@@ -1,0 +1,2 @@
+recursive-include fatac *
+global-exclude *pyc
