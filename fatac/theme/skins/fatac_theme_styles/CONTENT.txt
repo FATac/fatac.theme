@@ -1,5 +1,5 @@
 This folder holds stylesheet files that are registered for the
-'FATAC_Theme' Skin Selection only.
+'fatac.theme' Skin Selection only.
 
 It is a repository for customizations of the default Plone stylesheets,
 as well as for package specific stylesheets.

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object name="portal_skins" allow_any="False" cookie_persistence="False"
-   default_skin="FATAC_Theme">
+   default_skin="fatac.theme">
 
  <object name="fatac_theme_custom_images"
     meta_type="Filesystem Directory View"
@@ -12,7 +12,7 @@
     meta_type="Filesystem Directory View"
     directory="fatac.theme:skins/fatac_theme_styles"/>
 
- <skin-path name="FATAC_Theme" based-on="Plone Default">
+ <skin-path name="fatac.theme" based-on="Plone Default">
   <layer name="fatac_theme_custom_images"
      insert-after="custom"/>
   <layer name="fatac_theme_custom_templates"

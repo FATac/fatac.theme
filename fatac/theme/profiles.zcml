@@ -5,15 +5,15 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="FATAC_Theme"
+      title="fatac.theme"
       directory="profiles/default"
-      description='Extension profile for the "FATAC_Theme" Plone theme.'
+      description='Extension profile for the "fatac.theme" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <genericsetup:importStep
       name="fatac.theme.various"
-      title="FATAC_Theme: miscellaneous import steps"
+      title="fatac.theme: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
       handler="fatac.theme.setuphandlers.setupVarious">
     <depends name="skins"/>

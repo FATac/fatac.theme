@@ -1,6 +1,6 @@
-title:string=FATAC_Theme's color, font, logo and border defaults
+title:string=fatac.theme's color, font, logo and border defaults
 
-plone_skin:string=FATAC_Theme
+plone_skin:string=fatac.theme
 
 logoName:string=logo.jpg
 
