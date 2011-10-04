@@ -3,28 +3,29 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="fatac.theme">
 
-  <!-- 'fatac.theme' Zope 3 browser layer -->
-  <interface
-      interface=".interfaces.IThemeSpecific"
-      type="zope.publisher.interfaces.browser.IBrowserSkinType"
-      name="fatac.theme"
-      />
+    <!-- 'fatac.theme' Zope 3 browser layer -->
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="fatac.theme"
+        />
   
-  <!-- Viewlets registration -->
-  <!-- Zope 3 browser resources -->
+    <!-- Viewlets registration -->
+    <!-- Zope 3 browser resources -->
 
-  <!-- Resource directory for images -->
-  <browser:resourceDirectory
-      name="fatac.theme.images"
-      directory="images"
-      layer=".interfaces.IThemeSpecific"
-      />
 
-  <!-- Resource directory for stylesheets -->
-  <browser:resourceDirectory
-      name="fatac.theme.stylesheets"
-      directory="stylesheets"
-      layer=".interfaces.IThemeSpecific"
-      />
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="fatac.theme.images"
+        directory="images"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <!-- Resource directory for stylesheets -->
+    <browser:resourceDirectory
+        name="fatac.theme.stylesheets"
+        directory="stylesheets"
+        layer=".interfaces.IThemeSpecific"
+        />
 
 </configure>
