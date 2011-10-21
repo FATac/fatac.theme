@@ -1,0 +1,37 @@
+<div id="selector_idiomes" tal:condition="view/available">
+
+    <dl class="actionMenu deactivated" tal:define="here_url context/absolute_url;
+                                                 idiomes view/retIdiomes;
+                                                 idioma_actual idiomes/idioma_actual;
+                                                 altres_idiomes idiomes/altres_idiomes">
+        <dt class="actionMenuHeader">
+            <a tal:define="code idioma_actual/code;
+                           codeclass string:language-${code};
+                           name idioma_actual/name;
+                           shortname idioma_actual/shortname;"
+               tal:attributes="title name" href="">
+                <span tal:attributes="class string:currentLanguage${codeclass} currentLanguage arial13cffffff"
+                      tal:content="shortname">language name</span>
+                <!--<span class="arrowDownAlternative arial13cffffff">▼</span>-->
+                <span class="arrowDownAlternative">
+                    <img src="arrow_down_white.gif" />
+                </span>
+            </a>
+        </dt>
+        <dd class="actionMenuContent">
+            <ul>
+                <tal:language repeat="lang altres_idiomes">
+                    <li tal:define="code lang/code;
+                                    codeclass string:language-${code};
+                                    name lang/name;
+                                    shortname lang/shortname;"
+                        tal:attributes="class string:${codeclass}">
+                        <a tal:attributes="href string:${here_url}/switchLanguage?set_language=${code};
+                                           title name"
+                           tal:content="shortname" class="arial13cffffff">language name</a>
+                    </li>
+                </tal:language>
+            </ul>
+        </dd>
+    </dl>
+</div>

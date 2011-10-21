@@ -28,4 +28,36 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <browser:viewlet
+        name="cercador"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.cercador"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="on_estem"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.onestem"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="opcions"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.opcions"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="documents_relacionats"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".viewlets.documentsRelacionats"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
 </configure>

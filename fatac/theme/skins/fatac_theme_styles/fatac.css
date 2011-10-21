@@ -1,25 +1,59 @@
-/* ---------------------------------------------------------------------------- portal-top */
-#portal-top {
-    background: url('dotted_line.jpg')  repeat-x bottom transparent;
-    padding-bottom:10px;
-    margin-bottom:24px;
+/* ---------------------------------------------------------------------------- general */
+#visual-portal-wrapper { margin:0 1em; }
 
-}
+.div-dotted-line { float:left; width:100%; clear:both; background: url('dotted_line.jpg')  repeat-x top transparent; padding-top:10px; margin-top:4px; }
 
+img.arrow_top { margin-right:5px; }
 
-/* ---------------------------------------------------------------------------- portal-personaltools-wrapper */
-#portal-personaltools {
-    background: url('person.jpg') no-repeat 10px center #C6E6B5;
-    border-radius: 0.5em;
-    -webkit-radius: 0.5em;
-    -moz-border-radius: 0.5em;
-    padding: 0.95em 0em 0.95em 4.5em;
-    margin: 1.91em 0;
-}
+.arial15c666666 { font-family:Arial; font-size:15px; color:#666666; }
+.arial15c999999 { font-family:Arial; font-size:15px; color:#999999; }
+.arial13c999999 { font-family:Arial; font-size:13px; color:#999999; }
+.arial13cffffff { font-family:Arial; font-size:13px; color:#FFFFFF !important; }
 
 
 /* ---------------------------------------------------------------------------- edit-bar */
-#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar {
-    background-color: #DDDDDD;
-    border-color: #DDDDDD;
-}
+#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar
+    { background-color: #DDDDDD; border-color: #DDDDDD; }
+
+
+/* ---------------------------------------------------------------------------- languageselector.pt */
+#selector_idiomes { width:100%; clear:both; float:left; margin-top:-20px; margin-bottom:10px; }
+#selector_idiomes dl.actionMenu { background-color:#333333; border-radius: 0 0 0.3em 0.3em; -webkit-radius: 0 0 0.3em 0.3em; -moz-border-radius: 0 0 0.3em 0.3em; }
+#selector_idiomes dl.actionMenu.activated { border-radius: 0; -webkit-radius: 0; -moz-border-radius: 0; }
+#selector_idiomes dl.actionMenu .actionMenuHeader { padding-bottom:2px; }
+#selector_idiomes dl.actionMenu .currentLanguage { margin: 0 12px 0px 8px; }
+#selector_idiomes dd.actionMenuContent { background-color:#666666; padding:0; border-radius: 0 0 0.3em 0.3em; -webkit-radius: 0 0 0.3em 0.3em; -moz-border-radius: 0 0 0.3em 0.3em; z-index: 4; }
+#selector_idiomes dd.actionMenuContent a { background-color:#666666; padding:2px 0 4px 0; margin-left:8px; }
+
+/* ---------------------------------------------------------------------------- portal-logo */
+#portal-logo { float:left; margin-top:0; }
+
+
+/* ---------------------------------------------------------------------------- cercador.pt */
+#viewlet-cercador { float:none; margin:auto; width:450px; margin-top:22px; text-align:center; }
+#viewlet-cercador .searchButton { border:none; background-color: transparent; }
+#viewlet-cercador #text_a_cercar { background: url('search_33_grey.gif')  no-repeat 275px center #f6f6f6; width:300px; border:none; padding:10px; border-radius: 0.5em; -webkit-radius: 0.5em; -moz-border-radius: 0.5em; }
+
+
+/* ---------------------------------------------------------------------------- personal_bar.pt */
+#portal-personaltools-wrapper { float:right; margin-top:-64px; }
+#portal-personaltools { background: url('user_24_verde.gif') no-repeat 10px center #b3d396; border-radius: 0.5em; -webkit-radius: 0.5em; -moz-border-radius: 0.5em; padding: 0.95em 2em 0.95em 4.5em; margin: 1.91em 0; }
+#portal-personaltools, #portal-personaltools a { color: #339933; }
+
+
+/* ---------------------------------------------------------------------------- onestem.pt */
+#viewlet-onestem #onestem-left { color:#333333; }
+#viewlet-onestem #onestem-middle { color:#333333; padding:0 10px; }
+#viewlet-onestem #onestem-right { color:#999999; }
+
+
+/* ---------------------------------------------------------------------------- opcions.pt */
+#viewlet-opcions { margin-bottom:20px; }
+
+
+/* ---------------------------------------------------------------------------- genericview.pt */
+#generic-header {background-color:lightgreen; padding:10px; margin:10px 0;}
+#generic-body {background-color:lightblue; padding:10px; margin:10px 0;}
+#generic-content {background-color:orange; padding:10px; margin:10px 0;}
+#generic-contents {background-color:pink; padding:10px; margin:10px 0;}
+
