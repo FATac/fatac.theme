@@ -1,4 +1,4 @@
-<div id="viewlet-cercador" i18n:domain="fatac.theme">
+<div id="viewlet_cercador" i18n:domain="fatac.theme">
 
     <form action="#" id="cercador" name="cercador">
         <label for="input_cercador" class="hiddenStructure" i18n:translate="Search Site">Search Site</label>

@@ -15,7 +15,7 @@ class LanguageSelectorFatac(LanguageSelector):
         """
         altres_idiomes = []
         for lang in self.languages():
-            dades = {'code': lang['code'], 'name': lang['name'], 'shortname': lang['name'][0:3].lower()}
+            dades = {'code': lang['code'], 'name': lang['name']}
             if lang['selected']:
                 idioma_actual = dades
             else:

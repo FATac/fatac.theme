@@ -29,3 +29,14 @@ msgstr ""
 msgid "Search Site"
 msgstr ""
 
+#: ../../../browser/languageselector.pt:13, 29
+msgid "ca"
+msgstr "cat"
+
+#: ../../../browser/languageselector.pt:13, 29
+msgid "es"
+msgstr "cast"
+
+#: ../../../browser/languageselector.pt:13, 29
+msgid "en"
+msgstr "eng"

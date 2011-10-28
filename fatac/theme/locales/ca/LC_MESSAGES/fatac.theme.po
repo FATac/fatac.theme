@@ -28,3 +28,15 @@ msgstr "Fitxa d'expedient"
 msgid "Search Site"
 msgstr "Search Site"
 
+#: ../../../browser/languageselector.pt:13, 29
+msgid "ca"
+msgstr "cat"
+
+#: ../../../browser/languageselector.pt:13, 29
+msgid "en"
+msgstr "eng"
+
+#: ../../../browser/languageselector.pt:13, 29
+msgid "es"
+msgstr "cast"
+

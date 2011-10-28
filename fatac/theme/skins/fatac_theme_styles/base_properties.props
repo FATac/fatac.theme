@@ -2,7 +2,7 @@ title:string=fatac.theme's color, font, logo and border defaults
 
 plone_skin:string=fatac.theme
 
-logoName:string=logo.jpg
+logoName:string=logo.png
 
 fontFamily:string="Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif
 fontBaseSize:string=69%

@@ -1,3 +1,47 @@
-<div id="viewlet-documents-relacionats">
-    documents relacionats!
+<div id="viewlet_docs_relacionats" class="div_dotted_line_soft cell width-full position-0">
+    <img class="arrow_bottom" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="Documents relacionats">Documents relacionats</span>
+    <div class="clear_both"><!-- --></div>
+    <div id="docs_relacionats">
+
+        <div class="doc_relacionat primer_element">
+            <div class="imatge">
+                <img src="++resource++fatac.theme.images/demo1.jpg" alt="demo" /><br/>
+            </div>
+            <img class="icon" src="++resource++fatac.theme.images/demoicon1.gif" alt="icon" /><br/>
+            <span class="georgia13c333333">Lorem ipsum amet</span>
+        </div>
+
+        <div class="doc_relacionat">
+            <div class="imatge">
+                <img src="++resource++fatac.theme.images/demo2.jpg" alt="demo" /><br/>
+            </div>
+            <img class="icon" src="++resource++fatac.theme.images/demoicon1.gif" alt="icon" /><br/>
+            <span class="georgia13c333333">Lorem ipsum amet</span>
+        </div>
+
+        <div class="doc_relacionat">
+            <div class="imatge">
+                <img src="++resource++fatac.theme.images/demo1.jpg" alt="demo" /><br/>
+            </div>
+            <img class="icon" src="++resource++fatac.theme.images/demoicon1.gif" alt="icon" /><br/>
+            <span class="georgia13c333333">Lorem ipsum amet</span>
+        </div>
+
+        <div class="doc_relacionat">
+            <div class="imatge">
+                <img src="++resource++fatac.theme.images/demo2.jpg" alt="demo" /><br/>
+            </div>
+            <img class="icon" src="++resource++fatac.theme.images/demoicon1.gif" alt="icon" /><br/>
+            <span class="georgia13c333333">Lorem ipsum amet</span>
+        </div>
+
+        <div class="doc_relacionat">
+            <div class="imatge">
+                <img src="++resource++fatac.theme.images/demo3.jpg" alt="demo" /><br/>
+            </div>
+            <img class="icon" src="++resource++fatac.theme.images/demoicon2.gif" alt="icon" /><br/>
+            <span class="georgia13c333333">Lorem ipsum amet</span>
+        </div>
+
+    </div>
 </div>

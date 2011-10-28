@@ -28,6 +28,13 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Resource directory for javascripts -->
+    <browser:resourceDirectory
+        name="fatac.theme.javascripts"
+        directory="javascripts"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <browser:viewlet
         name="cercador"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
@@ -48,6 +55,14 @@
         name="opcions"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".viewlets.opcions"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="filtres"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.filtres"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
         />
