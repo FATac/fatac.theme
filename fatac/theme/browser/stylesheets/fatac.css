@@ -1,0 +1,128 @@
+/* ---------------------------------------------------------------------------- estructura */
+#visual-portal-wrapper { margin:auto; width:950px; }
+div.width-full { width: 100%; }
+div.position-0 { margin-left: 0; }
+div.cell { float: left; left: 100%; position: static; }
+
+
+/* ---------------------------------------------------------------------------- general */
+.div_dotted_line { float:left; width:100%; clear:both; border-top:1px dotted #888888; padding-top:10px; margin-top:4px; }
+.div_dotted_line_soft { float:left; width:100%; clear:both; border-top:1px dotted #cccccc; padding-top:10px; margin-top:4px; }
+
+.hidden { display:none; }
+
+img.arrow_top, img.arrow_bottom { margin-right:5px; }
+
+.arial15c666666 { font-family:Arial; font-size:15px; color:#666666; }
+.arial15c999999 { font-family:Arial; font-size:15px; color:#999999; }
+.arial13c999999 { font-family:Arial; font-size:13px; color:#999999; }
+.arial13cffffff { font-family:Arial; font-size:13px; color:#ffffff !important; }
+.arial12c999999i { font-family:Arial; font-size:12px; color:#999999; font-style:italic; }
+.arial12c666666 { font-family:Arial; font-size:12px; color:#666666; }
+.arial11c666666 { font-family:Arial; font-size:11px; color:#666666; }
+.georgia13c333333 { font-family:georgia; font-size:13px; color:#333333; }
+
+
+/* ---------------------------------------------------------------------------- edit-bar */
+#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar
+    { background-color:#dddddd; border-color:#dddddd; }
+
+
+/* ---------------------------------------------------------------------------- languageselector.pt */
+#selector_idiomes { width:100%; clear:both; float:left; margin-top:-20px; margin-bottom:10px; }
+#selector_idiomes dl.actionMenu { background-color:#333333; border-radius:0 0 0.3em 0.3em; -webkit-radius:0 0 0.3em 0.3em; -moz-border-radius:0 0 0.3em 0.3em; }
+#selector_idiomes dl.actionMenu.activated { border-radius:0; -webkit-radius:0; -moz-border-radius:0; }
+#selector_idiomes dl.actionMenu .actionMenuHeader { padding-bottom:2px; }
+#selector_idiomes dl.actionMenu .currentLanguage { margin:0 12px 0px 8px; }
+#selector_idiomes dd.actionMenuContent { background-color:#666666; padding:0; border-radius:0 0 0.3em 0.3em; -webkit-radius:0 0 0.3em 0.3em; -moz-border-radius:0 0 0.3em 0.3em; z-index:4; }
+#selector_idiomes dd.actionMenuContent a { background-color:#666666; padding:2px 0 4px 0; margin-left:8px; }
+
+
+/* ---------------------------------------------------------------------------- portal-logo */
+#portal-logo { float:left; margin-top:0; }
+
+
+/* ---------------------------------------------------------------------------- cercador.pt */
+#viewlet_cercador { float:none; margin:auto; width:450px; margin-top:22px; text-align:center; }
+#viewlet_cercador .searchButton { border:none; background-color:transparent; }
+#viewlet_cercador #text_a_cercar { background:url('++resource++fatac.theme.images/ico_search.png')  no-repeat 275px center #f6f6f6; width:300px; border:none; padding:10px; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; }
+
+
+/* ---------------------------------------------------------------------------- personal_bar.pt */
+#portal-personaltools-wrapper { float:right; margin-top:-64px; }
+#portal-personaltools { background:url('++resource++fatac.theme.images/user_24_verde.gif') no-repeat 10px center #b3d396; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; padding:0.95em 2em 0.95em 4.5em; margin:1.91em 0; }
+#portal-personaltools, #portal-personaltools a { color:#339933; }
+
+
+/* ---------------------------------------------------------------------------- onestem.pt */
+#viewlet_onestem #onestem_left { color:#333333; }
+#viewlet_onestem #onestem_middle { color:#333333; padding:0 10px; }
+#viewlet_onestem #onestem_right { color:#999999; }
+
+
+/* ---------------------------------------------------------------------------- opcions.pt */
+#viewlet_opcions { margin-bottom:20px; }
+
+
+/* ---------------------------------------------------------------------------- genericview.pt */
+#generic_header {background-color:lightgreen; padding:10px; margin:10px 0;}
+#generic_body {background-color:lightblue; padding:10px; margin:10px 0;}
+#generic_content {background-color:orange; padding:10px; margin:10px 0;}
+#generic_contents {background-color:pink; padding:10px; margin:10px 0;}
+
+
+/* ---------------------------------------------------------------------------- documents_relacionats.pt */
+#viewlet_docs_relacionats #docs_relacionats { background-color:#ececec; border-top:1px dotted #cccccc; float:left; margin-top:10px; padding:25px; }
+#viewlet_docs_relacionats .doc_relacionat { background-color:#ffffff; float:left; padding:10px; margin-left:10px; width:152px; height:176px; }
+#viewlet_docs_relacionats .doc_relacionat.primer_element { margin-left:0; }
+#viewlet_docs_relacionats .doc_relacionat .imatge { height: 120px; }
+#viewlet_docs_relacionats .doc_relacionat .imatge img { max-height:110px; max-width:152px; }
+#viewlet_docs_relacionats .doc_relacionat .imatge img, #viewlet_docs_relacionats .doc_relacionat .icon { margin-bottom:7px; }
+
+
+/* ---------------------------------------------------------------------------- filtres.pt */
+.boto_filtres { float:right; text-align:left; background-color:#ececec; border:1px solid #999999; padding:0px 20px 2px 10px; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
+.boto_filtres.amagar_filtres { background:url('++resource++fatac.theme.images/ico_reduir.png')  no-repeat right center #ececec; }
+.boto_filtres.mostrar_filtres { background:url('++resource++fatac.theme.images/ico_ampliar.png')  no-repeat right center #ececec; }
+
+#viewlet_filtres .div_dotted_line { margin-top:8px; }
+#viewlet_filtres .filtres { float:left; width:24000px; }
+#viewlet_filtres .filtre { float:left; width:138px; margin-left:10px; overflow:hidden; }
+
+#viewlet_filtres .filtre .opcions { width:125px; }
+#viewlet_filtres .filtre .slider-wrap { width:7px; }
+
+#viewlet_filtres .filtre dt { margin-bottom:5px; font-weight:normal; }
+#viewlet_filtres .filtre li { display:block; }
+
+#viewlet_filtres .arrow_left, #viewlet_filtres .arrow_right { float:left; width:3%; text-align:center; padding-top:50px; }
+#viewlet_filtres .arrow_right { float:right;}
+
+
+/* css necessari per ampliar filtres (jquery) */
+
+#viewlet_filtres .filtre .opcions li { line-height:15px; }
+#viewlet_filtres .filtre, #wrapper { height:110px; }
+#wrapper { overflow:hidden; }
+.clearLeft {clear:left;}
+
+
+/* css necessari per scroll horitzontal de filtre (jquery) */
+
+.scrollable { position:relative; overflow:hidden; }
+.scrollable .filtres { width:20000em; position:absolute; }
+.scrollable .filtres div { float:left; }
+a.disabled { visibility:hidden !important; } 
+
+
+/* css necessari per scroll vertical d'opcions dins un filtre (jquery) */
+
+#slider-vertical, .slideopcions, .slider-wrap { height:90px; }
+.slideopcions { overflow:hidden; float:left; position:relative; }
+.slider-wrap, .ui-slider-handle { margin-left:2px; }
+.slider-wrap{ float:left; background:url('++resource++fatac.theme.images/slider.png')  repeat-y center transparent; border:none; }
+#slider-vertical{ position:relative; text-align:center; }
+.ui-slider-handle { height:10px; margin:0 auto; background-color:#999999; display:block; position:absolute; width:3px; }
+    /* css per que esfaci ample l'scroll quan el fem servir */
+    #viewlet_filtres .filtre dd .ui-slider-handle { margin-left:2px; }
+    #viewlet_filtres .filtre dd:hover .ui-slider-handle { border-left:2px solid #999999; border-right:2px solid #999999; margin-left:0px; }
