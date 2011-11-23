@@ -67,6 +67,15 @@
         permission="zope2.View"
         />
 
+    <browser:viewlet
+        name="footer"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".viewlets.footer"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+
     <browser:page
         for="*"
         name="genericView"
@@ -74,7 +83,6 @@
         permission="zope2.Public"
         />
 
-    <!-- v1 -->
     <browser:page
         for="*"
         name="filtresView"
@@ -82,7 +90,6 @@
         permission="zope2.Public"
         />
 
-    <!-- v2 -->
     <browser:page
         for="*"
         name="resultatsView"
@@ -90,7 +97,6 @@
         permission="zope2.Public"
         />
 
-    <!-- v3 -->
     <browser:page
         for="*"
         name="cercaInicialView"
@@ -98,7 +104,6 @@
         permission="zope2.Public"
         />
 
-    <!-- v4 -->
     <browser:page
         for="*"
         name="cercaAjaxView"

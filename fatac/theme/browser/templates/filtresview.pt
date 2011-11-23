@@ -1,4 +1,4 @@
-<div id="selector_filtres" class="div_dotted_line" tal:define="filtres view/retFiltres">
+<div id="selector_filtres" class="div_dotted_line" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
 
     <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
     <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>

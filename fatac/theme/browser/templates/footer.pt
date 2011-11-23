@@ -1,0 +1,48 @@
+<div id="viewlet_footer" class="div_dotted_line" tal:define="linkequip view/linkequip; linkajuda view/linkajuda; linkcontacte view/linkcontacte" i18n:domain="fatac.theme">
+
+    <div id="links" class="georgia11c999999">
+        <a class="georgia11c999999" tal:condition="linkequip" tal:attributes="href linkequip/enllac; title linkequip/descripcio" tal:content="linkequip/titol" /> |
+        <a class="georgia11c999999" tal:condition="linkajuda" tal:attributes="href linkajuda/enllac; title linkajuda/descripcio" tal:content="linkajuda/titol" /> |
+        <a class="georgia11c999999" tal:condition="linkcontacte" tal:attributes="href linkcontacte/enllac; title linkcontacte/descripcio" tal:content="linkcontacte/titol" />
+    </div>
+
+    <div id="sponsors" class="georgia11c999999">
+        <div id="financament">
+            <span i18n:translate="financament">Finançament:</span><br/>
+            <a href="" i18n:attributes="title financament1">
+                <img i18n:attributes="alt financament1" src="++resource++fatac.theme.images/financament1.png" />
+            </a>
+            <a href="" i18n:attributes="title financament2">
+                <img i18n:attributes="alt financament2" src="++resource++fatac.theme.images/financament2.png" />
+            </a>
+        </div>
+        <div id="participants">
+            <span i18n:translate="participants">Participants:</span><br/>
+            <a href="" i18n:attributes="title participants1">
+                <img i18n:attributes="alt participants1" src="++resource++fatac.theme.images/participants1.png" />
+            </a>
+            <a href="" i18n:attributes="title participants2">
+                <img i18n:attributes="alt participants2" src="++resource++fatac.theme.images/participants2.png" />
+            </a>
+            <a href="" i18n:attributes="title participants3">
+                <img i18n:attributes="alt participants3" src="++resource++fatac.theme.images/participants3.png" />
+            </a>
+        </div>
+        <div id="patrocinadors">
+            <span i18n:translate="patrocinadors">Patrocinadors institucionals:</span><br/>
+            <a href="" i18n:attributes="title patrocinadors1">
+                <img i18n:attributes="alt patrocinadors1" src="++resource++fatac.theme.images/patrocinadors1.png" />
+            </a>
+            <a href="" i18n:attributes="title patrocinadors2">
+                <img i18n:attributes="alt patrocinadors2" src="++resource++fatac.theme.images/patrocinadors2.png" />
+            </a>
+        </div>
+        <div id="collaboracio">
+            <span i18n:translate="collaboracio">Amb la col·laboració de:</span><br/>
+            <a href="" i18n:attributes="title collaboracio1">
+                <img i18n:attributes="alt collaboracio1" src="++resource++fatac.theme.images/collaboracio1.png" />
+            </a>
+        </div>
+    </div>
+
+</div>
