@@ -1,0 +1,18 @@
+<div id="viewlet_cercador" i18n:domain="fatac.theme">
+
+    <form tal:attributes="action string:${view/navigation_root_url}/cercaInicialView" id="cercador" name="cercador">
+        <label for="input_cercador" class="hiddenStructure" i18n:translate="Search Site">Search Site</label>
+        <input name="s"
+               id="s"
+               type="text"
+               size="18"
+               class="arial15c999999"
+               i18n:attributes="title Explorar"
+               tal:attributes="value request/form/s|nothing" />
+
+        <input class="searchButton arial15c666666"
+               type="submit"
+               i18n:attributes="value Explorar" />
+    </form>
+
+</div>

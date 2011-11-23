@@ -1,0 +1,13 @@
+<div id="resultats_cerca" class="div_dotted_line" tal:define="resultats view/retResultats">
+    <div id="resultats">
+        <a class="arrow_left_resultats prev browse left"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
+        <a class="arrow_right_resultats next browse right"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
+        <div id="wrapper_resultats" class="scrollable">
+            <div class="resultats">
+                <div tal:repeat="resultat resultats" tal:attributes="id resultat/id; class string:small resultat resultat-${repeat/resultat/number} scrollable-${repeat/resultat/number}">
+                    <img class="miniatura_resultat" tal:attributes="src resultat/imatge" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

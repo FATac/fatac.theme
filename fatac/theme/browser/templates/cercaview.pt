@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+    <body>
+        <metal:main fill-slot="main" i18n:domain="fatac.theme">
+
+            <!--<script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery-1.7.min.js"></script>-->
+            <script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery-ui-1.8.16.custom.min.js"></script>
+            <script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery.mousewheel.min.js"></script>
+            <script type="text/javascript" src="++resource++fatac.theme.javascripts/fatac.js"></script>
+
+            <script>
+                inicialitza_js();
+            </script>
+
+            <!-- TODO: canviar type="text" per type="hidden", eliminar attr size -->
+            <input type="text" size="500" id="querystring" tal:attributes="value view/retQuerystringInicial" />
+
+            <tal:repl tal:replace="structure view/retFiltresView" />
+
+            <div class="visualClear"><!--  --></div>
+
+            <div id="ordre_y_tipus_cerca" class="div_dotted_line">
+                <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
+                <span class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
+
+                <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
+                    <dt class="actionMenuHeader">
+                        <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
+                            tipus d'entrada <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
+                        </a>
+                    </dt>
+                    <dd class="actionMenuContent">
+                        <ul>
+                            <li><a class="arial11c666666 selected" href="">document</a></li>
+                            <li><a class="arial11c666666" href="">expedient</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
+                    <dt class="actionMenuHeader">
+                        <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
+                            tipus d'ordre <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
+                        </a>
+                    </dt>
+                    <dd class="actionMenuContent">
+                        <ul>
+                            <li><a class="arial11c666666" href="">alfabètic</a></li>
+                            <li><a class="arial11c666666 selected" href="">cronològic</a></li>
+                            <li><a class="arial11c666666" href="">ordre original</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+            </div>
+
+            <div class="visualClear"><!--  --></div>
+
+            <tal:repl tal:replace="structure view/retResultatsView" />
+
+            <div class="visualClear"><!--  --></div>
+
+            <div id="controls_resultats">
+                <div id="dades_paginacio_cerca">
+                    <span i18n:translate="pagina" id="pagina">pàgina</span>: <span id="pagina_actual">1</span> <span i18n:translate="de">de</span> <span id="pagina_total">5</span>
+                    / <span i18n:translate="arxius" id="arxius">arxius</span>: <span id="arxiu_inicial">15</span> - <span id="arxiu_final">75</span>
+                </div>
+                <div id="visualitzacio_resultats">
+                    <a href="#" class="selected"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
+                    <a href="#"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" /></a>
+                    <a href="#"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" /></a>
+                </div>
+                <div id="zoom_resultats">
+                    <img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" />
+                    <div id="slider-wrap-zoom" class="slider-wrap-zoom">
+                        <div id="slider-vertical" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                            <a href="#" class="ui-slider-handle ui-state-default ui-corner-all"></a>
+                        </div>
+                    </div>
+                    <img src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" />
+                </div>
+            </div>
+
+            <div class="visualClear"><!--  --></div>
+
+            <div id="accions_cerca" class="div_dotted_line">
+                <dl class="llista_desplegable llista_desplegable_verd actionMenu deactivated">
+                    <dt class="actionMenuHeader">
+                        <a class="arial16c339933bold" i18n:attributes="title mes_opcions" href="">
+                            + <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_green.gif" /></span>
+                        </a>
+                    </dt>
+                    <dd class="actionMenuContent">
+                        <ul>
+                            <li><a class="arial11c339933">leer después</a></li>
+                            <li><a class="arial11c339933">añadir comentario</a></li>
+                            <li><a class="arial11c339933">añadir a album 1</a></li>
+                            <li><a class="arial11c339933">añadir a album 2</a></li>
+                            <li><a class="arial11c339933">añadir a nuevo album</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+
+        </metal:main>
+    </body>
+</html>

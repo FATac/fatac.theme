@@ -1,0 +1,37 @@
+<div id="selector_filtres" class="div_dotted_line" tal:define="filtres view/retFiltres">
+
+    <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
+    <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
+
+    <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres">
+    <input class="boto_filtres mostrar_filtres arial11c666666" type="button" i18n:attributes="value ampliar_filtres">
+
+    <div id="filtres" class="div_dotted_line">
+
+        <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
+        <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
+
+        <div id="wrapper" class="scrollable">
+            <div class="filtres">
+                <div tal:repeat="filtre filtres" tal:attributes="class string:filtre filtre-${repeat/filtre/number} scrollable-${repeat/filtre/number}">
+                    <dl>
+                        <dt class="arial12c999999i" tal:content="filtre/nom_filtre">filtre</dt>
+                        <dd>
+                            <div tal:attributes="class string:slideopcions slideopcions-${repeat/filtre/number}">
+                                <div class="opcions">
+                                    <ul>
+                                        <tal:rep tal:repeat="opcio filtre/opcions">
+                                            <li class="arial12c666666">
+                                                <a tal:attributes="href string:cercaAjaxView; rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
+                                            </li>
+                                        </tal:rep>
+                                    <ul>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
