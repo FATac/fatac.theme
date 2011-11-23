@@ -9,7 +9,7 @@
         type="zope.publisher.interfaces.browser.IBrowserSkinType"
         name="fatac.theme"
         />
-  
+
     <!-- Viewlets registration -->
     <!-- Zope 3 browser resources -->
 
@@ -60,19 +60,50 @@
         />
 
     <browser:viewlet
-        name="filtres"
-        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class=".viewlets.filtres"
-        layer=".interfaces.IThemeSpecific"
-        permission="zope2.View"
-        />
-
-    <browser:viewlet
         name="documents_relacionats"
         manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
         class=".viewlets.documentsRelacionats"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
+        />
+
+    <browser:page
+        for="*"
+        name="genericView"
+        class=".genericView.genericView"
+        permission="zope2.Public"
+        />
+
+    <!-- v1 -->
+    <browser:page
+        for="*"
+        name="filtresView"
+        class=".vistesCerca.filtresView"
+        permission="zope2.Public"
+        />
+
+    <!-- v2 -->
+    <browser:page
+        for="*"
+        name="resultatsView"
+        class=".vistesCerca.resultatsView"
+        permission="zope2.Public"
+        />
+
+    <!-- v3 -->
+    <browser:page
+        for="*"
+        name="cercaInicialView"
+        class=".vistesCerca.cercaInicialView"
+        permission="zope2.Public"
+        />
+
+    <!-- v4 -->
+    <browser:page
+        for="*"
+        name="cercaAjaxView"
+        class=".vistesCerca.cercaAjaxView"
+        permission="zope2.Public"
         />
 
 </configure>

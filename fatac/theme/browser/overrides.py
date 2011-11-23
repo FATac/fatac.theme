@@ -4,11 +4,11 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class PersonalBarViewletFatac(PersonalBarViewlet):
-    index = ViewPageTemplateFile('personal_bar.pt')
+    index = ViewPageTemplateFile('templates/personal_bar.pt')
 
 
 class LanguageSelectorFatac(LanguageSelector):
-    render = ViewPageTemplateFile('languageselector.pt')
+    render = ViewPageTemplateFile('templates/languageselector.pt')
 
     def retIdiomes(self):
         """

@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
+
  <javascript authenticated="False" cacheable="True" compression="none"
     conditionalcomment="" cookable="True" enabled="True" expression=""
+    id="++resource++fatac.theme.javascripts/jquery-1.7.min.js" inline="False"/> 
+
+ <javascript authenticated="False" cacheable="True" compression="none"
+    conditionalcomment="" cookable="True" enabled="False" expression=""
     id="jquery.js" inline="False"/>
  <javascript authenticated="False" cacheable="True" compression="safe"
     conditionalcomment="" cookable="True" enabled="True" expression=""
@@ -143,4 +148,7 @@
  <javascript authenticated="False" cacheable="True" compression="safe"
     conditionalcomment="lt IE 8" cookable="True" enabled="True" expression=""
     id="iefixes.js" inline="False"/>
+ <javascript authenticated="False" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="True" expression=""
+    id="++resource++plone.app.debugtoolbar/debugtoolbar.js" inline="False"/>
 </object>
