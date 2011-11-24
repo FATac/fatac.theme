@@ -24,6 +24,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial12c666666 { font-family:Arial; font-size:12px; color:#666666 !important; }
 .arial11c666666 { font-family:Arial; font-size:11px; color:#666666 !important; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
+.georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 
@@ -185,7 +186,20 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 
 /* ---------------------------------------------------------------------------- viewlet_footer */
-#viewlet_footer { padding-top:30px; }
+#viewlet_footer { padding-top:30px; margin-bottom:20px; }
 #viewlet_footer #sponsors { margin-top:40px; }
 #viewlet_footer #sponsors div { float:left; }
 #viewlet_footer #sponsors div img { margin: 20px 20px 0 0; }
+
+/* ---------------------------------------------------------------------------- homeview.pt */
+#text_intro { width:90%; float:left; padding: 0 5%; }
+
+#ultims_consultats { width:100%; float:left; }
+#text_intro { padding: 0 20px; }
+.requadre_resultats { width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:20px 2%; margin:10px 0; }
+
+#ultims_documents { width:100%; float:left; border-top:1px dotted #888888; padding-top:10px; margin-top:40px; }
+.requadre_resultats { text-align:center; }
+.requadre_resultats .resultat { width:18%; float:left; margin:0 1%; background-color:white; text-align:center; }
+.requadre_resultats .arrow_up { margin-bottom:10px; }
+.requadre_resultats .arrow_down { margin-top:10px; }

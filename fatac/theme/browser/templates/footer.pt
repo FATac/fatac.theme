@@ -1,9 +1,15 @@
 <div id="viewlet_footer" class="div_dotted_line" tal:define="linkequip view/linkequip; linkajuda view/linkajuda; linkcontacte view/linkcontacte" i18n:domain="fatac.theme">
 
     <div id="links" class="georgia11c999999">
-        <a class="georgia11c999999" tal:condition="linkequip" tal:attributes="href linkequip/enllac; title linkequip/descripcio" tal:content="linkequip/titol" /> |
-        <a class="georgia11c999999" tal:condition="linkajuda" tal:attributes="href linkajuda/enllac; title linkajuda/descripcio" tal:content="linkajuda/titol" /> |
-        <a class="georgia11c999999" tal:condition="linkcontacte" tal:attributes="href linkcontacte/enllac; title linkcontacte/descripcio" tal:content="linkcontacte/titol" />
+        <tal:co tal:condition="linkequip">
+            <a class="georgia11c999999" tal:attributes="href linkequip/enllac; title linkequip/descripcio" tal:content="linkequip/titol" /> |
+        </tal:co>
+        <tal:co tal:condition="linkajuda">
+            <a class="georgia11c999999" tal:attributes="href linkajuda/enllac; title linkajuda/descripcio" tal:content="linkajuda/titol" /> |
+        </tal:co>
+        <tal:co tal:condition="linkcontacte">
+            <a class="georgia11c999999" tal:attributes="href linkcontacte/enllac; title linkcontacte/descripcio" tal:content="linkcontacte/titol" />
+        </tal:co>
     </div>
 
     <div id="sponsors" class="georgia11c999999">

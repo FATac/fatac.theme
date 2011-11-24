@@ -30,33 +30,25 @@ class footer(ViewletBase):
         """
         brain = self.context.portal_catalog.searchResults(portal_type=tipus, id=id)[:1]
         for i in brain:
-            obj = i.getObject()
-            return {'titol': obj.Title(), 'descripcio': obj.Description(), 'enllac': obj.absolute_url()}
+            trad = i.getObject().getTranslation()
+            if trad:
+                return {'titol': trad.Title(), 'descripcio': trad.Description(), 'enllac': trad.absolute_url()}
         return None
 
     def linkequip(self):
         """ retorna un diccionari amb el títol, la descripció i la url del
         document amb id equip, en l'idioma actual
         """
-        langtool = self.context.portal_languages
-        idioma_actual = langtool.getLanguageBindings()[0]
-        ids = {'ca': 'equip', 'es': 'equipo', 'en': 'team'}
-        return self.retLinkGeneric(ids[idioma_actual], 'Document')
+        return self.retLinkGeneric('equip', 'Document')
 
     def linkajuda(self):
         """ retorna un diccionari amb el títol, la descripció i la url del
         document amb id ajuda, en l'idioma actual
         """
-        langtool = self.context.portal_languages
-        idioma_actual = langtool.getLanguageBindings()[0]
-        ids = {'ca': 'ajuda', 'es': 'ayuda', 'en': 'help'}
-        return self.retLinkGeneric(ids[idioma_actual], 'Document')
+        return self.retLinkGeneric('ajuda', 'Document')
 
     def linkcontacte(self):
         """ retorna un diccionari amb el títol, la descripció i la url de la
         carpeta amb id contacte, en l'idioma actual
         """
-        langtool = self.context.portal_languages
-        idioma_actual = langtool.getLanguageBindings()[0]
-        ids = {'ca': 'contacte', 'es': 'contacto', 'en': 'contact'}
-        return self.retLinkGeneric(ids[idioma_actual], 'Folder')
+        return self.retLinkGeneric('contacte', 'Folder')
