@@ -77,6 +77,14 @@
 
 
     <browser:page
+        name="homeview"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".homeview.homeView"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="*"
         name="genericView"
         class=".genericView.genericView"

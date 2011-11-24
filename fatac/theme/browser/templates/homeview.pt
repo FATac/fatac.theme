@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master">
+    <body>
+        <metal:content-title fill-slot="content-title"></metal:content-title>
+        <metal:content-description fill-slot="content-description"></metal:content-description>
+        <metal:content-core fill-slot="content-core">
+            <metal:main-macro define-macro="content">
+                <div id="content" i18n:domain="fatac.theme">
+
+                    <div id="text_intro" class="georgia32c666666" tal:define="text view/getFrontPage" tal:condition="text">
+                        <div tal:replace="structure text/body">text introductori</div>
+                    </div>
+
+                    <div id="ultims_documents">
+                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_documents">Últims documents</span>
+                        <div class="requadre_resultats">
+                            <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            <div class="visualClear"><!--  --></div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="visualClear"><!--  --></div>
+                            <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                        </div>
+                    </div>
+
+                    <div id="ultims_consultats">
+                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
+                        <div class="requadre_resultats">
+                            <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            <div class="visualClear"><!--  --></div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="resultat">aaa</div>
+                            <div class="visualClear"><!--  --></div>
+                            <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                        </div>
+                    </div>
+
+                </div>
+            </metal:main-macro>
+        </metal:content-core>
+    </body>
+</html>

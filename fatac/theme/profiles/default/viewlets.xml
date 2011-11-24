@@ -11,6 +11,11 @@
   <viewlet name="plone.logo"/>
   <viewlet name="plone.global_sections"/>
  </order>
+ <order manager="plone.belowcontent" skinname="Plone Default">
+  <viewlet name="plone.belowcontenttitle.keywords"/>
+  <viewlet name="plone.nextprevious"/>
+  <viewlet name="plone.manage_portlets_fallback"/>
+ </order>
  <order manager="plone.belowcontentbody" skinname="Plone Default">
   <viewlet name="plone.belowcontentbody.relateditems"/>
   <viewlet name="plone.abovecontenttitle.documentactions"/>
@@ -20,10 +25,17 @@
   <viewlet name="plone.colophon"/>
   <viewlet name="plone.site_actions"/>
  </order>
- <order manager="plone.belowcontent" skinname="Plone Default">
-  <viewlet name="plone.belowcontenttitle.keywords"/>
-  <viewlet name="plone.nextprevious"/>
-  <viewlet name="plone.manage_portlets_fallback"/>
+ <order manager="plone.debugtoolbar" skinname="Plone Default">
+  <viewlet name="plone.app.debugtoolbar.context"/>
+  <viewlet name="plone.app.debugtoolbar.interactive"/>
+  <viewlet name="plone.app.debugtoolbar.request"/>
+  <viewlet name="plone.app.debugtoolbar.response"/>
+  <viewlet name="plone.app.debugtoolbar.published"/>
+  <viewlet name="plone.app.debugtoolbar.theme"/>
+  <viewlet name="plone.app.debugtoolbar.user"/>
+  <viewlet name="plone.app.debugtoolbar.workflow"/>
+  <viewlet name="plone.app.debugtoolbar.global"/>
+  <viewlet name="plone.app.debugtoolbar.versions"/>
  </order>
  <order manager="plone.portaltop" skinname="Plone Default">
   <viewlet name="plone.header"/>
@@ -32,8 +44,21 @@
   <viewlet name="plone.contentviews"/>
   <viewlet name="plone.contentactions"/>
  </order>
+ <order manager="plone.debugtoolbar" skinname="fatac.theme">
+  <viewlet name="plone.app.debugtoolbar.context"/>
+  <viewlet name="plone.app.debugtoolbar.interactive"/>
+  <viewlet name="plone.app.debugtoolbar.request"/>
+  <viewlet name="plone.app.debugtoolbar.response"/>
+  <viewlet name="plone.app.debugtoolbar.published"/>
+  <viewlet name="plone.app.debugtoolbar.theme"/>
+  <viewlet name="plone.app.debugtoolbar.user"/>
+  <viewlet name="plone.app.debugtoolbar.workflow"/>
+  <viewlet name="plone.app.debugtoolbar.global"/>
+  <viewlet name="plone.app.debugtoolbar.versions"/>
+ </order>
  <order manager="plone.portalheader" skinname="fatac.theme">
   <viewlet name="plone.app.i18n.locales.languageselector"/>
+  <viewlet name="fatac.languageselector"/>
   <viewlet name="plone.logo"/>
   <viewlet name="cercador"/>
   <viewlet name="plone.personal_bar"/>
@@ -42,6 +67,18 @@
   <viewlet name="plone.skip_links"/>
   <viewlet name="plone.searchbox"/>
   <viewlet name="plone.global_sections"/>
+ </order>
+ <order manager="plone.debugtoolbar" skinname="Plone Classic Theme">
+  <viewlet name="plone.app.debugtoolbar.context"/>
+  <viewlet name="plone.app.debugtoolbar.interactive"/>
+  <viewlet name="plone.app.debugtoolbar.request"/>
+  <viewlet name="plone.app.debugtoolbar.response"/>
+  <viewlet name="plone.app.debugtoolbar.published"/>
+  <viewlet name="plone.app.debugtoolbar.theme"/>
+  <viewlet name="plone.app.debugtoolbar.user"/>
+  <viewlet name="plone.app.debugtoolbar.workflow"/>
+  <viewlet name="plone.app.debugtoolbar.global"/>
+  <viewlet name="plone.app.debugtoolbar.versions"/>
  </order>
  <order manager="plone.portalheader" skinname="Plone Classic Theme">
   <viewlet name="plone.skip_links"/>
@@ -59,14 +96,18 @@
   <viewlet name="plone.path_bar"/>
  </order>
  <hidden manager="plone.portalfooter" skinname="fatac.theme">
+  <viewlet name="documents_relacionats"/>
   <viewlet name="plone.site_actions"/>
   <viewlet name="plone.colophon"/>
   <viewlet name="plone.footer"/>
  </hidden>
  <hidden manager="plone.portalheader" skinname="fatac.theme">
+  <viewlet name="opcions"/>
+  <viewlet name="on_estem"/>
   <viewlet name="plone.searchbox"/>
   <viewlet name="plone.global_sections"/>
   <viewlet name="plone.skip_links"/>
+  <viewlet name="plone.app.i18n.locales.languageselector"/>
  </hidden>
  <hidden manager="plone.abovecontent" skinname="fatac.theme">
   <viewlet name="plone.path_bar"/>

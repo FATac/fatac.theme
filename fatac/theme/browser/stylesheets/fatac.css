@@ -1,8 +1,10 @@
 /* ---------------------------------------------------------------------------- estructura */
 #visual-portal-wrapper { margin:auto; width:950px; }
 div.width-full { width: 100%; }
+/* TODO: comentat xq a @@language-controlpanel es veia malament; e spot esborrar?
 div.position-0 { margin-left: 0; }
 div.cell { float: left; left: 100%; position: static; }
+*/
 
 
 /* ---------------------------------------------------------------------------- general */
