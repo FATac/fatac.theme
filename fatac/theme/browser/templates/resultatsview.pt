@@ -8,7 +8,7 @@
         <div id="wrapper_resultats">
             <div class="resultats">
                 <tal:rep tal:repeat="resultat resultats" tal:attributes="id resultat/id;">
-                    <a tal:attributes="href string:${here/portal_url}/legalValidation?id=${resultat/id}"><tal:repl tal:replace="structure resultat/html" /></a>
+                    <a tal:attributes="href string:${here/portal_url}/legalValidation?objectIdsVal=${resultat/id}"><tal:repl tal:replace="structure resultat/html" /></a>
                 </tal:rep>
             </div>
         </div>
