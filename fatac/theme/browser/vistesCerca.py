@@ -17,10 +17,12 @@ class filtresView(BrowserView, funcionsCerca):
         """
         #si no ens passen cap querystring, consultem l'inicial
         querystring = self.request.get('querystring', self.retQuerystringInicial())
-        dades_json = self.executaCerca(querystring)
+        resultat_cerca = self.executaCerca(querystring)
+        dades_json = resultat_cerca['dades_json']
+        ordre_filtres = resultat_cerca['ordre_filtres']
         filtres_json = dades_json['facet_counts']['facet_fields']
         filtres = []
-        for filtre in filtres_json.keys():
+        for filtre in ordre_filtres:
             opcions_json = filtres_json[filtre]  # [u'Video', 45, u'Audio', 38, u'Image', 8, u'Text', 4]
             if len(opcions_json) > 0:
                 i = 0
@@ -46,12 +48,22 @@ class resultatsView(BrowserView, funcionsCerca):
         """
         #si no ens passen cap querystring, consultem l'inicial
         querystring = self.request.get('querystring', self.retQuerystringInicial())
-        dades_json = self.executaCerca(querystring)
+        resultat_cerca = self.executaCerca(querystring)
+        dades_json = resultat_cerca['dades_json']
+
         resultats = dades_json['response']['docs']
         dades_resultats = []
         for resultat in resultats:
-            url2 = self.retServidorRest() + '/resource/' + resultat['id'] + '/thumbnail'
-            dades_resultats.append({'id': resultat['id'], 'imatge': url2})
+            portal = getToolByName(self, 'portal_url')
+            portal = portal.getPortalObject()
+            self.request.set('idobjecte', resultat['id'])
+            visualitzacio = self.request.get('visualitzacio', 'imatge')
+            self.request.set('visualitzacio', visualitzacio)
+            zoom = self.request.get('zoom', '1')
+            self.request.set('zoom', zoom)
+            html = portal.restrictedTraverse('@@genericView')()
+            dades_resultats.append({'id': resultat['id'], 'html': html})
+
         return dades_resultats
 
 

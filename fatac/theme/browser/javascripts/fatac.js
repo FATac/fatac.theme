@@ -1,6 +1,7 @@
 function inicialitza_js() {
     $(document).ready(function() {
         inicialitza_filtres ();
+        inicialitza_zoom_i_visualitzacio();
     });
 }
 
@@ -10,6 +11,12 @@ function inicialitza_filtres() {
     scroll_horitzontal_filtres();
     mostrar_i_amagar_filtres();
     click_filtres();
+}
+
+
+function inicialitza_zoom_i_visualitzacio() {
+    click_visualitzacions();
+    zoom_visualitzacions();
 }
 
 
@@ -26,7 +33,7 @@ function scroll_vertical_filtres() {
 
         //console.log(filtre);
 
-        var slideopcions = 'slideopcions-' + (i + 1)
+        var slideopcions = 'slideopcions-' + (i + 1);
 
         //change the main div to overflow-hidden as we can use the slider now
         $('.' + slideopcions).css('overflow','hidden');
@@ -109,7 +116,7 @@ function mostrar_i_amagar_filtres() {
         $("a.arrow_right img").addClass("hidden");
     }
     var altura_fila = $(".filtre").height();
-    var altura_total_separadors = 17 * (num_files - 1)
+    var altura_total_separadors = 17 * (num_files - 1);
     var altura_contenidor = num_files * altura_fila + altura_total_separadors;
 
     $("input.mostrar_filtres").click(function(){
@@ -123,6 +130,7 @@ function mostrar_i_amagar_filtres() {
         $("a.arrow_right img").addClass("hidden");
 
         //posa en posició inicial l'scroll horitzontal
+        var api=$(".scrollable").scrollable({api:true});
         api.seekTo(0);
 
         //canvia l'alçada del contenidor per que mostri totes les files
@@ -205,6 +213,84 @@ function click_filtres() {
 }
 
 
+function zoom_visualitzacions() {
+    // inicialitza la funcionalitat de zoom per les imatges
+    var slider_zoom = $("#slider-wrap-zoom").slider({
+        value:0,
+        min: 0,
+        max: 60,
+        step: 30,
+        change: function(event, ui) {
+            pinta_resultats(consulta_querystring());
+        }
+    });
+
+    $( "#zoom_menys" ).click(function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        visualitzacio = $('a.link_visualitzacio.selected').attr('rel');
+        if (visualitzacio == 'imatge') {
+            var valor = $("#slider-wrap-zoom").slider("option", "value");
+            var step = $("#slider-wrap-zoom").slider("option", "step");
+            var min = $("#slider-wrap-zoom").slider("option", "min");
+            if (valor > min) {
+                slider_zoom.slider("value", valor - step);
+            }
+        }
+    });
+
+    $( "#zoom_mes" ).click(function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        visualitzacio = $('a.link_visualitzacio.selected').attr('rel');
+        if (visualitzacio == 'imatge') {
+            var valor = $("#slider-wrap-zoom").slider("option", "value");
+            var step = $("#slider-wrap-zoom").slider("option", "step");
+            var max = $("#slider-wrap-zoom").slider("option", "max");
+            if (valor < max) {
+                slider_zoom.slider("value", valor + step);
+            }
+        }
+    });
+
+}
+
+
+function click_visualitzacions() {
+    // inicialitza la funcionalitat per canviar el tipus de visualitzacio
+
+
+    $('a.link_visualitzacio').click(function(event){
+
+        //que no s'executi el click
+        event.preventDefault();
+
+        //seleccionem la nova visualitzacio i deseleccionem la que estava marcada
+        $('a.link_visualitzacio.selected').removeClass('selected')
+        $(this).addClass('selected')
+
+        //repintem els resultats amb la nova visualitzacio
+        querystring_actual = consulta_querystring();
+        visualitzacio = $(this).attr('rel');
+
+        //deshabilitem/habilitem zoom
+        if (visualitzacio != 'imatge') {
+            var min = $( "#slider-wrap-zoom" ).slider("option", "min");
+            $( "#slider-wrap-zoom" ).slider("value", min);
+            $( "#slider-wrap-zoom" ).slider("disable");
+            $( "#zoom_resultats" ).addClass("hidden");
+        } else {
+            $( "#slider-wrap-zoom" ).slider("enable");
+            $( "#zoom_resultats" ).removeClass("hidden");
+        }
+
+        //recalculem els resultats
+        pinta_resultats(querystring_actual);
+
+    });
+}
+
+
 function consulta_querystring() {
     //retorna el valor de querystring actual, guardat a input#querystring
     return $('input#querystring').attr('value');
@@ -213,20 +299,20 @@ function consulta_querystring() {
 
 function neteja_querystring(querystring) {
     // netejar 'querystring' per si han quedat ',,', '=,' etc. en fer 'replace'
-    querystring = querystring.replace(',,', ',').replace('=,', '=')
+    querystring = querystring.replace(',,', ',').replace('=,', '=');
     // eliminar 'f=' si no hi ha cap filtre aplicat, xq el servei retorna error
     //endsWith() amb expressió regular
     if (querystring.match('&f='+"$")=='&f=') {
-        querystring = querystring.replace('&f=', '')
+        querystring = querystring.replace('&f=', '');
     }
     // eliminar ',' al final
     //endsWith() amb expressió regular
     if (querystring.match(','+"$")==',') {
-        querystring = querystring.slice(0, -1)
+        querystring = querystring.slice(0, -1);
     }
     //replace de '&?' per '?'
-    querystring = querystring.replace('&?', '?')
-    return querystring
+    querystring = querystring.replace('&?', '?');
+    return querystring;
 }
 
 
@@ -239,9 +325,9 @@ function actualitza_querystring(querystring_nou) {
 function afegir_filtre_a_querystring(querystring_actual, nou_filtre) {
     // querystring_nou: afegeixo nou_filtre a querystring_actual
     if(querystring_actual.indexOf('f=') >= 0) {
-        return querystring_actual + ',' + nou_filtre
+        return querystring_actual + ',' + nou_filtre;
     } else {
-        return querystring_actual + '&f=' + nou_filtre
+        return querystring_actual + '&f=' + nou_filtre;
     }
 }
 
@@ -258,7 +344,7 @@ function elimina_tots_filtres_de_querystring(querystring_actual, nom_filtre) {
     for (i=0; i<aux.length; i++) {
         // si es tracta del filtre f, recalculo aquesta part
         if(aux[i].indexOf('f=') >= 0) {
-            nou_f = ''
+            nou_f = '';
             if (aux[i].indexOf(',') >= 0) {
                 aux2 = aux[i].split(',');
                 for (j=0; j<aux2.length; j++) {
@@ -277,7 +363,7 @@ function elimina_tots_filtres_de_querystring(querystring_actual, nom_filtre) {
             nou += '&' + aux[i];
         }
     }
-    return nou
+    return nou;
 }
 
 function executa_cerca_amb_querystring(querystring) {
@@ -285,27 +371,77 @@ function executa_cerca_amb_querystring(querystring) {
     $.get('cercaAjaxView', {querystring:querystring}, function(data){
 
         //un cop ja hem recalculat la cerca, pintem els filtres
-        $.get('filtresView', {querystring: querystring}, function(data){
-            html_filtres = data;
-            $('div#selector_filtres').replaceWith(html_filtres);
-            //un cop hem recalculat la cerca, i pintat els filtres, marquem els seleccionats
-            //marca_filtres_seleccionats(querystring);
-            inicialitza_filtres();
-        });
+        pinta_filtres(querystring);
 
         //un cop ja hem recalculat la cerca, pintem els resultats
-        $.get('resultatsView', {querystring: querystring}, function(data){
-            html_resultats = data;
-            $('div#resultats_cerca').replaceWith(html_resultats);
-        });
+        pinta_resultats(querystring);
 
     });
 }
 
+function pinta_filtres(querystring) {
+    //crida la vista que recalcula els filtres
+
+    $.get('filtresView', {querystring: querystring}, function(data){
+        html_filtres = data;
+        $('div#selector_filtres').replaceWith(html_filtres);
+        //un cop hem recalculat la cerca, i pintat els filtres, marquem els seleccionats
+        //marca_filtres_seleccionats(querystring);
+        inicialitza_filtres();
+    });
+}
+
+function calculaNumResultats(querystring, visualitzacio, zoom) {
+    //donada la visualització i el zoom, calcula el número de resultast a mostrar i modifica querystring
+    if (visualitzacio == 'fitxa_cerca') { num = 15; }
+    else {
+        if (visualitzacio == 'fitxa_ampliada_cerca') { num = 1; }
+        else {
+            if (zoom == 1) { num = 66; }
+            else {
+                if (zoom == 2) { num = 45; }
+                else { num = 32; }
+            }
+        }
+    }
+    aux = querystring.split('&');
+    querystring_nou = ''
+    for (i=0; i<aux.length; i++) {
+        // es tracta del paràmetre f
+        if(aux[i].indexOf('rows=') >= 0) {
+            querystring_nou += "&rows=" + num
+        } else {
+            querystring_nou += '&' + aux[i]
+        }
+    }
+    return querystring_nou.replace("&?", "?");
+}
+
+function pinta_resultats(querystring) {
+    //crida la vista que recalcula els resultats
+
+    var visualitzacio = $('a.link_visualitzacio.selected').attr('rel');
+    var valor = $("#slider-wrap-zoom").slider("option", "value");
+    var step = $("#slider-wrap-zoom").slider("option", "step");
+    var zoom = valor/step + 1; //[1,2,3]
+
+    //segons la visualització i el zoom, recalculem el número de resultast a mostrar
+    querystring = self.calculaNumResultats(querystring, visualitzacio, zoom)
+    actualitza_querystring(querystring)
+
+    $.get('resultatsView', {querystring: querystring, visualitzacio: visualitzacio, zoom: zoom}, function(data){
+        html_resultats = data;
+        $('div#resultats_cerca').replaceWith(html_resultats);
+        //TODO: de moment he fixat min-height i el margin top d eles fletxes...
+        //topValue = $('div#resultats_cerca').height() / 2 - 24;
+        //$('.arrow_left_resultats').css({'margin-top':topValue});
+        //$('.arrow_right_resultats').css({'margin-top':topValue});
+    });
+}
 
 function marca_filtres_seleccionats(querystring) {
     // afegeix selected als filtres, segons el que hi hagi indicat a querystring
-    querystring = consulta_querystring()
+    querystring = consulta_querystring();
     //no hi ha filtres aplicat
     if(querystring.indexOf('f=') == -1) {
         $('.Tots').addClass('selected');
@@ -317,23 +453,31 @@ function marca_filtres_seleccionats(querystring) {
         for (i=0; i<aux.length; i++) {
             // es tracta del paràmetre f
             if(aux[i].indexOf('f=') >= 0) {
-                filtres_aplicats = aux[i].replace('f=', '')
+                filtres_aplicats = aux[i].replace('f=', '');
                 //més d'un filtre aplicat
                 if (filtres_aplicats.indexOf(',') >= 0) {
                     aux2 = filtres_aplicats.split(',');
                     for (j=0; j<aux2.length; j++) {
-                        categoria = aux2[j].split(':')[0]
-                        opcio = aux2[j].split(':')[1]
+                        categoria = aux2[j].split(':')[0];
+                        opcio = aux2[j].split(':')[1];
                         $('.' + categoria + '.' + opcio).addClass('selected');
                         $('.' + categoria + '.Tots').removeClass('selected');
+                        /* si conté espais, haurem posat class=str1 str2, i per seleccionar l'element en farem servri el primer */
+                        classe_c = categoria.split(' ')[0];
+                        classe_o = opcio.split(' ')[0];
+                        $('.' + classe_c + '.' + classe_o).addClass('selected');
+                        $('.' + classe_c + '.Tots').removeClass('selected');
                     }
                 }
                 //només hi ha un filtre aplicat
                 else {
-                    categoria = filtres_aplicats.split(':')[0]
-                    opcio = filtres_aplicats.split(':')[1]
-                    $('.' + categoria + '.' + opcio).addClass('selected');
-                    $('.' + categoria + '.Tots').removeClass('selected');
+                    categoria = filtres_aplicats.split(':')[0];
+                    opcio = filtres_aplicats.split(':')[1];
+                    /* si conté espais, haurem posat class=str1 str2, i per seleccionar l'element en farem servri el primer */
+                    classe_c = categoria.split(' ')[0];
+                    classe_o = opcio.split(' ')[0];
+                    $('.' + classe_c + '.' + classe_o).addClass('selected');
+                    $('.' + classe_c + '.Tots').removeClass('selected');
                 }
             }
         }

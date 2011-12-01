@@ -75,6 +75,13 @@
         permission="zope2.View"
         />
 
+    <!-- Control panel -->
+    <browser:page
+        name="fatac_settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.FatacSettingsControlPanel"
+        permission="cmf.ManagePortal"
+        />
 
     <browser:page
         name="homeview"

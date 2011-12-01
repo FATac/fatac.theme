@@ -11,6 +11,14 @@
             <metal:main-macro define-macro="content">
                 <div id="content" i18n:domain="fatac.theme">
 
+                    <!-- TODO: fer la crida on toqui! -->
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".scrollable_ultims_documents").scrollable({api:true, vertical: true, mousewheel: true});
+                            $(".scrollable_ultims_consultats").scrollable({api:true, vertical: true, mousewheel: true});
+                        });
+                    </script>
+
                     <div id="text_intro" class="georgia32c666666" tal:define="text view/getFrontPage" tal:condition="text">
                         <div tal:replace="structure text/body">text introductori</div>
                     </div>
@@ -18,30 +26,58 @@
                     <div id="ultims_documents">
                         <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_documents">Últims documents</span>
                         <div class="requadre_resultats">
-                            <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            <a class="arrow_left prev browse left">
+                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            </a>
                             <div class="visualClear"><!--  --></div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
+
+                            <div class="scrollable_ultims_documents">
+                                <div class="items_ultims_documents">
+                                    <tal:def tal:define="resultats view/retUltimsDocuments" tal:repeat="resultat resultats">
+                                        <tal:cond tal:define="num repeat/resultat/number; final repeat/resultat/end" tal:condition="python: num%5 == 1" tal:replace='structure string:<div class="item_home">' />
+                                        <div tal:attributes="id resultat/id; class string:resultat resultat-${repeat/resultat/number}">
+                                            <a tal:attributes="href string:${here/portal_url}/legalValidation?id=${resultat/id}">
+                                                <tal:repl tal:replace="structure resultat/html" />
+                                            </a>
+                                        </div>
+                                        <tal:cond tal:condition="python: num%5 == 0 or final" tal:define="num repeat/resultat/number; final repeat/resultat/end" tal:replace="structure string:</div>" />
+                                    </tal:def>
+                                </div>
+                            </div>
+
                             <div class="visualClear"><!--  --></div>
-                            <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                            <a class="arrow_right next browse right">
+                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                            </a>
                         </div>
                     </div>
 
                     <div id="ultims_consultats">
                         <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
                         <div class="requadre_resultats">
-                            <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            <a class="arrow_left prev browse left">
+                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                            </a>
                             <div class="visualClear"><!--  --></div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
-                            <div class="resultat">aaa</div>
+
+                            <div class="scrollable_ultims_consultats">
+                                <div class="items_ultims_consultats">
+                                    <tal:def tal:define="resultats view/retUltimsConsultats" tal:repeat="resultat resultats">
+                                        <tal:cond tal:define="num repeat/resultat/number; final repeat/resultat/end" tal:condition="python: num%5 == 1" tal:replace='structure string:<div class="item_home">' />
+                                        <div tal:attributes="id resultat/id; class string:resultat resultat-${repeat/resultat/number}">
+                                            <a tal:attributes="href string:${here/portal_url}/legalValidation?id=${resultat/id}">
+                                                <tal:repl tal:replace="structure resultat/html" />
+                                            </a>
+                                        </div>
+                                        <tal:cond tal:condition="python: num%5 == 0 or final" tal:define="num repeat/resultat/number; final repeat/resultat/end" tal:replace="structure string:</div>" />
+                                    </tal:def>
+                                </div>
+                            </div>
+
                             <div class="visualClear"><!--  --></div>
-                            <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                            <a class="arrow_right next browse right">
+                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                            </a>
                         </div>
                     </div>
 

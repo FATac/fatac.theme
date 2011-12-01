@@ -8,17 +8,14 @@
     <body>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
-            <!--<script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery-1.7.min.js"></script>-->
-            <script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery-ui-1.8.16.custom.min.js"></script>
-            <script type="text/javascript" src="++resource++fatac.theme.javascripts/jquery.mousewheel.min.js"></script>
-            <script type="text/javascript" src="++resource++fatac.theme.javascripts/fatac.js"></script>
-
+            <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
+            <!-- TODO: fer la crida on toqui! -->
             <script>
                 inicialitza_js();
             </script>
 
             <!-- TODO: canviar type="text" per type="hidden", eliminar attr size -->
-            <input type="text" size="500" id="querystring" tal:attributes="value view/retQuerystringInicial" />
+            <input type="hidden" size="100" id="querystring" tal:attributes="value view/retQuerystringInicial" />
 
             <tal:repl tal:replace="structure view/retFiltresView" />
 
@@ -66,24 +63,24 @@
             <div class="visualClear"><!--  --></div>
 
             <div id="controls_resultats">
+
                 <div id="dades_paginacio_cerca">
                     <span i18n:translate="pagina" id="pagina">pàgina</span>: <span id="pagina_actual">1</span> <span i18n:translate="de">de</span> <span id="pagina_total">5</span>
                     / <span i18n:translate="arxius" id="arxius">arxius</span>: <span id="arxiu_inicial">15</span> - <span id="arxiu_final">75</span>
                 </div>
+
                 <div id="visualitzacio_resultats">
-                    <a href="#" class="selected"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
-                    <a href="#"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" /></a>
-                    <a href="#"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" /></a>
+                    <a rel="imatge" href="#" class="link_visualitzacio selected"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
+                    <a rel="fitxa_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" /></a>
+                    <a rel="fitxa_ampliada_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" /></a>
                 </div>
+
                 <div id="zoom_resultats">
-                    <img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" />
-                    <div id="slider-wrap-zoom" class="slider-wrap-zoom">
-                        <div id="slider-vertical" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                            <a href="#" class="ui-slider-handle ui-state-default ui-corner-all"></a>
-                        </div>
-                    </div>
-                    <img src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" />
+                    <a href="#" id="zoom_menys"><img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" /></a>
+                    <div id="slider-wrap-zoom" class="slider-wrap-zoom"></div>
+                    <a href="#" id="zoom_mes"><img id="zoom_mes" src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" /></a>
                 </div>
+
             </div>
 
             <div class="visualClear"><!--  --></div>

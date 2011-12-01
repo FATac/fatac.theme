@@ -9,3 +9,8 @@ def setupVarious(context):
         return
 
     # Add additional setup code here
+
+    portal = context.getSite()
+
+    # configurem pagina per defecte
+    portal.setLayout("homeview")

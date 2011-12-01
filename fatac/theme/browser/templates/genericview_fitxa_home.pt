@@ -1,0 +1,16 @@
+<!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_home -->
+<div class="genericview_fitxa_home" tal:define="dades_objecte view/getDadesObjecte">
+    <tal:cond tal:condition="dades_objecte">
+        <div class="imatge">
+            <img class="miniatura_objecte" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol" />
+        </div>
+        <div class="dades">
+            <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+            <div class="visualClear"><!--  --></div>
+            <span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" />
+        </div>
+    </tal:cond>
+    <tal:cond tal:condition="not: dades_objecte">
+        no hi ha dades! (fitxa_home)
+    </tal:cond>
+</div>

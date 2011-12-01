@@ -28,6 +28,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
+.georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 
 
@@ -72,13 +73,6 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
 /* ---------------------------------------------------------------------------- opcions.pt */
 #viewlet_opcions { margin-bottom:20px; }
-
-
-/* ---------------------------------------------------------------------------- genericview.pt */
-#generic_header {background-color:lightgreen; padding:10px; margin:10px 0;}
-#generic_body {background-color:lightblue; padding:10px; margin:10px 0;}
-#generic_content {background-color:orange; padding:10px; margin:10px 0;}
-#generic_contents {background-color:pink; padding:10px; margin:10px 0;}
 
 
 /* ---------------------------------------------------------------------------- documents_relacionats.pt */
@@ -173,11 +167,13 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 #dades_paginacio_cerca { float:left; width:50%; font-size:12px; color:#999999 !important; font-family: georgia; }
 
-#zoom_resultats { margin-right:7px; float:right; width:105px; height:18px; padding:5px 10px 0 10px; background-color:#f3f3f3; border:1px solid #cccccc; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
+#zoom_resultats { margin-right:7px; float:right; width:125px; height:18px; padding:5px 10px 0 10px; background-color:#f3f3f3; border:1px solid #cccccc; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 #zoom_resultats img, #zoom_resultats #slider-wrap-zoom { float:left; }
-#zoom_resultats #slider-wrap-zoom { height:7px; width:60px; margin:2px 9px 0 9px; background:url('++resource++fatac.theme.images/slider_h.png')  repeat-x center transparent;}
+/* per que la barra que fa slide pugui fer 20px d'ample, li posem 20 px de border-right */
+#zoom_resultats #slider-wrap-zoom { position:absolute; height:7px; width:60px; margin:2px 9px 0 22px; background:url('++resource++fatac.theme.images/slider_h.png')  repeat-x center transparent; border-right: 20px solid transparent;}
 #zoom_resultats #slider-wrap-zoom .ui-slider-handle { height:7px; margin:0 auto; background-color:#999999; display:block; position:absolute; width:20px; }
-
+#zoom_resultats #zoom_menys { float:left; }
+#zoom_resultats #zoom_mes { float:right; }
 
 #visualitzacio_resultats { float:right; }
 
@@ -198,10 +194,55 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 #ultims_consultats { width:100%; float:left; }
 #text_intro { padding: 0 20px; }
-.requadre_resultats { width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:20px 2%; margin:10px 0; }
+.requadre_resultats { text-align:center; width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:20px 2%; margin:10px 0; }
 
 #ultims_documents { width:100%; float:left; border-top:1px dotted #888888; padding-top:10px; margin-top:40px; }
-.requadre_resultats { text-align:center; }
-.requadre_resultats .resultat { width:18%; float:left; margin:0 1%; background-color:white; text-align:center; }
+.requadre_resultats .resultat { width:16%; float:left; margin:0 1%; background-color:white; padding:1%; }
 .requadre_resultats .arrow_up { margin-bottom:10px; }
 .requadre_resultats .arrow_down { margin-top:10px; }
+
+/* codi necessari per scrollable ultims_documents i ultims_consultats */
+.requadre_resultats a.disabled { visibility: hidden; }
+.scrollable_ultims_consultats, .scrollable_ultims_documents
+    { position:relative; overflow:hidden; width: 100%; }
+.scrollable_ultims_consultats, .requadre_resultats .resultat, .scrollable_ultims_documents, .requadre_resultats .resultat
+    { height:175px; text-align:left; }
+.scrollable_ultims_consultats .items_ultims_consultats, .scrollable_ultims_documents .items_ultims_documents
+    { position:absolute; height:20000em; width:100%; }
+.scrollable_ultims_consultats .item_home, .scrollable_ultims_documents .item_home
+    { float:left; width:100%; }
+
+/* ---------------------------------------------------------------------------- genericview_fitxa_home.pt */
+.genericview_fitxa_home { float:left; }
+.genericview_fitxa_home .miniatura_objecte { max-width:140px; max-height:90px; }
+.genericview_fitxa_home .miniatura_classe { float:left; max-width:15px; max-height:15px; margin:10px 0 7px 0;}
+.genericview_fitxa_home div.imatge { float:left; width:100%; height:90px; margin-bottom:5px; }
+.genericview_fitxa_home div.dades { float:left; width:100%; height:65px; }
+
+
+/* ---------------------------------------------------------------------------- resultats cerca */
+#resultats_cerca { min-height:480px; }
+#resultats_cerca #wrapper_resultats { margin: 0 28px; }
+#resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 220px; }
+
+/* ---------------------------------------------------------------------------- genericview.pt */
+#generic_header {background-color:lightgreen; padding:10px; margin:10px 0;}
+#generic_body {background-color:lightblue; padding:10px; margin:10px 0;}
+#generic_content {background-color:orange; padding:10px; margin:10px 0;}
+#generic_contents {background-color:pink; padding:10px; margin:10px 0;}
+
+/* ---------------------------------------------------------------------------- genericview_imatge.pt */
+.genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
+.genericview_imatge.zoom_1 { width:70px; height:70px; }
+.genericview_imatge.zoom_2 { width:85px; height:85px; }
+.genericview_imatge.zoom_3 { width:100px; height:100px; }
+.genericview_imatge.zoom_1 img { max-width:70px; max-height:70px; }
+.genericview_imatge.zoom_2 img { max-width:85px; max-height:85px; }
+.genericview_imatge.zoom_3 img { max-width:100px; max-height:100px; }
+
+/* ---------------------------------------------------------------------------- genericview_fitxa_cerca.pt */
+.genericview_fitxa_cerca { float:left; width:31%; margin:1%; height:80px; background-color:#ececec; }
+.genericview_fitxa_cerca .thumbnail { float:left; width:32%; margin-right:2%; }
+.genericview_fitxa_cerca .thumbnail .miniatura_objecte { max-width:100%; max-height:100%; }
+.genericview_fitxa_cerca .dades { float:right; width:66%; }
+.genericview_fitxa_cerca .dades .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:10px; }

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="fatac.theme"
+    purge="False">
+
+    <configlet
+        title="Fatac"
+        action_id="fatac"
+        appId="fatac.theme"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@fatac_settings"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>

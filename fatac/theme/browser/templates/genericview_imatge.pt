@@ -1,0 +1,9 @@
+<!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=imatge -->
+<div tal:attributes="class string:genericview_imatge zoom_${view/getZoom}" tal:define="dades_objecte view/getDadesObjecte">
+    <tal:cond tal:condition="dades_objecte">
+        <img class="miniatura_objecte" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol" />
+    </tal:cond>
+    <tal:cond tal:condition="not: dades_objecte">
+        error
+    </tal:cond>
+</div>
