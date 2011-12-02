@@ -17,23 +17,24 @@ class filtresView(BrowserView, funcionsCerca):
         """
         #si no ens passen cap querystring, consultem l'inicial
         querystring = self.request.get('querystring', self.retQuerystringInicial())
-        resultat_cerca = self.executaCerca(querystring)
-        dades_json = resultat_cerca['dades_json']
-        ordre_filtres = resultat_cerca['ordre_filtres']
-        filtres_json = dades_json['facet_counts']['facet_fields']
         filtres = []
-        for filtre in ordre_filtres:
-            opcions_json = filtres_json[filtre]  # [u'Video', 45, u'Audio', 38, u'Image', 8, u'Text', 4]
-            if len(opcions_json) > 0:
-                i = 0
-                total = 0
-                opcions = []
-                while i < len(opcions_json):
-                    opcions.append({'nom': opcions_json[i], 'num': opcions_json[i + 1]})
-                    total += opcions_json[i + 1]
-                    i += 2
-                opcions = [{'nom': 'Tots', 'num': total}] + opcions
-                filtres.append({'nom_filtre': filtre, 'opcions': opcions})
+        resultat_cerca = self.executaCerca(querystring)
+        if resultat_cerca:
+            dades_json = resultat_cerca['dades_json']
+            ordre_filtres = resultat_cerca['ordre_filtres']
+            filtres_json = dades_json['facet_counts']['facet_fields']
+            for filtre in ordre_filtres:
+                opcions_json = filtres_json[filtre]  # [u'Video', 45, u'Audio', 38, u'Image', 8, u'Text', 4]
+                if len(opcions_json) > 0:
+                    i = 0
+                    total = 0
+                    opcions = []
+                    while i < len(opcions_json):
+                        opcions.append({'nom': opcions_json[i], 'num': opcions_json[i + 1]})
+                        total += opcions_json[i + 1]
+                        i += 2
+                    opcions = [{'nom': 'Tots', 'num': total}] + opcions
+                    filtres.append({'nom_filtre': filtre, 'opcions': opcions})
         return filtres
 
 
@@ -48,22 +49,21 @@ class resultatsView(BrowserView, funcionsCerca):
         """
         #si no ens passen cap querystring, consultem l'inicial
         querystring = self.request.get('querystring', self.retQuerystringInicial())
-        resultat_cerca = self.executaCerca(querystring)
-        dades_json = resultat_cerca['dades_json']
-
-        resultats = dades_json['response']['docs']
         dades_resultats = []
-        for resultat in resultats:
-            portal = getToolByName(self, 'portal_url')
-            portal = portal.getPortalObject()
-            self.request.set('idobjecte', resultat['id'])
-            visualitzacio = self.request.get('visualitzacio', 'imatge')
-            self.request.set('visualitzacio', visualitzacio)
-            zoom = self.request.get('zoom', '1')
-            self.request.set('zoom', zoom)
-            html = portal.restrictedTraverse('@@genericView')()
-            dades_resultats.append({'id': resultat['id'], 'html': html})
-
+        resultat_cerca = self.executaCerca(querystring)
+        if resultat_cerca:
+            dades_json = resultat_cerca['dades_json']
+            resultats = dades_json['response']['docs']
+            for resultat in resultats:
+                portal = getToolByName(self, 'portal_url')
+                portal = portal.getPortalObject()
+                self.request.set('idobjecte', resultat['id'])
+                visualitzacio = self.request.get('visualitzacio', 'imatge')
+                self.request.set('visualitzacio', visualitzacio)
+                zoom = self.request.get('zoom', '1')
+                self.request.set('zoom', zoom)
+                html = portal.restrictedTraverse('@@genericView')()
+                dades_resultats.append({'id': resultat['id'], 'html': html})
         return dades_resultats
 
 

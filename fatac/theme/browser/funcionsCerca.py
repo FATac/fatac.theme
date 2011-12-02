@@ -26,7 +26,6 @@ class funcionsCerca():
         """ retorna el querystring inicial (start i rows per defecte, corresponents
         a la vista en imatges petites, més el text introduït per l'usuari).
         """
-        #TODO: mostrar tants elemenst com toqui! (ho canvio a 5 per que carregui ràpid)
         querystring_inicial = '?start=0&rows=66'
         if 's' in self.request.keys():
             querystring_inicial += '&s=' + self.request.get('s')
@@ -38,8 +37,14 @@ class funcionsCerca():
         evitar errors de codificació
         """
         url = url.replace(" ", "%20")
-        request = urllib2.urlopen(url)
-        return request.read()
+        try:
+            request = urllib2.urlopen(url)
+            if request:
+                return request.read()
+            return
+        except:
+            self.context.plone_log("error en executar urllib2.urlopen(" + url + ")")
+            return
 
     def modified_cachekey(fn, self, querystring):
         """ Cache the result based on 'querystring'
@@ -47,7 +52,8 @@ class funcionsCerca():
         """
         return querystring
 
-    @cache(modified_cachekey)
+    #TODO: tornar a posar caché
+    #@cache(modified_cachekey)
     def executaCerca(self, querystring):
         """ Crida el servei rest que executa la cerca, i retorna el json resultant
         """
@@ -66,7 +72,6 @@ class funcionsCerca():
             #ordena mm en funció de la posició guardada
             llista_claus = [a[0] for a in sorted(mm,key=lambda filtre:filtre[1])]
             #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
-
             return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
         return None
 
@@ -95,7 +100,8 @@ class funcionsCerca():
         """
         return
 
-    @cache(modified_cachekey_ultims_documents)
+    #TODO: tornar a posar caché
+    #@cache(modified_cachekey_ultims_documents)
     def executaCercaUltimsConsultats(self):
         """ Crida el servei rest que executa la cerca, i retorna el json resultant
         """

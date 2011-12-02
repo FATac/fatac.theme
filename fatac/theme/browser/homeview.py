@@ -34,16 +34,17 @@ class homeView(BrowserView, funcionsCerca):
         diccionaris amb les dades de cada resultat
         """
         resultat_cerca = self.executaCercaUltimsDocuments()
-        dades_json = resultat_cerca['dades_json']
-        resultats = dades_json['response']['docs']
         dades_resultats = []
-        for resultat in resultats:
-            portal = getToolByName(self, 'portal_url')
-            portal = portal.getPortalObject()
-            self.request.set('idobjecte', resultat['id'])
-            self.request.set('visualitzacio', 'fitxa_home')
-            html = portal.restrictedTraverse('@@genericView')()
-            dades_resultats.append({'id': resultat['id'], 'html': html})
+        if resultat_cerca:
+            dades_json = resultat_cerca['dades_json']
+            resultats = dades_json['response']['docs']
+            for resultat in resultats:
+                portal = getToolByName(self, 'portal_url')
+                portal = portal.getPortalObject()
+                self.request.set('idobjecte', resultat['id'])
+                self.request.set('visualitzacio', 'fitxa_home')
+                html = portal.restrictedTraverse('@@genericView')()
+                dades_resultats.append({'id': resultat['id'], 'html': html})
         return dades_resultats
 
     def retUltimsConsultats(self):
@@ -52,14 +53,15 @@ class homeView(BrowserView, funcionsCerca):
         seleccionada
         """
         resultat_cerca = self.executaCercaUltimsConsultats()
-        dades_json = resultat_cerca['dades_json']
-        resultats = dades_json['response']['docs']
         dades_resultats = []
-        for resultat in resultats:
-            portal = getToolByName(self, 'portal_url')
-            portal = portal.getPortalObject()
-            self.request.set('idobjecte', resultat['id'])
-            self.request.set('visualitzacio', 'fitxa_home')
-            html = portal.restrictedTraverse('@@genericView')()
-            dades_resultats.append({'id': resultat['id'], 'html': html})
+        if resultat_cerca:
+            dades_json = resultat_cerca['dades_json']
+            resultats = dades_json['response']['docs']
+            for resultat in resultats:
+                portal = getToolByName(self, 'portal_url')
+                portal = portal.getPortalObject()
+                self.request.set('idobjecte', resultat['id'])
+                self.request.set('visualitzacio', 'fitxa_home')
+                html = portal.restrictedTraverse('@@genericView')()
+                dades_resultats.append({'id': resultat['id'], 'html': html})
         return dades_resultats

@@ -1,3 +1,11 @@
+/* ---------------------------------------------------------------------------- deformFormFieldset */
+.deformFormFieldset { border:none !important; background-color:#ededed; padding:10px;}
+.deformFormFieldset ul { list-style-type: none !important; margin-left: 0 !important; }
+.deformFormFieldset label { margin-right:15px; }
+.deformFormFieldset li.buttons { margin-top:15px; }
+.miniatura_objecte_validacio_legal { float:right; margin-top:-63px; }
+.miniatura_objecte_validacio_legal .genericview_imatge { background-color:transparent; }
+
 /* ---------------------------------------------------------------------------- estructura */
 #visual-portal-wrapper { margin:auto; width:950px; }
 div.width-full { width: 100%; }
