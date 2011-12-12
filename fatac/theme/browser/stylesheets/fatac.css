@@ -209,16 +209,12 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 .requadre_resultats .arrow_up { margin-bottom:10px; }
 .requadre_resultats .arrow_down { margin-top:10px; }
 
-/* codi necessari per scrollable ultims_documents i ultims_consultats */
+/* codi necessari per scrollable ultims_documents, ultims_consultats i formulari legal */
 .requadre_resultats a.disabled { visibility: hidden; }
-.scrollable_ultims_consultats, .scrollable_ultims_documents
-    { position:relative; overflow:hidden; width: 100%; }
-.scrollable_ultims_consultats, .requadre_resultats .resultat, .scrollable_ultims_documents, .requadre_resultats .resultat
-    { height:175px; text-align:left; }
-.scrollable_ultims_consultats .items_ultims_consultats, .scrollable_ultims_documents .items_ultims_documents
-    { position:absolute; height:20000em; width:100%; }
-.scrollable_ultims_consultats .item_home, .scrollable_ultims_documents .item_home
-    { float:left; width:100%; }
+.scrollable_fatac { position:relative; overflow:hidden; width: 100%; }
+.scrollable_fatac, .requadre_resultats .resultat { height:175px; text-align:left; }
+.scrollable_fatac .items_fatac { position:absolute; height:20000em; width:100%; }
+.scrollable_fatac .item_fatac { float:left; width:100%; }
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_home.pt */
 .genericview_fitxa_home { float:left; }

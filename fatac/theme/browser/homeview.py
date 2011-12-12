@@ -17,17 +17,14 @@ class homeView(BrowserView, funcionsCerca):
         self.request = request
 
     def getFrontPage(self):
-        """ retorna la pagina principal de l'espai, tenint en compte l'idioma i
-        els permissos de lusuari validat, amb un restrictedTraverse sobre l'objecte
+        """ si existeix un Document amb id 'textintro', en retorna el contingut.
         """
-        page = {}
-        portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
-        portal = portal_state.portal()
-        FrontPageObj = portal.textintro.getTranslation()
-        idFrontPageObj = FrontPageObj.id
-        traversal = portal.restrictedTraverse(idFrontPageObj)
-        page['body'] = FrontPageObj.CookedBody()
-        return page
+        brain = self.context.portal_catalog.searchResults(portal_type='Document', id='textintro')[:1]
+        for i in brain:
+            trad = i.getObject().getTranslation()
+            if trad:
+                return trad.CookedBody()
+        return None
 
     def retUltimsDocuments(self):
         """ executa la cerca dels últims documents i retorna una llista de
@@ -39,6 +36,7 @@ class homeView(BrowserView, funcionsCerca):
             dades_json = resultat_cerca['dades_json']
             resultats = dades_json['response']['docs']
             for resultat in resultats:
+                #TODO: fer això fora del for!
                 portal = getToolByName(self, 'portal_url')
                 portal = portal.getPortalObject()
                 self.request.set('idobjecte', resultat['id'])

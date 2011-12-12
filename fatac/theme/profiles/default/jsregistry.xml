@@ -150,7 +150,7 @@
     <javascript authenticated="False" cacheable="True" compression="none"
         conditionalcomment="" cookable="True" enabled="True" expression=""
         id="++resource++fatac.theme.javascripts/jquery-1.7.min.js"
-        inline="False" insert-before="++resource++plone.app.jquerytools.dateinput.js" />
+        inline="False" insert-top="True" />
 
     <javascript authenticated="False" cacheable="True" compression="none"
         conditionalcomment="" cookable="True" enabled="True" expression=""
