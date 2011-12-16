@@ -220,7 +220,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 .genericview_fitxa_home { float:left; }
 .genericview_fitxa_home .miniatura_objecte { max-width:140px; max-height:90px; }
 .genericview_fitxa_home .miniatura_classe { float:left; max-width:15px; max-height:15px; margin:10px 0 7px 0;}
-.genericview_fitxa_home div.imatge { float:left; width:100%; height:90px; margin-bottom:5px; }
+.genericview_fitxa_home div.imatge { float:left; width:100%; height:90px; margin-bottom:5px; text-align:center; }
 .genericview_fitxa_home div.dades { float:left; width:100%; height:65px; }
 
 
