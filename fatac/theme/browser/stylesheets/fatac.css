@@ -6,13 +6,10 @@
 .miniatura_objecte_validacio_legal { float:right; margin-top:-63px; }
 .miniatura_objecte_validacio_legal .genericview_imatge { background-color:transparent; }
 
+
 /* ---------------------------------------------------------------------------- estructura */
 #visual-portal-wrapper { margin:auto; width:950px; }
 div.width-full { width: 100%; }
-/* TODO: comentat xq a @@language-controlpanel es veia malament; e spot esborrar?
-div.position-0 { margin-left: 0; }
-div.cell { float: left; left: 100%; position: static; }
-*/
 
 
 /* ---------------------------------------------------------------------------- general */
@@ -102,8 +99,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 #selector_filtres .filtres { float:left; width:24000px; }
 #selector_filtres .filtre { float:left; width:138px; margin-left:10px; overflow:hidden; }
 
-#selector_filtres .filtre .opcions { width:125px; }
-#selector_filtres .filtre .slider-wrap { width:7px; }
+#selector_filtres .filtre .div_interior { width:125px; }
 
 #selector_filtres .filtre ul, #selector_filtres .filtre dd { margin:0; }
 #selector_filtres .filtre dt { margin-bottom:5px; font-weight:normal; }
@@ -117,7 +113,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
 /* css necessari per ampliar filtres (jquery) */
 
-#selector_filtres .filtre .opcions li { line-height:15px; }
+#selector_filtres .filtre .div_interior li { line-height:15px; }
 #selector_filtres .filtre, #selector_filtres #wrapper { height:110px; }
 #selector_filtres #wrapper { overflow:hidden; }
 #selector_filtres .clearLeft {clear:left;}
@@ -133,15 +129,19 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
 /* css necessari per scroll vertical d'opcions dins un filtre (jquery) */
 
-#selector_filtres #slider-vertical, #selector_filtres .slideopcions, #selector_filtres .slider-wrap { height:90px; }
+#selector_filtres #slider-vertical, #selector_filtres .slideopcions, #selector_filtres .barra { height:90px; }
 #selector_filtres .slideopcions { overflow:hidden; float:left; position:relative; }
-#selector_filtres .slider-wrap, #selector_filtres .ui-slider-handle { margin-left:2px; }
-#selector_filtres .slider-wrap { float:left; background:url('++resource++fatac.theme.images/slider.png')  repeat-y center transparent; border:none; }
-#selector_filtres #slider-vertical{ position:relative; text-align:center; }
-#selector_filtres .ui-slider-handle { height:10px; margin:0 auto; background-color:#999999; display:block; position:absolute; width:3px; }
+
+
+.div_interior { float:left; }
+.barra, .ui-slider-handle { margin-left:2px; }
+.barra { float:right; background:url('++resource++fatac.theme.images/slider.png')  repeat-y center transparent; border:none; width:7px; }
+#slider-vertical{ position:relative; text-align:center; }
+.ui-slider-handle { height:10px; margin:0 auto; background-color:#999999; display:block; position:absolute; width:3px; }
+
     /* css per que esfaci ample l'scroll quan el fem servir */
-    #selector_filtres .filtre dd .ui-slider-handle { margin-left:2px; }
-    #selector_filtres .filtre dd:hover .ui-slider-handle { border-left:2px solid #999999; border-right:2px solid #999999; margin-left:0px; }
+    .slider_vertical .ui-slider-handle { margin-left:2px; }
+    .slider_vertical:hover .ui-slider-handle { border-left:2px solid #999999; border-right:2px solid #999999; margin-left:0px; }
 
 
 /* ---------------------------------------------------------------------------- llistes desplegables */
@@ -244,9 +244,21 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 .genericview_imatge.zoom_2 img { max-width:85px; max-height:85px; }
 .genericview_imatge.zoom_3 img { max-width:100px; max-height:100px; }
 
+.img_hover { position:absolute; z-index:10000; background-color:#FFFFFF; padding:10px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
+
 /* ---------------------------------------------------------------------------- genericview_fitxa_cerca.pt */
 .genericview_fitxa_cerca { float:left; width:31%; margin:1%; height:80px; background-color:#ececec; }
 .genericview_fitxa_cerca .thumbnail { float:left; width:32%; margin-right:2%; }
 .genericview_fitxa_cerca .thumbnail .miniatura_objecte { max-width:100%; max-height:100%; }
 .genericview_fitxa_cerca .dades { float:right; width:66%; }
 .genericview_fitxa_cerca .dades .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:10px; }
+
+/* --------------------------------------------------------------------- genericview_fitxa_ampliadacerca.pt */
+.genericview_fitxa_ampliada_cerca #dades_left { float:left; width:30%; }
+.genericview_fitxa_ampliada_cerca #dades_left .div_interior { width:95%; }
+.genericview_fitxa_ampliada_cerca #dades_left, .genericview_fitxa_ampliada_cerca #dades_right, .genericview_fitxa_ampliada_cerca #slider-vertical, .genericview_fitxa_ampliada_cerca .slideopcions, .genericview_fitxa_ampliada_cerca .barra
+    { height:200px; }
+.genericview_fitxa_ampliada_cerca #dades_right { float:left; width:67%; margin-left:2%; }
+
+.genericview_fitxa_ampliada_cerca h1 { margin-top:0 !important; float:left; }
+.genericview_fitxa_ampliada_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:9px 0 0 5px; }

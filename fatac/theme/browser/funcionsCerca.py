@@ -26,6 +26,7 @@ class funcionsCerca():
         """ retorna el querystring inicial (start i rows per defecte, corresponents
         a la vista en imatges petites, més el text introduït per l'usuari).
         """
+        #TODO: tornar a posar 66
         querystring_inicial = '?start=0&rows=66'
         if 's' in self.request.keys():
             querystring_inicial += '&s=' + self.request.get('s')

@@ -35,12 +35,11 @@ class homeView(BrowserView, funcionsCerca):
         if resultat_cerca:
             dades_json = resultat_cerca['dades_json']
             resultats = dades_json['response']['docs']
+            portal = getToolByName(self, 'portal_url')
+            portal = portal.getPortalObject()
+            self.request.set('visualitzacio', 'fitxa_home')
             for resultat in resultats:
-                #TODO: fer això fora del for!
-                portal = getToolByName(self, 'portal_url')
-                portal = portal.getPortalObject()
                 self.request.set('idobjecte', resultat['id'])
-                self.request.set('visualitzacio', 'fitxa_home')
                 html = portal.restrictedTraverse('@@genericView')()
                 dades_resultats.append({'id': resultat['id'], 'html': html})
         return dades_resultats
@@ -55,11 +54,11 @@ class homeView(BrowserView, funcionsCerca):
         if resultat_cerca:
             dades_json = resultat_cerca['dades_json']
             resultats = dades_json['response']['docs']
+            portal = getToolByName(self, 'portal_url')
+            portal = portal.getPortalObject()
+            self.request.set('visualitzacio', 'fitxa_home')
             for resultat in resultats:
-                portal = getToolByName(self, 'portal_url')
-                portal = portal.getPortalObject()
                 self.request.set('idobjecte', resultat['id'])
-                self.request.set('visualitzacio', 'fitxa_home')
                 html = portal.restrictedTraverse('@@genericView')()
                 dades_resultats.append({'id': resultat['id'], 'html': html})
         return dades_resultats

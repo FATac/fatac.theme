@@ -1,7 +1,6 @@
 <!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_cerca
 http://localhost:8084/fatac/genericView?idobjecte=CulturalManagement_41&visualitzacio=fitxa_cerca -->
 <tal:def tal:define="dades_objecte view/getDadesObjecte">
-
     <div class="genericview_fitxa_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <div class="thumbnail">
                 <img class="miniatura_objecte" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol" />
@@ -14,9 +13,4 @@ http://localhost:8084/fatac/genericView?idobjecte=CulturalManagement_41&visualit
             </tal:rep>
         </div>
     </div>
-
-    <div class="genericview_fitxa_cerca" tal:condition="not: dades_objecte">
-        error
-    </div>
-
 </tal:def>

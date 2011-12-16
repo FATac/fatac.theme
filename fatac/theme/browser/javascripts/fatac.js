@@ -1,10 +1,17 @@
 function inicialitza_js() {
     $(document).ready(function() {
-        inicialitza_filtres ();
+        inicialitza_filtres();
+        activa_hover_imatges();
         inicialitza_zoom_i_visualitzacio();
     });
 }
 
+function scrolls_fitxa_ampliada_cerca() {
+    $(document).ready(function() {
+        crea_scroll_vertical('dades_left');
+        crea_scroll_vertical('dades_right');
+    });
+}
 
 function inicialitza_filtres() {
     scroll_vertical_filtres();
@@ -26,77 +33,84 @@ function scroll_horitzontal_filtres() {
 }
 
 
+function crea_scroll_vertical(identificador) {
+    // crea, si cal, un slider vertical per l'element donat
+    // prerequisits:
+    //      identificador és l'id del div contenidor, amb alçada fixada, que ha de tenir a més la classe 'slider_vertical'
+    //      dins té un div amb classe 'div_interior' amb alçada variable segons el que tingui dintre
+
+    //change the main div to overflow-hidden as we can use the slider now
+    $('#' + identificador).css('overflow','hidden');
+
+    //compare the height of the scroll content to the scroll pane to see if we need a scrollbar
+    var difference = $('#' + identificador + ' .div_interior').height() - $('#' + identificador).height(); //eg it's 200px longer
+
+    //if the scrollbar is needed, set it up...
+    if(difference > 5) {
+        var proportion = difference / $('#' + identificador + ' .div_interior').height(); //eg 200px/500px
+        var handleHeight = Math.round((1-proportion)*$('#' + identificador).height()); //set the proportional height - round it to make sure everything adds up correctly later on
+        handleHeight -= handleHeight%2;
+
+        $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><\div id="slider-vertical"><\/div><\/div>'); //append the necessary divs so they're only there if needed
+        $("#barra-" + identificador).height($('#' + identificador).height()); //set the height of the slider bar to that of the scroll pane
+
+        //set up the slider
+        $('#barra-' + identificador + ' #slider-vertical').slider({
+            orientation: 'vertical',
+            min: 0,
+            max: 100,
+            value: 100,
+            slide: function(event, ui) {//used so the content scrolls when the slider is dragged
+                var topValue = -((100-ui.value)*difference/100);
+                $('#' + identificador + ' .div_interior').css({'margin-top':topValue});//move the top up (negative value) by the percentage the slider has been moved times the difference in height
+            },
+            change: function(event, ui) {//used so the content scrolls when the slider is changed by a click outside the handle or by the mousewheel
+                var topValue = -((100-ui.value)*difference/100);
+                $('#' + identificador + ' .div_interior').css({'margin-top':topValue});//move the top up (negative value) by the percentage the slider has been moved times the difference in height
+            }
+        });
+
+        //set the handle height and bottom margin so the middle of the handle is in line with the slider
+        $('#barra-' + identificador + " .ui-slider-handle").css({height:handleHeight,'margin-bottom':-0.5*handleHeight});
+        var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height
+        var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
+        var sliderMargin =  (origSliderHeight - sliderHeight)*0.5;//so the slider needs to have both top and bottom margins equal to half the difference
+        $('#barra-' + identificador + " .ui-slider").css({height:sliderHeight,'margin-top':sliderMargin});//set the slider height and margins
+    }
+
+    //afegim barra buida, sense slide
+    else {
+        $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><!-- --><\/div>');
+    }
+
+    //code to handle clicks outside the slider handle
+    $('#barra-' + identificador + " .ui-slider").click(function(event){ //stop any clicks on the slider propagating through to the code below
+        event.stopPropagation();
+    });
+    $("#barra-" + identificador).click(function(event){//clicks on the wrap outside the slider range
+        var offsetTop = $(this).offset().top;//read the offset of the scroll pane
+        var clickValue = (event.pageY-offsetTop)*100/$(this).height();//find the click point, subtract the offset, and calculate percentage of the slider clicked
+        $("#barra-" + identificador + " #slider-vertical").slider("value", 100-clickValue);//set the new value of the slider
+    });
+
+    //additional code for mousewheel
+    $('#' + identificador + ', #barra-' + identificador).mousewheel(function(event, delta){
+        var speed = 15;
+        var sliderVal = $('#barra-' + identificador + " #slider-vertical").slider("value");//read current value of the slider
+        sliderVal += (delta*speed);//increment the current value
+        $('#barra-' + identificador + " #slider-vertical").slider("value", sliderVal);//and set the new value of the slider
+        event.preventDefault();//stop any default behaviour
+    });
+}
+
+
 function scroll_vertical_filtres() {
     // inicialitza l'scroll vertical de filtres
 
     $('.slideopcions').each(function(i, filtre) { //i és el número, filtre és l'element en sí
 
-        //console.log(filtre);
-
-        var slideopcions = 'slideopcions-' + (i + 1);
-
-        //change the main div to overflow-hidden as we can use the slider now
-        $('.' + slideopcions).css('overflow','hidden');
-
-        //compare the height of the scroll content to the scroll pane to see if we need a scrollbar
-        var difference = $('.' + slideopcions + ' .opcions').height() - $(filtre).height(); //eg it's 200px longer
-
-        //if the scrollbar is needed, set it up...
-        if(difference > 5) {
-            var proportion = difference / $('.' + slideopcions + ' .opcions').height(); //eg 200px/500px
-            var handleHeight = Math.round((1-proportion)*$('.' + slideopcions).height()); //set the proportional height - round it to make sure everything adds up correctly later on
-            handleHeight -= handleHeight%2;
-
-            $('.' + slideopcions + ' .opcions').after('<\div class="slider-wrap" id="slider-wrap-' + i + '"><\div id="slider-vertical"><\/div><\/div>'); //append the necessary divs so they're only there if needed
-            $("#slider-wrap-" + i).height($('.' + slideopcions).height()); //set the height of the slider bar to that of the scroll pane
-
-            //set up the slider
-            $('#slider-wrap-' + i + ' #slider-vertical').slider({
-                orientation: 'vertical',
-                min: 0,
-                max: 100,
-                value: 100,
-                slide: function(event, ui) {//used so the content scrolls when the slider is dragged
-                    var topValue = -((100-ui.value)*difference/100);
-                    $('.' + slideopcions + ' .opcions').css({'margin-top':topValue});//move the top up (negative value) by the percentage the slider has been moved times the difference in height
-                },
-                change: function(event, ui) {//used so the content scrolls when the slider is changed by a click outside the handle or by the mousewheel
-                    var topValue = -((100-ui.value)*difference/100);
-                    $('.' + slideopcions + ' .opcions').css({'margin-top':topValue});//move the top up (negative value) by the percentage the slider has been moved times the difference in height
-                }
-            });
-
-            //set the handle height and bottom margin so the middle of the handle is in line with the slider
-            $('#slider-wrap-' + i + " .ui-slider-handle").css({height:handleHeight,'margin-bottom':-0.5*handleHeight});
-            var origSliderHeight = $('#slider-wrap-' + i + " #slider-vertical").height();//read the original slider height
-            var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
-            var sliderMargin =  (origSliderHeight - sliderHeight)*0.5;//so the slider needs to have both top and bottom margins equal to half the difference
-            $('#slider-wrap-' + i + " .ui-slider").css({height:sliderHeight,'margin-top':sliderMargin});//set the slider height and margins
-        }
-
-        //afegim barra buida, sense slide
-        else {
-            $('.' + slideopcions + ' .opcions').after('<\div class="slider-wrap" id="slider-wrap-' + i + '"><!-- --><\/div>');
-        }
-
-        //code to handle clicks outside the slider handle
-        $('#slider-wrap-' + i + " .ui-slider").click(function(event){ //stop any clicks on the slider propagating through to the code below
-            event.stopPropagation();
-        });
-        $("#slider-wrap-" + i).click(function(event){//clicks on the wrap outside the slider range
-            var offsetTop = $(this).offset().top;//read the offset of the scroll pane
-            var clickValue = (event.pageY-offsetTop)*100/$(this).height();//find the click point, subtract the offset, and calculate percentage of the slider clicked
-            $("#slider-wrap-" + i + " #slider-vertical").slider("value", 100-clickValue);//set the new value of the slider
-        });
-
-        //additional code for mousewheel
-        $('.' + slideopcions + ', #slider-wrap-' + i).mousewheel(function(event, delta){
-            var speed = 15;
-            var sliderVal = $('#slider-wrap-' + i + " #slider-vertical").slider("value");//read current value of the slider
-            sliderVal += (delta*speed);//increment the current value
-            $('#slider-wrap-' + i + " #slider-vertical").slider("value", sliderVal);//and set the new value of the slider
-            event.preventDefault();//stop any default behaviour
-        });
+        identificador = 'slideopcions-' + (i + 1);
+        crea_scroll_vertical(identificador);
 
     });
 }
@@ -436,8 +450,59 @@ function pinta_resultats(querystring) {
         //topValue = $('div#resultats_cerca').height() / 2 - 24;
         //$('.arrow_left_resultats').css({'margin-top':topValue});
         //$('.arrow_right_resultats').css({'margin-top':topValue});
+
+        activa_hover_imatges()
+
     });
 }
+
+
+function activa_hover_imatges(){
+    $('#wrapper_resultats').before('<\div class="img_hover hidden"><\/div>');
+    var config = {
+         over: mostra_detall,    // function = onMouseOver callback (REQUIRED)
+         timeout: 50,           // number = milliseconds delay before onMouseOut
+         out: fes_res,           // function = onMouseOut callback (REQUIRED)
+    };
+    $(".hoverable").hoverIntent(config);
+}
+
+function fes_res() {}
+
+function mostra_detall() {
+    idobjecte = $(this).attr('id');
+    $('#wrapper_resultats').removeClass("hidden");
+    $.get('genericView', {idobjecte: idobjecte, visualitzacio: 'hover_cerca'}, function(data){
+
+        //afegim div amb el contingut a mostrar en fer over
+        $('div.img_hover').replaceWith('<\div class="img_hover hidden" id="img_hover_' + idobjecte + '">' + data + '<\/div>');
+
+
+        //posicionem centrat sobre la miniatura
+        height_hover = $('.img_hover').height();
+        width_hover = $('.img_hover').width();
+        left_imatge = $('#' + idobjecte).parent().position()['left'];
+        top_imatge = $('#' + idobjecte).parent().position()['top'];
+        width_imatge = $('#' + idobjecte).parent().width();
+        height_imatge = $('#' + idobjecte).parent().height();
+        center_height_imatge = top_imatge + (height_imatge/2);
+        center_width_imatge = left_imatge + (width_imatge/2);
+        top_hover = center_height_imatge - (height_hover/2);
+        left_hover = center_width_imatge - (width_hover/2);
+
+        //TODO: reposicionar si surt del slímits de la pantalla
+
+
+
+        $('div.img_hover').css({'top':top_hover, 'left':left_hover});
+        $('div.img_hover').fadeIn("slow");
+
+        //associem event al div per quan fem mouseout
+        $(".img_hover").mouseout(function() { $('div.img_hover').fadeOut("slow") });
+
+    });
+}
+
 
 function marca_filtres_seleccionats(querystring) {
     // afegeix selected als filtres, segons el que hi hagi indicat a querystring

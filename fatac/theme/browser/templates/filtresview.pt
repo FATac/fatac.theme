@@ -16,9 +16,9 @@
                 <div tal:repeat="filtre filtres" tal:attributes="class string:filtre filtre-${repeat/filtre/number} scrollable-${repeat/filtre/number}">
                     <dl>
                         <dt class="arial12c999999i" tal:content="filtre/nom_filtre">filtre</dt>
-                        <dd>
-                            <div tal:attributes="class string:slideopcions slideopcions-${repeat/filtre/number}">
-                                <div class="opcions">
+                        <dd class="slider_vertical">
+                            <div tal:attributes="class string:slideopcions; id string:slideopcions-${repeat/filtre/number}">
+                                <div class="div_interior">
                                     <ul>
                                         <tal:rep tal:repeat="opcio filtre/opcions">
                                             <li class="arial12c666666">

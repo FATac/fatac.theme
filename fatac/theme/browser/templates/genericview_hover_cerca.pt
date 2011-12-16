@@ -1,19 +1,17 @@
 <!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=hover_cerca -->
+
 <div class="genericview_hover_cerca" tal:define="dades_objecte view/getDadesObjecte">
     <tal:cond tal:condition="dades_objecte">
-        <img class="miniatura_objecte" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol" /><br/>
-        <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
-        <!-- TODO: on va link? -->
-        <a href="#"><span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" /></a>
-        <ul tal:define="dades_header dades_objecte/dades_header" tal:condition="dades_header">
-            <tal:rep tal:repeat="dada_header dades_header">
-                <tal:cond tal:condition="not: dada_header/es_titol">
-                    <li tal:condition="dada_header/es_text" tal:content="dada_header/valor" />
-                </tal:cond>
-            </tal:rep>
-        </ul>
-    </tal:cond>
-    <tal:cond tal:condition="not: dades_objecte">
-        no hi ha dades! (hover_cerca)
+        <a tal:attributes="href string:${here/portal_url}/legalValidation?objectIdsVal=${dades_objecte/id}">
+            <img class="miniatura_objecte" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol" /><br/>
+            <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
+            <!-- TODO: on va link? -->
+            <a href="#"><span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" /></a>
+            <ul tal:define="seccions dades_objecte/seccions">
+                <tal:rep tal:repeat="dada_header seccions/header">
+                    <li tal:attributes="class string:${dada_header/tipus} georgia11c999999" tal:content="dada_header/valor" />
+                </tal:rep>
+            </ul>
+        </a>
     </tal:cond>
 </div>

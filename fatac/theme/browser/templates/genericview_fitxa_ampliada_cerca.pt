@@ -1,14 +1,53 @@
+<!-- TODO: esborrar aquest troç -->
+<!--
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master">
+    <body>
+        <metal:content-title fill-slot="content-title"></metal:content-title>
+        <metal:content-description fill-slot="content-description"></metal:content-description>
+        <metal:content-core fill-slot="content-core">
+            <metal:main-macro define-macro="content">
+                <div id="content" i18n:domain="fatac.theme">
+-->
+<!-- /TODO: esborrar aquest troç -->
+
 <!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_ampliada_cerca -->
+
+<!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
+<!-- TODO: fer la crida on toqui! -->
+<script>
+    scrolls_fitxa_ampliada_cerca();
+</script>
+
 <div class="genericview_fitxa_ampliada_cerca" tal:define="dades_objecte view/getDadesObjecte">
     <tal:cond tal:condition="dades_objecte">
-        <div class="dades_left">
-            xxx
+        <div id="dades_left" class="slider_vertical">
+            <div class="div_interior">
+                <h1 tal:content="dades_objecte/titol" /> <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+            </div>
         </div>
-        <div class="dades_right">
-            yyy
+        <div id="dades_right" class="slider_vertical">
+            <div class="div_interior">
+                <img src="http://3.bp.blogspot.com/-011FO05kclE/TW-YKzZeXCI/AAAAAAAAAA0/_p6pdoEjaCY/no_music.png" /><br/><br/>
+                <img src="http://3.bp.blogspot.com/-011FO05kclE/TW-YKzZeXCI/AAAAAAAAAA0/_p6pdoEjaCY/no_music.png" /><br/><br/>
+                <img src="http://3.bp.blogspot.com/-011FO05kclE/TW-YKzZeXCI/AAAAAAAAAA0/_p6pdoEjaCY/no_music.png" />
+            </div>
         </div>
-    </tal:cond>
-    <tal:cond tal:condition="not: dades_objecte">
-        no hi ha dades! (fitxa_ampliada_cerca)
     </tal:cond>
 </div>
+
+
+
+<!-- TODO: esborrar aquest troç -->
+<!--
+                </div>
+            </metal:main-macro>
+        </metal:content-core>
+    </body>
+</html>
+-->
+<!-- /TODO: esborrar aquest troç -->

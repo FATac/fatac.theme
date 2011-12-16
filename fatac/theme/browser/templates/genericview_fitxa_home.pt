@@ -10,7 +10,4 @@
             <span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" />
         </div>
     </tal:cond>
-    <tal:cond tal:condition="not: dades_objecte">
-        no hi ha dades! (fitxa_home)
-    </tal:cond>
 </div>
