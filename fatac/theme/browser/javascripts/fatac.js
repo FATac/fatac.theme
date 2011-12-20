@@ -490,12 +490,34 @@ function mostra_detall() {
         top_hover = center_height_imatge - (height_hover/2);
         left_hover = center_width_imatge - (width_hover/2);
 
-        //TODO: reposicionar si surt del slímits de la pantalla
-
-
 
         $('div.img_hover').css({'top':top_hover, 'left':left_hover});
         $('div.img_hover').fadeIn("slow");
+
+
+        //TODO: reposicionament si sortim de la part visible de la pantalla. Ara només ok en Firefox!
+        ////reposicionar si surt dels límits de la pantalla
+        //    //posicions x,y de la part visible en referència a la pàgina sencera:
+        //        min_h_screen = $(window).scrollTop();
+        //        max_h_screen = $(window).scrollTop() + $(window).height();
+        //        min_w_screen = $(window).scrollLeft();
+        //        max_w_screen = $(window).scrollLeft() + $(window).width();
+        //    //posicions x,y del div en referència a la pàgina sencera:
+        //        min_h_div = $('div.img_hover').offset()['top'];
+        //        max_h_div = $('div.img_hover').offset()['top'] + $('div.img_hover').height();
+        //        min_w_div = $('div.img_hover').offset()['left'];
+        //        max_w_div = $('div.img_hover').offset()['left'] + $('div.img_hover').width();
+        //    //alert('screen: ' + min_h_screen + ', ' + max_h_screen + ',' + min_w_screen + ', ' + max_w_screen)
+        //    //alert('div: ' + min_h_div + ', ' + max_h_div + ',' + min_w_div + ', ' + max_w_div)
+        //    if (min_h_div < min_h_screen) { top_hover = top_hover + (min_h_screen - min_h_div) + 30; }
+        //    if (max_h_div > max_h_screen) { top_hover = top_hover - (max_h_div - max_h_screen) - 30; }
+        //    if (min_w_div < min_w_screen) { left_hover = left_hover +  (min_w_screen - min_w_div) + 30; }
+        //    if (max_w_div > max_w_screen) { left_hover = left_hover - (max_w_div - max_w_screen) -30 }
+        //    //if (min_h_div < min_h_screen) { alert('surt per sobre'); }
+        //    //if (max_h_div > max_h_screen) { alert('surt per sota'); }
+        //    //if (min_w_div < min_w_screen) { alert('surt per lesquerra'); }
+        //    //if (max_w_div > max_w_screen) { alert('surt per la dreta'); }
+        //    $('div.img_hover').css({'top':top_hover, 'left':left_hover});
 
         //associem event al div per quan fem mouseout
         $(".img_hover").mouseout(function() { $('div.img_hover').fadeOut("slow") });
