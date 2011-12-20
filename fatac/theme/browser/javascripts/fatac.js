@@ -6,13 +6,6 @@ function inicialitza_js() {
     });
 }
 
-function scrolls_fitxa_ampliada_cerca() {
-    $(document).ready(function() {
-        crea_scroll_vertical('dades_left');
-        crea_scroll_vertical('dades_right');
-    });
-}
-
 function inicialitza_filtres() {
     scroll_vertical_filtres();
     scroll_horitzontal_filtres();
@@ -20,6 +13,12 @@ function inicialitza_filtres() {
     click_filtres();
 }
 
+function scrolls_fitxa_ampliada_cerca() {
+    $(document).ready(function() {
+        crea_scroll_vertical('dades_left');
+        crea_scroll_vertical('dades_right');
+    });
+}
 
 function inicialitza_zoom_i_visualitzacio() {
     click_visualitzacions();
@@ -280,7 +279,7 @@ function click_visualitzacions() {
         event.preventDefault();
 
         //seleccionem la nova visualitzacio i deseleccionem la que estava marcada
-        $('a.link_visualitzacio.selected').removeClass('selected')
+        $('#visualitzacio_resultats .selected').removeClass('selected')
         $(this).addClass('selected')
 
         //repintem els resultats amb la nova visualitzacio
@@ -293,9 +292,12 @@ function click_visualitzacions() {
             $( "#slider-wrap-zoom" ).slider("value", min);
             $( "#slider-wrap-zoom" ).slider("disable");
             $( "#zoom_resultats" ).addClass("hidden");
+            $( ".link_visualitzacio1" ).removeClass("hidden");
         } else {
             $( "#slider-wrap-zoom" ).slider("enable");
             $( "#zoom_resultats" ).removeClass("hidden");
+            $( "#zoom_resultats" ).addClass("selected");
+            $(".link_visualitzacio1").addClass("hidden");
         }
 
         //recalculem els resultats

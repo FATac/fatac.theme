@@ -40,6 +40,8 @@ class genericView(BrowserView, funcionsCerca):
             return ViewPageTemplateFile('templates/genericview_fitxa_ampliada_cerca.pt')(self)
         elif self.visualitzacio == 'hover_cerca':
             return ViewPageTemplateFile('templates/genericview_hover_cerca.pt')(self)
+        elif self.visualitzacio == 'fitxa_ampliada_cerca_overlay':
+            return ViewPageTemplateFile('templates/fitxa_ampliada_cerca_overlay.pt')(self)
         else:
             return ViewPageTemplateFile('templates/genericview.pt')(self)
 

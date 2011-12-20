@@ -70,15 +70,15 @@
                 </div>
 
                 <div id="visualitzacio_resultats">
-                    <a rel="imatge" href="#" class="link_visualitzacio selected"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
+                    <div id="zoom_resultats" class="selected">
+                        <a href="#" id="zoom_menys"><img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" /></a>
+                        <div id="slider-wrap-zoom" class="slider-wrap-zoom"></div>
+                        <a href="#" id="zoom_mes"><img id="zoom_mes" src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" /></a>
+                    </div>
+                    <a rel="imatge" href="#" class="link_visualitzacio link_visualitzacio1 hidden"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
                     <a rel="fitxa_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" /></a>
                     <a rel="fitxa_ampliada_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" /></a>
-                </div>
-
-                <div id="zoom_resultats">
-                    <a href="#" id="zoom_menys"><img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" /></a>
-                    <div id="slider-wrap-zoom" class="slider-wrap-zoom"></div>
-                    <a href="#" id="zoom_mes"><img id="zoom_mes" src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" /></a>
+                    <a rel="fitxa_ampliada_cerca_overlay" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_4.png" i18n:attributes="title visualitzacio4" /></a>
                 </div>
 
             </div>

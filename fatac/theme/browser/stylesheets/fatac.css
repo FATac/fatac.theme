@@ -177,7 +177,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 #dades_paginacio_cerca { float:left; width:50%; font-size:12px; color:#999999 !important; font-family: georgia; }
 
-#zoom_resultats { margin-right:7px; float:right; width:125px; height:18px; padding:5px 10px 0 10px; background-color:#f3f3f3; border:1px solid #cccccc; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
+#zoom_resultats { margin-right:7px; float:left; width:125px; height:18px; padding:5px 10px 0 10px; background-color:#f3f3f3; border:1px solid #cccccc; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 #zoom_resultats img, #zoom_resultats #slider-wrap-zoom { float:left; }
 /* per que la barra que fa slide pugui fer 20px d'ample, li posem 20 px de border-right */
 #zoom_resultats #slider-wrap-zoom { position:absolute; height:7px; width:60px; margin:2px 9px 0 22px; background:url('++resource++fatac.theme.images/slider_h.png')  repeat-x center transparent; border-right: 20px solid transparent;}
@@ -191,7 +191,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #accions_cerca dl.llista_desplegable dt img { margin-left: 5px; }
 
 #visualitzacio_resultats a img { border:1px solid transparent; }
-#visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
+#visualitzacio_resultats div#zoom_resultats.selected, #visualitzacio_resultats div#zoom_resultats:hover, #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 
 /* ---------------------------------------------------------------------------- viewlet_footer */
 #viewlet_footer { padding-top:30px; margin-bottom:20px; }
