@@ -5,14 +5,14 @@
         <input name="s"
                id="s"
                type="text"
-               size="18"
+               size="28"
                class="arial15c999999"
-               i18n:attributes="title Explorar"
+               i18n:attributes="title Search"
                tal:attributes="value request/form/s|nothing" />
-
-        <input class="searchButton arial15c666666"
-               type="submit"
-               i18n:attributes="value Explorar" />
+        <button class="searchButton" type="submit">
+            <img i18n:attributes="alt Search" src="++resource++fatac.theme.images/ico_search.png" />
+        </button>
     </form>
+    <a href="#" i18n:translate="" class="arial15c666666">Explorar</a>
 
 </div>
