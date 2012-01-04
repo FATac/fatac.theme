@@ -4,6 +4,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 from Products.CMFCore.utils import getToolByName
+import ast
 
 
 class filtresView(BrowserView, funcionsCerca):
@@ -39,32 +40,96 @@ class filtresView(BrowserView, funcionsCerca):
 
 
 class resultatsView(BrowserView, funcionsCerca):
-    """ vista que executa la cerca amb el querystring actual () i pinta l'html dels resultats
+    """ vista que executa la cerca amb el querystring actual i pinta els resultats
+     i les dades referents a la paginació i les opcions de visualització
     """
     __call__ = ViewPageTemplateFile('templates/resultatsview.pt')
 
-    def retResultats(self):
-        """ executa la cerca amb el querystring del request (o l'inicial) i
-        retorna una llista de diccionaris amb les dades de cada resultat
+    def retDadesVisualitzacio(self):
         """
-        #si no ens passen cap querystring, consultem l'inicial
+        """
+        visualitzacio = self.request.get('visualitzacio')
+        zoom = self.request.get('zoom')
+        return {'visualitzacio': visualitzacio, 'zoom': zoom}
+
+    def retDadesPaginacio(self):
+        """
+        """
         querystring = self.request.get('querystring', self.retQuerystringInicial())
-        dades_resultats = []
+        resultat_cerca = self.executaCerca(querystring)
+        dades_paginacio = {'pagina_actual': '?', 'num_total_pagines': '?', 'num_obj_inicial': '?', 'num_obj_final': '?'}
+        if resultat_cerca:
+            dades_json = resultat_cerca['dades_json']
+            num_resultats = float(dades_json['response']['numFound'])
+            pagina_actual = int(self.request.get('pagina_actual', '1'))
+            resultats_per_pagina = float(self.request.get('resultats_per_pagina', self.resultatsPerPaginaInicial()))
+            import math
+            num_total_pagines = int(math.ceil(num_resultats / resultats_per_pagina))
+            num_obj_inicial = int((pagina_actual * resultats_per_pagina) - resultats_per_pagina + 1)
+            num_obj_final = int((pagina_actual * resultats_per_pagina))
+            if num_obj_final > num_resultats:
+                num_obj_final = int(num_resultats)
+            dades_paginacio = {'pagina_actual': pagina_actual, 'num_total_pagines': num_total_pagines, 'num_obj_inicial': num_obj_inicial, 'num_obj_final': num_obj_final}
+        return dades_paginacio
+
+    def retDadesResultats(self):
+        """
+        """
+        querystring = self.request.get('querystring', self.retQuerystringInicial())
+        visualitzacio = self.request.get('visualitzacio', 'imatge')
+        zoom = self.request.get('zoom', '1')
+        pagina_actual = self.request.get('pagina_actual', '1')
+        resultats_per_pagina = int(self.request.get('resultats_per_pagina', self.resultatsPerPaginaInicial()))
+
+        self.request.set('querystring', querystring)
+        self.request.set('visualitzacio', visualitzacio)
+        self.request.set('zoom', zoom)
+        self.request.set('pagina_a_mostrar', pagina_actual)
+        self.request.set('resultats_per_pagina', resultats_per_pagina)
+
+        portal = getToolByName(self, 'portal_url')
+        portal = portal.getPortalObject()
+        html = portal.restrictedTraverse('@@displayResultatsPaginaView')()
+        return html
+
+
+class displayResultatsPaginaView(BrowserView, funcionsCerca):
+    """
+    """
+    __call__ = ViewPageTemplateFile('templates/displayresultatspaginaview.pt')
+
+    def retDades(self):
+        """ retorna les dades necessàries per pintar els resultats de la pàgina 'pagina_a_pintar'
+        (només els resultats en sí, no els controls de visualització)
+        """
+        #resultats = self.request.get('resultats[]')  # TODO: no sé per què cal afegir [], però és el que arriba per request
+        querystring = self.request.get('querystring')
         resultat_cerca = self.executaCerca(querystring)
         if resultat_cerca:
             dades_json = resultat_cerca['dades_json']
             resultats = dades_json['response']['docs']
-            for resultat in resultats:
-                portal = getToolByName(self, 'portal_url')
-                portal = portal.getPortalObject()
+
+            resultats_per_pagina = int(self.request.get('resultats_per_pagina'))
+            pagina_a_mostrar = int(self.request.get('pagina_a_mostrar'))
+
+            num_obj_inicial = (pagina_a_mostrar * resultats_per_pagina) - resultats_per_pagina + 1
+            num_obj_final = (pagina_a_mostrar * resultats_per_pagina)
+
+            visualitzacio = self.request.get('visualitzacio')
+            zoom = self.request.get('zoom')
+            self.request.set('visualitzacio', visualitzacio)
+            self.request.set('zoom', zoom)
+
+            portal = getToolByName(self, 'portal_url')
+            portal = portal.getPortalObject()
+            dades_resultats = []
+            for resultat in resultats[num_obj_inicial - 1:num_obj_final]:
                 self.request.set('idobjecte', resultat['id'])
-                visualitzacio = self.request.get('visualitzacio', 'imatge')
-                self.request.set('visualitzacio', visualitzacio)
-                zoom = self.request.get('zoom', '1')
-                self.request.set('zoom', zoom)
                 html = portal.restrictedTraverse('@@genericView')()
                 dades_resultats.append({'id': resultat['id'], 'html': html})
-        return dades_resultats
+
+            return {'dades_resultats': dades_resultats}
+        return {'dades_resultats': []}
 
 
 class cercaInicialView(BrowserView, funcionsCerca):

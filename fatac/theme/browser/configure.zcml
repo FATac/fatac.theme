@@ -114,6 +114,13 @@
 
     <browser:page
         for="*"
+        name="displayResultatsPaginaView"
+        class=".vistesCerca.displayResultatsPaginaView"
+        permission="zope2.Public"
+        />
+
+    <browser:page
+        for="*"
         name="cercaInicialView"
         class=".vistesCerca.cercaInicialView"
         permission="zope2.Public"

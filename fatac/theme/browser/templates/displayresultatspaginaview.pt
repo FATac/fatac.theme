@@ -1,0 +1,7 @@
+<tal:def tal:define="dades view/retDades; resultats dades/dades_resultats">
+    <div tal:condition="resultats" tal:attributes="class string:resultats pagina">
+        <tal:rep tal:repeat="resultat resultats" tal:attributes="id resultat/id;">
+            <a tal:attributes="href string:${here/portal_url}/legalValidation?objectIdsVal=${resultat/id}"><tal:repl tal:replace="structure resultat/html" /></a>
+        </tal:rep>
+    </div>
+</tal:def>

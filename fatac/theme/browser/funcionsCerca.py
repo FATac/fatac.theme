@@ -22,12 +22,16 @@ class funcionsCerca():
         url = settings.rest_server
         return url
 
+    def resultatsPerPaginaInicial(self):
+        """
+        """
+        return 66
+
     def retQuerystringInicial(self):
         """ retorna el querystring inicial (start i rows per defecte, corresponents
         a la vista en imatges petites, més el text introduït per l'usuari).
         """
-        #TODO: tornar a posar 66
-        querystring_inicial = '?start=0&rows=66'
+        querystring_inicial = 'rows=999999'
         if 's' in self.request.keys():
             querystring_inicial += '&s=' + self.request.get('s')
         return querystring_inicial
@@ -54,11 +58,13 @@ class funcionsCerca():
         return querystring
 
     #TODO: tornar a posar caché
-    #@cache(modified_cachekey)
+    @cache(modified_cachekey)
     def executaCerca(self, querystring):
         """ Crida el servei rest que executa la cerca, i retorna el json resultant
         """
-        url = self.retServidorRest() + '/solr/search' + querystring
+        #TODO: fer que si no rep querystring, pugui rebre array de ids o similar,
+        #i en comptes d'executar la cerca monti json per retornar
+        url = self.retServidorRest() + '/solr/search?' + querystring
         read = self.llegeixJson(url)
         if read:
             #quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
@@ -83,7 +89,7 @@ class funcionsCerca():
         return
 
     #TODO: tornar a posar caché
-    #@cache(modified_cachekey_ultims_documents)
+    @cache(modified_cachekey_ultims_documents)
     def executaCercaUltimsDocuments(self):
         """ Crida el servei rest que executa la cerca, i retorna el json resultant
         """
@@ -102,7 +108,7 @@ class funcionsCerca():
         return
 
     #TODO: tornar a posar caché
-    #@cache(modified_cachekey_ultims_documents)
+    @cache(modified_cachekey_ultims_documents)
     def executaCercaUltimsConsultats(self):
         """ Crida el servei rest que executa la cerca, i retorna el json resultant
         """

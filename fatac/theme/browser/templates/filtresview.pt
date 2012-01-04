@@ -1,3 +1,11 @@
+<!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
+<!-- TODO: fer la crida on toqui! -->
+<script>
+    $(document).ready(function() {
+        inicialitza_js_filtres();
+    });
+</script>
+
 <div id="selector_filtres" class="div_dotted_line" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
 
     <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
@@ -13,24 +21,28 @@
 
         <div id="wrapper" class="scrollable">
             <div class="filtres">
-                <div tal:repeat="filtre filtres" tal:attributes="class string:filtre filtre-${repeat/filtre/number} scrollable-${repeat/filtre/number}">
-                    <dl>
-                        <dt class="arial12c999999i" tal:content="filtre/nom_filtre">filtre</dt>
-                        <dd class="slider_vertical">
-                            <div tal:attributes="class string:slideopcions; id string:slideopcions-${repeat/filtre/number}">
-                                <div class="div_interior">
-                                    <ul>
-                                        <tal:rep tal:repeat="opcio filtre/opcions">
-                                            <li class="arial12c666666">
-                                                <a tal:attributes="href string:cercaAjaxView; rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
-                                            </li>
-                                        </tal:rep>
-                                    <ul>
+                <tal:rep tal:repeat="filtre filtres">
+                    <tal:co tal:define="num repeat/filtre/number" tal:condition="python: num%6 == 1" tal:replace="structure string:<div class='fila'>" />
+                    <div tal:attributes="class string:filtre filtre-${repeat/filtre/number} scrollable-${repeat/filtre/number}">
+                        <dl>
+                            <dt class="arial12c999999i" tal:content="filtre/nom_filtre">filtre</dt>
+                            <dd class="slider_vertical">
+                                <div tal:attributes="class string:slideopcions; id string:slideopcions-${repeat/filtre/number}">
+                                    <div class="div_interior">
+                                        <ul>
+                                            <tal:rep tal:repeat="opcio filtre/opcions">
+                                                <li class="arial12c666666">
+                                                    <a tal:attributes="href string:cercaAjaxView; rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
+                                                </li>
+                                            </tal:rep>
+                                        <ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </dd>
-                    </dl>
-                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <tal:co tal:define="num repeat/filtre/number; final repeat/filtre/end;" tal:condition="python: num%6 == 0 or final" tal:replace="structure string:</div>" />
+                </tal:rep>
             </div>
         </div>
     </div>

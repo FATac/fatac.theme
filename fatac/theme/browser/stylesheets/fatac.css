@@ -16,7 +16,7 @@ div.width-full { width: 100%; }
 a { border-bottom:none !important; }
 
 .div_dotted_line { float:left; width:100%; clear:both; border-top:1px dotted #888888; padding-top:10px; margin-top:4px; }
-.div_dotted_line_soft { float:left; width:100%; clear:both; border-top:1px dotted #cccccc; padding-top:10px; margin-top:4px; }
+.div_dotted_line_soft { float:left; width:100%; clear:both; border-top:1px dotted #cccccc; padding-top:10px; margin-top:20px; }
 
 .hidden { display:none; }
 
@@ -58,7 +58,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; }
+#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; width:310px; }
 #viewlet_cercador #s { background-color:transparent; border:none; padding-left:10px; float:left; margin-top:10px; }
 #viewlet_cercador .searchButton { background-color:transparent; border:none; margin:5px; }
 #viewlet_cercador a { float:left; margin: 7px 0 0 25px; }
@@ -192,6 +192,25 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 #visualitzacio_resultats a img { border:1px solid transparent; }
 #visualitzacio_resultats div#zoom_resultats.selected, #visualitzacio_resultats div#zoom_resultats:hover, #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
+
+
+#resultats { float:left; width:100%; }
+#wrapper_resultats {
+    overflow:hidden;
+    position:relative;
+    height:485px; /* TODO: height correcte? */
+}
+.pagines_resultats {
+    position:absolute;
+    width:20000em;
+}
+.pagines_resultats .pagina {
+    width:944px;
+    float:left;
+}
+#resultats_cerca a.disabled {
+    visibility: hidden !important;
+}
 
 /* ---------------------------------------------------------------------------- viewlet_footer */
 #viewlet_footer { padding-top:30px; margin-bottom:20px; }

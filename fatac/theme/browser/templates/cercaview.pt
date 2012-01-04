@@ -8,14 +8,8 @@
     <body>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
-            <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
-            <!-- TODO: fer la crida on toqui! -->
-            <script>
-                inicialitza_js();
-            </script>
-
             <!-- TODO: canviar type="text" per type="hidden", eliminar attr size -->
-            <input type="hidden" size="100" id="querystring" tal:attributes="value view/retQuerystringInicial" />
+            <input type="text" size="100" id="querystring" tal:attributes="value view/retQuerystringInicial" />
 
             <tal:repl tal:replace="structure view/retFiltresView" />
 
@@ -58,29 +52,8 @@
 
             <div class="visualClear"><!--  --></div>
 
-            <tal:repl tal:replace="structure view/retResultatsView" />
-
-            <div class="visualClear"><!--  --></div>
-
-            <div id="controls_resultats">
-
-                <div id="dades_paginacio_cerca">
-                    <span i18n:translate="pagina" id="pagina">pàgina</span>: <span id="pagina_actual">1</span> <span i18n:translate="de">de</span> <span id="pagina_total">5</span>
-                    / <span i18n:translate="arxius" id="arxius">arxius</span>: <span id="arxiu_inicial">15</span> - <span id="arxiu_final">75</span>
-                </div>
-
-                <div id="visualitzacio_resultats">
-                    <div id="zoom_resultats" class="selected">
-                        <a href="#" id="zoom_menys"><img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" /></a>
-                        <div id="slider-wrap-zoom" class="slider-wrap-zoom"></div>
-                        <a href="#" id="zoom_mes"><img id="zoom_mes" src="++resource++fatac.theme.images/large.png" i18n:attributes="title large" /></a>
-                    </div>
-                    <a rel="imatge" href="#" class="link_visualitzacio link_visualitzacio1 hidden"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" /></a>
-                    <a rel="fitxa_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" /></a>
-                    <a rel="fitxa_ampliada_cerca" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" /></a>
-                    <a rel="fitxa_ampliada_cerca_overlay" href="#" class="link_visualitzacio"><img src="++resource++fatac.theme.images/ico_4.png" i18n:attributes="title visualitzacio4" /></a>
-                </div>
-
+            <div id="zona_resultats">
+                <tal:repl tal:replace="structure view/retResultatsView" />
             </div>
 
             <div class="visualClear"><!--  --></div>
