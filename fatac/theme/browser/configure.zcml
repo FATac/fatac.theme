@@ -133,4 +133,12 @@
         permission="zope2.Public"
         />
 
+    <!-- Vista creada per fer proves de pintar la visualització de resultats amb una llista de ids) -->
+    <browser:page
+        for="*"
+        name="demoView"
+        class=".vistesCerca.demoView"
+        permission="zope2.Public"
+        />
+
 </configure>

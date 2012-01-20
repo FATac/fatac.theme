@@ -8,53 +8,35 @@
     <body>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
-            <!-- TODO: canviar type="text" per type="hidden", eliminar attr size -->
-            <input type="text" size="100" id="querystring" tal:attributes="value view/retQuerystringInicial" />
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    querystring = {rows: 999999, s: $('input#s').attr('value')}
 
-            <tal:repl tal:replace="structure view/retFiltresView" />
+                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
 
-            <div class="visualClear"><!--  --></div>
+                    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+                    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
 
-            <div id="ordre_y_tipus_cerca" class="div_dotted_line">
-                <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
-                <span class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
+                    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
 
-                <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
-                    <dt class="actionMenuHeader">
-                        <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
-                            tipus d'entrada <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
-                        </a>
-                    </dt>
-                    <dd class="actionMenuContent">
-                        <ul>
-                            <li><a class="arial11c666666 selected" href="">document</a></li>
-                            <li><a class="arial11c666666" href="">expedient</a></li>
-                        </ul>
-                    </dd>
-                </dl>
+                    $.post('filtresView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_filtres').replaceWith(data);
+                    });
 
-                <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
-                    <dt class="actionMenuHeader">
-                        <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
-                            tipus d'ordre <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
-                        </a>
-                    </dt>
-                    <dd class="actionMenuContent">
-                        <ul>
-                            <li><a class="arial11c666666" href="">alfabètic</a></li>
-                            <li><a class="arial11c666666 selected" href="">cronològic</a></li>
-                            <li><a class="arial11c666666" href="">ordre original</a></li>
-                        </ul>
-                    </dd>
-                </dl>
+                    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_resultats').replaceWith(data);
+                    });
+                });
 
-            </div>
+            </script>
+
+            <!-- TODO: potser cal posar precarrega o algo mentre carreguem... -->
+            <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" /></div>
 
             <div class="visualClear"><!--  --></div>
 
-            <div id="zona_resultats">
-                <tal:repl tal:replace="structure view/retResultatsView" />
-            </div>
+            <!-- TODO: potser cal posar precarrega o algo mentre carreguem... -->
+            <div id="zona_resultats" class="zona_resultats_inicial"><img src="spinner.gif" /></div>
 
             <div class="visualClear"><!--  --></div>
 

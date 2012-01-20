@@ -16,17 +16,44 @@ class genericView(BrowserView, funcionsCerca):
 
     def __init__(self, context, request):
         """ self.servidorRest guarda l'adreça del servidor Rest que serveix les
-        dades; self.idobjecte guarda l'id de l'objecte del que volem mostrar la
-        vista
+        dades; self.idobjectes guarda l'id del/s objecte/s del que volem mostrar
         """
         self.request = request
         self.context = context
         self.servidorRest = self.retServidorRest()
-        self.idobjecte = self.request.get('idobjecte')
-        self.zoom = self.request.get('zoom')
-        self.visualitzacio = self.request.get('visualitzacio')
+        self.zoom = None
+        self.visualitzacio = None
+        self.idobjectes = None
 
-    #__call__ = ViewPageTemplateFile('templates/genericview.pt')
+        parametres_visualitzacio = self.retParametresVisualitzacio()
+        idobjecte = self.request.get('idobjecte')
+        if idobjecte:
+            self.idobjectes = [idobjecte]
+            self.zoom = self.request.get('zoom')
+            self.visualitzacio = self.request.get('visualitzacio')
+
+        elif parametres_visualitzacio:
+            resultat_cerca = self.executaCercaIdsOQuerystring()
+            if resultat_cerca:
+                if 'dades_json' in resultat_cerca:
+                    dades_json = resultat_cerca['dades_json']
+                    if 'response' in dades_json and 'docs' in dades_json['response']:
+                        resultats = dades_json['response']['docs']
+                        resultats_per_pagina = int(parametres_visualitzacio['resultats_per_pagina'])
+                        pagina_a_mostrar = int(parametres_visualitzacio['pagina_actual'])
+                        num_obj_inicial = (pagina_a_mostrar * resultats_per_pagina) - resultats_per_pagina
+                        num_obj_final = (pagina_a_mostrar * resultats_per_pagina)
+
+                        idobjectes = []
+                        for resultat in resultats[num_obj_inicial:num_obj_final]:
+                            idobjectes.append(resultat['id'])
+                        self.idobjectes = idobjectes
+
+            if 'zoom' in parametres_visualitzacio:
+                self.zoom = parametres_visualitzacio['zoom']
+            if 'visualitzacio' in parametres_visualitzacio:
+                self.visualitzacio = parametres_visualitzacio['visualitzacio']
+
     def __call__(self):
         """
         """
@@ -45,42 +72,109 @@ class genericView(BrowserView, funcionsCerca):
         else:
             return ViewPageTemplateFile('templates/genericview.pt')(self)
 
-    def getZoom(self):
-        """ retorna el zoom que cal aplicar a les imatges ([1,2,3])
+
+    #===========================================================================
+    # funcions que retornen les dades necessàries per pintar cada vista
+    #===========================================================================
+
+    def dades_genericview_header(self):
         """
-        return self.zoom
-
-
-    def getView(self):
-        """ retorna un diccionari amb les dades JSON de l'objecte self.idobjecte
         """
-        url = self.servidorRest + '/resource/' + self.idobjecte + '/view'
-        request = urllib2.urlopen(url)
-        read = request.read()
-        if read:
-            dades_json = json.loads(read)  # retorna diccionari
-            return dades_json
-        return None
+        dades_json = self.retSectionHeader()  # retorna diccionari
+        resultat = []
+        if dades_json:
+            i = 0
+            for objecte in dades_json:
+                id_objecte = self.idobjectes[i]
+                i += 1
+                titol_objecte = self.getTitolObjecte(objecte['sections'])
 
-    def getMedia(self):
-        """ retorna el media associat a l'objecte self.idobjecte
+                dades = []
+                for seccio in objecte['sections']:
+                    if seccio['name'] == 'header':
+                        for dada in seccio['data']:
+                            dades.append(self.llegirDada(dada))
+
+                dades_objecte = {'id': id_objecte,
+                                 'titol': titol_objecte,
+                                 'classe': objecte['className'],
+                                 'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
+                                 'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
+                                 'dades_header': dades}
+                resultat.append(dades_objecte)
+        return resultat
+
+
+    #===========================================================================
+    # funcions auxiliars
+    #===========================================================================
+
+    def getTitolObjecte(self, seccions):
+        """ donat un array de seccions, busca la seccio 'header' i retorna un
+        string concatenant els strings del primer camp
         """
-        url = self.servidorRest + '/objects/' + self.idobjecte + '/media'
-        return url
-        request = urllib2.urlopen(url)
-        return request.read()
+        for seccio in seccions:
+            if seccio['name'] == 'header':
+                titol_objecte = self.llegirDada(seccio['data'][0])['valor']
+                return titol_objecte
 
-    def getThumbnailObjecte(self):
+    def getThumbnailObjecte(self, idobjecte):
         """ crida el servei que retorna el thumbnail de l'objecte
         """
-        return self.servidorRest + '/resource/' + self.idobjecte + '/thumbnail'
+        return self.servidorRest + '/resource/' + idobjecte + '/thumbnail'
 
     def getThumbnailClasse(self, classe):
         """ crida el servei que retorna el thumbnail de la classe donada
         """
         return self.servidorRest + '/classes/' + classe + '/thumbnail'
 
-    def getTextType(self, dades):
+    def getMedia(self):
+        """ retorna el media associat a l'objecte self.idobjecte
+        """
+        url = self.servidorRest + '/objects/' + self.idobjecte + '/media'
+        return url
+
+
+    #===========================================================================
+    # funcions per cridar serveis
+    #===========================================================================
+
+    def retSectionHeader(self):
+        """
+        """
+        if self.idobjectes:
+            import string
+            idobjectes_str = string.join(self.idobjectes, ',')
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header'
+            #TODO: esborrar quan acabem de testejar
+            import time
+            t0 = time.time()
+            self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
+            request = urllib2.urlopen(url)
+            read = request.read()
+            self.context.plone_log('Fi crida  %.3f segons (%d)Kb' % (time.time() - t0, len(read) / 1024))
+            if read:
+                dades_json = json.loads(read)  # retorna diccionari
+                #si demanem més d'un id concatenats, retorna array de diccionaris; sinó, retorna només diccionari
+                if len(self.idobjectes) == 1:
+                    dades_json = [dades_json]
+                return dades_json
+        return
+
+
+    #===========================================================================
+    # funcions per llegir tipus de dades de json
+    #===========================================================================
+
+    def llegirDada(self, dada):
+        """
+        """
+        #if dada['type'] == 'text':
+        #   return {'nom': dada['name'], 'tipus': dada['type'], 'valor': self.getTextType(dada)}
+        valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
+        return {'selfm': dada['name'], 'tipus': dada['type'], 'valor': valor}
+
+    def get_text_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'text', u'name': u'Title',
         u'value': [u'Rainer Oldendorf']} retorna un string format pels strings
         dins el 'value' concatenats amb ', '
@@ -91,49 +185,3 @@ class genericView(BrowserView, funcionsCerca):
                 titol += ', '
             titol += i
         return titol
-
-    def llegirDada(self, dada):
-        """
-        """
-        if dada['type'] == 'text':
-            return {'nom': dada['name'], 'tipus': dada['type'], 'valor': self.getTextType(dada)}
-        return
-
-    def getTitolObjecte(self, dades):
-        """ donat el 'data' de la seccio 'header', retorna un string concatenant
-        els strings del primer camp
-        """
-        return self.llegirDada(dades[0])['valor']
-
-    def getDadesObjecte(self):
-        """ retorna les dades necessàries per pintar les vistes dels objectes:
-        títol de l'objecte, thumbnail de l'objecte, thumbnail de la classe,
-        dades del header
-        """
-        url = self.servidorRest + '/resource/' + self.idobjecte + '/view'
-        request = urllib2.urlopen(url)
-        read = request.read()
-
-        #TODO: tinc alguna altra manera de comprovar que no retorni error? Ara no sé què pintar al template...
-        if not read.startswith('"Error: '):
-
-            dades_json = json.loads(read)
-            seccions = {}
-            titol_objecte = ''
-            for seccio in dades_json['sections']:
-
-                dades_seccio = []
-                for dada in seccio['data']:
-                    dades_seccio.append(self.llegirDada(dada))
-                seccions[seccio['name']] = dades_seccio
-
-                if seccio['name'] == 'header':
-                    titol_objecte = self.getTitolObjecte(seccio['data'])
-
-            dades_objecte = {'id': self.idobjecte,
-                             'titol': titol_objecte,
-                             'classe': dades_json['className'],
-                             'thumbnail_classe': self.getThumbnailClasse(dades_json['className']),
-                             'seccions': seccions}
-            return dades_objecte
-        return None

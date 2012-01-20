@@ -1,6 +1,10 @@
-<!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=imatge -->
-<div tal:attributes="class string:genericview_imatge zoom_${view/getZoom}" tal:define="dades_objecte view/getDadesObjecte">
-    <tal:cond tal:condition="dades_objecte">
-        <img class="miniatura_objecte hoverable" tal:attributes="src view/getThumbnailObjecte; alt dades_objecte/titol; id dades_objecte/id" />
-    </tal:cond>
-</div>
+<!--
+crida demo1: http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=imatge
+crida demo2: tb es pot cridar amb parametres_visualitzacio
+-->
+
+<tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
+    <div tal:attributes="class string:genericview_imatge zoom_${view/zoom}; id string:div${dades_objecte/id}">
+        <img class="miniatura_objecte hoverable" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; id dades_objecte/id" />
+    </div>
+</tal:rep>

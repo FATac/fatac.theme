@@ -19,7 +19,7 @@
 
 <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
 <!-- TODO: fer la crida on toqui! -->
-<script>
+<script type="text/javascript">
     scrolls_fitxa_ampliada_cerca();
 </script>
 

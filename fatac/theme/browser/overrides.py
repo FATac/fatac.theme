@@ -4,14 +4,19 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class PersonalBarViewletFatac(PersonalBarViewlet):
+    """
+    """
     index = ViewPageTemplateFile('templates/personal_bar.pt')
 
 
 class LanguageSelectorFatac(LanguageSelector):
+    """
+    """
     render = ViewPageTemplateFile('templates/languageselector.pt')
 
     def retIdiomes(self):
-        """
+        """ retorna un diccionari amb el codi i el nom de l'idioma actiu i dels
+        idiomes disponibles
         """
         altres_idiomes = []
         for lang in self.languages():

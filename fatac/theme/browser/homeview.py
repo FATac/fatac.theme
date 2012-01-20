@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 from zope.publisher.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
 from funcionsCerca import funcionsCerca
 

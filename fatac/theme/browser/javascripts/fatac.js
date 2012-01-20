@@ -10,14 +10,42 @@ function inicialitza_js_filtres() {
     click_filtres();
 }
 
-
-function inicialitza_js_resultats() {
+function inicialitza_js_resultats(crida_inicial) {
     //activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal,
-    //activa els doferents tipus de visualització i el zoom, i carrega la segona pàgina
-    activa_hover_imatges();
-    scroll_horitzontal_resultats();
-    click_visualitzacions();
-    zoom_visualitzacions();
+    //activa els diferents tipus de visualització i el zoom
+    //si crida_inicial === 1, carrega la pàgina 2 i 3
+        //pinta_pagina_seguent torna a cridar aquesta funció amb crida_inicial = 0 per executar l'else
+
+    if (crida_inicial === 1) {
+        pinta_pagina_seguent(1, function () {
+            pinta_pagina_seguent(2);
+        });
+    } else {
+        //TODO: hi ha algun error i depen com no amaga les fletxes com cal; de moment crido funció per arreglar-ho
+        visualitzacio_fletxes();
+        activa_hover_imatges();
+        scroll_horitzontal_resultats();
+        click_visualitzacions();
+        zoom_visualitzacions();
+    }
+}
+
+function visualitzacio_fletxes() {
+    //
+
+    pagina_actual = consulta_parametre_visualitzacio("pagina_actual");
+    pagina_final = parseInt($('#pagina_total').attr("rel"), 10);
+    if (pagina_actual === 1) {
+        $('.arrow_left_resultats').addClass('disabled');
+    } else {
+        $('.arrow_left_resultats').removeClass('disabled');
+    }
+    if (pagina_actual === pagina_final) {
+        $('.arrow_right_resultats').addClass('disabled');
+    } else {
+        $('.arrow_right_resultats').removeClass('disabled');
+    }
+
 }
 
 function scrolls_fitxa_ampliada_cerca() {
@@ -37,36 +65,34 @@ function scrolls_fitxa_ampliada_cerca() {
 function pinta_filtres() {
     //crida la vista que recalcula els filtres i fa un replace de l'html
 
-    querystring = consulta_querystring();
-    $.get('filtresView', {querystring: querystring}, function(data){
+    querystring = consulta_parametre_visualitzacio('querystring');
+
+    $.post('filtresView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
         html_filtres = data;
         $('div#selector_filtres').replaceWith(html_filtres);
         inicialitza_js_filtres();
     });
 }
 
-
 function scroll_horitzontal_filtres() {
     // inicialitza l'scroll horitzontal de filtres
 
-    var api=$("#filtres .scrollable").scrollable({api:true});
+    $("#filtres .scrollable").scrollable({api: true});
 }
-
 
 function scroll_vertical_filtres() {
     // inicialitza l'scroll vertical de filtres
 
-    $('.slideopcions').each(function(i, filtre) { //i és el número, filtre és l'element en sí
+    $('.slideopcions').each(function (i) { //i és el número (, filtre és l'element en sí)
         identificador = 'slideopcions-' + (i + 1);
         crea_scroll_vertical(identificador);
     });
 }
 
-
 function mostrar_i_amagar_filtres() {
     // inicialitza la funcionalitat per mostrar i amagar filtres
+    //TODO: si despleguem filtres i clickem un filtre, tornen a aparèixer plegats i caldria desplegar
 
-    var num_elements = $("div.filtre").size();
     var num_files = $("div.fila").size();
 
     if (num_files < 2) {
@@ -80,7 +106,11 @@ function mostrar_i_amagar_filtres() {
     var altura_total_separadors = 31 * (num_files - 1);
     var altura_contenidor = num_files * altura_fila + altura_total_separadors;
 
-    $("input.mostrar_filtres").click(function(){
+    $("input.mostrar_filtres").click(function (event) {
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
 
         //canvia botó 'mostrar' per botó 'amagar'
         $("input.mostrar_filtres").addClass("hidden");
@@ -91,11 +121,11 @@ function mostrar_i_amagar_filtres() {
         $("a.arrow_right img").addClass("hidden");
 
         //posa en posició inicial l'scroll horitzontal
-        var api=$(".scrollable").scrollable({api:true});
+        var api = $(".scrollable").scrollable({api: true});
         api.seekTo(0);
 
         //canvia l'alçada del contenidor per que mostri totes les files
-        $("#wrapper").animate({height:altura_contenidor});
+        $("#wrapper").animate({height: altura_contenidor});
 
         //simula les files amb css i afegeix divs entre les files
         $("div.fila").addClass("clearLeft");
@@ -103,7 +133,11 @@ function mostrar_i_amagar_filtres() {
 
     });
 
-    $("input.amagar_filtres").click(function(){
+    $("input.amagar_filtres").click(function (event) {
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
 
         //canvia botó 'amagar' per botó 'mostrar'
         $("input.amagar_filtres").addClass("hidden");
@@ -114,7 +148,7 @@ function mostrar_i_amagar_filtres() {
         $("a.arrow_right img").removeClass("hidden");
 
         //canvia l'alçada del contenidor per que mostri només una fila
-        $('#wrapper').animate({height:altura_fila});
+        $('#wrapper').animate({height: altura_fila});
 
         //posa les files en una única línia
         $("div.fila").removeClass("clearLeft");
@@ -124,44 +158,39 @@ function mostrar_i_amagar_filtres() {
     });
 }
 
-
 function click_filtres() {
     // inicialitza la funcionalitat per fer cerques quan es clica els filtres
 
     //seleccionar els filtres 'Tots' per defecte
-    marca_filtres_seleccionats(consulta_querystring());
+    marca_filtres_seleccionats();
 
-    $('a.link_filtre').click(function(event){
-
-        //que no s'executi el click
+    $('a.link_filtre').click(function (event) {
         event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
 
         //recalcular querystring
             //si ja estava seleccionat, i no és 'Tots': l'eliminem de la cerca
             //sino:
                 //si és 'Tots': eliminem els marcats de querystring_actual
                 //si no és 'Tots': afegim el nou filtre a querystring_actual
-        filtre_clicat = $(this).attr('rel');
-        querystring_actual = consulta_querystring();
-        nom_filtre = $(this).attr('class').split(' ')[0] //Year
-        estava_seleccionat = $(this).hasClass('selected')
-        es_opcio_tots = $(this).hasClass('Tots')
+        var filtre_clicat = $(this).attr('rel');
+        var nom_filtre = $(this).attr('class').split(' ')[0]; //Year
+        //estava_seleccionat = $(this).hasClass('selected')
+        var estava_seleccionat = existeix_filtre_a_querystring(filtre_clicat);
+        var es_opcio_tots = $(this).hasClass('Tots');
 
         if (estava_seleccionat && !es_opcio_tots) {
-            querystring_nou = querystring_actual.replace(filtre_clicat,'');
+            elimina_filtre_de_querystring(filtre_clicat);
         } else {
-            if(es_opcio_tots) {
-                querystring_nou = elimina_tots_filtres_de_querystring(querystring_actual, nom_filtre)
+            if (es_opcio_tots) {
+                elimina_filtres_de_categoria(nom_filtre);
             } else {
-                querystring_nou = afegir_filtre_a_querystring(querystring_actual, filtre_clicat)
+                afegir_filtre_a_querystring(filtre_clicat);
             }
         }
 
-        querystring_nou = neteja_querystring(querystring_nou);
-
-        actualitza_querystring(querystring_nou);
-
-        $.get('cercaAjaxView', {querystring:querystring_nou}, function(data){
+        $.post('cercaAjaxView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function () {
 
             //un cop ja hem recalculat la cerca, pintem els filtres
             pinta_filtres();
@@ -174,30 +203,28 @@ function click_filtres() {
     });
 }
 
-
-function marca_filtres_seleccionats(querystring) {
+function marca_filtres_seleccionats() {
     // afegeix selected als filtres, segons el que hi hagi indicat a querystring
 
     //marquem les opcions 'Tots' i desmarcarem si hi ha algun filtre aplicat de la categoria en concret
     $('.Tots').addClass('selected');
 
-    if (existeix_parametre_a_querystring(querystring, 'f') == 1) {
-        dic = querystring_to_diccionari(querystring);
-        filtres_aplicats = dic['f']
-        llista_filtres = llista_filtres_aplicats(filtres_aplicats);
-        for (i=0; i<llista_filtres.length; i++) {
-            categoria = llista_filtres[i]['categoria'];
-            opcio = llista_filtres[i]['opcio'];
+    var querystring = consulta_parametre_visualitzacio('querystring');
+    var filtres_aplicats = querystring.f;
+    if (filtres_aplicats !== undefined) {
+        for (i = 0; i < filtres_aplicats.length; i = i + 1) {
+            categoria = filtres_aplicats[i].split(':')[0];
+            var opcio = filtres_aplicats[i].split(':')[1];
             $('.' + categoria + '.' + opcio).addClass('selected');
             $('.' + categoria + '.Tots').removeClass('selected');
             /* si conté espais, haurem posat class=str1 str2, i per seleccionar l'element en farem servri el primer */
-            classe_c = categoria.split(' ')[0];
-            classe_o = opcio.split(' ')[0];
+            var classe_c = categoria.split(' ')[0];
+            var classe_o = opcio.split(' ')[0];
             $('.' + classe_c + '.' + classe_o).addClass('selected');
             $('.' + classe_c + '.Tots').removeClass('selected');
         }
-
     }
+
 }
 
 
@@ -208,121 +235,164 @@ function marca_filtres_seleccionats(querystring) {
 function scroll_horitzontal_resultats() {
     // inicialitza l'scroll horitzontal de resultats
 
-    var api=$("div#resultats .scrollable").scrollable({api:true});
-    $("div#resultats .next").click(function() {
-        //TODO!! laura!!
-        alert('click!');
-        ////mirem fins a quina pàgian hem pintat, i pintem la següent (si existeix)
-        //pag_pintades = $('.pagina').length;
-        //ultima_pagina = $('.pagina' + pag_pintades);
-        //pagina_a_pintar = pag_pintades + 1
-        //resultats = $('input#llista_resultats').attr('value');
-        //visualitzacio = $('a.link_visualitzacio.selected').attr('rel');
-        //valor = $("#slider-wrap-zoom").slider("option", "value");
-        //step = $("#slider-wrap-zoom").slider("option", "step");
-        //zoom = valor/step + 1; //[1,2,3]
-        //resultats_per_pagina = 66; //TODO: inventat, caldria calcular!
-        //num_obj_inicial = (pagina_a_pintar * resultats_per_pagina) - resultats_per_pagina + 1;
-        //num_obj_final = (pagina_a_pintar * resultats_per_pagina);
-        //inici_res = num_obj_inicial - 1;
-        //final_res = num_obj_final;
-        //resultats = resultats.replace('[', '').replace(']', '');
-        //resultats = resultats.split(',');
-        //resultats = resultats.slice(inici_res, final_res); //(1,3) retorna les posicions 1 i 2 --> va de a a b-1
-        ////console.error(visualitzacio);
-        //$.get('displayResultatsPaginaView', {'resultats': resultats, 'visualitzacio': visualitzacio, 'zoom': zoom, 'pagina_a_pintar': pagina_a_pintar}, function(data){
-        //    html_resultats = data;
-        //    ultima_pagina.after(html_resultats);
-        //    inicialitza_js_resultats();
-        //});
+    //inicialment mostrem pag1 i precarreguem pag2 i pag3.
+    //next --> precarreguem pag_actual + 3
+    $("div#resultats .scrollable").scrollable({api: true});
 
+    $("div#resultats .next").click(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+        canvia_dades_paginacio('next', function () {
+            //tindrem sempre precarregades 2 pagines més de la que mirem
+            //si la pàgina que mirem no l'haviem visitat, pintem una pàgina més
+            pagina_actual = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10);
+            if (!($('.pagina' + pagina_actual).hasClass('visitada')) && !(pagina_actual == 1)) {
+                $('.pagina' + pagina_actual).addClass('visitada');
+                var ultima_pagina = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) + 1;
+                var pagina_a_pintar = ultima_pagina + 1;
+                if ($('.pagina' + pagina_a_pintar).length === 0) {
+                    pinta_pagina_seguent(ultima_pagina);
+                }
+            }
+        });
+        visualitzacio_fletxes();
     });
+
+    $("div#resultats .prev").click(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+        canvia_dades_paginacio('prev');
+        visualitzacio_fletxes();
+    });
+
 }
 
+function canvia_dades_paginacio(direccio, callback) {
+    //un cop hem fet scroll, cal canviar dades paginació
+
+    // canviem pagina actual
+    var pag;
+    if (direccio === 'next') {
+        pag = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) + 1;
+    } else {
+        pag = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) - 1;
+    }
+    //TODO: si ok sense guardar pàgina a rel, esborrar
+    //$('#pagina_actual').attr('rel', pag);
+    $('#pagina_actual').html(pag);
+    modifica_parametres_visualitzacio('pagina_actual', pag);
+
+    //canviem número de resultats
+    var num_resultats = $('#num_resultats').attr("value");
+    var resultats_per_pagina = consulta_parametre_visualitzacio('resultats_per_pagina');
+    var num_obj_inicial = parseInt((pag * resultats_per_pagina) - resultats_per_pagina + 1, 10);
+    var num_obj_final = parseInt((pag * resultats_per_pagina), 10);
+    if (num_obj_final > num_resultats) { num_obj_final = parseInt(num_resultats, 10); }
+
+    $('#arxiu_inicial').html(num_obj_inicial);
+    $('#arxiu_final').html(num_obj_final);
+
+    if (callback) { callback(); }
+}
 
 function zoom_visualitzacions() {
     // inicialitza la funcionalitat de zoom per les imatges
 
-    //TODO: sembla que quan apliquem un filtre, es llença per algun motiu l'event change de l'slider
-    valor_zoom = $('#slider-wrap-zoom').attr('rel');
-    var slider_zoom = $("#slider-wrap-zoom").slider({
+    var valor_zoom = $('#slider-wrap-zoom').attr('rel');
+    $("#slider-wrap-zoom").slider({
         value: (valor_zoom - 1) * 30,
         min: 0,
         max: 60,
         step: 30,
-        slide: function(event, ui) {
-            valor_zoom = parseInt(ui.value / 30) + 1; //[1,2,3]
+        slide: function (event, ui) {
+            valor_zoom = parseInt(ui.value / 30, 10) + 1; //[1,2,3]
             $('#slider-wrap-zoom').attr('rel', valor_zoom);
+            modifica_parametres_visualitzacio('zoom', valor_zoom);
+            resultats_per_pagina = calcula_resultats_per_pagina(valor_zoom);
+            modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
             pinta_resultats();
         }
     });
 
-    $("#zoom_menys").click(function(event) {
+    $("#zoom_menys").click(function (event) {
         event.preventDefault();
         event.stopImmediatePropagation();
-        visualitzacio = $('.link_visualitzacio.selected').attr('rel');
-        if (visualitzacio == 'imatge') {
-            var valor = $("#slider-wrap-zoom").slider("option", "value");
-            var step = $("#slider-wrap-zoom").slider("option", "step");
-            var min = $("#slider-wrap-zoom").slider("option", "min");
-            nou_valor = valor - step;
-            if (nou_valor >= min) {
-                //fem la cida aquí xq si posem event change, funciona malament xq salta quan no toca
-                $("#slider-wrap-zoom").slider("value", nou_valor);
-                valor_zoom = parseInt(nou_valor / step) + 1; //[1,2,3]
-                $('#slider-wrap-zoom').attr('rel', valor_zoom);
-                pinta_resultats();
-            }
+        event.stopPropagation();
+        var valor = $("#slider-wrap-zoom").slider("option", "value");
+        var step = $("#slider-wrap-zoom").slider("option", "step");
+        var min = $("#slider-wrap-zoom").slider("option", "min");
+        var nou_valor = valor - step;
+        if (nou_valor >= min) {
+            //fem la cida aquí xq si posem event change, funciona malament xq salta quan no toca
+            $("#slider-wrap-zoom").slider("value", nou_valor);
+            valor_zoom = parseInt(nou_valor / step, 10) + 1; //[1,2,3]
+            $('#slider-wrap-zoom').attr('rel', valor_zoom);
+            modifica_parametres_visualitzacio('zoom', valor_zoom);
+            resultats_per_pagina = calcula_resultats_per_pagina(valor_zoom);
+            modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
+            pinta_resultats();
         }
     });
 
-    $("#zoom_mes").click(function(event) {
+    $("#zoom_mes").click(function (event) {
         event.preventDefault();
         event.stopImmediatePropagation();
-        visualitzacio = $('.link_visualitzacio.selected').attr('rel');
-        if (visualitzacio == 'imatge') {
-            var valor = $("#slider-wrap-zoom").slider("option", "value");
-            var step = $("#slider-wrap-zoom").slider("option", "step");
-            var max = $("#slider-wrap-zoom").slider("option", "max");
-            nou_valor = valor + step;
-            if (nou_valor <= max) {
-                //fem la cida aquí xq si posem event change, funciona malament xq salta quan no toca
-                $("#slider-wrap-zoom").slider("value", nou_valor);
-                valor_zoom = parseInt(nou_valor / step) + 1; //[1,2,3]
-                $('#slider-wrap-zoom').attr('rel', valor_zoom);
-                pinta_resultats();
-            }
+        event.stopPropagation();
+        var valor = $("#slider-wrap-zoom").slider("option", "value");
+        var step = $("#slider-wrap-zoom").slider("option", "step");
+        var max = $("#slider-wrap-zoom").slider("option", "max");
+        var nou_valor = valor + step;
+        if (nou_valor <= max) {
+            //fem la cida aquí xq si posem event change, funciona malament xq salta quan no toca
+            $("#slider-wrap-zoom").slider("value", nou_valor);
+            valor_zoom = parseInt(nou_valor / step, 10) + 1; //[1,2,3]
+            $('#slider-wrap-zoom').attr('rel', valor_zoom);
+            modifica_parametres_visualitzacio('zoom', valor_zoom);
+            var resultats_per_pagina = calcula_resultats_per_pagina(valor_zoom);
+            modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
+            pinta_resultats();
         }
     });
 }
 
-
 function click_visualitzacions() {
     // inicialitza la funcionalitat per canviar el tipus de visualitzacio
 
-    $('a.link_visualitzacio').click(function(event){
-
-        //que no s'executi el click
+    $('a.link_visualitzacio').click(function (event) {
         event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
 
         //seleccionem la nova visualitzacio i deseleccionem la que estava marcada
-        $('#visualitzacio_resultats .selected').removeClass('selected')
-        $(this).addClass('selected')
+        $('#visualitzacio_resultats .selected').removeClass('selected');
+        $(this).addClass('selected');
 
         //repintem els resultats amb la nova visualitzacio
-        visualitzacio = $(this).attr('rel');
+        var visualitzacio = $(this).attr('rel');
+        modifica_parametres_visualitzacio('visualitzacio', visualitzacio);
+        var zoom = consulta_parametre_visualitzacio('zoom');
+        var resultats_per_pagina;
+        if (visualitzacio === 'fitxa_cerca') { resultats_per_pagina = 15; }
+        if (visualitzacio === 'fitxa_ampliada_cerca') { resultats_per_pagina = 1; }
+        if (visualitzacio === 'fitxa_ampliada_cerca_overlay') { resultats_per_pagina = 1; }
+        if (visualitzacio === 'imatge') {
+            resultats_per_pagina = calcula_resultats_per_pagina(zoom);
+        }
+        modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
 
         //deshabilitem/habilitem zoom
-        if (visualitzacio != 'imatge') {
-            var min = $( "#slider-wrap-zoom" ).slider("option", "min");
-            $( "#slider-wrap-zoom" ).slider("value", min);
-            $( "#slider-wrap-zoom" ).slider("disable");
-            $( "#zoom_resultats" ).addClass("hidden");
-            $( ".link_visualitzacio1" ).removeClass("hidden");
+        if (visualitzacio !== 'imatge') {
+            var min = $("#slider-wrap-zoom").slider("option", "min");
+            $("#slider-wrap-zoom").slider("value", min);
+            $("#slider-wrap-zoom").slider("disable");
+            $("#zoom_resultats").addClass("hidden");
+            $(".link_visualitzacio1").removeClass("hidden");
         } else {
-            $( "#slider-wrap-zoom" ).slider("enable");
-            $( "#zoom_resultats" ).removeClass("hidden");
-            $( "#zoom_resultats" ).addClass("selected");
+            $("#slider-wrap-zoom").slider("enable");
+            $("#zoom_resultats").removeClass("hidden");
+            $("#zoom_resultats").addClass("selected");
             $(".link_visualitzacio1").addClass("hidden");
         }
 
@@ -332,122 +402,118 @@ function click_visualitzacions() {
     });
 }
 
-
-function calculaPagActual() {
-    //retorna el número de pàgina que estem visualitzant
-
-    return $('#pagina_actual').attr('rel');
-}
-
-
 function pinta_resultats() {
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
 
     //1. consultem i calculem dades necessàries
-    querystring = consulta_querystring();
-    visualitzacio = $('.link_visualitzacio.selected').attr('rel');
-    zoom = $('#slider-wrap-zoom').attr('rel');
-
-    if (visualitzacio == 'fitxa_cerca') { resultats_per_pagina = 15; }
-    if (visualitzacio == 'fitxa_ampliada_cerca') { resultats_per_pagina = 1; }
-    if (visualitzacio == 'fitxa_ampliada_cerca_overlay') { resultats_per_pagina = 1; }
-    if (visualitzacio == 'imatge') {
-        resultats_per_pagina = 66;
-        if (zoom == 1) { resultats_per_pagina = 66; }
-        if (zoom == 2) { resultats_per_pagina = 45; }
-        if (zoom == 3) { resultats_per_pagina = 32; }
-    }
-    //TODO: potser caldria pintar la pàgina on estaria primer obj visible actualment amb la nova visualització
-    //TODO: de moment pintem els primers i ja està
-    pagina_a_mostrar = 1;
-
+    //TODO: potser caldria pintar la pàgina on estaria primer obj visible actualment amb la nova visualització (de moment pintem els primers)
+    modifica_parametres_visualitzacio('pagina_actual', 1);
 
     //2. cridem resultatsView per substituïr tota la zona de resultats
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
-    $.get('resultatsView', {querystring: querystring, pagina_actual: pagina_a_mostrar, resultats_per_pagina: resultats_per_pagina, visualitzacio: visualitzacio, zoom: zoom}, function(data){
-        html_resultats = data;
-        $('#zona_resultats').replaceWith(html_resultats);
+    $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
+        //TODO: si ok esborrar
+        //var html_resultats = data;
+        //$('#zona_resultats').replaceWith(html_resultats);
+        //inicialitza_js_resultats(crida_inicial=0);
+        replaceResultats(data, function () {
+            inicialitza_js_resultats(crida_inicial = 0);
+        });
     });
+}
 
-    inicialitza_js_resultats();
+function replaceResultats(html_resultats, callback) {
+    // reemplaça l'html de #zona_resultats amb el rebut i executa, si cal, la funció callback
+
+    $('#zona_resultats').replaceWith(html_resultats);
+
+    if (callback) { callback(); }
+}
+
+function clone(obj) {
+    if (null == obj || "object" != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
+    return copy;
+}
+
+function pinta_pagina_seguent(pagina, callback) {
+    //crida la vista que retorna l'html corresponent a la pàgina 'pagina'+1, i l'inserta després de 'pagina'
+
+    //si fem parametres_visualitzacio = ret_parametres_visualitzacio(); ho passa per referència i modifica valor original!
+    var params = clone(ret_parametres_visualitzacio());
+    params.pagina_actual = pagina + 1;
+
+
+    //afegim div i quan tinguem l'html, el reemplacem
+    var pagina_str = (pagina + 1).toString();
+    $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '">wait!<\/div>');
+
+
+    var parametres_visualitzacio_json = JSON.stringify(params);
+    $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
+        $('.pagina' + pagina_str).replaceWith(data);
+        inicialitza_js_resultats(crida_inicial = 0);
+    });
+    if (callback) { callback(); }
 
 }
 
-
-function activa_hover_imatges(){
+function activa_hover_imatges() {
     //configura el hover pels elements amb classe 'hoverable'.
     //Si es para el mouse prou temps (controlat per hoverIntent), aplica les funcions
     //indicades a la variable de configuració pels events onMouseOver i onMouseOut
 
-    $('#wrapper_resultats').before('<\div class="img_hover hidden"><\/div>');
-    var config = {
-         over: mostra_detall,    // function = onMouseOver callback (REQUIRED)
-         timeout: 50,           // number = milliseconds delay before onMouseOut
-         out: fes_res,           // function = onMouseOut callback (REQUIRED)
-    };
+    // {onMouseOver callback (REQUIRED), milliseconds delay before onMouseOut, onMouseOut callback (REQUIRED))
+    var config = { over: mostra_hover, timeout: 50, out: amaga_hover };
     $(".hoverable").hoverIntent(config);
 }
 
-
 function fes_res() {}
 
+function amaga_hover() {
+    // amaga l'element
+    var idobjecte = $(this).attr('id');
+    $('#img_hover_' + idobjecte).fadeOut('slow');
+}
 
-function mostra_detall() {
+function mostra_hover() {
     // mostra un div per sobre de l'element on s'ha fet hover, amb l'html resultant de cridar la vista 'genericView'
     // amb visualitzacio 'hover_cerca'
 
-    idobjecte = $(this).attr('id');
-    $('#wrapper_resultats').removeClass("hidden");
-    $.get('genericView', {idobjecte: idobjecte, visualitzacio: 'hover_cerca'}, function(data){
+    var idobjecte = $(this).attr('id');
+    var existeix_hover = $('#img_hover_' + idobjecte).length !== 0;
+    if (!existeix_hover) {
+        $('body').after('<\div class="img_hover hidden" id="img_hover_' + idobjecte + '"><\img src="spinner.gif" \/><\/div>');
+        reposicionar_hover(idobjecte);
+        $('#img_hover_' + idobjecte).fadeIn('slow');
+        $.get('genericView', {idobjecte: idobjecte, visualitzacio: 'hover_cerca'}, function (data) {
+            $('#img_hover_' + idobjecte).html(data);
+        });
+    } else {
+        reposicionar_hover(idobjecte);
+        $('#img_hover_' + idobjecte).fadeIn('slow');
+    }
+}
 
-        //afegim div amb el contingut a mostrar en fer over
-        $('div.img_hover').replaceWith('<\div class="img_hover hidden" id="img_hover_' + idobjecte + '">' + data + '<\/div>');
 
+jQuery.fn.center = function () {
+    //centra a la pantalla l'objecte sobre el que s'executa
 
-        //TODO: posicionem centrat sobre la miniatura
-        //height_hover = $('.img_hover').height();
-        //width_hover = $('.img_hover').width();
-        //left_imatge = $('#' + idobjecte).parent().position()['left'];
-        //top_imatge = $('#' + idobjecte).parent().position()['top'];
-        //width_imatge = $('#' + idobjecte).parent().width();
-        //height_imatge = $('#' + idobjecte).parent().height();
-        //center_height_imatge = top_imatge + (height_imatge/2);
-        //center_width_imatge = left_imatge + (width_imatge/2);
-        //top_hover = center_height_imatge - (height_hover/2);
-        //left_hover = center_width_imatge - (width_hover/2);
-        //$('div.img_hover').css({'top':top_hover, 'left':left_hover});
+    this.css("position","absolute");
+    this.css("top", (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop() + "px");
+    this.css("left", (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft() + "px");
+    return this;
+}
 
-        $('div.img_hover').fadeIn("slow");
+function reposicionar_hover(idobjecte){
+    //centra el div a la pantalla
 
-        //associem event al div per quan fem mouseout
-        $(".img_hover").mouseout(function() { $('div.img_hover').fadeOut("slow") });
-
-        //TODO: reposicionament si sortim de la part visible de la pantalla. Ara només ok en Firefox!
-        ////reposicionar si surt dels límits de la pantalla
-        //    //posicions x,y de la part visible en referència a la pàgina sencera:
-        //        min_h_screen = $(window).scrollTop();
-        //        max_h_screen = $(window).scrollTop() + $(window).height();
-        //        min_w_screen = $(window).scrollLeft();
-        //        max_w_screen = $(window).scrollLeft() + $(window).width();
-        //    //posicions x,y del div en referència a la pàgina sencera:
-        //        min_h_div = $('div.img_hover').offset()['top'];
-        //        max_h_div = $('div.img_hover').offset()['top'] + $('div.img_hover').height();
-        //        min_w_div = $('div.img_hover').offset()['left'];
-        //        max_w_div = $('div.img_hover').offset()['left'] + $('div.img_hover').width();
-        //    //alert('screen: ' + min_h_screen + ', ' + max_h_screen + ',' + min_w_screen + ', ' + max_w_screen)
-        //    //alert('div: ' + min_h_div + ', ' + max_h_div + ',' + min_w_div + ', ' + max_w_div)
-        //    if (min_h_div < min_h_screen) { top_hover = top_hover + (min_h_screen - min_h_div) + 30; }
-        //    if (max_h_div > max_h_screen) { top_hover = top_hover - (max_h_div - max_h_screen) - 30; }
-        //    if (min_w_div < min_w_screen) { left_hover = left_hover +  (min_w_screen - min_w_div) + 30; }
-        //    if (max_w_div > max_w_screen) { left_hover = left_hover - (max_w_div - max_w_screen) -30 }
-        //    //if (min_h_div < min_h_screen) { alert('surt per sobre'); }
-        //    //if (max_h_div > max_h_screen) { alert('surt per sota'); }
-        //    //if (min_w_div < min_w_screen) { alert('surt per lesquerra'); }
-        //    //if (max_w_div > max_w_screen) { alert('surt per la dreta'); }
-        //    $('div.img_hover').css({'top':top_hover, 'left':left_hover});
-
-    });
+    //TODO: caldria reposicionar millor xq no acaba de fer el que volem
+    $('#img_hover_' + idobjecte).center();
 }
 
 
@@ -525,158 +591,102 @@ function crea_scroll_vertical(identificador) {
     });
 }
 
-
-//==============================================================================================================
-//funcions bàsiques de manipulació de querystring
-//==============================================================================================================
-
-function consulta_querystring() {
-    //retorna el valor de querystring actual, guardat a input#querystring
-
-    return $('input#querystring').attr('value');
+function calcula_resultats_per_pagina(zoom) {
+    // segons el zoom aplicat, retorna el núemro de resultats a mostrar per pàgina
+    zoom = parseInt(zoom);
+    if (zoom === 1) { return 66; }
+    if (zoom === 2) { return 45; }
+    if (zoom === 3) { return 32; }
 }
-
-
-function actualitza_querystring(querystring_nou) {
-    //actualitza el valor de querystring actual, guardat a input#querystring, amb querystring_nou
-
-    $('input#querystring').attr('value', querystring_nou);
-}
-
-
-function querystring_to_diccionari(querystring) {
-    //donat un querystring de tipus rows=66&start=0&s=&f=Year:1991 retorna
-    //un diccionari de tipus {rows:66, start:0, s:, f:Year:1991}
-
-    aux = querystring.split('&');
-    diccionari = new Array();
-    for (i=0; i<aux.length; i++) {
-        parts = aux[i].split('=');
-        if (parts.length > 1) { diccionari[parts[0]] = parts[1]; }
-        else { diccionari[parts[0]] = ''; }
-    }
-    return diccionari;
-}
-
-
-function diccionari_to_querystring(diccionari) {
-    //donat un diccionari de tipus {rows:66, start:0, s:, f:Year:1991} retorna
-    //un querystring de tipus rows=66&start=0&s=&f=Year:1991
-
-    querystring = '';
-    nexe = '';
-    for (var i in diccionari) {
-        if (querystring != '')  {nexe = '&'}
-        querystring = querystring + nexe + i + '=' + diccionari[i];
-    }
-    return querystring;
-}
-
-
-function existeix_parametre_a_querystring(querystring, parametre) {
-    //retorna 1 si el paràmetre indicat existeix a querystring; 0 en cas contrari
-
-    if(querystring.indexOf(parametre + '=') == -1) { return 0; }
-    else { return 1; }
-}
-
-
-function modifica_parametre_a_querystring(querystring, param, nou_valor) {
-    //retorna un nou querystring, canviant el valor de 'param' per 'nou_valor'
-
-    dic = querystring_to_diccionari(querystring);
-    dic[param] = nou_valor;
-    return diccionari_to_querystring(dic);
-}
-
-
-function afegeix_parametre_a_querystring(querystring, param, valor) {
-    //retorna un nou querystring, afegint el paràmetre 'param' amb valor 'valor'
-
-    dic = querystring_to_diccionari(querystring);
-    dic[param] = valor;
-    return diccionari_to_querystring(dic);
-}
-
 
 
 //==============================================================================================================
 //funcions bàsiques de manipulació de filtres a querystring
 //==============================================================================================================
 
-function afegir_filtre_a_querystring(querystring, nou_filtre) {
-    // retorna querystring afegint el nou filtre
+function elimina_filtre_de_querystring(filtre) {
+    // elimina el filtre de querystring
 
-    dic = querystring_to_diccionari(querystring);
-    if ('f' in dic) {
-        if (dic['f'].indexOf(nou_filtre) == -1) {
-            nou_querystring = modifica_parametre_a_querystring(querystring, 'f', dic['f'] + ',' + nou_filtre);
+    var querystring = consulta_parametre_visualitzacio('querystring');
+    for (i = 0; i < querystring.f.length; i = i + 1) {
+        if (querystring.f[i] === filtre) {
+            querystring.f.splice(i, 1);
         }
-    } else {
-        nou_querystring = afegeix_parametre_a_querystring(querystring, 'f', nou_filtre);
     }
-    return nou_querystring
+    modifica_parametres_visualitzacio('querystring', querystring);
 }
 
+function afegir_filtre_a_querystring(filtre) {
+    // afegeix el nou filtre a querystring
 
-function elimina_tots_filtres_de_querystring(querystring, nom_filtre) {
-    // retorna querystring eliminant tots els nom_filtre de querystring
+    var querystring = consulta_parametre_visualitzacio('querystring');
+    if (existeix_filtre_a_querystring(filtre) === false) {
+        if (querystring.f === undefined) {
+            querystring.f = [filtre];
+        } else {
+            querystring.f.push(filtre);
+        }
+        modifica_parametres_visualitzacio('querystring', querystring);
+    }
+}
 
-    dic = querystring_to_diccionari(querystring);
-    filtres_aplicats = dic['f'];
-    nou_f = '';
+function existeix_filtre_a_querystring(filtre) {
+    // retorna true si el filtre ja existeix a querystring
 
-    //un filtre aplicat o més d'un
-    if (filtres_aplicats) {
-        if (filtres_aplicats.indexOf(',') < 0) { llista = [filtres_aplicats]; }
-        else { llista = filtres_aplicats.split(','); }
-
-        for (i=0; i<llista.length; i++) {
-            if (llista[i].indexOf(nom_filtre + ':') == -1) {
-                nou_f += llista[i] + ',';
+    var querystring = consulta_parametre_visualitzacio('querystring');
+    if (querystring.f !== undefined) {
+        for (i = 0; i < querystring.f.length; i = i + 1) {
+            if (querystring.f[i] === filtre) {
+                return true;
             }
         }
     }
+    return false;
+}
 
-    return modifica_parametre_a_querystring(querystring, 'f', nou_f.replace('f=', ''))
+function elimina_filtres_de_categoria(categoria) {
+    // elimina els filtres aplicats de la categoria indicada
+
+    var aux = [];
+    var querystring = consulta_parametre_visualitzacio('querystring');
+    for (i = 0; i < querystring.f.length; i = i + 1) {
+        if (querystring.f[i].indexOf(categoria + ':') === -1) {
+            aux.push(querystring.f[i]);
+        }
+    }
+    querystring.f = aux;
+    modifica_parametres_visualitzacio('querystring', querystring);
 }
 
 
-function neteja_querystring(querystring) {
-    // retorna el querystring 'net', sensecoses tipus ',,', '=,' etc. (que poden haver quedat en fer 'replace')
+//==============================================================================================================
+//funcions bàsiques parametres_visualitzacio
+//==============================================================================================================
 
-    querystring = querystring.replace(',,', ',').replace('=,', '=');
-    // eliminar 'f=' si no hi ha cap filtre aplicat, xq el servei retorna error
-    //endsWith() amb expressió regular
-    if (querystring.match('&f='+"$")=='&f=') {
-        querystring = querystring.replace('&f=', '');
-    }
-    // eliminar ',' al final
-    //endsWith() amb expressió regular
-    if (querystring.match(','+"$")==',') {
-        querystring = querystring.slice(0, -1);
-    }
+function modifica_parametres_visualitzacio(param, valor) {
+    // sobreescriu amb 'valor' el valor del paràmetre 'param' dels parametres_visualitzacio
 
-    return querystring;
+    var parametres_visualitzacio = $('#visual-portal-wrapper').get(0).parametres_visualitzacio;
+    parametres_visualitzacio[param] = valor;
+    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
 }
 
+function consulta_parametre_visualitzacio(param) {
+    // retorna l'objecte que representa els parametres de visualització
 
-function llista_filtres_aplicats(filtres) {
-    //donat un string tipus 'Collection:Dinners,Role:Curator' o 'Media:Video,Year:1992,Year:1992,Year:1992,Media:Image'
-    //retorna un array tipus [{'categoria': 'Collection', 'opcio': 'Dinners'}, {'categoria': 'Role', 'opcio': 'Curator'},... ]
+    var parametres_visualitzacio = $('#visual-portal-wrapper').get(0).parametres_visualitzacio;
+    return parametres_visualitzacio[param];
+}
 
-    llista_final = [];
+function ret_parametres_visualitzacio() {
+    // retorna l'objecte que representa els parametres de visualització
 
-    //un filtre aplicat o més d'un
-    if (filtres.indexOf(',') < 0) { llista = [filtres]; }
-    else { llista = filtres.split(','); }
+    return $('#visual-portal-wrapper').get(0).parametres_visualitzacio;
+}
 
-    for (i=0; i<llista.length; i++) {
-        categoria = llista[i].split(':')[0];
-        opcio = llista[i].split(':')[1];
-        llista_final.push({'categoria': categoria, 'opcio': opcio});
-    }
+function ret_parametres_visualitzacio_json() {
+    //
 
-    return llista_final;
-
+    var parametres_visualitzacio = $('#visual-portal-wrapper').get(0).parametres_visualitzacio;
+    return JSON.stringify(parametres_visualitzacio);
 }

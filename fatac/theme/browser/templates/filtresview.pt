@@ -1,6 +1,6 @@
 <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
 <!-- TODO: fer la crida on toqui! -->
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
         inicialitza_js_filtres();
     });
@@ -32,7 +32,7 @@
                                         <ul>
                                             <tal:rep tal:repeat="opcio filtre/opcions">
                                                 <li class="arial12c666666">
-                                                    <a tal:attributes="href string:cercaAjaxView; rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
+                                                    <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
                                                 </li>
                                             </tal:rep>
                                         <ul>

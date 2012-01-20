@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+    <body>
+        <metal:main fill-slot="main" i18n:domain="fatac.theme">
+
+            <!--
+            Info: Això és una vista demo per mostrar com fer servir la vista de resultats partint d'una llista de ids d'objectes.
+
+            Caldria fer una vista similar a aquesta, tenint en compte que:
+                - cal que pinti un div amb id "zona_resultats"
+                - cal que executi codi javascript que:
+                    -  declari un diccionari amb aquestes opcions:
+                        parametres_visualitzacio = {llista_ids: llista_ids, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
+                    - el guardi a l'element $('#visual-portal-wrapper'):
+                        $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+                    - cridi una vista per post, pasant-li el diccionari en format json:
+                        parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+                        $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                            $('div#zona_resultats').replaceWith(data);
+                        });
+            -->
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    llista_ids = ['Expedient_Ana_Mendieta', 'Expedient_Antoni_Tapies_Els_llocs_de_lart', 'Expedient_Merce_Cunningham', 'Expedient_Representacions_arabs_contemporanies_Lequacio_iraquiana', 'Expedient_Sobre_el_formalisme_i_els_seus_tipus', 'Expedient_Colleccio_2003', 'Expedient_Paul_Thek_El_mon_meravellos_que_no_va_arribar_a_ser', 'Expedient_maquettessansqualite_Travail_en_greve__Treball_en_vaga', 'Expedient_Antoni_Tapies_Colleccio', 'Expedient_Matt_Mullican_Mes_detalls_dun_univers_imaginari', 'Expedient_Reflexions_sobre_el_Museu_de_les_darreries_del_s_XX', 'Expedient_Pere_Noguera_Histories_darxiu', 'Expedient_Els_cartells_de_Tapies_i_lesfera_publica', 'Expedient_Colleccio_2007', 'Expedient_Tapies_Certeses_sentides', 'Expedient_Colleccio_2001', 'Expedient_Colleccio_2002', 'Expedient_Lygia_Clark', 'Expedient_El_cinema_calculat', 'Expedient_Brassai', 'Expedient_La_Fundacio_Antoni_Tapies_Proces_de_reforma', 'Expedient_Violencia_i_cultura', 'Expedient_La_primera_generacio_dones_i_video_19701975', 'Expedient_Tourismes_La_derrota_de_la_dissensio', 'Expedient_Craigie_Horsfield_La_ciutat_de_la_gent', 'Expedient_Colleccio_2004', 'Expedient_Seleccions_de_la_colleccio_permanent', 'Expedient_Antoni_Tapies_Colleccio_2', 'Expedient_Eulalia_Valldosera_Obres_19902000', 'Expedient_Jannis_Kounellis_La_Stanza_Vede', 'Expedient_Antoni_Tapies_Colleccio_3', 'Expedient_Homenatge_a_Picasso', 'Expedient_Bahman_Jalali', 'Expedient_Limen_El_centre_dart_com_a_institucio_total', 'Expedient_Inflamable', 'Expedient_Representacions_arabs_contemporanies_El_Caire', 'Expedient_Tapies_El_tatuatge_i_el_cos_Papers_cartons_i_collages', 'Expedient_Entusiasme', 'Expedient_James_Coleman', 'Expedient_Africa_explora_art_africa_del_segle_XX', 'Expedient_Videos_docasio', 'Expedient_Eva_Hesse_Trabajos_del_estudio', 'Expedient_LArmari_en_el_mar', 'Expedient_Registres_i_habits_Maquina_de_temps__imatges_despai', 'Expedient_En_lesperit_de_Fluxus', 'Expedient_Senyals_de_video_aspectes_de_la_videocreacio_espanyola_dels_darrers_anys', 'Expedient_El_somni_del_public_Theresa_Hak_Kyung_Cha', 'Expedient_Louise_Bourgeois', 'Expedient_Valentinos_Charalambous', 'Expedient_Victor_Burgin', 'Expedient_Tapies_Comunicacio_sobre_el_mur', 'Expedient_Representacions_arabs_contemporanies_Beirut__Liban', 'Expedient_Zona_B_als_marges_dEuropa', 'Expedient_Robert_Motherwell', 'Expedient_Amb_i_contra_el_cinema_Entorn_del_Maig_del_68', 'Expedient_Colleccio_2006', 'Expedient_Asger_Jorn', 'Expedient_Subcultura_i_homogeneitzacio', 'Expedient_Colleccio_2005', 'Expedient_Renee_Green_Ombres_i_senyals', 'Expedient_Franz_Kline_art_i_estructura_de_la_identitat', 'Expedient_Indivisuals', 'Expedient_Hans_Haacke_Obra_Social', 'Expedient_Alma_Matrix_Bracha_L_Ettinger_i_Ria_Verhaeghe', 'Expedient_Ibon_Aranberri_Organigrama', 'Expedient_Els_limits_del_museu', 'Expedient_Inflamable_II', 'Expedient_Expressionisme_abstracte', 'Expedient_Insideout_jardi_del_cambalache', 'Expedient_Krzysztof_Wodiczko_Instruments_projeccions_vehicles', 'Expedient_Anar_i_venir_de_Valcarcel_Medina', 'Expedient_Imaginaris_urbans_a_lAmerica_Llatina_arxius', 'Expedient_espai_imaginat_2009', 'Expedient_Projecte_Majories_Urbanes_19002025', 'Expedient_Dan_Graham', 'Expedient_Arxiu_FX_La_ciutat_buida', 'Expedient_Andy_Warhol_cinema_video_i_tv', 'Expedient_Lany_1967_lobjecte_dart_i_la_cosa_publica', 'Expedient_Jon_Mikel_Euba_Killem_all', 'Expedient_Jana_Sterbak_Velleitas', 'Expedient_Antoni_Tapies_Colleccio_4', 'Expedient_Antoni_Tapies_Colleccio_5', 'Expedient_Mangelos_num_1__9_12', 'Expedient_Fernando_Bryce', 'Expedient_Garry_Winogrand_ficcions_del_mon_real', 'Expedient_Arquitectures_del_discurs', 'Expedient_Helio_Oiticica', 'Expedient_Shoot_Shoot_Shoot', 'Expedient_Marcel_Broodthaers_Cinema', 'Expedient_Aspectes_de_ledicio_del_llibre_dart_contemporani', 'Expedient_Event_2009', 'Expedient_Obrim', 'Expedient_Chris_Marker', 'Expedient_Rainer_Oldendorf', 'Expedient_Sol_LeWitt_Dibuixos_19581992', 'Expedient_Steve_McQueen', 'Expedient_Francis_Picabia_Maquines_i_espanyoles', 'Expedient_Route_181_fragments_dun_viatge_a_PalestinaIsrael', 'Expedient_Anna_Maria_Maiolino', 'Expedient_Cultures_darxiu', 'Expedient_Focus_Quebec', 'Expedient_La_imatge_fantasma', 'Expedient_Sanja_Ivekovic_Alerta_general_Obres_19742007', 'Expedient_Sutures_i_fragments_Cossos_i_territoris_en_la_ciencia_ficcio', 'Expedient_Lansietat_de_les_influencies_Tapies_vist_per_Llena', 'Expedient_HansPeter_Feldmann_Exposicio_dart', 'Expedient_Mario_Merz', 'Expedient_Tapies_Escriptura_material_Llibres', 'Expedient_Laszlo_MoholyNagy_Fotogrames_19221943', 'Expedient_15_anys_19902005', 'Expedient_Art__Language_en_practica', 'Expedient_Tapies_Celebracio_de_la_mel', 'CulturalManagement', 'CulturalManagement_2', 'CulturalManagement_3', 'CulturalManagement_4', 'CulturalManagement_5', 'CulturalManagement_6', 'CulturalManagement_7', 'CulturalManagement_8', 'CulturalManagement_9', 'CulturalManagement_10', 'CulturalManagement_11', 'CulturalManagement_12', 'CulturalManagement_13', 'ProtectionPromotionAT_2', 'ProtectionPromotionAT_3', 'ProtectionPromotionAT_4', 'ProtectionPromotionAT_5', 'ProtectionPromotionAT_368']
+                    //llista_ids = ['Expedient_Ana_Mendieta', 'Expedient_Antoni_Tapies_Els_llocs_de_lart', 'Expedient_Merce_Cunningham', 'Expedient_Representacions_arabs_contemporanies_Lequacio_iraquiana', 'Expedient_Sobre_el_formalisme_i_els_seus_tipus', 'Expedient_Colleccio_2003', 'Expedient_Paul_Thek_El_mon_meravellos_que_no_va_arribar_a_ser', 'Expedient_maquettessansqualite_Travail_en_greve__Treball_en_vaga']
+                    //llista_ids = ['Expedient_Ana_Mendieta', 'Expedient_Antoni_Tapies_Els_llocs_de_lart']
+
+                    parametres_visualitzacio = {llista_ids: llista_ids, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
+
+                    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+                    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+                    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+                    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_resultats').replaceWith(data);
+                    });
+
+                });
+            </script>
+
+            <div id="zona_resultats">
+                <!-- -->
+            </div>
+
+        </metal:main>
+    </body>
+</html>

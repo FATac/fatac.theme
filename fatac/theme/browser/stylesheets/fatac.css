@@ -35,6 +35,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
+.georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
 
 
 /* ---------------------------------------------------------------------------- edit-bar */
@@ -247,7 +248,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 /* ---------------------------------------------------------------------------- resultats cerca */
 #resultats_cerca { min-height:480px; }
-#resultats_cerca #wrapper_resultats { margin: 0 28px; }
+#resultats_cerca #wrapper_resultats { margin: 0 28px; width:879px; }
 #resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 220px; }
 
 /* ---------------------------------------------------------------------------- genericview.pt */
@@ -259,19 +260,19 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 /* ---------------------------------------------------------------------------- genericview_imatge.pt */
 .genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
 .genericview_imatge.zoom_1 { width:70px; height:70px; }
-.genericview_imatge.zoom_2 { width:85px; height:85px; }
+.genericview_imatge.zoom_2 { width:85px; height:85px; margin:6px;}
 .genericview_imatge.zoom_3 { width:100px; height:100px; }
 .genericview_imatge.zoom_1 img { max-width:70px; max-height:70px; }
 .genericview_imatge.zoom_2 img { max-width:85px; max-height:85px; }
 .genericview_imatge.zoom_3 img { max-width:100px; max-height:100px; }
+.spinner img { margin-top:40%; }
 
-.img_hover { position:absolute; z-index:10000; background-color:#FFFFFF; padding:10px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_cerca.pt */
-.genericview_fitxa_cerca { float:left; width:31%; margin:1%; height:80px; background-color:#ececec; }
+.genericview_fitxa_cerca { float:left; width:274px; margin:1%; height:80px; background-color:#ececec; }
 .genericview_fitxa_cerca .thumbnail { float:left; width:32%; margin-right:2%; }
 .genericview_fitxa_cerca .thumbnail .miniatura_objecte { max-width:100%; max-height:100%; }
-.genericview_fitxa_cerca .dades { float:right; width:66%; }
+.genericview_fitxa_cerca .dades { float:right; width:66%; height:100%; overflow:hidden;}
 .genericview_fitxa_cerca .dades .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:10px; }
 
 /* --------------------------------------------------------------------- genericview_fitxa_ampliadacerca.pt */
@@ -283,3 +284,15 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 .genericview_fitxa_ampliada_cerca h1 { margin-top:0 !important; float:left; }
 .genericview_fitxa_ampliada_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:9px 0 0 5px; }
+
+/* --------------------------------------------------------------------- genericview_hover_cerca.pt */
+.genericview_hover_cerca { min-width:300px; min-height:300px; }
+/*.img_hover { z-index:10000; background-color:#FFFFFF; padding:10px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }*/
+.img_hover { background-color:#FFFFFF; padding:10px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
+
+/* ---------------------------------------------------------------------------- cerca_view.pt */
+.zona_filtres_inicial { text-align:center; height:173px }
+
+.zona_resultats_inicial { text-align:center; height:500px; }
+
+.zona_resultats_inicial img { margin-top:200px; }
