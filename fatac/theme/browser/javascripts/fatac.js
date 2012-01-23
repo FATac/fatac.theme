@@ -28,6 +28,7 @@ function inicialitza_js_resultats(crida_inicial) {
         click_visualitzacions();
         zoom_visualitzacions();
     }
+    jQuery(initializeMenus);
 }
 
 function visualitzacio_fletxes() {
@@ -450,7 +451,7 @@ function pinta_pagina_seguent(pagina, callback) {
 
     //afegim div i quan tinguem l'html, el reemplacem
     var pagina_str = (pagina + 1).toString();
-    $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '">wait!<\/div>');
+    $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '"><\img src="spinner.gif" \/><\/div>');
 
 
     var parametres_visualitzacio_json = JSON.stringify(params);

@@ -1,5 +1,10 @@
-<!-- TODO: esborrar aquest troç -->
 <!--
+crida demo1: http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_ampliada_cerca
+crida demo2: tb es pot cridar amb parametres_visualitzacio
+-->
+
+
+<!-- TODO: esborrar aquest troç -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -12,10 +17,9 @@
         <metal:content-core fill-slot="content-core">
             <metal:main-macro define-macro="content">
                 <div id="content" i18n:domain="fatac.theme">
--->
 <!-- /TODO: esborrar aquest troç -->
 
-<!-- TODO: esborrar aquest comentari: crida demo http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_ampliada_cerca -->
+
 
 <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
 <!-- TODO: fer la crida on toqui! -->
@@ -23,8 +27,8 @@
     scrolls_fitxa_ampliada_cerca();
 </script>
 
-<div class="genericview_fitxa_ampliada_cerca" tal:define="dades_objecte view/getDadesObjecte">
-    <tal:cond tal:condition="dades_objecte">
+<tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
+    <div class="genericview_fitxa_ampliada_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <div id="dades_left" class="slider_vertical">
             <div class="div_interior">
                 <h1 tal:content="dades_objecte/titol" /> <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
@@ -37,17 +41,45 @@
                 <img src="http://3.bp.blogspot.com/-011FO05kclE/TW-YKzZeXCI/AAAAAAAAAA0/_p6pdoEjaCY/no_music.png" />
             </div>
         </div>
-    </tal:cond>
-</div>
+    </div>
+</tal:rep>
 
+
+<!--
+            <tal:def tal:define="dades_json view/getView">
+                <tal:rep tal:repeat="section dades_json/sections">
+                    <tal:def tal:define="name section/name; data section/data">
+                        <div tal:attributes="id string:generic_${name}">
+                            SECCIÓ: <tal:repl tal:replace="name" /><br/>
+                            <tal:rep tal:repeat="item data">
+                                <tal:repl tal:replace="item" /><br/>
+-->
+<!-- if tipus text: name:value -->
+<!-- if tipus linkedobjects (nom + valor(jordi@id))... fer link que quan cliquin sobre nom vagin a veure l'ob amb id id -->
+<!-- if tipus media... -->
+<!--
+                            </tal:rep>
+                        </div>
+                    </tal:def>
+                </tal:rep>
+            </tal:def>
+-->
+<!--
+            <iframe tal:condition="view/getMedia" tal:attributes="src view/getMedia" transparency>
+                text alternatiu
+            </iframe>
+-->
+            <!-- TODO: tb funciona amb object, no sé quina forma és millor
+            <object tal:condition="view/getMedia" tal:attributes="data view/getMedia">
+                Warning: media could not be embedded.
+            </object>
+            -->
 
 
 <!-- TODO: esborrar aquest troç -->
-<!--
                 </div>
             </metal:main-macro>
         </metal:content-core>
     </body>
 </html>
--->
 <!-- /TODO: esborrar aquest troç -->

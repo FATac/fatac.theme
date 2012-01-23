@@ -6,13 +6,12 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
     <div class="genericview_fitxa_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <div class="thumbnail">
-                <img class="miniatura_objecte" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
+            <img class="miniatura_objecte" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
         </div>
         <div class="dades">
             <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
             <!-- TODO: destacar primer element i afegir link (on va link?) -->
             <tal:rep tal:repeat="dada dades_objecte/dades_header">
-                <!--<span tal:attributes="class string:${dada/tipus} georgia11c999999" tal:content="structure dada/valor" /><br/>-->
                 <tal:def tal:define="num repeat/dada/number; tipus dada/tipus; valor dada/valor; es_titol python: num==1 and 'georgia11c000000' or 'georgia11c999999'">
                     <span tal:attributes="class string:${tipus} ${es_titol}" tal:content="structure dada/valor" /><br/>
                 </tal:def>
