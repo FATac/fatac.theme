@@ -100,7 +100,8 @@
             </div>
         </div>
 
-        <div class="visualClear"><!--  --></div>
+        <!-- TODO: si aquí no calen comentaris, esborrar!
+        <div class="visualClear">< ! - -  - - ></div>
 
         <div id="accions_cerca" class="div_dotted_line">
             <dl class="llista_desplegable llista_desplegable_verd actionMenu deactivated">
@@ -120,6 +121,7 @@
                 </dd>
             </dl>
         </div>
+        -->
 
     </tal:co>
     <tal:co tal:condition="python: dades_paginacio['num_total_pagines'] <= 0">
