@@ -94,6 +94,7 @@ class funcionsCerca():
         if querystring:
             querystring_str = self.querystringToString(querystring)
             url = self.retServidorRest() + '/solr/search?' + querystring_str
+            self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
             read = self.llegeixJson(url)
             if read:
                 #quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
@@ -124,36 +125,27 @@ class funcionsCerca():
 
         return None
 
-    def modified_cachekey_ultims_documents(fn, self):
-        """ Cache the result based on 'querystring'
+    def modified_cachekey_tipus_ordenacio(fn, self, clau):
+        """ Cache the result based on
         TODO: de què la faig dependre? del temps?
         """
         return
 
-    @cache(modified_cachekey_ultims_documents)
-    def executaCercaUltimsDocuments(self):
-        """ Crida el servei rest que executa la cerca, i retorna el json resultant
+    #TODO: activar caché
+    @cache(modified_cachekey_tipus_ordenacio)
+    def retTipusOrdenacio(self, clau):
+        """ Crida el servei rest que retorna els tipus d'ordenació segons el
+        paràmetre rebut
         """
-        url = self.retServidorRest() + '/solr/search?start=0&rows=15&sort=creation desc'
+        url = self.retServidorRest() + '/solr/configurations'
         read = self.llegeixJson(url)
         if read:
-            return {'dades_json': json.loads(read)}
-        return None
-
-    def modified_cachekey_ultims_consultats(fn, self):
-        """ Cache the result based on 'querystring'
-        TODO: de què la faig dependre? del temps?
-        from time import time
-        time()//5       --> canvia cada 5 segons
-        """
+            dades_json = json.loads(read)
+            if 'data' in dades_json:
+                data = dades_json['data']
+                i = 0
+                while i < len(data):
+                    if data[i]['name'] == clau:
+                        return data[i]['sortFields']
+                    i += 1
         return
-
-    @cache(modified_cachekey_ultims_documents)
-    def executaCercaUltimsConsultats(self):
-        """ Crida el servei rest que executa la cerca, i retorna el json resultant
-        """
-        url = self.retServidorRest() + '/solr/search?start=0&rows=15&sort=lastView desc'
-        read = self.llegeixJson(url)
-        if read:
-            return {'dades_json': json.loads(read)}
-        return None

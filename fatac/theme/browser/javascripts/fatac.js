@@ -8,11 +8,13 @@ function inicialitza_js_filtres() {
     scroll_horitzontal_filtres();
     mostrar_i_amagar_filtres();
     click_filtres();
+    inicialitza_arrows();
 }
 
 function inicialitza_js_resultats(crida_inicial) {
     //activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal,
     //activa els diferents tipus de visualització i el zoom
+    //activa els menús desplegables
     //si crida_inicial === 1, carrega la pàgina 2 i 3
         //pinta_pagina_seguent torna a cridar aquesta funció amb crida_inicial = 0 per executar l'else
 
@@ -27,34 +29,62 @@ function inicialitza_js_resultats(crida_inicial) {
         scroll_horitzontal_resultats();
         click_visualitzacions();
         zoom_visualitzacions();
+        inicialitza_arrows();
     }
-    jQuery(initializeMenus);
+    //jQuery(initializeMenus);
+    inicialitza_menus_desplegables();
+}
+
+function inicialitza_menus_desplegables() {
+    // còpia de dropdown.js initializeMenus(), només pels desplegables que acabem de pintar
+
+    jQuery(document).mousedown(actionMenuDocumentMouseDown);
+
+    hideAllMenus();
+
+    // add toggle function to header links
+    jQuery('dl.actionMenu.actionMenuFatac dt.actionMenuHeader a')
+        .click(toggleMenuHandler)
+        .mouseover(actionMenuMouseOver);
+
+    // add hide function to all links in the dropdown, so the dropdown closes
+    // when any link is clicked
+    jQuery('dl.actionMenu.actionMenuFatac > dd.actionMenuContent').click(hideAllMenus);
+
+}
+
+function inicialitza_arrows() {
+    // quan es clica l'element amb classe arrow_bottom/arrow_top, plega o desplega el div amb id = attribut rel
+    // l'element amb classe 'arrow_top' o 'arrow_bottom' ha de tenir rel = 'id_zona_plegable' i classe = 'id_zona_plegable'
+
+    $(".arrow_bottom").click(function() {
+        var rel = $(this).attr('rel');
+        $('.' + rel + '.arrow_top').removeClass("hidden");
+        $(this).addClass("hidden");
+        $("div#" + rel).slideDown("slow");
+    });
+    $(".arrow_top").click(function() {
+        var rel = $(this).attr('rel');
+        $('.' + rel + '.arrow_bottom').removeClass("hidden");
+        $(this).addClass("hidden");
+        $("div#" + rel).slideUp("slow");
+    });
 }
 
 function visualitzacio_fletxes() {
     //
 
-    pagina_actual = consulta_parametre_visualitzacio("pagina_actual");
     pagina_final = parseInt($('#pagina_total').attr("rel"), 10);
-    if (pagina_actual === 1) {
+    if (pagina_final === 1) {
         $('.arrow_left_resultats').addClass('disabled');
-    } else {
-        $('.arrow_left_resultats').removeClass('disabled');
-    }
-    if (pagina_actual === pagina_final) {
         $('.arrow_right_resultats').addClass('disabled');
-    } else {
-        $('.arrow_right_resultats').removeClass('disabled');
     }
-
 }
 
-function scrolls_fitxa_ampliada_cerca() {
-    //inicialitza els scrolls verticals de la fitxa_ampliada
-
-    $(document).ready(function() {
-        crea_scroll_vertical('dades_left');
-        crea_scroll_vertical('dades_right');
+function crea_scrolls_verticals() {
+    //inicialitza els scrolls verticals per tots els elements amb classe slider_vertical
+    $('.slider_vertical').each(function () {
+        crea_scroll_vertical($(this).attr('id'));
     });
 }
 
@@ -170,16 +200,17 @@ function click_filtres() {
         event.stopImmediatePropagation();
         event.stopPropagation();
 
+        $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+
         //recalcular querystring
-            //si ja estava seleccionat, i no és 'Tots': l'eliminem de la cerca
+            //si ja estava seleccionat, i no és 'f_Tots': l'eliminem de la cerca
             //sino:
-                //si és 'Tots': eliminem els marcats de querystring_actual
-                //si no és 'Tots': afegim el nou filtre a querystring_actual
+                //si és 'f_Tots': eliminem els marcats de querystring_actual
+                //si no és 'f_Tots': afegim el nou filtre a querystring_actual
         var filtre_clicat = $(this).attr('rel');
-        var nom_filtre = $(this).attr('class').split(' ')[0]; //Year
-        //estava_seleccionat = $(this).hasClass('selected')
+        var nom_filtre = filtre_clicat.split(':')[0]; //Year
         var estava_seleccionat = existeix_filtre_a_querystring(filtre_clicat);
-        var es_opcio_tots = $(this).hasClass('Tots');
+        var es_opcio_tots = $(this).hasClass('f_Tots');
 
         if (estava_seleccionat && !es_opcio_tots) {
             elimina_filtre_de_querystring(filtre_clicat);
@@ -190,6 +221,9 @@ function click_filtres() {
                 afegir_filtre_a_querystring(filtre_clicat);
             }
         }
+
+        //seleccionar els filtres 'Tots' per defecte
+        marca_filtres_seleccionats();
 
         $.post('cercaAjaxView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function () {
 
@@ -208,7 +242,7 @@ function marca_filtres_seleccionats() {
     // afegeix selected als filtres, segons el que hi hagi indicat a querystring
 
     //marquem les opcions 'Tots' i desmarcarem si hi ha algun filtre aplicat de la categoria en concret
-    $('.Tots').addClass('selected');
+    $('.f_Tots').addClass('selected');
 
     var querystring = consulta_parametre_visualitzacio('querystring');
     var filtres_aplicats = querystring.f;
@@ -216,13 +250,13 @@ function marca_filtres_seleccionats() {
         for (i = 0; i < filtres_aplicats.length; i = i + 1) {
             categoria = filtres_aplicats[i].split(':')[0];
             var opcio = filtres_aplicats[i].split(':')[1];
-            $('.' + categoria + '.' + opcio).addClass('selected');
-            $('.' + categoria + '.Tots').removeClass('selected');
+            $('.c_' + categoria + '.f_' + opcio).addClass('selected');
+            $('.c_' + categoria + '.f_Tots').removeClass('selected');
             /* si conté espais, haurem posat class=str1 str2, i per seleccionar l'element en farem servri el primer */
             var classe_c = categoria.split(' ')[0];
             var classe_o = opcio.split(' ')[0];
-            $('.' + classe_c + '.' + classe_o).addClass('selected');
-            $('.' + classe_c + '.Tots').removeClass('selected');
+            $('.c_' + classe_c + '.f_' + classe_o).addClass('selected');
+            $('.c_' + classe_c + '.f_Tots').removeClass('selected');
         }
     }
 
@@ -245,9 +279,9 @@ function scroll_horitzontal_resultats() {
         event.stopImmediatePropagation();
         event.stopPropagation();
         canvia_dades_paginacio('next', function () {
-            //tindrem sempre precarregades 2 pagines més de la que mirem
+            //tindrem sempre precarregades 2 pàgines més de la que mirem
             //si la pàgina que mirem no l'haviem visitat, pintem una pàgina més
-            pagina_actual = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10);
+            var pagina_actual = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10);
             if (!($('.pagina' + pagina_actual).hasClass('visitada')) && !(pagina_actual == 1)) {
                 $('.pagina' + pagina_actual).addClass('visitada');
                 var ultima_pagina = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) + 1;
@@ -257,7 +291,6 @@ function scroll_horitzontal_resultats() {
                 }
             }
         });
-        visualitzacio_fletxes();
     });
 
     $("div#resultats .prev").click(function (event) {
@@ -265,7 +298,6 @@ function scroll_horitzontal_resultats() {
         event.stopImmediatePropagation();
         event.stopPropagation();
         canvia_dades_paginacio('prev');
-        visualitzacio_fletxes();
     });
 
 }
@@ -407,6 +439,8 @@ function pinta_resultats() {
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
 
+    $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+
     //1. consultem i calculem dades necessàries
     //TODO: potser caldria pintar la pàgina on estaria primer obj visible actualment amb la nova visualització (de moment pintem els primers)
     modifica_parametres_visualitzacio('pagina_actual', 1);
@@ -414,10 +448,6 @@ function pinta_resultats() {
     //2. cridem resultatsView per substituïr tota la zona de resultats
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
     $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
-        //TODO: si ok esborrar
-        //var html_resultats = data;
-        //$('#zona_resultats').replaceWith(html_resultats);
-        //inicialitza_js_resultats(crida_inicial=0);
         replaceResultats(data, function () {
             inicialitza_js_resultats(crida_inicial = 0);
         });
@@ -444,23 +474,26 @@ function clone(obj) {
 function pinta_pagina_seguent(pagina, callback) {
     //crida la vista que retorna l'html corresponent a la pàgina 'pagina'+1, i l'inserta després de 'pagina'
 
-    //si fem parametres_visualitzacio = ret_parametres_visualitzacio(); ho passa per referència i modifica valor original!
-    var params = clone(ret_parametres_visualitzacio());
-    params.pagina_actual = pagina + 1;
+    var total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+
+    if (pagina < total_pagines) {
+        //si fem parametres_visualitzacio = ret_parametres_visualitzacio(); ho passa per referència i modifica valor original!
+        var params = clone(ret_parametres_visualitzacio());
+        params.pagina_actual = pagina + 1;
 
 
-    //afegim div i quan tinguem l'html, el reemplacem
-    var pagina_str = (pagina + 1).toString();
-    $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '"><\img src="spinner.gif" \/><\/div>');
+        //afegim div i quan tinguem l'html, el reemplacem
+        var pagina_str = (pagina + 1).toString();
+        $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '"><\img class="spinner_pagina" src="spinner.gif" \/><\/div>');
 
 
-    var parametres_visualitzacio_json = JSON.stringify(params);
-    $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
-        $('.pagina' + pagina_str).replaceWith(data);
-        inicialitza_js_resultats(crida_inicial = 0);
-    });
-    if (callback) { callback(); }
-
+        var parametres_visualitzacio_json = JSON.stringify(params);
+        $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
+            $('.pagina' + pagina_str).replaceWith(data);
+            inicialitza_js_resultats(crida_inicial = 0);
+        });
+        if (callback) { callback(); }
+    }
 }
 
 function activa_hover_imatges() {

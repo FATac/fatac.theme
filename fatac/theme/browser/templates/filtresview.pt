@@ -6,9 +6,12 @@
     });
 </script>
 
-<div id="selector_filtres" class="div_dotted_line" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
+<div id="selector_filtres" class="div_dotted_line_bottom" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
 
-    <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
+    <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div, arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id dle div que plega o desplega, també indicat a rel -->
+    <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" />
+    <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" />
+
     <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
 
     <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres">
@@ -32,7 +35,7 @@
                                         <ul>
                                             <tal:rep tal:repeat="opcio filtre/opcions">
                                                 <li class="arial12c666666">
-                                                    <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:${filtre/nom_filtre} ${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
+                                                    <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:c_${filtre/nom_filtre} f_${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
                                                 </li>
                                             </tal:rep>
                                         <ul>

@@ -8,9 +8,13 @@
     <body>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
+            <input type="hidden" id="get_s" tal:attributes="value view/getS" />
+
             <script type="text/javascript">
                 $(document).ready(function() {
-                    querystring = {rows: 999999, s: $('input#s').attr('value')}
+                    get_s = $('input#get_s').attr('value');
+
+                    querystring = {rows: 999999, s: get_s};
 
                     parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
 
@@ -30,12 +34,18 @@
 
             </script>
 
-            <!-- TODO: potser cal posar precarrega o algo mentre carreguem... -->
+            <div class="div_dotted_line_doble_negre">
+                <h1 class="arial13c000000upp" i18n:translate="Cerca">Cerca</h1>
+                <tal:co tal:define="text_cerca view/getS" tal:condition="text_cerca">
+                    <span class="arial13c000000upp">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
+                    <span class="arial13c999999upp" tal:content="text_cerca" />
+                </tal:co>
+            </div>
+
             <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" /></div>
 
             <div class="visualClear"><!--  --></div>
 
-            <!-- TODO: potser cal posar precarrega o algo mentre carreguem... -->
             <div id="zona_resultats" class="zona_resultats_inicial"><img src="spinner.gif" /></div>
 
         </metal:main>

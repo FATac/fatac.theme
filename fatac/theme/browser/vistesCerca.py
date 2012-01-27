@@ -83,6 +83,42 @@ class resultatsView(BrowserView, funcionsCerca):
 
         return {'visualitzacio': parametres_visualitzacio['visualitzacio'], 'zoom': parametres_visualitzacio['zoom']}
 
+    def retTipusEntrada(self):
+        """ pel selector de tipus d'entrada, retorna una llista de diccionaris
+        amb les opcions possibles, formades per filtres 'class' amb resultats
+        """
+        resultat_cerca = self.executaCercaIdsOQuerystring()
+        opcions = []
+        if resultat_cerca:
+            if 'dades_json' in resultat_cerca and 'ordre_filtres' in resultat_cerca:
+                dades_json = resultat_cerca['dades_json']
+                if 'facet_counts' in dades_json and 'facet_fields' in dades_json['facet_counts']:
+                    filtres_json = dades_json['facet_counts']['facet_fields']
+                    if 'class' in filtres_json:
+                        classes = filtres_json['class']
+                        if len(classes) > 0:
+                            i = 0
+                            opcions = []
+                            while i < len(classes):
+                                num = classes[i + 1]
+                                if num > 0:
+                                    opcions.append(classes[i])
+                                i += 2
+        return opcions
+
+    def retTipusOrdre(self):
+        """ pel selector de tipus d'ordre, retorna una llista de diccionaris
+        amb les opcions possibles, consultades mitjançant un servei
+        """
+        parametres_visualitzacio = self.retParametresVisualitzacio()
+        conf = ''
+        if 'querystring' in parametres_visualitzacio:
+            if 'conf' in parametres_visualitzacio['querystring']:
+                conf = parametres_visualitzacio['querystring']['conf']
+        clau = conf == 'Explorar' and 'Explorar' or 'default'
+        self.context.plone_log('--------------------------------------------------------------------------- clau = ' + clau)
+        return self.retTipusOrdenacio(clau)
+
 
 class displayResultatsPaginaView(BrowserView, funcionsCerca):
     """ pinta l'html corresponent als resultats de la pàgina actual (sense
@@ -100,8 +136,6 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         """ retorna l'html dels resultats de la pàgina actual
         (només els resultats en sí, no els controls de visualització)
         """
-        #TODO: per testejar descomentar següent líni ai comentar la resta
-        #return self.retNumPagina()
         portal = getToolByName(self, 'portal_url')
         portal = portal.getPortalObject()
         html = portal.restrictedTraverse('@@genericView')()
@@ -115,6 +149,11 @@ class cercaInicialView(BrowserView, funcionsCerca):
     """
     __call__ = ViewPageTemplateFile('templates/cercaview.pt')
 
+    def getS(self):
+        """
+        """
+        return self.request.get('s')
+
 
 class cercaAjaxView(BrowserView, funcionsCerca):
     """ vista cridada des del codi js, que executa la cerca amb el querystring o
@@ -125,6 +164,12 @@ class cercaAjaxView(BrowserView, funcionsCerca):
         """ executa la cerca amb els paràmetre sde visualització actuals
         """
         return self.executaCercaIdsOQuerystring()
+
+
+class explorarView(BrowserView, funcionsCerca):
+    """
+    """
+    __call__ = ViewPageTemplateFile('templates/explorarview.pt')
 
 
 class demoView(BrowserView, funcionsCerca):

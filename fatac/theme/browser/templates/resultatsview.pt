@@ -8,11 +8,14 @@
             });
         </script>
 
-        <div id="ordre_y_tipus_cerca" class="div_dotted_line">
-            <img class="arrow_top" src="++resource++fatac.theme.images/ico_arrow_up.png" />
-            <span class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
+        <div id="ordre_y_tipus_cerca" class="div_dotted_line_bottom">
+            <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div, arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id dle div que plega o desplega, també indicat a rel -->
+            <img rel="zona_resultast" class="arrow_top zona_resultast" src="++resource++fatac.theme.images/ico_arrow_up.png" />
+            <img rel="zona_resultast" class="arrow_bottom zona_resultast hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" />
 
-            <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
+            <span id="visualitzacio_cerca" class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
+
+            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusEntrada" tal:condition="llista_tipus">
                 <dt class="actionMenuHeader">
                     <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
                         tipus d'entrada <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
@@ -20,13 +23,13 @@
                 </dt>
                 <dd class="actionMenuContent">
                     <ul>
-                        <li><a class="arial11c666666 selected" href="">document</a></li>
-                        <li><a class="arial11c666666" href="">expedient</a></li>
+                        <li tal:repeat="tipus llista_tipus">
+                            <a class="arial11c666666 selected" tal:content="tipus" href="" />
+                        </li>
                     </ul>
                 </dd>
             </dl>
-
-            <dl class="llista_desplegable llista_desplegable_gris actionMenu deactivated">
+            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_ordres view/retTipusOrdre" tal:condition="llista_ordres">
                 <dt class="actionMenuHeader">
                     <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
                         tipus d'ordre <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
@@ -34,25 +37,24 @@
                 </dt>
                 <dd class="actionMenuContent">
                     <ul>
-                        <li><a class="arial11c666666" href="">alfabètic</a></li>
-                        <li><a class="arial11c666666 selected" href="">cronològic</a></li>
-                        <li><a class="arial11c666666" href="">ordre original</a></li>
+                        <li tal:repeat="ordre llista_ordres">
+                            <a class="arial11c666666 selected" tal:content="ordre" href="" />
+                        </li>
                     </ul>
                 </dd>
             </dl>
-
         </div>
 
         <div class="visualClear"><!--  --></div>
 
-        <div>
+        <div id="zona_resultast">
 
-            <div id="resultats_cerca" class="div_dotted_line">
+            <div id="resultats_cerca" class="div_dotted_line_bottom">
                 <div id="resultats">
 
-                    <a class="arrow_left_resultats prev browse left disabled"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
+                    <a class="arrow_left_resultats prev browse left"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
 
-                    <a class="arrow_right_resultats next browse right disabled"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
+                    <a class="arrow_right_resultats next browse right"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
 
                     <div id="wrapper_resultats" class="scrollable">
                         <div class="pagines_resultats">

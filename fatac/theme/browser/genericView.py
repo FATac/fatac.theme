@@ -87,20 +87,58 @@ class genericView(BrowserView, funcionsCerca):
             for objecte in dades_json:
                 id_objecte = self.idobjectes[i]
                 i += 1
-                titol_objecte = self.getTitolObjecte(objecte['sections'])
+                if objecte and 'sections' in objecte:
+                    titol_objecte = self.getTitolObjecte(objecte['sections'])
 
-                dades = []
+                    dades = []
+                    for seccio in objecte['sections']:
+                        if seccio['name'] == 'header':
+                            for dada in seccio['data']:
+                                dades.append(self.llegirDada(dada))
+
+                    dades_objecte = {'id': id_objecte,
+                                     'titol': titol_objecte,
+                                     'classe': objecte['className'],
+                                     'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
+                                     'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
+                                     'dades_header': dades}
+                    resultat.append(dades_objecte)
+        return resultat
+
+    def dades_genericview_all_sections(self):
+        """
+        """
+        dades_json = self.retAllSections()  # retorna diccionari
+        resultat = []
+        if dades_json:
+            i = 0
+            for objecte in dades_json:
+                id_objecte = self.idobjectes[i]
+                i += 1
+                titol_objecte = self.getTitolObjecte(objecte['sections'])
+                titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
+                dades_seccions = {}
+                te_subcerca = False
+                string_cerca = ''
                 for seccio in objecte['sections']:
-                    if seccio['name'] == 'header':
+                    dades = []
+                    if 'data' in seccio:
                         for dada in seccio['data']:
                             dades.append(self.llegirDada(dada))
+                            if dada['type'] == 'search':
+                                te_subcerca = True
+                                string_cerca = self.llegirDada(dada)['valor']  # "CaseFile:Expedient_Sol_LeWitt_Dibuixos_19581992"
+                        dades_seccions[seccio['name']] = dades
 
                 dades_objecte = {'id': id_objecte,
                                  'titol': titol_objecte,
                                  'classe': objecte['className'],
                                  'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
                                  'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
-                                 'dades_header': dades}
+                                 'dades_seccions': dades_seccions,
+                                 'te_subcerca': te_subcerca,
+                                 'string_cerca': string_cerca,
+                                 'titol_zona_resultats': titol_zona_resultats}
                 resultat.append(dades_objecte)
         return resultat
 
@@ -162,6 +200,28 @@ class genericView(BrowserView, funcionsCerca):
         return
 
 
+    def retAllSections(self):
+        """
+        """
+        if self.idobjectes:
+            import string
+            idobjectes_str = string.join(self.idobjectes, ',')
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content'
+            #TODO: esborrar quan acabem de testejar
+            import time
+            t0 = time.time()
+            self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
+            request = urllib2.urlopen(url)
+            read = request.read()
+            self.context.plone_log('Fi crida  %.3f segons (%d)Kb' % (time.time() - t0, len(read) / 1024))
+            if read:
+                dades_json = json.loads(read)  # retorna diccionari
+                #si demanem més d'un id concatenats, retorna array de diccionaris; sinó, retorna només diccionari
+                if len(self.idobjectes) == 1:
+                    dades_json = [dades_json]
+                return dades_json
+        return
+
     #===========================================================================
     # funcions per llegir tipus de dades de json
     #===========================================================================
@@ -169,19 +229,62 @@ class genericView(BrowserView, funcionsCerca):
     def llegirDada(self, dada):
         """
         """
-        #if dada['type'] == 'text':
-        #   return {'nom': dada['name'], 'tipus': dada['type'], 'valor': self.getTextType(dada)}
+        nom = 'name' in dada and dada['name'] or ''
+        tipus = 'type' in dada and dada['type'] or ''
         valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
-        return {'selfm': dada['name'], 'tipus': dada['type'], 'valor': valor}
+        return {'nom': nom, 'tipus': tipus, 'valor': valor}
 
     def get_text_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'text', u'name': u'Title',
         u'value': [u'Rainer Oldendorf']} retorna un string format pels strings
         dins el 'value' concatenats amb ', '
         """
-        titol = ''
+        text = ''
         for i in dades['value']:
-            if titol != '':
-                titol += ', '
-            titol += i
-        return titol
+            if text != '':
+                text += ', '
+            text += i
+        return text
+
+    def get_search_dada(self, dades):
+        """ donat un diccionari de tipus {u'type': u'search', u'name': u'',
+        u'value': ["CaseFile:Expedient_Sol_LeWitt_Dibuixos_19581992"]} cal
+        realitzar la cerca amb els filtre indicats i pintar-ne els resultats al pt
+        """
+        #TODO: quin tipus de dades és??
+        text = ''
+        for i in dades['value']:
+            if text != '':
+                text += ','  # sense espai, per fer la cerca
+            text += i
+        return text
+
+    def get_linkedObjects_dada(self, dades):
+        """
+        """
+        #TODO: quin tipus de dades és??
+        return dades['value']
+
+    def get_objects_dada(self, dades):
+        """
+        """
+        #TODO: quin tipus de dades és??
+        return dades['value']
+
+    def get_media_dada(self, dades):
+        """
+        """
+        #TODO: quin tipus de dades és??
+        return dades['value']
+
+    def get_date_dada(self, dades):
+        """
+        """
+        #TODO: quin tipus de dades és??
+        return dades['value']
+
+    def get_counter_dada(self, dades):
+        """
+        """
+        #TODO: quin tipus de dades és??
+        return dades['value']

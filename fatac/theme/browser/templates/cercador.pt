@@ -13,6 +13,6 @@
             <img i18n:attributes="alt Search" src="++resource++fatac.theme.images/ico_search.png" />
         </button>
     </form>
-    <a href="#" i18n:translate="" class="arial15c666666">Explorar</a>
+    <a tal:attributes="href string:${view/navigation_root_url}/explorar" i18n:translate="" class="arial15c666666">Explorar</a>
 
 </div>

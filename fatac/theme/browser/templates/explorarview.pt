@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+    <body>
+        <metal:main fill-slot="main" i18n:domain="fatac.theme">
+
+            <div class="div_dotted_line_doble_negre">
+                <h1 class="arial13c000000upp" i18n:translate="">Explorar</h1>
+            </div>
+
+            <div class="div_dotted_line_bottom arial12c666666">
+                <br/><span class="arial20c333333bold" i18n:translate="">Explora la nostra base de dades per:</span>
+                <br/><br/>
+                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person">Agentes</a> |
+                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity">Eventos</a> |
+                <a href="" class="arial15c666666 explorar_classe" rel="class:Collection">Colección</a>
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+
+                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: ['class:Person']};
+
+                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'fitxa_cerca', zoom: '1', pagina_actual: 1, resultats_per_pagina: 45};
+
+                    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+                    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+                    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+                    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_resultats').replaceWith(data);
+                    });
+                });
+
+                $('.explorar_classe').click(function(event) {
+
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    event.stopPropagation();
+
+                    $('.explorar_classe.selected').removeClass('selected');
+                    $(this).addClass('selected');
+
+                    $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+
+                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: [$(this).attr('rel')]};
+
+                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'fitxa_cerca', zoom: '1', pagina_actual: 1, resultats_per_pagina: 45};
+
+                    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+                    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+                    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+                    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_resultats').replaceWith(data);
+                    });
+
+                });
+            </script>
+
+            <div id="zona_resultats">
+                <!-- -->
+            </div>
+
+        </metal:main>
+    </body>
+</html>
