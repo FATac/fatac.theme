@@ -70,7 +70,28 @@ class genericView(BrowserView, funcionsCerca):
         elif self.visualitzacio == 'fitxa_ampliada_cerca_overlay':
             return ViewPageTemplateFile('templates/fitxa_ampliada_cerca_overlay.pt')(self)
         else:
-            return ViewPageTemplateFile('templates/genericview.pt')(self)
+            #return ViewPageTemplateFile('templates/genericview.pt')(self)
+
+            # http://localhost:8084/Plone/genericView?idobjecte=Angela_RicciLucchi
+            # self.request.REQUEST.environ['QUERY_STRING'][10:] --> Angela_RicciLucchi
+            # value = self.context.portal_catalog.searchResults(portal_type='fata.ghost', id=idobject) --> ok, existeix!
+            # obtenim id de la url
+            idobject = self.request.REQUEST.environ['QUERY_STRING'][10:]
+            # http://ec2-107-20-10-248.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/resource/Angela_RicciLucchi/exists
+            # Mirem si l'objecte existeix al servidor REST i cal crear-lo a Plone (si no s'ha creat amb anterioritat)
+            crear_objecte = self.existObjectRest(idobject)
+            if crear_objecte == 'true':
+                # Busquem si ja estava creat al Plone, sino el creem
+                value = self.context.portal_catalog.searchResults(portal_type='fatac.dummy', id=idobject)
+                # Si no existeix el creem fantasma per afegir commentaris
+                if not value:
+                    _createObjectByType('fatac.dummy', self.context, idobject)
+                # Retornem la vista de l'objecte que ja permet afegir els commentaris
+                return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url()+'/'+idobject)
+            else:
+                # L'objecte que es passa per string no s'ha de crear o no existeix, retornem ERROR
+                logging.exception("Can't create object in Plone, the ID %s doesn't exist in REST server", idobject)
+                raise AttributeError
 
 
     #===========================================================================

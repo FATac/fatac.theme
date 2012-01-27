@@ -149,3 +149,13 @@ class funcionsCerca():
                         return data[i]['sortFields']
                     i += 1
         return
+
+    def existObjectRest(self, querystring):
+        """ Crida al servei rest que ens diu si l'objecte existeix o no, per després crear-lo al plone
+        """
+        value = 'false'
+        url = self.retServidorRest() + '/resource/' + querystring + '/exists'
+        dades = self.llegeixJson(url)
+        if dades:
+            value = json.loads(dades)
+        return value
