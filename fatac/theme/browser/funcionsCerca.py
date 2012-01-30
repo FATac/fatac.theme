@@ -132,7 +132,7 @@ class funcionsCerca():
         return
 
     #TODO: activar caché
-    @cache(modified_cachekey_tipus_ordenacio)
+    #@cache(modified_cachekey_tipus_ordenacio)
     def retTipusOrdenacio(self, clau):
         """ Crida el servei rest que retorna els tipus d'ordenació segons el
         paràmetre rebut

@@ -11,7 +11,8 @@ function inicialitza_js_filtres() {
     inicialitza_arrows();
 }
 
-function inicialitza_js_resultats(crida_inicial) {
+//TODO: esborrar si nova ok!
+function inicialitza_js_resultatsOld(crida_inicial) {
     //activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal,
     //activa els diferents tipus de visualització i el zoom
     //activa els menús desplegables
@@ -29,10 +30,52 @@ function inicialitza_js_resultats(crida_inicial) {
         scroll_horitzontal_resultats();
         click_visualitzacions();
         zoom_visualitzacions();
+        selector_ordenacio();
         inicialitza_arrows();
     }
-    //jQuery(initializeMenus);
     inicialitza_menus_desplegables();
+
+}
+
+function inicialitza_js_resultats() {
+    //carrega les pàgines 2 i 3
+    //activa els controls pels diferents tipus de visualització i el zoom
+    //activa els menús desplegables d'ordre i tipus d'entrada
+    //inicialitza el js relacionat amb les pàgines (inicialitza_js_pagines)
+
+    pinta_pagina_seguent(1, function () {
+        pinta_pagina_seguent(2);
+    });
+    click_visualitzacions();
+    zoom_visualitzacions();
+    selector_ordenacio();
+    inicialitza_arrows();
+    inicialitza_menus_desplegables();
+    inicialitza_js_pagines();
+}
+
+function inicialitza_js_pagines() {
+    // activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal i la visualització de les fletxes
+
+    activa_hover_imatges();
+    visualitzacio_fletxes();
+    scroll_horitzontal_resultats();
+}
+
+function selector_ordenacio() {
+    //inicialitza el selector 'Ordre' per tal que quan es clica una opció, es refaci la cerca
+
+    $('.tipus_ordre').click(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+        //console.error("modifica_parametres_visualitzacio('sort', " + $(this).attr('rel') + ")");
+        //modifica_parametres_visualitzacio('sort', $(this).attr('rel'));
+        querystring = consulta_parametre_visualitzacio('querystring');
+        querystring['sort'] = $(this).attr('rel');
+        modifica_parametres_visualitzacio('querystring', querystring);
+        pinta_resultats();
+    });
 }
 
 function inicialitza_menus_desplegables() {
@@ -435,6 +478,7 @@ function click_visualitzacions() {
     });
 }
 
+//TODO: caldria fer que només canvii la zona de les pàgines, no els controls de paginació i visualització, ordre, etc.
 function pinta_resultats() {
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
@@ -448,9 +492,7 @@ function pinta_resultats() {
     //2. cridem resultatsView per substituïr tota la zona de resultats
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
     $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
-        replaceResultats(data, function () {
-            inicialitza_js_resultats(crida_inicial = 0);
-        });
+        replaceResultats(data);
     });
 }
 
@@ -490,7 +532,7 @@ function pinta_pagina_seguent(pagina, callback) {
         var parametres_visualitzacio_json = JSON.stringify(params);
         $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
             $('.pagina' + pagina_str).replaceWith(data);
-            inicialitza_js_resultats(crida_inicial = 0);
+            inicialitza_js_pagines();
         });
         if (callback) { callback(); }
     }

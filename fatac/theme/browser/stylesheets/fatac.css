@@ -43,6 +43,8 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
 
+ .font_normal { font-weight: normal !important; }
+
 img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
 

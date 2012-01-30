@@ -104,20 +104,35 @@ class resultatsView(BrowserView, funcionsCerca):
                                 if num > 0:
                                     opcions.append(classes[i])
                                 i += 2
-        return opcions
+        opcio_inicial = ''
+        altres_opcions = []
+        if len(opcions) > 0:
+            opcio_inicial = opcions[0]
+        if len(opcions) > 1:
+            altres_opcions = opcions[1:len(opcions)]
+        return {'opcio_selec': opcio_inicial, 'altres_opcions': altres_opcions}
 
     def retTipusOrdre(self):
-        """ pel selector de tipus d'ordre, retorna una llista de diccionaris
-        amb les opcions possibles, consultades mitjançant un servei
+        """ pel selector de tipus d'ordre, retorna un diccionari amb la opció
+        seleccionada i una llista amb la resta d'opcions possibles
         """
         parametres_visualitzacio = self.retParametresVisualitzacio()
-        conf = ''
         if 'querystring' in parametres_visualitzacio:
+            conf = ''
             if 'conf' in parametres_visualitzacio['querystring']:
                 conf = parametres_visualitzacio['querystring']['conf']
-        clau = conf == 'Explorar' and 'Explorar' or 'default'
-        self.context.plone_log('--------------------------------------------------------------------------- clau = ' + clau)
-        return self.retTipusOrdenacio(clau)
+            clau = conf == 'Explorar' and 'Explorar' or 'default'
+            altres_opcions = self.retTipusOrdenacio(clau)
+            opcio_selec = 'sort' in parametres_visualitzacio['querystring'] and parametres_visualitzacio['querystring']['sort'] or (len(altres_opcions) > 0 and altres_opcions[0] or '')
+            if opcio_selec in altres_opcions:
+                altres_opcions.remove(opcio_selec)
+            llista_altres_opcions = []
+            for o in altres_opcions:
+                llista_altres_opcions.append({'opcio': o, 'nom': o.split('+')[0]})
+
+            return {'opcio_selec': {'opcio': opcio_selec, 'nom': opcio_selec.split('+')[0]}, 'altres_opcions': llista_altres_opcions}
+        else:
+            return {'opcio_selec': '', 'altres_opcions': []}
 
 
 class displayResultatsPaginaView(BrowserView, funcionsCerca):

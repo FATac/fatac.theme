@@ -4,7 +4,7 @@
     <tal:co tal:condition="python: dades_paginacio['num_total_pagines'] > 0">
         <script type="text/javascript">
             $(document).ready(function() {
-                inicialitza_js_resultats(crida_inicial=1);
+                inicialitza_js_resultats();
             });
         </script>
 
@@ -15,34 +15,48 @@
 
             <span id="visualitzacio_cerca" class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
 
-            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusEntrada" tal:condition="llista_tipus">
+            <!--
+            TODO: volen que el filtre class en comptes de que estigui amb la resta de filtres, estigui aquí al desplegable.
+            De moment no ho faig per falta de temps (implica tocar força el jquery) i xq perden funcionalitats (seleccionar més d'una classe alhora)
+            -->
+            <!--
+            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusEntrada" tal:condition="llista_tipus/opcio_selec">
                 <dt class="actionMenuHeader">
-                    <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
-                        tipus d'entrada <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
+                    <a i18n:attributes="title mes_opcions" href="" class="arial11c666666" tal:condition="llista_tipus/altres_opcions">
+                        <span i18n:translate="">Tipus d'entrada:</span> <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec" /> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
                     </a>
+                    <tal:co tal:condition="not: llista_tipus/altres_opcions">
+                        <span class="arial11c666666 font_normal" i18n:translate="">Tipus d'entrada:</span> <span class="arial11c666666 font_normal" id="tipus_entrada" tal:content="llista_tipus/opcio_selec" />
+                    </tal:co>
                 </dt>
-                <dd class="actionMenuContent">
+                <dd class="actionMenuContent" tal:condition="llista_tipus/altres_opcions">
                     <ul>
-                        <li tal:repeat="tipus llista_tipus">
+                        <li tal:repeat="tipus llista_tipus/altres_opcions">
                             <a class="arial11c666666 selected" tal:content="tipus" href="" />
                         </li>
                     </ul>
                 </dd>
             </dl>
-            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_ordres view/retTipusOrdre" tal:condition="llista_ordres">
+            -->
+
+            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusOrdre" tal:condition="llista_tipus/opcio_selec">
                 <dt class="actionMenuHeader">
-                    <a i18n:attributes="title mes_opcions" href="" class="arial11c666666">
-                        tipus d'ordre <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
+                    <a i18n:attributes="title mes_opcions" href="" class="arial11c666666" tal:condition="llista_tipus/altres_opcions">
+                        <span i18n:translate="">Ordre:</span> <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" /> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
                     </a>
+                    <tal:co tal:condition="not: llista_tipus/altres_opcions">
+                        <span class="arial11c666666 font_normal" i18n:translate="">Ordre:</span> <span class="arial11c666666 font_normal" id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" />
+                    </tal:co>
                 </dt>
-                <dd class="actionMenuContent">
+                <dd class="actionMenuContent" tal:condition="llista_tipus/altres_opcions">
                     <ul>
-                        <li tal:repeat="ordre llista_ordres">
-                            <a class="arial11c666666 selected" tal:content="ordre" href="" />
+                        <li tal:repeat="tipus llista_tipus/altres_opcions">
+                            <a class="arial11c666666 tipus_ordre" tal:attributes="rel tipus/opcio" tal:content="tipus/nom" href="" />
                         </li>
                     </ul>
                 </dd>
             </dl>
+
         </div>
 
         <div class="visualClear"><!--  --></div>
@@ -70,13 +84,9 @@
             <div id="controls_resultats">
 
                 <div id="dades_paginacio_cerca">
-                    <!-- TODO: es correcte? o en compte sde guardar-ho a input hidden, millor a $('#visual-portal-wrapper').get(0).num_resultats??? Com??? -->
                     <input id="num_resultats" type="hidden" tal:attributes="value dades_paginacio/num_total_obj" />
 
                     <span i18n:translate="pagina" id="pagina">pàgina</span>:
-                    <!-- TODO: si ok sense guardar pagina_actual a rel, esborrar
-                    <span id="pagina_actual" tal:attributes="rel dades_paginacio/pagina_actual" tal:content="dades_paginacio/pagina_actual">1</span>
-                    -->
                     <span id="pagina_actual" tal:content="dades_paginacio/pagina_actual">1</span>
                     <span i18n:translate="de">de</span>
                     <span id="pagina_total" tal:attributes="rel dades_paginacio/num_total_pagines" tal:content="dades_paginacio/num_total_pagines">5</span>
@@ -128,7 +138,7 @@
     </tal:co>
     <tal:co tal:condition="python: dades_paginacio['num_total_pagines'] <= 0">
         <div class="div_dotted_line">
-            No s'han trobat resultats!
+            <span i18n:translate="">0 resultats</span>
         </div>
     </tal:co>
 </div>
