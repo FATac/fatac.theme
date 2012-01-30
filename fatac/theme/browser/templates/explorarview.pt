@@ -17,7 +17,7 @@
                 <br/><br/>
                 <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person">Agentes</a> |
                 <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity">Eventos</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:Collection">Colección</a>
+                <a href="" class="arial15c666666 explorar_classe" rel="ObjectType:Collection">Colección</a>
             </div>
 
             <script type="text/javascript">
