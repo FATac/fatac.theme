@@ -5,6 +5,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 import urllib2
 import json
+from Products.CMFPlone.utils import _createObjectByType
+import logging
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -87,12 +89,11 @@ class genericView(BrowserView, funcionsCerca):
                 if not value:
                     _createObjectByType('fatac.dummy', self.context, idobject)
                 # Retornem la vista de l'objecte que ja permet afegir els commentaris
-                return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url()+'/'+idobject)
+                return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url() + '/' + idobject)
             else:
                 # L'objecte que es passa per string no s'ha de crear o no existeix, retornem ERROR
                 logging.exception("Can't create object in Plone, the ID %s doesn't exist in REST server", idobject)
                 raise AttributeError
-
 
     #===========================================================================
     # funcions que retornen les dades necessàries per pintar cada vista
@@ -163,7 +164,6 @@ class genericView(BrowserView, funcionsCerca):
                 resultat.append(dades_objecte)
         return resultat
 
-
     #===========================================================================
     # funcions auxiliars
     #===========================================================================
@@ -193,7 +193,6 @@ class genericView(BrowserView, funcionsCerca):
         url = self.servidorRest + '/objects/' + self.idobjecte + '/media'
         return url
 
-
     #===========================================================================
     # funcions per cridar serveis
     #===========================================================================
@@ -219,7 +218,6 @@ class genericView(BrowserView, funcionsCerca):
                     dades_json = [dades_json]
                 return dades_json
         return
-
 
     def retAllSections(self):
         """
