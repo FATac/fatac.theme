@@ -119,20 +119,19 @@ class resultatsView(BrowserView, funcionsCerca):
         parametres_visualitzacio = self.retParametresVisualitzacio()
         if 'querystring' in parametres_visualitzacio:
             conf = ''
+            llista_altres_opcions = []
             if 'conf' in parametres_visualitzacio['querystring']:
                 conf = parametres_visualitzacio['querystring']['conf']
             clau = conf == 'Explorar' and 'Explorar' or 'default'
             altres_opcions = self.retTipusOrdenacio(clau)
-            opcio_selec = 'sort' in parametres_visualitzacio['querystring'] and parametres_visualitzacio['querystring']['sort'] or (len(altres_opcions) > 0 and altres_opcions[0] or '')
-            if opcio_selec in altres_opcions:
-                altres_opcions.remove(opcio_selec)
-            llista_altres_opcions = []
-            for o in altres_opcions:
-                llista_altres_opcions.append({'opcio': o, 'nom': o.split('+')[0]})
-
-            return {'opcio_selec': {'opcio': opcio_selec, 'nom': opcio_selec.split('+')[0]}, 'altres_opcions': llista_altres_opcions}
-        else:
-            return {'opcio_selec': '', 'altres_opcions': []}
+            if altres_opcions:
+                opcio_selec = 'sort' in parametres_visualitzacio['querystring'] and parametres_visualitzacio['querystring']['sort'] or (len(altres_opcions) > 0 and altres_opcions[0] or '')
+                if opcio_selec in altres_opcions:
+                    altres_opcions.remove(opcio_selec)
+                for o in altres_opcions:
+                    llista_altres_opcions.append({'opcio': o, 'nom': o.split('+')[0]})
+                return {'opcio_selec': {'opcio': opcio_selec, 'nom': opcio_selec.split('+')[0]}, 'altres_opcions': llista_altres_opcions}
+        return {'opcio_selec': '', 'altres_opcions': []}
 
 
 class displayResultatsPaginaView(BrowserView, funcionsCerca):

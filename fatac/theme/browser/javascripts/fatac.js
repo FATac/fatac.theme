@@ -11,32 +11,6 @@ function inicialitza_js_filtres() {
     inicialitza_arrows();
 }
 
-//TODO: esborrar si nova ok!
-function inicialitza_js_resultatsOld(crida_inicial) {
-    //activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal,
-    //activa els diferents tipus de visualització i el zoom
-    //activa els menús desplegables
-    //si crida_inicial === 1, carrega la pàgina 2 i 3
-        //pinta_pagina_seguent torna a cridar aquesta funció amb crida_inicial = 0 per executar l'else
-
-    if (crida_inicial === 1) {
-        pinta_pagina_seguent(1, function () {
-            pinta_pagina_seguent(2);
-        });
-    } else {
-        //TODO: hi ha algun error i depen com no amaga les fletxes com cal; de moment crido funció per arreglar-ho
-        visualitzacio_fletxes();
-        activa_hover_imatges();
-        scroll_horitzontal_resultats();
-        click_visualitzacions();
-        zoom_visualitzacions();
-        selector_ordenacio();
-        inicialitza_arrows();
-    }
-    inicialitza_menus_desplegables();
-
-}
-
 function inicialitza_js_resultats() {
     //carrega les pàgines 2 i 3
     //activa els controls pels diferents tipus de visualització i el zoom
