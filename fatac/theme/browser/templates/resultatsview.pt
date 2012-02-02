@@ -45,7 +45,7 @@
                         <span i18n:translate="">Ordre:</span> <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" i18n:translate=""/> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>
                     </a>
                     <tal:co tal:condition="not: llista_tipus/altres_opcions">
-                        <span class="arial11c666666 font_normal" i18n:translate="ordre">Ordre:</span> 
+                        <span class="arial11c666666 font_normal" i18n:translate="ordre">Ordre:</span>
                         <span class="arial11c666666 font_normal" id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" i18n:translate="" />
                     </tal:co>
                 </dt>
@@ -108,35 +108,13 @@
                     <a rel="imatge" href="#" tal:attributes="class python: visualitzacio == 'imatge' and 'link_visualitzacio link_visualitzacio1 hidden' or 'link_visualitzacio link_visualitzacio1'"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1" i18n:translate=""/></a>
                     <a rel="fitxa_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2" i18n:translate=""/></a>
                     <a rel="fitxa_ampliada_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3" i18n:translate="" /></a>
+                    <!-- TODO: la visualització a pantalla completa queda pendent per falta de temps
                     <a rel="fitxa_ampliada_cerca_overlay" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca_overlay' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_4.png" i18n:attributes="title visualitzacio4" i18n:translate="" /></a>
+                    -->
                 </div>
 
             </div>
         </div>
-
-        <!-- TODO: si aquí no calen comentaris, esborrar!
-        <div class="visualClear">< ! - -  - - ></div>
-
-        <div id="accions_cerca" class="div_dotted_line">
-            <dl class="llista_desplegable llista_desplegable_verd actionMenu deactivated">
-                <dt class="actionMenuHeader">
-                    <a class="arial16c339933bold" i18n:attributes="title mes_opcions" href="">
-                        + <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_green.gif" /></span>
-                    </a>
-                </dt>
-                <dd class="actionMenuContent">
-                    <ul>
-                        <li><a class="arial11c339933">leer después</a></li>
-                        <li><a class="arial11c339933">añadir comentario</a></li>
-                        <li><a class="arial11c339933">añadir a album 1</a></li>
-                        <li><a class="arial11c339933">añadir a album 2</a></li>
-                        <li><a class="arial11c339933">añadir a nuevo album</a></li>
-                    </ul>
-                </dd>
-            </dl>
-        </div>
-        -->
-
     </tal:co>
     <tal:co tal:condition="python: dades_paginacio['num_total_pagines'] <= 0">
         <div class="div_dotted_line">

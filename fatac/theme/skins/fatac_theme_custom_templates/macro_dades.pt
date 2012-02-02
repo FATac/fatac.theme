@@ -1,4 +1,4 @@
-<div metal:define-macro="dadaObjecte">
+<metal:dada metal:define-macro="dadaObjecte">
     <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">
 
         <tal:co tal:condition="python: tipus == 'text'">
@@ -62,7 +62,14 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'counter'">
-            counter: <tal:repl tal:replace="dada" /><br/>
+            <div class="counters" tal:condition="valor">
+                <tal:rep tal:repeat="classe valor">
+                    <div class="counter" class="arial11c666666">
+                        <img tal:attributes="src classe/icon; alt classe/classe" /> <span tal:content="classe/num" />
+                    </div>
+                </tal:rep>
+            </div>
+            <div class="visualClear"><!--  --></div>
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'media'">
@@ -81,4 +88,4 @@
         </tal:co>
 
     </tal:def>
-</div>
+</metal:dada>

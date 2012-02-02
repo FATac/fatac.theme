@@ -261,22 +261,23 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 
-div.genericview_fitxa_ampliada_cerca { float:left; width:100%; }
-div.genericview_fitxa_ampliada_cerca .seccio_dades { float:left; width:100%; clear:both; }
+div.genericview_fitxa_final { float:left; width:100%; }
+div.genericview_fitxa_final .seccio_dades { float:left; width:100%; clear:both; }
 
-div.genericview_fitxa_ampliada_cerca.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
-div.genericview_fitxa_ampliada_cerca.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; }
-div.genericview_fitxa_ampliada_cerca .slider_vertical { height:200px; }
-div.genericview_fitxa_ampliada_cerca .div_interior { width:97%; }
+div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
+div.genericview_fitxa_final.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; }
+div.genericview_fitxa_final .slider_vertical { height:200px; }
+div.genericview_fitxa_final .div_interior { width:97%; }
 
-div.genericview_fitxa_ampliada_cerca.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #body_objecte { float:left; width:100%; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
+div.genericview_fitxa_final.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
+div.genericview_fitxa_final.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
+div.genericview_fitxa_final.sense_subcerca #body_objecte { float:left; width:100%; }
+div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
 
-/*
-.requadre_objects { text-align:center; width:100%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:2% 0; margin:10px 0 20px 0; }
-*/
+.counters { background-color:#ECECEC; float:left; width:184px; clear:right; }
+.counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
+.counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
+
 .requadre_objects { margin:0 0 20px 0; text-align:center; }
 .scrollable_genericview { height:220px; text-align:center; width:98%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
 .scrollable_genericview .fila { margin: 10px 0; }
