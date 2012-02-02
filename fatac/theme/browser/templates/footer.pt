@@ -1,15 +1,20 @@
-<div id="viewlet_footer" class="div_dotted_line" tal:define="linkequip view/linkequip; linkajuda view/linkajuda; linkcontacte view/linkcontacte; currentPath context/@@plone_context_state/current_page_url" i18n:domain="fatac.theme">
+<div id="viewlet_footer" class="div_dotted_line"
+     tal:define="linkabout view/linkabout; linkcomfunciona view/linkcomfunciona; linkcredits view/linkcredits; linkavislegal view/linkavislegal; currentPath context/@@plone_context_state/current_page_url" i18n:domain="fatac.theme">
 
     <tal:root tal:condition="python: currentPath == context.portal_url()">
+        <!-- TODO: unificar amb es links de sota, que són els mateixos (no fet per falta de temps) -->
         <div id="links" class="georgia11c999999">
-            <tal:co tal:condition="linkequip">
-                <a class="georgia11c999999" tal:attributes="href linkequip/enllac; title linkequip/descripcio" tal:content="linkequip/titol" /> |
+            <tal:co tal:condition="linkabout">
+                <a class="georgia11c999999" tal:attributes="href linkabout/enllac; title linkabout/descripcio" tal:content="linkabout/titol" /> |
             </tal:co>
-            <tal:co tal:condition="linkajuda">
-                <a class="georgia11c999999" tal:attributes="href linkajuda/enllac; title linkajuda/descripcio" tal:content="linkajuda/titol" /> |
+            <tal:co tal:condition="linkcomfunciona">
+                <a class="georgia11c999999" tal:attributes="href linkcomfunciona/enllac; title linkcomfunciona/descripcio" tal:content="linkcomfunciona/titol" /> |
             </tal:co>
-            <tal:co tal:condition="linkcontacte">
-                <a class="georgia11c999999" tal:attributes="href linkcontacte/enllac; title linkcontacte/descripcio" tal:content="linkcontacte/titol" />
+            <tal:co tal:condition="linkcredits">
+                <a class="georgia11c999999" tal:attributes="href linkcredits/enllac; title linkcredits/descripcio" tal:content="linkcredits/titol" /> |
+            </tal:co>
+            <tal:co tal:condition="linkavislegal">
+                <a class="georgia11c999999" tal:attributes="href linkavislegal/enllac; title linkavislegal/descripcio" tal:content="linkavislegal/titol" />
             </tal:co>
         </div>
 
@@ -62,7 +67,7 @@
                 <a class="georgia11c999999" tal:attributes="href linkcomfunciona/enllac; title linkcomfunciona/descripcio" tal:content="linkcomfunciona/titol" /> |
             </tal:co>
             <tal:co tal:condition="linkcredits">
-                <a class="georgia11c999999" tal:attributes="href linkcredits/enllac; title linkcredits/descripcio" tal:content="linkcredits/titol" />
+                <a class="georgia11c999999" tal:attributes="href linkcredits/enllac; title linkcredits/descripcio" tal:content="linkcredits/titol" /> |
             </tal:co>
             <tal:co tal:condition="linkavislegal">
                 <a class="georgia11c999999" tal:attributes="href linkavislegal/enllac; title linkavislegal/descripcio" tal:content="linkavislegal/titol" />
