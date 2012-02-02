@@ -1,5 +1,4 @@
-<div id="viewlet_footer" class="div_dotted_line"
-     tal:define="linkabout view/linkabout; linkcomfunciona view/linkcomfunciona; linkcredits view/linkcredits; linkavislegal view/linkavislegal; currentPath context/@@plone_context_state/current_page_url" i18n:domain="fatac.theme">
+<div id="viewlet_footer" class="div_dotted_line" tal:define="linkabout view/linkabout; linkcomfunciona view/linkcomfunciona; linkcredits view/linkcredits; linkavislegal view/linkavislegal; currentPath context/@@plone_context_state/current_page_url" i18n:domain="fatac.theme">
 
     <tal:root tal:condition="python: currentPath == context.portal_url()">
         <!-- TODO: unificar amb es links de sota, que són els mateixos (no fet per falta de temps) -->
