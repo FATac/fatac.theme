@@ -9,8 +9,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language-Code: ca\n"
-"Language-Name: Catalan\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fatac.theme\n"
 
@@ -20,11 +20,11 @@ msgstr "Explorar"
 
 #: ../../../browser/opcions.pt:2
 msgid "Fitxa d'expedient"
-msgstr "Fitxa d'expedient"
+msgstr "Ficha de expediente"
 
 #: ../../../browser/cercador.pt:4
 msgid "Search Site"
-msgstr "Buscar al Site"
+msgstr "Buscar en el Site"
 
 #: ../../../browser/languageselector.pt:13, 29
 msgid "ca"
@@ -45,64 +45,64 @@ msgid "Search"
 msgstr "Búsqueda"
 
 msgid "ultims_documents"
-msgstr "Últims documents"
+msgstr "Últimos documentos"
 
 msgid "ultims_consultats"
-msgstr "Últims consultats"
+msgstr "Últimos consultados"
 
 msgid "Filtre de búsqueda"
-msgstr "Filtre de búsqueda"
+msgstr "Filtro de búsqueda"
 
 msgid "reduir_filtres"
-msgstr "redüir filtres"
+msgstr "reducir filtros"
 
 msgid "ampliar_filtres"
-msgstr "ampliar filtres"
+msgstr "ampliar filtros"
 
 msgid "esquerra"
-msgstr "pàgina anterior"
+msgstr "página anterior"
 
 msgid "dreta"
-msgstr "pàgina següent"
+msgstr "página siguiente"
 
 msgid "class"
-msgstr "classe"
+msgstr "Clase"
 
 msgid "Year"
-msgstr "Anys"
+msgstr "Años"
 
 msgid "Country"
-msgstr "Ubicació"
+msgstr "Ubicaciones"
 
 msgid "Translation"
-msgstr "Idioma"
+msgstr "Idiomas"
 
 msgid "Media"
 msgstr "Media"
 
 msgid "License"
-msgstr "Llicències"
+msgstr "Licencias"
 
 msgid "Role"
-msgstr "Rols"
+msgstr "Roles"
 
 msgid "Person"
-msgstr "Persones"
+msgstr "Personas"
 
 msgid "Organisation"
-msgstr "Organització"
+msgstr "Organizaciones"
 
 msgid "Events"
-msgstr "Esdeveniments"
+msgstr "Eventos"
 
 msgid "Publications"
-msgstr "Publicacions"
+msgstr "Publicaciones"
 
 msgid "ArtWork"
 msgstr ""
 
 msgid "Collection"
-msgstr "Col·leccions"
+msgstr "Colecciones"
 
 msgid "CulturalManagement"
 msgstr ""
@@ -111,49 +111,49 @@ msgid "ProtectionPromotion"
 msgstr ""
 
 msgid "ordre"
-msgstr "tipus d'ordre:"
+msgstr "tipo de ordenación:"
 
 msgid "AlphabeticalOrder"
-msgstr "alfabètic"
+msgstr "alfabéticamente"
 
 msgid "ChronologicalOrder"
-msgstr "cronològic"
+msgstr "cronológicamente"
 
 msgid "Visualització de búsqueda"
-msgstr "Visualització de la búsqueda"
+msgstr "Visualización de la búsqueda"
 
 msgid "visualitzacio1"
-msgstr "Llistat"
+msgstr "Listado"
 
 msgid "visualitzacio2"
-msgstr "Miniatures"
+msgstr "Miniaturas"
 
 msgid "visualitzacio3"
-msgstr "Vista prèvia"
+msgstr "Vista previa"
 
 msgid "visualitzacio4"
-msgstr "Pantalla sencera"
+msgstr "Pantalla completa"
 
 msgid "small"
-msgstr "Veure més petit"
+msgstr "Ver más pequeño"
 
 msgid "large"
-msgstr "Veure més gran"
+msgstr "Ver más grande"
 
 msgid "pagina"
-msgstr "pàgina"
+msgstr "página"
 
 msgid "de"
 msgstr "de"
 
 msgid "arxius"
-msgstr "arxius"
+msgstr "archivos"
 
 msgid "mes_opcions"
-msgstr "més opcions"
+msgstr "más opciones"
 
 msgid "cap_resultat"
-msgstr "0 resultats"
+msgstr "0 resultados"
 
 msgid "Tots"
-msgstr "Tots"
+msgstr "Todos"

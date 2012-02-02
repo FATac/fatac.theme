@@ -9,14 +9,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language-Code: ca\n"
-"Language-Name: Catalan\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fatac.theme\n"
 
 #: ../../../browser/cercador.pt:5
 msgid "Explorar"
-msgstr "Explorar"
+msgstr "Explore"
 
 #: ../../../browser/opcions.pt:2
 msgid "Fitxa d'expedient"
@@ -24,7 +24,7 @@ msgstr "Fitxa d'expedient"
 
 #: ../../../browser/cercador.pt:4
 msgid "Search Site"
-msgstr "Buscar al Site"
+msgstr "Search Site"
 
 #: ../../../browser/languageselector.pt:13, 29
 msgid "ca"
@@ -39,121 +39,121 @@ msgid "es"
 msgstr "cast"
 
 msgid "Cerca"
-msgstr "Búsqueda"
+msgstr "Search"
 
 msgid "Search"
-msgstr "Búsqueda"
+msgstr "Search"
 
 msgid "ultims_documents"
-msgstr "Últims documents"
+msgstr "Last documents"
 
 msgid "ultims_consultats"
-msgstr "Últims consultats"
+msgstr "Last viewed"
 
 msgid "Filtre de búsqueda"
-msgstr "Filtre de búsqueda"
+msgstr "Filter search"
 
 msgid "reduir_filtres"
-msgstr "redüir filtres"
+msgstr "minimize filters"
 
 msgid "ampliar_filtres"
-msgstr "ampliar filtres"
+msgstr "maximize filters"
 
 msgid "esquerra"
-msgstr "pàgina anterior"
+msgstr "previous page"
 
 msgid "dreta"
-msgstr "pàgina següent"
+msgstr "next page"
 
 msgid "class"
-msgstr "classe"
+msgstr "Class"
 
 msgid "Year"
-msgstr "Anys"
+msgstr "Years"
 
 msgid "Country"
-msgstr "Ubicació"
+msgstr "Countries"
 
 msgid "Translation"
-msgstr "Idioma"
+msgstr "Translations"
 
 msgid "Media"
 msgstr "Media"
 
 msgid "License"
-msgstr "Llicències"
+msgstr "Licenses"
 
 msgid "Role"
-msgstr "Rols"
+msgstr "Roles"
 
 msgid "Person"
-msgstr "Persones"
+msgstr "Persons"
 
 msgid "Organisation"
-msgstr "Organització"
+msgstr "Organisations"
 
 msgid "Events"
-msgstr "Esdeveniments"
+msgstr "Events"
 
 msgid "Publications"
-msgstr "Publicacions"
+msgstr "Publications"
 
 msgid "ArtWork"
-msgstr ""
+msgstr "ArtWork"
 
 msgid "Collection"
-msgstr "Col·leccions"
+msgstr "Collections"
 
 msgid "CulturalManagement"
-msgstr ""
+msgstr "Cultural Management"
 
 msgid "ProtectionPromotion"
-msgstr ""
+msgstr "Protection Promotion"
 
 msgid "ordre"
-msgstr "tipus d'ordre:"
+msgstr "order type:"
 
 msgid "AlphabeticalOrder"
-msgstr "alfabètic"
+msgstr "alphabetic"
 
 msgid "ChronologicalOrder"
-msgstr "cronològic"
+msgstr "chronologic"
 
 msgid "Visualització de búsqueda"
-msgstr "Visualització de la búsqueda"
+msgstr "Search view"
 
 msgid "visualitzacio1"
-msgstr "Llistat"
+msgstr "List"
 
 msgid "visualitzacio2"
-msgstr "Miniatures"
+msgstr "Mini"
 
 msgid "visualitzacio3"
-msgstr "Vista prèvia"
+msgstr "Thumbnail"
 
 msgid "visualitzacio4"
-msgstr "Pantalla sencera"
+msgstr "Fullscreen"
 
 msgid "small"
-msgstr "Veure més petit"
+msgstr "Smaller"
 
 msgid "large"
-msgstr "Veure més gran"
+msgstr "Larger"
 
 msgid "pagina"
-msgstr "pàgina"
+msgstr "page"
 
 msgid "de"
-msgstr "de"
+msgstr "of"
 
 msgid "arxius"
-msgstr "arxius"
+msgstr "files"
 
 msgid "mes_opcions"
-msgstr "més opcions"
+msgstr "more options"
 
 msgid "cap_resultat"
-msgstr "0 resultats"
+msgstr "0 results"
 
 msgid "Tots"
-msgstr "Tots"
+msgstr "All"
