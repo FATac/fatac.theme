@@ -80,6 +80,17 @@
                 </object>
             </tal:rep><br/>
             -->
+
+            <!--
+            <iframe tal:condition="view/getMedia" tal:attributes="src view/getMedia" transparency>
+                text alternatiu
+            </iframe>
+            -->
+            <!-- TODO: tb funciona amb object, no sé quina forma és millor
+            <object tal:condition="view/getMedia" tal:attributes="data view/getMedia">
+                Warning: media could not be embedded.
+            </object>
+            -->
         </tal:co>
 
         <!-- TODO: per devel pintem els tipus no contemplats; esborrar! -->

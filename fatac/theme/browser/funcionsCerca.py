@@ -8,6 +8,9 @@ from plone.registry.interfaces import IRegistry
 from fatac.theme.browser.interfaces import IFatacSettings
 
 
+#TODO: fer bé les caché (que deenguin del temps, querystring, llista_ids, etc.) i activar-les (si estan comentades)
+#TODO: totes les crides al servidor haurien d'anar acompanyades de l'id de l'usuari (tb per l'src de les imategs)
+
 class funcionsCerca():
     """ classe que conté les funcions bàsiques relacionades amb la cerca;
     cacheja els resultats fent servir ram.cache
@@ -60,13 +63,6 @@ class funcionsCerca():
             self.context.plone_log("error en executar urllib2.urlopen(" + url + ")")
             return
 
-    def modified_cachekey(fn, self, querystring, llista_ids):
-        """ Cache the result based on 'querystring'
-        TODO: que depengui tb de llista_ids!
-        TODO: cal que depengui de més coses?? temps, usuari, etc.
-        """
-        return querystring
-
     def querystringToString(self, querystring):
         """
         """
@@ -84,7 +80,11 @@ class funcionsCerca():
                     querystring_str += '&' + key + '=' + str(valor)
         return querystring_str
 
-    #TODO: si està comentada, tornar a posar caché
+    def modified_cachekey(fn, self, querystring, llista_ids):
+        """ Cache the result based on
+        """
+        return querystring
+
     #@cache(modified_cachekey)
     def executaCerca(self, querystring, llista_ids=None):
         """
@@ -129,11 +129,9 @@ class funcionsCerca():
 
     def modified_cachekey_tipus_ordenacio(fn, self, clau):
         """ Cache the result based on
-        TODO: de què la faig dependre? del temps?
         """
         return
 
-    #TODO: activar caché
     #@cache(modified_cachekey_tipus_ordenacio)
     def retTipusOrdenacio(self, clau):
         """ Crida el servei rest que retorna els tipus d'ordenació segons el

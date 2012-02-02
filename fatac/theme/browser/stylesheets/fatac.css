@@ -197,7 +197,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 /* ---------------------------------------------------------------------------- viewlet_footer */
 #viewlet_footer { padding-top:30px; margin-bottom:20px; }
-#viewlet_footer #sponsors { margin-top:40px; }
+#viewlet_footer #sponsors { margin-top:40px; width:970px; }
 #viewlet_footer #sponsors div { float:left; }
 #viewlet_footer #sponsors div img { margin: 20px 20px 0 0; }
 
@@ -255,7 +255,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 
 
-/* ---------------------------------------------------------------------------- genericview.pt (vista final dels objectes) */
+/* ---------------------------------------------------------------------------- content/dummy_templates/view.pt (vista final dels objectes) */
 #header_objecte {background-color: orange}
 #body_objecte {background-color: lightblue}
 #content_objecte {background-color: lightgreen}
