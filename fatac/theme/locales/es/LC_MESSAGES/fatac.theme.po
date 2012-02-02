@@ -39,10 +39,10 @@ msgid "es"
 msgstr "cast"
 
 msgid "Cerca"
-msgstr "Búsqueda"
+msgstr "BÚSQUEDA"
 
 msgid "Search"
-msgstr "Búsqueda"
+msgstr "BÚSQUEDA"
 
 msgid "ultims_documents"
 msgstr "Últimos documentos"
@@ -154,6 +154,42 @@ msgstr "más opciones"
 
 msgid "cap_resultat"
 msgstr "0 resultados"
+
+msgid "financament"
+msgstr "Financiamiento"
+
+msgid "financament1"
+msgstr "Ministerio de Educación"
+
+msgid "financament2"
+msgstr "Plan Avanza"
+
+msgid "participants"
+msgstr "Participantes"
+
+msgid "participants1"
+msgstr "Fundación Antoni Tàpies"
+
+msgid "participants2"
+msgstr "Universidad Politécnica de Valencia"
+
+msgid "participants3"
+msgstr "Universidad Politécnica de Barcelona"
+
+msgid "patrocinadors"
+msgstr "Patrocinadores institucionales"
+
+msgid "patrocinadors1"
+msgstr "Generalitat de Catalunya"
+
+msgid "patrocinadors2"
+msgstr "Ayuntamiento de Barcelona"
+
+msgid "collaboracio"
+msgstr "Con la colaboración de"
+
+msgid "collaboracio1"
+msgstr "Ministerio de Educación"
 
 msgid "Tots"
 msgstr "Todos"
