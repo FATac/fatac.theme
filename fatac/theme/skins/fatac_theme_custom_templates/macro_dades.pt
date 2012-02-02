@@ -1,0 +1,84 @@
+<div metal:define-macro="dadaObjecte">
+    <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">
+
+        <tal:co tal:condition="python: tipus == 'text'">
+            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" />: </tal:co>
+            <span class="valor" tal:content="structure valor" /><br/>
+        </tal:co>
+
+        <tal:co tal:condition="python: tipus == 'search'">
+            <input type="hidden" id="string_cerca" tal:attributes="value valor" />
+            <input type="hidden" id="titol_visualitzacio" tal:attributes="value dades_objecte/titol_zona_resultats" />
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    var querystring = {rows: 999999, s: '', conf:'Explorar', f: $('#string_cerca').attr('value').split(',')}
+                    var parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
+                    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+                    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+                    var parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+                    $.post('filtresView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_filtres').replaceWith(data);
+                    });
+                    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+                        $('div#zona_resultats').replaceWith(data);
+                        $('#visualitzacio_cerca').html($('#titol_visualitzacio').attr('value'));
+                    });
+                });
+            </script>
+            <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" /></div>
+            <div class="visualClear"><!--  --></div>
+            <div id="zona_resultats" class="zona_resultats_inicial"><img src="spinner.gif" /></div>
+        </tal:co>
+
+        <tal:co tal:condition="python: tipus == 'linkedObjects'">
+            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" />: </tal:co>
+            <tal:rep tal:repeat="obj valor">
+                <a class="linked_object" tal:attributes="href obj/link"><span tal:content="obj/text" /></a>
+                <tal:repl tal:condition="not: repeat/obj/end" tal:replace="string:, " />
+            </tal:rep><br/>
+        </tal:co>
+
+        <tal:co tal:condition="python: tipus == 'objects'">
+            <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" />
+            <input type="hidden" tal:attributes="id string:llista_ids_${nom}; value valor" />
+            <div tal:attributes="id string:scrollable_${nom}">
+                <tal:co tal:condition="nom"><span class="arial13c999999" tal:content="nom" /></tal:co>
+                <div class="requadre_objects">
+                    <a class="arrow_left prev browse left">
+                        <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                    </a>
+                    <div class="visualClear"><!--  --></div>
+                    <div tal:attributes="class string:scrollable_${nom} scrollable_fatac scrollable_genericview">
+                        <div tal:attributes="class string:items_${nom} items_fatac" class="">
+                            <img class="spinner_home" src="spinner.gif" />
+                        </div>
+                    </div>
+                    <div class="visualClear"><!--  --></div>
+                    <a class="arrow_right next browse right">
+                        <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                    </a>
+                </div>
+            </div>
+        </tal:co>
+
+        <tal:co tal:condition="python: tipus == 'counter'">
+            counter: <tal:repl tal:replace="dada" /><br/>
+        </tal:co>
+
+        <tal:co tal:condition="python: tipus == 'media'">
+            <!-- TODO!
+            <tal:rep tal:repeat="obj valor">
+                <object tal:attributes="data python: view.servidorRest + '/resource/' + obj">
+                    Warning: media could not be embedded.
+                </object>
+            </tal:rep><br/>
+            -->
+        </tal:co>
+
+        <!-- TODO: per devel pintem els tipus no contemplats; esborrar! -->
+        <tal:co tal:condition="python: tipus != 'text' and tipus != 'search' and tipus != 'linkedObjects' and tipus != 'objects' and tipus != 'counter'">
+            <tal:repl tal:replace="dada" /><br/>
+        </tal:co>
+
+    </tal:def>
+</div>

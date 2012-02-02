@@ -22,6 +22,7 @@ class funcionsCerca():
         querystring = None
         if 'llista_ids' in parametres_visualitzacio:
             llista_ids = parametres_visualitzacio['llista_ids']
+            self.context.plone_log(llista_ids)
         if 'querystring' in parametres_visualitzacio:
             querystring = parametres_visualitzacio['querystring']
 
@@ -61,6 +62,7 @@ class funcionsCerca():
 
     def modified_cachekey(fn, self, querystring, llista_ids):
         """ Cache the result based on 'querystring'
+        TODO: que depengui tb de llista_ids!
         TODO: cal que depengui de més coses?? temps, usuari, etc.
         """
         return querystring
@@ -83,7 +85,7 @@ class funcionsCerca():
         return querystring_str
 
     #TODO: si està comentada, tornar a posar caché
-    @cache(modified_cachekey)
+    #@cache(modified_cachekey)
     def executaCerca(self, querystring, llista_ids=None):
         """
         si rep querystring, crida el servei rest que executa la cerca, i

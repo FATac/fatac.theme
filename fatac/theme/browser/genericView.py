@@ -139,18 +139,20 @@ class genericView(BrowserView, funcionsCerca):
                 i += 1
                 titol_objecte = self.getTitolObjecte(objecte['sections'])
                 titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
-                dades_seccions = {}
-                te_subcerca = False
-                string_cerca = ''
+
+                dades_seccions = []
+                te_subcerca = 'sense_subcerca'
+                hi_ha_seccio_content = False
                 for seccio in objecte['sections']:
+                    if seccio['name'] == 'content':
+                        hi_ha_seccio_content = True
                     dades = []
                     if 'data' in seccio:
                         for dada in seccio['data']:
-                            dades.append(self.llegirDada(dada))
+                            dades.append(self.llegirDada(dada))  # {'nom': nom, 'tipus': tipus, 'valor': valor}
                             if dada['type'] == 'search':
-                                te_subcerca = True
-                                string_cerca = self.llegirDada(dada)['valor']  # "CaseFile:Expedient_Sol_LeWitt_Dibuixos_19581992"
-                        dades_seccions[seccio['name']] = dades
+                                te_subcerca = 'amb_subcerca'
+                        dades_seccions.append({'nom': seccio['name'], 'dades': dades})
 
                 dades_objecte = {'id': id_objecte,
                                  'titol': titol_objecte,
@@ -159,8 +161,8 @@ class genericView(BrowserView, funcionsCerca):
                                  'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
                                  'dades_seccions': dades_seccions,
                                  'te_subcerca': te_subcerca,
-                                 'string_cerca': string_cerca,
-                                 'titol_zona_resultats': titol_zona_resultats}
+                                 'titol_zona_resultats': titol_zona_resultats,
+                                 'hi_ha_seccio_content': hi_ha_seccio_content}
                 resultat.append(dades_objecte)
         return resultat
 
@@ -187,11 +189,10 @@ class genericView(BrowserView, funcionsCerca):
         """
         return self.servidorRest + '/classes/' + classe + '/thumbnail'
 
-    def getMedia(self):
-        """ retorna el media associat a l'objecte self.idobjecte
+    def getServidorRest(self):
+        """ retorna la url del servidor rest
         """
-        url = self.servidorRest + '/objects/' + self.idobjecte + '/media'
-        return url
+        return self.servidorRest
 
     #===========================================================================
     # funcions per cridar serveis
@@ -209,11 +210,11 @@ class genericView(BrowserView, funcionsCerca):
             t0 = time.time()
             self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
             request = urllib2.urlopen(url)
+            self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
             read = request.read()
-            self.context.plone_log('Fi crida  %.3f segons (%d)Kb' % (time.time() - t0, len(read) / 1024))
             if read:
                 dades_json = json.loads(read)  # retorna diccionari
-                #si demanem més d'un id concatenats, retorna array de diccionaris; sinó, retorna només diccionari
+                #si demanem més d'un id concatenats, retorna array de diccionaris; sinó, retorna només diccionari --> el convertim en array
                 if len(self.idobjectes) == 1:
                     dades_json = [dades_json]
                 return dades_json
@@ -225,14 +226,14 @@ class genericView(BrowserView, funcionsCerca):
         if self.idobjectes:
             import string
             idobjectes_str = string.join(self.idobjectes, ',')
-            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content'
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer'
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
             self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
             request = urllib2.urlopen(url)
+            self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
             read = request.read()
-            self.context.plone_log('Fi crida  %.3f segons (%d)Kb' % (time.time() - t0, len(read) / 1024))
             if read:
                 dades_json = json.loads(read)  # retorna diccionari
                 #si demanem més d'un id concatenats, retorna array de diccionaris; sinó, retorna només diccionari
@@ -251,7 +252,7 @@ class genericView(BrowserView, funcionsCerca):
         nom = 'name' in dada and dada['name'] or ''
         tipus = 'type' in dada and dada['type'] or ''
         valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
-        return {'nom': nom, 'tipus': tipus, 'valor': valor}
+        return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
 
     def get_text_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'text', u'name': u'Title',
@@ -268,7 +269,8 @@ class genericView(BrowserView, funcionsCerca):
     def get_search_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'search', u'name': u'',
         u'value': ["CaseFile:Expedient_Sol_LeWitt_Dibuixos_19581992"]} cal
-        realitzar la cerca amb els filtre indicats i pintar-ne els resultats al pt
+        realitzar la cerca amb els filtre indicats i pintar-ne els resultats al pt.
+        Retorna un string format pels strings dins el 'value' concatenats amb ','
         """
         #TODO: quin tipus de dades és??
         text = ''
@@ -279,16 +281,23 @@ class genericView(BrowserView, funcionsCerca):
         return text
 
     def get_linkedObjects_dada(self, dades):
+        """ donat un diccionari de tipus {"name": "Author", "type": "linkedObjects",
+        "value": ["Tàpies. Celebració de la mel@Tapies_Celebracio_de_la_mel_3", "Tàpies. Certeses sentides@Tapies_Certeses_sentides", "Homenatge a Picasso@Homenatge_a_Picasso"]}
+        cal pintar cada dada dins value formant un link amb la part esquerra de '@'
+        que linki a la fitxa de l'objecte amb l'id indicat després de l'@.
+        Retorna una llista de ciccionaris tipus {'text':xxx, 'id':xxx}
         """
-        """
-        #TODO: quin tipus de dades és??
-        return dades['value']
+        llista = []
+        for i in dades['value']:
+            if '@' in i:
+                llista.append({'text': i.split('@')[0], 'link': self.context.portal_url() + '/genericView?idobjecte=' + i.split('@')[1]})
+        return llista
 
     def get_objects_dada(self, dades):
         """
         """
         #TODO: quin tipus de dades és??
-        return dades['value']
+        return ','.join(dades['value'])
 
     def get_media_dada(self, dades):
         """
