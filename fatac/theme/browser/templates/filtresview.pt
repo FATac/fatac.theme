@@ -1,4 +1,4 @@
-<!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
+<!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir condicions xq no carreguin sempre ¿? -->
 <!-- TODO: fer la crida on toqui! -->
 <script type="text/javascript">
     $(document).ready(function() {
@@ -8,34 +8,35 @@
 
 <div id="selector_filtres" class="div_dotted_line_bottom" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
 
-    <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div, arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id dle div que plega o desplega, també indicat a rel -->
+    <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div, 
+        arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div 
+        que plega o desplega, també indicat a rel -->
     <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" />
     <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" />
 
     <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
 
-    <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres">
-    <input class="boto_filtres mostrar_filtres arial11c666666" type="button" i18n:attributes="value ampliar_filtres">
+    <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres" />
+    <input class="boto_filtres mostrar_filtres arial11c666666" type="button" i18n:attributes="value ampliar_filtres" />
 
     <div id="filtres" class="div_dotted_line">
 
         <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
         <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
-
         <div id="wrapper" class="scrollable">
             <div class="filtres">
                 <tal:rep tal:repeat="filtre filtres">
                     <tal:co tal:define="num repeat/filtre/number" tal:condition="python: num%6 == 1" tal:replace="structure string:<div class='fila'>" />
                     <div tal:attributes="class string:filtre filtre-${repeat/filtre/number} scrollable-${repeat/filtre/number}">
                         <dl>
-                            <dt class="arial12c999999i" tal:content="filtre/nom_filtre">filtre</dt>
+                            <dt class="arial12c999999i" tal:content="filtre/nom_filtre" i18n:translate="">filtre</dt>
                             <dd class="slider_vertical">
                                 <div tal:attributes="class string:slideopcions; id string:slideopcions-${repeat/filtre/number}">
                                     <div class="div_interior">
                                         <ul>
                                             <tal:rep tal:repeat="opcio filtre/opcions">
                                                 <li class="arial12c666666">
-                                                    <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:c_${filtre/nom_filtre} f_${opcio/nom} link_filtre" tal:content="opcio/nom">Tots</a> [<span tal:content="opcio/num">0</span>]
+                                                    <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:c_${filtre/nom_filtre} f_${opcio/nom} link_filtre" tal:content="opcio/nom" i18n:translate="">Tots</a> [<span tal:content="opcio/num">0</span>]
                                                 </li>
                                             </tal:rep>
                                         <ul>

@@ -1,18 +1,19 @@
 <div id="viewlet_cercador" i18n:domain="fatac.theme">
 
-    <form tal:attributes="action string:${view/navigation_root_url}/cercaInicialView" id="cercador" name="cercador">
+    <form tal:attributes="action string:${view/navigation_root_url}/cercaInicialView" id="cercador" name="cercador" >
         <label for="input_cercador" class="hiddenStructure" i18n:translate="Search Site">Search Site</label>
         <input name="s"
                id="s"
                type="text"
                size="28"
                class="arial15c999999"
+               value="Antoni Tàpies"
                i18n:attributes="title Search"
                tal:attributes="value request/form/s|nothing" />
         <button class="searchButton" type="submit">
-            <img i18n:attributes="alt Search" src="++resource++fatac.theme.images/ico_search.png" />
+            <img i18n:attributes="alt Search; title Search" i18n:translate="" src="++resource++fatac.theme.images/ico_search.png " />
         </button>
     </form>
-    <a tal:attributes="href string:${view/navigation_root_url}/explorar" i18n:translate="" class="arial15c666666">Explorar</a>
+    <a tal:attributes="href string:${view/navigation_root_url}/explorar" i18n:translate="Explorar" class="arial15c666666">Explorar</a>
 
 </div>

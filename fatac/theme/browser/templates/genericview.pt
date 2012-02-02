@@ -24,6 +24,7 @@
                         </tal:rep>
                     </div>
                 </div>
+            Afegir comentari....
             </tal:rep>
         </metal:main>
     </body>

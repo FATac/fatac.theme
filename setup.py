@@ -33,6 +33,6 @@ setup(name='fatac.theme',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
+      setup_requires=[""],
+      paster_plugins=[""],
       )

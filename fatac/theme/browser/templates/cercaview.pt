@@ -35,10 +35,9 @@
             </script>
 
             <div class="div_dotted_line_doble_negre">
-                <h1 class="arial13c000000upp" i18n:translate="Cerca">Cerca</h1>
+                <span class="arial13c000000upp" i18n:translate="Cerca">Cerca</span>
                 <tal:co tal:define="text_cerca view/getS" tal:condition="text_cerca">
-                    <span class="arial13c000000upp">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
-                    <span class="arial13c999999upp" tal:content="text_cerca" />
+                    <span class="arial13c000000upp">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><span class="arial13c999999upp" tal:content="text_cerca" />
                 </tal:co>
             </div>
 
