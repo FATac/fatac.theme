@@ -17,7 +17,7 @@
                 <br/><br/>
                 <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" i18n:translate="agentes">Agents</a> |
                 <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" i18n:translate="eventos">Esdeveniments</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:Collection" i18n:translate="colection">Col·lecció</a>
+                <a href="" class="arial15c666666 explorar_classe" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
             </div>
 
             <script type="text/javascript">

@@ -258,11 +258,12 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 
 /* ---------------------------------------------------------------------------- content/dummy_templates/view.pt (vista final dels objectes) */
+/*
 #header_objecte {background-color: orange}
 #body_objecte {background-color: lightblue}
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
-
+*/
 div.genericview_fitxa_final { float:left; width:100%; }
 div.genericview_fitxa_final .seccio_dades { float:left; width:100%; clear:both; }
 
@@ -288,6 +289,8 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:26.6%; float:left; margin-left:2%; background-color:white; padding:2%; }
 .requadre_objects a.disabled { visibility: hidden; }
 
+.media_image { max-width:617px; }
+.media_video, .media_audio, .media_image { margin-bottom:10px; clear:right; }
 
 /* ---------------------------------------------------------------------------- genericview_imatge.pt */
 .genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
