@@ -6,10 +6,10 @@ import json
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from fatac.theme.browser.interfaces import IFatacSettings
+from Products.CMFCore.utils import getToolByName
+from base64 import b64encode
+from time import time
 
-
-#TODO: fer bé les caché (que deenguin del temps, querystring, llista_ids, etc.) i activar-les (si estan comentades)
-#TODO: totes les crides al servidor haurien d'anar acompanyades de l'id de l'usuari (tb per l'src de les imategs)
 
 class funcionsCerca():
     """ classe que conté les funcions bàsiques relacionades amb la cerca;
@@ -83,9 +83,13 @@ class funcionsCerca():
     def modified_cachekey(fn, self, querystring, llista_ids):
         """ Cache the result based on
         """
-        return querystring
+        #TODO property pel temps de cache
+        llista_ordenada = ''
+        if llista_ids is not None:
+            llista_ordenada = str(sorted(llista_ids))
+        return str(querystring) + llista_ordenada + str(time() // (60*5))
 
-    #@cache(modified_cachekey)
+    @cache(modified_cachekey)
     def executaCerca(self, querystring, llista_ids=None):
         """
         si rep querystring, crida el servei rest que executa la cerca, i
@@ -130,9 +134,9 @@ class funcionsCerca():
     def modified_cachekey_tipus_ordenacio(fn, self, clau):
         """ Cache the result based on
         """
-        return
+        return clau + str(time() // (60*5))
 
-    #@cache(modified_cachekey_tipus_ordenacio)
+    @cache(modified_cachekey_tipus_ordenacio)
     def retTipusOrdenacio(self, clau):
         """ Crida el servei rest que retorna els tipus d'ordenació segons el
         paràmetre rebut
@@ -159,3 +163,14 @@ class funcionsCerca():
         if dades:
             value = json.loads(dades)
         return value
+
+    def getUIDParam(self, context):
+        """ Obte l'uid de l'usuari en base64, si no s'ha identificat retornar una cadena buida
+        """
+
+        mt = getToolByName(context, 'portal_membership')
+        if mt.isAnonymousUser():
+            #  the user has not logged in
+            return ''
+        else:
+            return 'uid='+b64encode(mt.getAuthenticatedMember().getId())

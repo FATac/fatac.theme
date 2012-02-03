@@ -73,41 +73,29 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'media'">
-<!--
-Exemples:
-video: http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/resource/Hot_water_de_leau_chaud__2000__Revenants__2003_/view
-pdf: http://localhost:8080/ArtsCombinatoriesRest/resource/Text_31
-odt: Text_19
-audio: Conferencia_Cap_a_una_societat_metafisica_Sobre_els_espais_publics_virtuals
-imatge única: Image_7
-imatges:
 
--->
+            <!-- TODO: caldria millorar la visualització i adaptar-la al disseny gràfic proposat -->
+            <tal:rep tal:repeat="media valor">
+                <tal:def tal:define="url media/url; tipus_media media/tipus_media; identificador python:url.split('/')[-1]">
+                    <tal:co tal:condition="python: tipus_media == 'image'">
+                        <img class="media_image" tal:attributes="src url; alt identificador" />
+                    </tal:co>
+                    <tal:co tal:condition="python: tipus_media == 'video'">
+                        <object class="media_video" tal:attributes="data url">
+                            Warning: media could not be embedded.
+                        </object>
+                    </tal:co>
+                    <tal:co tal:condition="python: tipus_media == 'audio'">
+                        <object class="media_audio" tal:attributes="data url">
+                            Warning: media could not be embedded.
+                        </object>
+                    </tal:co>
+                    <tal:co tal:condition="python: tipus_media == 'object'">
+                        <span i18n:translate="Download" i18n:domain="plone">Descarregar</span> <a tal:attributes="href url" tal:content="identificador" /><br/>
+                    </tal:co>
+                </tal:def>
+            </tal:rep>
 
-
-            <!-- TODO!
-            <tal:rep tal:repeat="obj valor">
-                <object tal:attributes="data python: view.servidorRest + '/resource/' + obj">
-                    Warning: media could not be embedded.
-                </object>
-            </tal:rep><br/>
-            -->
-
-            <!--
-            <iframe tal:condition="view/getMedia" tal:attributes="src view/getMedia" transparency>
-                text alternatiu
-            </iframe>
-            -->
-            <!-- TODO: tb funciona amb object, no sé quina forma és millor
-            <object tal:condition="view/getMedia" tal:attributes="data view/getMedia">
-                Warning: media could not be embedded.
-            </object>
-            -->
-        </tal:co>
-
-        <!-- TODO: per devel pintem els tipus no contemplats; esborrar! -->
-        <tal:co tal:condition="python: tipus != 'text' and tipus != 'search' and tipus != 'linkedObjects' and tipus != 'objects' and tipus != 'counter'">
-            <tal:repl tal:replace="dada" /><br/>
         </tal:co>
 
     </tal:def>

@@ -26,6 +26,7 @@ class genericView(BrowserView, funcionsCerca):
         self.zoom = None
         self.visualitzacio = None
         self.idobjectes = None
+        self.uidParam = self.getUIDParam(self.context)
 
         parametres_visualitzacio = self.retParametresVisualitzacio()
         idobjecte = self.request.get('idobjecte')
@@ -180,12 +181,18 @@ class genericView(BrowserView, funcionsCerca):
     def getThumbnailObjecte(self, idobjecte):
         """ crida el servei que retorna el thumbnail de l'objecte
         """
-        return self.servidorRest + '/resource/' + idobjecte + '/thumbnail'
+        uid = self.uidParam
+        if uid != '':
+            uid = '?' + uid
+        return self.servidorRest + '/resource/' + idobjecte + '/thumbnail' + uid
 
     def getThumbnailClasse(self, classe):
         """ crida el servei que retorna el thumbnail de la classe donada
         """
-        return self.servidorRest + '/classes/' + classe + '/thumbnail'
+        uid = self.uidParam
+        if uid != '':
+            uid = '?' + uid
+        return self.servidorRest + '/classes/' + classe + '/thumbnail' + uid
 
     def getServidorRest(self):
         """ retorna la url del servidor rest
@@ -202,7 +209,10 @@ class genericView(BrowserView, funcionsCerca):
         if self.idobjectes:
             import string
             idobjectes_str = string.join(self.idobjectes, ',')
-            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header'
+            uid = self.uidParam
+            if uid != '':
+                uid = '&' + uid
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header'+uid
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
@@ -224,7 +234,10 @@ class genericView(BrowserView, funcionsCerca):
         if self.idobjectes:
             import string
             idobjectes_str = string.join(self.idobjectes, ',')
-            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer'
+            uid = self.uidParam
+            if uid != '':
+                uid = '&' + uid
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer' + uid
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
@@ -289,7 +302,7 @@ class genericView(BrowserView, funcionsCerca):
 
     def get_counter_dada(self, dades):
         """ donat un diccionari de tipus {'nom': '', 'tipus': u'counter', 'valor': [u'Text', u'3', u'Media', u'56', u'Image', u'42', u'Video', u'11']}
-        cal pintar caixes amb la icona de la classe i el núemro indicats
+        cal pintar caixes amb la icona de la classe i el número indicats
         """
         llista = []
         i = 0
@@ -308,7 +321,12 @@ class genericView(BrowserView, funcionsCerca):
         return ', '.join(dades['value'])
 
     def get_media_dada(self, dades):
+        """ donat un diccionari de tipus {"type": "media", "value": ["http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/media/gizmo_3719d295746c4cb"]}
+        retorna una llista de diccionaris amb la url i el tipus (audio, video, text, image) de cada media a pintar
         """
-        """
-        #TODO: quin tipus de dades és??
-        return dades['value']
+        llista = []
+        i = 0
+        while i < len(dades['value']):
+            llista.append({'url': dades['value'][i], 'tipus_media': dades['value'][i + 1]})
+            i += 2
+        return llista
