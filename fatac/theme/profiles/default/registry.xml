@@ -1,4 +1,13 @@
 <?xml version="1.0"?>
 <registry>
   <records interface="fatac.theme.browser.interfaces.IFatacSettings" />
+  <record field="globally_enabled" interface="plone.app.discussion.interfaces.IDiscussionSettings" name="plone.app.discussion.interfaces.IDiscussionSettings.globally_enabled">
+    <field type="plone.registry.field.Bool">
+      <default>False</default>
+      <description>help_globally_enabled</description>
+      <required>False</required>
+      <title>label_globally_enabled</title>
+    </field>
+    <value>True</value>
+  </record>
 </registry>

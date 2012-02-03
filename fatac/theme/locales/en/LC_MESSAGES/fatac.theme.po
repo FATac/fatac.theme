@@ -191,5 +191,17 @@ msgstr "Collaborators"
 msgid "collaboracio1"
 msgstr "Ministry of Education"
 
+msgid "explora_bbdd"
+msgstr "Explore our database by:"
+
+msgid "agentes"
+msgstr "Agents"
+
+msgid "eventos"
+msgstr "Events"
+
+msgid "colection"
+msgstr "Collections"
+
 msgid "Tots"
 msgstr "All"

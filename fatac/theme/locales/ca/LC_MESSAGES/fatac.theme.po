@@ -191,6 +191,17 @@ msgstr "Amb la col·laboració de"
 msgid "collaboracio1"
 msgstr "Ministeri Educació"
 
+msgid "explora_bbdd"
+msgstr "Explora la nostra base de dades per:"
+
+msgid "agentes"
+msgstr "Agents"
+
+msgid "eventos"
+msgstr "Esdeveniments"
+
+msgid "colection"
+msgstr "Col·leccions"
+
 msgid "Tots"
 msgstr "Tots"
-

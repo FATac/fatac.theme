@@ -9,15 +9,15 @@
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
             <div class="div_dotted_line_doble_negre">
-                <h1 class="arial13c000000upp" i18n:translate="">Explorar</h1>
+                <span class="TerminalDosis600" style="text-transform:uppercase;" i18n:translate="Explorar">Explorar</span>
             </div>
 
             <div class="div_dotted_line_bottom arial12c666666">
-                <br/><span class="arial20c333333bold" i18n:translate="">Explora la nostra base de dades per:</span>
+                <br/><span class="arial20c333333bold" i18n:translate="explora_bbdd">Explora la nostra base de dades per:</span>
                 <br/><br/>
-                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person">Agentes</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity">Eventos</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:Collection">Colección</a>
+                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" i18n:translate="agentes">Agents</a> |
+                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" i18n:translate="eventos">Esdeveniments</a> |
+                <a href="" class="arial15c666666 explorar_classe" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
             </div>
 
             <script type="text/javascript">
