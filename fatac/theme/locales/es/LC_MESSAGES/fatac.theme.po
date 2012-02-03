@@ -66,7 +66,7 @@ msgid "dreta"
 msgstr "página siguiente"
 
 msgid "class"
-msgstr "Clase"
+msgstr "Tipo de documento"
 
 msgid "Year"
 msgstr "Años"
@@ -76,9 +76,6 @@ msgstr "Ubicaciones"
 
 msgid "Translation"
 msgstr "Idiomas"
-
-msgid "Media"
-msgstr "Media"
 
 msgid "License"
 msgstr "Licencias"
@@ -98,17 +95,8 @@ msgstr "Eventos"
 msgid "Publications"
 msgstr "Publicaciones"
 
-msgid "ArtWork"
-msgstr ""
-
 msgid "Collection"
 msgstr "Colecciones"
-
-msgid "CulturalManagement"
-msgstr ""
-
-msgid "ProtectionPromotion"
-msgstr ""
 
 msgid "ordre"
 msgstr "tipo de ordenación:"
@@ -205,3 +193,72 @@ msgstr "Colecciones"
 
 msgid "Tots"
 msgstr "Todos"
+
+msgid "Publication"
+msgstr "Publicación"
+
+msgid "ProtectionPromotionAT"
+msgstr "Protección de patrimonio"
+
+msgid "ProtectionPromotion"
+msgstr "Protección de patrimonio"
+
+msgid "CulturalManagement"
+msgstr "Gestión cultural"
+
+msgid "Espanol"
+msgstr "Español"
+
+msgid "Frances"
+msgstr "Francés"
+
+msgid "Catala"
+msgstr "Catalán"
+
+msgid "Ingles"
+msgstr "Inglés"
+
+msgid "Arabe"
+msgstr "Árabe"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Curator"
+msgstr "Comisario"
+
+msgid "Participant"
+msgstr "Participante"
+
+msgid "Film-maker"
+msgstr "Realizador"
+
+msgid "Producer"
+msgstr "Productor"
+
+msgid "Lecturer"
+msgstr "Conferenciante"
+
+msgid "Speaker"
+msgstr "Orador"
+
+msgid "Artist"
+msgstr "Artista"
+
+msgid "Chair"
+msgstr "Catedrático"
+
+msgid "Photographer"
+msgstr "Fotógrafo"
+
+msgid "ArtWork"
+msgstr "Obra de arte"
