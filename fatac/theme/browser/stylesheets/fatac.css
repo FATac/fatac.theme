@@ -43,8 +43,9 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
-
- .font_normal { font-weight: normal !important; }
+.TerminalDosis600 { font-family:'Terminal Dosis', sans-serif; font-weight: 600; }
+.TerminalDosis200 { font-family:'Terminal Dosis', sans-serif; font-weight: 200; }
+.font_normal { font-weight: normal !important; }
 
 img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
@@ -71,7 +72,8 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; width:310px; }
+#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; }
+/*width:310px; } REMOVED: Aparece la lupa salto de linea */
 #viewlet_cercador #s { background-color:transparent; border:none; padding-left:10px; float:left; margin-top:10px; }
 #viewlet_cercador .searchButton { background-color:transparent; border:none; margin:5px; }
 #viewlet_cercador a { float:left; margin: 7px 0 0 25px; }
