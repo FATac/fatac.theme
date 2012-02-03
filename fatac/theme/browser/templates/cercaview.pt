@@ -9,6 +9,7 @@
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
             <input type="hidden" id="get_s" tal:attributes="value view/getS" />
+<!--            <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:200,600' rel='stylesheet' type='text/css'> -->
 
             <script type="text/javascript">
                 $(document).ready(function() {
@@ -35,9 +36,9 @@
             </script>
 
             <div class="div_dotted_line_doble_negre">
-                <span class="arial13c000000upp" i18n:translate="Cerca">Cerca</span>
+                <span class="TerminalDosis600" i18n:translate="Cerca">Cerca</span>
                 <tal:co tal:define="text_cerca view/getS" tal:condition="text_cerca">
-                    <span class="arial13c000000upp">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><span class="arial13c999999upp" tal:content="text_cerca" />
+                    <span class="TerminalDosis200">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><span class="TerminalDosis200" tal:content="text_cerca" />
                 </tal:co>
             </div>
 

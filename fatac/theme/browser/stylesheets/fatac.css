@@ -43,8 +43,9 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
-
- .font_normal { font-weight: normal !important; }
+.TerminalDosis600 { font-family:'Terminal Dosis', sans-serif; font-weight: 600; }
+.TerminalDosis200 { font-family:'Terminal Dosis', sans-serif; font-weight: 200; }
+.font_normal { font-weight: normal !important; }
 
 img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
@@ -71,7 +72,8 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; width:310px; }
+#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; }
+/*width:310px; } REMOVED: Aparece la lupa salto de linea */
 #viewlet_cercador #s { background-color:transparent; border:none; padding-left:10px; float:left; margin-top:10px; }
 #viewlet_cercador .searchButton { background-color:transparent; border:none; margin:5px; }
 #viewlet_cercador a { float:left; margin: 7px 0 0 25px; }
@@ -197,7 +199,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 /* ---------------------------------------------------------------------------- viewlet_footer */
 #viewlet_footer { padding-top:30px; margin-bottom:20px; }
-#viewlet_footer #sponsors { margin-top:40px; }
+#viewlet_footer #sponsors { margin-top:40px; width:970px; }
 #viewlet_footer #sponsors div { float:left; }
 #viewlet_footer #sponsors div img { margin: 20px 20px 0 0; }
 
@@ -255,28 +257,29 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 
 
-/* ---------------------------------------------------------------------------- genericview.pt (vista final dels objectes) */
+/* ---------------------------------------------------------------------------- content/dummy_templates/view.pt (vista final dels objectes) */
 #header_objecte {background-color: orange}
 #body_objecte {background-color: lightblue}
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 
-div.genericview_fitxa_ampliada_cerca { float:left; width:100%; }
-div.genericview_fitxa_ampliada_cerca .seccio_dades { float:left; width:100%; clear:both; }
+div.genericview_fitxa_final { float:left; width:100%; }
+div.genericview_fitxa_final .seccio_dades { float:left; width:100%; clear:both; }
 
-div.genericview_fitxa_ampliada_cerca.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
-div.genericview_fitxa_ampliada_cerca.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; }
-div.genericview_fitxa_ampliada_cerca .slider_vertical { height:200px; }
-div.genericview_fitxa_ampliada_cerca .div_interior { width:97%; }
+div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
+div.genericview_fitxa_final.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; }
+div.genericview_fitxa_final .slider_vertical { height:200px; }
+div.genericview_fitxa_final .div_interior { width:97%; }
 
-div.genericview_fitxa_ampliada_cerca.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #body_objecte { float:left; width:100%; }
-div.genericview_fitxa_ampliada_cerca.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
+div.genericview_fitxa_final.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
+div.genericview_fitxa_final.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
+div.genericview_fitxa_final.sense_subcerca #body_objecte { float:left; width:100%; }
+div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
 
-/*
-.requadre_objects { text-align:center; width:100%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:2% 0; margin:10px 0 20px 0; }
-*/
+.counters { background-color:#ECECEC; float:left; width:184px; clear:right; }
+.counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
+.counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
+
 .requadre_objects { margin:0 0 20px 0; text-align:center; }
 .scrollable_genericview { height:220px; text-align:center; width:98%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
 .scrollable_genericview .fila { margin: 10px 0; }

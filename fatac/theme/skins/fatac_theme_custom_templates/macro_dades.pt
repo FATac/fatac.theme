@@ -1,4 +1,4 @@
-<div metal:define-macro="dadaObjecte">
+<metal:dada metal:define-macro="dadaObjecte">
     <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">
 
         <tal:co tal:condition="python: tipus == 'text'">
@@ -62,16 +62,46 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'counter'">
-            counter: <tal:repl tal:replace="dada" /><br/>
+            <div class="counters" tal:condition="valor">
+                <tal:rep tal:repeat="classe valor">
+                    <div class="counter" class="arial11c666666">
+                        <img tal:attributes="src classe/icon; alt classe/classe" /> <span tal:content="classe/num" />
+                    </div>
+                </tal:rep>
+            </div>
+            <div class="visualClear"><!--  --></div>
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'media'">
+<!--
+Exemples:
+video: http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/resource/Hot_water_de_leau_chaud__2000__Revenants__2003_/view
+pdf: http://localhost:8080/ArtsCombinatoriesRest/resource/Text_31
+odt: Text_19
+audio: Conferencia_Cap_a_una_societat_metafisica_Sobre_els_espais_publics_virtuals
+imatge única: Image_7
+imatges:
+
+-->
+
+
             <!-- TODO!
             <tal:rep tal:repeat="obj valor">
                 <object tal:attributes="data python: view.servidorRest + '/resource/' + obj">
                     Warning: media could not be embedded.
                 </object>
             </tal:rep><br/>
+            -->
+
+            <!--
+            <iframe tal:condition="view/getMedia" tal:attributes="src view/getMedia" transparency>
+                text alternatiu
+            </iframe>
+            -->
+            <!-- TODO: tb funciona amb object, no sé quina forma és millor
+            <object tal:condition="view/getMedia" tal:attributes="data view/getMedia">
+                Warning: media could not be embedded.
+            </object>
             -->
         </tal:co>
 
@@ -81,4 +111,4 @@
         </tal:co>
 
     </tal:def>
-</div>
+</metal:dada>

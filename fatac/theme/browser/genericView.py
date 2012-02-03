@@ -29,6 +29,7 @@ class genericView(BrowserView, funcionsCerca):
 
         parametres_visualitzacio = self.retParametresVisualitzacio()
         idobjecte = self.request.get('idobjecte')
+
         if idobjecte:
             self.idobjectes = [idobjecte]
             self.zoom = self.request.get('zoom')
@@ -56,6 +57,10 @@ class genericView(BrowserView, funcionsCerca):
             if 'visualitzacio' in parametres_visualitzacio:
                 self.visualitzacio = parametres_visualitzacio['visualitzacio']
 
+        else:
+            #cas especial per visualització final dels objectes; no rebem res per request i cal agafar l'id del propi context
+            self.idobjectes = [self.context.getId()]
+
     def __call__(self):
         """
         """
@@ -72,14 +77,7 @@ class genericView(BrowserView, funcionsCerca):
         elif self.visualitzacio == 'fitxa_ampliada_cerca_overlay':
             return ViewPageTemplateFile('templates/fitxa_ampliada_cerca_overlay.pt')(self)
         else:
-            #return ViewPageTemplateFile('templates/genericview.pt')(self)
-
-            # http://localhost:8084/Plone/genericView?idobjecte=Angela_RicciLucchi
-            # self.request.REQUEST.environ['QUERY_STRING'][10:] --> Angela_RicciLucchi
-            # value = self.context.portal_catalog.searchResults(portal_type='fata.ghost', id=idobject) --> ok, existeix!
-            # obtenim id de la url
-            idobject = self.request.REQUEST.environ['QUERY_STRING'][10:]
-            # http://ec2-107-20-10-248.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/resource/Angela_RicciLucchi/exists
+            idobject = self.idobjectes[0]
             # Mirem si l'objecte existeix al servidor REST i cal crear-lo a Plone (si no s'ha creat amb anterioritat)
             crear_objecte = self.existObjectRest(idobject)
             if crear_objecte == 'true':
@@ -259,12 +257,7 @@ class genericView(BrowserView, funcionsCerca):
         u'value': [u'Rainer Oldendorf']} retorna un string format pels strings
         dins el 'value' concatenats amb ', '
         """
-        text = ''
-        for i in dades['value']:
-            if text != '':
-                text += ', '
-            text += i
-        return text
+        return ', '.join(dades['value'])
 
     def get_search_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'search', u'name': u'',
@@ -272,20 +265,14 @@ class genericView(BrowserView, funcionsCerca):
         realitzar la cerca amb els filtre indicats i pintar-ne els resultats al pt.
         Retorna un string format pels strings dins el 'value' concatenats amb ','
         """
-        #TODO: quin tipus de dades és??
-        text = ''
-        for i in dades['value']:
-            if text != '':
-                text += ','  # sense espai, per fer la cerca
-            text += i
-        return text
+        return ','.join(dades['value'])
 
     def get_linkedObjects_dada(self, dades):
         """ donat un diccionari de tipus {"name": "Author", "type": "linkedObjects",
         "value": ["Tàpies. Celebració de la mel@Tapies_Celebracio_de_la_mel_3", "Tàpies. Certeses sentides@Tapies_Certeses_sentides", "Homenatge a Picasso@Homenatge_a_Picasso"]}
         cal pintar cada dada dins value formant un link amb la part esquerra de '@'
         que linki a la fitxa de l'objecte amb l'id indicat després de l'@.
-        Retorna una llista de ciccionaris tipus {'text':xxx, 'id':xxx}
+        Retorna una llista de diccionaris tipus {'text':xxx, 'id':xxx}
         """
         llista = []
         for i in dades['value']:
@@ -294,24 +281,33 @@ class genericView(BrowserView, funcionsCerca):
         return llista
 
     def get_objects_dada(self, dades):
+        """ donat un diccionari de tipus {"name": "RelatedActivites","type": "objects",value": ["Ser_fer_pensar_trobades_en_lart_com_a_vida","Moviment_a_Entrevidas_Entre_vides","Laltra_cara_del_paper_Activitat_per_a_families","SpecificActivity","Anna_Maria_Maiolino_Visita_comentada_previa_a_la_inauguracio"]}
+        cal pintar un scrollable amb una visualiztació de cada objecte.
+        Retorna un string format pels strings dins el 'value' concatenats amb ','
         """
-        """
-        #TODO: quin tipus de dades és??
         return ','.join(dades['value'])
 
-    def get_media_dada(self, dades):
+    def get_counter_dada(self, dades):
+        """ donat un diccionari de tipus {'nom': '', 'tipus': u'counter', 'valor': [u'Text', u'3', u'Media', u'56', u'Image', u'42', u'Video', u'11']}
+        cal pintar caixes amb la icona de la classe i el núemro indicats
         """
-        """
-        #TODO: quin tipus de dades és??
-        return dades['value']
+        llista = []
+        i = 0
+        while i < len(dades['value']):
+            #ignorem 'media', xq és la superclasse
+            if dades['value'][i] != 'Media':
+                llista.append({'classe': self.context.translate(dades['value'][i], domain="fatac"), 'num': dades['value'][i + 1], 'icon': self.getThumbnailClasse(dades['value'][i])})
+            i += 2
+        return llista
 
     def get_date_dada(self, dades):
+        """ donat un diccionari de tipus {u'type': u'date', u'name': u'nom',
+        u'value': [llista de valors]} retorna un string format pels strings
+        dins el 'value' concatenats amb ', '
         """
-        """
-        #TODO: quin tipus de dades és??
-        return dades['value']
+        return ', '.join(dades['value'])
 
-    def get_counter_dada(self, dades):
+    def get_media_dada(self, dades):
         """
         """
         #TODO: quin tipus de dades és??

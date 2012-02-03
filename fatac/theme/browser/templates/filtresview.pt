@@ -1,5 +1,5 @@
 <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir condicions xq no carreguin sempre ¿? -->
-<!-- TODO: fer la crida on toqui! -->
+<!-- TODO: correcte posar aquest js aquí? Hi ha un lloc millor? -->
 <script type="text/javascript">
     $(document).ready(function() {
         inicialitza_js_filtres();
@@ -8,8 +8,8 @@
 
 <div id="selector_filtres" class="div_dotted_line_bottom" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
 
-    <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div, 
-        arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div 
+    <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div,
+        arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div
         que plega o desplega, també indicat a rel -->
     <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" />
     <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" />
@@ -21,8 +21,8 @@
 
     <div id="filtres" class="div_dotted_line">
 
-        <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.png" i18n:attributes="title esquerra" /></a>
-        <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.png" i18n:attributes="title dreta" /></a>
+        <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.gif" i18n:attributes="title esquerra" /></a>
+        <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.gif" i18n:attributes="title dreta" /></a>
         <div id="wrapper" class="scrollable">
             <div class="filtres">
                 <tal:rep tal:repeat="filtre filtres">

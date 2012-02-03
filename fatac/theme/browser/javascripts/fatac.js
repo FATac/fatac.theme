@@ -329,8 +329,7 @@ function canvia_dades_paginacio(direccio, callback) {
     } else {
         pag = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) - 1;
     }
-    //TODO: si ok sense guardar pàgina a rel, esborrar
-    //$('#pagina_actual').attr('rel', pag);
+
     $('#pagina_actual').html(pag);
     modifica_parametres_visualitzacio('pagina_actual', pag);
 
@@ -562,7 +561,7 @@ jQuery.fn.center = function () {
 function reposicionar_hover(idobjecte){
     //centra el div a la pantalla
 
-    //TODO: caldria reposicionar millor xq no acaba de fer el que volem
+    //TODO: caldria reposicionar millor xq no acaba de fer el que volem; de fet volen l'efecte que fan a google a la cerca d'imatges
     $('#img_hover_' + idobjecte).center();
 }
 
