@@ -289,7 +289,7 @@ class genericView(BrowserView, funcionsCerca):
 
     def get_counter_dada(self, dades):
         """ donat un diccionari de tipus {'nom': '', 'tipus': u'counter', 'valor': [u'Text', u'3', u'Media', u'56', u'Image', u'42', u'Video', u'11']}
-        cal pintar caixes amb la icona de la classe i el núemro indicats
+        cal pintar caixes amb la icona de la classe i el número indicats
         """
         llista = []
         i = 0
@@ -308,7 +308,12 @@ class genericView(BrowserView, funcionsCerca):
         return ', '.join(dades['value'])
 
     def get_media_dada(self, dades):
+        """ donat un diccionari de tipus {"type": "media", "value": ["http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/media/gizmo_3719d295746c4cb"]}
+        retorna una llista de diccionaris amb la url i el tipus (audio, video, text, image) de cada media a pintar
         """
-        """
-        #TODO: quin tipus de dades és??
-        return dades['value']
+        llista = []
+        i = 0
+        while i < len(dades['value']):
+            llista.append({'url': dades['value'][i], 'tipus_media': dades['value'][i + 1]})
+            i += 2
+        return llista
