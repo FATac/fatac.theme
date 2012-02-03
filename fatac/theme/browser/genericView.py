@@ -290,11 +290,11 @@ class genericView(BrowserView, funcionsCerca):
     def get_counter_dada(self, dades):
         """ donat un diccionari de tipus {'nom': '', 'tipus': u'counter', 'valor': [u'Text', u'3', u'Media', u'56', u'Image', u'42', u'Video', u'11']}
         cal pintar caixes amb la icona de la classe i el núemro indicats
-        (TODO: de moment ignorem 'media', tal com indica en Jordi, xq és la superclasse)
         """
         llista = []
         i = 0
         while i < len(dades['value']):
+            #ignorem 'media', xq és la superclasse
             if dades['value'][i] != 'Media':
                 llista.append({'classe': self.context.translate(dades['value'][i], domain="fatac"), 'num': dades['value'][i + 1], 'icon': self.getThumbnailClasse(dades['value'][i])})
             i += 2

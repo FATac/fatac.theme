@@ -73,6 +73,18 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'media'">
+<!--
+Exemples:
+video: http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/resource/Hot_water_de_leau_chaud__2000__Revenants__2003_/view
+pdf: http://localhost:8080/ArtsCombinatoriesRest/resource/Text_31
+odt: Text_19
+audio: Conferencia_Cap_a_una_societat_metafisica_Sobre_els_espais_publics_virtuals
+imatge única: Image_7
+imatges:
+
+-->
+
+
             <!-- TODO!
             <tal:rep tal:repeat="obj valor">
                 <object tal:attributes="data python: view.servidorRest + '/resource/' + obj">

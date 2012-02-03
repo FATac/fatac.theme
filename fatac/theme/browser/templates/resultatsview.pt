@@ -1,7 +1,7 @@
 <!-- TODO: he carregat el js a jsregistry.xml de forma global, potser cal afegir ocndicions xq no carreguin sempre ¿? -->
-<!-- TODO: fer la crida on toqui! -->
 <div id="zona_resultats" tal:define="dades_paginacio view/retDadesPaginacio" i18n:domain="fatac.theme">
     <tal:co tal:condition="python: dades_paginacio['num_total_pagines'] > 0">
+        <!-- TODO: correcte posar aquest js aquí? Hi ha un lloc millor? -->
         <script type="text/javascript">
             $(document).ready(function() {
                 inicialitza_js_resultats();

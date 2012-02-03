@@ -11,13 +11,11 @@
             <metal:main-macro define-macro="content">
                 <div id="content" i18n:domain="fatac.theme">
 
-<!-- TODO: fer igual que aqui al formularid e validació legal!!! -->
-
-                    <!-- TODO: fer la crida on toqui! -->
+                    <!-- TODO: correcte posar aquest js aquí? Hi ha un lloc millor? -->
                     <script type="text/javascript">
                         $(document).ready(function() {
 
-                            //TODO: unificar codi (no fet per falta de temps)
+                            //TODO: unificar el codi dels dos scrollers (no fet per falta de temps)
 
                             var sort = 'creation+desc';
                             querystring = {start: 0, rows: 15, sort: sort, conf: 'Explorar'};
