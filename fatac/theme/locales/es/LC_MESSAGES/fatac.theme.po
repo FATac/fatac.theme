@@ -191,5 +191,17 @@ msgstr "Con la colaboración de"
 msgid "collaboracio1"
 msgstr "Ministerio de Educación"
 
+msgid "explora_bbdd"
+msgstr "Explora nuestra base de datos por:"
+
+msgid "agentes"
+msgstr "Agentes"
+
+msgid "eventos"
+msgstr "Eventos"
+
+msgid "colection"
+msgstr "Colecciones"
+
 msgid "Tots"
 msgstr "Todos"
