@@ -5,15 +5,12 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
     <div class="genericview_hover_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
-        <a tal:attributes="href string:${here/portal_url}/legalValidation?objectIdsVal=${dades_objecte/id}">
-            <img class="miniatura_objecte" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" /><br/>
+        <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
+            <img class="miniatura_objecte" 
+                    tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; align string:middle" /><br/>
             <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
-            <!-- TODO: on va link? -->
-            <a href="#"><span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" /></a>
             <tal:rep tal:repeat="dada dades_objecte/dades_header">
-                <tal:def tal:define="num repeat/dada/number; tipus dada/tipus; valor dada/valor; es_titol python: num==1 and 'georgia11c000000' or 'georgia11c999999'">
-                    <span tal:attributes="class string:${tipus} ${es_titol}" tal:content="structure dada/valor" /><br/>
-                </tal:def>
+                <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
             </tal:rep>
         </a>
     </div>
