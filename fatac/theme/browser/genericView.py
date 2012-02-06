@@ -263,6 +263,7 @@ class genericView(BrowserView, funcionsCerca):
         """
         nom = 'name' in dada and dada['name'] or ''
         tipus = 'type' in dada and dada['type'] or ''
+        #TODO: comprovar que existeixi la funció que es crida (get_xxx_dada)
         valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
         return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
 
