@@ -323,8 +323,9 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 
 
 /* --------------------------------------------------------------------- genericview_hover_cerca.pt */
-.genericview_hover_cerca { min-width:300px; min-height:300px; }
-.img_hover { background-color:#FFFFFF; padding:10px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
+.genericview_hover_cerca { max-width: 210px; }
+.genericview_hover_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
+.img_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
 
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_home.pt */
