@@ -263,6 +263,77 @@ msgstr "Fotògraf"
 msgid "ArtWork"
 msgstr "Obra d'art"
 
+msgid "Title"
+msgstr "Títol"
+
+msgid "Description"
+msgstr "Descripció"
+
+msgid "OriginalSource"
+msgstr "Orígen"
+
+msgid "Authors"
+msgstr "Autors"
+
+msgid "Collections"
+msgstr "Col·leccions"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Represents"
+msgstr "Representa"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Creator"
+msgstr "Creador"
+
+msgid "Collaborator"
+msgstr "Col·laborador"
+
+msgid "Places"
+msgstr "Llocs"
+
+msgid "Location"
+msgstr "Localització"
+
+msgid "Biography"
+msgstr "Biografia"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Designers"
+msgstr "Dissenyadors"
+
+msgid "Translators"
+msgstr "Traductors"
+
+msgid "Editors"
+msgstr "Editors"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "NumPages"
+msgstr "Núm. pàgines"
+
+msgid "Color"
+msgstr "Color"
+
+msgid "Measures"
+msgstr "Mides"
+
+msgid "RelatedActivities"
+msgstr "Activitats relacionades"
+
+msgid "Representation"
+msgstr "Representació"
 
 
 

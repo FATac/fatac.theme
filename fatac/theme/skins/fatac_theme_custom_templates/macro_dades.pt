@@ -1,8 +1,8 @@
-<metal:dada metal:define-macro="dadaObjecte">
+<metal:dada metal:define-macro="dadaObjecte" i18n:domain="fatac.theme">
     <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">
 
         <tal:co tal:condition="python: tipus == 'text'">
-            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" />: </tal:co>
+            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" i18n:translate=""/>: </tal:co>
             <span class="valor" tal:content="structure valor" /><br/>
         </tal:co>
 
@@ -31,7 +31,7 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'linkedObjects'">
-            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" />: </tal:co>
+            <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" i18n:translate=""/>: </tal:co>
             <tal:rep tal:repeat="obj valor">
                 <a class="linked_object" tal:attributes="href obj/link"><span tal:content="obj/text" /></a>
                 <tal:repl tal:condition="not: repeat/obj/end" tal:replace="string:, " />
@@ -39,7 +39,7 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'objects'">
-            <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" />
+            <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" i18n:translate=""/>
             <input type="hidden" tal:attributes="id string:llista_ids_${nom}; value valor" />
             <div tal:attributes="id string:scrollable_${nom}">
                 <tal:co tal:condition="nom"><span class="arial13c999999" tal:content="nom" /></tal:co>
