@@ -29,7 +29,7 @@ class funcionsCerca():
         if 'querystring' in parametres_visualitzacio:
             querystring = parametres_visualitzacio['querystring']
 
-        return self.executaCerca(querystring, llista_ids)
+        return self.executaCerca(querystring, llista_ids, self.getLang())
 
     def retServidorRest(self):
         """ retorna la url del servidor rest, guardada amb plone.app.registry i
@@ -80,17 +80,17 @@ class funcionsCerca():
                     querystring_str += '&' + key + '=' + str(valor)
         return querystring_str
 
-    def modified_cachekey(fn, self, querystring, llista_ids):
+    def modified_cachekey(fn, self, querystring, llista_ids, lang):
         """ Cache the result based on
         """
         #TODO property pel temps de cache
         llista_ordenada = ''
         if llista_ids is not None:
             llista_ordenada = str(sorted(llista_ids))
-        return str(querystring) + llista_ordenada + str(time() // (60*5))
+        return str(querystring) + llista_ordenada + str(time() // (60 * 5)) + lang
 
     @cache(modified_cachekey)
-    def executaCerca(self, querystring, llista_ids=None):
+    def executaCerca(self, querystring, llista_ids, lang):
         """
         si rep querystring, crida el servei rest que executa la cerca, i
         retorna el json resultant i els filtres ordenats;
@@ -99,7 +99,7 @@ class funcionsCerca():
         """
         if querystring:
             querystring_str = self.querystringToString(querystring)
-            url = self.retServidorRest() + '/solr/search?' + querystring_str
+            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&lang=" + lang
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
             read = self.llegeixJson(url)
             if read:
@@ -174,3 +174,8 @@ class funcionsCerca():
             return ''
         else:
             return 'uid='+b64encode(mt.getAuthenticatedMember().getId())
+
+    def getLang(self):
+        """Retorna l'idioma actiu del lloc web"""
+        lt = getToolByName(self.context, 'portal_languages')
+        return lt.getPreferredLanguage()
