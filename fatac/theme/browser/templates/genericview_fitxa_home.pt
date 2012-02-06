@@ -6,14 +6,19 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
     <div class="genericview_fitxa_home" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <tal:cond tal:condition="dades_objecte">
-            <div class="imatge">
-                <img class="miniatura_objecte" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
-            </div>
-            <div class="dades">
-                <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
-                <div class="visualClear"><!--  --></div>
-                <span class="titol_objecte georgia11c333333" tal:content="dades_objecte/titol" />
-            </div>
+            <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
+                <div class="imatge">        
+                    <img class="miniatura_objecte" 
+                         tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
+                </div>
+                <div class="dades">
+                    <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+                    <div class="visualClear"><!--  --></div>
+                    <tal:rep tal:repeat="dada dades_objecte/dades_header">
+                        <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b>
+                    </tal:rep>
+                </div>
+            </a>
         </tal:cond>
     </div>
 </tal:rep>
