@@ -213,7 +213,7 @@ class genericView(BrowserView, funcionsCerca):
             uid = self.uidParam
             if uid != '':
                 uid = '&' + uid
-            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header'+uid
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header' + uid + '&lang=' + self.getLang()
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
@@ -238,7 +238,7 @@ class genericView(BrowserView, funcionsCerca):
             uid = self.uidParam
             if uid != '':
                 uid = '&' + uid
-            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer' + uid
+            url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer' + uid + '&lang=' + self.getLang()
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
