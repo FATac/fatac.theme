@@ -264,8 +264,9 @@ class genericView(BrowserView, funcionsCerca):
         nom = 'name' in dada and dada['name'] or ''
         tipus = 'type' in dada and dada['type'] or ''
         valor = ''
-        if hasattr(self, 'get_%s_dada' % (dada['type']))(dada):
-            valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
+        if 'type' in dada:
+            if hasattr(self, 'get_%s_dada' % (dada['type'])):
+                valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
         return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
 
     def get_text_dada(self, dades):
