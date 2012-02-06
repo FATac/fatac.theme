@@ -4,6 +4,8 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 -->
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
     <div tal:condition="dades_objecte" tal:attributes="class string:genericview_imatge zoom_${view/zoom}; id string:div${dades_objecte/id}">
-        <img class="miniatura_objecte hoverable" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; id dades_objecte/id" />
+    	<a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
+        	<img class="miniatura_objecte hoverable" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; id dades_objecte/id; title dades_objecte/titol" />
+    	</a>
     </div>
 </tal:rep>

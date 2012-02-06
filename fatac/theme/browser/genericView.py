@@ -88,6 +88,7 @@ class genericView(BrowserView, funcionsCerca):
                 if not value:
                     _createObjectByType('fatac.dummy', self.context, idobject)
                 # Retornem la vista de l'objecte que ja permet afegir els commentaris
+                #fatac/content/dummy_templates/view.pt
                 return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url() + '/' + idobject)
             else:
                 # L'objecte que es passa per string no s'ha de crear o no existeix, retornem ERROR
@@ -262,6 +263,7 @@ class genericView(BrowserView, funcionsCerca):
         """
         nom = 'name' in dada and dada['name'] or ''
         tipus = 'type' in dada and dada['type'] or ''
+        #TODO: comprovar que existeixi la funció que es crida (get_xxx_dada)
         valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
         return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
 
