@@ -335,6 +335,12 @@ msgstr "Activitats relacionades"
 msgid "Representation"
 msgstr "Representació"
 
+msgid "Technique"
+msgstr "Tècnica"
+
+msgid "Kind"
+msgstr "Tipus"
+
 
 
 

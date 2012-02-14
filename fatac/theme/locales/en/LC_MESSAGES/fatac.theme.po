@@ -205,3 +205,6 @@ msgstr "Collections"
 
 msgid "Tots"
 msgstr "All"
+
+msgid "Cerca a VTLS"
+msgstr "Search in VTLS"
