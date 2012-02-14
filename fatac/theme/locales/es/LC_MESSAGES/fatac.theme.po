@@ -344,4 +344,5 @@ msgstr "Tipo"
 msgid "Cerca a VTLS"
 msgstr "Buscar en VTLS"
 
-
+msgid "RelatedPublications"
+msgstr "Publicaciones"
