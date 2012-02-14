@@ -101,7 +101,10 @@ function visualitzacio_fletxes() {
 function crea_scrolls_verticals() {
     //inicialitza els scrolls verticals per tots els elements amb classe slider_vertical
     $('.slider_vertical').each(function () {
-        crea_scroll_vertical($(this).attr('id'));
+        if ($(this).attr('id') != null)
+        {
+            crea_scroll_vertical($(this).attr('id'));
+        }
     });
 }
 
@@ -579,17 +582,28 @@ function crea_scroll_vertical(identificador) {
     //change the main div to overflow-hidden as we can use the slider now
     $('#' + identificador).css('overflow','hidden');
 
+    //En el cas de que estiguem a la vista "genericview_fitxa_ampliada_cerca" la mida ha de ser 485px.
+    if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
+    {
+        var fullHeight = 485;
+    }
+    else
+    {
+        
+        var fullHeight = $('#' + identificador).height();
+    }
+
     //compare the height of the scroll content to the scroll pane to see if we need a scrollbar
-    var difference = $('#' + identificador + ' .div_interior').height() - $('#' + identificador).height(); //eg it's 200px longer
+    var difference = $('#' + identificador + ' .div_interior').height() - fullHeight; //eg it's 200px longer
 
     //if the scrollbar is needed, set it up...
-    if(difference > 5) {
+    if(difference > 5 && $('#barra-' + identificador).length == 0) {
         var proportion = difference / $('#' + identificador + ' .div_interior').height(); //eg 200px/500px
-        var handleHeight = Math.round((1-proportion)*$('#' + identificador).height()); //set the proportional height - round it to make sure everything adds up correctly later on
+        var handleHeight = Math.round((1-proportion)*fullHeight); //set the proportional height - round it to make sure everything adds up correctly later on
         handleHeight -= handleHeight%2;
 
         $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><\div id="slider-vertical"><\/div><\/div>'); //append the necessary divs so they're only there if needed
-        $("#barra-" + identificador).height($('#' + identificador).height()); //set the height of the slider bar to that of the scroll pane
+        $("#barra-" + identificador).height(fullHeight); //set the height of the slider bar to that of the scroll pane
 
         //set up the slider
         $('#barra-' + identificador + ' #slider-vertical').slider({
@@ -609,7 +623,16 @@ function crea_scroll_vertical(identificador) {
 
         //set the handle height and bottom margin so the middle of the handle is in line with the slider
         $('#barra-' + identificador + " .ui-slider-handle").css({height:handleHeight,'margin-bottom':-0.5*handleHeight});
-        var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height
+        
+        if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
+        {
+            var origSliderHeight = fullHeight;//read the original slider height
+        }
+        else
+        {
+            var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height    
+        }
+        
         var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
         var sliderMargin =  (origSliderHeight - sliderHeight)*0.5;//so the slider needs to have both top and bottom margins equal to half the difference
         $('#barra-' + identificador + " .ui-slider").css({height:sliderHeight,'margin-top':sliderMargin});//set the slider height and margins
@@ -617,7 +640,10 @@ function crea_scroll_vertical(identificador) {
 
     //afegim barra buida, sense slide
     else {
-        $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><!-- --><\/div>');
+        if ($('#barra-' + identificador).length == 0)
+        {
+            $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><!-- --><\/div>');
+        }
     }
 
     //code to handle clicks outside the slider handle
