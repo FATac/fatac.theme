@@ -332,8 +332,17 @@ msgstr "Mides"
 msgid "RelatedActivities"
 msgstr "Activitats relacionades"
 
+msgid "RelatedPublications"
+msgstr "Publicacions"
+
 msgid "Representation"
 msgstr "Representació"
+
+msgid "Technique"
+msgstr "Tècnica"
+
+msgid "Kind"
+msgstr "Tipus"
 
 
 

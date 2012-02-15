@@ -205,3 +205,12 @@ msgstr "Collections"
 
 msgid "Tots"
 msgstr "All"
+
+msgid "Cerca a VTLS"
+msgstr "Search in VTLS"
+
+msgid "RelatedActivities"
+msgstr "Related activities"
+
+msgid "RelatedPublications"
+msgstr "Publications"

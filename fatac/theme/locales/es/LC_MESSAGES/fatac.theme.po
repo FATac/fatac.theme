@@ -335,3 +335,14 @@ msgstr "Actividades relacionadas"
 msgid "Representation"
 msgstr "Representación"
 
+msgid "Technique"
+msgstr "Técnica"
+
+msgid "Kind"
+msgstr "Tipo"
+
+msgid "Cerca a VTLS"
+msgstr "Buscar en VTLS"
+
+msgid "RelatedPublications"
+msgstr "Publicaciones"
