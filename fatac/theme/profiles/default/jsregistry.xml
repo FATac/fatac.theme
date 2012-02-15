@@ -172,4 +172,9 @@
         id="++resource++fatac.theme.javascripts/jquery.hoverIntent.js"
         inline="False" />
 
+    <javascript authenticated="False" cacheable="True" compression="none"
+        conditionalcomment="" cookable="True" enabled="True" expression=""
+        id="++resource++fatac.theme.javascripts/hover_thumbnail.js"
+        inline="False" />
+
 </object>

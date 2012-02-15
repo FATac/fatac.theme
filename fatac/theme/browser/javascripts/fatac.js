@@ -31,7 +31,7 @@ function inicialitza_js_resultats() {
 function inicialitza_js_pagines() {
     // activa la funcionalitat de hover de les imatges, activa l'scroll horitzontal i la visualització de les fletxes
 
-    activa_hover_imatges();
+    activa_hover_imatges('thumbnail_center', 'crida', 'genericView', {visualitzacio: 'hover_cerca'});
     visualitzacio_fletxes();
     scroll_horitzontal_resultats();
 }
@@ -514,60 +514,6 @@ function pinta_pagina_seguent(pagina, callback) {
     }
 }
 
-function activa_hover_imatges() {
-    //configura el hover pels elements amb classe 'hoverable'.
-    //Si es para el mouse prou temps (controlat per hoverIntent), aplica les funcions
-    //indicades a la variable de configuració pels events onMouseOver i onMouseOut
-
-    // {onMouseOver callback (REQUIRED), milliseconds delay before onMouseOut, onMouseOut callback (REQUIRED))
-    var config = { over: mostra_hover, timeout: 50, out: amaga_hover };
-    $(".hoverable").hoverIntent(config);
-}
-
-function fes_res() {}
-
-function amaga_hover() {
-    // amaga l'element
-    var idobjecte = $(this).attr('id');
-    $('#img_hover_' + idobjecte).fadeOut('slow');
-}
-
-function mostra_hover() {
-    // mostra un div per sobre de l'element on s'ha fet hover, amb l'html resultant de cridar la vista 'genericView'
-    // amb visualitzacio 'hover_cerca'
-
-    var idobjecte = $(this).attr('id');
-    var existeix_hover = $('#img_hover_' + idobjecte).length !== 0;
-    if (!existeix_hover) {
-        $('body').after('<\div class="img_hover hidden" id="img_hover_' + idobjecte + '"><\img src="spinner.gif" \/><\/div>');
-        reposicionar_hover(idobjecte);
-        $('#img_hover_' + idobjecte).fadeIn('slow');
-        $.get('genericView', {idobjecte: idobjecte, visualitzacio: 'hover_cerca'}, function (data) {
-            $('#img_hover_' + idobjecte).html(data);
-        });
-    } else {
-        reposicionar_hover(idobjecte);
-        $('#img_hover_' + idobjecte).fadeIn('slow');
-    }
-}
-
-
-jQuery.fn.center = function () {
-    //centra a la pantalla l'objecte sobre el que s'executa
-
-    this.css("position","absolute");
-    this.css("top", (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop() + "px");
-    this.css("left", (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft() + "px");
-    return this;
-}
-
-function reposicionar_hover(idobjecte){
-    //centra el div a la pantalla
-
-    //TODO: caldria reposicionar millor xq no acaba de fer el que volem; de fet volen l'efecte que fan a google a la cerca d'imatges
-    $('#img_hover_' + idobjecte).center();
-}
-
 
 //==============================================================================================================
 //funcions generals
@@ -589,7 +535,7 @@ function crea_scroll_vertical(identificador) {
     }
     else
     {
-        
+
         var fullHeight = $('#' + identificador).height();
     }
 
@@ -623,16 +569,16 @@ function crea_scroll_vertical(identificador) {
 
         //set the handle height and bottom margin so the middle of the handle is in line with the slider
         $('#barra-' + identificador + " .ui-slider-handle").css({height:handleHeight,'margin-bottom':-0.5*handleHeight});
-        
+
         if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
         {
             var origSliderHeight = fullHeight;//read the original slider height
         }
         else
         {
-            var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height    
+            var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height
         }
-        
+
         var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
         var sliderMargin =  (origSliderHeight - sliderHeight)*0.5;//so the slider needs to have both top and bottom margins equal to half the difference
         $('#barra-' + identificador + " .ui-slider").css({height:sliderHeight,'margin-top':sliderMargin});//set the slider height and margins

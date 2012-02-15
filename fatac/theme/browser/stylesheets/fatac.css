@@ -72,7 +72,7 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; }
+#viewlet_cercador form#cercador { width: 305px; border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; float:left; }
 /*width:310px; } REMOVED: Aparece la lupa salto de linea */
 #viewlet_cercador #s { background-color:transparent; border:none; padding-left:10px; float:left; margin-top:10px; }
 #viewlet_cercador .searchButton { background-color:transparent; border:none; margin:5px; }
@@ -323,9 +323,14 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 
 
 /* --------------------------------------------------------------------- genericview_hover_cerca.pt */
+/*
 .genericview_hover_cerca { max-width: 210px; }
 .genericview_hover_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
 .img_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
+*/
+.wrapper_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; width:220px; height:250px; }
+.wrapper_hover img { max-width:200px; max-height:230px; }
+.wrapper_hover img.miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
 
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_home.pt */
