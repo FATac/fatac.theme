@@ -35,7 +35,6 @@ class genericView(BrowserView, funcionsCerca):
             self.idobjectes = [idobjecte]
             self.zoom = self.request.get('zoom')
             self.visualitzacio = self.request.get('visualitzacio')
-            self.context.plone_log('init de genericView; idobjectes = ' + str(self.idobjectes) + '; visualitzacio = ' + self.visualitzacio)
 
         elif parametres_visualitzacio:
             resultat_cerca = self.executaCercaIdsOQuerystring()
