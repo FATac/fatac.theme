@@ -323,7 +323,7 @@ class genericView(BrowserView, funcionsCerca):
         dins el 'value' concatenats amb ', '
         """
         return ', '.join(dades['value'])
-
+    
     def get_media_dada(self, dades):
         """ donat un diccionari de tipus {"type": "media", "value": ["http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/media/gizmo_3719d295746c4cb"]}
         retorna una llista de diccionaris amb la url i el tipus (audio, video, text, image) de cada media a pintar
@@ -331,6 +331,7 @@ class genericView(BrowserView, funcionsCerca):
         llista = []
         i = 0
         while i < len(dades['value']):
-            llista.append({'url': dades['value'][i], 'tipus_media': dades['value'][i + 1]})
+            partsDades = (dades['value'][i + 1]+",default").split(",")
+            llista.append({'url': dades['value'][i], 'tipus_media': partsDades[0], 'profile': partsDades[1]})
             i += 2
         return llista

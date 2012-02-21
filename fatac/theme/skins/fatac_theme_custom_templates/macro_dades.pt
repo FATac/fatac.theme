@@ -75,22 +75,33 @@
         <tal:co tal:condition="python: tipus == 'media'">
 
             <!-- TODO: caldria millorar la visualització i adaptar-la al disseny gràfic proposat -->
+            <tal:def tal:define="global hasVideo python:0"></tal:def>
             <tal:rep tal:repeat="media valor">
-                <tal:def tal:define="url media/url; tipus_media media/tipus_media; identificador python:url.split('/')[-1]">
+                <tal:def tal:define="url media/url; tipus_media media/tipus_media; profile media/profile; identificador python:url.split('/')[-1]">
                     <tal:co tal:condition="python: tipus_media == 'image'">
                         <div class="photo-container">
                             <img class="media_image" tal:attributes="src url; alt identificador" />
                         </div>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'video'">
-                        <object class="media_video" tal:attributes="data url">
-                            Warning: media could not be embedded.
-                        </object>
+                    	<tal:co tal:condition="python: hasVideo == 0">
+	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls>
+	                       		Warning: media could not be embedded.
+	                       	</video>
+	                       	<br/>
+	                    </tal:co>
+	                    <label tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></label> |
+	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
-                        <object class="media_audio" tal:attributes="data url">
-                            Warning: media could not be embedded.
-                        </object>
+                    	<tal:co tal:condition="python: hasVideo == 0">
+	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls>
+	                       		Warning: media could not be embedded.
+	                       	</video>
+	                       	<br/>
+	                    </tal:co>
+	                    <label tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></label> |
+	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
                         <span i18n:translate="Download" i18n:domain="plone">Descarregar</span> <a tal:attributes="href url" tal:content="identificador" /><br/>
