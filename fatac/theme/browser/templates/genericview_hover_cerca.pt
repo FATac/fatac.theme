@@ -8,7 +8,9 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
         <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
             <img class="miniatura_objecte" 
                     tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; align string:middle" /><br/>
-            <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
+            <div class="hover_miniatura_classe">
+            	<img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+            </div>
             <tal:rep tal:repeat="dada dades_objecte/dades_header">
                 <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
             </tal:rep>
