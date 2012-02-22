@@ -39,6 +39,15 @@ class funcionsCerca():
         settings = registry.forInterface(IFatacSettings)
         url = settings.rest_server
         return url
+    
+    def retServidorMedia(self):
+        """ retorna la url del servidor rest, guardada amb plone.app.registry i
+        configurable a través de @@fatac_settings
+        """
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IFatacSettings)
+        url = settings.media_server
+        return url
 
     def retParametresVisualitzacio(self):
         """

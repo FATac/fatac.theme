@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object>
- <default_language value="es"/>
+ <default_language value="ca"/>
  <use_path_negotiation value="False"/>
  <use_cookie_negotiation value="True"/>
  <set_cookie_everywhere value="False"/>

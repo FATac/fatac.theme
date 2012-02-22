@@ -17,3 +17,8 @@ class IFatacSettings(Interface):
                                   description=(u"Per exemple: http://localhost:8080/ArtsCombinatoriesRest"),
                                   required=False,
                                   default=u'http://localhost:8080/ArtsCombinatoriesRest',)
+    
+    media_server = schema.TextLine(title=(u"Media Server URL"),
+                                   description=(u"Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"),
+                                   required=False,
+                                   default=u'http://localhost:8080/ArtsCombinatoriesRest/media/',)
