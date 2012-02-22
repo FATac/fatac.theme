@@ -85,12 +85,13 @@
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'video'">
                     	<tal:co tal:condition="python: hasVideo == 0">
-	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls>
+	                    	<video id="videoTag" tal:attributes="src url" preload="none" width="680" height="480" controls>
 	                       		Warning: media could not be embedded.
 	                       	</video>
 	                       	<br/>
+	                       	|
 	                    </tal:co>
-	                    <label tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></label> |
+	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
@@ -99,8 +100,9 @@
 	                       		Warning: media could not be embedded.
 	                       	</video>
 	                       	<br/>
+	                       	|
 	                    </tal:co>
-	                    <label tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></label> |
+	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
