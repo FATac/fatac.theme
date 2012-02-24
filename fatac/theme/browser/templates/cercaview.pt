@@ -17,7 +17,7 @@
 
                     querystring = {rows: 999999, s: get_s};
 
-                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '1', pagina_actual: 1, resultats_per_pagina: 66};
+                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '3', pagina_actual: 1, resultats_per_pagina: 32};
 
                     //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
                     $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
