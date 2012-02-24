@@ -214,3 +214,6 @@ msgstr "Related activities"
 
 msgid "RelatedPublications"
 msgstr "Publications"
+
+msgid "Cerca a la biblioteca"
+msgstr "Search in library"
