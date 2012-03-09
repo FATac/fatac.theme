@@ -123,7 +123,8 @@ class resultatsView(BrowserView, funcionsCerca):
             if 'conf' in parametres_visualitzacio['querystring']:
                 conf = parametres_visualitzacio['querystring']['conf']
             clau = conf == 'Explorar' and 'Explorar' or 'default'
-            altres_opcions = self.retTipusOrdenacio(clau)
+            # Fem una copia de la llista per no modificar la cache
+            altres_opcions = list(self.retTipusOrdenacio(clau))
             if altres_opcions:
                 opcio_selec = 'sort' in parametres_visualitzacio['querystring'] and parametres_visualitzacio['querystring']['sort'] or (len(altres_opcions) > 0 and altres_opcions[0] or '')
                 if opcio_selec in altres_opcions:
