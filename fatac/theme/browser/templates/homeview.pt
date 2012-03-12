@@ -3,13 +3,13 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      metal:use-macro="here/main_template/macros/master">
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="fatac.theme">
     <body>
         <metal:content-title fill-slot="content-title"></metal:content-title>
         <metal:content-description fill-slot="content-description"></metal:content-description>
         <metal:content-core fill-slot="content-core">
             <metal:main-macro define-macro="content">
-                <div id="content" i18n:domain="fatac.theme">
 
                     <!-- TODO: correcte posar aquest js aquí? Hi ha un lloc millor? -->
                     <script type="text/javascript">
@@ -75,48 +75,47 @@
                     </div>
 
                     <div id="ultims_documents">
-                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_documents">Últims documents</span>
+                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="" /> <span class="arial13c999999" i18n:translate="ultims_documents">Últims documents</span>
                         <div class="requadre_resultats">
                             <a class="arrow_left prev browse left">
-                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />
                             </a>
                             <div class="visualClear"><!--  --></div>
 
                             <div class="scrollable_ultims_documents scrollable_fatac">
                                 <div class="items_ultims_documents items_fatac">
-                                    <img class="spinner_home" src="spinner.gif" />
+                                    <img class="spinner_home" src="spinner.gif" alt="Carregant..." i18n:attributes="alt;" />
                                 </div>
                             </div>
 
                             <div class="visualClear"><!--  --></div>
                             <a class="arrow_right next browse right">
-                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" alt="Anteriors" i18n:attributes="alt" />
                             </a>
                         </div>
                     </div>
 
                     <div id="ultims_consultats">
-                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
+                        <img class="arrow_down" alt="" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
                         <div class="requadre_resultats">
                             <a class="arrow_left prev browse left">
-                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" />
+                                <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />
                             </a>
                             <div class="visualClear"><!--  --></div>
 
                             <div class="scrollable_ultims_consultats scrollable_fatac">
                                 <div class="items_ultims_consultats items_fatac">
-                                    <img class="spinner_home" src="spinner.gif" />
+                                    <img class="spinner_home" src="spinner.gif" alt="Carregant..." i18n:attributes="alt;"/>
                                 </div>
                             </div>
 
                             <div class="visualClear"><!--  --></div>
                             <a class="arrow_right next browse right">
-                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" />
+                                <img class="arrow_down" src="++resource++fatac.theme.images/arrow_down_search.png" alt="Anteriors" i18n:attributes="alt" />
                             </a>
                         </div>
                     </div>
 
-                </div>
             </metal:main-macro>
         </metal:content-core>
     </body>

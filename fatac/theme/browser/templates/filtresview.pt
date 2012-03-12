@@ -11,8 +11,8 @@
     <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div,
         arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div
         que plega o desplega, també indicat a rel -->
-    <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" />
-    <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" />
+    <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" alt="Tanca" title="Tanca" i18n:attributes="title;alt"/>
+    <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="Obre" title="Obre" i18n:attributes="title;alt"/>
 
     <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
 
@@ -21,8 +21,8 @@
 
     <div id="filtres" class="div_dotted_line">
 
-        <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.gif" i18n:attributes="title esquerra" /></a>
-        <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.gif" i18n:attributes="title dreta" /></a>
+        <a class="arrow_left prev browse left"><img src="++resource++fatac.theme.images/ico_left.gif" i18n:attributes="title esquerra; alt esquerra" /></a>
+        <a class="arrow_right next browse right"><img src="++resource++fatac.theme.images/ico_right.gif" i18n:attributes="title dreta; alt dreta" /></a>
         <div id="wrapper" class="scrollable">
             <div class="filtres">
                 <tal:rep tal:repeat="filtre filtres">
@@ -39,7 +39,7 @@
                                                     <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom}; class string:c_${filtre/nom_filtre} f_${opcio/nom} link_filtre" tal:content="opcio/nom" i18n:translate="">Tots</a> [<span tal:content="opcio/num">0</span>]
                                                 </li>
                                             </tal:rep>
-                                        <ul>
+                                        </ul>
                                     </div>
                                 </div>
                             </dd>

@@ -46,20 +46,20 @@
                 </tal:co>
             </div>
             
-            <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" /></div>
+            <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" alt="Carregant..." i18n:attributes="alt;"/></div>
 
             <div class="visualClear"><!--  --></div>
 
-            <div id="zona_resultats" class="zona_resultats_inicial"><img src="spinner.gif" /></div>
+            <div id="zona_resultats" class="zona_resultats_inicial"><img src="spinner.gif" alt="Carregant..." i18n:attributes="alt;"/></div>
             
             <tal:def tal:define="stringCerca python: context.REQUEST.get('s')">
 				<div style="text-align: right">
 				    <form name="vtlsform" action="http://tosca.vtlseurope.com:8000/cgi-bin/fat/chameleon" method="post" target="vtlswindow">
-				    	<input type="hidden" tal:attributes="value stringCerca" name="t1">
-				        <input type="hidden" name=u1 value="1035">
-				        <input type=hidden name=op1 value="AND">
-				        <input type=hidden name=t2 value="">
-				        <input type=hidden name=u2 value="1035">
+				    	<input type="hidden" tal:attributes="value stringCerca" name="t1" />
+				        <input type="hidden" name=u1 value="1035" />
+				        <input type=hidden name=op1 value="AND" />
+				        <input type=hidden name=t2 value="" />
+				        <input type=hidden name=u2 value="1035" />
 				        <input type="hidden" name="host" value="192.168.1.3+2202+DEFAULT" />
 				        <input type="hidden" name="sessionid" value="2012021411503521105" />
 				        <input type="hidden" name="skin" value="default" />

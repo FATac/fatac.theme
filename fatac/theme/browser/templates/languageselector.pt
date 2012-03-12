@@ -8,12 +8,12 @@
             <a tal:define="code idioma_actual/code;
                            codeclass string:language-${code};
                            name idioma_actual/name;"
-               tal:attributes="title name" href="">
+               tal:attributes="title name" href="#">
                 <span tal:attributes="class string:currentLanguage${codeclass} currentLanguage arial13cffffff"
                       tal:content="code" i18n:translate=""></span>
                 <!--<span class="arrowDownAlternative arial13cffffff">▼</span>-->
                 <span class="arrowDownAlternative">
-                    <img src="++resource++fatac.theme.images/arrow_down_white.gif" />
+                    <img src="++resource++fatac.theme.images/arrow_down_white.gif" alt="▼"/>
                 </span>
             </a>
         </dt>

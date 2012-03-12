@@ -11,7 +11,7 @@
             </dt>
             <dd class="actionMenuContent">
                 <ul>
-                    <li tal:repeat="action view/user_actions" tal:attributes="id string:personaltools-${action/id}">
+                    <li tal:repeat="action view/user_actions">
                         <a href="" tal:attributes="href action/url" tal:content="action/title" i18n:translate="">
                             action title
                         </a>
@@ -24,7 +24,7 @@
     <dl class="actionMenu deactivated" id="portal-personaltools" tal:condition="python:view.user_actions and view.anonymous">
         <dt id="anon-personalbar">
             <tal:actions repeat="action view/user_actions">
-                <a href="" tal:attributes="href action/url; id string:personaltools-${action/id};" tal:content="action/title" i18n:translate="">
+                <a href="" tal:attributes="href action/url;" tal:content="action/title" i18n:translate="">
                     action title
                 </a>
             </tal:actions>

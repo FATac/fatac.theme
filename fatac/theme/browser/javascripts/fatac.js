@@ -220,7 +220,7 @@ function click_filtres() {
         event.stopImmediatePropagation();
         event.stopPropagation();
 
-        $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+        $('#zona_resultats').html('<img class="spinner_zona_resultats" src="spinner.gif" alt="..."/>');
 
         //recalcular querystring
             //si ja estava seleccionat, i no és 'f_Tots': l'eliminem de la cerca
@@ -459,7 +459,7 @@ function pinta_resultats() {
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
 
-    $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
+    $('#zona_resultats').html('<img class="spinner_zona_resultats" src="spinner.gif" alt="..."/>');
 
     //1. consultem i calculem dades necessàries
     //TODO: potser caldria pintar la pàgina on estaria primer obj visible actualment amb la nova visualització (de moment pintem els primers)
@@ -502,7 +502,7 @@ function pinta_pagina_seguent(pagina, callback) {
 
         //afegim div i quan tinguem l'html, el reemplacem
         var pagina_str = (pagina + 1).toString();
-        $('.pagina' + pagina).after('<\div class="resultats pagina pagina' + pagina_str + '"><\img class="spinner_pagina" src="spinner.gif" \/><\/div>');
+        $('.pagina' + pagina).after('<div class="resultats pagina pagina' + pagina_str + '"><img class="spinner_pagina" src="spinner.gif" alt="..." /></div>');
 
 
         var parametres_visualitzacio_json = JSON.stringify(params);
@@ -548,11 +548,11 @@ function crea_scroll_vertical(identificador) {
         var handleHeight = Math.round((1-proportion)*fullHeight); //set the proportional height - round it to make sure everything adds up correctly later on
         handleHeight -= handleHeight%2;
 
-        $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><\div id="slider-vertical"><\/div><\/div>'); //append the necessary divs so they're only there if needed
+        $('#' + identificador + ' .div_interior').after('<div class="barra" id="barra-' + identificador + '"><div class="slider-vertical"></div></div>'); //append the necessary divs so they're only there if needed
         $("#barra-" + identificador).height(fullHeight); //set the height of the slider bar to that of the scroll pane
 
         //set up the slider
-        $('#barra-' + identificador + ' #slider-vertical').slider({
+        $('#barra-' + identificador + ' .slider-vertical').slider({
             orientation: 'vertical',
             min: 0,
             max: 100,
@@ -576,7 +576,7 @@ function crea_scroll_vertical(identificador) {
         }
         else
         {
-            var origSliderHeight = $('#barra-' + identificador + " #slider-vertical").height();//read the original slider height
+            var origSliderHeight = $('#barra-' + identificador + " .slider-vertical").height();//read the original slider height
         }
 
         var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
@@ -588,7 +588,7 @@ function crea_scroll_vertical(identificador) {
     else {
         if ($('#barra-' + identificador).length == 0)
         {
-            $('#' + identificador + ' .div_interior').after('<\div class="barra" id="barra-' + identificador + '"><!-- --><\/div>');
+            $('#' + identificador + ' .div_interior').after('<div class="barra" id="barra-' + identificador + '"><!-- --></div>');
         }
     }
 
@@ -599,15 +599,15 @@ function crea_scroll_vertical(identificador) {
     $("#barra-" + identificador).click(function(event){//clicks on the wrap outside the slider range
         var offsetTop = $(this).offset().top;//read the offset of the scroll pane
         var clickValue = (event.pageY-offsetTop)*100/$(this).height();//find the click point, subtract the offset, and calculate percentage of the slider clicked
-        $("#barra-" + identificador + " #slider-vertical").slider("value", 100-clickValue);//set the new value of the slider
+        $("#barra-" + identificador + " .slider-vertical").slider("value", 100-clickValue);//set the new value of the slider
     });
 
     //additional code for mousewheel
     $('#' + identificador + ', #barra-' + identificador).mousewheel(function(event, delta){
         var speed = 15;
-        var sliderVal = $('#barra-' + identificador + " #slider-vertical").slider("value");//read current value of the slider
+        var sliderVal = $('#barra-' + identificador + " .slider-vertical").slider("value");//read current value of the slider
         sliderVal += (delta*speed);//increment the current value
-        $('#barra-' + identificador + " #slider-vertical").slider("value", sliderVal);//and set the new value of the slider
+        $('#barra-' + identificador + " .slider-vertical").slider("value", sliderVal);//and set the new value of the slider
         event.preventDefault();//stop any default behaviour
     });
 }
@@ -668,8 +668,8 @@ function existeix_filtre_a_querystring(filtre) {
 function elimina_filtres_de_categoria(categoria) {
     // elimina els filtres aplicats de la categoria indicada
 
-    var aux = [];
-    var querystring = consulta_parametre_visualitzacio('querystring');
+    var aux = [], querystring;
+    querystring = consulta_parametre_visualitzacio('querystring');
     for (i = 0; i < querystring.f.length; i = i + 1) {
         if (querystring.f[i].indexOf(categoria + ':') === -1) {
             aux.push(querystring.f[i]);
