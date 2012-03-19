@@ -344,6 +344,8 @@ msgstr "Tècnica"
 msgid "Kind"
 msgstr "Tipus"
 
+msgid "FrameActivity"
+msgstr "Exposició"
 
 
 
