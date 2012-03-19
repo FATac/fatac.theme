@@ -349,3 +349,6 @@ msgstr "Publicaciones"
 
 msgid "Cerca a la biblioteca"
 msgstr "Buscar en biblioteca"
+
+msgid "FrameActivity"
+msgstr "Exposición"
