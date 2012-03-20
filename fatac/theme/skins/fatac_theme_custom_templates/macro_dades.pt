@@ -96,7 +96,7 @@
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
                     	<tal:co tal:condition="python: hasVideo == 0">
-	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls>
+	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls="">
 	                       		Warning: media could not be embedded.
 	                       	</video>
 	                       	<br/>
@@ -106,7 +106,9 @@
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
-                        <span i18n:translate="Download" i18n:domain="plone">Descarregar</span> <a tal:attributes="href url" tal:content="identificador" /><br/>
+                        <div class="download">
+                        <span i18n:translate="Download" i18n:domain="plone">Descarregar</span> <a tal:attributes="href url" tal:content="identificador" />
+                        </div>
                     </tal:co>
                 </tal:def>
             </tal:rep>

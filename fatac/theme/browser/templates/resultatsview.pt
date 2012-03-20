@@ -108,9 +108,7 @@
                     <a rel="imatge" href="#" tal:attributes="class python: visualitzacio == 'imatge' and 'link_visualitzacio link_visualitzacio1 hidden' or 'link_visualitzacio link_visualitzacio1'"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1; alt visualitzacio1" /></a>
                     <a rel="fitxa_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2; alt visualitzacio2"/></a>
                     <a rel="fitxa_ampliada_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3; alt visualitzacio3"/></a>
-                    <!-- TODO: la visualització a pantalla completa queda pendent per falta de temps
                     <a rel="fitxa_ampliada_cerca_overlay" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca_overlay' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_4.png" alt="" i18n:attributes="title visualitzacio4; alt visualitzacio4" /></a>
-                    -->
                 </div>
 
             </div>

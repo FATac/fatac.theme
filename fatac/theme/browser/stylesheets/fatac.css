@@ -351,3 +351,52 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 
 .slideFitxaOpcions { height:485px; overflow:hidden; float:left; position:relative; }
 #slideFitxaOpcionsId { height:485px; }
+
+/* ---------------------------------------------------------------------------- fullscreen */
+
+#fullscreenSlideshowContainer { z-index:10;}
+#fullscreenSlideshowContainer a { color:#205C90; }
+#fullscreenSlideshowContainer a:visited { color:#205C90; }
+#fullscreenSlideshowContainer .download { color: #ECECEC; text-align: center; }
+#fullscreenSlideshowContainer .ui { position: absolute;font-family: sans-serif; z-index: 100; font-size: 1em;}
+#fullscreenSlideshowContainer .ui img{vertical-align: middle; }
+#fullscreenSlideshowContainer .media_video, #fullscreenSlideshowContainer .media_image { width:auto; height:auto; max-height:100%; max-width: 100%; }
+
+#fs-header, #fs-loader, #fs-caption { -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; }
+#fs-header, #fs-loader, #fs-caption, #fs-footer { background-color: black; font-weight: bold; cursor: pointer; line-height: 1em; color: #ECECEC; }
+#fs-header div, #fs-fotter div{ display:inline; }
+
+#fs-header { background-color: #330033; top:0.75em; right:1em;  padding:0.5em; text-align: center;}
+#fs-header .logo{ position: absolute; text-transform: uppercase; left: 2em;}
+#fs-header .title{ font-size:0.8em; }
+#fs-header .btns { float:right; }
+#fs-header .fs-header-extra { display:none; }
+
+#fs-header:hover { left:1em; }
+#fs-header:hover .fs-header-extra { display:inline; }
+
+#fs-footer{ display:none; background-color: #330033; bottom:0em; left:0em; right:0em; padding:3em; opacity:0.8; text-align: center; }
+#fs-footer .fs-prev{ position: absolute; font-size: 3em; bottom: 1em; left: 1em; }
+#fs-footer .fs-next{position: absolute; font-size: 3em; bottom: 1em; right: 1em; }
+
+#fs-loader { top: 50%; left: 50%; height: 1em; margin-top: -1em; margin-left: -75px; display: none; }
+
+#fs-caption {
+    padding:2px;
+    background-color: #330033;
+    position: fixed;
+    width: 300px;
+    max-height: 400px;
+    left: 20px;
+    top: 50px;
+    color: #ECECEC;
+}
+#fs-caption .body {
+    font-family: georgia;
+    font-size: 13px;
+}
+#fs-caption .header img{
+    vertical-align:middle;
+    max-width:15px;
+}
+#fs-caption .body { padding-top:10px;}

@@ -100,9 +100,8 @@ function visualitzacio_fletxes() {
 
 function crea_scrolls_verticals() {
     //inicialitza els scrolls verticals per tots els elements amb classe slider_vertical
-    $('.slider_vertical').each(function () {
-        if ($(this).attr('id') != null)
-        {
+    $('.slider_vertical').each(function (i) {
+        if ($(this).attr('id') != null) {
             crea_scroll_vertical($(this).attr('id'));
         }
     });
@@ -304,7 +303,7 @@ function scroll_horitzontal_resultats() {
             var pagina_actual = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10);
             if (!($('.pagina' + pagina_actual).hasClass('visitada')) && !(pagina_actual == 1)) {
                 $('.pagina' + pagina_actual).addClass('visitada');
-                var ultima_pagina = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) + 1;
+                var ultima_pagina = pagina_actual + 1;
                 var pagina_a_pintar = ultima_pagina + 1;
                 if ($('.pagina' + pagina_a_pintar).length === 0) {
                     pinta_pagina_seguent(ultima_pagina);
@@ -326,7 +325,7 @@ function canvia_dades_paginacio(direccio, callback) {
     //un cop hem fet scroll, cal canviar dades paginació
 
     // canviem pagina actual
-    var pag;
+    var pag, num_resultats, resultats_per_pagina, numb_obj_inicial, num_obj_final;
     if (direccio === 'next') {
         pag = parseInt(consulta_parametre_visualitzacio('pagina_actual'), 10) + 1;
     } else {
@@ -337,10 +336,10 @@ function canvia_dades_paginacio(direccio, callback) {
     modifica_parametres_visualitzacio('pagina_actual', pag);
 
     //canviem número de resultats
-    var num_resultats = $('#num_resultats').attr("value");
-    var resultats_per_pagina = consulta_parametre_visualitzacio('resultats_per_pagina');
-    var num_obj_inicial = parseInt((pag * resultats_per_pagina) - resultats_per_pagina + 1, 10);
-    var num_obj_final = parseInt((pag * resultats_per_pagina), 10);
+    num_resultats = $('#num_resultats').attr("value");
+    resultats_per_pagina = consulta_parametre_visualitzacio('resultats_per_pagina');
+    num_obj_inicial = parseInt((pag * resultats_per_pagina) - resultats_per_pagina + 1, 10);
+    num_obj_final = parseInt((pag * resultats_per_pagina), 10);
     if (num_obj_final > num_resultats) { num_obj_final = parseInt(num_resultats, 10); }
 
     $('#arxiu_inicial').html(num_obj_inicial);
@@ -428,14 +427,14 @@ function click_visualitzacions() {
         var resultats_per_pagina;
         if (visualitzacio === 'fitxa_cerca') { resultats_per_pagina = 15; }
         if (visualitzacio === 'fitxa_ampliada_cerca') { resultats_per_pagina = 1; }
-        if (visualitzacio === 'fitxa_ampliada_cerca_overlay') { resultats_per_pagina = 1; }
+        if (visualitzacio === 'fitxa_ampliada_cerca_overlay') { resultats_per_pagina = 1;}
         if (visualitzacio === 'imatge') {
             resultats_per_pagina = calcula_resultats_per_pagina(zoom);
         }
         modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
 
         //deshabilitem/habilitem zoom
-        if (visualitzacio !== 'imatge') {
+        if (visualitzacio !== 'imatge' && visualitzacio != 'fitxa_ampliada_cerca_overlay') {
             var min = $("#slider-wrap-zoom").slider("option", "min");
             $("#slider-wrap-zoom").slider("value", min);
             $("#slider-wrap-zoom").slider("disable");
@@ -447,15 +446,23 @@ function click_visualitzacions() {
             $("#zoom_resultats").addClass("selected");
             $(".link_visualitzacio1").addClass("hidden");
         }
-
         //recalculem els resultats
-        pinta_resultats();
+        pinta_resultats( function(){
+            if (visualitzacio == 'fitxa_ampliada_cerca_overlay'){
+                //pinta_pagina_seguent(1);
+                initFullScreen();
+            }
+        });
 
     });
 }
 
+function canvia_visualitzacio(event){
+
+}
+
 //TODO: caldria fer que només canvii la zona de les pàgines, no els controls de paginació i visualització, ordre, etc.
-function pinta_resultats() {
+function pinta_resultats(callback) {
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
 
@@ -469,6 +476,7 @@ function pinta_resultats() {
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
     $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
         replaceResultats(data);
+        if (callback) { callback()};
     });
 }
 
@@ -509,8 +517,8 @@ function pinta_pagina_seguent(pagina, callback) {
         $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
             $('.pagina' + pagina_str).replaceWith(data);
             inicialitza_js_pagines();
+            if (callback) { callback(); }
         });
-        if (callback) { callback(); }
     }
 }
 
@@ -710,4 +718,373 @@ function ret_parametres_visualitzacio_json() {
 
     var parametres_visualitzacio = $('#visual-portal-wrapper').get(0).parametres_visualitzacio;
     return JSON.stringify(parametres_visualitzacio);
+}
+
+(function($){
+
+  var $container;
+
+  var attachEvents = function(){
+
+    // deal with resizing the browser window and resize container
+    $container.bind("updateSize", function(event) {
+      $container.height($(window).height());
+      updateSlideSize();
+    });
+
+    // private function to update the image size and position of a slide
+    var updateSlideSize = function(slide) {
+      if (slide === undefined) {
+        var slide = $container.data("currentSlide");
+      }
+      if (slide !== undefined) {
+        var wh = $(window).height();
+        var ww = $(window).width();
+        // compare the window aspect ratio to the image aspect ratio
+        // to use either maximum width or height
+        if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
+          slide.$img.css({
+            "height" : wh + "px",
+            "width"  : "auto"
+          });
+        } else {
+          slide.$img.css({
+            "height" : "auto",
+            "width"  : ww + "px"
+          });
+        }
+        // update margins to position in the center
+        slide.$img.css({
+          "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
+        });
+
+        slide.$img.find('img').each(function(i, o) {
+            o = $(o);
+            if ((ww / wh) > (o.width() / o.height())) {
+              o.css({
+                "height" : wh + "px",
+                "width"  : "auto"
+              });
+            } else {
+              o.css({
+                "height" : "auto",
+                "width"  : ww + "px"
+              });
+            }
+        });
+        slide.$img.find('video').each(function(i, o) {
+            o = $(o);
+            if ((ww / wh) > (o.width() / o.height())) {
+              o.height(wh)
+            } else {
+              o.width(ww)
+            }
+        });
+      }
+    }
+    $(window).bind("resize", function(){
+      //todo: throttle
+      $container.trigger("updateSize");
+    });
+
+    // Show individual slides
+    var isLoading = false;
+
+    $container.bind("showSlide", function(event, slide) {
+      if (!isLoading) {
+        var slides, total_pagines, newSlide, oldSlide = $container.data("currentSlide");
+        slides = $container.data("slides");
+        total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+        pagina = slide + 1;
+        if (slide < slides.length){
+            newSlide = slides[slide]
+            changeSlide(oldSlide, newSlide);
+            updateSlideSize(newSlide);
+        }
+        else if (pagina < total_pagines){
+            slides[slide] = {loaded:false, id: slide};
+            newSlide = slides[slide]
+            isLoading = true;
+            $container.trigger("startLoading");
+            if ($('.pagina'+pagina).length !== 0){
+                newSlide.$img = $('.pagina'+pagina);
+                newSlide.$img.css({
+                               "position"    : "absolute",
+                               "left"        : "50%",
+                               "top"         : "50%"
+                             }).hide();
+                $container.append(newSlide.$img);
+                newSlide.loaded = true;
+                isLoading = false;
+                newSlide.info = $('.pagina' + pagina + " .fs-info").html();
+                $('.pagina' + pagina + " .fs-info").remove();
+                $container.trigger("stopLoading");
+                changeSlide(oldSlide, newSlide);
+                updateSlideSize(newSlide);
+            }
+        }
+        else {
+            // Do nothing
+            //slides[slide] = {loaded: false, id: slide};
+        }
+      }
+    });
+
+    $container.bind("prevSlide nextSlide", function(event, obj) {
+      var total_pagines, nextID, slides = $container.data("slides"), currentID = $container.data("currentSlide").id;
+      total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+      if (event.type == "nextSlide") {
+        nextID = (currentID + 1);
+        if (nextID >= total_pagines){
+            nextID = 0;
+        }
+        if (currentID + 2 >= slides.length){
+            pinta_pagina_seguent(currentID + 3);
+        }
+      } else {
+        nextID = (currentID - 1 + slides.length) % slides.length;
+      }
+      $container.trigger("showSlide", nextID);
+    });
+
+    // private function to change between slides
+    var changeSlide = function(oldSlide, newSlide) {
+      if (oldSlide !== undefined) {
+        $container.trigger("endOfSlide", oldSlide);
+        oldSlide.$img.fadeOut();
+      }
+      newSlide.$img.fadeIn( function(){
+        $container.trigger("startOfSlide", newSlide);
+      });
+      $container.data("currentSlide", newSlide);
+    }
+
+    // keyboard navigation
+    var keyFunc = function(event) {
+      if (event.keyCode == 27) { // ESC
+        $container.trigger("close");
+      }
+      if (event.keyCode == 37) { // Left
+        $container.trigger("prevSlide");
+      }
+      if (event.keyCode == 39) { // Right
+        $container.trigger("nextSlide");
+      }
+    }
+
+    // Close the viewer
+    $container.bind("close", function(){
+        var options = $container.data("options");
+        var oldSlide = $container.data("currentSlide");
+        oldSlide.$img.hide();
+        $container.trigger("endOfSlide", oldSlide);
+        $(document).unbind("keyup", keyFunc);
+        // Use the fancy new FullScreenAPI:
+        if (options.useFullScreen) {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        }
+        if (document.mozCancelFullScreen) {
+          $("html").css("overflow", "auto");
+          $(document).scrollTop($container.data("mozScrollTop"));
+          document.mozCancelFullScreen();
+        }
+        if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        }
+        document.removeEventListener('fullscreenchange', changeFullScreenHandler);
+        document.removeEventListener('mozfullscreenchange', changeFullScreenHandler);
+        document.removeEventListener('webkitfullscreenchange', changeFullScreenHandler);
+        }
+        var link = $('.link_visualitzacio')[0]
+        //seleccionem la nova visualitzacio i deseleccionem la que estava marcada
+        $('#visualitzacio_resultats .selected').removeClass('selected');
+        $(link).addClass('selected');
+
+        //repintem els resultats amb la nova visualitzacio
+        var visualitzacio = $(link).attr('rel');
+        modifica_parametres_visualitzacio('visualitzacio', visualitzacio);
+        var zoom = consulta_parametre_visualitzacio('zoom');
+        var resultats_per_pagina;
+        if (visualitzacio === 'imatge') {
+            resultats_per_pagina = calcula_resultats_per_pagina(zoom);
+        }
+        modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
+
+        $("#slider-wrap-zoom").slider("enable");
+        $("#zoom_resultats").removeClass("hidden");
+        $("#zoom_resultats").addClass("selected");
+        $(".link_visualitzacio1").addClass("hidden");
+
+        // You can close the slide show like this:
+        $container
+            .removeData("currentSlide slides width height")
+            .hide();
+        $container.remove();
+        //recalculem els resultats
+        pinta_resultats();
+    });
+
+    // When ESC is pressed in full screen mode, the keypressed event is not
+    // triggered, so this here catches the exit-fullscreen event:
+    function changeFullScreenHandler(event) {
+      if ($container.data("isFullScreen")) {
+        $container.trigger("close");
+      }
+      $container.data("isFullScreen", true);
+    }
+
+    var firstrun = true;
+    // Show a particular slide
+    $container.bind("show", function(event, slide){
+      var options = $container.data("options");
+      var slideshows = $container.data("slideshows");
+      var slides = slideshows;
+      $container.data("slides", slides);
+      $container.trigger("updateSize");
+      $(document).bind("keyup", keyFunc);
+      // Use the fancy new FullScreenAPI:
+      if (options.useFullScreen) {
+        con = $container[0];
+        if (con.requestFullScreen) {
+          document.requestFullScreen();
+          document.addEventListener('fullscreenchange', changeFullScreenHandler);
+        }
+        if (con.mozRequestFullScreen) {
+          con.mozRequestFullScreen();
+          document.addEventListener('mozfullscreenchange', changeFullScreenHandler);
+          $container.data("mozScrollTop", $(document).scrollTop());
+          $("html").css("overflow", "hidden");
+        }
+        if (con.webkitRequestFullScreen) {
+          con.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          document.addEventListener('webkitfullscreenchange', changeFullScreenHandler);
+        }
+        $container.data("isFullScreen", false);
+      }
+      if (firstrun) {
+        $container.trigger("init");
+        firstrun = false;
+      }
+      $container.show();
+      $container.trigger("showSlide", slide);
+    });
+
+  }
+
+  $.fn.fullscreenslides = function(options) {
+    $container = $('#fullscreenSlideshowContainer');
+    if ($container.length == 0) {
+      $container = $('<div id="fullscreenSlideshowContainer">').hide();
+      $("body").append($container);
+      attachEvents();
+    }
+    // initialize variables
+    var options = $.extend({
+      "bgColor"           : "#000",
+      "useFullScreen"     : false,
+      "startSlide"        : 0
+    }, options || {});
+    // Check if fullScreenApi is available
+    options.useFullScreen = options.useFullScreen && !!(
+      $container[0].requestFullScreen ||
+      $container[0].mozRequestFullScreen ||
+      $container[0].webkitRequestFullScreen);
+
+    $container.data("options", options);
+    // Apply default styles
+    $container.css({
+      "position"         : "fixed",
+      "top"              : 0,
+      "left"             : 0,
+      "width"            : "100%",
+      "background-color" : options.bgColor
+    });
+    var slideshows = [];
+    // Preload one slides
+    // dataProvider.fillBuffer(0);
+    // slideshows.push({loaded: false, id: 0 });
+    $container.data("slideshows", slideshows);
+
+  }
+})(jQuery);
+
+function initFullScreen(){
+
+
+      // initialize the slideshow
+      $(document).fullscreenslides();
+
+      // All events are bound to this container element
+      var $container = $('#fullscreenSlideshowContainer');
+
+      $container
+        //This is triggered once:
+        .bind("init", function() {
+
+          // The slideshow does not provide its own UI, so add your own
+          // check the fullscreenstyle.css for corresponding styles
+          $container
+            .append('<div class="ui" id="fs-caption"></div> \
+                <div class="ui" id="fs-header"> \
+                <div class="fs-header-extra"><span class="logo">ARTSCOMBINATORIES</span> \
+                <span class="title"> ' + document.title + '</span></div> \
+                <div class="btns"> \
+                    <span id="fs-close">&times;</span> \
+                    <span id="fs-info"><img src="++resource++fatac.theme.images/info_16_blanco.png" alt="i" title="Info"></span> \
+                    <span class="fs-prev">&lt;</span> \
+                    <span class="fs-next">&gt;</span> \
+                </div> \
+                </div>')
+            .append('<div class="ui" id="fs-loader"><img src=\"spinner.gif\" alt="Loading..."></div>')
+            .append('<div class="ui" id="fs-footer"> \
+                    <span class="fs-prev">&lt;</span> \
+                    <span class="fs-next">&gt;</span> \
+                </div>');
+
+          // Bind to the ui elements and trigger slideshow events
+          $('.fs-prev').each(
+                function(){
+            $(this).click(function(){
+            // You can trigger the transition to the previous slide
+                $container.trigger("prevSlide");
+              });
+            });
+          $('.fs-next').click(function(){
+            // You can trigger the transition to the next slide
+            $container.trigger("nextSlide");
+          });
+          $('#fs-close').click(function(){
+            $container.trigger("close");
+          });
+          $('#fs-info').click(function(){
+            $('#fs-caption').toggle();
+          })
+
+        })
+        // When a slide starts to load this is called
+        .bind("startLoading", function() {
+          // show spinner
+          $('#fs-loader').show();
+        })
+        // When a slide stops to load this is called:
+        .bind("stopLoading", function() {
+          // hide spinner
+          $('#fs-loader').hide();
+        })
+        // When a slide is shown this is called.
+        // The "loading" events are triggered only once per slide.
+        // The "start" and "end" events are called every time.
+        // Notice the "slide" argument:
+        .bind("startOfSlide", function(event, slide) {
+          // set and show caption
+          $('#fs-caption').html(slide.info);
+          $('#fs-caption').show();
+        })
+        // before a slide is hidden this is called:
+        .bind("endOfSlide", function(event, slide) {
+          $('#fs-caption').hide();
+        });
+        $container.trigger("show", 0);
 }
