@@ -349,3 +349,27 @@ msgstr "Publicaciones"
 
 msgid "Cerca a la biblioteca"
 msgstr "Buscar en biblioteca"
+
+msgid "Tanca"
+msgstr "Cerrar"
+
+msgid "Obre"
+msgstr "Abrir"
+
+msgid "Següents"
+msgstr "Siguientes"
+
+msgid "Anteriors"
+msgstr "Anteriores"
+
+msgid "Carregant..."
+msgstr "Cargando..."
+
+msgid "Afegeix Nova Playlist"
+msgstr "Añadir Nueva Playlist"
+
+msgid "Afegeix Nou Fitxer"
+msgstr "Añadir Nuevo Fichero"
+
+msgid "Afegeix Nou Grup"
+msgstr "Añadir Nuevo Grupo"

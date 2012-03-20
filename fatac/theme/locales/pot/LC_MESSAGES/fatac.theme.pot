@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-10-20 09:56+0000\n"
+"POT-Creation-Date: 2012-03-12 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,229 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fatac.theme\n"
 
-#: ../../../browser/cercador.pt:5
+#: ../../../browser/templates/resultatsview.pt:45
+msgid "<span>x</span> <span id="tipus_entrada">x</span> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" alt="▼" /></span>"
+msgstr ""
+
+#: ../../../browser/templates/homeview.pt:93
+msgid "Anteriors"
+msgstr ""
+
+#: ../../../browser/templates/cercaview.pt:49
+#: ../../../browser/templates/homeview.pt:87
+msgid "Carregant..."
+msgstr ""
+
+#: ../../../browser/templates/cercaview.pt:43
+msgid "Cerca"
+msgstr ""
+
+#: ../../../browser/templates/cercaview.pt:39
+msgid "Cerca a la biblioteca"
+msgstr ""
+
+#: ../../../browser/templates/cercador.pt:17
+#: ../../../browser/templates/explorarview.pt:12
 msgid "Explorar"
+msgstr ""
+
+#: ../../../profiles/default/controlpanel.xml
+msgid "Fatac"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:17
+msgid "Filtre de búsqueda"
 msgstr ""
 
 #: ../../../browser/opcions.pt:2
 msgid "Fitxa d'expedient"
 msgstr ""
 
-#: ../../../browser/cercador.pt:4
+#: ../../../browser/templates/filtresview.pt:15
+#: ../../../browser/templates/resultatsview.pt:14
+msgid "Obre"
+msgstr ""
+
+#: ../../../browser/templates/cercador.pt:5
+msgid "Search"
+msgstr ""
+
+#: ../../../browser/templates/cercador.pt:4
 msgid "Search Site"
 msgstr ""
 
+#: ../../../browser/templates/homeview.pt:81
+msgid "Següents"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:14
+#: ../../../browser/templates/resultatsview.pt:13
+msgid "Tanca"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:16
+msgid "Visualització de búsqueda"
+msgstr ""
+
+#. Default: "Agents"
+#: ../../../browser/templates/explorarview.pt:18
+msgid "agentes"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:20
+msgid "ampliar_filtres"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:96
+msgid "arxius"
+msgstr ""
+
+#. Default: "cat"
 #: ../../../browser/languageselector.pt:13, 29
 msgid "ca"
-msgstr "cat"
+msgstr ""
 
-#: ../../../browser/languageselector.pt:13, 29
-msgid "es"
-msgstr "cast"
+#. Default: "0 resultats"
+#: ../../../browser/templates/resultatsview.pt:121
+msgid "cap_resultat"
+msgstr ""
 
+#. Default: "Col·lecció"
+#: ../../../browser/templates/explorarview.pt:20
+msgid "colection"
+msgstr ""
+
+#. Default: "Amb la col·laboració de:"
+#: ../../../browser/templates/footer.pt:52
+msgid "collaboracio"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:53
+msgid "collaboracio1"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:93
+msgid "de"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:25
+#: ../../../browser/templates/resultatsview.pt:73
+msgid "dreta"
+msgstr ""
+
+#. Default: "eng"
 #: ../../../browser/languageselector.pt:13, 29
 msgid "en"
-msgstr "eng"
+msgstr ""
+
+#. Default: "cast"
+#: ../../../browser/languageselector.pt:13, 29
+msgid "es"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:24
+#: ../../../browser/templates/resultatsview.pt:70
+msgid "esquerra"
+msgstr ""
+
+#. Default: "Esdeveniments"
+#: ../../../browser/templates/explorarview.pt:19
+msgid "eventos"
+msgstr ""
+
+#. Default: "Explora la nostra base de dades per:"
+#: ../../../browser/templates/explorarview.pt:16
+msgid "explora_bbdd"
+msgstr ""
+
+#. Default: "Finançament:"
+#: ../../../browser/templates/footer.pt:22
+msgid "financament"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:23
+msgid "financament1"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:26
+msgid "financament2"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:106
+msgid "large"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:44
+msgid "mes_opcions"
+msgstr ""
+
+#. Default: "Ordre:"
+#: ../../../browser/templates/resultatsview.pt:45
+msgid "ordre"
+msgstr ""
+
+#. Default: "pàgina"
+#: ../../../browser/templates/resultatsview.pt:91
+msgid "pagina"
+msgstr ""
+
+#. Default: "Participants:"
+#: ../../../browser/templates/footer.pt:31
+msgid "participants"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:32
+msgid "participants1"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:35
+msgid "participants2"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:38
+msgid "participants3"
+msgstr ""
+
+#. Default: "Patrocinadors institucionals:"
+#: ../../../browser/templates/footer.pt:43
+msgid "patrocinadors"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:44
+msgid "patrocinadors1"
+msgstr ""
+
+#: ../../../browser/templates/footer.pt:47
+msgid "patrocinadors2"
+msgstr ""
+
+#: ../../../browser/templates/filtresview.pt:19
+msgid "reduir_filtres"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:104
+msgid "small"
+msgstr ""
+
+#. Default: "Últims consultats"
+#: ../../../browser/templates/homeview.pt:99
+msgid "ultims_consultats"
+msgstr ""
+
+#. Default: "Últims documents"
+#: ../../../browser/templates/homeview.pt:78
+msgid "ultims_documents"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:108
+msgid "visualitzacio1"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:109
+msgid "visualitzacio2"
+msgstr ""
+
+#: ../../../browser/templates/resultatsview.pt:110
+msgid "visualitzacio3"
+msgstr ""
+

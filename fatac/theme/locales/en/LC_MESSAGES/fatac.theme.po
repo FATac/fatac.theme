@@ -217,3 +217,9 @@ msgstr "Publications"
 
 msgid "Cerca a la biblioteca"
 msgstr "Search in library"
+
+msgid "Obre"
+msgstr "Open"
+
+msgid "Tanca"
+msgstr "Close"
