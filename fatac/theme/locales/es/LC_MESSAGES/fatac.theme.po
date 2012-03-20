@@ -373,3 +373,6 @@ msgstr "Añadir Nuevo Fichero"
 
 msgid "Afegeix Nou Grup"
 msgstr "Añadir Nuevo Grupo"
+
+msgid "FrameActivity"
+msgstr "Exposición"

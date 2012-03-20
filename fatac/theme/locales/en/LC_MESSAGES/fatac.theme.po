@@ -223,3 +223,6 @@ msgstr "Open"
 
 msgid "Tanca"
 msgstr "Close"
+
+msgid "FrameActivity"
+msgstr "Exhibition"
