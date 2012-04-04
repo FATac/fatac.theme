@@ -449,16 +449,11 @@ function click_visualitzacions() {
         //recalculem els resultats
         pinta_resultats( function(){
             if (visualitzacio == 'fitxa_ampliada_cerca_overlay'){
-                //pinta_pagina_seguent(1);
                 initFullScreen();
             }
         });
 
     });
-}
-
-function canvia_visualitzacio(event){
-
 }
 
 //TODO: caldria fer que només canvii la zona de les pàgines, no els controls de paginació i visualització, ordre, etc.
@@ -475,17 +470,11 @@ function pinta_resultats(callback) {
     //2. cridem resultatsView per substituïr tota la zona de resultats
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
     $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
-        replaceResultats(data);
+
+        $('#zona_resultats').replaceWith(data);
+
         if (callback) { callback()};
     });
-}
-
-function replaceResultats(html_resultats, callback) {
-    // reemplaça l'html de #zona_resultats amb el rebut i executa, si cal, la funció callback
-
-    $('#zona_resultats').replaceWith(html_resultats);
-
-    if (callback) { callback(); }
 }
 
 function clone(obj) {
@@ -518,6 +507,7 @@ function pinta_pagina_seguent(pagina, callback) {
             $('.pagina' + pagina_str).replaceWith(data);
             inicialitza_js_pagines();
             if (callback) { callback(); }
+            $(document).trigger('pinta_pagina_seguent', pagina)
         });
     }
 }
@@ -734,14 +724,41 @@ function ret_parametres_visualitzacio_json() {
 
     // private function to update the image size and position of a slide
     var updateSlideSize = function(slide) {
+      var ww, wh;
       if (slide === undefined) {
-        var slide = $container.data("currentSlide");
+        slide = $container.data("currentSlide");
       }
       if (slide !== undefined) {
-        var wh = $(window).height();
-        var ww = $(window).width();
+        wh = $(window).height();
+        ww = $(window).width();
         // compare the window aspect ratio to the image aspect ratio
         // to use either maximum width or height
+        slide.$img.find('img').each(function(i, o) {
+            o = $(o);
+            o.removeClass('media_image')
+            if ((ww / wh) > (o.width() / o.height())) {
+              o.css({
+                "height" : wh + "px",
+                "width"  : "auto"
+              });
+            } else {
+              o.css({
+                "height" : "auto",
+                "width"  : ww + "px"
+              });
+            }
+        });
+        // compare the window aspect ratio to the video aspect ratio
+        slide.$img.find('video').each(function(i, o) {
+            o = $(o);
+            o.removeClass('media_video')
+            if ((ww / wh) <= (o.width() / o.height())) {
+              o.width(ww)
+            }
+            o.height(wh - 50)
+        });
+
+        // compare the window aspect ratio to the container
         if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
           slide.$img.css({
             "height" : wh + "px",
@@ -759,28 +776,6 @@ function ret_parametres_visualitzacio_json() {
           "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
         });
 
-        slide.$img.find('img').each(function(i, o) {
-            o = $(o);
-            if ((ww / wh) > (o.width() / o.height())) {
-              o.css({
-                "height" : wh + "px",
-                "width"  : "auto"
-              });
-            } else {
-              o.css({
-                "height" : "auto",
-                "width"  : ww + "px"
-              });
-            }
-        });
-        slide.$img.find('video').each(function(i, o) {
-            o = $(o);
-            if ((ww / wh) > (o.width() / o.height())) {
-              o.height(wh)
-            } else {
-              o.width(ww)
-            }
-        });
       }
     }
     $(window).bind("resize", function(){
@@ -790,74 +785,183 @@ function ret_parametres_visualitzacio_json() {
 
     // Show individual slides
     var isLoading = false;
+    var prepareSlide = function(slide){
+        var slides, newSlide, pagina, preview, info, slideElement;
+        slides = $container.data("slides");
+        pagina = slide + 1;
+        newSlide = slides[slide];
+        newSlide.$img = $('.pagina'+pagina).hide();
+        if (newSlide.$img.find('.fs-info').length > 0){
+            newSlide.$img.css({
+                       "position"    : "absolute",
+                       "left"        : "50%",
+                       "top"         : "50%"
+                     }).hide();
+            newSlide.loaded = true;
+            // Info
+            info = newSlide.$img.find('.fs-info');
+            newSlide.info = info.html();
+            info.remove();
+            // Preview
+            $container.append(newSlide.$img);
+            newSlide.preview  = newSlide.$img.find('.slide-preview');
+            newSlide.preview.attr('id', 'slide-preview-' + slide);
+            slideElement = $('#slide-preview-'+slide);
+            if (slideElement.length > 0 ){
+                slideElement.replaceWith(newSlide.preview)
+                slideElement.click( function () {
+                    $container.trigger("showSlide", slide);
+                });
+            }
+            newSlide.$img.find('.slide-preview').remove();
+        }
+    }
+    var waitReady = 0;
+    $(document).bind('pinta_pagina_seguent', function(event, pagina){
+        if ($container){
+            slides = $container.data("slides")
+            if (slides !== undefined && slides[pagina] && !slides[pagina].loaded){
+                prepareSlide(pagina);
+                if (waitReady === pagina){
+                    isLoading = false;
+                    $container.trigger('stopLoading');
+                    changeSlide($container.data("currentSlide"), slides[pagina]);
+                    updateSlideSize(slides[pagina]);
+                }
+            }
+        }
+
+      });
+
+    var preloadSlide = function(){
+        var slides, preloadID, total_pagines;
+        slides = $container.data("slides")
+        total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+        preloadID = slides.length;
+        if (preloadID < total_pagines ){
+            newSlide = {loaded:false, id: preloadID};
+
+            slides[preloadID] = newSlide;
+            if ($('.pagina'+(preloadID + 1)).length === 0){
+                pinta_pagina_seguent(preloadID, function(){
+                    prepareSlide(preloadID);
+                });
+            }else{
+                prepareSlide(preloadID);
+            }
+        }
+    }
 
     $container.bind("showSlide", function(event, slide) {
+      var slides, total_pagines, newSlide, oldSlide = $container.data("currentSlide");
+
       if (!isLoading) {
-        var slides, total_pagines, newSlide, oldSlide = $container.data("currentSlide");
         slides = $container.data("slides");
         total_pagines = parseInt($('#pagina_total').attr('rel'),10);
-        pagina = slide + 1;
         if (slide < slides.length){
             newSlide = slides[slide]
-            changeSlide(oldSlide, newSlide);
-            updateSlideSize(newSlide);
-        }
-        else if (pagina < total_pagines){
-            slides[slide] = {loaded:false, id: slide};
-            newSlide = slides[slide]
-            isLoading = true;
-            $container.trigger("startLoading");
-            if ($('.pagina'+pagina).length !== 0){
-                newSlide.$img = $('.pagina'+pagina);
-                newSlide.$img.css({
-                               "position"    : "absolute",
-                               "left"        : "50%",
-                               "top"         : "50%"
-                             }).hide();
-                $container.append(newSlide.$img);
-                newSlide.loaded = true;
-                isLoading = false;
-                newSlide.info = $('.pagina' + pagina + " .fs-info").html();
-                $('.pagina' + pagina + " .fs-info").remove();
-                $container.trigger("stopLoading");
+            if (newSlide.loaded) {
                 changeSlide(oldSlide, newSlide);
                 updateSlideSize(newSlide);
             }
+            else {
+                // Encara no s'ha obtingut els resultats de la pregarrega
+                isLoading = true;
+                $container.trigger('startLoading');
+                waitReady = slide;
+            }
         }
-        else {
-            // Do nothing
-            //slides[slide] = {loaded: false, id: slide};
+        else if ((slide + 1) <= total_pagines){
+            // Encara no s'ha precarregat
+            slides[slide] = {loaded:false, id: slide};
+            newSlide = slides[slide]
+            isLoading = true;
+            $container.trigger('startLoading');
+            waitReady = slide;
+            if ($('.pagina' + (slide + 1)).length === 0){
+                // No s'ha fet la precarrega
+                pinta_pagina_seguent(slide);
+            }
         }
       }
     });
 
     $container.bind("prevSlide nextSlide", function(event, obj) {
-      var total_pagines, nextID, slides = $container.data("slides"), currentID = $container.data("currentSlide").id;
-      total_pagines = parseInt($('#pagina_total').attr('rel'),10);
-      if (event.type == "nextSlide") {
-        nextID = (currentID + 1);
-        if (nextID >= total_pagines){
-            nextID = 0;
+        var total_pagines, nextID, currentID;
+        currentID = $container.data("currentSlide").id;
+        total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+        if (event.type == "nextSlide") {
+            nextID = (currentID + 1);
+            if (nextID > total_pagines){
+                nextID = currentID;
+            } else{
+                preloadSlide();
+            }
+        } else {
+            nextID = currentID - 1;
+            if (nextID < 0) {
+                nextID = 0;
+            }
         }
-        if (currentID + 2 >= slides.length){
-            pinta_pagina_seguent(currentID + 3);
+        if (nextID != currentID){
+            $container.trigger("showSlide", nextID);
         }
-      } else {
-        nextID = (currentID - 1 + slides.length) % slides.length;
-      }
-      $container.trigger("showSlide", nextID);
     });
+    var addPreview = function(slides, index){
+        var slide, preview;
+        preview = '<div class="slide-preview waiting" id="slide-preview-' + index + '"><img src="spinner.gif"/></div>';
+        slide = $("#slide-preview-" + index);
+        if (index < slides.length){
+            if (slides[index].loaded) {
+                preview = slides[index].preview;
+            }
+        }
+        if (slide.length === 0){
+            $('.slide-selector > .previews').append(preview);
+            slide.click( function () {
+                    $container.trigger("showSlide", index);
+            });
+        } else {
+            // Comprovar que l'slide s'hagi carregat
+            if (slide.hasClass('waiting')){
+                slide.replaceWith(preview);
+                slide.click( function () {
+                    $container.trigger("showSlide", index);
+                });
+            }
+            slide.show();
+        }
+    }
 
     // private function to change between slides
     var changeSlide = function(oldSlide, newSlide) {
-      if (oldSlide !== undefined) {
-        $container.trigger("endOfSlide", oldSlide);
-        oldSlide.$img.fadeOut();
-      }
-      newSlide.$img.fadeIn( function(){
-        $container.trigger("startOfSlide", newSlide);
-      });
-      $container.data("currentSlide", newSlide);
+        var slides, slide, total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+        slides = $container.data("slides")
+        slide = newSlide.id;
+
+        if (oldSlide !== undefined) {
+            $container.trigger("endOfSlide", oldSlide);
+            childrens = $('.previews').children();
+            childrens.removeClass('selected');
+            childrens.hide();
+            oldSlide.$img.fadeOut();
+        }
+        newSlide.$img.fadeIn(function(){
+            $container.trigger("startOfSlide", newSlide);
+        });
+        if (slide === 0){
+            startAt = 0;
+        }
+        else if (slide === total_pagines - 1){
+            startAt = slide - 2;
+        } else{
+            startAt = slide - 1;
+        }
+        for (i = 0; i < 3; i ++){
+            addPreview(slides, startAt + i);
+        }
+        $('#slide-preview-' + slide).addClass('selected');
+        $container.data("currentSlide", newSlide);
     }
 
     // keyboard navigation
@@ -875,8 +979,9 @@ function ret_parametres_visualitzacio_json() {
 
     // Close the viewer
     $container.bind("close", function(){
-        var options = $container.data("options");
-        var oldSlide = $container.data("currentSlide");
+        var options, oldSlide, link, zoom;
+        options = $container.data("options");
+        oldSlide = $container.data("currentSlide");
         oldSlide.$img.hide();
         $container.trigger("endOfSlide", oldSlide);
         $(document).unbind("keyup", keyFunc);
@@ -897,20 +1002,15 @@ function ret_parametres_visualitzacio_json() {
         document.removeEventListener('mozfullscreenchange', changeFullScreenHandler);
         document.removeEventListener('webkitfullscreenchange', changeFullScreenHandler);
         }
-        var link = $('.link_visualitzacio')[0]
-        //seleccionem la nova visualitzacio i deseleccionem la que estava marcada
+        // Canviem la visuaalització
+        link = $('.link_visualitzacio:first-child')
+        // seleccionem la nova visualitzacio i deseleccionem la que estava marcada
         $('#visualitzacio_resultats .selected').removeClass('selected');
-        $(link).addClass('selected');
-
-        //repintem els resultats amb la nova visualitzacio
-        var visualitzacio = $(link).attr('rel');
-        modifica_parametres_visualitzacio('visualitzacio', visualitzacio);
-        var zoom = consulta_parametre_visualitzacio('zoom');
-        var resultats_per_pagina;
-        if (visualitzacio === 'imatge') {
-            resultats_per_pagina = calcula_resultats_per_pagina(zoom);
-        }
-        modifica_parametres_visualitzacio('resultats_per_pagina', resultats_per_pagina);
+        link.addClass('selected');
+        // repintem els resultats amb la nova visualitzacio
+        modifica_parametres_visualitzacio('visualitzacio', link.attr('rel'));
+        zoom = consulta_parametre_visualitzacio('zoom');
+        modifica_parametres_visualitzacio('resultats_per_pagina', calcula_resultats_per_pagina(zoom));
 
         $("#slider-wrap-zoom").slider("enable");
         $("#zoom_resultats").removeClass("hidden");
@@ -938,12 +1038,27 @@ function ret_parametres_visualitzacio_json() {
     var firstrun = true;
     // Show a particular slide
     $container.bind("show", function(event, slide){
-      var options = $container.data("options");
-      var slideshows = $container.data("slideshows");
-      var slides = slideshows;
-      $container.data("slides", slides);
+      var options, slides, total_pagines;
+      total_pagines = parseInt($('#pagina_total').attr('rel'),10);
+      options = $container.data("options");
+      slides = $container.data("slides");
+
       $container.trigger("updateSize");
       $(document).bind("keyup", keyFunc);
+
+      if (firstrun) {
+        $container.trigger("init");
+        // Find and prepare content loaded
+        $('.pagina').each(function(i, o){
+            slides.push({loaded:false, id: i});
+            prepareSlide(i);
+        });
+        // We want 3 slides to preload if they exist
+        while (slides.length < 3 && (slides.length < total_pagines)){
+            slides.push({loaded:false, id: slides.length});
+        }
+        firstrun = false;
+      }
       // Use the fancy new FullScreenAPI:
       if (options.useFullScreen) {
         con = $container[0];
@@ -963,10 +1078,7 @@ function ret_parametres_visualitzacio_json() {
         }
         $container.data("isFullScreen", false);
       }
-      if (firstrun) {
-        $container.trigger("init");
-        firstrun = false;
-      }
+
       $container.show();
       $container.trigger("showSlide", slide);
     });
@@ -983,7 +1095,7 @@ function ret_parametres_visualitzacio_json() {
     // initialize variables
     var options = $.extend({
       "bgColor"           : "#000",
-      "useFullScreen"     : false,
+      "useFullScreen"     : true,
       "startSlide"        : 0
     }, options || {});
     // Check if fullScreenApi is available
@@ -1001,11 +1113,7 @@ function ret_parametres_visualitzacio_json() {
       "width"            : "100%",
       "background-color" : options.bgColor
     });
-    var slideshows = [];
-    // Preload one slides
-    // dataProvider.fillBuffer(0);
-    // slideshows.push({loaded: false, id: 0 });
-    $container.data("slideshows", slideshows);
+    $container.data("slides", []);
 
   }
 })(jQuery);
@@ -1039,10 +1147,29 @@ function initFullScreen(){
                 </div>')
             .append('<div class="ui" id="fs-loader"><img src=\"spinner.gif\" alt="Loading..."></div>')
             .append('<div class="ui" id="fs-footer"> \
-                    <span class="fs-prev">&lt;</span> \
-                    <span class="fs-next">&gt;</span> \
+                    <div class="slide-selector"> \
+                        <div class="fs-prev">&lt;</div> \
+                        <div class="fs-next">&gt;</div> \
+                        <div class="previews"></div>\
+                    </div>\
+                    <div class="helper"></div>\
                 </div>');
-
+          $('.helper').mouseenter(function (){
+               $('.slide-selector').show();
+          });
+          var timeout = 0;
+          $('#fs-footer').mouseleave(function(){
+                if (timeout !== 0 ) {
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(function(){
+                    $('.slide-selector').hide();
+                }, 400);
+          }).mouseenter(function(){
+            if (timeout !== 0 ) {
+                clearTimeout(timeout);
+            }
+          });
           // Bind to the ui elements and trigger slideshow events
           $('.fs-prev').each(
                 function(){
@@ -1079,8 +1206,9 @@ function initFullScreen(){
         // Notice the "slide" argument:
         .bind("startOfSlide", function(event, slide) {
           // set and show caption
-          $('#fs-caption').html(slide.info);
-          $('#fs-caption').show();
+         
+          $('#fs-caption').html(slide.info).fadeIn();
+          crea_scrolls_verticals();
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
