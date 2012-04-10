@@ -506,8 +506,8 @@ function pinta_pagina_seguent(pagina, callback) {
         $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
             $('.pagina' + pagina_str).replaceWith(data);
             inicialitza_js_pagines();
-            if (callback) { callback(); }
             $(document).trigger('pinta_pagina_seguent', pagina)
+            if (callback) { callback(); }
         });
     }
 }
@@ -840,7 +840,6 @@ function ret_parametres_visualitzacio_json() {
         preloadID = slides.length;
         if (preloadID < total_pagines ){
             newSlide = {loaded:false, id: preloadID};
-
             slides[preloadID] = newSlide;
             if ($('.pagina'+(preloadID + 1)).length === 0){
                 pinta_pagina_seguent(preloadID, function(){
@@ -1203,12 +1202,11 @@ function initFullScreen(){
         // When a slide is shown this is called.
         // The "loading" events are triggered only once per slide.
         // The "start" and "end" events are called every time.
-        // Notice the "slide" argument:
         .bind("startOfSlide", function(event, slide) {
           // set and show caption
-         
-          $('#fs-caption').html(slide.info).fadeIn();
-          crea_scrolls_verticals();
+          $('#fs-caption').html(slide.info).fadeIn(function(){
+                crea_scrolls_verticals();
+            });
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
@@ -1216,3 +1214,6 @@ function initFullScreen(){
         });
         $container.trigger("show", 0);
 }
+
+
+

@@ -1,7 +1,6 @@
 <tal:comment tal:replace="nothing">
 crida demo1: http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=fitxa_ampliada_cerca_overlay
 crida demo2: tb es pot cridar amb parametres_visualitzacio
-TODO@ariel disseny
 </tal:comment>
 
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_all_sections">
@@ -22,7 +21,7 @@ TODO@ariel disseny
 
             <tal:comment tal:replace="nothing">(Títol i Descripció)</tal:comment>
             <div class="fs-info">
-                <div class="slider-vertical" tal:attributes="id string:slideFitxaOpcionsId-${dades_objecte/id}">
+                <div class="slider_vertical" tal:attributes="id string:slideFitxaOpcionsId-${dades_objecte/id}">
                     <div class="div_interior">
                         <tal:rep tal:repeat="seccio seccions">
                             <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body']">
