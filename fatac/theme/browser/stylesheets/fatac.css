@@ -366,7 +366,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 #fs-header, #fs-loader, #fs-caption, #fs-footer { background-color: black; font-weight: bold; cursor: pointer; line-height: 1em; color: #ECECEC; }
 #fs-header div, #fs-fotter div { display:inline; }
 
-#fs-header { background-color: #330033; top:0.75em; right:1em;  padding:0.5em; text-align: center; }
+#fs-header { background-color: #464242; top:0.75em; right:1em;  padding:0.5em; text-align: center; }
 #fs-header .logo { position: absolute; text-transform: uppercase; left: 2em; }
 #fs-header .title { font-size:0.8em; }
 #fs-header .btns { float:right; }
@@ -375,7 +375,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 #fs-header:hover { left:1em; }
 #fs-header:hover .fs-header-extra { display:inline; }
 
-#fs-footer { background-color: #330033; bottom:0em; left:0em; right:0em; opacity:0.8; text-align: center; }
+#fs-footer { background-color: #464242; bottom:0em; left:0em; right:0em; opacity:0.8; text-align: center; }
 #fs-footer div { display:inline; vertical-align:middle;}
 #fs-footer .helper { background-color: red; bottom: 0; height: 20px; left: 0; position: absolute; width: 100%; opacity: 0; display:hidden;}
 #fs-footer .fs-prev { float:left; font-size: 3em; padding: 30px 12px 12px; margin:15px 20px 15px 0;}
@@ -387,7 +387,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 /* .slide-preview.selected { border: solid 2px #FFF;}*/
 
 #fs-loader { top: 50%; left: 50%; height: 1em; margin-top: -1em; margin-left: -75px; display: none; }
-#fs-caption { padding: 2px; background-color: #330033; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 50px; color: #ECECEC; overflow: hidden;}
+#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 50px; color: #ECECEC; overflow: hidden;}
 #fs-caption .slider-vertical{text-align:left;}
 #fs-caption .header { padding:5px; }
 #fs-caption .header img{ vertical-align:middle; max-width:15px; }
