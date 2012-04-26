@@ -95,14 +95,14 @@
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
-                    	<tal:co tal:condition="python: hasVideo == 0">
-	                    	<video id="videoTag" tal:attributes="src url" preload="none" controls="">
-	                       		Warning: media could not be embedded.
-	                       	</video>
-	                       	<br/>
-	                       	|
+                        <tal:co tal:condition="python: hasVideo == 0">
+                            <audio id="audioTag" tal:attributes="src url" preload="none" controls="">
+                                Warning: media could not be embedded.
+                            </audio>
+                            <br/>
+                            |
 	                    </tal:co>
-	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></a> |
+	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:$$('#audioTag').attr('src','${url}');; $$('#audioTag').load();; $$('#audioTag').play();;"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
