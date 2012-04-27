@@ -10,7 +10,6 @@ from Products.CMFCore.utils import getToolByName
 from base64 import b64encode
 from time import time
 
-
 class funcionsCerca():
     """ classe que conté les funcions bàsiques relacionades amb la cerca;
     cacheja els resultats fent servir ram.cache
@@ -39,7 +38,7 @@ class funcionsCerca():
         settings = registry.forInterface(IFatacSettings)
         url = settings.rest_server
         return url
-    
+
     def retServidorMedia(self):
         """ retorna la url del servidor rest, guardada amb plone.app.registry i
         configurable a través de @@fatac_settings
@@ -48,6 +47,23 @@ class funcionsCerca():
         settings = registry.forInterface(IFatacSettings)
         url = settings.media_server
         return url
+
+    def retTempsCache(self):
+        """ retorna la duració en segons de la cache, guardad amb plone.appe.registry i
+         configurable a través de @@fatac_settings"""
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IFatacSettings)
+        temps = settings.cache_time
+        if temps == 0:
+            return 0.01
+        return temps * 60
+
+    def retRequestTimeout(self):
+        """ retorna la duració en segons del timeout per les peticions, guardad amb plone.appe.registry i
+         configurable a través de @@fatac_settings"""
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IFatacSettings)
+        return settings.rest_timeout
 
     def retParametresVisualitzacio(self):
         """
@@ -64,7 +80,7 @@ class funcionsCerca():
         """
         url = url.replace(" ", "%20")
         try:
-            request = urllib2.urlopen(url)
+            request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
             if request:
                 return request.read()
             return
@@ -91,14 +107,22 @@ class funcionsCerca():
                     querystring_str += '&' + key + '=' + str(valor)
         return querystring_str
 
+    def marca_temps(self):
+        """Retorna una marca (string) en funció del temps i la durada de la cache"""
+        marca_temps = time()
+        durada = self.retTempsCache()
+        if durada != 0:
+            marca_temps = marca_temps // durada
+        return str(marca_temps)
+
     def modified_cachekey(fn, self, querystring, llista_ids, lang):
         """ Cache the result based on
         """
-        #TODO property pel temps de cache
         llista_ordenada = ''
         if llista_ids is not None:
             llista_ordenada = str(sorted(llista_ids))
-        return str(querystring) + llista_ordenada + str(time() // (60 * 5)) + lang
+
+        return str(querystring) + llista_ordenada + self.marca_temps() + lang
 
     @cache(modified_cachekey)
     def executaCerca(self, querystring, llista_ids, lang):
@@ -121,10 +145,10 @@ class funcionsCerca():
                 final = read.find('}', inici)
                 facet_fields = read[inici:final]
                 # busca qualsevol cadena [A-Za-z] seguida de :, i les agrupa guardant la posició inicial
-                mm = [(a.groups()[0],a.start()) for a in re.finditer('"([A-Za-z]*)":',facet_fields)]
+                mm = [(a.groups()[0], a.start()) for a in re.finditer('"([A-Za-z]*)":', facet_fields)]
                 #mm = [('ObjectType', 15), ('Year', 139), ('Country', 347), ('Translation', 570), ('Media', 649), ('License', 702), ('Role', 715), ('Person', 832), ('Organisation', 2858), ('Collection', 2876), ('ArtWork', 3043)]
                 #ordena mm en funció de la posició guardada
-                llista_claus = [a[0] for a in sorted(mm,key=lambda filtre:filtre[1])]
+                llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
                 #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
                 return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
 
@@ -145,7 +169,7 @@ class funcionsCerca():
     def modified_cachekey_tipus_ordenacio(fn, self, clau):
         """ Cache the result based on
         """
-        return clau + str(time() // (60*5))
+        return clau + self.marca_temps()
 
     @cache(modified_cachekey_tipus_ordenacio)
     def retTipusOrdenacio(self, clau):
@@ -184,7 +208,7 @@ class funcionsCerca():
             #  the user has not logged in
             return ''
         else:
-            return 'uid='+b64encode(mt.getAuthenticatedMember().getId())
+            return 'uid=' + b64encode(mt.getAuthenticatedMember().getId())
 
     def getLang(self):
         """Retorna l'idioma actiu del lloc web"""
