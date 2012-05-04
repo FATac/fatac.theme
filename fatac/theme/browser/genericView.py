@@ -23,6 +23,7 @@ class genericView(BrowserView, funcionsCerca):
         self.request = request
         self.context = context
         self.servidorRest = self.retServidorRest()
+        self.rest_public = self.getSettings('rest_public_server')
         self.zoom = None
         self.visualitzacio = None
         self.idobjectes = None
@@ -85,11 +86,13 @@ class genericView(BrowserView, funcionsCerca):
                 # Busquem si ja estava creat al Plone, sino el creem
                 value = self.context.portal_catalog.searchResults(portal_type='fatac.dummy', id=idobject)
                 # Si no existeix el creem fantasma per afegir commentaris
+                arts = self.getSettings('arts_folder')
+                #TODO? find the context using catalog arts => plone object
                 if not value:
-                    _createObjectByType('fatac.dummy', self.context, idobject)
+                    _createObjectByType('fatac.dummy', getattr(self.context, arts), idobject)
                 # Retornem la vista de l'objecte que ja permet afegir els commentaris
                 #fatac/content/dummy_templates/view.pt
-                return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url() + '/' + idobject)
+                return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url() + '/' + arts + '/' + idobject)
             else:
                 # L'objecte que es passa per string no s'ha de crear o no existeix, retornem ERROR
                 logging.exception("Can't create object in Plone, the ID %s doesn't exist in REST server", idobject)
@@ -185,7 +188,7 @@ class genericView(BrowserView, funcionsCerca):
         uid = self.uidParam
         if uid != '':
             uid = '?' + uid
-        return self.servidorRest + '/resource/' + idobjecte + '/thumbnail' + uid
+        return self.rest_public + '/resource/' + idobjecte + '/thumbnail' + uid
 
     def getThumbnailClasse(self, classe):
         """ crida el servei que retorna el thumbnail de la classe donada
@@ -193,7 +196,7 @@ class genericView(BrowserView, funcionsCerca):
         uid = self.uidParam
         if uid != '':
             uid = '?' + uid
-        return self.servidorRest + '/classes/' + classe + '/thumbnail' + uid
+        return self.rest_public + '/classes/' + classe + '/thumbnail' + uid
 
     def getServidorRest(self):
         """ retorna la url del servidor rest

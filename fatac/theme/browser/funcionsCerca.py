@@ -9,11 +9,16 @@ from fatac.theme.browser.interfaces import IFatacSettings
 from Products.CMFCore.utils import getToolByName
 from base64 import b64encode
 from time import time
+from zope.deprecation import deprecation
+
 
 class funcionsCerca():
     """ classe que conté les funcions bàsiques relacionades amb la cerca;
     cacheja els resultats fent servir ram.cache
     """
+
+    # Settings
+    _settings = None
 
     def executaCercaIdsOQuerystring(self):
         """
@@ -30,40 +35,46 @@ class funcionsCerca():
 
         return self.executaCerca(querystring, llista_ids, self.getLang())
 
-    def retServidorRest(self):
-        """ retorna la url del servidor rest, guardada amb plone.app.registry i
-        configurable a través de @@fatac_settings
+    def getSettings(self, key=None):
+        """ Retorna la configuració o el valor de la configuració demanat (key).
+            El primer cop carrega la configuració desada amb plone.app.registry, els
+             següents cops fa servir la variable _settings.
+            La configuració es defineix a la vista @@fatac_settings
         """
-        registry = getUtility(IRegistry)
-        settings = registry.forInterface(IFatacSettings)
-        url = settings.rest_server
-        return url
+        # Carrega
+        if self._settings == None:
+            registry = getUtility(IRegistry)
+            self._settings = registry.forInterface(IFatacSettings)
+        # Retornar valor clau
+        if key != None:
+            if hasattr(self._settings, key):
+                return getattr(self._settings, key)
+            else:
+                return None
 
-    def retServidorMedia(self):
-        """ retorna la url del servidor rest, guardada amb plone.app.registry i
+        return self._settings
+
+    def retServidorRest(self):
+        """ retorna la url del servidor rest (rest_server), guardada amb plone.app.registry i
         configurable a través de @@fatac_settings
         """
-        registry = getUtility(IRegistry)
-        settings = registry.forInterface(IFatacSettings)
-        url = settings.media_server
-        return url
+        return self.getSettings('rest_server')
+
+    # TODOv2.0 remove deprecation mark, and method
+    retServidorRest = deprecation.deprecated(retServidorRest, 'retServidorRest() is depreacted use the new getSettings().')
 
     def retTempsCache(self):
         """ retorna la duració en segons de la cache, guardad amb plone.appe.registry i
          configurable a través de @@fatac_settings"""
-        registry = getUtility(IRegistry)
-        settings = registry.forInterface(IFatacSettings)
-        temps = settings.cache_time
-        if temps == 0:
+        temps = self.getSettings('cache_time')
+        if temps == 0 or temps == None:
             return 0.01
         return temps * 60
 
     def retRequestTimeout(self):
         """ retorna la duració en segons del timeout per les peticions, guardad amb plone.appe.registry i
          configurable a través de @@fatac_settings"""
-        registry = getUtility(IRegistry)
-        settings = registry.forInterface(IFatacSettings)
-        return settings.rest_timeout
+        return self.getSettings('rest_timeout')
 
     def retParametresVisualitzacio(self):
         """
