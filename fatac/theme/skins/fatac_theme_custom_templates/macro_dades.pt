@@ -85,10 +85,10 @@
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'video'">
                     	<tal:co tal:condition="python: hasVideo == 0">
-	                    	<video id="videoTag" tal:attributes="src url" preload="none" width="680" height="480" controls>
-	                       		Warning: media could not be embedded.
-	                       	</video>
-	                       	<br/>
+                            <video id="videoTag" tal:attributes="src url" width="100%" height="100%" controls="controls">
+                                Warning: media could not be embedded.
+                            </video>
+                            <br/>
 	                       	|
 	                    </tal:co>
 	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:$$('#videoTag').attr('src','${url}');; $$('#videoTag').load();; $$('#videoTag').play();;"></a> |
