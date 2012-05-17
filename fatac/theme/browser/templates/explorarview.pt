@@ -15,18 +15,18 @@
             <div class="div_dotted_line_bottom arial12c666666">
                 <br/><span class="arial20c333333bold" i18n:translate="explora_bbdd">Explora la nostra base de dades per:</span>
                 <br/><br/>
-                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" i18n:translate="agentes">Agents</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" i18n:translate="eventos">Esdeveniments</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
+                <a href="" class="arial15c666666 explorar_classe selected" data-mode="alphabetColumns" rel="class:Person" i18n:translate="agentes">Agents</a> |
+                <a href="" class="arial15c666666 explorar_classe" data-mode="yearColumns" rel="class:FrameActivity" i18n:translate="eventos">Esdeveniments</a> |
+                <a href="" class="arial15c666666 explorar_classe" data-mode="default" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
             </div>
 
             <script type="text/javascript">
                 $(document).ready(function() {
                     $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
 
-                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: ['class:Person']};
+                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: ['Year:[1984 TO '+new Date().getFullYear() + '], class:FrameActivity']};
 
-                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'fitxa_cerca', zoom: '1', pagina_actual: 1, resultats_per_pagina: 45};
+                    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'explora', zoom: '1', pagina_actual: 1, resultats_per_pagina: 45};
 
                     //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
                     $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
