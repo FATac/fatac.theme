@@ -98,12 +98,26 @@ function visualitzacio_fletxes() {
     }
 }
 
+var _auto_id = 0;
+
+function auto_id() {
+    _auto_id += 1;
+    return _auto_id;
+}
+
+
 function crea_scrolls_verticals() {
+    var $e, id;
     //inicialitza els scrolls verticals per tots els elements amb classe slider_vertical
     $('.slider_vertical').each(function (i) {
-        if ($(this).attr('id') != null) {
-            crea_scroll_vertical($(this).attr('id'));
+        $e = $(this);
+        id = $e.attr('id');
+        if (id === undefined) {
+            // if the element doesn't have id, we create a unique "human friendly" id
+            id = 'scroll_autoid_' + auto_id();
+            $e.attr('id', id);
         }
+        crea_scroll_vertical(id);
     });
 }
 
@@ -522,19 +536,17 @@ function crea_scroll_vertical(identificador) {
     // prerequisits:
     //      identificador és l'id del div contenidor, amb alçada fixada, que ha de tenir a més la classe 'slider_vertical'
     //      dins té un div amb classe 'div_interior' amb alçada variable segons el que tingui dintre
-
+    var fullHeight;
     //change the main div to overflow-hidden as we can use the slider now
     $('#' + identificador).css('overflow','hidden');
 
     //En el cas de que estiguem a la vista "genericview_fitxa_ampliada_cerca" la mida ha de ser 485px.
-    if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
-    {
-        var fullHeight = 485;
+    if (identificador.split('-')[0] == 'slideFitxaOpcionsId') {
+        fullHeight = 485;
     }
-    else
-    {
-
-        var fullHeight = $('#' + identificador).height();
+    else {
+        fullHeight = $('#' + identificador).height();
+        $('#' + identificador).css('height','auto');
     }
 
     //compare the height of the scroll content to the scroll pane to see if we need a scrollbar
@@ -567,15 +579,15 @@ function crea_scroll_vertical(identificador) {
 
         //set the handle height and bottom margin so the middle of the handle is in line with the slider
         $('#barra-' + identificador + " .ui-slider-handle").css({height:handleHeight,'margin-bottom':-0.5*handleHeight});
-
-        if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
+        var origSliderHeight = fullHeight;//read the original slider height
+        /*if (identificador.split('-')[0] == 'slideFitxaOpcionsId')
         {
             var origSliderHeight = fullHeight;//read the original slider height
         }
         else
         {
             var origSliderHeight = $('#barra-' + identificador + " .slider-vertical").height();//read the original slider height
-        }
+        }*/
 
         var sliderHeight = origSliderHeight - handleHeight ;//the height through which the handle can move needs to be the original height minus the handle height
         var sliderMargin =  (origSliderHeight - sliderHeight)*0.5;//so the slider needs to have both top and bottom margins equal to half the difference
