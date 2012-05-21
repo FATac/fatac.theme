@@ -4,6 +4,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 from Products.CMFCore.utils import getToolByName
+from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
 
 
 class filtresView(BrowserView, funcionsCerca):
@@ -141,6 +142,19 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
     """
     __call__ = ViewPageTemplateFile('templates/displayresultatspaginaview.pt')
 
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+        parametres_visualitzacio = self.retParametresVisualitzacio()
+        self.column = None
+        if 'visualitzacio' in parametres_visualitzacio:
+            if  parametres_visualitzacio['visualitzacio'] == 'explora':
+                if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
+                    self.column = YearPeriodColumn()
+                elif 'AlphabeticalOrder' in parametres_visualitzacio['querystring']['f'][0]:
+                    self.column = CapitalLetterColumn()
+
+
     def retNumPagina(self):
         """ retorna el número de pàgina que cal pintar pintar
         """
@@ -153,7 +167,10 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         """
         portal = getToolByName(self, 'portal_url')
         portal = portal.getPortalObject()
-        html = portal.restrictedTraverse('@@genericView')()
+        if self.column is None:
+            html = portal.restrictedTraverse('@@genericView')()
+        else:
+            html = portal.restrictedTraverse('@@genericViewColumns')()
         return html
 
 
