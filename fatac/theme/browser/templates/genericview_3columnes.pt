@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        crea_scrolls_verticals();
+    });
+</script>
+<div class="row column-results">
+    <tal:rep tal:repeat="column view/getColumns">
+        <div class="span5">
+            <div tal:content="column/title">[Column title]</div>
+            <div class="slider_vertical">
+                <div class="div_interior">
+                    <ul>
+                        <tal:rep tal:repeat="dades_objecte column/content">
+                            <tal:cond tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}" tal:define="seccions dades_objecte/dades_seccions">
+                                    <li>
+                                        <tal:rep tal:repeat="seccio seccions">
+                                            <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body']">
+                                                <tal:rep tal:repeat="dada seccio/dades">
+
+                                                    <tal:header tal:condition="python: repeat['dada'].index == 0 and seccio['nom'] == 'header'">
+                                                        <!-- Enllaç a objecte -->
+                                                        <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
+                                                                    <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span>
+                                                        </a>
+                                                    </tal:header>
+
+                                                </tal:rep>
+                                            </tal:cond>
+                                        </tal:rep>
+                                    </li>
+                            </tal:cond>
+                        </tal:rep>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </tal:rep>
+</div>
+
+<!-- <div class="page_bottom">
+    <ul>
+        <tal:rep tal:repeat="column view/getColumnHeaders">
+            <li>
+            <tal:cond tal:condition="not:column/active">
+                <a href="#" tal:attributes="href string:page${column/page}" tal:content="column/title"></a>
+            </tal:cond>
+            <tal:cond tal:condition="column/active" tal:replace="column/title"/>
+            </li>
+        </tal:rep>
+    </ul>
+</div> -->
+

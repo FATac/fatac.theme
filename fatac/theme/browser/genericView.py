@@ -211,8 +211,7 @@ class genericView(BrowserView, funcionsCerca):
         """
         """
         if self.idobjectes:
-            import string
-            idobjectes_str = string.join(self.idobjectes, ',')
+            idobjectes_str = ','.join(self.idobjectes)
             uid = self.uidParam
             if uid != '':
                 uid = '&' + uid
@@ -236,8 +235,7 @@ class genericView(BrowserView, funcionsCerca):
         """
         """
         if self.idobjectes:
-            import string
-            idobjectes_str = string.join(self.idobjectes, ',')
+            idobjectes_str = ','.join(self.idobjectes)
             uid = self.uidParam
             if uid != '':
                 uid = '&' + uid
