@@ -22,7 +22,7 @@
 
             <script type="text/javascript">
                 $(document).ready(function() {
-                    querys = [ ["AlphabeticalOrder:*,class:Person"], ['Year:[1984 TO '+new Date().getFullYear() + '], class:FrameActivity'], ["ObjectType:Collection"]];
+                    querys = [ ["class:Person"], ['Year:[1984 TO '+new Date().getFullYear() + '], class:FrameActivity'], ["ObjectType:Collection"]];
                     $(".explorar_classe").each(function (i, item){ 
                         $(item).attr('rel', querys[i]);
                     });

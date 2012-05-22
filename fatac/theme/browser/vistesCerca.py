@@ -151,7 +151,7 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
             if  parametres_visualitzacio['visualitzacio'] == 'explora':
                 if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
                     self.column = YearPeriodColumn()
-                elif 'AlphabeticalOrder' in parametres_visualitzacio['querystring']['f'][0]:
+                else: #elif 'AlphabeticalOrder' in parametres_visualitzacio['querystring']['f'][0]:
                     self.column = CapitalLetterColumn()
 
 
