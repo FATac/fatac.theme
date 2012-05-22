@@ -46,7 +46,7 @@ class Column:
 class CapitalLetterColumn(Column):
 
     def _build_dict(self):
-        return list(u"ABCDEFGHIJKLMNÑOPQRSTUVXYZ")
+        return list(u"ABCDEFGHIJKLMNOPQRSTUVXYZ")
 
     def query(self, i):
         return "AlphabeticalOrder:" + self._dict[i] + "*, class:Person"
