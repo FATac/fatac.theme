@@ -25,7 +25,7 @@ class resultatsViewColumnes(BrowserView, funcionsCerca):
         if 'querystring' in parametres_visualitzacio:
             if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
                 self.column = YearPeriodColumn()
-            elif 'AlphabeticalOrder' in parametres_visualitzacio['querystring']['f'][0]:
+            else:
                 self.column = CapitalLetterColumn()
 
         dades_paginacio = {'pagina_actual': '?', 'num_total_pagines': '?', 'num_obj_inicial': '?', 'num_obj_final': '?', 'num_total_obj': '?'}
