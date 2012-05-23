@@ -7,15 +7,10 @@ import logging
 import urllib2
 import json
 from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
+N_COLUMNS = 3
 
 
 class genericViewColumnes(BrowserView, funcionsCerca):
-
-    _columns = []
-    N_COLUMNS = 3
-
-    query = ''
-    start = 0
 
     def __init__(self, context, request):
         """ self.servidorRest guarda l'adreça del servidor Rest que serveix les
@@ -117,9 +112,9 @@ class genericViewColumnes(BrowserView, funcionsCerca):
         titles = self.columns
         columns = []
         if self.visualitzacio == 'explora':
-            pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * 3
+            pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * N_COLUMNS
             max_columns = len(titles)
-            for i in range(pagina, pagina + 3):
+            for i in range(pagina, pagina + N_COLUMNS):
                 if i < max_columns:
                     columns.append({
                             'title': titles.title(i),
@@ -145,14 +140,14 @@ class genericViewColumnes(BrowserView, funcionsCerca):
     def getColumnHeaders(self):
         columns = self.columns
         res = []
-        pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * 3
-        actius = range(pagina, pagina + 3)
+        pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * N_COLUMNS
+        actius = range(pagina, pagina + N_COLUMNS)
         i = 0
         while (i < len(columns)):
             res.append({
                         'active': i in actius,
                         'title': columns.title(i),
-                        'page': (i / 3) + 1
+                        'page': (i / N_COLUMNS) + 1
                     })
             i += 1
         return res

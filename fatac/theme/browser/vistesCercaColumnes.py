@@ -12,7 +12,7 @@ class resultatsViewColumnes(BrowserView, funcionsCerca):
     """ pinta els resultats i les dades referents a la paginació i les opcions
     de visualització
     """
-    __call__ = ViewPageTemplateFile('templates/resultats_columna_view.pt')
+    __call__ = ViewPageTemplateFile('templates/resultatsview.pt')
 
     column = None
 

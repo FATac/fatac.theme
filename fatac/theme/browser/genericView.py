@@ -6,7 +6,9 @@ from funcionsCerca import funcionsCerca
 import urllib2
 import json
 from Products.CMFPlone.utils import _createObjectByType
+from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
 import logging
+N_COLUMNS = 3
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -38,26 +40,33 @@ class genericView(BrowserView, funcionsCerca):
             self.visualitzacio = self.request.get('visualitzacio')
 
         elif parametres_visualitzacio:
-            resultat_cerca = self.executaCercaIdsOQuerystring()
-            if resultat_cerca:
-                if 'dades_json' in resultat_cerca:
-                    dades_json = resultat_cerca['dades_json']
-                    if 'response' in dades_json and 'docs' in dades_json['response']:
-                        resultats = dades_json['response']['docs']
-                        resultats_per_pagina = int(parametres_visualitzacio['resultats_per_pagina'])
-                        pagina_a_mostrar = int(parametres_visualitzacio['pagina_actual'])
-                        num_obj_inicial = (pagina_a_mostrar * resultats_per_pagina) - resultats_per_pagina
-                        num_obj_final = (pagina_a_mostrar * resultats_per_pagina)
+            if 'visualitzacio' in parametres_visualitzacio:
+                self.visualitzacio = parametres_visualitzacio['visualitzacio']
+            if self.visualitzacio is not None and self.visualitzacio == 'columnes':
+                if 'querystring' in parametres_visualitzacio:
+                    if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
+                        self.columns = YearPeriodColumn()
+                    else:
+                        self.columns = CapitalLetterColumn()
+            else:
+                resultat_cerca = self.executaCercaIdsOQuerystring()
+                if resultat_cerca:
+                    if 'dades_json' in resultat_cerca:
+                        dades_json = resultat_cerca['dades_json']
+                        if 'response' in dades_json and 'docs' in dades_json['response']:
+                            resultats = dades_json['response']['docs']
+                            resultats_per_pagina = int(parametres_visualitzacio['resultats_per_pagina'])
+                            pagina_a_mostrar = int(parametres_visualitzacio['pagina_actual'])
+                            num_obj_inicial = (pagina_a_mostrar * resultats_per_pagina) - resultats_per_pagina
+                            num_obj_final = (pagina_a_mostrar * resultats_per_pagina)
 
-                        idobjectes = []
-                        for resultat in resultats[num_obj_inicial:num_obj_final]:
-                            idobjectes.append(resultat['id'])
-                        self.idobjectes = idobjectes
+                            idobjectes = []
+                            for resultat in resultats[num_obj_inicial:num_obj_final]:
+                                idobjectes.append(resultat['id'])
+                            self.idobjectes = idobjectes
 
             if 'zoom' in parametres_visualitzacio:
                 self.zoom = parametres_visualitzacio['zoom']
-            if 'visualitzacio' in parametres_visualitzacio:
-                self.visualitzacio = parametres_visualitzacio['visualitzacio']
 
         else:
             #cas especial per visualització final dels objectes; no rebem res per request i cal agafar l'id del propi context
@@ -78,6 +87,8 @@ class genericView(BrowserView, funcionsCerca):
             return ViewPageTemplateFile('templates/genericview_hover_cerca.pt')(self)
         elif self.visualitzacio == 'fitxa_ampliada_cerca_overlay':
             return ViewPageTemplateFile('templates/fitxa_ampliada_cerca_overlay.pt')(self)
+        elif self.visualitzacio == 'columnes':
+            return ViewPageTemplateFile('templates/genericview_3columnes.pt')(self)
         else:
             idobject = self.idobjectes[0]
             # Mirem si l'objecte existeix al servidor REST i cal crear-lo a Plone (si no s'ha creat amb anterioritat)
@@ -324,7 +335,7 @@ class genericView(BrowserView, funcionsCerca):
         dins el 'value' concatenats amb ', '
         """
         return ', '.join(dades['value'])
-    
+
     def get_media_dada(self, dades):
         """ donat un diccionari de tipus {"type": "media", "value": ["http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/media/gizmo_3719d295746c4cb"]}
         retorna una llista de diccionaris amb la url i el tipus (audio, video, text, image) de cada media a pintar
@@ -332,7 +343,88 @@ class genericView(BrowserView, funcionsCerca):
         llista = []
         i = 0
         while i < len(dades['value']):
-            partsDades = (dades['value'][i + 1]+",default").split(",")
+            partsDades = (dades['value'][i + 1] + ",default").split(",")
             llista.append({'url': dades['value'][i], 'tipus_media': partsDades[0], 'profile': partsDades[1]})
             i += 2
         return llista
+
+    def getColumns(self):
+        """ Gets de columns and content"""
+        titles = self.columns
+        columns = []
+        if self.visualitzacio == 'columnes':
+            pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * N_COLUMNS
+            max_columns = len(titles)
+            for i in range(pagina, pagina + N_COLUMNS):
+                if i < max_columns:
+                    columns.append({
+                            'title': titles.title(i),
+                            'content': self._getColumnContent(titles.query(i))
+                        })
+        return columns
+
+    def _getObjectHead(self):
+        """
+        """
+        dades_json = self.retSectionHeader()  # retorna diccionari
+        resultat = []
+        if dades_json:
+            i = 0
+            for objecte in dades_json:
+                id_objecte = self.idobjectes[i]
+                i += 1
+                titol_objecte = self.getTitolObjecte(objecte['sections'])
+                titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
+
+                dades_seccions = []
+                te_subcerca = 'sense_subcerca'
+                hi_ha_seccio_content = False
+                for seccio in objecte['sections']:
+                    if seccio['name'] == 'content':
+                        hi_ha_seccio_content = True
+                    dades = []
+                    if 'data' in seccio:
+                        for dada in seccio['data']:
+                            dades.append(self.llegirDada(dada))  # {'nom': nom, 'tipus': tipus, 'valor': valor}
+                            if dada['type'] == 'search':
+                                te_subcerca = 'amb_subcerca'
+                        dades_seccions.append({'nom': seccio['name'], 'dades': dades})
+
+                dades_objecte = {'id': id_objecte,
+                                 'titol': titol_objecte,
+                                 'classe': objecte['className'],
+                                 'dades_seccions': dades_seccions,
+                                 'te_subcerca': te_subcerca,
+                                 'titol_zona_resultats': titol_zona_resultats,
+                                 'hi_ha_seccio_content': hi_ha_seccio_content}
+                resultat.append(dades_objecte)
+        return resultat
+
+    def _getColumnContent(self, query):
+        #parametres_visualitzacio['querystring']['f'][0]
+        resultat_cerca = self.executaCercaIdsOQuerystring([query])
+        if resultat_cerca:
+            if 'dades_json' in resultat_cerca:
+                dades_json = resultat_cerca['dades_json']
+                if 'response' in dades_json and 'docs' in dades_json['response']:
+                    resultats = dades_json['response']['docs']
+                    idobjectes = []
+                    for resultat in resultats:
+                        idobjectes.append(resultat['id'])
+                    self.idobjectes = idobjectes
+        return self._getObjectHead()
+
+    def getColumnHeaders(self):
+        columns = self.columns
+        res = []
+        pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * N_COLUMNS
+        actius = range(pagina, pagina + N_COLUMNS)
+        i = 0
+        while (i < len(columns)):
+            res.append({
+                        'active': i in actius,
+                        'title': columns.title(i),
+                        'page': (i / N_COLUMNS) + 1
+                    })
+            i += 1
+        return res

@@ -124,9 +124,10 @@ class resultatsView(BrowserView, funcionsCerca):
             if 'conf' in parametres_visualitzacio['querystring']:
                 conf = parametres_visualitzacio['querystring']['conf']
             clau = conf == 'Explorar' and 'Explorar' or 'default'
-            # Fem una copia de la llista per no modificar la cache
-            altres_opcions = list(self.retTipusOrdenacio(clau))
+            altres_opcions = self.retTipusOrdenacio(clau)
             if altres_opcions:
+                # Fem una copia de la llista per no modificar la cache
+                altres_opcions = list(self.retTipusOrdenacio(clau))
                 opcio_selec = 'sort' in parametres_visualitzacio['querystring'] and parametres_visualitzacio['querystring']['sort'] or (len(altres_opcions) > 0 and altres_opcions[0] or '')
                 if opcio_selec in altres_opcions:
                     altres_opcions.remove(opcio_selec)
@@ -148,12 +149,11 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         parametres_visualitzacio = self.retParametresVisualitzacio()
         self.column = None
         if 'visualitzacio' in parametres_visualitzacio:
-            if  parametres_visualitzacio['visualitzacio'] == 'explora':
+            if  parametres_visualitzacio['visualitzacio'] == 'columnes':
                 if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
                     self.column = YearPeriodColumn()
-                else: #elif 'AlphabeticalOrder' in parametres_visualitzacio['querystring']['f'][0]:
+                else:
                     self.column = CapitalLetterColumn()
-
 
     def retNumPagina(self):
         """ retorna el número de pàgina que cal pintar pintar
@@ -167,10 +167,7 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         """
         portal = getToolByName(self, 'portal_url')
         portal = portal.getPortalObject()
-        if self.column is None:
-            html = portal.restrictedTraverse('@@genericView')()
-        else:
-            html = portal.restrictedTraverse('@@genericViewColumns')()
+        html = portal.restrictedTraverse('@@genericView')()
         return html
 
 
