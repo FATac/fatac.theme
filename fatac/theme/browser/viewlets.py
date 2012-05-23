@@ -12,6 +12,21 @@ class footer(ViewletBase):
     """
     render = ViewPageTemplateFile('templates/footer.pt')
 
+    #def __init__(self, context, request, view, manager=None):
+    #    super(footer, self).__init__(context, request, view, manager)
+
+    def isRoot(self):
+        """El viewlet mostra contingut sengons si estem a la pagina principal"""
+        # Recuperem la url sense la vista
+        # (self.request.getURL() ens retorna la vista del document) aixi que fem
+        # servir other['ACTUAL_URL']
+        current = self.request.other['ACTUAL_URL']
+        # Aquesta url pot contenir una / al final, però self.context.portal_url
+        # mai en porta, treiem la / de current abans de comparar.
+        if current[-1] == '/':
+            current = current[:-1]
+        return self.context.portal_url() == current
+
     def retLinkGeneric(self, id, tipus):
         """ retorna un diccionari amb el títol, la descripció i la url de
         l'objecte de tipus 'tipus' amb id 'id'
