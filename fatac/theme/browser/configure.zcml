@@ -76,6 +76,13 @@
 
     <browser:page
         for="*"
+        name="genericViewColumns"
+        class=".genericViewColumnes.genericViewColumnes"
+        permission="zope2.Public"
+        />
+
+    <browser:page
+        for="*"
         name="filtresView"
         class=".vistesCerca.filtresView"
         permission="zope2.Public"
@@ -85,6 +92,13 @@
         for="*"
         name="resultatsView"
         class=".vistesCerca.resultatsView"
+        permission="zope2.Public"
+        />
+
+    <browser:page
+        for="*"
+        name="resultatsViewColumnes"
+        class=".vistesCercaColumnes.resultatsViewColumnes"
         permission="zope2.Public"
         />
 

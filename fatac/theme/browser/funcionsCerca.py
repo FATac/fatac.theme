@@ -20,7 +20,7 @@ class funcionsCerca():
     # Settings
     _settings = None
 
-    def executaCercaIdsOQuerystring(self):
+    def executaCercaIdsOQuerystring(self, query = None):
         """
         """
         parametres_visualitzacio = self.retParametresVisualitzacio()
@@ -29,9 +29,11 @@ class funcionsCerca():
         querystring = None
         if 'llista_ids' in parametres_visualitzacio:
             llista_ids = parametres_visualitzacio['llista_ids']
-            self.context.plone_log(llista_ids)
+            self.context.plone_log("Llista id's: " + str(llista_ids))
         if 'querystring' in parametres_visualitzacio:
             querystring = parametres_visualitzacio['querystring']
+            if query != None:
+                querystring['f'] = query
 
         return self.executaCerca(querystring, llista_ids, self.getLang())
 

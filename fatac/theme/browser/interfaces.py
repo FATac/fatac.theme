@@ -33,7 +33,7 @@ class IFatacSettings(Interface):
 
     # Timeout for the internal querys to the backend
     rest_timeout = schema.Int(title=_(u"REST request timeout"),
-                                   description=_(u"Timeout in seconds for the resquests to the REST Serve."),
+                                   description=_(u"Timeout in seconds for the resquests to the REST Server."),
                                    required=False,
                                    min=2,
                                    max=30,
