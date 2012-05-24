@@ -75,7 +75,7 @@
                     </div>
 
                     <div id="ultims_documents">
-                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="" /> <span class="arial13c999999" i18n:translate="ultims_documents">Últims documents</span>
+                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="" /> <span class="georgia13c999999" i18n:translate="ultims_documents">Últims documents</span>
                         <div class="requadre_resultats">
                             <a class="arrow_left prev browse left">
                                 <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />
@@ -96,7 +96,7 @@
                     </div>
 
                     <div id="ultims_consultats">
-                        <img class="arrow_down" alt="" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="arial13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
+                        <img class="arrow_down" alt="" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="georgia13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
                         <div class="requadre_resultats">
                             <a class="arrow_left prev browse left">
                                 <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />

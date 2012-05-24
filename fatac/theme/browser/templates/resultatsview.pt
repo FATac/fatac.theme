@@ -13,7 +13,7 @@
             <img rel="zona_resultats_inner" class="arrow_top zona_resultats_inner" src="++resource++fatac.theme.images/ico_arrow_up.png" alt="Tanca" title="Tanca" i18n:attributes="title; alt"/>
             <img rel="zona_resultats_inner" class="arrow_bottom zona_resultats_inner hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="Obre" title="Obre" i18n:attributes="title;alt"/>
 
-            <span id="visualitzacio_cerca" class="arial13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
+            <span id="visualitzacio_cerca" class="georgia13c999999" i18n:translate="Visualització de búsqueda">Visualització de búsqueda</span>
 
             <!--
             TODO: volen que el filtre class en comptes de que estigui amb la resta de filtres, estigui aquí al desplegable.
@@ -39,7 +39,7 @@
             </dl>
             -->
 
-            <dl class="llista_desplegable llista_desplegable_gris actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusOrdre" tal:condition="llista_tipus/opcio_selec">
+            <dl class="llista_desplegable actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusOrdre" tal:condition="llista_tipus/opcio_selec">
                 <dt class="actionMenuHeader">
                     <a i18n:attributes="title mes_opcions" i18n:translate="" href="" class="arial11c666666" tal:condition="llista_tipus/altres_opcions">
                         <span i18n:translate="ordre">Ordre:</span> <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" i18n:translate=""/> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" alt="▼" /></span>

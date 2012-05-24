@@ -14,7 +14,7 @@
     <img rel="filtres" class="arrow_top filtres" src="++resource++fatac.theme.images/ico_arrow_up.png" alt="Tanca" title="Tanca" i18n:attributes="title;alt"/>
     <img rel="filtres" class="arrow_bottom filtres hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="Obre" title="Obre" i18n:attributes="title;alt"/>
 
-    <span class="arial13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
+    <span class="georgia13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
 
     <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres" />
     <input class="boto_filtres mostrar_filtres arial11c666666" type="button" i18n:attributes="value ampliar_filtres" />

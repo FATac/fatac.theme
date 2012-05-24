@@ -8,8 +8,8 @@
     <body>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
-            <div class="div_dotted_line_doble_negre">
-                <span class="TerminalDosis600" style="text-transform:uppercase;" i18n:translate="Explorar">Explorar</span>
+            <div class="ac_breadcrump div_dotted_line_bottom TerminalDosis600">
+                <span i18n:translate="Explorar">Explorar</span>
             </div>
 
             <div class="div_dotted_line_bottom arial12c666666">
