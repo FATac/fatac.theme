@@ -45,9 +45,9 @@ class genericView(BrowserView, funcionsCerca):
             if self.visualitzacio is not None and self.visualitzacio == 'columnes':
                 if 'querystring' in parametres_visualitzacio:
                     if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
-                        self.columns = YearPeriodColumn()
+                        self.columns = YearPeriodColumn(self.getLang())
                     else:
-                        self.columns = CapitalLetterColumn()
+                        self.columns = CapitalLetterColumn(self.getLang())
             else:
                 resultat_cerca = self.executaCercaIdsOQuerystring()
                 if resultat_cerca:
@@ -359,50 +359,13 @@ class genericView(BrowserView, funcionsCerca):
                 if i < max_columns:
                     columns.append({
                             'title': titles.title(i),
-                            'content': self._getColumnContent(titles.query(i))
+                            'content': self._getColumnContent(titles.query(i), titles.field(), titles.fieldFilter)
                         })
         return columns
 
-    def _getObjectHead(self):
-        """
-        """
-        dades_json = self.retSectionHeader()  # retorna diccionari
-        resultat = []
-        if dades_json:
-            i = 0
-            for objecte in dades_json:
-                id_objecte = self.idobjectes[i]
-                i += 1
-                titol_objecte = self.getTitolObjecte(objecte['sections'])
-                titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
-
-                dades_seccions = []
-                te_subcerca = 'sense_subcerca'
-                hi_ha_seccio_content = False
-                for seccio in objecte['sections']:
-                    if seccio['name'] == 'content':
-                        hi_ha_seccio_content = True
-                    dades = []
-                    if 'data' in seccio:
-                        for dada in seccio['data']:
-                            dades.append(self.llegirDada(dada))  # {'nom': nom, 'tipus': tipus, 'valor': valor}
-                            if dada['type'] == 'search':
-                                te_subcerca = 'amb_subcerca'
-                        dades_seccions.append({'nom': seccio['name'], 'dades': dades})
-
-                dades_objecte = {'id': id_objecte,
-                                 'titol': titol_objecte,
-                                 'classe': objecte['className'],
-                                 'dades_seccions': dades_seccions,
-                                 'te_subcerca': te_subcerca,
-                                 'titol_zona_resultats': titol_zona_resultats,
-                                 'hi_ha_seccio_content': hi_ha_seccio_content}
-                resultat.append(dades_objecte)
-        return resultat
-
-    def _getColumnContent(self, query):
+    def _getColumnContent(self, query, field, fieldFilter):
         #parametres_visualitzacio['querystring']['f'][0]
-        resultat_cerca = self.executaCercaIdsOQuerystring([query])
+        resultat_cerca = self.executaCercaIdsOQuerystring([query], "id%2C" + field)
         if resultat_cerca:
             if 'dades_json' in resultat_cerca:
                 dades_json = resultat_cerca['dades_json']
@@ -410,9 +373,12 @@ class genericView(BrowserView, funcionsCerca):
                     resultats = dades_json['response']['docs']
                     idobjectes = []
                     for resultat in resultats:
-                        idobjectes.append(resultat['id'])
+                        idobjectes.append({
+                            'id': resultat['id'],
+                            'name': fieldFilter(resultat[field])
+                            })
                     self.idobjectes = idobjectes
-        return self._getObjectHead()
+        return self.idobjectes
 
     def getColumnHeaders(self):
         columns = self.columns

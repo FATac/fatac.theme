@@ -5,6 +5,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 from Products.CMFCore.utils import getToolByName
 from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
+from math import ceil
 
 
 class filtresView(BrowserView, funcionsCerca):
@@ -68,13 +69,19 @@ class resultatsView(BrowserView, funcionsCerca):
                     num_resultats = float(dades_json['response']['numFound'])
                     pagina_actual = int(parametres_visualitzacio['pagina_actual'])
                     resultats_per_pagina = float(parametres_visualitzacio['resultats_per_pagina'])
-                    import math
-                    num_total_pagines = int(math.ceil(num_resultats / resultats_per_pagina))
+                    num_total_pagines = int(ceil(num_resultats / resultats_per_pagina))
                     num_obj_inicial = int((pagina_actual * resultats_per_pagina) - resultats_per_pagina + 1)
                     num_obj_final = int((pagina_actual * resultats_per_pagina))
                     if num_obj_final > num_resultats:
                         num_obj_final = int(num_resultats)
                     dades_paginacio = {'pagina_actual': pagina_actual, 'num_total_pagines': num_total_pagines, 'num_obj_inicial': num_obj_inicial, 'num_obj_final': num_obj_final, 'num_total_obj': int(num_resultats)}
+        if ('visualitzacio' in parametres_visualitzacio and parametres_visualitzacio["visualitzacio"] == 'columnes'):
+            if 'querystring' in parametres_visualitzacio:
+                if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
+                    self.column = YearPeriodColumn(self.getLang())
+                else:
+                    self.column = CapitalLetterColumn(self.getLang())
+            dades_paginacio['num_total_pagines'] = int(ceil(len(self.column) / 3.0))
         return dades_paginacio
 
     def retDadesVisualitzacio(self):
@@ -118,6 +125,8 @@ class resultatsView(BrowserView, funcionsCerca):
         seleccionada i una llista amb la resta d'opcions possibles
         """
         parametres_visualitzacio = self.retParametresVisualitzacio()
+        if 'visualitzacio' in parametres_visualitzacio and parametres_visualitzacio['visualitzacio'] == 'columnes':
+            return {'opcio_selec': '', 'altres_opcions': []}
         if 'querystring' in parametres_visualitzacio:
             conf = ''
             llista_altres_opcions = []
@@ -151,9 +160,9 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         if 'visualitzacio' in parametres_visualitzacio:
             if  parametres_visualitzacio['visualitzacio'] == 'columnes':
                 if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
-                    self.column = YearPeriodColumn()
+                    self.column = YearPeriodColumn(self.getLang())
                 else:
-                    self.column = CapitalLetterColumn()
+                    self.column = CapitalLetterColumn(self.getLang())
 
     def retNumPagina(self):
         """ retorna el número de pàgina que cal pintar pintar
