@@ -113,8 +113,6 @@ class funcionsCerca():
                 if len(querystring[key]) > 0:
                     valor = ','.join(querystring[key])
             if valor:
-                if isinstance(valor, unicode):
-                    valor = valor.encode('utf-8')
                 if querystring_str == '':
                     querystring_str += key + '=' + str(valor)
                 else:
