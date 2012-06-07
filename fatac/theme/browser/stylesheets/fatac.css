@@ -416,3 +416,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 #fs-caption .body { padding: 5px; font-family: arial; font-size: 12px; }
 #fs-caption .counters { background-color: inherit; color: inherit;}
 #fs-caption .counters .counter { border: none; }
+
+#selector_idiomes dl.actionMenu {
+    position:relative;
+}

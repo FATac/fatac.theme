@@ -10,6 +10,11 @@
         name="fatac.theme"
         />
 
+    <browser:jbot
+        directory="jbot"
+        />
+
+
     <!-- Viewlets registration -->
     <!-- Zope 3 browser resources -->
 
