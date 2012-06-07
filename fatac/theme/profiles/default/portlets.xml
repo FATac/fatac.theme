@@ -15,4 +15,7 @@
   <assignment remove="True" name="login" category="context" key="/"
               manager="plone.leftcolumn" type="portlets.Login">
   </assignment>
+  <assignment remove="True" name="navigation" category="context" key="/"
+              manager="plone.leftcolumn" type="portlets.Navigation">
+  </assignment>
 </portlets>
