@@ -10,7 +10,7 @@
                i18n:attributes="title Search"
                tal:attributes="value request/form/s|nothing" />
         <button class="searchButton" type="submit">
-            <img i18n:attributes="alt Search; title Search" i18n:translate="" src="++resource++fatac.theme.images/ico_search.png " />
+            <img i18n:attributes="alt Search; title Search;" i18n:translate="" tal:attributes="src string:${view/navigation_root_url}/++resource++fatac.theme.images/ico_search.png " />
         </button>
     </form>
     <a tal:attributes="href string:${view/navigation_root_url}/explorar" i18n:translate="Explorar" class="arial15c666666">Explorar</a>
