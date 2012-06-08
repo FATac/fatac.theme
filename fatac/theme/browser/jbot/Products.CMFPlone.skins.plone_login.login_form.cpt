@@ -305,8 +305,7 @@
                 </p>
             </div>
 
-            <div id="login-new-user"
-               tal:condition="python:join_url and use_normal">
+            <div id="login-new-user">
                 <h3 i18n:translate="heading_new_user">
                 New user?
                 </h3>
