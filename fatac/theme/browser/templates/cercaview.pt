@@ -6,6 +6,8 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
     <body>
+        <metal:block fill-slot="top_slot" tal:define="dummy python:request.set('disable_border',1)">
+        </metal:block>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
             <input type="hidden" id="get_s" tal:attributes="value view/getS" />

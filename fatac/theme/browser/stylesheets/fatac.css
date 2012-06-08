@@ -12,6 +12,7 @@
 div.width-full { width: 100%; }
 div.position-0 { margin-left: -100%; }
 #content { margin:0; }
+#content a:hover, dl.portlet a:hover{ color:#000000 !important;}
 
 
 /* ---------------------------------------------------------------------------- general */
