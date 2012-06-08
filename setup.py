@@ -34,5 +34,4 @@ setup(name='fatac.theme',
       target = plone
       """,
       setup_requires=[""],
-      paster_plugins=[""],
       )
