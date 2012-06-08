@@ -274,6 +274,7 @@
 
         </tal:use_iframe>
 
+            <!--
             <div id="new_user">
                 <strong i18n:translate="box_new_user">
                     Encara no us heu registrat?
@@ -287,6 +288,7 @@
                            i18n:translate="label_new_user">podeu registrar-vos aquí.</a></span>.
                 </p>
             </div>
+            -->
 
             <div id="login-forgotten-password"
                  tal:condition="python:mail_password_url and use_normal">
