@@ -21,4 +21,9 @@
         permission="zope2.View"
         />
 
+    <browser:resource
+        name="plone.app.jquerytools.overlayhelpers.js"
+        file="browser/javascripts/overlayhelpers.js"
+        />
+
 </configure>
