@@ -34,11 +34,18 @@ class FatacSettingsEditForm(controlpanel.RegistryEditForm):
             return
         self.applyChanges(data)
 
-        self.create_ghostContainer()
+        self.create_ghostContainer(data['arts_folder'])
 
         IStatusMessage(self.request).addStatusMessage(_(u"Changes saved"),
                                                       "info")
         self.context.REQUEST.RESPONSE.redirect("@@fatac_settings")
+
+    @button.buttonAndHandler(_('Cancel'), name='cancel')
+    def handleCancel(self, action):
+        IStatusMessage(self.request).addStatusMessage(_(u"Edit cancelled"),
+                                                      "info")
+        self.request.response.redirect("%s/%s" % (self.context.absolute_url(),
+                                                  self.control_panel_view))
 
     def create_ghostContainer(self, nom_container):
         portal = getToolByName(self, 'portal_url').getPortalObject()
@@ -73,7 +80,7 @@ class FatacSettingsEditForm(controlpanel.RegistryEditForm):
         object_status = pw.getStatusOf(object_workflow, context)
         if object_status:
             try:
-                pw.doActionFor(context, {'genweb_simple': 'publish', 'genweb_review': 'publicaalaintranet'}[object_workflow])
+                pw.doActionFor(context, {'simple_publication_workflow': 'publish'}[object_workflow])
             except:
                 pass
 

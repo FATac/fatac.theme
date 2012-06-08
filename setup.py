@@ -25,7 +25,7 @@ setup(name='fatac.theme',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'collective.js.jqueryui'
       ],
       entry_points="""
       # -*- Entry points: -*-

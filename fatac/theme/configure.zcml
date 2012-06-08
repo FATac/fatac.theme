@@ -6,9 +6,14 @@
     i18n_domain="fatac.theme">
 
   <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="collective.js.jqueryui" />
+
   <include package=".browser" />
+
   <include file="skins.zcml" />
   <include file="profiles.zcml" />
+
   <i18n:registerTranslations directory="locales" />
 
 </configure>
