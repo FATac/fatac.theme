@@ -98,10 +98,19 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- personal_bar.pt */
 #portal-personaltools-wrapper { float:right; margin-top:-6px; }
-#portal-personaltools { background:url('++resource++fatac.theme.images/user_24_verde.gif') no-repeat 10px center #b3d396; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; padding:0.95em 2em 0.95em 4.5em; font-size:13px;}
-#portal-personaltools, #portal-personaltools a { color:#339933; }
+#portal-personaltools { background:url('++resource++fatac.theme.images/user_24_verde.gif') no-repeat 10px center #b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.95em 0.5em 0.95em 3.5em; font-size:13px;}
+#portal-personaltools, #portal-personaltools a, #portal-personaltools a:hover { color:#339933 !important; }
 #portal-personaltools.activated { border-radius:0.5em 0.5em 0 0; -webkit-radius:0.5em 0.5em 0 0; -moz-border-radius:0.5em 0.5em 0 0; }
-#portal-personaltools dd { background-color:#d3e3c3; margin-top:12px; }
+#portal-personaltools dd { background-color:#e1edd7; margin-top:12px; }
+#portal-personaltools dd a:hover { background-color:#d2e3c1 !important; }
+
+#portal-personaltools dt.actionMenuHeader a:after { content: none; }
+#portal-personaltools dt.actionMenuHeader a { background:url('++resource++fatac.theme.images/arrow_down_green.gif') no-repeat right 11px transparent; padding-right:20px; }
+
+#portal-personaltools li a { padding-left: 24px; }
+#portal-personaltools .Add.Playlist a, #portal-personaltools .Add.Playlist a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
+#portal-personaltools .Add.Group a, #portal-personaltools .Add.Group a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
+#portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
 
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
