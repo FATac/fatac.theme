@@ -58,6 +58,7 @@
     </tal:root>
 
     <tal:noroot tal:condition="not:view/isRoot">
+        <img id="logo_peu" src="++resource++fatac.theme.images/fatac.png" />
         <div id="links2" class="georgia11c999999">
             <tal:co tal:condition="linkabout">
                 <a class="georgia11c999999" tal:attributes="href linkabout/enllac; title linkabout/descripcio" tal:content="linkabout/titol" /> |
