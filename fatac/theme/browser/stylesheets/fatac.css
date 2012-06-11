@@ -223,7 +223,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #viewlet_footer #sponsors div { float:left; }
 #viewlet_footer #sponsors div img { margin: 20px 20px 0 0; }
 
-#links2 { float:right; }
+#links2 { float:right; text-align:right; width:60%; margin-top:6px; }
 
 /* ---------------------------------------------------------------------------- homeview.pt */
 #text_intro { width:90%; float:left; padding: 0 5%; padding: 0 20px; }
