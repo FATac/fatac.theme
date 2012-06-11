@@ -15,6 +15,12 @@ class footer(ViewletBase):
     #def __init__(self, context, request, view, manager=None):
     #    super(footer, self).__init__(context, request, view, manager)
 
+    def titolPortal(self):
+        """ retorna el títol del portal
+        """
+
+        return self.portal_state.navigation_root_title()
+
     def isRoot(self):
         """El viewlet mostra contingut sengons si estem a la pagina principal"""
         # Recuperem la url sense la vista
