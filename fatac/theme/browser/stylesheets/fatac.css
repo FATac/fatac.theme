@@ -195,8 +195,8 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #zoom_resultats { margin-right:7px; float:left; width:125px; height:18px; padding:5px 10px 0 10px; background-color:#f3f3f3; border:1px solid #cccccc; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 #zoom_resultats img, #zoom_resultats #slider-wrap-zoom { float:left; }
 /* per que la barra que fa slide pugui fer 20px d'ample, li posem 20 px de border-right */
-#zoom_resultats #slider-wrap-zoom { position:absolute; height:7px; width:60px; margin:2px 9px 0 22px; background:url('++resource++fatac.theme.images/slider_h.png')  repeat-x center transparent; border-right: 20px solid transparent;}
-#zoom_resultats #slider-wrap-zoom .ui-slider-handle { height:7px; margin:0 auto; background-color:#999999; display:block; position:absolute; width:20px; }
+#zoom_resultats #slider-wrap-zoom { position:absolute; height:7px; width:60px; margin:2px 9px 0 22px; background:url('++resource++fatac.theme.images/slider_h.png')  repeat-x center transparent; border-right: 20px solid transparent; border-radius:0; border-color:transparent; }
+#zoom_resultats #slider-wrap-zoom .ui-slider-handle { height:7px; margin:3px auto 0; background-color:#999999; border-color:#999999; display:block; position:absolute; width:20px; border-radius:0; }
 #zoom_resultats #zoom_menys { float:left; }
 #zoom_resultats #zoom_mes { float:right; }
 
