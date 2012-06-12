@@ -23,6 +23,8 @@ a { border-bottom:none !important; }
 .div_dotted_line_doble_negre { float:left; width:100%; clear:both; border-bottom:1px dotted #000000; border-top:1px dotted #000000; padding-bottom:8px; padding-top: 8px; margin-bottom:8px; }
 .div_dotted_line_bottom { float:left; width:100%; clear:both; border-bottom:1px dotted #888888; padding-bottom:8px; margin-bottom:8px; }
 
+#current-group-header.div_dotted_line_bottom {float:none;}
+
 .hidden { display:none; }
 
 img.arrow_top, img.arrow_bottom { margin-right:5px; }
