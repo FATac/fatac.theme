@@ -11,7 +11,7 @@
             </dt>
             <dd class="actionMenuContent">
                 <ul>
-                    <li tal:repeat="action view/user_actions">
+                    <li tal:repeat="action view/user_actions" tal:attributes="class string:${action/id}">
                         <a href="" tal:attributes="href action/url" tal:content="action/title" i18n:translate="">
                             action title
                         </a>
