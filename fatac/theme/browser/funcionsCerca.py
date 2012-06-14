@@ -20,7 +20,7 @@ class funcionsCerca():
     # Settings
     _settings = None
 
-    def executaCercaIdsOQuerystring(self, query=None, fields=None):
+    def executaCercaIdsOQuerystring(self, query=None, fields=None, rows=9999, start=0):
         """
         """
         parametres_visualitzacio = self.retParametresVisualitzacio()
@@ -36,7 +36,8 @@ class funcionsCerca():
                 querystring['f'] = query
             if fields != None:
                 querystring['fields'] = fields
-        return self.executaCerca(querystring, llista_ids, self.getLang())
+
+        return self.executaCerca(querystring, llista_ids, self.getLang(), rows, start)
 
     def getSettings(self, key=None):
         """ Retorna la configuració o el valor de la configuració demanat (key).
@@ -127,17 +128,17 @@ class funcionsCerca():
             marca_temps = marca_temps // durada
         return str(marca_temps)
 
-    def modified_cachekey(fn, self, querystring, llista_ids, lang):
+    def modified_cachekey(fn, self, querystring, llista_ids, lang, rows, start):
         """ Cache the result based on
         """
         llista_ordenada = ''
         if llista_ids is not None:
             llista_ordenada = str(sorted(llista_ids))
 
-        return str(querystring) + llista_ordenada + self.marca_temps() + lang
+        return str(querystring) + llista_ordenada + self.marca_temps() + lang + str(rows) + str(start)
 
     @cache(modified_cachekey)
-    def executaCerca(self, querystring, llista_ids, lang):
+    def executaCerca(self, querystring, llista_ids, lang, rows, start):
         """
         si rep querystring, crida el servei rest que executa la cerca, i
         retorna el json resultant i els filtres ordenats;
@@ -145,6 +146,8 @@ class funcionsCerca():
         sigués el resultat d'una cerca i el retorna
         """
         if querystring:
+            querystring['rows'] = rows
+            querystring['start'] = start
             querystring_str = self.querystringToString(querystring)
             url = self.retServidorRest() + '/solr/search?' + querystring_str + "&lang=" + lang
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)

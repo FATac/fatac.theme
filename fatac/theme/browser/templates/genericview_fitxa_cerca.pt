@@ -3,7 +3,7 @@ crida demo1: http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucch
 crida demo2: tb es pot cridar amb parametres_visualitzacio
 -->
 
-<tal:rep tal:repeat="dades_objecte view/dades_genericview_header">
+<tal:rep tal:repeat="dades_objecte view/dades_genericview_solr">
     <div class="genericview_fitxa_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <!-- TODO: destacar primer element i afegir link (on va link?) -->
         <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
@@ -12,10 +12,10 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             </div>
             <div class="dades">
                 <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
-                
-                <tal:rep tal:repeat="dada dades_objecte/dades_header">
+                <tal:replace tal:replace="structure dades_objecte/titol"></tal:replace>
+                <!-- <tal:rep tal:repeat="dada dades_objecte/dades_header">
                     <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
-                </tal:rep>
+                </tal:rep> -->
             </div>
         </a>
     </div>
