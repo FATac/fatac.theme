@@ -168,16 +168,38 @@ class funcionsCerca():
                 return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
 
         elif llista_ids:
-            numFound = len(llista_ids)
-            #exemple: docs = [{u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}]
-            docs = []
-            for id in llista_ids:
-                docs.append({'id': id})
-            dades_json = {
-                'facet_counts': {u'facet_ranges': {}, u'facet_fields': {}},
-                'response': {u'start': 0, u'numFound': numFound, u'docs': docs}
-            }
-            return {'ordre_filtres': [], 'dades_json': dades_json}
+            querystring = {}
+            querystring['rows'] = rows
+            querystring['start'] = start
+            querystring['f'] = ['id:' + ' | '.join(llista_ids)]
+            querystring_str = self.querystringToString(querystring)
+            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
+            self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
+            read = self.llegeixJson(url)
+            if read:
+                #quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
+                #el read amb una expressió regular que ens retornarà una llista on podrem consultar l'ordre.
+                import re
+                inici = read.find('facet_fields')
+                final = read.find('}', inici)
+                facet_fields = read[inici:final]
+                # busca qualsevol cadena [A-Za-z] seguida de :, i les agrupa guardant la posició inicial
+                mm = [(a.groups()[0], a.start()) for a in re.finditer('"([A-Za-z]*)":', facet_fields)]
+                #mm = [('ObjectType', 15), ('Year', 139), ('Country', 347), ('Translation', 570), ('Media', 649), ('License', 702), ('Role', 715), ('Person', 832), ('Organisation', 2858), ('Collection', 2876), ('ArtWork', 3043)]
+                #ordena mm en funció de la posició guardada
+                llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
+                #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
+                return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
+            # numFound = len(llista_ids)
+            # #exemple: docs = [{u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}]
+            # docs = []
+            # for id in llista_ids:
+            #     docs.append({'id': id})
+            # dades_json = {
+            #     'facet_counts': {u'facet_ranges': {}, u'facet_fields': {}},
+            #     'response': {u'start': 0, u'numFound': numFound, u'docs': docs}
+            # }
+            # return {'ordre_filtres': [], 'dades_json': dades_json}
 
         return None
 
