@@ -4,19 +4,30 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 -->
 
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_solr">
-    <div class="genericview_fitxa_cerca" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
+    <div class="genericview_fitxa_cerca addPlaylistParent" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <!-- TODO: destacar primer element i afegir link (on va link?) -->
         <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
             <div class="thumbnail">
                 <img class="miniatura_objecte" tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
             </div>
-            <div class="dades">
+        </a>
+        <div class="dades">
+            <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
+                    tal:condition="not: isanon">
+                <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+            </tal:co>
+
+            <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
                 <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
                 <tal:replace tal:replace="structure dades_objecte/titol"></tal:replace>
                 <!-- <tal:rep tal:repeat="dada dades_objecte/dades_header">
                     <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
                 </tal:rep> -->
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </tal:rep>
+
+<script type="text/javascript">
+    addPlaylistMenu();
+</script>
