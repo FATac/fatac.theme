@@ -23,8 +23,8 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                 <!-- <tal:rep tal:repeat="dada dades_objecte/dades_header">
                     <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
                 </tal:rep> -->
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </tal:rep>
 
