@@ -6,7 +6,7 @@ from funcionsCerca import funcionsCerca
 import urllib2
 import json
 from Products.CMFPlone.utils import _createObjectByType
-from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
+from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
 N_COLUMNS = 3
 
@@ -49,7 +49,7 @@ class genericView(BrowserView, funcionsCerca):
                     if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
                         self.columns = YearPeriodColumn(self.getLang())
                     else:
-                        self.columns = CapitalLetterColumn(self.getLang())
+                        self.columns = AgentColumn(self.getLang())
             else:
                 rows = 0
                 start = 0
@@ -117,16 +117,22 @@ class genericView(BrowserView, funcionsCerca):
     #===========================================================================
     # funcions que retornen les dades necessàries per pintar cada vista
     #===========================================================================
+
     def _translate(self, field, lang):
+        """ Retorna el valor corresponent a l'idioma (el parametre lang) d'un
+            camp multivaluat del solr.
+        """
+
+        default = ''
         for value in field:
             if not 'LANG' in value[:4]:
                 default = value
             elif 'LANG' + lang in value[:6]:
-                return value.replace("LANG" + self.lang + "__", "")
+                return value.replace("LANG" + lang + "__", "")
         return default
 
     def dades_genericview_solr(self):
-        """
+        """ Retorna les dades que s'han obtingut de la cerca al solr.
         """
         if self.resultat_cerca is not None:
             resultat = []
@@ -397,7 +403,7 @@ class genericView(BrowserView, funcionsCerca):
 
     def _getColumnContent(self, query, field, fieldFilter):
         #parametres_visualitzacio['querystring']['f'][0]
-        resultat_cerca = self.executaCercaIdsOQuerystring([query], "id%2C" + field)
+        resultat_cerca = self.executaCercaIdsOQuerystring([query], "id," + field)
         if resultat_cerca:
             if 'dades_json' in resultat_cerca:
                 dades_json = resultat_cerca['dades_json']
@@ -407,7 +413,7 @@ class genericView(BrowserView, funcionsCerca):
                     for resultat in resultats:
                         idobjectes.append({
                             'id': resultat['id'],
-                            'name': fieldFilter(resultat[field])
+                            'name': fieldFilter(resultat)
                             })
                     self.idobjectes = idobjectes
         return self.idobjectes

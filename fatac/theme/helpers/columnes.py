@@ -47,8 +47,8 @@ class Column:
     def field(self):
         return ''
 
-    def fieldFilter(self, field):
-        return field
+    def fieldFilter(self, result):
+        return str(result)
 
 
 class CapitalLetterColumn(Column):
@@ -57,10 +57,32 @@ class CapitalLetterColumn(Column):
         return list(u"ABCDEFGHIJKLMNOPQRSTUVXYZ")
 
     def query(self, i):
-        return "AlphabeticalOrder:" + self._dict[i] + "*, class:Person"
+        return "AlphabeticalOrder:" + self._dict[i] + "*"
 
     def field(self):
         return "AlphabeticalOrder"
+
+
+class AgentColumn(CapitalLetterColumn):
+    """
+        Cerca agents i genera com a text de la columna "Cognom, Nom", per
+         exemple:
+            Tàpies, Antoni
+    """
+    def query(self, i):
+        return "LastName:" + self._dict[i] + "*, class:Person"
+
+    def field(self):
+        return "LastName, FirstName"
+
+    def fieldFilter(self, result):
+        text = ''
+        # El last name segur que existeix, ja que és sobre qui fem la cerca
+        # pero desconeixmen si hi haura firstName
+        text = result['LastName']
+        if 'FirstName' in result:
+            text += ', ' + result['FirstName']
+        return text
 
 
 class YearPeriodColumn(Column):
@@ -93,6 +115,7 @@ class YearPeriodColumn(Column):
         return "Events"
 
     def fieldFilter(self, field, default=''):
+        field = field['Events']
         for value in field:
             if not 'LANG' in value[:4]:
                 default = value

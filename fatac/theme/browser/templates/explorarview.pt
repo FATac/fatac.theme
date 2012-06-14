@@ -15,11 +15,9 @@
             </div>
 
             <div class="div_dotted_line_bottom arial12c666666">
-                <!-- <br/><span class="arial20c333333bold" i18n:translate="explora_bbdd">Explora la nostra base de dades per:</span>
-                <br/><br/> -->
-                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" i18n:translate="agentes">Agents</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" i18n:translate="eventos">Esdeveniments</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
+                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" data-conf="Agents" i18n:translate="agentes">Agents</a> |
+                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" data-conf="Events" i18n:translate="eventos">Esdeveniments</a> |
+                <a href="" class="arial15c666666 explorar_classe" data-conf="Explora" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a>
             </div>
 
             <script type="text/javascript">
@@ -30,7 +28,7 @@
                     });
                     $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
 
-                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: querys[0]};
+                    querystring = {rows: 999999, s: '', conf: 'Agents', f: querys[0]};
 
                     parametres_visualitzacio = {querystring: querystring, visualitzacio: 'columnes', zoom: '1', pagina_actual: 1, resultats_per_pagina: 15};
 
@@ -58,7 +56,7 @@
 
                     $('#zona_resultats').html('<\img class="spinner_zona_resultats" src="spinner.gif" \/>');
 
-                    querystring = {rows: 999999, s: '', conf: 'Explorar', f: [$(this).attr('rel')]};
+                    querystring = {rows: 999999, s: '', conf: $(this).attr('data-conf'), f: [$(this).attr('rel')]};
                     visualitzacio = 'fitxa_cerca';
                     if ( $(this).attr('rel') != 'ObjectType:Collection'){
                         visualitzacio = 'columnes';
