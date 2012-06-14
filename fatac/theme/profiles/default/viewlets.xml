@@ -117,6 +117,7 @@
  </hidden>
  <hidden manager="plone.belowcontent" skinname="Plone Classic Theme">
   <viewlet name="plone.belowcontenttitle.keywords"/>
+  <viewlet name="plone.manage_portlets_fallback"/>
  </hidden>
  <hidden manager="plone.portalfooter" skinname="Plone Classic Theme">
   <viewlet name="plone.site_actions"/>
@@ -127,5 +128,8 @@
  </hidden>
  <hidden manager="plone.abovecontent" skinname="Plone Classic Theme">
   <viewlet name="plone.path_bar"/>
+ </hidden>
+ <hidden manager="plone.belowcontent" skinname="fatac.theme">
+  <viewlet name="plone.manage_portlets_fallback"/>
  </hidden>
 </object>
