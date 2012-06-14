@@ -6,7 +6,7 @@ from funcionsCerca import funcionsCerca
 import urllib2
 import json
 from Products.CMFPlone.utils import _createObjectByType
-from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
+from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
 N_COLUMNS = 3
 
@@ -30,6 +30,8 @@ class genericView(BrowserView, funcionsCerca):
         self.visualitzacio = None
         self.idobjectes = None
         self.uidParam = self.getUIDParam(self.context)
+        self.resultat_cerca = None
+        self.idobjectes = None
 
         parametres_visualitzacio = self.retParametresVisualitzacio()
         idobjecte = self.request.get('idobjecte')
@@ -47,21 +49,24 @@ class genericView(BrowserView, funcionsCerca):
                     if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
                         self.columns = YearPeriodColumn(self.getLang())
                     else:
-                        self.columns = CapitalLetterColumn(self.getLang())
+                        self.columns = AgentColumn(self.getLang())
             else:
-                resultat_cerca = self.executaCercaIdsOQuerystring()
+                rows = 0
+                start = 0
+                if 'resultats_per_pagina' in parametres_visualitzacio:
+                    rows = parametres_visualitzacio['resultats_per_pagina']
+                if 'pagina_actual' in parametres_visualitzacio:
+                    start = (int(parametres_visualitzacio['pagina_actual']) - 1) * int(parametres_visualitzacio['resultats_per_pagina'])
+                resultat_cerca = self.executaCercaIdsOQuerystring(fields='id, Title, class', rows=rows, start=start)
+                self.resultat_cerca = []
                 if resultat_cerca:
                     if 'dades_json' in resultat_cerca:
                         dades_json = resultat_cerca['dades_json']
                         if 'response' in dades_json and 'docs' in dades_json['response']:
                             resultats = dades_json['response']['docs']
-                            resultats_per_pagina = int(parametres_visualitzacio['resultats_per_pagina'])
-                            pagina_a_mostrar = int(parametres_visualitzacio['pagina_actual'])
-                            num_obj_inicial = (pagina_a_mostrar * resultats_per_pagina) - resultats_per_pagina
-                            num_obj_final = (pagina_a_mostrar * resultats_per_pagina)
-
+                            self.resultat_cerca = resultat_cerca['dades_json']['response']['docs']
                             idobjectes = []
-                            for resultat in resultats[num_obj_inicial:num_obj_final]:
+                            for resultat in resultats:
                                 idobjectes.append(resultat['id'])
                             self.idobjectes = idobjectes
 
@@ -112,6 +117,39 @@ class genericView(BrowserView, funcionsCerca):
     #===========================================================================
     # funcions que retornen les dades necessàries per pintar cada vista
     #===========================================================================
+
+    def _translate(self, field, lang):
+        """ Retorna el valor corresponent a l'idioma (el parametre lang) d'un
+            camp multivaluat del solr.
+        """
+
+        default = ''
+        for value in field:
+            if not 'LANG' in value[:4]:
+                default = value
+            elif 'LANG' + lang in value[:6]:
+                return value.replace("LANG" + lang + "__", "")
+        return default
+
+    def dades_genericview_solr(self):
+        """ Retorna les dades que s'han obtingut de la cerca al solr.
+        """
+        if self.resultat_cerca is not None:
+            resultat = []
+            lang = self.getLang()
+            for objecte in self.resultat_cerca:
+                id_objecte = objecte['id']
+                dades_objecte = {'id': id_objecte,
+                                 'titol': '',
+                                 'classe': objecte['class'],
+                                 'thumbnail_classe': self.getThumbnailClasse(objecte['class']),
+                                 'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
+                                 'dades_header': []}
+                if 'Title' in objecte:
+                    dades_objecte['titol'] = self._translate(objecte['Title'], lang)
+                resultat.append(dades_objecte)
+            self.resultat_cerca = None
+            return resultat
 
     def dades_genericview_header(self):
         """
@@ -365,7 +403,7 @@ class genericView(BrowserView, funcionsCerca):
 
     def _getColumnContent(self, query, field, fieldFilter):
         #parametres_visualitzacio['querystring']['f'][0]
-        resultat_cerca = self.executaCercaIdsOQuerystring([query], "id%2C" + field)
+        resultat_cerca = self.executaCercaIdsOQuerystring([query], "id," + field)
         if resultat_cerca:
             if 'dades_json' in resultat_cerca:
                 dades_json = resultat_cerca['dades_json']
@@ -375,7 +413,7 @@ class genericView(BrowserView, funcionsCerca):
                     for resultat in resultats:
                         idobjectes.append({
                             'id': resultat['id'],
-                            'name': fieldFilter(resultat[field])
+                            'name': fieldFilter(resultat)
                             })
                     self.idobjectes = idobjectes
         return self.idobjectes
