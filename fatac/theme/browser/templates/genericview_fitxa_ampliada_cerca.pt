@@ -10,7 +10,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
     });
 </script>
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_all_sections">
-    <div tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}">
+    <div tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}" class="fitxa_ampliada_cerca">
 
         <div class="row" tal:define="seccions dades_objecte/dades_seccions">
 
@@ -26,14 +26,22 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                     <tal:header tal:condition="python: repeat['dada'].index == 0 and seccio['nom'] == 'header'">
                                         <!-- Enllaç a objecte -->
                                         <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
-                                            <div class="georgia20c333333Ital" style="margin-top: 5px;">
-                                                    <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span>       
+                                            <div class="georgia20c333333Ital"
+                                                 tal:define="estil string: margin-top: 5px;; background:url('${dades_objecte/thumbnail_classe}') no-repeat center right transparent;; background-size:15px 15px"
+                                                 tal:attributes="style estil">
+                                                    <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span>
                                             </div>
+                                            <!--
                                             <div style="margin-top: 10px; margin-bottom: 10px;">
-                                                <img style="max-width:15px; max-height:15px;" 
+                                                <img style="max-width:15px; max-height:15px;"
                                                      tal:attributes="src dades_objecte/thumbnail_classe; alt dades_objecte/titol; id dades_objecte/id" />
                                             </div>
+                                            -->
                                         </a>
+                                        <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
+                                                tal:condition="not: isanon">
+                                            <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                                        </tal:co>
                                     </tal:header>
 
                                     <!-- Text del cos -->
@@ -87,3 +95,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
         </div>
     </div>
 </tal:rep>
+
+<script type="text/javascript">
+    addPlaylistMenu();
+</script>

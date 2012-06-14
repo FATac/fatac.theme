@@ -36,7 +36,7 @@
                 });
 
             </script>
-            
+
             <div class="ac_search_biblio">
                	<a i18n:translate="" href="javascript:void(0);" onclick="document.forms['vtlsform'].submit();">Cerca a la biblioteca</a>
                 <tal:def tal:define="stringCerca python: context.REQUEST.get('s')">
@@ -62,14 +62,14 @@
                     </form>
                 </tal:def>
             </div>
-            
+
             <div class="ac_breadcrump div_dotted_line_bottom">
                 <span class="TerminalDosis600" i18n:translate="Cerca">Cerca</span>
                 <tal:co tal:define="text_cerca view/getS" tal:condition="text_cerca">
                     <span class="TerminalDosis200">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><span class="TerminalDosis200" tal:content="text_cerca" />
                 </tal:co>
             </div>
-            
+
             <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" alt="Carregant..." i18n:attributes="alt;"/></div>
 
             <div class="visualClear"><!--  --></div>

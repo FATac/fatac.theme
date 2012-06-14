@@ -42,6 +42,7 @@
                                 if (fila_actual === 1) { $('.arrow_up').addClass("hidden"); $('.arrow_down').addClass("hidden"); }
 
                                 $(".scrollable_ultims_documents").scrollable({api:true, vertical: true, mousewheel: true});
+
                             });
 
                             var sort = 'lastView+desc';
@@ -67,6 +68,7 @@
                                 if (fila_actual === 1) { $('.arrow_up').addClass("hidden"); $('.arrow_down').addClass("hidden"); }
 
                                 $(".scrollable_ultims_consultats").scrollable({api:true, vertical: true, mousewheel: true});
+
                             });
 
                         });

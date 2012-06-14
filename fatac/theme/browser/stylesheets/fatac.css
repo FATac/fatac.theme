@@ -345,10 +345,11 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_cerca.pt */
-.genericview_fitxa_cerca { float:left; width:274px; margin:1%; height:80px; background-color:#ececec; overflow:hidden; font-family:georgia; font-size:13px;}
+.genericview_fitxa_cerca { float:left; width:274px; margin:1%; height:80px; background-color:transparent; overflow:hidden; font-family:georgia; font-size:13px;}
+.genericview_fitxa_cerca:hover { background-color:#ececec; }
 .genericview_fitxa_cerca .thumbnail { float:left; width:29%; margin-right:2%; }
 .genericview_fitxa_cerca .thumbnail .miniatura_objecte { max-width:100%; max-height:100%; }
-.genericview_fitxa_cerca .dades { padding-top:1px; width:66%; height:100%; overflow:hidden;}
+.genericview_fitxa_cerca .dades { padding-top:1px; width:69%; height:100%; overflow:hidden;}
 .genericview_fitxa_cerca .dades .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:10px; }
 #content .genericview_fitxa_cerca a{ color: #333333;}
 #content .genericview_fitxa_cerca a:hover { color: #666666 !important;}
