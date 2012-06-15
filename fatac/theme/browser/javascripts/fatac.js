@@ -135,7 +135,7 @@ function pinta_filtres() {
         html_filtres = data;
         $('div#selector_filtres').replaceWith(html_filtres);
         inicialitza_js_filtres();
-    });
+    }).error(function(){console.error('errrr!'); genericAjaxError($('div#selector_filtres'));});
 }
 
 function scroll_horitzontal_filtres() {
@@ -266,7 +266,7 @@ function click_filtres() {
             //un cop ja hem recalculat la cerca, pintem els resultats
             pinta_resultats();
 
-        });
+        }).error(function(){genericAjaxError($('#zona_resultats'));});
 
     });
 }
@@ -470,8 +470,42 @@ function click_visualitzacions() {
     });
 }
 
+function _(dic){
+    // Obtenir idioma actual treient els epais en blanc i salts de linea
+    cLang = $('#selector_idiomes .actionMenuHeader').text().trim();
+    if (cLang === 'cat') {
+        return dic.ca;
+    }
+    if (cLang === 'cast') {
+        return dic.es;
+    }
+    if (cLang === 'eng') {
+        return dic.en;
+    }
+}
+
+function genericAjaxError(area){
+    text = _({'ca': 'Error al obtenir el contingut, si us plau recarrega la pàgina.',
+                'en': 'Error loading content, please reload the page',
+                'es': 'Error al cargar contenido, porfavor recarga la pagina.'
+        });
+    console.error(text)
+    // Si ens passen un element de la pàgina, substituim el seu contingut pel
+    //  missatge d'error
+    if (area !== null) {
+        html = '<div class="error">' + text + '</div>';
+        $(area).html(html);
+    }
+    else {
+        // en cas de no tenir un element del dom mostrem un alert :-(
+        alert(text);
+    }
+}
+
 //TODO: caldria fer que només canvii la zona de les pàgines, no els controls de paginació i visualització, ordre, etc.
 function pinta_resultats(callback) {
+    var visualitzacio;
+    visualitzacio = consulta_parametre_visualitzacio('visualitzacio');
     // - cridada quan es clica un filtre, es canvia el zoom o es canvia el tipus de visualització
     // - fa un replace de la zona de resultats (resultats, paginació i visualitzacions)
 
@@ -480,15 +514,17 @@ function pinta_resultats(callback) {
     //1. consultem i calculem dades necessàries
     //TODO: potser caldria pintar la pàgina on estaria primer obj visible actualment amb la nova visualització (de moment pintem els primers)
     modifica_parametres_visualitzacio('pagina_actual', 1);
-
     //2. cridem resultatsView per substituïr tota la zona de resultats
     //útil només si presuposem que quan canviem visualització, tornem a la pàgina 1
     $.post('resultatsView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function (data) {
-
-        $('#zona_resultats').replaceWith(data);
-
-        if (callback) { callback()};
-    });
+        if (visualitzacio === consulta_parametre_visualitzacio('visualitzacio')) {
+            $('#zona_resultats').replaceWith(data);
+            if (callback) { callback();}
+        }
+        else {
+            console.log("View discarted!");
+        }
+    }).error(function(){genericAjaxError($('#zona_resultats'));});
 }
 
 function clone(obj) {
@@ -502,9 +538,8 @@ function clone(obj) {
 
 function pinta_pagina_seguent(pagina, callback) {
     //crida la vista que retorna l'html corresponent a la pàgina 'pagina'+1, i l'inserta després de 'pagina'
-
     var total_pagines = parseInt($('#pagina_total').attr('rel'),10);
-
+    var visualitzacio = consulta_parametre_visualitzacio('visualitzacio');
     if (pagina < total_pagines) {
         //si fem parametres_visualitzacio = ret_parametres_visualitzacio(); ho passa per referència i modifica valor original!
         var params = clone(ret_parametres_visualitzacio());
@@ -518,11 +553,16 @@ function pinta_pagina_seguent(pagina, callback) {
 
         var parametres_visualitzacio_json = JSON.stringify(params);
         $.post('displayResultatsPaginaView', {parametres_visualitzacio: parametres_visualitzacio_json}, function (data) {
-            $('.pagina' + pagina_str).replaceWith(data);
-            inicialitza_js_pagines();
-            $(document).trigger('pinta_pagina_seguent', pagina)
-            if (callback) { callback(); }
-        });
+            if (visualitzacio === consulta_parametre_visualitzacio('visualitzacio')) {
+                $('.pagina' + pagina_str).replaceWith(data);
+                inicialitza_js_pagines();
+                $(document).trigger('pinta_pagina_seguent', pagina);
+                if (callback) { callback(); }
+            }
+            else {
+                console.log("View discarted!");
+            }
+        }).error(function(){genericAjaxError($('.pagina ' + pagina_str));});
     }
 }
 
@@ -722,6 +762,96 @@ function ret_parametres_visualitzacio_json() {
     return JSON.stringify(parametres_visualitzacio);
 }
 
+//==============================================================================================================
+//funcions especifiques de cada vista
+//==============================================================================================================
+
+
+function init_cerca() {
+    get_s = $('input#get_s').attr('value');
+
+    querystring = {rows: 999999, s: get_s};
+
+    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '3', pagina_actual: 1, resultats_per_pagina: 32};
+
+    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+    $.post('filtresView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+        $('div#zona_filtres').replaceWith(data);
+    }).error(function(){ genericAjaxError($('div#zona_filtres'));});
+
+    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+        $('div#zona_resultats').replaceWith(data);
+    }).error(function(){ genericAjaxError($('div#zona_resultats'));});
+}
+
+
+function init_explora() {
+    querys = [ ["class:Person"], ['Year:[1984 TO '+new Date().getFullYear() + '],class:FrameActivity'], ["ObjectType:Collection"]];
+    $(".explorar_classe").each(function (i, item){
+        $(item).attr('rel', querys[i]);
+    });
+    $('#zona_resultats').html('<img class="spinner_zona_resultats" src="spinner.gif" />');
+
+    querystring = {rows: 999999, s: '', conf: 'Agents', f: querys[0]};
+
+    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'columnes', zoom: '1', pagina_actual: 1, resultats_per_pagina: 15};
+
+    //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+    $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+    parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+    $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+        $('div#zona_resultats').replaceWith(data);
+        $('div#controls_resultats').css('display','none');
+        $('div#ordre_y_tipus_cerca').css('display','none');
+        $('#resultats_cerca').removeClass();
+    }).error(function(){ genericAjaxError($('div#zona_resultats'));});
+
+    $('.explorar_classe').click(function(event) {
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+
+        $('.explorar_classe.selected').removeClass('selected');
+        $(this).addClass('selected');
+
+        $('#zona_resultats').html('<img class="spinner_zona_resultats" src="spinner.gif" />');
+
+        querystring = {rows: 999999, s: '', conf: $(this).attr('data-conf'), f: [$(this).attr('rel')]};
+        visualitzacio = 'fitxa_cerca';
+        if ( $(this).attr('rel') != 'ObjectType:Collection'){
+            visualitzacio = 'columnes';
+        }
+        parametres_visualitzacio = {querystring: querystring, visualitzacio: visualitzacio, zoom: '1', pagina_actual: 1, resultats_per_pagina: 15};
+
+        //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
+        $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
+
+        parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
+
+        $.post('resultatsView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
+            $('div#zona_resultats').replaceWith(data);
+            if (visualitzacio == 'columnes') {
+                $('div#controls_resultats').css('display','none');
+            }
+            $('div#ordre_y_tipus_cerca').css('display','none');
+            $('#resultats_cerca').removeClass();
+        }).error(function(){ genericAjaxError($('div#zona_resultats'));});
+
+    });
+}
+
+//==============================================================================================================
+// FullScreen
+//==============================================================================================================
+
+
 (function($){
 
   var $container;
@@ -747,7 +877,7 @@ function ret_parametres_visualitzacio_json() {
         // to use either maximum width or height
         slide.$img.find('img').each(function(i, o) {
             o = $(o);
-            o.removeClass('media_image')
+            o.removeClass('media_image');
             if ((ww / wh) > (o.width() / o.height())) {
               o.css({
                 "height" : wh + "px",
@@ -763,11 +893,11 @@ function ret_parametres_visualitzacio_json() {
         // compare the window aspect ratio to the video aspect ratio
         slide.$img.find('video').each(function(i, o) {
             o = $(o);
-            o.removeClass('media_video')
+            o.removeClass('media_video');
             if ((ww / wh) <= (o.width() / o.height())) {
-              o.width(ww)
+              o.width(ww);
             }
-            o.height(wh - 50)
+            o.height(wh - 50);
         });
 
         // compare the window aspect ratio to the container
@@ -847,7 +977,7 @@ function ret_parametres_visualitzacio_json() {
 
     var preloadSlide = function(){
         var slides, preloadID, total_pagines;
-        slides = $container.data("slides")
+        slides = $container.data("slides");
         total_pagines = parseInt($('#pagina_total').attr('rel'),10);
         preloadID = slides.length;
         if (preloadID < total_pagines ){
@@ -870,7 +1000,7 @@ function ret_parametres_visualitzacio_json() {
         slides = $container.data("slides");
         total_pagines = parseInt($('#pagina_total').attr('rel'),10);
         if (slide < slides.length){
-            newSlide = slides[slide]
+            newSlide = slides[slide];
             if (newSlide.loaded) {
                 changeSlide(oldSlide, newSlide);
                 updateSlideSize(newSlide);
@@ -885,7 +1015,7 @@ function ret_parametres_visualitzacio_json() {
         else if ((slide + 1) <= total_pagines){
             // Encara no s'ha precarregat
             slides[slide] = {loaded:false, id: slide};
-            newSlide = slides[slide]
+            newSlide = slides[slide];
             isLoading = true;
             $container.trigger('startLoading');
             waitReady = slide;
