@@ -18,8 +18,14 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             </tal:co>
 
             <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
-                <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" /><br/>
-                <tal:replace tal:replace="structure dades_objecte/titol"></tal:replace>
+                <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+                <br/>
+                <span class="what georgia13c333333" tal:replace="structure dades_objecte/titol" />
+                <br/>
+                <span class="who georgia11c999999" tal:content="dades_objecte/qui" />
+                <tal-omit:tag tal:condition="dades_objecte/quan">
+                    <span class="when georgia11c999999"  tal:content="dades_objecte/quan"/>
+                </tal-omit:tag>
                 <!-- <tal:rep tal:repeat="dada dades_objecte/dades_header">
                     <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
                 </tal:rep> -->
@@ -28,6 +34,6 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
     </div>
 </tal:rep>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     addPlaylistMenu();
-</script>
+</script> -->

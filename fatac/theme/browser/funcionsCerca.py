@@ -94,14 +94,14 @@ class funcionsCerca():
         evitar errors de codificació
         """
         url = url.replace(" ", "%20")
-        try:
-            request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
-            if request:
-                return request.read()
-            return
-        except:
-            self.context.plone_log("error en executar urllib2.urlopen(" + url + ")")
-            return
+        #try:
+        request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
+        if request:
+            return request.read()
+        return
+        #except:
+        #    self.context.plone_log("error en executar urllib2.urlopen(" + url + ")")
+        #    return
 
     def querystringToString(self, querystring):
         """
@@ -149,7 +149,9 @@ class funcionsCerca():
             querystring['rows'] = rows
             querystring['start'] = start
             querystring_str = self.querystringToString(querystring)
-            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&lang=" + lang
+            filtres_str = 'categories=class,Year,Country,Translation,Media,License,Role,Person,Organisation,Events,Publications,ArtWork,Collection,Administration,CulturalManagement,ProtectionPromotion'
+            url = (self.retServidorRest() + '/solr/search?' + querystring_str
+                    + "&lang=" + lang + '&' + filtres_str)
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
             read = self.llegeixJson(url)
             if read:
