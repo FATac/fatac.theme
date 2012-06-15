@@ -57,7 +57,7 @@ class genericView(BrowserView, funcionsCerca):
                     rows = parametres_visualitzacio['resultats_per_pagina']
                 if 'pagina_actual' in parametres_visualitzacio:
                     start = (int(parametres_visualitzacio['pagina_actual']) - 1) * int(parametres_visualitzacio['resultats_per_pagina'])
-                resultat_cerca = self.executaCercaIdsOQuerystring(fields='id, Title, class', rows=rows, start=start)
+                resultat_cerca = self.executaCercaIdsOQuerystring(fields='id, Who, What, When, class', rows=rows, start=start)
                 self.resultat_cerca = []
                 if resultat_cerca:
                     if 'dades_json' in resultat_cerca:
@@ -141,12 +141,18 @@ class genericView(BrowserView, funcionsCerca):
                 id_objecte = objecte['id']
                 dades_objecte = {'id': id_objecte,
                                  'titol': '',
+                                 'quan': '',
+                                 'qui': '',
                                  'classe': objecte['class'],
                                  'thumbnail_classe': self.getThumbnailClasse(objecte['class']),
                                  'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
                                  'dades_header': []}
-                if 'Title' in objecte:
-                    dades_objecte['titol'] = self._translate(objecte['Title'], lang)
+                if 'What' in objecte:
+                    dades_objecte['titol'] = self._translate(objecte['What'], lang)
+                if 'Who' in objecte:
+                    dades_objecte['qui'] = objecte['Who'][0]
+                if 'When' in objecte:
+                    dades_objecte['quan'] = objecte['When'][0]
                 resultat.append(dades_objecte)
             self.resultat_cerca = None
             return resultat
