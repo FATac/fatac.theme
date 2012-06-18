@@ -22,6 +22,7 @@ class genericView(BrowserView, funcionsCerca):
         """ self.servidorRest guarda l'adreça del servidor Rest que serveix les
         dades; self.idobjectes guarda l'id del/s objecte/s del que volem mostrar
         """
+        super(BrowserView, self).__init__(context, request)
         self.request = request
         self.context = context
         self.servidorRest = self.retServidorRest()
@@ -29,7 +30,7 @@ class genericView(BrowserView, funcionsCerca):
         self.zoom = None
         self.visualitzacio = None
         self.idobjectes = None
-        self.uidParam = self.getUIDParam(self.context)
+        self.uidParam = self.getUIDParam()
         self.resultat_cerca = None
         self.idobjectes = None
 
