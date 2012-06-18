@@ -148,10 +148,11 @@ class funcionsCerca():
         if querystring:
             querystring['rows'] = rows
             querystring['start'] = start
+            if 'categories' not in querystring:
+                querystring['categories'] = 'class,Year,Country,Translation,Media,License,Role,Person,Organisation,Events,Publications,ArtWork,Collection,Administration,CulturalManagement,ProtectionPromotion'
             querystring_str = self.querystringToString(querystring)
-            filtres_str = 'categories=class,Year,Country,Translation,Media,License,Role,Person,Organisation,Events,Publications,ArtWork,Collection,Administration,CulturalManagement,ProtectionPromotion'
             url = (self.retServidorRest() + '/solr/search?' + querystring_str
-                    + "&lang=" + lang + '&' + filtres_str)
+                    + "&lang=" + lang)
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
             read = self.llegeixJson(url)
             if read:
@@ -232,17 +233,19 @@ class funcionsCerca():
         """ Crida al servei rest que ens diu si l'objecte existeix o no, per després crear-lo al plone
         """
         value = 'false'
-        url = self.retServidorRest() + '/resource/' + querystring + '/exists'
+        uid = self.getUIDParam()
+        if uid != '':
+            uid = '?' + uid
+        url = self.retServidorRest() + '/resource/' + querystring + '/exists' + uid
         dades = self.llegeixJson(url)
         if dades:
             value = json.loads(dades)
         return value
 
-    def getUIDParam(self, context):
+    def getUIDParam(self):
         """ Obte l'uid de l'usuari en base64, si no s'ha identificat retornar una cadena buida
         """
-
-        mt = getToolByName(context, 'portal_membership')
+        mt = getToolByName(self.context, 'portal_membership')
         if mt.isAnonymousUser():
             #  the user has not logged in
             return ''

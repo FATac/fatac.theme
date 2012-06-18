@@ -50,6 +50,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
 .TerminalDosis600 { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; }
 .TerminalDosis200 { font-family:'Terminal Dosis', sans-serif; font-weight: 200; font-size: 9pt; }
+.BreadCrumbSecondary { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; color: #999999;}
 .font_normal { font-weight: normal !important; }
 
 img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
@@ -91,7 +92,7 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { display:inline;  padding:10px 0 10px 10px; border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#f6f6f6; }
+#viewlet_cercador form#cercador { display:inline;  padding:10px 0 10px 10px; border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#EEEEEE; }
 #viewlet_cercador #s { background-color:transparent; width: 270px; border:none; }
 #viewlet_cercador .searchButton { background-color:transparent; border:none; }
 #viewlet_cercador a {  margin: 7px 0 0 25px; }
@@ -241,7 +242,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 #ultims_documents, #ultims_consultats { width:100%; float:left; }
 #ultims_documents { border-top:1px dotted #888888; padding-top:10px; margin-top:40px; }
-.requadre_resultats { text-align:center; width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:20px 2%; margin:10px 0; }
+.requadre_resultats { text-align:center; width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#EEEEEE; padding:20px 2%; margin:10px 0; }
 .requadre_resultats .arrow_up { margin-bottom:10px; }
 .requadre_resultats .arrow_down { margin-top:10px; }
 .requadre_resultats .genericview_fitxa_home {height:175px; text-align:left;  width:16%; float:left; margin:0 1%; background-color:white; padding:1%; }
@@ -339,7 +340,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .genericview_imatge.zoom_2 { width:85px; height:85px; margin:6px;}
 .genericview_imatge.zoom_3 { width:100px; height:100px; }
 .genericview_imatge.zoom_1 img { max-width:70px; max-height:70px; }
-.miniatura_objecte { max-width:100% !important; max-height:100% !important; }
+.miniatura_objecte { max-width:100% !important; max-height:100% !important; border-radius: 0.3em;}
 .genericview_imatge.zoom_2 img { max-width:85px; max-height:85px; }
 .genericview_imatge.zoom_3 img { max-width:100px; max-height:100px; }
 .spinner img { margin-top:40%; }
@@ -375,7 +376,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .genericview_hover_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
 .img_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
 */
-.wrapper_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; width:220px; height:280px; }
+.wrapper_hover { background-color:#FFFFFF; padding:10px; box-shadow:0 0 20px 0px; width:220px; height:280px; }
 .wrapper_hover img { max-width:200px; max-height:230px; }
 .wrapper_hover img.miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
 
@@ -438,3 +439,8 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 #selector_idiomes dl.actionMenu {
     position:relative;
 }
+
+
+.portaltype-fatac-playlist #contentview-local_roles {display:none;}
+.portaltype-fatac-playlist #parent-fieldname-title, .portaltype-fatac-playlist #parent-fieldname-description {display: none;}
+.portaltype-fatac-playlist .documentFirstHeading, .portaltype-fatac-playlist .documentDescription {display: none;}

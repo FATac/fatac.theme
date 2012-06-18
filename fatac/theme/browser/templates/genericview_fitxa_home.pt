@@ -15,8 +15,8 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             <div class="dades">
                 <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
                     <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
-                    <div class="visualClear"><!-- --></div>
-                    <tal:replace tal:replace="structure dades_objecte/titol"></tal:replace>
+                    <div class="visualClear"><!--  --></div>
+                    <span class="what georgia13c333333" tal:content="structure dades_objecte/titol" />
                 </a>
                 <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                         tal:condition="not: isanon">
