@@ -26,17 +26,11 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                     <tal:header tal:condition="python: repeat['dada'].index == 0 and seccio['nom'] == 'header'">
                                         <!-- Enllaç a objecte -->
                                         <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
-                                            <div class="georgia20c333333Ital"
-                                                 tal:define="estil string: margin-top: 5px;; background:url('${dades_objecte/thumbnail_classe}') no-repeat center right transparent;; background-size:15px 15px"
-                                                 tal:attributes="style estil">
-                                                    <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span>
-                                            </div>
-                                            <!--
-                                            <div style="margin-top: 10px; margin-bottom: 10px;">
-                                                <img style="max-width:15px; max-height:15px;"
+                                            <div class="georgia20c333333Ital caixa_titol">
+                                                <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span>
+                                                <img class="miniatura_classe"
                                                      tal:attributes="src dades_objecte/thumbnail_classe; alt dades_objecte/titol; id dades_objecte/id" />
                                             </div>
-                                            -->
                                         </a>
                                         <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                                                 tal:condition="not: isanon">

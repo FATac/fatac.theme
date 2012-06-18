@@ -14,7 +14,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
         <div class="dades">
             <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                     tal:condition="not: isanon">
-                <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                <img class="addPlaylist hidden" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
             </tal:co>
 
             <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
@@ -34,6 +34,6 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
     </div>
 </tal:rep>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     addPlaylistMenu();
-</script> -->
+</script>

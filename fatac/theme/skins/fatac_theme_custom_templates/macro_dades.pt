@@ -3,7 +3,7 @@
 
         <tal:co tal:condition="python: tipus == 'text'">
             <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" i18n:translate=""/>: </tal:co>
-            <span class="valor" tal:content="structure valor" /><br/>
+            <span class="valor" tal:content="structure valor" />
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'search'">
@@ -35,7 +35,7 @@
             <tal:rep tal:repeat="obj valor">
                 <a class="linked_object" tal:attributes="href obj/link"><span tal:content="obj/text" /></a>
                 <tal:repl tal:condition="not: repeat/obj/end" tal:replace="string:, " />
-            </tal:rep><br/>
+            </tal:rep>
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'objects'">
