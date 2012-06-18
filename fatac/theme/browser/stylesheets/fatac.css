@@ -444,3 +444,14 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .portaltype-fatac-playlist #contentview-local_roles {display:none;}
 .portaltype-fatac-playlist #parent-fieldname-title, .portaltype-fatac-playlist #parent-fieldname-description {display: none;}
 .portaltype-fatac-playlist .documentFirstHeading, .portaltype-fatac-playlist .documentDescription {display: none;}
+
+
+
+/* ---------------------------------------------------------------------------- notificacions purr */
+
+#purr-container { position:fixed; right:177px; top:95px; z-index:10; }
+#purr-container div.info { background: url(++resource++fatac.theme.images/icon-favorits.png) no-repeat 13px center; }
+#purr-container div.purr { border:1px #339933 solid; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius: 10px; background-color:#E1EDD7; }
+#purr-container div.purr div { padding:15px; }
+#purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
+#purr-container div a.close{ display:none; }
