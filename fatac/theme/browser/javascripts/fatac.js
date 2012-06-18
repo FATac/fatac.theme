@@ -773,12 +773,11 @@ function init_cerca() {
     querystring = {rows: 999999, s: get_s};
 
     parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '3', pagina_actual: 1, resultats_per_pagina: 32};
-
+    parametres_visualitzacio['querystring']['categories'] = 'class,Year,Country,Translation,Media,License,Role,Person,Organisation,Events,Publications,ArtWork,Collection,Administration,CulturalManagement,ProtectionPromotion';
     //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
     $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
 
     parametres_visualitzacio_json = JSON.stringify(parametres_visualitzacio);
-
     $.post('filtresView', {parametres_visualitzacio: parametres_visualitzacio_json}, function(data){
         $('div#zona_filtres').replaceWith(data);
     }).error(function(){ genericAjaxError($('div#zona_filtres'));});
@@ -846,6 +845,17 @@ function init_explora() {
 
     });
 }
+
+
+function setMediaSrc(domElement, url, kind) {
+    var player, $d;
+    $d = $(domElement);
+    player = $d.siblings(kind).get(0);
+    $(player).attr('src', url);
+    player.load();
+    player.play();
+}
+
 
 //==============================================================================================================
 // FullScreen
