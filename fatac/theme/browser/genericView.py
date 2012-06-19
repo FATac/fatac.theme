@@ -100,12 +100,16 @@ class genericView(BrowserView, funcionsCerca):
             crear_objecte = self.existObjectRest(idobject)
             if crear_objecte == 'true':
                 # Busquem si ja estava creat al Plone, sino el creem
-                value = self.context.portal_catalog.searchResults(portal_type='fatac.dummy', id=idobject)
+                #value = self.context.portal_catalog.searchResults(portal_type='fatac.dummy', id=idobject)
                 # Si no existeix el creem fantasma per afegir commentaris
                 arts = self.getSettings('arts_folder')
+                arts_obj = getattr(self.context, arts)
+                value = getattr(arts_obj, idobject, False)
                 #TODO? find the context using catalog arts => plone object
                 if not value:
-                    _createObjectByType('fatac.dummy', getattr(self.context, arts), idobject)
+                    _createObjectByType('fatac.dummy', arts_obj, idobject)
+                    # En la nevera por si acaso, por defecto dejamos el language neutro
+                    # getattr(arts_obj, idobject).setLanguage('ca')
                 # Retornem la vista de l'objecte que ja permet afegir els commentaris
                 #fatac/content/dummy_templates/view.pt
                 return self.request.REQUEST.RESPONSE.redirect(self.context.portal_url() + '/' + arts + '/' + idobject)
