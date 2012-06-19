@@ -367,6 +367,8 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .genericview_fitxa_ampliada_cerca h1 { margin-top:0 !important; float:left; }
 .genericview_fitxa_ampliada_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:9px 0 0 5px; }
 
+.fitxa_ampliada_cerca .caixa_titol { margin-top: 5px; }
+.fitxa_ampliada_cerca .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:4px; }
 
 /* --------------------------------------------------------------------- genericview_hover_cerca.pt */
 /*
@@ -438,11 +440,13 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
     position:relative;
 }
 
+
 .portaltype-fatac-playlist #contentview-local_roles {display:none;}
 .portaltype-fatac-playlist #parent-fieldname-title, .portaltype-fatac-playlist #parent-fieldname-description {display: none;}
 .portaltype-fatac-playlist .documentFirstHeading, .portaltype-fatac-playlist .documentDescription {display: none;}
 
 
+<<<<<<< HEAD
 /* Comentaris */
 
 div.photo-column {
@@ -729,3 +733,13 @@ div.photo-container {
 #commenting .field {
     margin-bottom: 5px;
 }
+
+/* ---------------------------------------------------------------------------- notificacions purr */
+
+#purr-container { position:fixed; right:177px; top:95px; z-index:10; }
+#purr-container div.info { background: url(++resource++fatac.theme.images/icon-favorits.png) no-repeat 13px center; }
+#purr-container div.purr { border:1px #339933 solid; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius: 10px; background-color:#E1EDD7; }
+#purr-container div.purr div { padding:15px; }
+#purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
+#purr-container div a.close{ display:none; }
+

@@ -16,11 +16,11 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                 <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
                     <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
                     <div class="visualClear"><!--  --></div>
-                    <tal:replace tal:replace="structure dades_objecte/titol"></tal:replace>
+                    <span class="what georgia13c333333" tal:content="structure dades_objecte/titol" />
                 </a>
                 <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                         tal:condition="not: isanon">
-                    <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                    <img class="addPlaylist hidden" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
                 </tal:co>
             </div>
         </tal:cond>
