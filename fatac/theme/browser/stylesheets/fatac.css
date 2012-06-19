@@ -239,9 +239,10 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 
 /* ---------------------------------------------------------------------------- homeview.pt */
 #text_intro { width:90%; float:left; padding: 0 5%; padding: 0 20px; }
+#text_intro p {margin-bottom: 0.5em;}
 
 #ultims_documents, #ultims_consultats { width:100%; float:left; }
-#ultims_documents { border-top:1px dotted #888888; padding-top:10px; margin-top:40px; }
+#ultims_documents { border-top:1px dotted #888888; padding-top:10px; margin-top:10px; }
 .requadre_resultats { text-align:center; width:96%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#EEEEEE; padding:20px 2%; margin:10px 0; }
 .requadre_resultats .arrow_up { margin-bottom:10px; }
 .requadre_resultats .arrow_down { margin-top:10px; }
