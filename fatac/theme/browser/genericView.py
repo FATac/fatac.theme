@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
@@ -109,6 +109,7 @@ class genericView(BrowserView, funcionsCerca):
                 #TODO? find the context using catalog arts => plone object
                 if not value:
                     _createObjectByType('fatac.dummy', arts_obj, idobject)
+                    #getattr(arts_obj, idobject).
                     # En la nevera por si acaso, por defecto dejamos el language neutro
                     # getattr(arts_obj, idobject).setLanguage('ca')
                 # Retornem la vista de l'objecte que ja permet afegir els commentaris

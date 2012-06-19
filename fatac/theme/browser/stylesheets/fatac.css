@@ -445,6 +445,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .portaltype-fatac-playlist #parent-fieldname-title, .portaltype-fatac-playlist #parent-fieldname-description {display: none;}
 .portaltype-fatac-playlist .documentFirstHeading, .portaltype-fatac-playlist .documentDescription {display: none;}
 
+#advanced {display: none !important;}
 
 <<<<<<< HEAD
 /* Comentaris */
