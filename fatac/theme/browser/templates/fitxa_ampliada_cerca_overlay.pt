@@ -11,7 +11,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                 <img tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol"/>
             </div>
             <div class="dades">
-                <img tal:attributes="src string:${dades_objecte/thumbnail_classe}?&amp;style=neg;
+                <img tal:attributes="src string:${dades_objecte/thumbnail_classe}_neg.png;
                                                                         alt dades_objecte/titol;
                                                                         id dades_objecte/id" />
                 <p tal:content="dades_objecte/titol"/>
@@ -27,7 +27,6 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                             <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body']">
                                 <tal:rep tal:repeat="dada seccio/dades">
 
-                                    <!-- Titol + Icona Tipus objecte -->
                                     <tal:header tal:condition="python: repeat['dada'].index == 0 and seccio['nom'] == 'header'">
                                         <div class="header">
                                             <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">

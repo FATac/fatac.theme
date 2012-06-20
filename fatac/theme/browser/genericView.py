@@ -9,6 +9,7 @@ from Products.CMFPlone.utils import _createObjectByType
 from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
 N_COLUMNS = 3
+from Products.CMFCore.utils import getToolByName
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -255,10 +256,25 @@ class genericView(BrowserView, funcionsCerca):
     def getThumbnailClasse(self, classe):
         """ crida el servei que retorna el thumbnail de la classe donada
         """
-        uid = self.uidParam
-        if uid != '':
-            uid = '?' + uid
-        return self.rest_public + '/classes/' + classe + '/thumbnail' + uid
+
+        portal = getToolByName(self, 'portal_url')
+        portal = portal.getPortalObject()
+        classe = classe.replace('ac:', '')
+        # una alternativa al replace seria el codi següent
+        # if classe[:3] == 'ac:':
+        #    classe = classe[3:]
+
+        # Restricted traverse
+        try:
+            # skins doesn't support filenames with ':', but does in dirnames
+            classe_path = str("ac:/" + classe + ".png")
+            portal.restrictedTraverse(classe_path)
+            uri = portal.portal_url() + '/' + classe_path
+            return uri
+        except:
+            pass
+        default = portal.portal_url() + "/ac:/default.png"
+        return default
 
     def getServidorRest(self):
         """ retorna la url del servidor rest

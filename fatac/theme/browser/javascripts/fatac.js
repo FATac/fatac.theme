@@ -929,7 +929,7 @@ function setMediaSrc(domElement, url, kind) {
         });
 
       }
-    }
+    };
     $(window).bind("resize", function(){
       //todo: throttle
       $container.trigger("updateSize");
@@ -960,18 +960,18 @@ function setMediaSrc(domElement, url, kind) {
             newSlide.preview.attr('id', 'slide-preview-' + slide);
             slideElement = $('#slide-preview-'+slide);
             if (slideElement.length > 0 ){
-                slideElement.replaceWith(newSlide.preview)
+                slideElement.replaceWith(newSlide.preview);
                 slideElement.click( function () {
                     $container.trigger("showSlide", slide);
                 });
             }
             newSlide.$img.find('.slide-preview').remove();
         }
-    }
+    };
     var waitReady = 0;
     $(document).bind('pinta_pagina_seguent', function(event, pagina){
         if ($container){
-            slides = $container.data("slides")
+            slides = $container.data("slides");
             if (slides !== undefined && slides[pagina] && !slides[pagina].loaded){
                 prepareSlide(pagina);
                 if (waitReady === pagina){
@@ -1001,7 +1001,7 @@ function setMediaSrc(domElement, url, kind) {
                 prepareSlide(preloadID);
             }
         }
-    }
+    };
 
     $container.bind("showSlide", function(event, slide) {
       var slides, total_pagines, newSlide, oldSlide = $container.data("currentSlide");
@@ -1082,12 +1082,12 @@ function setMediaSrc(domElement, url, kind) {
             }
             slide.show();
         }
-    }
+    };
 
     // private function to change between slides
     var changeSlide = function(oldSlide, newSlide) {
         var slides, slide, total_pagines = parseInt($('#pagina_total').attr('rel'),10);
-        slides = $container.data("slides")
+        slides = $container.data("slides");
         slide = newSlide.id;
 
         if (oldSlide !== undefined) {
@@ -1113,7 +1113,7 @@ function setMediaSrc(domElement, url, kind) {
         }
         $('#slide-preview-' + slide).addClass('selected');
         $container.data("currentSlide", newSlide);
-    }
+    };
 
     // keyboard navigation
     var keyFunc = function(event) {
@@ -1126,7 +1126,7 @@ function setMediaSrc(domElement, url, kind) {
       if (event.keyCode == 39) { // Right
         $container.trigger("nextSlide");
       }
-    }
+    };
 
     // Close the viewer
     $container.bind("close", function(){
@@ -1154,7 +1154,7 @@ function setMediaSrc(domElement, url, kind) {
         document.removeEventListener('webkitfullscreenchange', changeFullScreenHandler);
         }
         // Canviem la visuaalització
-        link = $('.link_visualitzacio:first-child')
+        link = $('.link_visualitzacio:first-child');
         // seleccionem la nova visualitzacio i deseleccionem la que estava marcada
         $('#visualitzacio_resultats .selected').removeClass('selected');
         link.addClass('selected');
@@ -1234,17 +1234,17 @@ function setMediaSrc(domElement, url, kind) {
       $container.trigger("showSlide", slide);
     });
 
-  }
+  };
 
   $.fn.fullscreenslides = function(options) {
     $container = $('#fullscreenSlideshowContainer');
-    if ($container.length == 0) {
+    if ($container.length === 0) {
       $container = $('<div id="fullscreenSlideshowContainer">').hide();
       $("body").append($container);
       attachEvents();
     }
     // initialize variables
-    var options = $.extend({
+    options = $.extend({
       "bgColor"           : "#000",
       "useFullScreen"     : true,
       "startSlide"        : 0
@@ -1266,7 +1266,7 @@ function setMediaSrc(domElement, url, kind) {
     });
     $container.data("slides", []);
 
-  }
+  };
 })(jQuery);
 
 function initFullScreen(){
@@ -1290,17 +1290,17 @@ function initFullScreen(){
                 <div class="fs-header-extra"><span class="logo">ARTSCOMBINATORIES</span> \
                 <span class="title"> ' + document.title + '</span></div> \
                 <div class="btns"> \
-                    <span id="fs-close">&times;</span> \
-                    <span id="fs-info"><img src="++resource++fatac.theme.images/info_16_blanco.png" alt="i" title="Info"></span> \
-                    <span class="fs-prev">&lt;</span> \
-                    <span class="fs-next">&gt;</span> \
+                    <span id="fs-close"><img src="++resource++fatac.theme.images/vista-normal.png" alt="&times;" title="Close"/></span> \
+                    <span id="fs-info"><img src="++resource++fatac.theme.images/info.png" alt="i" title="Info"/></span> \
+                    <span class="fs-prev"><img src="++resource++fatac.theme.images/flecha-detras.png" alt="&lt;" title="Previous"/></span> \
+                    <span class="fs-next"><img src="++resource++fatac.theme.images/flecha-delante.png" alt="&gt;" title="Next"/></span> \
                 </div> \
                 </div>')
-            .append('<div class="ui" id="fs-loader"><img src=\"spinner.gif\" alt="Loading..."></div>')
+            .append('<div class="ui" id="fs-loader"><img src="spinner.gif" alt="Loading..."></div>')
             .append('<div class="ui" id="fs-footer"> \
                     <div class="slide-selector"> \
-                        <div class="fs-prev">&lt;</div> \
-                        <div class="fs-next">&gt;</div> \
+                        <div class="fs-prev"><img src="++resource++fatac.theme.images/flecha-detras-grande.png" alt="&lt;" title="Previous"/></div> \
+                        <div class="fs-next"><img src="++resource++fatac.theme.images/flecha-delante-grande.png" alt="&gt;" title="Next"/></div> \
                         <div class="previews"></div>\
                     </div>\
                     <div class="helper"></div>\
@@ -1338,7 +1338,7 @@ function initFullScreen(){
           });
           $('#fs-info').click(function(){
             $('#fs-caption').toggle();
-          })
+          });
 
         })
         // When a slide starts to load this is called
