@@ -3,7 +3,7 @@
 
         <tal:co tal:condition="python: tipus == 'text'">
             <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" i18n:translate=""/>: </tal:co>
-            <span class="valor" tal:content="structure valor" /><br/>
+            <span class="valor" tal:content="structure valor" />
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'search'">
