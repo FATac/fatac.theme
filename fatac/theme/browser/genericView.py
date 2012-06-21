@@ -215,7 +215,9 @@ class genericView(BrowserView, funcionsCerca):
                     dades = []
                     if 'data' in seccio:
                         for dada in seccio['data']:
-                            dades.append(self.llegirDada(dada))  # {'nom': nom, 'tipus': tipus, 'valor': valor}
+                            dada_llegida = self.llegirDada(dada)  # {'nom': nom, 'tipus': tipus, 'valor': valor}
+                            if dada_llegida['valor'] and dada_llegida['valor'] != ' ':
+                                dades.append(dada_llegida)
                             if dada['type'] == 'search':
                                 te_subcerca = 'amb_subcerca'
                         dades_seccions.append({'nom': seccio['name'], 'dades': dades})
