@@ -455,7 +455,6 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 
 #advanced {display: none !important;}
 
-<<<<<<< HEAD
 /* Comentaris */
 
 div.photo-column {
@@ -751,3 +750,14 @@ div.photo-container {
 #purr-container div.purr div { padding:15px; }
 #purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
 #purr-container div a.close{ display:none; }
+
+.download a {
+    color: #339933 !important;
+    background-color: #B3D396;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    font-size: 13px;
+    padding: 0.5em;
+}
+#content .download a:hover {color: #339933 !important;}
+
+.media iframe { margin-bottom: 15px;}
