@@ -109,10 +109,13 @@ class funcionsCerca():
         querystring_str = ''
         for key in querystring.keys():
             valor = querystring[key]
+            if key == 's' and valor != '':
+                valor = "(" + valor + ")"
             if key == 'f':
                 valor = ''
                 if len(querystring[key]) > 0:
                     valor = ','.join(querystring[key])
+                valor = "(" + valor + ")"
             if valor:
                 if querystring_str == '':
                     querystring_str += key + '=' + str(valor)
@@ -174,7 +177,7 @@ class funcionsCerca():
             querystring = {}
             querystring['rows'] = rows
             querystring['start'] = start
-            querystring['f'] = ['id:' + ' | '.join(llista_ids)]
+            querystring['f'] = ['id:' + ' OR '.join(llista_ids)]
             querystring_str = self.querystringToString(querystring)
             url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)

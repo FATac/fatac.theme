@@ -70,7 +70,7 @@ class AgentColumn(CapitalLetterColumn):
             Tàpies, Antoni
     """
     def query(self, i):
-        return "LastName:" + self._dict[i] + "*, class:Person"
+        return "LastName:" + self._dict[i] + "*,class:Person"
 
     def field(self):
         return "LastName, FirstName"
@@ -109,7 +109,7 @@ class YearPeriodColumn(Column):
 
     def query(self, i):
         """ Transforms the column to the equivalent solr query """
-        return "Year:[" + self._dict[i].replace('-', ' TO ') + "], class:FrameActivity"
+        return "Year:[" + self._dict[i].replace('-', ' TO ') + "],class:FrameActivity"
 
     def field(self):
         return "Events"
