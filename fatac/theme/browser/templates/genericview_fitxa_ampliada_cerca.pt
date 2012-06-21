@@ -90,6 +90,9 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
     </div>
 </tal:rep>
 
-<script type="text/javascript">
-    addPlaylistMenu();
-</script>
+<tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
+        tal:condition="not: isanon">
+    <script type="text/javascript">
+        addPlaylistMenu();
+    </script>
+</tal:co>

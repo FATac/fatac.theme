@@ -79,8 +79,17 @@
                     </div>
 
                     <div id="ultims_documents">
-                        <img class="arrow_down" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="" /> <span class="georgia13c999999" i18n:translate="ultims_documents">Últims documents</span>
-                        <div class="requadre_resultats">
+
+                        <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div,
+                            arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div
+                            que plega o desplega, també indicat a rel -->
+                        <div class="titol_home">
+                            <img rel="ultims_docs" class="arrow_top ultims_docs" src="++resource++fatac.theme.images/ico_arrow_up.png" alt="Tanca" title="Tanca" i18n:attributes="title;alt"/>
+                            <img rel="ultims_docs" class="arrow_bottom ultims_docs hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="Obre" title="Obre" i18n:attributes="title;alt"/>
+                            <span class="georgia13c999999" i18n:translate="ultims_documents">Últims documents</span>
+                        </div>
+
+                        <div class="requadre_resultats" id="ultims_docs">
                             <a class="arrow_left prev browse left">
                                 <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />
                             </a>
@@ -100,8 +109,14 @@
                     </div>
 
                     <div id="ultims_consultats">
-                        <img class="arrow_down" alt="" src="++resource++fatac.theme.images/ico_arrow_down.png" /> <span class="georgia13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
-                        <div class="requadre_resultats">
+
+                        <div class="titol_home">
+                            <img rel="ultims_cons" class="arrow_top ultims_cons" src="++resource++fatac.theme.images/ico_arrow_up.png" alt="Tanca" title="Tanca" i18n:attributes="title;alt"/>
+                            <img rel="ultims_cons" class="arrow_bottom ultims_cons hidden" src="++resource++fatac.theme.images/ico_arrow_down.png" alt="Obre" title="Obre" i18n:attributes="title;alt"/>
+                            <span class="georgia13c999999" i18n:translate="ultims_consultats">Últims consultats</span>
+                        </div>
+
+                        <div class="requadre_resultats" id="ultims_cons">
                             <a class="arrow_left prev browse left">
                                 <img class="arrow_up" src="++resource++fatac.theme.images/arrow_up_search.png" alt="Següents" i18n:attributes="alt;" />
                             </a>
@@ -119,6 +134,10 @@
                             </a>
                         </div>
                     </div>
+
+                    <script type="text/javascript">
+                        inicialitza_arrows();
+                    </script>
 
             </metal:main-macro>
         </metal:content-core>
