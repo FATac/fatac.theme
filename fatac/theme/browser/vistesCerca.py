@@ -52,7 +52,7 @@ class resultatsView(BrowserView, funcionsCerca):
         """
         portal = getToolByName(self, 'portal_url')
         portal = portal.getPortalObject()
-        html = portal.restrictedTraverse('@@displayResultatsPaginaView')()
+        html = portal.unrestrictedTraverse('@@displayResultatsPaginaView')()
         return html
 
     def retDadesPaginacio(self):
@@ -176,7 +176,7 @@ class displayResultatsPaginaView(BrowserView, funcionsCerca):
         """
         portal = getToolByName(self, 'portal_url')
         portal = portal.getPortalObject()
-        html = portal.restrictedTraverse('@@genericView')()
+        html = portal.unrestrictedTraverse('@@genericView')()
         return html
 
 

@@ -270,7 +270,7 @@ class genericView(BrowserView, funcionsCerca):
         try:
             # skins doesn't support filenames with ':', but does in dirnames
             classe_path = str("ac:/" + classe + ".png")
-            portal.restrictedTraverse(classe_path)
+            portal.unrestrictedTraverse(classe_path)
             uri = portal.portal_url() + '/' + classe_path
             return uri
         except:
