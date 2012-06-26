@@ -763,11 +763,11 @@ div.photo-container {
 .media iframe { margin-bottom: 15px;}
 
 
-#dialog-form {display: none}
+#dialog-form, #dialog-confirm {display: none}
 
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    background: url("images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #B3D396;
+    background: url("++resource++fatac.theme.images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #B3D396;
     color: #339933;
     border: 1px solid #339933;
     font-weight: normal;
