@@ -66,13 +66,13 @@ class footer(ViewletBase):
         """ retorna un diccionari amb el títol, la descripció i la url de la
         carpeta amb id contacte, en l'idioma actual
         """
-        return self.retLinkGeneric('sobre-aquest-web', 'Document')
+        return self.retLinkGeneric('about', 'Document')
 
     def linkcomfunciona(self):
         """ retorna un diccionari amb el títol, la descripció i la url de la
         carpeta amb id contacte, en l'idioma actual
         """
-        return self.retLinkGeneric('com-funciona', 'Document')
+        return self.retLinkGeneric('comfunciona', 'Document')
 
     def linkcredits(self):
         """ retorna un diccionari amb el títol, la descripció i la url de la
@@ -84,4 +84,4 @@ class footer(ViewletBase):
         """ retorna un diccionari amb el títol, la descripció i la url de la
         carpeta amb id contacte, en l'idioma actual
         """
-        return self.retLinkGeneric('avis-legal', 'Document')
+        return self.retLinkGeneric('avislegal', 'Document')
