@@ -150,7 +150,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 /* css necessari per ampliar filtres (jquery) */
 
 #selector_filtres .filtre .div_interior li { line-height:15px; }
-#selector_filtres .filtre, #selector_filtres #wrapper { height:114px; }
+#selector_filtres .filtre, #selector_filtres #wrapper { height:131px; }
 #selector_filtres #wrapper { overflow:hidden; }
 #selector_filtres .clearLeft {clear:left;}
 
@@ -167,9 +167,10 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 
 #selector_filtres .ui-slider .ui-slider-handle { z-index: 1; }
 
-#selector_filtres .slider-vertical, #selector_filtres .slideopcions, #selector_filtres .barra { height:90px; }
+#selector_filtres .slider-vertical, #selector_filtres .slideopcions, #selector_filtres .barra { height:105px; }
 #selector_filtres .slideopcions { overflow:hidden; float:left; position:relative; }
 
+#selector_filtres #filtres { padding:25px 0; }
 
 .div_interior { float:left; width:270px; }
 .barra, .ui-slider-handle { margin-left:2px; }
