@@ -16,8 +16,8 @@
 
     <span class="georgia13c999999" i18n:translate="Filtre de búsqueda">Filtre de búsqueda</span>
 
-    <input class="boto_filtres amagar_filtres hidden arial11c666666" type="button" i18n:attributes="value reduir_filtres" />
-    <input class="boto_filtres mostrar_filtres arial11c666666" type="button" i18n:attributes="value ampliar_filtres" />
+    <input class="boto_filtres amagar_filtres hidden arial12c666666" type="button" i18n:attributes="value reduir_filtres" />
+    <input class="boto_filtres mostrar_filtres arial12c666666" type="button" i18n:attributes="value ampliar_filtres" />
 
     <div id="filtres" class="div_dotted_line">
 
