@@ -147,7 +147,7 @@ msgid "financament"
 msgstr "Finançament"
 
 msgid "financament1"
-msgstr "Ministeri Educació"
+msgstr "Ministerio de Industria, Turismo y Comercio"
 
 msgid "financament2"
 msgstr "Plan Avanza"
@@ -162,7 +162,7 @@ msgid "participants2"
 msgstr "Universitat Politècnica de València"
 
 msgid "participants3"
-msgstr "Universitat Politècnica de Barcelona"
+msgstr "Universitat Politècnica de Catalunya"
 
 msgid "patrocinadors"
 msgstr "Patrocinadors institucionals"
@@ -177,7 +177,7 @@ msgid "collaboracio"
 msgstr "Amb la col·laboració de"
 
 msgid "collaboracio1"
-msgstr "Ministeri Educació"
+msgstr "Ministeri de Cultura"
 
 msgid "explora_bbdd"
 msgstr "Explora la nostra base de dades per:"
