@@ -512,6 +512,7 @@ div.photo-container {
 }
 
 .comment {
+    margin-bottom: 25px;
 }
 
 .commentImage {
@@ -530,21 +531,21 @@ div.photo-container {
 }
 
 .commentDate {
-    display: block;
-    font-size: 85%;
-    line-height: 1.5em;
-    padding-top: 0.5em;
-    color: #76797C;
+    display: inline;
+    font-size: 13px;
+    color: #339933;
+    font-style: normal;
 }
 
 .commentBody {
     clear: both;
     overflow: auto;
-    font-family:georgia;
-    font-size:13px;
+    font-family: serif, sans-serif;
+    font-size:16px;
     color: black !important;
     border-radius:0em;
     box-shadow: 0 0 0 0 #000000;
+    padding: 0;
 }
 
 .commentBody p {
@@ -556,6 +557,8 @@ div.photo-container {
     margin-left: 0;
     margin-bottom: 0.5em;
     color: #339933;
+    font-size: 16px;
+    font-style: italic;
 }
 .discussion .documentByLine a {
     color: #339933;
@@ -794,3 +797,4 @@ div.photo-container {
     width: 252px;
 }
 
+.numberofcomments {margin-bottom: 20px; font-size: 13px;}
