@@ -4,7 +4,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 -->
 
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_solr">
-    <div class="genericview_fitxa_cerca addPlaylistParent" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
+    <div class="genericview genericview_fitxa_cerca addPlaylistParent" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
         <!-- TODO: destacar primer element i afegir link (on va link?) -->
         <a tal:attributes="href string:${here/portal_url}/genericView?idobjecte=${dades_objecte/id}">
             <div class="thumbnail">

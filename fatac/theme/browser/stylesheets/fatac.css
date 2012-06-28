@@ -43,6 +43,8 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
+.georgia13c333333italic { font-family:georgia; font-size:13px; color:#333333 !important; font-style:italic }
+.georgia13c000000italic { font-family:georgia; font-size:13px; color:#000000 !important; font-style:italic }
 .georgia13c999999 { font-family:georgia; font-size:13px; color:#999999 !important; }
 .georgia14c333333 { font-family:georgia; font-size:14px; color:#333333 !important; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
@@ -348,7 +350,7 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .genericview_imatge.zoom_2 { width:85px; height:85px; margin:6px;}
 .genericview_imatge.zoom_3 { width:100px; height:100px; }
 .genericview_imatge.zoom_1 img { max-width:70px; max-height:70px; }
-.miniatura_objecte { max-width:100% !important; max-height:100% !important; border-radius: 0.3em;}
+.miniatura_objecte { max-width:100% !important; max-height:100% !important;}
 .genericview_imatge.zoom_2 img { max-width:85px; max-height:85px; }
 .genericview_imatge.zoom_3 img { max-width:100px; max-height:100px; }
 .spinner img { margin-top:40%; }
@@ -384,10 +386,17 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 .genericview_hover_cerca .miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
 .img_hover { background-color:#FFFFFF; padding:20px; -moz-box-shadow:0 0 90px 5px #000; -webkit-box-shadow: 0 0 90px #000; }
 */
-.wrapper_hover { background-color:#FFFFFF; padding:10px; box-shadow:0 0 20px 0px; width:220px; height:280px; }
-.wrapper_hover img { max-width:200px; max-height:230px; }
-.wrapper_hover img.miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }
+/*.wrapper_hover { background-color:#FFFFFF; padding:10px; box-shadow:0 0 20px 0px; width:220px; height:280px; }
+*//*.wrapper_hover img { max-width:200px; max-height:230px; }*/
+/*.wrapper_hover img.miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }*/
 
+.genericview.genericview_hover_cerca { border-radius: 0.2em; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em;
+    -moz-box-shadow: 0 0 15px #666;
+    -webkit-box-shadow: 0 0 15px #666;
+    box-shadow: 0 0 15px #666;
+    text-align:left; background-color:#FFFFFF; padding:10px; width:220px; }
+.genericview.genericview_hover_cerca img { max-width:200px; max-height:230px; }
+.genericview.genericview_hover_cerca img.miniatura_classe { max-width:15px; max-height:15px; margin:5px 0 2px 0; }
 
 /* ---------------------------------------------------------------------------- genericview_fitxa_home.pt */
 .genericview_fitxa_home { float:left; }
