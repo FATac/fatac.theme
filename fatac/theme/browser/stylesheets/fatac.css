@@ -124,10 +124,12 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
 #selector_filtres  { margin-bottom:10px; }
-#selector_filtres .boto_filtres { float:right; text-align:left; background-color:#FFFFFF; border:none; padding:0px 20px 2px 10px; /*border:1px solid #999999; padding:0px 20px 2px 10px; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em;*/ }
+#selector_filtres .boto_filtres { float:right; text-align:left; background-color:#FFFFFF; border:none; padding:0px 7px 2px 10px; /*border:1px solid #999999; padding:0px 20px 2px 10px; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em;*/ }
+/* comentat perquè ara no volen imatges de fons ([+] i [-])
+#selector_filtres .boto_filtres { float:right; text-align:left; background-color:#FFFFFF; border:none; padding:0px 20px 2px 10px; }
 #selector_filtres .boto_filtres.amagar_filtres { background:url('++resource++fatac.theme.images/ico_reduir.png')  no-repeat right center #FFFFFF; }
 #selector_filtres .boto_filtres.mostrar_filtres { background:url('++resource++fatac.theme.images/ico_ampliar.png')  no-repeat right center #FFFFFF; }
-
+*/
 #selector_filtres .div_dotted_line { margin-top:8px; }
 #selector_filtres div.filtres { float:left; width:24000px; }
 #selector_filtres .filtre { float:left; width:138px; margin-left:10px; overflow:hidden; }
