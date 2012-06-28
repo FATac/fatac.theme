@@ -53,6 +53,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
 .TerminalDosis600 { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; }
 .TerminalDosis200 { font-family:'Terminal Dosis', sans-serif; font-weight: 200; font-size: 9pt; }
+.TerminalDosis600c339933upp { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; color:#339933 !important; text-transform:uppercase;}
 .BreadCrumbSecondary { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; color: #999999;}
 .font_normal { font-weight: normal !important; }
 
@@ -72,9 +73,9 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
     display:none;
 }
 
-a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #007CA2 !important; }
-a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #005060 !important; }
-a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #007090 !important; }
+a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
+a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
+a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
 /* ---------------------------------------------------------------------------- edit-bar */
 #contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar
