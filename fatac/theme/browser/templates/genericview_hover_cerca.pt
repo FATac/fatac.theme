@@ -1,21 +1,3 @@
-<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
-      metal:use-macro="here/main_template/macros/master"
-      i18n:domain="fatac.theme">
-    <body>
-        <metal:block fill-slot="top_slot" tal:define="dummy python:request.set('disable_border',1)">
-        </metal:block>
-        <metal:content-title fill-slot="content-title"></metal:content-title>
-        <metal:content-description fill-slot="content-description"></metal:content-description>
-        <metal:content-core fill-slot="content-core">
-            <metal:main-macro define-macro="content">
-                <style>body {background-color:red}</style> -->
-
-
-
 <!--
 crida demo1: http://localhost:8084/fatac/genericView?idobjecte=Angela_RicciLucchi&visualitzacio=hover_cerca
 crida demo2: tb es pot cridar amb parametres_visualitzacio
@@ -39,18 +21,3 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
         </a>
     </div>
 </tal:rep>
-
-
-
-
-
-
-
-
-
-
-
-<!--             </metal:main-macro>
-        </metal:content-core>
-    </body>
-</html> -->
