@@ -798,3 +798,13 @@ div.photo-container {
 }
 
 .numberofcomments {margin-bottom: 20px; font-size: 13px;}
+
+.pb-ajax {border-radius: 0.5em;}
+
+.login-logo {padding-bottom:40px;}
+
+body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
+    text-align: left;
+}
+
+#login-wrapper{ padding: 20px; }

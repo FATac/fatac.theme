@@ -55,6 +55,8 @@
                         target python:test(target in ('_parent', '_top', '_blank', '_self'), target, None);
                         ztu modules/ZTUtils;">
 
+          <div id="login-wrapper">asasd
+
             <dl class="portalMessage error"
                 id="enable_cookies_message"
                 style="display:none">
@@ -70,6 +72,7 @@
                 Since cookie authentication is disabled, cookie-based login is not available.
             </div>
 
+            <div class="login-logo"><img tal:attributes="src string:${portal_url}/logo.png" /></div>
             <form tal:attributes="action python:context.absolute_url()+'/'+template.id"
                   class="enableAutoFocus"
                   method="post"
@@ -123,13 +126,13 @@
                          tal:define="error python:errors.get(ac_name, None);"
                          tal:attributes="class python:test(error, 'field error', 'field')">
 
-                        <label i18n:translate="label_login_name"
+<!--                         <label i18n:translate="label_login_name"
                                tal:condition="not:use_email_as_login"
                                tal:attributes="for ac_name">Login Name</label>
 
                         <label i18n:translate="label_email"
                                tal:condition="use_email_as_login"
-                               tal:attributes="for ac_name">E-mail</label>
+                               tal:attributes="for ac_name">E-mail</label> -->
 
                         <div tal:condition="error"
                              tal:content="error">Validation error output</div>
@@ -137,8 +140,8 @@
                         <input type="text"
                                size="15"
                                tal:attributes="name ac_name;
-                                               id ac_name;
-                                               value login_name;"
+                                               id ac_name;"
+                               i18n:attributes="value label_email"
                                />
 
                 </div>
@@ -147,16 +150,17 @@
                          tal:define="error python:errors.get(ac_password, None);"
                          tal:attributes="class python:test(error, 'field error', 'field')">
 
-                        <label i18n:translate="label_password"
-                               tal:attributes="for ac_password">Password</label>
+<!--                         <label i18n:translate="label_password"
+                               tal:attributes="for ac_password">Password</label> -->
 
                         <div tal:condition="error"
                              tal:content="error">Validation error output</div>
 
-                        <input type="password"
+                        <input type="text"
                                size="15"
                                tal:attributes="name ac_password;
                                                id ac_password;"
+                               i18n:attributes="value label_password"
                                />
                 </div>
 
@@ -321,6 +325,8 @@
                 </p>
 
             </div>
+
+          </div>
 
         </metal:login>
     </div>
