@@ -27,7 +27,7 @@
                 </tal:co>
 
                 <div class="ac_search_biblio">
-                    <a class="arial12c999999" i18n:translate="" href="javascript:void(0);" onclick="document.forms['vtlsform'].submit();">Cerca a la biblioteca</a>
+                    <a class="arial12c999999 link_biblioteca" i18n:translate="" href="javascript:void(0);" onclick="document.forms['vtlsform'].submit();">buscar a biblioteca</a>
                     <tal:def tal:define="stringCerca python: context.REQUEST.get('s')">
                         <form name="vtlsform" action="http://tosca.vtlseurope.com:8000/cgi-bin/fat/chameleon" method="post" target="vtlswindow">
                             <input type="hidden" tal:attributes="value stringCerca" name="t1" />
