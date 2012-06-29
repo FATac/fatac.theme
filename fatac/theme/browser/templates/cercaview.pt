@@ -20,37 +20,38 @@
 
             </script>
 
-            <div class="ac_search_biblio">
-               	<a i18n:translate="" href="javascript:void(0);" onclick="document.forms['vtlsform'].submit();">Cerca a la biblioteca</a>
-                <tal:def tal:define="stringCerca python: context.REQUEST.get('s')">
-                    <form name="vtlsform" action="http://tosca.vtlseurope.com:8000/cgi-bin/fat/chameleon" method="post" target="vtlswindow">
-                        <input type="hidden" tal:attributes="value stringCerca" name="t1" />
-                        <input type="hidden" name="u1" value="1035" />
-                        <input type="hidden" name="op1" value="AND" />
-                        <input type="hidden" name="t2" value="" />
-                        <input type="hidden" name="u2" value="1035" />
-                        <input type="hidden" name="host" value="192.168.1.3+2202+DEFAULT" />
-                        <input type="hidden" name="sessionid" value="2012021411503521105" />
-                        <input type="hidden" name="skin" value="default" />
-                        <input type="hidden" name="inst" value="consortium" />
-                        <input type="hidden" name="submittheform" value="" />
-                        <input type="hidden" name="usersrch" value="1" />
-                        <input type="hidden" name="beginsrch" value="1" />
-                        <input type="hidden" name="elementcount" value="3" />
-                        <input type="hidden" name="function" value="INITREQ" />
-                        <input type="hidden" name="search" value="KEYWORD" />
-                        <input type="hidden" name="rootsearch" value="KEYWORD" />
-                        <input type="hidden" name="lng" value="en" />
-                        <input type="hidden" name="pos" value="1" />
-                    </form>
-                </tal:def>
-            </div>
-
-            <div class="ac_breadcrump div_dotted_line_bottom">
+            <div class="ac_breadcrump div_dotted_line_bottom breadcrumb_cerca">
                 <span class="TerminalDosis600" i18n:translate="Cerca">Cerca</span>
                 <tal:co tal:define="text_cerca view/getS" tal:condition="text_cerca">
                     <span class="BreadCrumbSecondary">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><span class="BreadCrumbSecondary" tal:content="text_cerca" />
                 </tal:co>
+
+                <div class="ac_search_biblio">
+                    <a class="arial12c999999" i18n:translate="" href="javascript:void(0);" onclick="document.forms['vtlsform'].submit();">Cerca a la biblioteca</a>
+                    <tal:def tal:define="stringCerca python: context.REQUEST.get('s')">
+                        <form name="vtlsform" action="http://tosca.vtlseurope.com:8000/cgi-bin/fat/chameleon" method="post" target="vtlswindow">
+                            <input type="hidden" tal:attributes="value stringCerca" name="t1" />
+                            <input type="hidden" name="u1" value="1035" />
+                            <input type="hidden" name="op1" value="AND" />
+                            <input type="hidden" name="t2" value="" />
+                            <input type="hidden" name="u2" value="1035" />
+                            <input type="hidden" name="host" value="192.168.1.3+2202+DEFAULT" />
+                            <input type="hidden" name="sessionid" value="2012021411503521105" />
+                            <input type="hidden" name="skin" value="default" />
+                            <input type="hidden" name="inst" value="consortium" />
+                            <input type="hidden" name="submittheform" value="" />
+                            <input type="hidden" name="usersrch" value="1" />
+                            <input type="hidden" name="beginsrch" value="1" />
+                            <input type="hidden" name="elementcount" value="3" />
+                            <input type="hidden" name="function" value="INITREQ" />
+                            <input type="hidden" name="search" value="KEYWORD" />
+                            <input type="hidden" name="rootsearch" value="KEYWORD" />
+                            <input type="hidden" name="lng" value="en" />
+                            <input type="hidden" name="pos" value="1" />
+                        </form>
+                    </tal:def>
+                </div>
+
             </div>
 
             <div id="zona_filtres" class="zona_filtres_inicial"><img src="spinner.gif" alt="Carregant..." i18n:attributes="alt;"/></div>
