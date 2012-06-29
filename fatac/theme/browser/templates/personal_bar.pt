@@ -5,8 +5,14 @@
     <dl class="actionMenu deactivated" id="portal-personaltools" tal:condition="python:view.user_actions and not view.anonymous">
         <tal:block condition="not: view/anonymous">
             <dt class="actionMenuHeader">
+                <!-- comentat per si ho volen desfer
+                css: #portal-personaltools { background:url('++resource++fatac.theme.images/user_24_verde.gif') no-repeat 10px center #b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.95em 0.5em 0.95em 3.5em; font-size:13px;}
                 <a id="user-name" tal:attributes="href view/homelink_url" tal:content="view/user_name">
                     John
+                </a>
+                -->
+                <a id="user-name" tal:attributes="href view/homelink_url">
+                    <img tal:attributes="alt view/user_name;" src="++resource++fatac.theme.images/user_24_verde.gif" />
                 </a>
             </dt>
             <dd class="actionMenuContent">
