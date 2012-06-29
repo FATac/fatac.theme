@@ -95,16 +95,17 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 
 /* ---------------------------------------------------------------------------- cercador.pt */
 #viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { display:inline;  padding:10px 0 10px 10px; border:none; border-radius:0.5em; -webkit-radius:0.5em; -moz-border-radius:0.5em; background-color:#EEEEEE; }
+#viewlet_cercador form#cercador { width:330px; float:left; }
+#viewlet_cercador form#cercador input { float:left; height:16px; display:inline;  padding:10px; border:none; border-radius:0.3em 0 0 0.3em; -webkit-radius:0.3em 0 0 0.3em; -moz-border-radius:0.3em 0 0 0.3em; background-color:#EEEEEE; }
 #viewlet_cercador #s { background-color:transparent; width: 270px; border:none; }
-#viewlet_cercador .searchButton { background-color:transparent; border:none; }
-#viewlet_cercador a {  margin: 7px 0 0 25px; }
+#viewlet_cercador .searchButton { height:36px; width:36px; background:url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent; border:none; float:left; }
+#viewlet_cercador a {  margin: 7px 0 0 25px; float:left; }
 #viewlet_cercador img{ vertical-align:middle;}
 
 
 /* ---------------------------------------------------------------------------- personal_bar.pt */
-#portal-personaltools-wrapper { float:right; margin-top:-6px; }
-#portal-personaltools { background-color:#b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.6em 0.5em; font-size:13px;}
+#portal-personaltools-wrapper { float:right; }
+#portal-personaltools { background-color:#b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.5em; font-size:13px;}
 #portal-personaltools, #portal-personaltools a, #portal-personaltools a:hover { color:#339933 !important; }
 #portal-personaltools.activated { border-radius:0.3em 0.3em 0 0; -webkit-radius:0.3em 0.3em 0 0; -moz-border-radius:0.3em 0.3em 0 0; }
 #portal-personaltools dd { background-color:#e1edd7; margin-top:7px; }
