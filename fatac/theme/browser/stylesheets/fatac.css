@@ -314,7 +314,9 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 */
-div.genericview_fitxa_final { float:left; width:100%; }
+div.genericview_fitxa_final img.miniatura_classe { max-width:15px; max-height:15px; vertical-align: middle;}
+
+div.genericview_fitxa_final { float:left; width:100%; margin-top:20px; }
 div.genericview_fitxa_final .slider_vertical { height:200px; }
 div.genericview_fitxa_final .seccio_dades { width:100%; }
 div.genericview_fitxa_final .pagines_resultats .slider_vertical { height:480px; }
