@@ -807,3 +807,13 @@ body.template-logged_out #content, body.template-login_form #content, .pb-ajax #
 }
 
 #login-wrapper{ padding: 20px; }
+
+#login-form input {
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    height: 30px;
+    padding: 5px;
+}
+
+#login-utils {float: right;}
+
+#login-form {clear:none;}
