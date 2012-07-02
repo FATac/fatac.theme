@@ -195,7 +195,7 @@
                         <input type="text"
                                size="15"
                                id="fake_password"
-                               tal:attributes="name ac_password;"
+                               name="fake_password"
                                i18n:attributes="value label_password"
                                />
                         <input type="password"
