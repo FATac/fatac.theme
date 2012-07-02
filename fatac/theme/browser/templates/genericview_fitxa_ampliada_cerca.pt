@@ -10,7 +10,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
     });
 </script>
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_all_sections">
-    <div tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}" class="fitxa_ampliada_cerca">
+    <div tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}" class="genericview fitxa_ampliada_cerca">
 
         <div class="row" tal:define="seccions dades_objecte/dades_seccions">
 

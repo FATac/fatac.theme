@@ -11,7 +11,7 @@
            tal:condition="python:isDiscussionAllowed or has_replies"
            i18n:domain="plone">
 
-    <div class="reply"
+<!--     <div class="reply"
          tal:condition="python:isAnon and not isAnonymousDiscussionAllowed">
         <form tal:attributes="action view/login_action">
             <input class="standalone"
@@ -21,11 +21,14 @@
                    i18n:attributes="value label_login_to_add_comments;"
                    />
         </form>
-    </div>
+    </div> -->
 
     <div class="discussion"
          tal:attributes="class python: showCommenterImage and 'discussion showCommenterImage' or 'discussion';"
          tal:condition="has_replies">
+
+        <div class="numberofcomments" tal:content="view/numberOfComments">Number of comments</div>
+
         <tal:getreplies repeat="reply_dict replies">
 
             <div class="comment"
@@ -40,7 +43,7 @@
                                  id string:${reply/getId}"
                  tal:condition="python:canReview or review_state == 'published'">
 
-                <div class="commentImage" tal:condition="showCommenterImage">
+<!--                 <div class="commentImage" tal:condition="showCommenterImage">
                     <a href="" tal:condition="has_author_link"
                                tal:attributes="href author_home_url">
                          <img src="defaultUser.gif"
@@ -57,25 +60,26 @@
                          tal:condition="not: has_author_link"
                          tal:attributes="src portrait_url;
                                          alt reply/Creator" />
-                </div>
+                </div> -->
 
                 <div class="documentByLine" i18n:domain="plone.app.discussion">
                     <tal:name>
-                        <a href=""
+<!--                         <a href=""
                            tal:condition="has_author_link"
                            tal:content="reply/Creator"
                            tal:attributes="href author_home_url">
                             Poster Name
-                        </a>
-                        <span tal:condition="not: has_author_link"
-                              tal:replace="reply/Creator" />
+                        </a> -->
+<!--                         <span tal:condition="not: has_author_link"
+                              tal:replace="reply/Creator" /> -->
+                        <span tal:replace="reply/Creator" />
                         <span tal:condition="not: reply/Creator">Anonymous</span>
                     </tal:name>
-                    <tal:posted i18n:translate="label_says">says:</tal:posted>
-                    <div class="commentDate"
-                         tal:content="python:view.format_time(reply.modification_date)">
+                    <!-- <tal:posted i18n:translate="label_says">says:</tal:posted> -->
+                    <span class="commentDate"
+                         tal:content="python:'(%s)' % view.format_time(reply.modification_date)">
                          8/23/2001 12:40:44 PM
-                    </div>
+                    </span>
                 </div>
 
                 <div class="commentBody">
@@ -87,7 +91,7 @@
                               action=""
                               method="post"
                               style="display: inline;"
-                              tal:condition="canReview"
+                              tal:condition="python:view.can_delete(reply.author_username)"
                               tal:attributes="action string:${reply/absolute_url}/@@moderate-delete-comment">
                             <input name="form.button.DeleteComment"
                                    class="destructive"
@@ -118,11 +122,11 @@
 
 
                 </div>
-                <button class="context reply-to-comment-button hide allowMultiSubmit"
+<!--                 <button class="context reply-to-comment-button hide allowMultiSubmit"
                         tal:condition="python:isDiscussionAllowed and (isAnon and isAnonymousDiscussionAllowed or userHasReplyPermission)"
                         i18n:translate="label_reply">
                     Reply
-                </button>
+                </button> -->
             </div>
 
         </tal:getreplies>
@@ -136,7 +140,7 @@
 
     </div>
 
-    <div class="reply"
+<!--     <div class="reply"
          tal:condition="python:has_replies and (isAnon and not isAnonymousDiscussionAllowed)">
         <form tal:attributes="action view/login_action">
             <input class="standalone"
@@ -146,7 +150,7 @@
                    i18n:attributes="value label_login_to_add_comments;"
                    />
         </form>
-    </div>
+    </div> -->
 
     <div id="commenting" class="reply" tal:condition="python:isDiscussionAllowed and (isAnon and isAnonymousDiscussionAllowed or userHasReplyPermission)">
 

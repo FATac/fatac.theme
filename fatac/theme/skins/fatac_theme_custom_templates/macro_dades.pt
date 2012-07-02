@@ -120,9 +120,6 @@
                         <tal:co tal:condition="python: url[-4:] == '.pdf'">
                             <iframe tal:attributes="src string:http://docs.google.com/gview?url=${url}&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
                         </tal:co>
-                        <div class="download">
-                            <a i18n:translate="Download" tal:attributes="href url">Descarrega</a>
-                        </div>
                     </tal:co>
                 </tal:def>
             </tal:rep>

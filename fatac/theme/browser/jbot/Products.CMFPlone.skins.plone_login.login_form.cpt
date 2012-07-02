@@ -55,6 +55,8 @@
                         target python:test(target in ('_parent', '_top', '_blank', '_self'), target, None);
                         ztu modules/ZTUtils;">
 
+          <div id="login-wrapper">
+
             <dl class="portalMessage error"
                 id="enable_cookies_message"
                 style="display:none">
@@ -70,8 +72,45 @@
                 Since cookie authentication is disabled, cookie-based login is not available.
             </div>
 
+            <div class="login-logo"><img tal:attributes="src string:${portal_url}/logo.png" /></div>
+
+            <div id="login-utils">
+
+              <div id="login-forgotten-password"
+                   tal:condition="python:mail_password_url and use_normal">
+                  <strong i18n:translate="box_forgot_password_option">
+                      Forgot your password?
+                  </strong>
+                  <p class="discreet"
+                     i18n:translate="help_password_retrieval">
+                      If you have forgotten your password,
+                      <span i18n:name="click_here">
+                          <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
+                              tal:attributes="href mail_password_url; target target;"
+                             i18n:translate="label_click_here_to_retrieve">we can send you a new one</a></span>.
+                  </p>
+              </div>
+
+              <div id="login-new-user">
+                  <h3 i18n:translate="heading_new_user">
+                  New user?
+                  </h3>
+
+                  <p i18n:translate="description_no_account">
+                  If you do not have an account here, head over to the
+                  <span i18n:name="registration_form">
+                      <a href=""
+                         tal:define="join_url python:test(came_from, join_url+test(join_url.find('?')==-1, '?', '&amp;')+ztu.make_query(came_from=came_from), join_url);"
+                         tal:attributes="href string:${context/portal_url}/@@register; target target;"
+                         i18n:translate="description_no_account_registration_linktext"
+                          >registration form</a></span>.
+                  </p>
+
+              </div>
+            </div>
+
             <form tal:attributes="action python:context.absolute_url()+'/'+template.id"
-                  class="enableAutoFocus"
+
                   method="post"
                   id="login_form"
                   tal:condition="use_normal">
@@ -123,13 +162,13 @@
                          tal:define="error python:errors.get(ac_name, None);"
                          tal:attributes="class python:test(error, 'field error', 'field')">
 
-                        <label i18n:translate="label_login_name"
+<!--                         <label i18n:translate="label_login_name"
                                tal:condition="not:use_email_as_login"
                                tal:attributes="for ac_name">Login Name</label>
 
                         <label i18n:translate="label_email"
                                tal:condition="use_email_as_login"
-                               tal:attributes="for ac_name">E-mail</label>
+                               tal:attributes="for ac_name">E-mail</label> -->
 
                         <div tal:condition="error"
                              tal:content="error">Validation error output</div>
@@ -137,8 +176,8 @@
                         <input type="text"
                                size="15"
                                tal:attributes="name ac_name;
-                                               id ac_name;
-                                               value login_name;"
+                                               id ac_name;"
+                               i18n:attributes="value label_email"
                                />
 
                 </div>
@@ -147,13 +186,20 @@
                          tal:define="error python:errors.get(ac_password, None);"
                          tal:attributes="class python:test(error, 'field error', 'field')">
 
-                        <label i18n:translate="label_password"
-                               tal:attributes="for ac_password">Password</label>
+<!--                         <label i18n:translate="label_password"
+                               tal:attributes="for ac_password">Password</label> -->
 
                         <div tal:condition="error"
                              tal:content="error">Validation error output</div>
 
+                        <input type="text"
+                               size="15"
+                               id="fake_password"
+                               name="fake_password"
+                               i18n:attributes="value label_password"
+                               />
                         <input type="password"
+                               style="display:none;"
                                size="15"
                                tal:attributes="name ac_password;
                                                id ac_password;"
@@ -290,37 +336,9 @@
             </div>
             -->
 
-            <div id="login-forgotten-password"
-                 tal:condition="python:mail_password_url and use_normal">
-                <strong i18n:translate="box_forgot_password_option">
-                    Forgot your password?
-                </strong>
-                <p class="discreet"
-                   i18n:translate="help_password_retrieval">
-                    If you have forgotten your password,
-                    <span i18n:name="click_here">
-                        <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
-                            tal:attributes="href mail_password_url; target target;"
-                           i18n:translate="label_click_here_to_retrieve">we can send you a new one</a></span>.
-                </p>
-            </div>
 
-            <div id="login-new-user">
-                <h3 i18n:translate="heading_new_user">
-                New user?
-                </h3>
 
-                <p i18n:translate="description_no_account">
-                If you do not have an account here, head over to the
-                <span i18n:name="registration_form">
-                    <a href=""
-                       tal:define="join_url python:test(came_from, join_url+test(join_url.find('?')==-1, '?', '&amp;')+ztu.make_query(came_from=came_from), join_url);"
-                       tal:attributes="href string:${context/portal_url}/@@register; target target;"
-                       i18n:translate="description_no_account_registration_linktext"
-                        >registration form</a></span>.
-                </p>
-
-            </div>
+          </div>
 
         </metal:login>
     </div>

@@ -9,6 +9,7 @@ from Products.CMFPlone.utils import _createObjectByType
 from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
 N_COLUMNS = 3
+from plone.app.discussion.interfaces import IConversation
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -237,6 +238,12 @@ class genericView(BrowserView, funcionsCerca):
     # funcions auxiliars
     #===========================================================================
 
+    def retNumComentaris(self):
+        """ retorna el número de comentaris que té l'objecte
+        """
+
+        return IConversation(self.context).total_comments
+
     def getTitolObjecte(self, seccions):
         """ donat un array de seccions, busca la seccio 'header' i retorna un
         string concatenant els strings del primer camp
@@ -269,7 +276,7 @@ class genericView(BrowserView, funcionsCerca):
         try:
             # skins doesn't support filenames with ':', but does in dirnames
             classe_path = str("ac:/" + classe + ".png")
-            portal.restrictedTraverse(classe_path)
+            portal.unrestrictedTraverse(classe_path)
             uri = portal.portal_url() + '/' + classe_path
             return uri
         except:
