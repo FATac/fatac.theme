@@ -789,7 +789,7 @@ function init_cerca() {
 
 
 function init_explora() {
-    querys = [ ["class:Person"], ['Year:[1984 TO '+new Date().getFullYear() + '],class:FrameActivity'], ["ObjectType:Collection"]];
+    querys = [ ["class:Person"], ['Year:[1990 TO '+new Date().getFullYear() + '],class:FrameActivity'], ["ObjectType:Collection"]];
     $(".explorar_classe").each(function (i, item){
         $(item).attr('rel', querys[i]);
     });
@@ -848,12 +848,18 @@ function init_explora() {
 
 
 function setMediaSrc(domElement, url, kind) {
-    var player, $d;
-    $d = $(domElement);
-    player = $d.siblings(kind).get(0);
-    $(player).attr('src', url);
-    player.load();
-    player.play();
+    // var player, player_parent, $d;
+    // $d = $(domElement);
+    // player_parent = $d.siblings(kind).get(0);
+    // player = player_parent.find('video').get(0);
+    // $(player).attr('src', url);
+    // player.load();
+    // player.play();
+
+    var video = $($(domElement).siblings()[0]).find('video')[0];
+    $(video).attr('src', url);
+    video.load();
+    video.play();
 }
 
 

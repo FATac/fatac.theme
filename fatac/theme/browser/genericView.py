@@ -9,7 +9,6 @@ from Products.CMFPlone.utils import _createObjectByType
 from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
 N_COLUMNS = 3
-from Products.CMFCore.utils import getToolByName
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -409,11 +408,19 @@ class genericView(BrowserView, funcionsCerca):
         """ donat un diccionari de tipus {"type": "media", "value": ["http://ec2-50-16-26-20.compute-1.amazonaws.com:8080/ArtsCombinatoriesRest/media/gizmo_3719d295746c4cb"]}
         retorna una llista de diccionaris amb la url i el tipus (audio, video, text, image) de cada media a pintar
         """
-        llista = []
+        info_srt = []
         i = 0
+        llista = []
+        # Afegim subtitols al player (audio/video)
+        values = self.context.portal_catalog.searchResults(portal_type='File', path=self.context.absolute_url_path())
+        info_srt = [dict(label=obj.Title, src=obj.getURL()) for obj in values]
         while i < len(dades['value']):
             partsDades = (dades['value'][i + 1] + ",default").split(",")
-            llista.append({'url': dades['value'][i], 'tipus_media': partsDades[0], 'profile': partsDades[1]})
+            llista.append({'url': dades['value'][i],
+                            'tipus_media': partsDades[0],
+                            'profile': partsDades[1],
+                            'info_srt': info_srt,
+                            'showComments': partsDades[0] in ['audio', 'video']})
             i += 2
         return llista
 
@@ -421,6 +428,7 @@ class genericView(BrowserView, funcionsCerca):
         """ Gets de columns and content"""
         titles = self.columns
         columns = []
+
         if self.visualitzacio == 'columnes':
             pagina = (int(self.retParametresVisualitzacio()['pagina_actual']) - 1) * N_COLUMNS
             max_columns = len(titles)

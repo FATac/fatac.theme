@@ -125,6 +125,9 @@
  <javascript authenticated="True" cacheable="True" compression="none"
     conditionalcomment="" cookable="True" enabled="True" expression=""
     id="tiny_mce_init.js" inline="False"/>
+ <javascript authenticated="True" cacheable="True" compression="none"
+    conditionalcomment="" cookable="True" enabled="True" expression=""
+    id="++resource++fatac.theme.javascripts/video.js" inline="False"/>
  <javascript authenticated="False" cacheable="True" compression="safe"
     conditionalcomment="lt IE 8" cookable="True" enabled="True" expression=""
     id="iefixes.js" inline="False"/>
