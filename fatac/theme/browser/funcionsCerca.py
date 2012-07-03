@@ -148,7 +148,7 @@ class funcionsCerca():
         si rep llista_ids, en comptes de querystring, monta un diccionari com si
         sigués el resultat d'una cerca i el retorna
         """
-        if querystring:
+        if querystring and not llista_ids:
             querystring['rows'] = rows
             querystring['start'] = start
             if 'categories' not in querystring:
