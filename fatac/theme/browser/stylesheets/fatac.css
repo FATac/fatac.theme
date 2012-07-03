@@ -804,6 +804,35 @@ div.photo-container {
 
 .media iframe { margin-bottom: 15px;}
 
+.vjs-tech {
+    position: relative !important;}
+
+.vjs-poster {
+    position: absolute !important;
+    z-index: 0;
+    left: 0;
+    top: 0;
+}    
+
+/* Color de fondo del player en audio */
+.video-js {
+    background-color: black;
+}
+
+/* forzar ver controls en player */
+.vjs-fade-out {
+    -moz-transition: visibility 0s linear 0s, opacity 0.3s linear 0s;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#box_captions  {
+    background: url("") no-repeat scroll 10px center #B3D396;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    font-size: 13px;
+    padding: 0.95em 0.5em 0.95em 3.5em;
+}    
+
 
 #dialog-form, #dialog-confirm {display: none}
 

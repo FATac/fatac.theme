@@ -12,4 +12,10 @@
     enabled="True" expression="" id="http://fonts.googleapis.com/css?family=Terminal+Dosis:200,600" 
     media="" rel="stylesheet" rendering="import"/>
 
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="False" 
+    enabled="on" expression="" 
+    id="++resource++fatac.theme.stylesheets/video-js.css" media="" 
+    rel="stylesheet" rendering="import"/>
+
 </object>

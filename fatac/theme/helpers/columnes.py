@@ -100,8 +100,8 @@ class YearPeriodColumn(Column):
         return str(i) + '-' + str(end)
 
     def _build_dict(self):
-        """ Builds the period dictionari, the first column has a diferent length"""
-        dict = ['1984-1989']
+        """ Builds the period dictionari """
+        dict = []
         r = range(self.period_start, self.period_end, self.period_length + 1)
         for i in r:
             dict.append(self._period(i))
