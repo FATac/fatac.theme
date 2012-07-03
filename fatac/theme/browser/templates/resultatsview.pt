@@ -38,11 +38,12 @@
                 </dd>
             </dl>
             -->
-
             <dl class="llista_desplegable actionMenu actionMenuFatac deactivated" tal:define="llista_tipus view/retTipusOrdre" tal:condition="llista_tipus/opcio_selec">
                 <dt class="actionMenuHeader">
-                    <a i18n:attributes="title mes_opcions" i18n:translate="" href="" class="arial11c666666" tal:condition="llista_tipus/altres_opcions">
-                        <span i18n:translate="ordre">Ordre:</span> <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" i18n:translate=""/> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" alt="▼" /></span>
+                    <a href="" class="arial11c666666" tal:condition="llista_tipus/altres_opcions">
+                        <span i18n:translate="ordre">Ordre:</span>
+                        <span id="tipus_entrada" tal:content="llista_tipus/opcio_selec/nom" i18n:translate=""/> <span class="arrowDownAlternative">
+                        <img src="++resource++fatac.theme.images/arrow_down_grey.gif" alt="▼" /></span>
                     </a>
                     <tal:co tal:condition="not: llista_tipus/altres_opcions">
                         <span class="arial11c666666 font_normal" i18n:translate="ordre">Ordre:</span>
@@ -101,16 +102,30 @@
 
                 <div id="visualitzacio_resultats" tal:define="dades_visualitzacio view/retDadesVisualitzacio; visualitzacio dades_visualitzacio/visualitzacio; zoom dades_visualitzacio/zoom">
                     <div id="zoom_resultats" tal:attributes="class python: visualitzacio == 'imatge' and 'link_visualitzacio selected' or 'link_visualitzacio hidden'" rel="imatge">
-                        <a href="#" id="zoom_menys"><img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" alt="-" i18n:translate=""/></a>
+                        <a href="#" id="zoom_menys">
+                            <img src="++resource++fatac.theme.images/small.png" i18n:attributes="title small" alt="-" i18n:translate=""/>
+                        </a>
                         <div tal:attributes="rel zoom" id="slider-wrap-zoom" class="slider-wrap-zoom"></div>
-                        <a href="#" id="zoom_mes"><img src="++resource++fatac.theme.images/large.png" alt="+" i18n:attributes="title large" i18n:translate=""/></a>
+                        <a href="#" id="zoom_mes">
+                            <img src="++resource++fatac.theme.images/large.png" alt="+" i18n:attributes="title large" i18n:translate=""/>
+                        </a>
                     </div>
-                    <a rel="imatge" href="#" tal:attributes="class python: visualitzacio == 'imatge' and 'link_visualitzacio link_visualitzacio1 hidden' or 'link_visualitzacio link_visualitzacio1'"><img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1; alt visualitzacio1" /></a>
-                    <a rel="fitxa_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2; alt visualitzacio2"/></a>
-                    <a rel="fitxa_ampliada_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3; alt visualitzacio3"/></a>
-                    <a rel="fitxa_ampliada_cerca_overlay" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca_overlay' and 'link_visualitzacio selected' or 'link_visualitzacio'"><img src="++resource++fatac.theme.images/ico_4.png" alt="" i18n:attributes="title visualitzacio4; alt visualitzacio4" /></a>
-                </div>
+                    <a rel="imatge" href="#" tal:attributes="class python: visualitzacio == 'imatge' and 'link_visualitzacio link_visualitzacio1 hidden' or 'link_visualitzacio link_visualitzacio1'">
+                        <img src="++resource++fatac.theme.images/ico_1.png" i18n:attributes="title visualitzacio1; alt visualitzacio1" />
+                    </a>
 
+                    <a rel="fitxa_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'">
+                        <img src="++resource++fatac.theme.images/ico_2.png" i18n:attributes="title visualitzacio2; alt visualitzacio2"/>
+                    </a>
+
+                    <a rel="fitxa_ampliada_cerca" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca' and 'link_visualitzacio selected' or 'link_visualitzacio'">
+                        <img src="++resource++fatac.theme.images/ico_3.png" i18n:attributes="title visualitzacio3; alt visualitzacio3"/>
+                    </a>
+
+                    <a rel="fitxa_ampliada_cerca_overlay" href="#" tal:attributes="class python: visualitzacio == 'fitxa_ampliada_cerca_overlay' and 'link_visualitzacio selected' or 'link_visualitzacio'">
+                        <img src="++resource++fatac.theme.images/ico_4.png" alt="" i18n:attributes="title visualitzacio4; alt visualitzacio4" />
+                    </a>
+                </div>
             </div>
         </div>
     </tal:co>
