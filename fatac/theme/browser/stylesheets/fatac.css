@@ -40,6 +40,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial12c999999 { font-family:Arial; font-size:12px; color:#999999 !important; }
 .arial12c999999i { font-family:Arial; font-size:12px; color:#999999 !important; font-style:italic; }
 .arial12c666666 { font-family:Arial; font-size:12px; color:#666666 !important; }
+.arial12c339933 { font-family:Arial; font-size:12px; color:#339933 !important; }
 .arial11c666666 { font-family:Arial; font-size:11px; color:#666666 !important; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
@@ -49,6 +50,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia13c000000italic { font-family:georgia; font-size:13px; color:#000000 !important; font-style:italic }
 .georgia13c999999 { font-family:georgia; font-size:13px; color:#999999 !important; }
 .georgia14c333333 { font-family:georgia; font-size:14px; color:#333333 !important; }
+.georgia15c666666italic { font-family:georgia; font-size:15px; color:#666666 !important; font-style:italic; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
@@ -766,6 +768,31 @@ div.photo-container {
 #purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
 #purr-container div a.close{ display:none; }
 
+
+/* ---------------------------------------------------------------------------- formularis */
+
+.field_fatac { margin-bottom:5px; }
+.input_fatac { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9acc9a !important; border:1px solid #D3E3C3; }
+.input_fatac:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
+.formControls_fatac { margin:23px 0 0 0 !important; float:left; }
+.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.button_fatac:hover { background-color:#9acc9a; color:#339933 !important; }
+.login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
+.descripcio_registre { float:left; line-height:18px; height:91px; }
+.link_registre {  }
+
+/* ---------------------------------------------------------------------------- login-form */
+#login-form { float:left; width:100%; }
+#login-wrapper { float:left; width:100%; padding: 20px; }
+#login-wrapper .login-left, #login-wrapper .login-right { height:175px; }
+#login-wrapper .login-left { float:left; width:45%; border-right:1px solid #B3D396; padding-right:4.8%; margin-right:5%; }
+#login-wrapper .login-right { float: right; width:45%; }
+
+#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; }
+#login-wrapper #login-form { clear:none; }
+
+
+/* ---------------------------------------------------------------------------- altres */
 .download a {
     color: #339933 !important;
     background-color: #B3D396;
@@ -834,15 +861,3 @@ div.photo-container {
 body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
     text-align: left;
 }
-
-#login-wrapper{ padding: 20px; }
-
-#login-form input {
-    border-radius: 0.3em 0.3em 0.3em 0.3em;
-    height: 30px;
-    padding: 5px;
-}
-
-#login-utils {float: right;}
-
-#login-form {clear:none;}
