@@ -75,10 +75,10 @@
 
         <tal:co tal:condition="python: tipus == 'media'">
             <div class="media">
-            <!-- TODO: caldria millorar la visualització i adaptar-la al disseny gràfic proposat -->
+            <!-- TODO: millorar la visualització i adaptar-la al disseny gràfic proposat -->
             <tal:def tal:define="global hasVideo python:0"></tal:def>
             <tal:rep tal:repeat="media valor">
-                <tal:def tal:define="url media/url; tipus_media media/tipus_media; profile media/profile; identificador python:url.split('/')[-1]">
+                <tal:def tal:define="url media/url; tipus_media media/tipus_media; profile media/profile; identificador python:url.split('/')[-1]; info_srt media/info_srt">
                     <tal:co tal:condition="python: tipus_media == 'image'">
                         <div class="photo-container">
                             <img class="media_image" tal:attributes="src url; alt identificador" />
@@ -86,40 +86,50 @@
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'video'">
                     	<tal:co tal:condition="python: hasVideo == 0">
-                            <video class="videoTag" tal:attributes="src url" width="100%" height="100%" controls="controls">
+                            <video class="videoTag video-js vjs-default-skin" tal:attributes="src url"
+                                   width="100%" height="100%" data-setup='{"controls": true, "autoplay": false, "preload": "auto"}'>
                                 Warning: media could not be embedded.
+                            <tal:co repeat="srt info_srt" condition="info_srt">
+                                <track tal:attributes="src srt/src; label srt/label" kind="captions"/>
+                            </tal:co>
                             </video>
                             <br/>
 	                       	|
 	                    </tal:co>
-	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:setMediaSrc(this,'${url}', 'video')"></a> |
+                        <a href="javascript:void(0);" tal:content="profile"
+                           tal:attributes="onclick string:setMediaSrc(this,'${url}', 'video')"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
                         <tal:co tal:condition="python: hasVideo == 0">
-                            <audio class="audioTag" tal:attributes="src url" preload="none" controls="">
+                            <video class="audioTag video-js vjs-default-skin" tal:attributes="src url"
+                                   width="100%" height="100%" controls="controls" data-setup='{"autoplay": false, "preload": "auto"}'>
                                 Warning: media could not be embedded.
-                            </audio>
+                                <tal:co repeat="srt info_srt" condition="info_srt">
+                                    <track tal:attributes="src srt/src; label srt/label" kind="captions"/>
+                                </tal:co>
+                            </video>
                             <br/>
                             |
 	                    </tal:co>
-	                    <a href="javascript:void(0);" tal:content="profile" tal:attributes="onclick string:setMediaSrc(this,'${url}', 'audio')"></a> |
+                        <a href="javascript:void(0);" tal:content="profile"
+                           tal:attributes="onclick string:setMediaSrc(this,'${url}', 'audio')"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
                         <tal:co tal:condition="python: url[-4:] == '.pdf'">
                             <iframe tal:attributes="src string:http://docs.google.com/gview?url=${url}&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
                         </tal:co>
-                        <div class="download">
-                            <a i18n:translate="Download" tal:attributes="href url">Descarrega</a>
-                        </div>
                     </tal:co>
                 </tal:def>
-
-
             </tal:rep>
+            <tal:b tal:define="dades dada/valor;
+                               isAnon context/@@plone_portal_state/anonymous"
+                    tal:condition="python:dades[0]['showComments'] and not isAnon">
+                    <a id="addSubtitles" href="createObject?type_name=File">Afegir subtítols</a>|
+                    <a id="removeSubtitles" href="folder_contents">Esborrar subtítols</a>
+            </tal:b>
             </div>
         </tal:co>
-
     </tal:def>
 </metal:dada>

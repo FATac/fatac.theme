@@ -1,15 +1,15 @@
 <div id="selector_idiomes" tal:condition="view/available" i18n:domain="fatac.theme">
 
-    <dl class="actionMenu deactivated" tal:define="here_url context/absolute_url;
+    <dl class="llista_desplegable actionMenu deactivated" tal:define="here_url context/absolute_url;
                                                    idiomes view/retIdiomes;
                                                    idioma_actual idiomes/idioma_actual;
                                                    altres_idiomes idiomes/altres_idiomes">
         <dt class="actionMenuHeader">
             <a tal:define="code idioma_actual/code;
-                           codeclass string:language-${code};
+                           codeclass string:language-${code} arial11c666666;
                            name idioma_actual/name;"
                tal:attributes="title name" href="#">
-                <span tal:attributes="class string:currentLanguage${codeclass} currentLanguage arial13c999999"
+                <span tal:attributes="class string:currentLanguage${codeclass} currentLanguage"
                       tal:content="code" i18n:translate=""></span>
                 <span class="arrowDownAlternative">
                     <img src="++resource++fatac.theme.images/arrow_down_grey.gif" alt="▼"/>
@@ -25,7 +25,7 @@
                         tal:attributes="class string:${codeclass}">
                         <a tal:attributes="href string:${here_url}/switchLanguage?set_language=${code};
                                            title name"
-                           tal:content="code" i18n:translate="" class="arial13cffffff">language name</a>
+                           tal:content="code" i18n:translate="" class="arial11c666666">language name</a>
                     </li>
                 </tal:language>
             </ul>

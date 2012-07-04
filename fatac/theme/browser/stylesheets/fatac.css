@@ -15,6 +15,9 @@ div.position-0 { margin-left: -100%; }
 #content a:hover, dl.portlet a:hover{ color:#000000 !important;}
 
 
+div#portal-columns.row {margin-left: 0px;}
+div#portal-top.row {margin-left: 0px;}
+div#portal-footer-wrapper.row {margin-left: 0px;}
 /* ---------------------------------------------------------------------------- general */
 a { border-bottom:none !important; }
 
@@ -40,6 +43,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial12c999999 { font-family:Arial; font-size:12px; color:#999999 !important; }
 .arial12c999999i { font-family:Arial; font-size:12px; color:#999999 !important; font-style:italic; }
 .arial12c666666 { font-family:Arial; font-size:12px; color:#666666 !important; }
+.arial12c339933 { font-family:Arial; font-size:12px; color:#339933 !important; }
 .arial11c666666 { font-family:Arial; font-size:11px; color:#666666 !important; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
@@ -49,6 +53,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia13c000000italic { font-family:georgia; font-size:13px; color:#000000 !important; font-style:italic }
 .georgia13c999999 { font-family:georgia; font-size:13px; color:#999999 !important; }
 .georgia14c333333 { font-family:georgia; font-size:14px; color:#333333 !important; }
+.georgia15c666666italic { font-family:georgia; font-size:15px; color:#666666 !important; font-style:italic; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
@@ -62,7 +67,7 @@ img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
 
 .ac_breadcrump { font-size:9pt; text-transform:uppercase; }
-.breadcrumb_cerca { margin-top:40px; }
+.breadcrumb_cerca { margin-top: 18px; }
 
 /* Cerca a la biblioteca || Buscar en la biblioteca */
 .ac_search_biblio { text-align: right; float:right; width:20%; }
@@ -85,9 +90,10 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #selector_idiomes dl.actionMenu.activated { border-radius:0; -webkit-radius:0; -moz-border-radius:0; }
 #selector_idiomes dl.actionMenu .actionMenuHeader { padding-bottom:2px; }
 #selector_idiomes dl.actionMenu .currentLanguage { margin:0 12px 0px 8px; }
-#selector_idiomes dd.actionMenuContent { background-color:#DDDDDD; padding:0; border-radius:0 0 0.3em 0.3em; -webkit-radius:0 0 0.3em 0.3em; -moz-border-radius:0 0 0.3em 0.3em; z-index:4; }
-#selector_idiomes dd.actionMenuContent a { background-color:#DDDDDD; padding:2px 0 4px 0; margin-left:8px; }
-
+#selector_idiomes dd.actionMenuContent {background-color:#EDEDED !important; padding:0; border-radius:0 0 0.3em 0.3em; -webkit-radius:0 0 0.3em 0.3em; -moz-border-radius:0 0 0.3em 0.3em; z-index:4; }
+#selector_idiomes dd.actionMenuContent a {background-color:#EDEDED !important; padding:2px 0 4px 0; margin-left:8px; }
+#selector_idiomes dd.actionMenuContent a:hover {color: #000000 !important;}
+#selector_idiomes dl.actionMenu .currentLanguage:hover {color: #000000 !important;}
 
 /* ---------------------------------------------------------------------------- portal-logo */
 #portal-logo { float:left; margin-top:0; }
@@ -314,6 +320,7 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 */
+div.genericview_fitxa_final div.num_aportacions { float:left; margin-left:10px; padding:3px 10px; height:16px; color: #339933; background-color: #D3E3C3; border-radius: 0.3em; -webkit-radius: 0.3em; -moz-border-radius: 0.3em; }
 div.genericview_fitxa_final img.miniatura_classe { max-width:15px; max-height:15px; vertical-align: middle;}
 
 div.genericview_fitxa_final { float:left; width:100%; margin-top:20px; }
@@ -765,6 +772,31 @@ div.photo-container {
 #purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
 #purr-container div a.close{ display:none; }
 
+
+/* ---------------------------------------------------------------------------- formularis */
+
+.field_fatac { margin-bottom:5px; }
+.input_fatac { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9acc9a !important; border:1px solid #D3E3C3; }
+.input_fatac:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
+.formControls_fatac { margin:23px 0 0 0 !important; float:left; }
+.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.button_fatac:hover { background-color:#9acc9a; color:#339933 !important; }
+.login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
+.descripcio_registre { float:left; line-height:18px; height:91px; }
+.link_registre {  }
+
+/* ---------------------------------------------------------------------------- login-form */
+#login-form { float:left; width:100%; }
+#login-wrapper { float:left; width:100%; padding: 20px; }
+#login-wrapper .login-left, #login-wrapper .login-right { height:175px; }
+#login-wrapper .login-left { float:left; width:45%; border-right:1px solid #B3D396; padding-right:4.8%; margin-right:5%; }
+#login-wrapper .login-right { float: right; width:45%; }
+
+#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; }
+#login-wrapper #login-form { clear:none; }
+
+
+/* ---------------------------------------------------------------------------- altres */
 .download a {
     color: #339933 !important;
     background-color: #B3D396;
@@ -775,6 +807,35 @@ div.photo-container {
 #content .download a:hover {color: #339933 !important;}
 
 .media iframe { margin-bottom: 15px;}
+
+.vjs-tech {
+    position: relative !important;}
+
+.vjs-poster {
+    position: absolute !important;
+    z-index: 0;
+    left: 0;
+    top: 0;
+}
+
+/* Color de fondo del player en audio */
+.video-js {
+    background-color: black;
+}
+
+/* forzar ver controls en player */
+.vjs-fade-out {
+    -moz-transition: visibility 0s linear 0s, opacity 0.3s linear 0s;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#box_captions  {
+    background: url("") no-repeat scroll 10px center #B3D396;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    font-size: 13px;
+    padding: 0.95em 0.5em 0.95em 3.5em;
+}
 
 
 #dialog-form, #dialog-confirm {display: none}
@@ -796,3 +857,95 @@ div.photo-container {
 }
 
 .numberofcomments {margin-bottom: 20px; font-size: 13px;}
+
+
+/* Templates de registre, perfil d'usuari i */
+.pb-ajax {border-radius: 0.5em;}
+
+.pb-ajax .login-logo {display:block !important; padding-bottom:40px;}
+
+body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
+    text-align: left;
+}
+
+.template-login_form .login-logo,
+.template-logged_out .login-logo {display: none;}
+
+.template-change-password .documentFirstHeading,
+.template-personal-information .documentFirstHeading,
+.template-register .documentFirstHeading {display: none}
+
+.template-change-password .documentDescription,
+.template-personal-information .documentDescription,
+.template-register .documentDescription {display: none}
+
+.template-change-password .descripcio_registre,
+.template-personal-information .descripcio_registre,
+.template-register .descripcio_registre {height:50px; float:none;}
+
+.title_registre { color: #333333 !important; font-style: normal; margin-bottom: 5px; margin-top: 18px}
+
+.template-change-password label,
+.template-personal-information label,
+.template-register label {float:left; font-weight: normal; font-family:Arial; font-size:15px; color:#666666 !important; padding-top: 10px;}
+
+.template-change-password .formHelp,
+.template-personal-information .formHelp,
+.template-register .formHelp {display: none;}
+
+.template-change-password .widget {margin-left: 220px}
+
+.template-personal-information .widget,
+.template-register .widget {margin-left: 160px}
+
+.template-personal-information legend,
+.template-change-password legend {display: none}
+
+.template-change-password .field,
+.template-personal-information .field,
+.template-register .field { margin-bottom:5px; }
+
+.template-change-password input,
+.template-personal-information input,
+.template-register input {
+    border-radius:0.3em;
+    -moz-border-radius:0.3em;
+    -webkit-border-radius: 0.3em;
+    background-color:#D3E3C3;
+    font-family:Arial;
+    font-size:15px !important;
+    color:#9acc9a !important;
+    border:1px solid #D3E3C3;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+.template-change-password input:focus,
+.template-personal-information input:focus,
+.template-register input:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
+
+body.template-register #content input[type="text"] { width: 400px;}
+body.template-personal-information #content input[type="text"] { width: 400px;}
+body.template-change-password #content input[type="password"] { width: 400px;}
+
+#formfield-form-accept {margin-top: 10px}
+#formfield-form-accept label {float:none; font-size:12px !important; padding: 0; position: relative; top:-3px; margin-left: 5px}
+#formfield-form-accept input {padding-top: 5px}
+
+.template-change-password .fieldErrorBox,
+.template-personal-information .fieldErrorBox,
+.template-register .fieldErrorBox {margin-left: 160px}
+
+.template-change-password #actionsView {margin-left: 220px; margin-top: 20px;}
+
+.template-personal-information #actionsView,
+.template-register #actionsView {margin-left: 160px; margin-top: 20px;}
+
+.actionButtons input {width: auto; height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.actionButtons input:hover {width: auto; background-color:#9acc9a; color:#339933 !important; cursor: pointer;}
+
+#contentview-user_data-personal-preferences {display: none;}
+#content fieldset {border:none;}
+
+.template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}

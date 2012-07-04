@@ -140,7 +140,7 @@
 
     </div>
 
-    <div class="reply"
+<!--     <div class="reply"
          tal:condition="python:has_replies and (isAnon and not isAnonymousDiscussionAllowed)">
         <form tal:attributes="action view/login_action">
             <input class="standalone"
@@ -150,7 +150,7 @@
                    i18n:attributes="value label_login_to_add_comments;"
                    />
         </form>
-    </div>
+    </div> -->
 
     <div id="commenting" class="reply" tal:condition="python:isDiscussionAllowed and (isAnon and isAnonymousDiscussionAllowed or userHasReplyPermission)">
 
