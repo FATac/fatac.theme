@@ -14,6 +14,7 @@ div.position-0 { margin-left: -100%; }
 #content { margin:0; }
 #content a:hover, dl.portlet a:hover{ color:#000000 !important;}
 
+div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
 div#portal-columns.row {margin-left: 0px;}
 div#portal-top.row {margin-left: 0px;}
@@ -96,7 +97,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #selector_idiomes dl.actionMenu .currentLanguage:hover {color: #000000 !important;}
 
 /* ---------------------------------------------------------------------------- portal-logo */
-#portal-logo { float:left; margin-top:0; }
+#portal-logo { float:left; margin-bottom: 15px; margin-top: 7px;}
 
 
 /* ---------------------------------------------------------------------------- cercador.pt */
@@ -111,7 +112,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 
 /* ---------------------------------------------------------------------------- personal_bar.pt */
 #portal-personaltools-wrapper { float:right; }
-#portal-personaltools { background-color:#b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.5em; font-size:13px;}
+#portal-personaltools { height: 25px; background-color:#b3d396; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; padding:0.5em; font-size:13px;}
 #portal-personaltools, #portal-personaltools a, #portal-personaltools a:hover { color:#339933 !important; }
 #portal-personaltools.activated { border-radius:0.3em 0.3em 0 0; -webkit-radius:0.3em 0.3em 0 0; -moz-border-radius:0.3em 0.3em 0 0; }
 #portal-personaltools dd { background-color:#e1edd7; margin-top:7px; }
@@ -124,7 +125,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #portal-personaltools .Add.Playlist a, #portal-personaltools .Add.Playlist a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
 #portal-personaltools .Add.Group a, #portal-personaltools .Add.Group a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
 #portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
-
+#anon-personalbar {height: 22px; padding-top: 1px;}
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
 #selector_filtres  { margin-bottom:10px; }

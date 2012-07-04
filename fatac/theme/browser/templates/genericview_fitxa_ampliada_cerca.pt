@@ -70,12 +70,10 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                             <tal:repl tal:condition="slider_vertical" tal:replace="structure string:<div class='div_interior'>" />
 
                             <tal:rep tal:repeat="dada seccio/dades">
-
                                 <!-- Fiquem tot el que no sigui de la capçalera, el cos i la cerca -->
-                                <tal:co tal:condition="python: dada['tipus'] not in ['header', 'body', 'search', 'objects']">
+                                 <tal:co tal:condition="python: dada['tipus'] not in ['header', 'body', 'search', 'objects']">
                                     <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
-                                </tal:co>
-
+                                </tal:co> 
                             </tal:rep>
 
                             <!-- estructura: si hi ha subcerca, header y body tenen slider vertcal; el tanquem -->
