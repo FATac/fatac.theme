@@ -289,7 +289,7 @@ jQuery(function ($) {
     ******/
     pb.fi_focus = function (jqo) {
         if (! jqo.find("form div.error :input:first").focus().length) {
-            jqo.find("form :input:visible:first").focus();
+            // jqo.find("form :input:visible:first").focus();
         }
     };
 

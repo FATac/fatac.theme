@@ -95,24 +95,24 @@
                             </video>
                             <br/>
 	                       	|
-	                    </tal:co>                    
-                        <a href="javascript:void(0);" tal:content="profile" 
+	                    </tal:co>
+                        <a href="javascript:void(0);" tal:content="profile"
                            tal:attributes="onclick string:setMediaSrc(this,'${url}', 'video')"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'audio'">
                         <tal:co tal:condition="python: hasVideo == 0">
-                            <video class="audioTag video-js vjs-default-skin" tal:attributes="src url" 
+                            <video class="audioTag video-js vjs-default-skin" tal:attributes="src url"
                                    width="100%" height="100%" controls="controls" data-setup='{"autoplay": false, "preload": "auto"}'>
                                 Warning: media could not be embedded.
                                 <tal:co repeat="srt info_srt" condition="info_srt">
                                     <track tal:attributes="src srt/src; label srt/label" kind="captions"/>
-                                </tal:co>                                
+                                </tal:co>
                             </video>
                             <br/>
                             |
 	                    </tal:co>
-                        <a href="javascript:void(0);" tal:content="profile" 
+                        <a href="javascript:void(0);" tal:content="profile"
                            tal:attributes="onclick string:setMediaSrc(this,'${url}', 'audio')"></a> |
 	                    <tal:def tal:define="global hasVideo python:1"></tal:def>
                     </tal:co>
@@ -124,10 +124,10 @@
                 </tal:def>
             </tal:rep>
             <tal:b tal:define="dades dada/valor;
-                               isAnon context/@@plone_portal_state/anonymous" 
+                               isAnon context/@@plone_portal_state/anonymous"
                     tal:condition="python:dades[0]['showComments'] and not isAnon">
                     <a id="addSubtitles" href="createObject?type_name=File">Afegir subtítols</a>|
-                    <a id="removeSubtitles" href="folder_contents">Esborrar subtítols</a>                    
+                    <a id="removeSubtitles" href="folder_contents">Esborrar subtítols</a>
             </tal:b>
             </div>
         </tal:co>

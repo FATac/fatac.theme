@@ -817,7 +817,7 @@ div.photo-container {
     z-index: 0;
     left: 0;
     top: 0;
-}    
+}
 
 /* Color de fondo del player en audio */
 .video-js {
@@ -836,7 +836,7 @@ div.photo-container {
     border-radius: 0.3em 0.3em 0.3em 0.3em;
     font-size: 13px;
     padding: 0.95em 0.5em 0.95em 3.5em;
-}    
+}
 
 
 #dialog-form, #dialog-confirm {display: none}
@@ -859,10 +859,94 @@ div.photo-container {
 
 .numberofcomments {margin-bottom: 20px; font-size: 13px;}
 
+
+/* Templates de registre, perfil d'usuari i */
 .pb-ajax {border-radius: 0.5em;}
 
-.login-logo {padding-bottom:40px;}
+.pb-ajax .login-logo {display:block !important; padding-bottom:40px;}
 
 body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
     text-align: left;
 }
+
+.template-login_form .login-logo,
+.template-logged_out .login-logo {display: none;}
+
+.template-change-password .documentFirstHeading,
+.template-personal-information .documentFirstHeading,
+.template-register .documentFirstHeading {display: none}
+
+.template-change-password .documentDescription,
+.template-personal-information .documentDescription,
+.template-register .documentDescription {display: none}
+
+.template-change-password .descripcio_registre,
+.template-personal-information .descripcio_registre,
+.template-register .descripcio_registre {height:50px; float:none;}
+
+.title_registre { color: #333333 !important; font-style: normal; margin-bottom: 5px; margin-top: 18px}
+
+.template-change-password label,
+.template-personal-information label,
+.template-register label {float:left; font-weight: normal; font-family:Arial; font-size:15px; color:#666666 !important; padding-top: 10px;}
+
+.template-change-password .formHelp,
+.template-personal-information .formHelp,
+.template-register .formHelp {display: none;}
+
+.template-change-password .widget {margin-left: 220px}
+
+.template-personal-information .widget,
+.template-register .widget {margin-left: 160px}
+
+.template-personal-information legend,
+.template-change-password legend {display: none}
+
+.template-change-password .field,
+.template-personal-information .field,
+.template-register .field { margin-bottom:5px; }
+
+.template-change-password input,
+.template-personal-information input,
+.template-register input {
+    border-radius:0.3em;
+    -moz-border-radius:0.3em;
+    -webkit-border-radius: 0.3em;
+    background-color:#D3E3C3;
+    font-family:Arial;
+    font-size:15px !important;
+    color:#9acc9a !important;
+    border:1px solid #D3E3C3;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+.template-change-password input:focus,
+.template-personal-information input:focus,
+.template-register input:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
+
+body.template-register #content input[type="text"] { width: 400px;}
+body.template-personal-information #content input[type="text"] { width: 400px;}
+body.template-change-password #content input[type="password"] { width: 400px;}
+
+#formfield-form-accept {margin-top: 10px}
+#formfield-form-accept label {float:none; font-size:12px !important; padding: 0; position: relative; top:-3px; margin-left: 5px}
+#formfield-form-accept input {padding-top: 5px}
+
+.template-change-password .fieldErrorBox,
+.template-personal-information .fieldErrorBox,
+.template-register .fieldErrorBox {margin-left: 160px}
+
+.template-change-password #actionsView {margin-left: 220px; margin-top: 20px;}
+
+.template-personal-information #actionsView,
+.template-register #actionsView {margin-left: 160px; margin-top: 20px;}
+
+.actionButtons input {width: auto; height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.actionButtons input:hover {width: auto; background-color:#9acc9a; color:#339933 !important; cursor: pointer;}
+
+#contentview-user_data-personal-preferences {display: none;}
+#content fieldset {border:none;}
+
+.template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}

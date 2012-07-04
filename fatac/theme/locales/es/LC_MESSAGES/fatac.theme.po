@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
-"POT-Creation-Date: 2011-10-20 09:56+0000\n"
-"PO-Revision-Date: 2011-10-20 10:52+0100\n"
-"Last-Translator: Laura <laura.perez-mayos@upcnet.es>\n"
+"POT-Creation-Date: 2012-07-03 08:25+0000\n"
+"PO-Revision-Date: 2012-07-03 17:46+0100\n"
+"Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,366 +13,1363 @@ msgstr ""
 "Language-Name: Spanish\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fatac.theme\n"
+"X-Poedit-Basepath: /var/plone/fatac/fatac.buildout/src\n"
 
-#: ../../../browser/cercador.pt:5
+#: zope/component/zcml.py:231
+msgid "A callable object that handles events."
+msgstr "Un objeto llamable que gestiona eventos."
+
+#: zope/component/zcml.py:443
+msgid "A class that provides attributes used by the view."
+msgstr "Una clase que ofrece atributos usados por la vista."
+
+#: fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
+msgid "A description of Dummy"
+msgstr ""
+
+#: fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
+msgid "A description of Playlist"
+msgstr ""
+
+#: zope/component/zcml.py:225
+msgid "A factory used to create the subscriber instance."
+msgstr "Una factoría utilizada para crear la instancia de subscriptor."
+
+#: fatac.content/fatac/content/profiles/default/types/fatac.ghost.xml
+msgid "A fake type for store comments"
+msgstr ""
+
+#: zope/component/zcml.py:83
+msgid "A list of factories (usually just one) that create the adapter instance."
+msgstr "Una lista de factorías (normalmente sólo una) que crean la instancia del adaptador."
+
+#. Default: "Accions de manteniment"
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:30
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:35
+msgid "AccionsManteniment"
+msgstr "Acciones de mantenimiento"
+
+#. Default: "Actualitza les ontologies amb les especificades a la variable de configuració ONTOLOGY_NAMESPACE"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:47
+msgid "ActualitzaOntologies"
+msgstr "Actualiza las ontologias con las especificadas en la variable de configuración ONTOLOGY_NAMESPACE"
+
+#: zope/component/zcml.py:82
+msgid "Adapter factory/factories"
+msgstr "Factoría(s) de Adaptador"
+
+#: fatac.content/fatac/content/portletMyFiles.py:33
+msgid "Add MyFiles Portlet"
+msgstr "Añadir portlet Mis archivos"
+
+#: fatac.content/fatac/content/portletMyGroups.py:33
+msgid "Add MyGroups Portlet"
+msgstr "Añadir portlet Mis grupos"
+
+#: fatac.content/fatac/content/portletPlaylists.py:33
+msgid "Add Playlists Portlet"
+msgstr "Añadir portlets Playlist"
+
+#: fatac.content/fatac/content/ghost.py:42
+#: fatac.content/fatac/content/playlist.py:25
+msgid "Add a Playlist Image that represents your playlist"
+msgstr "Añadir una imagen que represente tu Playlist"
+
+#. Default: "Administració"
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:15
+msgid "Administracio"
+msgstr "Administración"
+
+#. Default: "Añadir Nuevo Fichero"
+msgid "Afegeix Nou Fitxer"
+msgstr "Añadir Nuevo Fichero"
+
+#. Default: "Añadir Nuevo Grupo"
+msgid "Afegeix Nou Grup"
+msgstr "Añadir Nuevo Grupo"
+
+#. Default: "Añadir Nueva Playlist"
+msgid "Afegeix Nova Playlist"
+msgstr "Añadir Nueva Playlist"
+
+#. Default: "alfabéticamente"
+msgid "AlphabeticalOrder"
+msgstr "Alfabético"
+
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:106
+msgid "Anteriors"
+msgstr "Anteriores"
+
+#. Default: "Árabe"
+msgid "Arabe"
+msgstr "Árabe"
+
+#. Default: "Obra de arte"
+msgid "ArtWork"
+msgstr "Obra de arte"
+
+#. Default: "Artista"
+msgid "Artist"
+msgstr "Artista"
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:50
+msgid "Arts folder"
+msgstr "Carpeta Arts"
+
+#. Default: "Assignar drets legals"
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:28
+msgid "AssignarDretsLegals"
+msgstr ""
+
+#. Default: "Audio"
+msgid "Audio"
+msgstr "Audio"
+
+#. Default: "Autor"
+msgid "Author"
+msgstr "Autor"
+
+#. Default: "Autores"
+msgid "Authors"
+msgstr "Autores"
+
+#. Default: "Biografía"
+msgid "Biography"
+msgstr "Biografía"
+
+#. Default: "Buscar/Editar objectes"
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:27
+msgid "BuscarEditarObjectes"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:42
+msgid "Cache time"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:44
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: fatac.theme/fatac/theme/browser/templates/cercaview.pt:57
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:100
+msgid "Carregant..."
+msgstr "Cargando..."
+
+#. Default: "Catalán"
+msgid "Catala"
+msgstr "Catalán"
+
+#: fatac.theme/fatac/theme/browser/templates/cercaview.pt:24
+msgid "Cerca"
+msgstr "BÚSQUEDA"
+
+#. Default: "Buscar en VTLS"
+msgid "Cerca a VTLS"
+msgstr "Buscar en VTLS"
+
+#: ../../../browser/templates/cercaview.pt:39
+msgid "Cerca a la biblioteca"
+msgstr "Buscar en biblioteca"
+
+#. Default: "Catedrático"
+msgid "Chair"
+msgstr "Catedrático"
+
+#: fatac.content/fatac/content/dashboard.py:256
+msgid "Changes made."
+msgstr "Cambios realizados."
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:40
+msgid "Changes saved"
+msgstr "Se han guardado los cambios"
+
+#: fatac.content/fatac/content/dashboard.py:479
+msgid "Changes saved."
+msgstr "Cambios guardados."
+
+#. Default: "cronológicamente"
+msgid "ChronologicalOrder"
+msgstr "cronológicamente"
+
+#: zope/component/zcml.py:442
+msgid "Class"
+msgstr "Tipo de documento"
+
+#. Default: "Colaborador"
+msgid "Collaborator"
+msgstr "Colaborador"
+
+#. Default: "Colecciones"
+msgid "Collection"
+msgstr "Colecciones"
+
+#. Default: "Colecciones"
+msgid "Collections"
+msgstr "Colecciones"
+
+#. Default: "Color"
+msgid "Color"
+msgstr "Color"
+
+#: zope/component/zcml.py:52
+msgid "Component to use"
+msgstr "Componente a utilizar"
+
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:67
+msgid "Convertir"
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:672
+msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
+msgstr "No pudo agregarse el grupo ${name}, quizás ya existe un usuario o grupo con este nombre."
+
+#. Default: "Ubicaciones"
+msgid "Country"
+msgstr "Ubicaciones"
+
+#. Default: "Creador"
+msgid "Creator"
+msgstr "Creador"
+
+#. Default: "Gestión cultural"
+msgid "CulturalManagement"
+msgstr "Gestión cultural"
+
+#. Default: "Comisario"
+msgid "Curator"
+msgstr "Comisario"
+
+#. Default: "Fecha"
+msgid "Date"
+msgstr "Fecha"
+
+#. Default: "Descripció"
+msgid "Description"
+msgstr "Descripció"
+
+#. Default: "Diseñadores"
+msgid "Designers"
+msgstr "Diseñadores"
+
+#. Default: "Descarrega"
+#: fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:114
+msgid "Download"
+msgstr "Descargar"
+
+#: fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
+msgid "Dummy"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:43
+msgid "Duration of the internal cache in minutes, it must be betwen 0 and 60"
+msgstr "Duración de la cache interna en minutos, debe estar entre 0 y 60"
+
+#: fatac.content/fatac/content/portletMyFiles.py:41
+msgid "Edit MyFiles Portlet"
+msgstr "Editar portlet Mis archivos"
+
+#: fatac.content/fatac/content/portletMyGroups.py:41
+msgid "Edit MyGroups Portlet"
+msgstr "Editar portlet Mis grupos"
+
+#: fatac.content/fatac/content/portletPlaylists.py:41
+msgid "Edit Playlists Portlet"
+msgstr "Editar portlet Playlist"
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:46
+msgid "Edit cancelled"
+msgstr "Edición cancelada"
+
+#. Default: "Editores"
+msgid "Editors"
+msgstr "Editores"
+
+#: fatac.content/fatac/content/portlets/portletMyGroups.pt:6
+msgid "Els meus Grups"
+msgstr "Mis grupos"
+
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:61
+msgid "Error"
+msgstr "Error"
+
+#. Default: "Esborra totes les dades"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:88
+msgid "EsborraDades"
+msgstr "Borrar todos los datos"
+
+#. Default: "Esborra <span style=\"font-weight:bold; color:red;\">de forma irreversible</span> totes les dades del sistema, arxius media, estadístiques i recarrega les ontologies. Per a confirmar aquest acció cal introduir la data i hora actual del servidor (en format tipus '30/11/11 16:37')"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:90
+msgid "EsborraDadesExplicacio"
+msgstr ""
+
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:66
+msgid "Esborrar"
+msgstr "Eliminar"
+
+#. Default: "Español"
+msgid "Espanol"
+msgstr "Español"
+
+#. Default: "Eventos"
+msgid "Events"
+msgstr "Eventos"
+
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:54
+msgid "Executa"
+msgstr "Ejecuta"
+
+#: fatac.theme/fatac/theme/browser/templates/cercador.pt:11
+#: fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
 msgid "Explorar"
 msgstr "Explorar"
 
+#. Default: "Exportar a OAI"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:51
+msgid "ExportarOAI"
+msgstr "Exportar a OAI"
+
+#. Default: "Assegura que les dades actuals estiguin disponibles pel servidor OAI-PMH, d'acord amb allò especificat al oai-mapping <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:53
+msgid "ExportarOAIExplicacio"
+msgstr ""
+
+#: zope/component/zcml.py:67
+msgid "Factory"
+msgstr "Factoría"
+
+#: fatac.theme/fatac/theme/profiles/default/controlpanel.xml
+msgid "Fatac"
+msgstr "FATac"
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:17
+msgid "Fatac settings"
+msgstr "Configuración FATac"
+
+#. Default: "Realizador"
+msgid "Film-maker"
+msgstr "Realizador"
+
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:17
+msgid "Filtre de búsqueda"
+msgstr "Filtro de búsqueda"
+
+#. Default: "Fitxa d'expedient"
 #: ../../../browser/opcions.pt:2
 msgid "Fitxa d'expedient"
 msgstr "Ficha de expediente"
 
-#: ../../../browser/cercador.pt:4
-msgid "Search Site"
-msgstr "Buscar en el Site"
-
-#: ../../../browser/languageselector.pt:13, 29
-msgid "ca"
-msgstr "cat"
-
-#: ../../../browser/languageselector.pt:13, 29
-msgid "en"
-msgstr "eng"
-
-#: ../../../browser/languageselector.pt:13, 29
-msgid "es"
-msgstr "cast"
-
-msgid "Cerca"
-msgstr "BÚSQUEDA"
-
-msgid "Search"
-msgstr "BÚSQUEDA"
-
-msgid "ultims_documents"
-msgstr "Últimos documentos"
-
-msgid "ultims_consultats"
-msgstr "Últimos consultados"
-
-msgid "Filtre de búsqueda"
-msgstr "Filtro de búsqueda"
-
-msgid "reduir_filtres"
-msgstr "reducir filtros"
-
-msgid "ampliar_filtres"
-msgstr "ampliar filtros"
-
-msgid "esquerra"
-msgstr "página anterior"
-
-msgid "dreta"
-msgstr "página siguiente"
-
-msgid "class"
-msgstr "Tipo de documento"
-
-msgid "Year"
-msgstr "Años"
-
-msgid "Country"
-msgstr "Ubicaciones"
-
-msgid "Translation"
-msgstr "Idiomas"
-
-msgid "License"
-msgstr "Licencias"
-
-msgid "Role"
-msgstr "Roles"
-
-msgid "Person"
-msgstr "Personas"
-
-msgid "Organisation"
-msgstr "Organizaciones"
-
-msgid "Events"
-msgstr "Eventos"
-
-msgid "Publications"
-msgstr "Publicaciones"
-
-msgid "Collection"
-msgstr "Colecciones"
-
-msgid "ordre"
-msgstr "tipo de ordenación:"
-
-msgid "AlphabeticalOrder"
-msgstr "alfabéticamente"
-
-msgid "ChronologicalOrder"
-msgstr "cronológicamente"
-
-msgid "Visualització de búsqueda"
-msgstr "Visualización de la búsqueda"
-
-msgid "visualitzacio1"
-msgstr "Listado"
-
-msgid "visualitzacio2"
-msgstr "Miniaturas"
-
-msgid "visualitzacio3"
-msgstr "Vista previa"
-
-msgid "visualitzacio4"
-msgstr "Pantalla completa"
-
-msgid "small"
-msgstr "Ver más pequeño"
-
-msgid "large"
-msgstr "Ver más grande"
-
-msgid "pagina"
-msgstr "página"
-
-msgid "de"
-msgstr "de"
-
-msgid "arxius"
-msgstr "archivos"
-
-msgid "mes_opcions"
-msgstr "más opciones"
-
-msgid "cap_resultat"
-msgstr "0 resultados"
-
-msgid "financament"
-msgstr "Financiamiento"
-
-msgid "financament1"
-msgstr "Ministerio de Educación"
-
-msgid "financament2"
-msgstr "Plan Avanza"
-
-msgid "participants"
-msgstr "Participantes"
-
-msgid "participants1"
-msgstr "Fundación Antoni Tàpies"
-
-msgid "participants2"
-msgstr "Universidad Politécnica de Valencia"
-
-msgid "participants3"
-msgstr "Universidad Politécnica de Barcelona"
-
-msgid "patrocinadors"
-msgstr "Patrocinadores institucionales"
-
-msgid "patrocinadors1"
-msgstr "Generalitat de Catalunya"
-
-msgid "patrocinadors2"
-msgstr "Ayuntamiento de Barcelona"
-
-msgid "collaboracio"
-msgstr "Con la colaboración de"
-
-msgid "collaboracio1"
-msgstr "Ministerio de Educación"
-
-msgid "explora_bbdd"
-msgstr "Explora nuestra base de datos por:"
-
-msgid "agentes"
-msgstr "Agentes"
-
-msgid "eventos"
-msgstr "Eventos"
-
-msgid "colection"
-msgstr "Colecciones"
-
-msgid "Tots"
-msgstr "Todos"
-
-msgid "Publication"
-msgstr "Publicación"
-
-msgid "ProtectionPromotionAT"
-msgstr "Protección de patrimonio"
-
-msgid "ProtectionPromotion"
-msgstr "Protección de patrimonio"
-
-msgid "CulturalManagement"
-msgstr "Gestión cultural"
-
-msgid "Espanol"
-msgstr "Español"
-
-msgid "Frances"
-msgstr "Francés"
-
-msgid "Catala"
-msgstr "Catalán"
-
-msgid "Ingles"
-msgstr "Inglés"
-
-msgid "Arabe"
-msgstr "Árabe"
-
-msgid "Media"
-msgstr "Media"
-
-msgid "Image"
-msgstr "Imagen"
-
-msgid "Video"
-msgstr "Video"
-
-msgid "Audio"
-msgstr "Audio"
-
-msgid "Curator"
-msgstr "Comisario"
-
-msgid "Participant"
-msgstr "Participante"
-
-msgid "Film-maker"
-msgstr "Realizador"
-
-msgid "Producer"
-msgstr "Productor"
-
-msgid "Lecturer"
-msgstr "Conferenciante"
-
-msgid "Speaker"
-msgstr "Orador"
-
-msgid "Artist"
-msgstr "Artista"
-
-msgid "Chair"
-msgstr "Catedrático"
-
-msgid "Photographer"
-msgstr "Fotógrafo"
-
-msgid "ArtWork"
-msgstr "Obra de arte"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Description"
-msgstr "Descripció"
-
-msgid "OriginalSource"
-msgstr "Orígen"
-
-msgid "Authors"
-msgstr "Autores"
-
-msgid "Collections"
-msgstr "Colecciones"
-
+#: fatac.theme/fatac/theme/browser/interfaces.py:51
+msgid "Folder name where the Plone representations of the rest objectes will be created, must be inside root folder."
+msgstr "Nombre de la carpeta donde las representaciones Plone del resto de objetos debe ser creada, tiene que estar en la carpeta raíz."
+
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
 msgid "Format"
 msgstr "Formato"
 
-msgid "Author"
-msgstr "Autor"
+#. Default: "Exposición"
+msgid "FrameActivity"
+msgstr "Exposición"
 
-msgid "Represents"
-msgstr "Representa"
+#. Default: "Francés"
+msgid "Frances"
+msgstr "Francés"
 
-msgid "Date"
-msgstr "Fecha"
+#. Default: "Generar miniatures"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:66
+msgid "GenerarMiniatures"
+msgstr "Generar miniaturas"
 
-msgid "Creator"
-msgstr "Creador"
+#. Default: "Genera les miniatures de tots els objectes d'una determinada classe. Això és útil per evitar sobrecarregar el servidor durant la cerca <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:68
+msgid "GenerarMiniaturesExplicacio"
+msgstr ""
 
-msgid "Collaborator"
-msgstr "Colaborador"
+#. Default: "Generar miniatures: Falta escollir la classe"
+#: fatac.forms/fatac/forms/browser/manteniment.py:43
+msgid "GenerarMiniaturesFaltaClasse"
+msgstr "Generar miniaturas: Falta escoger la clase"
 
-msgid "Places"
-msgstr "Lugares"
+#. Default: "Cerca i gestió medias"
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:30
+msgid "GestioCercaMedia"
+msgstr "Búsqueda y gestión de medias"
 
-msgid "Location"
-msgstr "Localización"
+#. Default: "Gestió dels media"
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:30
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:29
+msgid "GestioMedia"
+msgstr "Gestiób de Medias"
 
-msgid "Biography"
-msgstr "Biografía"
+#: fatac.content/fatac/content/profiles/default/types/fatac.ghost.xml
+msgid "Ghost"
+msgstr ""
 
-msgid "Name"
-msgstr "Nombre"
+#: fatac.content/fatac/content/dashboard.py:686
+msgid "Group ${name} has been added."
+msgstr "El grupo ${name} ha sido agregado."
 
-msgid "Designers"
-msgstr "Diseñadores"
+#: fatac.content/fatac/content/dashboard.py:697
+msgid "Group name required."
+msgstr "Nombre de grupo requerido."
 
-msgid "Translators"
-msgstr "Traductores"
+#: fatac.content/fatac/content/dashboard.py:488
+msgid "Group(s) deleted."
+msgstr "Grupo(s) borrado(s)."
 
-msgid "Editors"
-msgstr "Editores"
+#: zope/component/zcml.py:230
+msgid "Handler"
+msgstr "Controlador"
 
-msgid "Language"
-msgstr "Idioma"
+#: fatac.content/fatac/content/portletMyFiles.py:15
+#: fatac.content/fatac/content/portletMyGroups.py:15
+#: fatac.content/fatac/content/portletPlaylists.py:15
+msgid "How many items to list."
+msgstr "Cuántos elementos a listar."
 
-msgid "NumPages"
-msgstr "Nº páginas"
+#. Default: "Imagen"
+msgid "Image"
+msgstr "Imagen"
 
-msgid "Color"
-msgstr "Color"
+#. Default: "Indexar tot"
+#: fatac.forms/fatac/forms/browser/manteniment.py:82
+msgid "IndexAll"
+msgstr "Indexar todo"
 
-msgid "Measures"
-msgstr "Medidas"
+#. Default: "Indexar dades recents"
+#: fatac.forms/fatac/forms/browser/manteniment.py:53
+msgid "IndexarRecents"
+msgstr "Indexar datos recientes"
 
-msgid "RelatedActivities"
-msgstr "Actividades relacionadas"
+#. Default: "Indexar dades recents: cal indicar el temps "
+#: fatac.forms/fatac/forms/browser/manteniment.py:55
+msgid "IndexarRecentsFaltaTemps"
+msgstr "Indexar datos recientes: es necesario indicar el tiempo "
 
-msgid "Representation"
-msgstr "Representación"
+#. Default: "Indexar a Solr"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:57
+msgid "IndexarSolr"
+msgstr "Indexar en Solr"
 
-msgid "Technique"
-msgstr "Técnica"
+#. Default: "Indexa des de zero totes les dades actuals perquè siguin disponibles al motor de cerca Solr, d'acord amb allò especificat al mapping <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:59
+msgid "IndexarSolrExplicacio1"
+msgstr ""
 
+#. Default: "Indexa només les dades recentment introduides o modificades, en el temps establert. No actualitza els objectes esborrats <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:61
+msgid "IndexarSolrExplicacio2"
+msgstr ""
+
+#. Default: "Inglés"
+msgid "Ingles"
+msgstr "Inglés"
+
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:19
+msgid "Inici"
+msgstr "Inicio"
+
+#. Default: "Inserir nou objecte"
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:26
+msgid "InserirObjecte"
+msgstr "Inserir un nuevo objeto"
+
+#: zope/component/zcml.py:401
+msgid "Interface"
+msgstr "Interfaz"
+
+#: zope/component/zcml.py:353
+msgid "Interface provided by the utility."
+msgstr "Interfaz ofrecida por la utilidad."
+
+#: zope/component/zcml.py:457
+msgid "Interface that is also allowed if user has permission."
+msgstr "Interfaz que también se permite si el usuario tiene permiso."
+
+#: zope/component/zcml.py:90
+msgid "Interface the component provides"
+msgstr "Interfaz que el componente ofrece"
+
+#: zope/component/zcml.py:406
+msgid "Interface type"
+msgstr "Tipo de Interfaz"
+
+#: zope/component/zcml.py:243
+msgid "Interfaces or classes that this subscriber depends on"
+msgstr "Interfaces o clases de las que depende este subscriptor"
+
+#. Default: "Introdueix la data i hora del servidor per confirmar"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:91
+msgid "IntroduirHoraServidor"
+msgstr "Introducir la fecha y la hora del servidor para confirmar"
+
+#. Default: "Introdueix el nom de la classe"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:69
+msgid "IntroduirNomClasse"
+msgstr "Introducir el nombre de la clase"
+
+#. Default: "Introdueix el temps en minuts"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:62
+msgid "IntroduirTemps"
+msgstr "Introducir el tiempo en minutos"
+
+#. Default: "Tipo"
 msgid "Kind"
 msgstr "Tipo"
 
-msgid "Cerca a VTLS"
-msgstr "Buscar en VTLS"
+#. Default: "Idioma"
+msgid "Language"
+msgstr "Idioma"
 
-msgid "RelatedPublications"
-msgstr "Publicaciones"
+#. Default: "Conferenciante"
+msgid "Lecturer"
+msgstr "Conferenciante"
 
-msgid "Cerca a la biblioteca"
-msgstr "Buscar en biblioteca"
+#: fatac.content/fatac/content/portlets/portletPlaylists.pt:6
+msgid "Les Meves Playlists"
+msgstr "Mis Playlists"
 
-msgid "Tanca"
-msgstr "Cerrar"
+#. Default: "Licencias"
+msgid "License"
+msgstr "Licencias"
 
+#. Default: "Seleccionar"
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:70
+msgid "Link"
+msgstr "Enlace"
+
+#: fatac.content/fatac/content/playlist.py:44
+msgid "List of Groups that has this Playlist"
+msgstr "Lista de grupos que tienen esta Playlist"
+
+#: zope/component/zcml.py:135
+msgid "Locate"
+msgstr "Localizar"
+
+#. Default: "Localización"
+msgid "Location"
+msgstr "Localización"
+
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:32
+msgid "Manteniment"
+msgstr "Mantenimiento"
+
+#. Default: "Medidas"
+msgid "Measures"
+msgstr "Medidas"
+
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
+msgid "Media"
+msgstr "Media"
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:29
+msgid "Media Server URI"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:28
+msgid "My Files items"
+msgstr "Elementos de Mis archivos"
+
+#: fatac.content/fatac/content/portletMyGroups.py:28
+msgid "MyGroups items"
+msgstr "elementos de Mis grupos"
+
+#: zope/component/zcml.py:113
+msgid "Name"
+msgstr "Nombre"
+
+#: zope/component/zcml.py:359
+msgid "Name of the registration.  This is used by application code when locating a utility."
+msgstr ""
+"Nombre del registro. Esto se usa por código de aplicación cuando se\n"
+"localiza una utilidad."
+
+#: fatac.content/fatac/content/dashboard.py:467
+msgid "No changes made."
+msgstr "No se ha aplicado ningún cambio"
+
+#. Default: "Nom de la propietat"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:76
+msgid "NomPropietat"
+msgstr "Nombre de la propiedad"
+
+#. Default: "Nº páginas"
+msgid "NumPages"
+msgstr "Nº páginas"
+
+#: fatac.content/fatac/content/portletMyFiles.py:14
+#: fatac.content/fatac/content/portletMyGroups.py:14
+#: fatac.content/fatac/content/portletPlaylists.py:14
+msgid "Number of items to display"
+msgstr "Número de elementos a mostrar"
+
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
+msgid "Objectes"
+msgstr "Objetos"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:14
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:15
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:88
 msgid "Obre"
 msgstr "Abrir"
 
+#. Default: "Ontologies"
+#: fatac.forms/fatac/forms/browser/manteniment.py:74
+msgid "Ontologies"
+msgstr "Ontologias"
+
+#: fatac.content/fatac/content/playlist.py:34
+msgid "Ordered List To Play"
+msgstr "Lista ordenanda para reproducir"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:45
+msgid "Ordre:"
+msgstr "Orden:"
+
+#. Default: "Organizaciones"
+msgid "Organisation"
+msgstr "Organizaciones"
+
+#: fatac.content/fatac/content/playlist.py:51
+msgid "Original Group"
+msgstr "grupo original"
+
+#. Default: "Orígen"
+msgid "OriginalSource"
+msgstr "Orígen"
+
+#. Default: "Participante"
+msgid "Participant"
+msgstr "Participante"
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:25
+msgid "Per exemple: http://example.com/rest/"
+msgstr "Por ejemplo: http://example.com/rest/"
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:19
+msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest"
+msgstr "Por ejemplo: http://localhost:8080/ArtsCombinatoriesRest"
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:30
+msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"
+msgstr "Por ejemplo: http://localhost:8080/ArtsCombinatoriesRest/media/"
+
+#: zope/component/zcml.py:61
+msgid "Permission"
+msgstr "Permisos"
+
+#: zope/component/zcml.py:62
+msgid "Permission required to use this component."
+msgstr "Permiso requerido para usar este componente."
+
+#. Default: "Personas"
+msgid "Person"
+msgstr "Personas"
+
+#. Default: "Fotógrafo"
+msgid "Photographer"
+msgstr "Fotógrafo"
+
+#. Default: "Lugares"
+msgid "Places"
+msgstr "Lugares"
+
+#: fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
+msgid "Playlist"
+msgstr "Playlist"
+
+#: fatac.content/fatac/content/ghost.py:41
+#: fatac.content/fatac/content/playlist.py:24
+msgid "Playlist Image"
+msgstr "Imagen de la Playlist"
+
+#: fatac.content/fatac/content/portletPlaylists.py:28
+msgid "Playlists items"
+msgstr "Elementos de la Playlist"
+
+#. Default: "Productor"
+msgid "Producer"
+msgstr "Productor"
+
+#. Default: "Protección de patrimonio"
+msgid "ProtectionPromotion"
+msgstr "Protección de patrimonio"
+
+#. Default: "Protección de patrimonio"
+msgid "ProtectionPromotionAT"
+msgstr "Protección de patrimonio"
+
+#: zope/component/zcml.py:352
+msgid "Provided interface"
+msgstr "Interfaz ofrecida"
+
+#. Default: "Publicación"
+msgid "Publication"
+msgstr "Publicación"
+
+#. Default: "Publicaciones"
+msgid "Publications"
+msgstr "Publicaciones"
+
+#: zope/component/zcml.py:68
+msgid "Python name of a factory which can create the implementation object.  This must identify an object in a module using the full dotted name. If specified, the ``component`` field must be left blank."
+msgstr ""
+"Nombre Python de una factoría que puede crear el objeto de la implementación.\n"
+"Esto debe identificar un objeto en un módulo usando el nombre completo\n"
+"separado por puntos. Si se especifica, el campo ``component`` debe dejarse\n"
+"en blanco."
+
+#: zope/component/zcml.py:53
+msgid "Python name of the implementation object.  This must identify an object in a module using the full dotted name.  If specified, the ``factory`` field must be left blank."
+msgstr ""
+"Nombre Python del objeto de la implementación. Esto debe identificar un\n"
+"objeto en un módulo usando el nombre completo separado por puntos. Si se\n"
+"especifica, el campo ``factory`` debe dejarse en blanco."
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:35
+msgid "REST request timeout"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:18
+msgid "REST server URI"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:24
+msgid "REST server public URI"
+msgstr ""
+
+#. Default: "Recarregar ontologies"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:45
+msgid "RecarregarOntologies"
+msgstr "Recargar ontologías"
+
+#. Default: "Reiniciar rols"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:82
+msgid "ReiniciarRols"
+msgstr "reiniciar roles"
+
+#. Default: "Acció necessària perquè els canvis de rol dels usuaris es facin efectius"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:84
+msgid "ReiniciarRolsExplicacio"
+msgstr "Acción necesaria para que los cambios de rol de los usuarios se hagan efectivos"
+
+#. Default: "Actividades relacionadas"
+msgid "RelatedActivities"
+msgstr "Actividades relacionadas"
+
+#. Default: "Publicaciones"
+msgid "RelatedPublications"
+msgstr "Publicaciones"
+
+#. Default: "Representación"
+msgid "Representation"
+msgstr "Representación"
+
+#. Default: "Representa"
+msgid "Represents"
+msgstr "Representa"
+
+#: zope/component/zcml.py:504
+msgid "Request type"
+msgstr "Tipo de petición"
+
+#. Default: "Reset: Falta confirmar"
+#: fatac.forms/fatac/forms/browser/manteniment.py:31
+msgid "ResetFaltaConfirmar"
+msgstr "Reset: Falta confirmar"
+
+#. Default: "Reiniciar rols"
+#: fatac.forms/fatac/forms/browser/manteniment.py:86
+msgid "RestartRoles"
+msgstr "Reiniciar roles"
+
+#. Default: "Roles"
+msgid "Role"
+msgstr "Roles"
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:30
+msgid "Save"
+msgstr "Guardar"
+
+#: fatac.theme/fatac/theme/browser/templates/cercador.pt:4
+msgid "Search"
+msgstr "BÚSQUEDA"
+
+#. Default: "Buscar al Site"
+#: ../../../browser/templates/cercador.pt:4
+msgid "Search Site"
+msgstr "Buscar en el Site"
+
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:94
 msgid "Següents"
 msgstr "Siguientes"
 
-msgid "Anteriors"
-msgstr "Anteriores"
+#. Default: "Selecciona una tasca a realitzar"
+#: fatac.forms/fatac/forms/browser/manteniment.py:19
+msgid "SeleccionaTasca"
+msgstr "Seleccionar una tare a realizar"
 
-msgid "Carregant..."
-msgstr "Cargando..."
+#. Default: "Orador"
+msgid "Speaker"
+msgstr "Orador"
 
-msgid "Afegeix Nova Playlist"
-msgstr "Añadir Nueva Playlist"
+#: fatac.theme/fatac/theme/browser/controlpanel.py:18
+msgid "Specific settings for FATac based sites"
+msgstr ""
 
-msgid "Afegeix Nou Fitxer"
-msgstr "Añadir Nuevo Fichero"
+#: zope/component/zcml.py:426
+msgid "Specifications of the objects to be viewed"
+msgstr "Especificaciones de los objetos que van a ser vistos"
 
-msgid "Afegeix Nou Grup"
-msgstr "Añadir Nuevo Grupo"
+#: zope/component/zcml.py:97
+msgid "Specifications to be adapted"
+msgstr "Especificaciones para ser adaptadas"
 
-msgid "FrameActivity"
-msgstr "Exposición"
+#: zope/component/zcml.py:224
+msgid "Subscriber factory"
+msgstr "Factoría de subscriptores"
+
+#. Default: "Substitueix"
+#: fatac.forms/fatac/forms/browser/manteniment.py:66
+msgid "Substitueix"
+msgstr "Substituir"
+
+#. Default: "Substitueix: falten paràmetres per indicar "
+#: fatac.forms/fatac/forms/browser/manteniment.py:68
+msgid "SubstitueixFaltenParams"
+msgstr "Substituir: faltan parámetros por indicar "
+
+#. Default: "Substitueix: cal indicar els paràmetres "
+#: fatac.forms/fatac/forms/browser/manteniment.py:70
+msgid "SubstitueixFaltenTotsParams"
+msgstr "Substituir: es necesario indicar los parámetros "
+
+#. Default: "Substituir textos"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:73
+msgid "SubstituirTextos"
+msgstr "Substituir textos"
+
+#. Default: "Substitueix de cop tots els textos d'un camp especificat. Acció útil per a canviar totes les URL de cop quan es canvia el domini del servidor. Cal indicar: el nom de la propietat que es canviarà (forma \"prefix:NomPropietat\"), el text a substituir, i el nou text."
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:75
+msgid "SubstituirTextosExplicacio"
+msgstr "Substituir de golpe todos los textos de un campo especifico. Acción útil para cambiar todas las URL a la vez cuando se cambia de dominio el servidor. Es necesario indicar: el nombre de la propiedad que se cambiará (forma \"prefijo:NomPropiedad\"), el texto a substituir, y el nuevo texto."
+
+#: fatac.content/fatac/content/dummy.py:18
+#: fatac.content/fatac/content/ghost.py:33
+msgid "Tag List"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:13
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:14
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:87
+msgid "Tanca"
+msgstr "Cerrar"
+
+#. Default: "Técnica"
+msgid "Technique"
+msgstr "Técnica"
+
+#. Default: "Text anterior"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:77
+msgid "TextAnterior"
+msgstr "Texto anterior"
+
+#. Default: "Text nou"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:78
+msgid "TextNou"
+msgstr "nuevo texto"
+
+#: fatac.content/fatac/content/dashboard.py:664
+msgid "The group name you entered is not valid."
+msgstr "El nombre de grupo introducido no es válido."
+
+#: zope/component/zcml.py:495
+msgid "The interface this component provides."
+msgstr "La interfaz que este componente ofrece."
+
+#: zope/component/zcml.py:616
+msgid "The layer the resource is in."
+msgstr ""
+
+#: zope/component/zcml.py:448
+msgid "The layer the view is in."
+msgstr "La capa en la que la vista se encuentra."
+
+#: zope/component/zcml.py:488
+msgid "The name of the resource."
+msgstr "El nombre del recurso."
+
+#: zope/component/zcml.py:489
+msgid "The name shows up in URLs/paths. For example 'foo'."
+msgstr "El nombre se muestra en rutas/URLs."
+
+#: zope/component/zcml.py:437
+msgid "The permission needed to use the view."
+msgstr "Los permisos necesarios para usar la vista."
+
+#: zope/component/zcml.py:107
+msgid "This adapter is only available, if the principal has this permission."
+msgstr "Este adaptador sólo está disponible, si el principal tiene este permiso."
+
+#: zope/component/zcml.py:91
+msgid "This attribute specifies the interface the adapter instance must provide."
+msgstr "Este atributo especifica la interfaz que la instancia del adaptador debe ofrecer."
+
+#: fatac.content/fatac/content/dummy.py:19
+#: fatac.content/fatac/content/ghost.py:34
+msgid "This is a list of tags that have this image"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist.py:45
+msgid "This is a list of the Groups that can show this playlist"
+msgstr "Lista de grupos que pueden mostrar esta Playlist"
+
+#: fatac.content/fatac/content/playlist.py:35
+msgid "This is a list that has the order of the DB objects"
+msgstr "Listaque contiene el orden de los elementos de la base de datos"
+
+#: fatac.content/fatac/content/portletPlaylists.py:34
+msgid "This portlet displays Playlists."
+msgstr "Portlet que muestra las Playlists"
+
+#: fatac.content/fatac/content/portletMyFiles.py:34
+msgid "This portlet displays my files."
+msgstr "Portlet que muestra Mis archivos"
+
+#: fatac.content/fatac/content/portletMyGroups.py:34
+msgid "This portlet displays my groups."
+msgstr "Portlet que muestra  Mis grupos"
+
+#: zope/component/zcml.py:98
+msgid "This should be a list of interfaces or classes"
+msgstr "Esto debe ser una lista de interfaces o clases"
+
+#: zope/component/zcml.py:253
+msgid "This subscriber is only available, if the principal has this permission."
+msgstr "Este subscriptor sólo esta disponible si el principal tiene este permiso."
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:36
+msgid "Timeout in seconds for the resquests to the REST Server."
+msgstr ""
+
+#. Default: "Título"
+msgid "Title"
+msgstr "Título"
+
+#: fatac.theme/fatac/theme/browser/templates/explorarview.pt:21
+msgid "Totes les playlists"
+msgstr "Todas las Playlist"
+
+#. Default: "Todos"
+msgid "Tots"
+msgstr "Todos"
+
+#. Default: "Idiomas"
+msgid "Translation"
+msgstr "Idiomas"
+
+#. Default: "Traductores"
+msgid "Translators"
+msgstr "Traductores"
+
+#: zope/component/zcml.py:121
+msgid "Trusted"
+msgstr "Confiable"
+
+#. Default: "Video"
+msgid "Video"
+msgstr "Video"
+
+#: zope/component/zcml.py:471
+msgid "View attributes that are also allowed if the user has permission."
+msgstr "Atributos de la vista que también se permiten si el usuario tiene permiso."
+
+#: zope/component/zcml.py:627
+msgid "View attributes that are also allowed if user has permission."
+msgstr "Atributos de vista que también se permiten si el usuario tiene permiso."
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:16
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:16
+msgid "Visualització de búsqueda"
+msgstr "Visualización de la búsqueda"
+
+#. Default: "Años"
+msgid "Year"
+msgstr "Años"
+
+#. Default: "Agents"
+#: fatac.theme/fatac/theme/browser/templates/explorarview.pt:18
+msgid "agentes"
+msgstr "Agentes"
+
+#. Default: "Amb el suport de:"
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:16
+msgid "amb_el_suport_de"
+msgstr "Con el soporte de:"
+
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:20
+msgid "ampliar_filtres"
+msgstr "ampliar filtros"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:96
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:96
+msgid "arxius"
+msgstr "archivos"
+
+#. Default: "Forgot your password?"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
+msgid "box_forgot_password_option"
+msgstr "¿Ha olvidado su contraseña?"
+
+#: fatac.theme/fatac/theme/browser/templates/cercaview.pt:30
+msgid "buscar a biblioteca"
+msgstr "Buscar en la bibliteca"
+
+#. Default: "cat"
+#: ../../../browser/languageselector.pt:13,
+#: 29
+msgid "ca"
+msgstr "cat"
+
+#. Default: "0 resultats"
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:119
+#: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:47
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:119
+msgid "cap_resultat"
+msgstr "Ningún resultado"
+
+#. Default: "Tipo de documento"
+msgid "class"
+msgstr "Tipo de documento"
+
+#. Default: "Col·lecció"
+#: fatac.theme/fatac/theme/browser/templates/explorarview.pt:20
+msgid "colection"
+msgstr "Colecciones"
+
+#. Default: "Amb la col·laboració de"
+#: ../../../browser/templates/footer.pt:52
+msgid "collaboracio"
+msgstr "Con la colaboración de"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:21
+msgid "collaboracio1"
+msgstr "Ministerio de Educación"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:93
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:93
+msgid "de"
+msgstr "de"
+
+#. Default: "List of My Files from user."
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "description_myfiles_portlet"
+msgstr "Lista de Mis archivos del usuario"
+
+#. Default: "List of My Groups from user."
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "description_mygroups_portlet"
+msgstr "Lista de Mis grupos del usuario"
+
+#. Default: "If you do not have an account here, head over to the ${registration_form}."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:315
+msgid "description_no_account"
+msgstr "Si no tiene una cuenta aquí, vaya al ${registration_form} para convertirse en miembro."
+
+#. Default: "registration form"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:316
+msgid "description_no_account_registration_linktext"
+msgstr "formulario de registro"
+
+#. Default: "List of playlists from user."
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "description_playlist_portlet"
+msgstr "Lista de Mis Playlist del usuario"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:73
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:25
+#: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:20
+msgid "dreta"
+msgstr "página siguiente"
+
+#. Default: "eng"
+#: ../../../browser/languageselector.pt:13,
+#: 29
+msgid "en"
+msgstr "eng"
+
+#. Default: "En col·laboració amb:"
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:11
+msgid "en_colaboracio_amb"
+msgstr "En colaboración con:"
+
+#. Default: "Cookies are not enabled. You must enable cookies before you can log in."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:64
+msgid "enable_cookies_message_before_login"
+msgstr "Las cookies no han sido habilitadas. Debe habilitar las cookies antes de iniciar la sesión."
+
+#. Default: "cast"
+#: ../../../browser/languageselector.pt:13,
+#: 29
+msgid "es"
+msgstr "cast"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:70
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:24
+#: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:17
+msgid "esquerra"
+msgstr "página anterior"
+
+#. Default: "Esdeveniments"
+#: fatac.theme/fatac/theme/browser/templates/explorarview.pt:19
+msgid "eventos"
+msgstr "Eventos"
+
+#. Default: "Explora la nostra base de dades per:"
+#: ../../../browser/templates/explorarview.pt:16
+msgid "explora_bbdd"
+msgstr "Explora nuestra base de datos por:"
+
+#. Default: "Finançament"
+#: ../../../browser/templates/footer.pt:22
+msgid "financament"
+msgstr "Financiación"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:17
+msgid "financament1"
+msgstr "Ministerio de Educación"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:18
+msgid "financament2"
+msgstr "Plan Avanza"
+
+#. Default: "New user?"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
+msgid "heading_new_user"
+msgstr "¿Usuario nuevo?"
+
+#. Default: "Personal tools"
+#: ../../../browser/templates/personal_bar.pt:3
+msgid "heading_personal_tools"
+msgstr "Herramientas Personales"
+
+#. Default: "Enter full name, e.g. John Smith."
+#: fatac.core/fatac/core/userdataschema.py:33
+msgid "help_full_name_creation"
+msgstr "Introduzca su nombre completo, por ejemplo José Pérez."
+
+#. Default: "The URL for your external home page, if you have one."
+#: fatac.core/fatac/core/userdataschema.py:66
+msgid "help_homepage"
+msgstr "El URL para su página personal externa, si tiene una."
+
+#. Default: "If you have forgotten your password, ${click_here}."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:301
+msgid "help_password_retrieval"
+msgstr "Si ha olvidado su contraseña, ${click_here} ."
+
+#. Default: "Check this to have your email address filled in automatically when you log in later."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:186
+msgid "help_remember_my_email"
+msgstr "Marque esta opción para que su dirección de correo se rellene automáticamente cuando inicie la sesión más tarde."
+
+#. Default: "Check this to have your user name filled in automatically when you log in later."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:177
+msgid "help_remember_my_name"
+msgstr "Marcando la opción 'Recordar mi nombre' hará que el navegador guarde una cookie con su nombre de usuario. Cuando ustéd regrese al site más tarde, su nombre de usuario aparecerá automáticamente."
+
+#. Default: "we can send you a new one"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:302
+msgid "label_click_here_to_retrieve"
+msgstr "podemos enviarle una nueva"
+
+#. Default: "Delete"
+#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:96
+msgid "label_delete"
+msgstr "Eliminar"
+
+#. Default: "E-mail"
+#: fatac.core/fatac/core/userdataschema.py:38
+msgid "label_email"
+msgstr "Correo"
+
+#. Default: "Full Name"
+#: fatac.core/fatac/core/userdataschema.py:32
+msgid "label_full_name"
+msgstr "Nombre Completo"
+
+#. Default: "Home page"
+#: fatac.core/fatac/core/userdataschema.py:65
+msgid "label_homepage"
+msgstr "Página personal"
+
+#. Default: "Log in"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
+msgid "label_log_in"
+msgstr "Entrar"
+
+#. Default: "Login Name"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
+msgid "label_login_name"
+msgstr "Nombre de Usuario"
+
+#. Default: "Log in to add comments"
+#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:146
+msgid "label_login_to_add_comments"
+msgstr "Inicie sesión para agregar comentarios"
+
+#. Default: "Password"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:150
+msgid "label_password"
+msgstr "Contraseña"
+
+#. Default: "Remember my email address."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:184
+msgid "label_remember_my_email"
+msgstr "Recordar mi dirección de correo."
+
+#. Default: "Remember my name."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:175
+msgid "label_remember_my_name"
+msgstr "Recuerda mi nombre."
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:106
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:106
+msgid "large"
+msgstr "Ver más grande"
+
+#. Default: "Since cookie authentication is disabled, cookie-based login is not available."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:69
+msgid "login_form_disabled"
+msgstr "Debido a que la autenticación basada en cookie esté deshabilitada, el inicio de sesión basado en cookies no está disponible."
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:44
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:44
+msgid "mes_opcions"
+msgstr "más opciones"
+
+#: fatac.forms/fatac/forms/browser/updateExisting.py:155
+#: fatac.forms/fatac/forms/browser/uploadNew.py:43
+msgid "name"
+msgstr "Nombre"
+
+#. Default: "Ordre:"
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:48
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:45
+msgid "ordre"
+msgstr "tipo de ordenación:"
+
+#. Default: "pàgina"
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:91
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:91
+msgid "pagina"
+msgstr "página"
+
+#. Default: "Participants"
+#: ../../../browser/templates/footer.pt:31
+msgid "participants"
+msgstr "Participantes"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:8
+msgid "participants1"
+msgstr "Fundación Antoni Tàpies"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:12
+msgid "participants2"
+msgstr "Universidad Politécnica de Valencia"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:13
+msgid "participants3"
+msgstr "Universidad Politécnica de Barcelona"
+
+#. Default: "Patrocinadors institucionals"
+#: ../../../browser/templates/footer.pt:43
+msgid "patrocinadors"
+msgstr "Patrocinadores institucionales"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:19
+msgid "patrocinadors1"
+msgstr "Generalitat de Catalunya"
+
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:20
+msgid "patrocinadors2"
+msgstr "Ayuntamiento de Barcelona"
+
+#: fatac.theme/fatac/theme/browser/templates/filtresview.pt:19
+msgid "reduir_filtres"
+msgstr "reducir filtros"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:104
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:104
+msgid "small"
+msgstr "Ver más pequeño"
+
+#. Default: "Close this box."
+#: fatac.content/fatac/content/jsvariables.py:24
+msgid "text_ajax_close_box_message"
+msgstr "Cierrar esta ventana"
+
+#. Default: "No response from server. Please try again later."
+#: fatac.content/fatac/content/jsvariables.py:21
+msgid "text_ajax_noresponse_message"
+msgstr "No hay respuesta del servidor. Por favor, inténtelo de nuevo más tarde."
+
+#. Default: "Your form has not been saved. All changes you have made will be lost."
+#: fatac.content/fatac/content/jsvariables.py:15
+msgid "text_form_modified_message"
+msgstr "Su formulario no ha sido guardado. Todos los cambios realizados se perderán."
+
+#. Default: "You already clicked the submit button. Do you really want to submit this form again?"
+#: fatac.content/fatac/content/jsvariables.py:18
+msgid "text_form_resubmit_message"
+msgstr "Ya ha hecho clic en el botón de enviar. ¿Realmente desea enviar de nuevo este formulario?"
+
+#. Default: "Portlet MyFiles"
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "title_myfiles_portlet"
+msgstr "Portlets Mis archivos"
+
+#. Default: "Portlet MyGroups"
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "title_mygroups_portlet"
+msgstr "Portlet Mis Grupos"
+
+#. Default: "Portlet Playlists"
+#: fatac.content/fatac/content/profiles/default/portlets.xml
+msgid "title_playlist_portlet"
+msgstr "Portlet Playlists"
+
+#. Default: "Últims consultats"
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:116
+msgid "ultims_consultats"
+msgstr "Últimos consultados"
+
+#. Default: "Últims documents"
+#: fatac.theme/fatac/theme/browser/templates/homeview.pt:89
+msgid "ultims_documents"
+msgstr "Últimos documentos"
+
+#. Default: "Una iniciativa de:"
+#: fatac.theme/fatac/theme/browser/templates/footer.pt:7
+msgid "una_iniciativa_de"
+msgstr "Una iniciativa de"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:108
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:108
+msgid "visualitzacio1"
+msgstr "Listado"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:109
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:109
+msgid "visualitzacio2"
+msgstr "Miniaturas"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:110
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:110
+msgid "visualitzacio3"
+msgstr "Vista previa"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:111
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:111
+msgid "visualitzacio4"
+msgstr "Pantalla completa"
+
