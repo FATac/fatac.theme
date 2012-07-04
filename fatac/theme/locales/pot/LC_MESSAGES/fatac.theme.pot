@@ -1,7 +1,10 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-03 08:25+0000\n"
+"POT-Creation-Date: 2012-07-04 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +15,11 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: fatac.theme\n"
+
+#: fatac.content/fatac/content/playlist_templates/playlistView.pt:45
+msgid "<span>x</span> <span id="tipus_entrada">x</span> <span class="arrowDownAlternative"><img src="++resource++fatac.theme.images/arrow_down_grey.gif" /></span>"
+msgstr ""
 
 #: zope/component/zcml.py:231
 msgid "A callable object that handles events."
@@ -79,18 +86,22 @@ msgstr ""
 msgid "Administracio"
 msgstr ""
 
+#. Default: "Afegeix Nou Fitxer"
 #. Default: "Añadir Nuevo Fichero"
 msgid "Afegeix Nou Fitxer"
 msgstr ""
 
+#. Default: "Afegeix Nou Grup"
 #. Default: "Añadir Nuevo Grupo"
 msgid "Afegeix Nou Grup"
 msgstr ""
 
+#. Default: "Afegeix Nova Playlist"
 #. Default: "Añadir Nueva Playlist"
 msgid "Afegeix Nova Playlist"
 msgstr ""
 
+#. Default: "Alfabètic"
 #. Default: "alfabéticamente"
 msgid "AlphabeticalOrder"
 msgstr ""
@@ -99,10 +110,12 @@ msgstr ""
 msgid "Anteriors"
 msgstr ""
 
+#. Default: "Àrab"
 #. Default: "Árabe"
 msgid "Arabe"
 msgstr ""
 
+#. Default: "Obra d'art"
 #. Default: "Obra de arte"
 msgid "ArtWork"
 msgstr ""
@@ -120,6 +133,7 @@ msgstr ""
 msgid "AssignarDretsLegals"
 msgstr ""
 
+#. Default: "Audi"
 #. Default: "Audio"
 msgid "Audio"
 msgstr ""
@@ -128,10 +142,12 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
+#. Default: "Autors"
 #. Default: "Autores"
 msgid "Authors"
 msgstr ""
 
+#. Default: "Biografia"
 #. Default: "Biografía"
 msgid "Biography"
 msgstr ""
@@ -154,6 +170,7 @@ msgstr ""
 msgid "Carregant..."
 msgstr ""
 
+#. Default: "Català"
 #. Default: "Catalán"
 msgid "Catala"
 msgstr ""
@@ -162,19 +179,22 @@ msgstr ""
 msgid "Cerca"
 msgstr ""
 
+#. Default: "Cerca a VTLS"
 #. Default: "Buscar en VTLS"
 msgid "Cerca a VTLS"
 msgstr ""
 
+#. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
 msgstr ""
 
+#. Default: "Catedràtic"
 #. Default: "Catedrático"
 msgid "Chair"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:256
+#: fatac.content/fatac/content/dashboard.py:232
 msgid "Changes made."
 msgstr ""
 
@@ -182,26 +202,31 @@ msgstr ""
 msgid "Changes saved"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:479
+#: fatac.content/fatac/content/dashboard.py:455
 msgid "Changes saved."
 msgstr ""
 
+#. Default: "Cronològic"
 #. Default: "cronológicamente"
 msgid "ChronologicalOrder"
 msgstr ""
 
+#. Default: "Tipus"
 #: zope/component/zcml.py:442
 msgid "Class"
 msgstr ""
 
+#. Default: "Col·laborador"
 #. Default: "Colaborador"
 msgid "Collaborator"
 msgstr ""
 
+#. Default: "Col·lecció"
 #. Default: "Colecciones"
 msgid "Collection"
 msgstr ""
 
+#. Default: "Col·leccions"
 #. Default: "Colecciones"
 msgid "Collections"
 msgstr ""
@@ -218,10 +243,11 @@ msgstr ""
 msgid "Convertir"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:672
+#: fatac.content/fatac/content/dashboard.py:648
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
 msgstr ""
 
+#. Default: "País"
 #. Default: "Ubicaciones"
 msgid "Country"
 msgstr ""
@@ -230,14 +256,17 @@ msgstr ""
 msgid "Creator"
 msgstr ""
 
+#. Default: "Gestió cultural"
 #. Default: "Gestión cultural"
 msgid "CulturalManagement"
 msgstr ""
 
+#. Default: "Comissari"
 #. Default: "Comisario"
 msgid "Curator"
 msgstr ""
 
+#. Default: "Data"
 #. Default: "Fecha"
 msgid "Date"
 msgstr ""
@@ -246,6 +275,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#. Default: "Dissenyador"
 #. Default: "Diseñadores"
 msgid "Designers"
 msgstr ""
@@ -279,6 +309,7 @@ msgstr ""
 msgid "Edit cancelled"
 msgstr ""
 
+#. Default: "Editors"
 #. Default: "Editores"
 msgid "Editors"
 msgstr ""
@@ -287,6 +318,7 @@ msgstr ""
 msgid "Els meus Grups"
 msgstr ""
 
+#. Default: "Error"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:61
 msgid "Error"
 msgstr ""
@@ -305,10 +337,12 @@ msgstr ""
 msgid "Esborrar"
 msgstr ""
 
+#. Default: "Castellà"
 #. Default: "Español"
 msgid "Espanol"
 msgstr ""
 
+#. Default: "Esdeveniments"
 #. Default: "Eventos"
 msgid "Events"
 msgstr ""
@@ -344,6 +378,7 @@ msgstr ""
 msgid "Fatac settings"
 msgstr ""
 
+#. Default: "realitzador"
 #. Default: "Realizador"
 msgid "Film-maker"
 msgstr ""
@@ -365,10 +400,12 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
+#. Default: "Exposició"
 #. Default: "Exposición"
 msgid "FrameActivity"
 msgstr ""
 
+#. Default: "Francès"
 #. Default: "Francés"
 msgid "Frances"
 msgstr ""
@@ -388,33 +425,38 @@ msgstr ""
 msgid "GenerarMiniaturesFaltaClasse"
 msgstr ""
 
+#. Default: "Cerca i gestió de medias"
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:33
+msgid "GestioCercaMedia"
+msgstr ""
+
 #. Default: "Gestió dels media"
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:30
 #: fatac.forms/fatac/forms/browser/templates/inici.pt:29
 msgid "GestioMedia"
 msgstr ""
 
-#. Default: "Cerca i gestió medias"
+#. Default: "Gestió de medias"
 #: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:30
-msgid "GestioCercaMedia"
+msgid "GestioMedias"
 msgstr ""
 
 #: fatac.content/fatac/content/profiles/default/types/fatac.ghost.xml
 msgid "Ghost"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:686
+#: fatac.content/fatac/content/dashboard.py:666
 msgid "Group ${name} has been added."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:697
+#: fatac.content/fatac/content/dashboard.py:677
 msgid "Group name required."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:488
+#: fatac.content/fatac/content/dashboard.py:464
 msgid "Group(s) deleted."
 msgstr ""
 
+#. Default: "Controlador"
 #: zope/component/zcml.py:230
 msgid "Handler"
 msgstr ""
@@ -425,6 +467,7 @@ msgstr ""
 msgid "How many items to list."
 msgstr ""
 
+#. Default: "Imatge"
 #. Default: "Imagen"
 msgid "Image"
 msgstr ""
@@ -459,6 +502,7 @@ msgstr ""
 msgid "IndexarSolrExplicacio2"
 msgstr ""
 
+#. Default: "Anglès"
 #. Default: "Inglés"
 msgid "Ingles"
 msgstr ""
@@ -511,6 +555,7 @@ msgstr ""
 msgid "IntroduirTemps"
 msgstr ""
 
+#. Default: "Tipus"
 #. Default: "Tipo"
 msgid "Kind"
 msgstr ""
@@ -519,6 +564,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+#. Default: "Conferenciant"
 #. Default: "Conferenciante"
 msgid "Lecturer"
 msgstr ""
@@ -527,6 +573,7 @@ msgstr ""
 msgid "Les Meves Playlists"
 msgstr ""
 
+#. Default: "Llicències"
 #. Default: "Licencias"
 msgid "License"
 msgstr ""
@@ -536,6 +583,7 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
+#. Default: "Llista de grups que tenen aquesta Playlist"
 #: fatac.content/fatac/content/playlist.py:44
 msgid "List of Groups that has this Playlist"
 msgstr ""
@@ -544,6 +592,7 @@ msgstr ""
 msgid "Locate"
 msgstr ""
 
+#. Default: "Ubicació"
 #. Default: "Localización"
 msgid "Location"
 msgstr ""
@@ -552,6 +601,7 @@ msgstr ""
 msgid "Manteniment"
 msgstr ""
 
+#. Default: "Mesures"
 #. Default: "Medidas"
 msgid "Measures"
 msgstr ""
@@ -572,6 +622,7 @@ msgstr ""
 msgid "MyGroups items"
 msgstr ""
 
+#. Default: "Nom"
 #: zope/component/zcml.py:113
 msgid "Name"
 msgstr ""
@@ -580,7 +631,7 @@ msgstr ""
 msgid "Name of the registration.  This is used by application code when locating a utility."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:467
+#: fatac.content/fatac/content/dashboard.py:443
 msgid "No changes made."
 msgstr ""
 
@@ -589,6 +640,7 @@ msgstr ""
 msgid "NomPropietat"
 msgstr ""
 
+#. Default: "Nombre de pàgines"
 #. Default: "Nº páginas"
 msgid "NumPages"
 msgstr ""
@@ -622,6 +674,7 @@ msgstr ""
 msgid "Ordre:"
 msgstr ""
 
+#. Default: "Organitzacions"
 #. Default: "Organizaciones"
 msgid "Organisation"
 msgstr ""
@@ -630,10 +683,12 @@ msgstr ""
 msgid "Original Group"
 msgstr ""
 
+#. Default: "Origen"
 #. Default: "Orígen"
 msgid "OriginalSource"
 msgstr ""
 
+#. Default: "Participant"
 #. Default: "Participante"
 msgid "Participant"
 msgstr ""
@@ -658,14 +713,17 @@ msgstr ""
 msgid "Permission required to use this component."
 msgstr ""
 
+#. Default: "Persones"
 #. Default: "Personas"
 msgid "Person"
 msgstr ""
 
+#. Default: "Fotògraf"
 #. Default: "Fotógrafo"
 msgid "Photographer"
 msgstr ""
 
+#. Default: "Llocs"
 #. Default: "Lugares"
 msgid "Places"
 msgstr ""
@@ -687,10 +745,12 @@ msgstr ""
 msgid "Producer"
 msgstr ""
 
+#. Default: "Protecció de patrimonis"
 #. Default: "Protección de patrimonio"
 msgid "ProtectionPromotion"
 msgstr ""
 
+#. Default: "Protecció de patrimoni"
 #. Default: "Protección de patrimonio"
 msgid "ProtectionPromotionAT"
 msgstr ""
@@ -699,10 +759,12 @@ msgstr ""
 msgid "Provided interface"
 msgstr ""
 
+#. Default: "Publicació"
 #. Default: "Publicación"
 msgid "Publication"
 msgstr ""
 
+#. Default: "Publicacions"
 #. Default: "Publicaciones"
 msgid "Publications"
 msgstr ""
@@ -742,14 +804,17 @@ msgstr ""
 msgid "ReiniciarRolsExplicacio"
 msgstr ""
 
+#. Default: "Activitats relacionades"
 #. Default: "Actividades relacionadas"
 msgid "RelatedActivities"
 msgstr ""
 
+#. Default: "Publicacions"
 #. Default: "Publicaciones"
 msgid "RelatedPublications"
 msgstr ""
 
+#. Default: "Representació"
 #. Default: "Representación"
 msgid "Representation"
 msgstr ""
@@ -772,6 +837,7 @@ msgstr ""
 msgid "RestartRoles"
 msgstr ""
 
+#. Default: "Rols"
 #. Default: "Roles"
 msgid "Role"
 msgstr ""
@@ -854,6 +920,7 @@ msgstr ""
 msgid "Tanca"
 msgstr ""
 
+#. Default: "Tècnica"
 #. Default: "Técnica"
 msgid "Technique"
 msgstr ""
@@ -868,7 +935,7 @@ msgstr ""
 msgid "TextNou"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:664
+#: fatac.content/fatac/content/dashboard.py:640
 msgid "The group name you entered is not valid."
 msgstr ""
 
@@ -909,6 +976,7 @@ msgstr ""
 msgid "This is a list of tags that have this image"
 msgstr ""
 
+#. Default: "Aquesta es la llista de Grups que poden mostrar aquesta Playlist"
 #: fatac.content/fatac/content/playlist.py:45
 msgid "This is a list of the Groups that can show this playlist"
 msgstr ""
@@ -941,6 +1009,7 @@ msgstr ""
 msgid "Timeout in seconds for the resquests to the REST Server."
 msgstr ""
 
+#. Default: "Títol"
 #. Default: "Título"
 msgid "Title"
 msgstr ""
@@ -949,14 +1018,17 @@ msgstr ""
 msgid "Totes les playlists"
 msgstr ""
 
+#. Default: "Tots"
 #. Default: "Todos"
 msgid "Tots"
 msgstr ""
 
+#. Default: "Idiomes"
 #. Default: "Idiomas"
 msgid "Translation"
 msgstr ""
 
+#. Default: "Traductors"
 #. Default: "Traductores"
 msgid "Translators"
 msgstr ""
@@ -982,6 +1054,7 @@ msgstr ""
 msgid "Visualització de búsqueda"
 msgstr ""
 
+#. Default: "Any"
 #. Default: "Años"
 msgid "Year"
 msgstr ""
@@ -1001,10 +1074,11 @@ msgid "ampliar_filtres"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:96
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:96
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:97
 msgid "arxius"
 msgstr ""
 
+#. Default: "Heu oblidat la contrasenya?"
 #. Default: "Forgot your password?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
 msgid "box_forgot_password_option"
@@ -1015,17 +1089,19 @@ msgid "buscar a biblioteca"
 msgstr ""
 
 #. Default: "cat"
-#: ../../../browser/languageselector.pt:13, 29
+#: ../../../browser/languageselector.pt:13,
+#: 29
 msgid "ca"
 msgstr ""
 
 #. Default: "0 resultats"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:119
 #: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:47
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:119
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:134
 msgid "cap_resultat"
 msgstr ""
 
+#. Default: "Tipus de document"
 #. Default: "Tipo de documento"
 msgid "class"
 msgstr ""
@@ -1035,7 +1111,6 @@ msgstr ""
 msgid "colection"
 msgstr ""
 
-#. Default: "Amb la col·laboració de"
 #. Default: "Amb la col·laboració de:"
 #: ../../../browser/templates/footer.pt:52
 msgid "collaboracio"
@@ -1046,8 +1121,18 @@ msgid "collaboracio1"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:93
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:93
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:94
 msgid "de"
+msgstr ""
+
+#. Default: "A través d'aquest formulari podeu canviar les dades del vostre perfil d'usuari."
+#: fatac.core/fatac/core/browser/profile_form.pt:32
+msgid "desc_iwant_register"
+msgstr ""
+
+#. Default: "A través d'aquest formulari podeu canviar les dades del vostre perfil d'usuari."
+#: fatac.core/fatac/core/browser/change_password_form.pt:25
+msgid "desc_register"
 msgstr ""
 
 #. Default: "List of My Files from user."
@@ -1060,11 +1145,13 @@ msgstr ""
 msgid "description_mygroups_portlet"
 msgstr ""
 
+#. Default: "Si no teniu un compte d'usuari utilitzeu el ${registration_form} per donar-vos d'alta."
 #. Default: "If you do not have an account here, head over to the ${registration_form}."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:315
 msgid "description_no_account"
 msgstr ""
 
+#. Default: "formulari de registre"
 #. Default: "registration form"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:316
 msgid "description_no_account_registration_linktext"
@@ -1082,7 +1169,8 @@ msgid "dreta"
 msgstr ""
 
 #. Default: "eng"
-#: ../../../browser/languageselector.pt:13, 29
+#: ../../../browser/languageselector.pt:13,
+#: 29
 msgid "en"
 msgstr ""
 
@@ -1091,13 +1179,15 @@ msgstr ""
 msgid "en_colaboracio_amb"
 msgstr ""
 
+#. Default: "Les galetes no estan habilitades. Cal que habiliteu les galetes per poder iniciar la sessió."
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:64
 msgid "enable_cookies_message_before_login"
 msgstr ""
 
 #. Default: "cast"
-#: ../../../browser/languageselector.pt:13, 29
+#: ../../../browser/languageselector.pt:13,
+#: 29
 msgid "es"
 msgstr ""
 
@@ -1110,6 +1200,11 @@ msgstr ""
 #. Default: "Esdeveniments"
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:19
 msgid "eventos"
+msgstr ""
+
+#. Default: "Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris."
+#: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:27
+msgid "exp_iwant_register"
 msgstr ""
 
 #. Default: "Explora la nostra base de dades per:"
@@ -1131,108 +1226,140 @@ msgstr ""
 msgid "financament2"
 msgstr ""
 
+#. Default: "Usuari nou?"
 #. Default: "New user?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
 msgid "heading_new_user"
 msgstr ""
 
+#. Default: "Eines personals"
 #. Default: "Personal tools"
 #: ../../../browser/templates/personal_bar.pt:3
 msgid "heading_personal_tools"
 msgstr ""
 
 #. Default: "Enter full name, e.g. John Smith."
-#: fatac.core/fatac/core/userdataschema.py:33
+#: fatac.core/fatac/core/userdataschema.py:34
 msgid "help_full_name_creation"
 msgstr ""
 
 #. Default: "The URL for your external home page, if you have one."
-#: fatac.core/fatac/core/userdataschema.py:66
+#: fatac.core/fatac/core/userdataschema.py:67
 msgid "help_homepage"
 msgstr ""
 
+#. Default: "Si heu oblidat la contrasenya, ${click_here}."
 #. Default: "If you have forgotten your password, ${click_here}."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:301
 msgid "help_password_retrieval"
 msgstr ""
 
+#. Default: "Marqueu aquesta opció si voleu que s'ompli automàticament la vostra adreça de correu quan torneu a iniciar la sessió."
 #. Default: "Check this to have your email address filled in automatically when you log in later."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:186
 msgid "help_remember_my_email"
 msgstr ""
 
+#. Default: "Marqueu aquesta opció si voleu que s'ompli automàticament el vostre nom d'usuari quan torneu a iniciar la sessió."
 #. Default: "Check this to have your user name filled in automatically when you log in later."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:177
 msgid "help_remember_my_name"
 msgstr ""
 
+#. Default: "us en podem enviar una de nova"
 #. Default: "we can send you a new one"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:302
 msgid "label_click_here_to_retrieve"
 msgstr ""
 
+#. Default: "Suprimeix"
 #. Default: "Delete"
 #: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:96
 msgid "label_delete"
 msgstr ""
 
 #. Default: "E-mail"
-#: fatac.core/fatac/core/userdataschema.py:38
+#: fatac.core/fatac/core/userdataschema.py:39
 msgid "label_email"
 msgstr ""
 
+#. Default: "Establiu la vostra contrasenya"
+#: fatac.core/fatac/core/browser/change_password_form.pt:21
+msgid "label_estb_contrasenya"
+msgstr ""
+
 #. Default: "Full Name"
-#: fatac.core/fatac/core/userdataschema.py:32
+#: fatac.core/fatac/core/userdataschema.py:33
 msgid "label_full_name"
 msgstr ""
 
 #. Default: "Home page"
-#: fatac.core/fatac/core/userdataschema.py:65
+#: fatac.core/fatac/core/userdataschema.py:66
 msgid "label_homepage"
 msgstr ""
 
+#. Default: "Registra't"
+#: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:23
+msgid "label_iwant_register"
+msgstr ""
+
+#. Default: "Identifica"
 #. Default: "Log in"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
 msgid "label_log_in"
 msgstr ""
 
+#. Default: "Nom d'usuari"
 #. Default: "Login Name"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
 msgid "label_login_name"
 msgstr ""
 
+#. Default: "Identifiqueu-vos per afegir comentaris"
 #. Default: "Log in to add comments"
 #: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:146
 msgid "label_login_to_add_comments"
 msgstr ""
 
-#. Default: "Password"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:150
+#. Default: "Assignar contrasenya"
+#: fatac.core/fatac/core/browser/change_password_form.pt:19
 msgid "label_password"
 msgstr ""
 
+#. Default: "PERFIL"
+#: fatac.core/fatac/core/browser/profile_form.pt:19
+msgid "label_perfil"
+msgstr ""
+
+#. Default: "Perfil d'usuari"
+#: fatac.core/fatac/core/browser/profile_form.pt:28
+msgid "label_perfil_usuari"
+msgstr ""
+
+#. Default: "Recorda la meva adreça de correu."
 #. Default: "Remember my email address."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:184
 msgid "label_remember_my_email"
 msgstr ""
 
+#. Default: "Recorda el meu nom."
 #. Default: "Remember my name."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:175
 msgid "label_remember_my_name"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:106
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:106
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:110
 msgid "large"
 msgstr ""
 
+#. Default: "Com que l'autenticació per galetes està inhabilitada, l'accés basat en galetes no està disponible."
 #. Default: "Since cookie authentication is disabled, cookie-based login is not available."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:69
 msgid "login_form_disabled"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:44
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:44
 msgid "mes_opcions"
 msgstr ""
 
@@ -1243,13 +1370,13 @@ msgstr ""
 
 #. Default: "Ordre:"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:48
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:45
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:44
 msgid "ordre"
 msgstr ""
 
 #. Default: "pàgina"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:91
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:91
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:92
 msgid "pagina"
 msgstr ""
 
@@ -1271,7 +1398,6 @@ msgstr ""
 msgid "participants3"
 msgstr ""
 
-#. Default: "Patrocinadors institucionals"
 #. Default: "Patrocinadors institucionals:"
 #: ../../../browser/templates/footer.pt:43
 msgid "patrocinadors"
@@ -1289,8 +1415,13 @@ msgstr ""
 msgid "reduir_filtres"
 msgstr ""
 
+#. Default: "REGISTRE"
+#: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:21
+msgid "register"
+msgstr ""
+
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:104
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:104
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:106
 msgid "small"
 msgstr ""
 
@@ -1345,22 +1476,22 @@ msgid "una_iniciativa_de"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:108
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:108
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:114
 msgid "visualitzacio1"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:109
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:109
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:118
 msgid "visualitzacio2"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:110
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:110
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:122
 msgid "visualitzacio3"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:111
-#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:111
+#: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:126
 msgid "visualitzacio4"
 msgstr ""
 

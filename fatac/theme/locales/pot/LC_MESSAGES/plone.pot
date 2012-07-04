@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-02 10:16+0000\n"
+"POT-Creation-Date: 2012-07-04 10:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,179 +17,803 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
-#: ../../../browser/interfaces.py:50
+#: fatac.content/fatac/content/browser/my-activity.pt:128
+msgid "<img src="++resource++fatac.content/images/activitat24.gif" /> <span>x</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-activity.pt:111
+msgid "<img src="++resource++fatac.content/images/activitat24.gif" /> Canvis recents del grup: <span>${DYNAMIC_CONTENT}</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:111
+#: fatac.content/fatac/content/browser/group-activity.pt:94
+#: fatac.content/fatac/content/browser/group-members.pt:101
+msgid "<img src="++resource++fatac.content/images/activitat_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:127
+msgid "<img src="++resource++fatac.content/images/dashboard24.gif" /> <span>x</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-view.pt:116
+msgid "<img src="++resource++fatac.content/images/groups24.gif" /> <span>${DYNAMIC_CONTENT}</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-members.pt:117
+#: fatac.content/fatac/content/browser/manage-groups.pt:153
+msgid "<img src="++resource++fatac.content/images/groups24.gif" /> <span>x</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:91
+#: fatac.content/fatac/content/browser/group-activity.pt:74
+#: fatac.content/fatac/content/browser/group-members.pt:81
+msgid "<img src="++resource++fatac.content/images/groups_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist_templates/sortingView.pt:26
+#: fatac.content/fatac/content/playlist_templates/view.pt:31
+msgid "<img src="++resource++fatac.content/images/playlist24.gif" /> <span>x</span>"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:101
+#: fatac.content/fatac/content/browser/group-activity.pt:84
+#: fatac.content/fatac/content/browser/group-members.pt:91
+msgid "<img src="++resource++fatac.content/images/playlist_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-activity.pt:46
+msgid "> Activitat del Grup"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/my-activity.pt:50
+msgid "> Activity"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/manage-groups.pt:80
+msgid "> Grups"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-members.pt:54
+msgid "> Membres del Grup"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-playlists.pt:55
+#: fatac.content/fatac/content/browser/my-playlists.pt:94
+msgid "> Playlists"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Accés usuaris"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:110
+#: fatac.content/fatac/content/browser/group-activity.pt:93
+#: fatac.content/fatac/content/browser/group-members.pt:100
+msgid "Activitat"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:33
+msgid "Add MyFiles Portlet"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyGroups.py:33
+msgid "Add MyGroups Portlet"
+msgstr ""
+
+#: fatac.content/fatac/content/portletPlaylists.py:33
+msgid "Add Playlists Portlet"
+msgstr ""
+
+#: fatac.content/fatac/content/ghost.py:42
+#: fatac.content/fatac/content/playlist.py:25
+msgid "Add a Playlist Image that represents your playlist"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Administració"
+msgstr ""
+
+#: fatac.content/fatac/content/profiles/default/actions.xml
+msgid "Afegeix Fitxer"
+msgstr ""
+
+#: fatac.content/fatac/content/profiles/default/actions.xml
+msgid "Afegeix Grup"
+msgstr ""
+
+#: fatac.content/fatac/content/profiles/default/actions.xml
+msgid "Afegeix Playlist"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:50
 msgid "Arts folder"
 msgstr ""
 
-#: ../../../browser/interfaces.py:42
+#: fatac.theme/fatac/theme/browser/interfaces.py:42
 msgid "Cache time"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:44
+#: fatac.theme/fatac/theme/browser/controlpanel.py:44
 msgid "Cancel"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:40
+#: fatac.content/fatac/content/browser/my-activity.pt:128
+msgid "Canvis Recents"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Carpeta arrel"
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:232
+msgid "Changes made."
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:40
 msgid "Changes saved"
 msgstr ""
 
-#. Default: "Descarregar"
-#: ../../../skins/fatac_theme_custom_templates/macro_dades.pt:109
-msgid "Download"
+#: fatac.content/fatac/content/dashboard.py:455
+msgid "Changes saved."
 msgstr ""
 
-#: ../../../browser/interfaces.py:43
+#: fatac.content/fatac/content/dashboard.py:648
+msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Dashboard"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:43
 msgid "Duration of the internal cache in minutes, it must be betwen 0 and 60"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:46
+#: fatac.content/fatac/content/portletMyFiles.py:41
+msgid "Edit MyFiles Portlet"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyGroups.py:41
+msgid "Edit MyGroups Portlet"
+msgstr ""
+
+#: fatac.content/fatac/content/portletPlaylists.py:41
+msgid "Edit Playlists Portlet"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:46
 msgid "Edit cancelled"
 msgstr ""
 
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:61
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:17
+#: fatac.theme/fatac/theme/browser/controlpanel.py:17
 msgid "Fatac settings"
 msgstr ""
 
-#: ../../../browser/interfaces.py:51
+#: fatac.theme/fatac/theme/browser/interfaces.py:51
 msgid "Folder name where the Plone representations of the rest objectes will be created, must be inside root folder."
 msgstr ""
 
-#: ../../../browser/interfaces.py:29
+#. Default: "Generar miniatures: Falta escollir la classe"
+#: fatac.forms/fatac/forms/browser/manteniment.py:43
+msgid "GenerarMiniaturesFaltaClasse"
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:666
+msgid "Group ${name} has been added."
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:677
+msgid "Group name required."
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:464
+msgid "Group(s) deleted."
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:90
+#: fatac.content/fatac/content/browser/manage-groups.pt:113
+#: fatac.content/fatac/content/browser/my-activity.pt:83
+msgid "Grups"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-activity.pt:44
+#: fatac.content/fatac/content/browser/group-members.pt:52
+#: fatac.content/fatac/content/browser/group-playlists.pt:53
+msgid "Grups >"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:15
+#: fatac.content/fatac/content/portletMyGroups.py:15
+#: fatac.content/fatac/content/portletPlaylists.py:15
+msgid "How many items to list."
+msgstr ""
+
+#. Default: "Indexar tot"
+#: fatac.forms/fatac/forms/browser/manteniment.py:82
+msgid "IndexAll"
+msgstr ""
+
+#. Default: "Indexar dades recents"
+#: fatac.forms/fatac/forms/browser/manteniment.py:53
+msgid "IndexarRecents"
+msgstr ""
+
+#. Default: "Indexar dades recents: cal indicar el temps "
+#: fatac.forms/fatac/forms/browser/manteniment.py:55
+msgid "IndexarRecentsFaltaTemps"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Log out"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
 msgstr ""
 
-#: ../../../browser/interfaces.py:25
+#: fatac.content/fatac/content/browser/group-activity.pt:73
+#: fatac.content/fatac/content/browser/group-members.pt:80
+#: fatac.content/fatac/content/browser/group-playlists.pt:82
+msgid "Members"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:28
+msgid "My Files items"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "My Folder"
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyGroups.py:28
+msgid "MyGroups items"
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:443
+msgid "No changes made."
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:14
+#: fatac.content/fatac/content/portletMyGroups.py:14
+#: fatac.content/fatac/content/portletPlaylists.py:14
+msgid "Number of items to display"
+msgstr ""
+
+#. Default: "Ontologies"
+#: fatac.forms/fatac/forms/browser/manteniment.py:74
+msgid "Ontologies"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist.py:34
+msgid "Ordered List To Play"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist.py:51
+msgid "Original Group"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:25
 msgid "Per exemple: http://example.com/rest/"
 msgstr ""
 
-#: ../../../browser/interfaces.py:19
+#: fatac.theme/fatac/theme/browser/interfaces.py:19
 msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest"
 msgstr ""
 
-#: ../../../browser/interfaces.py:30
+#: fatac.theme/fatac/theme/browser/interfaces.py:30
 msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"
 msgstr ""
 
-#: ../../../browser/interfaces.py:35
+#: fatac.content/fatac/content/ghost.py:41
+#: fatac.content/fatac/content/playlist.py:24
+msgid "Playlist Image"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:100
+#: fatac.content/fatac/content/browser/group-activity.pt:83
+#: fatac.content/fatac/content/browser/group-members.pt:90
+msgid "Playlists"
+msgstr ""
+
+#: fatac.content/fatac/content/portletPlaylists.py:28
+msgid "Playlists items"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Preferences"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:35
 msgid "REST request timeout"
 msgstr ""
 
-#: ../../../browser/interfaces.py:18
+#: fatac.theme/fatac/theme/browser/interfaces.py:18
 msgid "REST server URI"
 msgstr ""
 
-#: ../../../browser/interfaces.py:24
+#: fatac.theme/fatac/theme/browser/interfaces.py:24
 msgid "REST server public URI"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:30
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Register"
+msgstr ""
+
+#. Default: "Reset: Falta confirmar"
+#: fatac.forms/fatac/forms/browser/manteniment.py:31
+msgid "ResetFaltaConfirmar"
+msgstr ""
+
+#. Default: "Reiniciar rols"
+#: fatac.forms/fatac/forms/browser/manteniment.py:86
+msgid "RestartRoles"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:30
 msgid "Save"
 msgstr ""
 
-#: ../../../browser/controlpanel.py:18
+#. Default: "Selecciona una tasca a realitzar"
+#: fatac.forms/fatac/forms/browser/manteniment.py:19
+msgid "SeleccionaTasca"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Site Setup"
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/controlpanel.py:18
 msgid "Specific settings for FATac based sites"
 msgstr ""
 
-#: ../../../browser/interfaces.py:36
+#. Default: "Substitueix"
+#: fatac.forms/fatac/forms/browser/manteniment.py:66
+msgid "Substitueix"
+msgstr ""
+
+#. Default: "Substitueix: falten paràmetres per indicar "
+#: fatac.forms/fatac/forms/browser/manteniment.py:68
+msgid "SubstitueixFaltenParams"
+msgstr ""
+
+#. Default: "Substitueix: cal indicar els paràmetres "
+#: fatac.forms/fatac/forms/browser/manteniment.py:70
+msgid "SubstitueixFaltenTotsParams"
+msgstr ""
+
+#: fatac.content/fatac/content/dummy.py:18
+#: fatac.content/fatac/content/ghost.py:33
+msgid "Tag List"
+msgstr ""
+
+#: fatac.content/fatac/content/dashboard.py:640
+msgid "The group name you entered is not valid."
+msgstr ""
+
+#: fatac.content/fatac/content/dummy.py:19
+#: fatac.content/fatac/content/ghost.py:34
+msgid "This is a list of tags that have this image"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist.py:35
+msgid "This is a list that has the order of the DB objects"
+msgstr ""
+
+#: fatac.content/fatac/content/portletPlaylists.py:34
+msgid "This portlet displays Playlists."
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyFiles.py:34
+msgid "This portlet displays my files."
+msgstr ""
+
+#: fatac.content/fatac/content/portletMyGroups.py:34
+msgid "This portlet displays my groups."
+msgstr ""
+
+#: fatac.theme/fatac/theme/browser/interfaces.py:36
 msgid "Timeout in seconds for the resquests to the REST Server."
 msgstr ""
 
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Undo"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/dashboard.pt:56
+#: fatac.content/fatac/content/browser/manage-groups.pt:78
+#: fatac.content/fatac/content/browser/my-activity.pt:48
+msgid "Usuari >"
+msgstr ""
+
 #. Default: "Forgot your password?"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:129
 msgid "box_forgot_password_option"
 msgstr ""
 
-#. Default: "If you do not have an account here, head over to the ${registration_form}."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:315
-msgid "description_no_account"
+#. Default: "All recent changes…"
+#: fatac.content/fatac/content/portlets/portletMyGroups.pt:28
+#: fatac.content/fatac/content/portlets/portletPlaylists.pt:28
+msgid "box_more_recently_changed"
 msgstr ""
 
-#. Default: "registration form"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:316
-msgid "description_no_account_registration_linktext"
+#. Default: "There is no group or user attached to this group."
+#: fatac.content/fatac/content/browser/group-members.pt:234
+msgid "decription_no_members_assigned"
+msgstr ""
+
+#. Default: "Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris."
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:144
+msgid "descripcio_registre"
+msgstr ""
+
+#. Default: "Groups are logical collections of users, like departments and business units. They are not directly related to permissions on a global level, you normally use Roles for that - and let certain Groups have a particular role."
+#: fatac.content/fatac/content/browser/edit-group-details.pt:56
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:88
+msgid "description_edit_groupproperties"
+msgstr ""
+
+#. Default: "You can add or remove groups and users from this particular group here. Note that this doesn't actually delete the group or user, it is only removed from this group."
+#: fatac.content/fatac/content/browser/group-members.pt:142
+msgid "description_group_members_of"
+msgstr ""
+
+#. Default: "Show all search results"
+#: fatac.content/fatac/content/browser/group-members.pt:374
+#: fatac.content/fatac/content/browser/manage-groups.pt:303
+msgid "description_pas_show_all_search_results"
 msgstr ""
 
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:64
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:63
 msgid "enable_cookies_message_before_login"
 msgstr ""
 
-#. Default: "New user?"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
-msgid "heading_new_user"
+#: fatac.content/fatac/content/browser/group-playlists.pt:123
+msgid "group playlists"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/manage-groups.pt:153
+msgid "grups"
+msgstr ""
+
+#. Default: "Assign to groups"
+#: fatac.content/fatac/content/browser/manage-groups.pt:220
+msgid "heading_assign_to_groups"
+msgstr ""
+
+#. Default: "Create a Group"
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:55
+msgid "heading_create_group"
+msgstr ""
+
+#. Default: "Edit Group Properties for ${groupname}"
+#: fatac.content/fatac/content/browser/edit-group-details.pt:53
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:85
+msgid "heading_edit_groupproperties"
+msgstr ""
+
+#. Default: "Group Members"
+#: fatac.content/fatac/content/browser/group-members.pt:117
+msgid "heading_group_members"
+msgstr ""
+
+#. Default: "Members of the ${groupname} group"
+#: fatac.content/fatac/content/browser/group-members.pt:124
+msgid "heading_group_members_of"
+msgstr ""
+
+#. Default: "Current group members"
+#: fatac.content/fatac/content/browser/group-members.pt:157
+msgid "heading_groupmembers_current"
+msgstr ""
+
+#. Default: "Current group memberships"
+#: fatac.content/fatac/content/browser/manage-groups.pt:158
+msgid "heading_memberships_current"
 msgstr ""
 
 #. Default: "Personal tools"
-#: ../../../browser/templates/personal_bar.pt:3
+#: fatac.theme/fatac/theme/browser/templates/personal_bar.pt:3
 msgid "heading_personal_tools"
 msgstr ""
 
-#. Default: "If you have forgotten your password, ${click_here}."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:301
-msgid "help_password_retrieval"
+#. Default: "Search for groups"
+#: fatac.content/fatac/content/browser/manage-groups.pt:214
+msgid "heading_search_groups"
+msgstr ""
+
+#. Default: "Search for new group members"
+#: fatac.content/fatac/content/browser/group-members.pt:245
+msgid "heading_search_newmembers"
+msgstr ""
+
+#. Default: "Enter full name, e.g. John Smith."
+#: fatac.core/fatac/core/userdataschema.py:34
+msgid "help_full_name_creation"
+msgstr ""
+
+#. Default: "The URL for your external home page, if you have one."
+#: fatac.core/fatac/core/userdataschema.py:67
+msgid "help_homepage"
 msgstr ""
 
 #. Default: "Check this to have your email address filled in automatically when you log in later."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:186
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:117
 msgid "help_remember_my_email"
 msgstr ""
 
 #. Default: "Check this to have your user name filled in automatically when you log in later."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:177
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:111
 msgid "help_remember_my_name"
 msgstr ""
 
-#. Default: "we can send you a new one"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:302
-msgid "label_click_here_to_retrieve"
+#. Default: "Add New Group"
+#: fatac.content/fatac/content/browser/manage-groups.pt:69
+msgid "label_add_new_group"
+msgstr ""
+
+#. Default: "Afegeix una nova Playlist"
+#: fatac.content/fatac/content/browser/group-playlists.pt:44
+#: fatac.content/fatac/content/browser/group-view.pt:44
+#: fatac.content/fatac/content/browser/my-activity.pt:39
+msgid "label_add_new_playlist"
+msgstr ""
+
+#. Default: "Add user to selected groups"
+#: fatac.content/fatac/content/browser/manage-groups.pt:317
+msgid "label_add_user_to_group"
+msgstr ""
+
+#. Default: "Add selected groups and users to this group"
+#: fatac.content/fatac/content/browser/group-members.pt:380
+msgid "label_add_users_to_group"
+msgstr ""
+
+#. Default: "Canviar contrasenya"
+#: fatac.core/fatac/core/browser/profile_form.pt:21
+msgid "label_canviar_contrasenya"
+msgstr ""
+
+#. Default: "Dashboard"
+#: fatac.content/fatac/content/browser/dashboard.pt:81
+#: fatac.content/fatac/content/browser/group-activity.pt:64
+#: fatac.content/fatac/content/browser/group-members.pt:71
+msgid "label_dashboard"
 msgstr ""
 
 #. Default: "Delete"
-#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:96
+#: fatac.theme/fatac/theme/browser/jbot/plone.app.discussion.browser.comments.pt:96
 msgid "label_delete"
 msgstr ""
 
-#. Default: "E-mail"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:130
+#. Default: "Edit"
+#: fatac.content/fatac/content/browser/manage-groups.pt:187
+msgid "label_edit_group"
+msgstr ""
+
+#: fatac.core/fatac/core/userdataschema.py:39
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:95
 msgid "label_email"
 msgstr ""
 
+#. Default: "Find a group here"
+#: fatac.content/fatac/content/browser/group-members.pt:134
+msgid "label_find_group"
+msgstr ""
+
+#. Default: "Full Name"
+#: fatac.core/fatac/core/userdataschema.py:33
+msgid "label_full_name"
+msgstr ""
+
+#. Default: "Group Dashboard"
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:37
+msgid "label_group_dashboard"
+msgstr ""
+
+#. Default: "Group Members"
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:22
+msgid "label_group_members"
+msgstr ""
+
+#. Default: "Group Portlets"
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:32
+msgid "label_group_portlets"
+msgstr ""
+
+#. Default: "Group Properties"
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:27
+msgid "label_group_properties"
+msgstr ""
+
+#. Default: "Home page"
+#: fatac.core/fatac/core/userdataschema.py:66
+msgid "label_homepage"
+msgstr ""
+
 #. Default: "Log in"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:124
 msgid "label_log_in"
 msgstr ""
 
-#. Default: "Login Name"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
-msgid "label_login_name"
+#. Default: "Name"
+#: fatac.content/fatac/content/browser/edit-group-details.pt:77
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:115
+msgid "label_name"
 msgstr ""
 
-#. Default: "Log in to add comments"
-#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:146
-msgid "label_login_to_add_comments"
+#. Default: "No group was specified."
+#: fatac.content/fatac/content/browser/group-members.pt:131
+msgid "label_no_group_specified"
 msgstr ""
 
-#. Default: "Password"
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:150
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:102
 msgid "label_password"
 msgstr ""
 
+#. Default: "Quick search"
+#: fatac.content/fatac/content/browser/group-members.pt:253
+#: fatac.content/fatac/content/browser/manage-groups.pt:229
+msgid "label_quick_search"
+msgstr ""
+
 #. Default: "Remember my email address."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:184
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:116
 msgid "label_remember_my_email"
 msgstr ""
 
 #. Default: "Remember my name."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:175
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:110
 msgid "label_remember_my_name"
 msgstr ""
 
+#. Default: "Remove selected groups / users"
+#: fatac.content/fatac/content/browser/group-members.pt:236
+msgid "label_remove_selected_users"
+msgstr ""
+
+#. Default: "Save"
+#: fatac.content/fatac/content/browser/edit-group-details.pt:198
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:238
+msgid "label_save"
+msgstr ""
+
+#. Default: "Search"
+#: fatac.content/fatac/content/browser/group-members.pt:262
+#: fatac.content/fatac/content/browser/manage-groups.pt:237
+msgid "label_search"
+msgstr ""
+
+#. Default: "Show all"
+#: fatac.content/fatac/content/browser/group-members.pt:267
+msgid "label_search_large"
+msgstr ""
+
+#. Default: "Select all items"
+#: fatac.content/fatac/content/browser/group-members.pt:171
+#: fatac.content/fatac/content/browser/manage-groups.pt:248
+msgid "label_select_all_items"
+msgstr ""
+
+#. Default: "Torna a la llista de les teves playlists"
+#: fatac.content/fatac/content/playlist_templates/view.pt:20
+msgid "label_torna_a_la_llista_de_les_teves_playlists"
+msgstr ""
+
+#. Default: "Up to Groups Overview"
+#: fatac.content/fatac/content/browser/group-activity.pt:146
+#: fatac.content/fatac/content/browser/group-members.pt:395
+#: fatac.content/fatac/content/browser/group-playlists.pt:148
+msgid "label_up_to_groups_overview"
+msgstr ""
+
+#. Default: "Group Properties"
+#: fatac.content/fatac/content/browser/edit-group-details.pt:74
+#: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:112
+msgid "link_group_properties"
+msgstr ""
+
+#. Default: "E-mail Address"
+#: fatac.content/fatac/content/browser/group-members.pt:183
+msgid "listingheader_email_address"
+msgstr ""
+
+#. Default: "Group Name"
+#: fatac.content/fatac/content/browser/manage-groups.pt:163
+msgid "listingheader_group_name"
+msgstr ""
+
+#. Default: "Remove"
+#: fatac.content/fatac/content/browser/manage-groups.pt:165
+msgid "listingheader_group_remove"
+msgstr ""
+
+#. Default: "Group/User name"
+#: fatac.content/fatac/content/browser/group-members.pt:288
+msgid "listingheader_group_user_name"
+msgstr ""
+
+#. Default: "User name"
+#: fatac.content/fatac/content/browser/group-members.pt:182
+msgid "listingheader_user_name"
+msgstr ""
+
 #. Default: "Since cookie authentication is disabled, cookie-based login is not available."
-#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:69
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:68
 msgid "login_form_disabled"
+msgstr ""
+
+#: fatac.forms/fatac/forms/browser/updateExisting.py:155
+#: fatac.forms/fatac/forms/browser/uploadNew.py:43
+msgid "name"
+msgstr ""
+
+#: fatac.content/fatac/content/playlist_templates/sortingView.pt:26
+#: fatac.content/fatac/content/playlist_templates/view.pt:31
+msgid "playlist"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/my-playlists.pt:167
+msgid "playlists"
+msgstr ""
+
+#. Default: "Registra't"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:149
+msgid "registrat"
+msgstr ""
+
+#. Default: "Close this box."
+#: fatac.content/fatac/content/jsvariables.py:24
+msgid "text_ajax_close_box_message"
+msgstr ""
+
+#. Default: "No response from server. Please try again later."
+#: fatac.content/fatac/content/jsvariables.py:21
+msgid "text_ajax_noresponse_message"
+msgstr ""
+
+#. Default: "by ${creator}, last updated: ${date}"
+#: fatac.content/fatac/content/browser/group-activity.pt:133
+#: fatac.content/fatac/content/browser/my-activity.pt:151
+msgid "text_creator_date"
+msgstr ""
+
+#. Default: "Your form has not been saved. All changes you have made will be lost."
+#: fatac.content/fatac/content/jsvariables.py:15
+msgid "text_form_modified_message"
+msgstr ""
+
+#. Default: "You already clicked the submit button. Do you really want to submit this form again?"
+#: fatac.content/fatac/content/jsvariables.py:18
+msgid "text_form_resubmit_message"
+msgstr ""
+
+#. Default: "Enter a group or user name to search for or click 'Show All'."
+#: fatac.content/fatac/content/browser/group-members.pt:348
+msgid "text_no_searchstring"
+msgstr ""
+
+#. Default: "Enter a group or user name to search for."
+#: fatac.content/fatac/content/browser/group-members.pt:342
+msgid "text_no_searchstring_large"
+msgstr ""
+
+#. Default: "No matches"
+#: fatac.content/fatac/content/browser/group-members.pt:337
+msgid "text_nomatches"
+msgstr ""
+
+#. Default: "This user does not belong to any group."
+#: fatac.content/fatac/content/browser/manage-groups.pt:209
+msgid "text_user_not_in_any_group"
+msgstr ""
+
+#. Default: "Send a mail to this user"
+#: fatac.content/fatac/content/browser/group-members.pt:221
+msgid "title_send_mail_to_user"
 msgstr ""
 

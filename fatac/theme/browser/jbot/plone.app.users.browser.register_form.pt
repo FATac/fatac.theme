@@ -24,7 +24,7 @@
                      i18n:domain="fatac.theme" i18n:translate="label_iwant_register">
                      Registra't
                 </div>
-                <div class="georgia15c666666italic descripcio_registre" i18n:domain="fatac.theme" i18n:translate="label_iwant_register">
+                <div class="georgia15c666666italic descripcio_registre" i18n:domain="fatac.theme" i18n:translate="exp_iwant_register">
                     Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris.
                 </div>
                 <div metal:use-macro="context/base-pageform.html/form" />
