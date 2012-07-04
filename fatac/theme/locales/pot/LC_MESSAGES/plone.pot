@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-03-12 11:11+0000\n"
+"POT-Creation-Date: 2012-07-02 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,179 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
+#: ../../../browser/interfaces.py:50
+msgid "Arts folder"
+msgstr ""
+
+#: ../../../browser/interfaces.py:42
+msgid "Cache time"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:44
+msgid "Cancel"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:40
+msgid "Changes saved"
+msgstr ""
+
 #. Default: "Descarregar"
 #: ../../../skins/fatac_theme_custom_templates/macro_dades.pt:109
 msgid "Download"
 msgstr ""
 
+#: ../../../browser/interfaces.py:43
+msgid "Duration of the internal cache in minutes, it must be betwen 0 and 60"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:46
+msgid "Edit cancelled"
+msgstr ""
+
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:61
+msgid "Error"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:17
+msgid "Fatac settings"
+msgstr ""
+
+#: ../../../browser/interfaces.py:51
+msgid "Folder name where the Plone representations of the rest objectes will be created, must be inside root folder."
+msgstr ""
+
+#: ../../../browser/interfaces.py:29
+msgid "Media Server URI"
+msgstr ""
+
+#: ../../../browser/interfaces.py:25
+msgid "Per exemple: http://example.com/rest/"
+msgstr ""
+
+#: ../../../browser/interfaces.py:19
+msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest"
+msgstr ""
+
+#: ../../../browser/interfaces.py:30
+msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"
+msgstr ""
+
+#: ../../../browser/interfaces.py:35
+msgid "REST request timeout"
+msgstr ""
+
+#: ../../../browser/interfaces.py:18
+msgid "REST server URI"
+msgstr ""
+
+#: ../../../browser/interfaces.py:24
+msgid "REST server public URI"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:30
+msgid "Save"
+msgstr ""
+
+#: ../../../browser/controlpanel.py:18
+msgid "Specific settings for FATac based sites"
+msgstr ""
+
+#: ../../../browser/interfaces.py:36
+msgid "Timeout in seconds for the resquests to the REST Server."
+msgstr ""
+
+#. Default: "Forgot your password?"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
+msgid "box_forgot_password_option"
+msgstr ""
+
+#. Default: "If you do not have an account here, head over to the ${registration_form}."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:315
+msgid "description_no_account"
+msgstr ""
+
+#. Default: "registration form"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:316
+msgid "description_no_account_registration_linktext"
+msgstr ""
+
+#. Default: "Cookies are not enabled. You must enable cookies before you can log in."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:64
+msgid "enable_cookies_message_before_login"
+msgstr ""
+
+#. Default: "New user?"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
+msgid "heading_new_user"
+msgstr ""
+
 #. Default: "Personal tools"
 #: ../../../browser/templates/personal_bar.pt:3
 msgid "heading_personal_tools"
+msgstr ""
+
+#. Default: "If you have forgotten your password, ${click_here}."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:301
+msgid "help_password_retrieval"
+msgstr ""
+
+#. Default: "Check this to have your email address filled in automatically when you log in later."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:186
+msgid "help_remember_my_email"
+msgstr ""
+
+#. Default: "Check this to have your user name filled in automatically when you log in later."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:177
+msgid "help_remember_my_name"
+msgstr ""
+
+#. Default: "we can send you a new one"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:302
+msgid "label_click_here_to_retrieve"
+msgstr ""
+
+#. Default: "Delete"
+#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:96
+msgid "label_delete"
+msgstr ""
+
+#. Default: "E-mail"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:130
+msgid "label_email"
+msgstr ""
+
+#. Default: "Log in"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
+msgid "label_log_in"
+msgstr ""
+
+#. Default: "Login Name"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
+msgid "label_login_name"
+msgstr ""
+
+#. Default: "Log in to add comments"
+#: ../../../browser/jbot/plone.app.discussion.browser.comments.pt:146
+msgid "label_login_to_add_comments"
+msgstr ""
+
+#. Default: "Password"
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:150
+msgid "label_password"
+msgstr ""
+
+#. Default: "Remember my email address."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:184
+msgid "label_remember_my_email"
+msgstr ""
+
+#. Default: "Remember my name."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:175
+msgid "label_remember_my_name"
+msgstr ""
+
+#. Default: "Since cookie authentication is disabled, cookie-based login is not available."
+#: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:69
+msgid "login_form_disabled"
 msgstr ""
 

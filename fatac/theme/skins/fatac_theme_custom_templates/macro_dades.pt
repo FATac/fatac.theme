@@ -126,8 +126,8 @@
             <tal:b tal:define="dades dada/valor;
                                isAnon context/@@plone_portal_state/anonymous"
                     tal:condition="python:dades[0]['showComments'] and not isAnon">
-                    <a id="addSubtitles" href="createObject?type_name=File">Afegir subtítols</a>|
-                    <a id="removeSubtitles" href="folder_contents">Esborrar subtítols</a>
+                    <a id="addSubtitles" i18n:translate="addCaptions" href="createObject?type_name=File">Afegir subtítols</a>|
+                    <a id="removeSubtitles" i18n:translate="delCaptions" href="folder_contents">Esborrar subtítols</a>
             </tal:b>
             </div>
         </tal:co>

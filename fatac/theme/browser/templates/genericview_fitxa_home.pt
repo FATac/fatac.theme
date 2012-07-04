@@ -5,22 +5,29 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_solr">
     <div class="genericview genericview_fitxa_home addPlaylistParent" tal:condition="dades_objecte" tal:attributes="id dades_objecte/id">
-        <tal:cond tal:condition="dades_objecte">
+        <tal:cond tal:condition="dades_objecte" tal:define="plone_view context/@@plone">
             <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
                 <div class="imatge">
                     <img class="miniatura_objecte"
-                         tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol" />
+                         tal:attributes="src dades_objecte/thumbnail_objecte; alt dades_objecte/titol; title dades_objecte/titol" />
                 </div>
             </a>
             <div class="dades">
                 <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
-                    <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+
+                    <span class="what georgia12c333333italic" 
+                          tal:define="value dades_objecte/titol"
+                          tal:content="python:plone_view.cropText(value,45)"
+                          tal:attributes="alt value; title value;"
+                          />
+
+
+                    <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />                    
+                    <div class="visualClear"><!--  --></div>                    
                     <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                             tal:condition="not: isanon">
                         <img class="addPlaylist hidden" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
-                    </tal:co>
-                    <div class="visualClear"><!--  --></div>
-                    <span class="what georgia13c333333" tal:content="structure dades_objecte/titol" />
+                    </tal:co>                    
                 </a>
             </div>
         </tal:cond>

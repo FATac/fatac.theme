@@ -11,7 +11,7 @@
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
             <div class="ac_breadcrump div_dotted_line_bottom TerminalDosis600">
-                <span i18n:translate="Explorar">Explorar</span>
+                <span i18n:translate="Explorar" style="margin-top: 8px;">Explorar</span>
             </div>
 
             <div class="div_dotted_line_bottom arial12c666666">

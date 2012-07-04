@@ -12,7 +12,7 @@
                 </a>
                 -->
                 <a id="user-name" tal:attributes="href view/homelink_url">
-                    <img tal:attributes="alt view/user_name;" src="++resource++fatac.theme.images/user_24_verde.gif" />
+                    <img tal:attributes="alt view/user_name;" src="++resource++fatac.theme.images/user_24_verde.png" />
                 </a>
             </dt>
             <dd class="actionMenuContent">
