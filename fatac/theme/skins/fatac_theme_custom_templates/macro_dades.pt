@@ -6,6 +6,10 @@
             <span class="valor" tal:content="structure valor" />
         </tal:co>
 
+        <tal:co tal:condition="python: tipus == 'forbidden'">
+            <img tal:attributes="src string:${here/portal_url}/forbidden/image">
+        </tal:co>        
+
         <tal:co tal:condition="python: tipus == 'search'">
             <input type="hidden" id="string_cerca" tal:attributes="value valor" />
             <input type="hidden" id="titol_visualitzacio" tal:attributes="value dades_objecte/titol_zona_resultats" />
@@ -75,7 +79,6 @@
 
         <tal:co tal:condition="python: tipus == 'media'">
             <div class="media">
-            <!-- TODO: millorar la visualització i adaptar-la al disseny gràfic proposat -->
             <tal:def tal:define="global hasVideo python:0"></tal:def>
             <tal:rep tal:repeat="media valor">
                 <tal:def tal:define="url media/url; tipus_media media/tipus_media; profile media/profile; identificador python:url.split('/')[-1]; info_srt media/info_srt">
