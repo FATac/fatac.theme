@@ -186,7 +186,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 .ui-slider-handle { height:10px; margin:0 auto; background-color:#999999; background-image:none !important; display:block; position:absolute; width:3px; }
 
     /* css per que esfaci ample l'scroll quan el fem servir */
-    .slider_vertical .ui-slider-handle { margin-left:4px; width:100%; background-image:none; background-color:#999999; width:3px; margin-left:4px; border:0; }
+    .slider_vertical .ui-slider-handle { margin-left:4px; width:100%; background-image:none; background-color:#999999 !important; width:3px; margin-left:4px; border:0; }
     .slider_vertical:hover .ui-slider-handle { border-left:2px solid #999999; border-right:2px solid #999999; margin-left:3px; border-radius:0; }
 
 
