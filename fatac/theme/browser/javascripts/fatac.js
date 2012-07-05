@@ -110,14 +110,16 @@ function crea_scrolls_verticals() {
     var $e, id;
     //inicialitza els scrolls verticals per tots els elements amb classe slider_vertical
     $('.slider_vertical').each(function (i) {
-        $e = $(this);
-        id = $e.attr('id');
-        if (id === undefined) {
-            // if the element doesn't have id, we create a unique "human friendly" id
-            id = 'scroll_autoid_' + auto_id();
-            $e.attr('id', id);
+        if(($(this).find('.barra')).length == 0) {
+            $e = $(this);
+            id = $e.attr('id');
+            if (id === undefined) {
+                // if the element doesn't have id, we create a unique "human friendly" id
+                id = 'scroll_autoid_' + auto_id();
+                $e.attr('id', id);
+            }
+            crea_scroll_vertical(id);
         }
-        crea_scroll_vertical(id);
     });
 }
 
