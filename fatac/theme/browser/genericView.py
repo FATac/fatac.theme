@@ -419,8 +419,8 @@ class genericView(BrowserView, funcionsCerca):
         i = 0
         llista = []
         # Afegim subtitols al player (audio/video)
-        values = self.context.portal_catalog.searchResults(portal_type='File', path=self.context.absolute_url_path())
-        info_srt = [dict(label=obj.Title, src=obj.getURL()) for obj in values]
+        values = [self.context[obj_id] for obj_id in self.context.objectIds()]
+        info_srt = [dict(label=obj.Title, src=obj.absolute_url()) for obj in values]
         while i < len(dades['value']):
             partsDades = (dades['value'][i + 1] + ",default").split(",")
             llista.append({'url': dades['value'][i],

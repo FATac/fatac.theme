@@ -15,7 +15,7 @@
  <stylesheet title="" applyPrefix="False" authenticated="False"
     cacheable="True" compression="safe" conditionalcomment="" cookable="False" 
     enabled="on" expression="" 
-    id="++resource++fatac.theme.stylesheets/video-js.css" media="" 
+    id="video-js.css" media="" 
     rel="stylesheet" rendering="import"/>
 
 </object>

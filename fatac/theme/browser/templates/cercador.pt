@@ -4,10 +4,9 @@
         <input name="s" id="s" type="text" size="28" class="arial15c999999" value="Antoni Tàpies"
                i18n:attributes="title Search"
                tal:attributes="value request/form/s|nothing" />
-        <button class="searchButton" type="submit">
-            <!-- <img i18n:attributes="alt Search; title Search;" i18n:translate="" tal:attributes="src string:${view/navigation_root_url}/++resource++fatac.theme.images/ico-buscar-a.gif" /> -->
-        </button>
+        <button class="searchButton" type="submit"> </button>
     </form>
-    <a tal:attributes="href string:${view/navigation_root_url}/explorar" i18n:translate="Explorar" class="arial15c666666">Explorar</a>
+    <a tal:attributes="href string:${view/navigation_root_url}/explorar" 
+       i18n:translate="Explorar" class="arial15c666666" style="margin-top: 8px;">Explorar</a>
 
 </div>
