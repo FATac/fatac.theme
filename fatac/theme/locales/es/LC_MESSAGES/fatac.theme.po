@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-07-04 12:35+0000\n"
-"PO-Revision-Date: 2012-07-04 14:55+0100\n"
+"PO-Revision-Date: 2012-07-05 14:27+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
 msgid "A description of Playlist"
-msgstr ""
+msgstr "Una breve descripción de la Playlist"
 
 #: zope/component/zcml.py:225
 msgid "A factory used to create the subscriber instance."
@@ -581,7 +581,7 @@ msgstr "Elementos de Mis archivos"
 
 #: fatac.content/fatac/content/portletMyGroups.py:28
 msgid "MyGroups items"
-msgstr "elementos de Mis grupos"
+msgstr "Elementos de Mis grupos"
 
 #. Default: "Nom"
 #: zope/component/zcml.py:113
@@ -626,11 +626,11 @@ msgstr "Abrir"
 #. Default: "Ontologies"
 #: fatac.forms/fatac/forms/browser/manteniment.py:74
 msgid "Ontologies"
-msgstr "Ontologias"
+msgstr "Ontologías"
 
 #: fatac.content/fatac/content/playlist.py:34
 msgid "Ordered List To Play"
-msgstr "Lista ordenanda para reproducir"
+msgstr "Lista ordenada para reproducir"
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:45
 msgid "Ordre:"
@@ -642,7 +642,7 @@ msgstr "Organizaciones"
 
 #: fatac.content/fatac/content/playlist.py:51
 msgid "Original Group"
-msgstr "grupo original"
+msgstr "Grupo original"
 
 #. Default: "Origen"
 msgid "OriginalSource"
@@ -842,27 +842,27 @@ msgstr "Factoría de subscriptores"
 #. Default: "Substitueix"
 #: fatac.forms/fatac/forms/browser/manteniment.py:66
 msgid "Substitueix"
-msgstr "Substituir"
+msgstr "Sustituir"
 
 #. Default: "Substitueix: falten paràmetres per indicar "
 #: fatac.forms/fatac/forms/browser/manteniment.py:68
 msgid "SubstitueixFaltenParams"
-msgstr "Substituir: faltan parámetros por indicar "
+msgstr "Sustituir: faltan parámetros por indicar "
 
 #. Default: "Substitueix: cal indicar els paràmetres "
 #: fatac.forms/fatac/forms/browser/manteniment.py:70
 msgid "SubstitueixFaltenTotsParams"
-msgstr "Substituir: es necesario indicar los parámetros "
+msgstr "Sustituir: es necesario indicar los parámetros "
 
 #. Default: "Substituir textos"
 #: fatac.forms/fatac/forms/browser/templates/manteniment.pt:73
 msgid "SubstituirTextos"
-msgstr "Substituir textos"
+msgstr "Sustituir textos"
 
 #. Default: "Substitueix de cop tots els textos d'un camp especificat. Acció útil per a canviar totes les URL de cop quan es canvia el domini del servidor. Cal indicar: el nom de la propietat que es canviarà (forma \"prefix:NomPropietat\"), el text a substituir, i el nou text."
 #: fatac.forms/fatac/forms/browser/templates/manteniment.pt:75
 msgid "SubstituirTextosExplicacio"
-msgstr "Substituir de golpe todos los textos de un campo especifico. Acción útil para cambiar todas las URL a la vez cuando se cambia de dominio el servidor. Es necesario indicar: el nombre de la propiedad que se cambiará (forma \"prefijo:NomPropiedad\"), el texto a substituir, y el nuevo texto."
+msgstr "Sustituir de golpe todos los textos de un campo especifico. Acción útil para cambiar todas las URL a la vez cuando se cambia de dominio el servidor. Es necesario indicar: el nombre de la propiedad que se cambiará (forma \"prefijo:NomPropiedad\"), el texto a substituir, y el nuevo texto."
 
 #: fatac.content/fatac/content/dummy.py:18
 #: fatac.content/fatac/content/ghost.py:33
@@ -937,7 +937,7 @@ msgstr "Lista de grupos que pueden mostrar esta Playlist"
 
 #: fatac.content/fatac/content/playlist.py:35
 msgid "This is a list that has the order of the DB objects"
-msgstr "Listaque contiene el orden de los elementos de la base de datos"
+msgstr "Lista que contiene el orden de los elementos de la base de datos"
 
 #: fatac.content/fatac/content/portletPlaylists.py:34
 msgid "This portlet displays Playlists."

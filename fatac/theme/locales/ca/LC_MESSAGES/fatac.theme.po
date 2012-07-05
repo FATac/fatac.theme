@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-07-04 12:22+0000\n"
-"PO-Revision-Date: 2012-07-04 16:03+0100\n"
+"PO-Revision-Date: 2012-07-05 14:26+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
-"Language-Team: \n"
+"Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -577,11 +577,11 @@ msgstr "Media Server URI"
 
 #: fatac.content/fatac/content/portletMyFiles.py:28
 msgid "My Files items"
-msgstr "Objectes My Files"
+msgstr "Elements dels Meus arxius"
 
 #: fatac.content/fatac/content/portletMyGroups.py:28
 msgid "MyGroups items"
-msgstr "Objectes My Groups"
+msgstr "Elements dels Meus grups"
 
 #. Default: "Nom"
 #: zope/component/zcml.py:113
@@ -628,7 +628,7 @@ msgstr "Ontologies"
 
 #: fatac.content/fatac/content/playlist.py:34
 msgid "Ordered List To Play"
-msgstr "Odre de la llista per iniciar"
+msgstr "Llista ordenada per reproduir"
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:45
 msgid "Ordre:"
@@ -928,7 +928,7 @@ msgstr "Aquesta es la llista de Grups que poden mostrar aquesta Playlist"
 
 #: fatac.content/fatac/content/playlist.py:35
 msgid "This is a list that has the order of the DB objects"
-msgstr "Aquesta es la lista que conté l'ordre dels objectes de la base de dades."
+msgstr "Aquesta es la llista que conté l'ordre dels objectes de la base de dades."
 
 #: fatac.content/fatac/content/portletPlaylists.py:34
 msgid "This portlet displays Playlists."
@@ -940,7 +940,7 @@ msgstr "Aquest portlet mostra els Meus Arxius."
 
 #: fatac.content/fatac/content/portletMyGroups.py:34
 msgid "This portlet displays my groups."
-msgstr "Aquest portlet mostra Els Meus Grups."
+msgstr "Aquest portlet mostra els Meus Grups."
 
 #: zope/component/zcml.py:98
 msgid "This should be a list of interfaces or classes"
@@ -1414,4 +1414,7 @@ msgstr "Vista prèvia"
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:126
 msgid "visualitzacio4"
 msgstr "Pantalla sencera"
+
+msgid "Writer"
+msgstr "Escriptor"
 
