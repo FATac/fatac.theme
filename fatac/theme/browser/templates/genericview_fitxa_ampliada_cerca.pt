@@ -15,19 +15,33 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
         <div class="row" tal:define="seccions dades_objecte/dades_seccions;
                                      isanon context/@@plone_portal_state/anonymous">
 
+<!--             <br/>===================<br/>
+            <tal:repl tal:replace="seccions" />
+            <br/>===================<br/> -->
+
             <!-- Columna esquerra (Títol i Descripció) -->
             <div class="span5">
                 <div class="slider_vertical" tal:attributes="id string:slideFitxaOpcionsId-${dades_objecte/id}">
                     <div class="div_interior">
                         <tal:rep tal:repeat="seccio seccions">
-                            <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body']">
+                            <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body', 'footer']">
 
                                 <!-- si no hi ha títol, pintem miniatura classe + botó addPlaylist -->
                                 <tal:co tal:define="hi_ha_dades python: len(seccio['dades']) > 0" tal:condition="python: hi_ha_dades==False and seccio['nom'] == 'header'">
                                     <img class="miniatura_classe"
                                          tal:attributes="src dades_objecte/thumbnail_classe; alt dades_objecte/titol; id dades_objecte/id" />
                                     <br/>
-                                    <img tal:condition="not: isanon" class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                                    <tal:co tal:condition="not: isanon">
+                                        <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                                        <div class="visualClear" />
+
+                                        <!-- prova -->
+<!--                                         You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
+                                        <div style="display:none;">
+                                        <a href="http://slipsum.com">lorem ipsum</a></div>
+ -->                                        <!-- fi prova -->
+
+                                    </tal:co>
                                 </tal:co>
 
                                 <tal:rep tal:repeat="dada seccio/dades">
@@ -44,14 +58,15 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                         </a>
                                         <tal:co tal:condition="not: isanon">
                                             <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                                            <div class="visualClear" />
                                         </tal:co>
                                     </tal:header>
 
                                     <!-- Text del cos -->
-                                    <tal:body tal:condition="python: seccio['nom'] == 'body'">
-                                        <div class="georgia13c333333">
+                                    <tal:body tal:condition="python: seccio['nom'] == 'body' or  seccio['nom'] == 'footer'">
+
                                            <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
-                                        </div>
+
                                     </tal:body>
 
                                 </tal:rep>
@@ -62,36 +77,37 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             </div>
 
             <!-- Columna dreta (Contingut) -->
-            <div class="span10">
-                <tal:rep tal:repeat="seccio seccions">
-                    <tal:def tal:condition="python: seccio['nom'] not in ['header', 'body']"
-                             tal:define="slider_vertical python: dades_objecte['te_subcerca'] == 'amb_subcerca' and (seccio['nom'] == 'header' or seccio['nom'] == 'body');
-                                        start repeat/seccio/start; end repeat/seccio/end; es_div_content python: seccio['nom'] == 'content';
-                                        hi_ha_content dades_objecte/hi_ha_seccio_content">
 
-                        <!-- estructura: si és el primer div i no és el div content obrim div columna esquerra -->
-                        <tal:repl tal:condition="python: hi_ha_content and start and es_div_content==False" tal:replace="structure string:<div class='divs_esq'>" />
-                        <!-- estructura: si no és el primer div i és el div content, o és l'últim div, tanquem columna esquerra -->
-                        <tal:repl tal:condition="python: (hi_ha_content and start==False and es_div_content)" tal:replace="structure string:</div>" />
+            <tal:rep tal:repeat="seccio seccions">
+                <tal:def tal:condition="python: seccio['nom']=='content'">
 
-                        <div tal:attributes="id string:${seccio/nom}_objecte; class python:slider_vertical and 'slider_vertical seccio_dades' or 'seccio_dades'" tal:condition="seccio/dades">
-                            <!-- estructura: si hi ha subcerca, header y body tenen slider vertcal; l'obrim -->
-                            <tal:repl tal:condition="slider_vertical" tal:replace="structure string:<div class='div_interior'>" />
+                    <div class="span10" tal:condition="seccio/dades">
 
-                            <tal:rep tal:repeat="dada seccio/dades">
-                                <!-- Fiquem tot el que no sigui de la capçalera, el cos i la cerca -->
-                                 <tal:co tal:condition="python: dada['tipus'] not in ['header', 'body', 'search', 'objects']">
-                                    <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
-                                </tal:co>
-                            </tal:rep>
+                        <div class="slider_vertical seccio_dades"
+                             tal:attributes="id string:${dades_objecte/id}_objecte;">
 
-                            <!-- estructura: si hi ha subcerca, header y body tenen slider vertcal; el tanquem -->
-                            <tal:repl tal:condition="slider_vertical" tal:replace="structure string:</div>" />
+                            <div class="div_interior">
+
+                                <tal:rep tal:repeat="dada seccio/dades">
+                                     <tal:co tal:condition="python: dada['tipus'] not in ['search']">
+                                        <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
+
+                                        <!--  inici prova -->
+                                        <!-- <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
+                                        <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/> -->
+                                        <!--  fi prova -->
+
+                                    </tal:co>
+                                </tal:rep>
+
+                            </div>
+
                         </div>
+                    </div>
 
-                    </tal:def>
-                </tal:rep>
-            </div>
+                </tal:def>
+            </tal:rep>
+
 
         </div>
     </div>

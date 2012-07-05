@@ -395,6 +395,14 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 .fitxa_ampliada_cerca .caixa_titol { margin-top: 5px; }
 .fitxa_ampliada_cerca .miniatura_classe { max-width:15px; max-height:15px; margin-bottom:4px; }
 
+.fitxa_ampliada_cerca .span5 { margin-left:0 !important; }
+.fitxa_ampliada_cerca .barra { height:100%; }
+.fitxa_ampliada_cerca .slider_vertical { height:485px !important; }
+.fitxa_ampliada_cerca .span5 .div_interior { width:254px !important; }
+.fitxa_ampliada_cerca .span10 .div_interior { width:560px !important; }
+.fitxa_ampliada_cerca .span10 .photo-container { float:left; width:100%; }
+.fitxa_ampliada_cerca .span10 .photo-container .media_image { max-width:100%; }
+
 /* --------------------------------------------------------------------- genericview_hover_cerca.pt */
 /*
 .genericview_hover_cerca { max-width: 210px; }
