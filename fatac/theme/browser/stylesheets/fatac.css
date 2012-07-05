@@ -16,9 +16,7 @@ div.position-0 { margin-left: -100%; }
 
 div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
-div#portal-columns.row {margin-left: 0px;}
-div#portal-top.row {margin-left: 0px;}
-div#portal-footer-wrapper.row {margin-left: 0px;}
+div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-wrapper.row {margin-left: 0px;}
 /* ---------------------------------------------------------------------------- general */
 a { border-bottom:none !important; }
 
@@ -240,7 +238,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #resultats { float:left; width:100%; }
 #wrapper_resultats { overflow:hidden; position:relative; height:485px; }
 .pagines_resultats { position:absolute; width:20000em; }
-.pagines_resultats .pagina { width:944px; float:left; }
+.pagines_resultats .pagina { width:881px; float:left; }
 #resultats_cerca a.disabled { visibility: hidden !important; }
 
 #ordre_y_tipus_cerca dl { margin-bottom:0; z-index:1; }
