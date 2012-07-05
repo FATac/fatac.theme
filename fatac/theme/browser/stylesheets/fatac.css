@@ -38,6 +38,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
 .arial15c666666 { font-family:Arial; font-size:15px; color:#666666 !important; }
 .arial15c999999 { font-family:Arial; font-size:15px; color:#999999 !important; }
+.arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
 .arial13c999999 { font-family:Arial; font-size:13px; color:#999999 !important; }
 .arial13c999999upp { font-family:Arial; font-weight:normal; line-height:1em; font-size:13px; color:#999999 !important; text-transform: uppercase; }
 .arial13c000000upp { font-family:Arial; font-weight:normal; line-height:1em; font-size:13px; color:#000000 !important; text-transform: uppercase; }
@@ -187,7 +188,7 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 .ui-slider-handle { height:10px; margin:0 auto; background-color:#999999; background-image:none !important; display:block; position:absolute; width:3px; }
 
     /* css per que esfaci ample l'scroll quan el fem servir */
-    .slider_vertical .ui-slider-handle { margin-left:4px; width:100%; background-image:none; background-color:#999999; width:3px; margin-left:4px; border:0; }
+    .slider_vertical .ui-slider-handle { margin-left:4px; width:100%; background-image:none; background-color:#999999 !important; width:3px; margin-left:4px; border:0; }
     .slider_vertical:hover .ui-slider-handle { border-left:2px solid #999999; border-right:2px solid #999999; margin-left:3px; border-radius:0; }
 
 
@@ -323,7 +324,7 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 */
-div.genericview_fitxa_final div.num_aportacions { float:left; margin-left:10px; padding:3px 10px; height:16px; color: #339933; background-color: #D3E3C3; border-radius: 0.3em; -webkit-radius: 0.3em; -moz-border-radius: 0.3em; }
+div.genericview_fitxa_final div.num_aportacions { line-height:15px; font-style:normal; float:left; margin-left:10px; padding:3px 10px; height:16px; color: #339933; background-color: #D3E3C3; border-radius: 0.3em; -webkit-radius: 0.3em; -moz-border-radius: 0.3em; }
 div.genericview_fitxa_final img.miniatura_classe { max-width:15px; max-height:15px; vertical-align: middle;}
 
 div.genericview_fitxa_final { float:left; width:100%; margin-top:20px; }
@@ -348,12 +349,12 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 .counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
 .counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
 
-.requadre_objects { margin:0 0 20px 0; text-align:center; }
-.scrollable_genericview { height:220px; text-align:center; width:98%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
-.scrollable_genericview .fila { margin: 10px 0; }
-.requadre_objects .arrow_up { margin-bottom:10px; }
-.requadre_objects .arrow_down { margin-top:10px; }
-.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:26.6%; float:left; margin-left:2%; background-color:white; padding:2%; }
+.requadre_objects { margin:0 0 20px 0; text-align:center; background-color:#ECECEC; border-top: 1px dotted #888; border-bottom: 1px dotted #888; }
+.scrollable_genericview { height:198px; text-align:center; width:98%; float:left; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
+.scrollable_genericview .fila { margin: 0px 0; }
+.requadre_objects .arrow_up { margin:7px 0px 10px; }
+.requadre_objects .arrow_down { margin:10px 0px 7px; }
+.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:27%; float:left; margin-left:2%; background-color:white; padding:2%; }
 .requadre_objects a.disabled { visibility: hidden; }
 
 .media_image { max-width:617px; height : auto; }

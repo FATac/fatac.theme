@@ -5,7 +5,9 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 from Products.CMFCore.utils import getToolByName
 from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
+from zope.component import getMultiAdapter
 from math import ceil
+import unicodedata
 
 
 class filtresView(BrowserView, funcionsCerca):
@@ -190,7 +192,9 @@ class cercaInicialView(BrowserView, funcionsCerca):
     def getS(self):
         """
         """
-        return self.request.get('s')
+        search_text = unicode(self.request.get('s'))
+        search_text = ''.join((c for c in unicodedata.normalize('NFD', search_text) if unicodedata.category(c) != 'Mn'))
+        return search_text
 
 
 class cercaAjaxView(BrowserView, funcionsCerca):

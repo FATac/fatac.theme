@@ -12,7 +12,8 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
 <tal:rep tal:repeat="dades_objecte view/dades_genericview_all_sections">
     <div tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}" class="genericview fitxa_ampliada_cerca">
 
-        <div class="row" tal:define="seccions dades_objecte/dades_seccions">
+        <div class="row" tal:define="seccions dades_objecte/dades_seccions;
+                                     isanon context/@@plone_portal_state/anonymous">
 
             <!-- Columna esquerra (Títol i Descripció) -->
             <div class="span5">
@@ -20,6 +21,15 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                     <div class="div_interior">
                         <tal:rep tal:repeat="seccio seccions">
                             <tal:cond tal:condition="python: seccio['nom'] in ['header', 'body']">
+
+                                <!-- si no hi ha títol, pintem miniatura classe + botó addPlaylist -->
+                                <tal:co tal:define="hi_ha_dades python: len(seccio['dades']) > 0" tal:condition="python: hi_ha_dades==False and seccio['nom'] == 'header'">
+                                    <img class="miniatura_classe"
+                                         tal:attributes="src dades_objecte/thumbnail_classe; alt dades_objecte/titol; id dades_objecte/id" />
+                                    <br/>
+                                    <img tal:condition="not: isanon" class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
+                                </tal:co>
+
                                 <tal:rep tal:repeat="dada seccio/dades">
 
                                     <!-- Titol + Icona Tipus objecte -->
@@ -32,8 +42,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                                      tal:attributes="src dades_objecte/thumbnail_classe; alt dades_objecte/titol; id dades_objecte/id" />
                                             </div>
                                         </a>
-                                        <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
-                                                tal:condition="not: isanon">
+                                        <tal:co tal:condition="not: isanon">
                                             <img class="addPlaylist" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
                                         </tal:co>
                                     </tal:header>
@@ -73,7 +82,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                 <!-- Fiquem tot el que no sigui de la capçalera, el cos i la cerca -->
                                  <tal:co tal:condition="python: dada['tipus'] not in ['header', 'body', 'search', 'objects']">
                                     <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
-                                </tal:co> 
+                                </tal:co>
                             </tal:rep>
 
                             <!-- estructura: si hi ha subcerca, header y body tenen slider vertcal; el tanquem -->
