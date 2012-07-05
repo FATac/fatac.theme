@@ -10,15 +10,15 @@
         </metal:block>
         <metal:main fill-slot="main" i18n:domain="fatac.theme">
 
-            <div class="ac_breadcrump div_dotted_line_bottom TerminalDosis600">
-                <span i18n:translate="Explorar" style="margin-top: 8px;">Explorar</span>
+            <div class="ac_breadcrump div_dotted_line_bottom breadcrumb_cerca">
+                <span i18n:translate="Explorar" class="TerminalDosis600">Explorar</span>
             </div>
 
             <div class="div_dotted_line_bottom arial12c666666">
-                <a href="" class="arial15c666666 explorar_classe selected" rel="class:Person" data-conf="Agents" i18n:translate="agentes">Agents</a> |
-                <a href="" class="arial15c666666 explorar_classe" rel="class:FrameActivity" data-conf="Events" i18n:translate="eventos">Esdeveniments</a> |
-                <a href="" class="arial15c666666 explorar_classe" data-conf="Explora" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a> |
-                <a href="totes-les-playlists" class="arial15c666666" i18n:translate="">Totes les playlists</a>
+                <a href="" class="arial13c666666 explorar_classe selected" rel="class:Person" data-conf="Agents" i18n:translate="agentes">Agents</a> &nbsp|&nbsp
+                <a href="" class="arial13c666666 explorar_classe" rel="class:FrameActivity" data-conf="Events" i18n:translate="eventos">Esdeveniments</a> &nbsp|&nbsp
+                <a href="" class="arial13c666666 explorar_classe" data-conf="Explora" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a> &nbsp|&nbsp
+                <a href="totes-les-playlists" class="arial13c666666" i18n:translate="">Totes les playlists</a>
             </div>
 
             <script type="text/javascript">

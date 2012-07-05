@@ -3,7 +3,8 @@
         crea_scrolls_verticals();
     });
 </script>
-<div class="row column-results">
+
+<div class="row column-results" tal:define="plone_view context/@@plone">
     <tal:rep tal:repeat="column view/getColumns">
         <div class="span5">
             <div tal:content="column/title" class="arial15c666666">[Column title]</div>
@@ -11,10 +12,14 @@
                 <div class="div_interior">
                     <ul>
                         <tal:rep tal:repeat="dades_objecte column/content">
-                            <tal:cond tal:condition="dades_objecte" tal:attributes="id string:div${dades_objecte/id}">
+                            <tal:cond tal:condition="dades_objecte"
+                                      tal:attributes="id string:div${dades_objecte/id}">
                                     <li>
-                                        <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}"
-                                            tal:content="dades_objecte/name">
+                                        <a href="#" 
+                                            tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}; alt value; title value;"
+                                            tal:define="value dades_objecte/name"
+                                            tal:content="python:plone_view.cropText(value,40)"
+                                            >
                                         </a>
                                     </li>
                             </tal:cond>

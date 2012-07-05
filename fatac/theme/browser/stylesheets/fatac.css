@@ -33,8 +33,10 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
 .arial20c333333bold { font-family:Arial; font-size:20px; color:#333333 !important; font-weight:bold !important; }
 .arial16c339933bold { font-family:Arial; font-size:16px; color:#339933 !important; font-weight:bold !important; }
+.arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
 .arial15c666666 { font-family:Arial; font-size:15px; color:#666666 !important; }
 .arial15c999999 { font-family:Arial; font-size:15px; color:#999999 !important; }
+.arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
 .arial13c999999 { font-family:Arial; font-size:13px; color:#999999 !important; }
 .arial13c999999upp { font-family:Arial; font-weight:normal; line-height:1em; font-size:13px; color:#999999 !important; text-transform: uppercase; }
 .arial13c000000upp { font-family:Arial; font-weight:normal; line-height:1em; font-size:13px; color:#000000 !important; text-transform: uppercase; }
@@ -345,12 +347,12 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 .counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
 .counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
 
-.requadre_objects { margin:0 0 20px 0; text-align:center; }
-.scrollable_genericview { height:220px; text-align:center; width:98%; float:left; border-top:1px dotted #888888; border-bottom:1px dotted #888888; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
-.scrollable_genericview .fila { margin: 10px 0; }
-.requadre_objects .arrow_up { margin-bottom:10px; }
-.requadre_objects .arrow_down { margin-top:10px; }
-.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:26.6%; float:left; margin-left:2%; background-color:white; padding:2%; }
+.requadre_objects { margin:0 0 20px 0; text-align:center; background-color:#ECECEC; border-top: 1px dotted #888; border-bottom: 1px dotted #888; }
+.scrollable_genericview { height:198px; text-align:center; width:98%; float:left; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
+.scrollable_genericview .fila { margin: 0px 0; }
+.requadre_objects .arrow_up { margin:7px 0px 10px; }
+.requadre_objects .arrow_down { margin:10px 0px 7px; }
+.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:27%; float:left; margin-left:2%; background-color:white; padding:2%; }
 .requadre_objects a.disabled { visibility: hidden; }
 
 .media_image { max-width:617px; height : auto; }
@@ -412,7 +414,7 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 .genericview_fitxa_home .miniatura_objecte { max-width:164px; max-height:90px; }
 .genericview_fitxa_home .miniatura_classe { max-width:15px; max-height:15px; margin:0px;}
 .genericview_fitxa_home div.imatge { float:left; width:100%; height:90px; margin-bottom:5px; }
-.genericview_fitxa_home div.dades { float:left; width:92%; height:65px; padding: 0 4%; }
+.genericview_fitxa_home div.dades { float:left; width:92%; height: 31%; padding: 0 4%; }
 .genericview_fitxa_home img.addPlaylist { margin-top:3px; }
 
 
