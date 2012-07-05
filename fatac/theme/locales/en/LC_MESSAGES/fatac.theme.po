@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
-"POT-Creation-Date: 2012-07-04 12:36+0000\n"
-"PO-Revision-Date: 2012-07-05 14:27+0100\n"
+"POT-Creation-Date: 2012-07-05 15:40+0000\n"
+"PO-Revision-Date: 2012-07-05 17:43+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgid "A list of factories (usually just one) that create the adapter instance."
 msgstr "A list of factories (usually just one) that create the adapter instance."
 
 #. Default: "Accions de manteniment"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:30
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:34
 #: fatac.forms/fatac/forms/browser/templates/manteniment.pt:35
 msgid "AccionsManteniment"
 msgstr "Maintenance actions"
@@ -77,7 +77,7 @@ msgid "Add a Playlist Image that represents your playlist"
 msgstr "Add a Playlist Image that represents your playlist"
 
 #. Default: "Administració"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:15
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:18
 msgid "Administracio"
 msgstr "Administration"
 
@@ -118,7 +118,7 @@ msgid "Arts folder"
 msgstr "Arts folder"
 
 #. Default: "Assignar drets legals"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:28
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:32
 msgid "AssignarDretsLegals"
 msgstr "Assign legal rights"
 
@@ -139,7 +139,7 @@ msgid "Biography"
 msgstr "Biography"
 
 #. Default: "Buscar/Editar objectes"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:27
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:31
 msgid "BuscarEditarObjectes"
 msgstr "Search / Edit items"
 
@@ -177,7 +177,7 @@ msgstr "Search in library"
 msgid "Chair"
 msgstr "Chair"
 
-#: fatac.content/fatac/content/dashboard.py:232
+#: fatac.content/fatac/content/dashboard.py:241
 msgid "Changes made."
 msgstr "Changes made."
 
@@ -185,7 +185,7 @@ msgstr "Changes made."
 msgid "Changes saved"
 msgstr "Changes saved"
 
-#: fatac.content/fatac/content/dashboard.py:455
+#: fatac.content/fatac/content/dashboard.py:464
 msgid "Changes saved."
 msgstr "Changes saved."
 
@@ -222,7 +222,7 @@ msgstr "Component to use"
 msgid "Convertir"
 msgstr "Convert"
 
-#: fatac.content/fatac/content/dashboard.py:648
+#: fatac.content/fatac/content/dashboard.py:657
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
 msgstr "Could not add group ${name}, perhaps a user or group with this name already exists."
 
@@ -322,7 +322,7 @@ msgstr "Events"
 msgid "Executa"
 msgstr "Play"
 
-#: fatac.theme/fatac/theme/browser/templates/cercador.pt:11
+#: fatac.theme/fatac/theme/browser/templates/cercador.pt:9
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
 msgid "Explorar"
 msgstr "Explore"
@@ -349,7 +349,7 @@ msgstr "Fatac"
 msgid "Fatac settings"
 msgstr "Fatac settings"
 
-#. Default: "realitzador"
+#. Default: "Realitzador"
 msgid "Film-maker"
 msgstr "Film-maker"
 
@@ -399,7 +399,7 @@ msgid "GestioCercaMedia"
 msgstr "Medias search and management"
 
 #. Default: "Gestió dels media"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:29
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:33
 msgid "GestioMedia"
 msgstr "Medias Management"
 
@@ -412,15 +412,15 @@ msgstr "Medias Management"
 msgid "Ghost"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:666
+#: fatac.content/fatac/content/dashboard.py:675
 msgid "Group ${name} has been added."
 msgstr "Group ${name} has been added."
 
-#: fatac.content/fatac/content/dashboard.py:677
+#: fatac.content/fatac/content/dashboard.py:686
 msgid "Group name required."
 msgstr "Group name required."
 
-#: fatac.content/fatac/content/dashboard.py:464
+#: fatac.content/fatac/content/dashboard.py:473
 msgid "Group(s) deleted."
 msgstr "Group(s) deleted."
 
@@ -473,12 +473,12 @@ msgstr ""
 msgid "Ingles"
 msgstr "English"
 
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:19
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:22
 msgid "Inici"
 msgstr "Home"
 
 #. Default: "Inserir nou objecte"
-#: fatac.forms/fatac/forms/browser/templates/inici.pt:26
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:30
 msgid "InserirObjecte"
 msgstr "Insert new object"
 
@@ -592,7 +592,7 @@ msgstr "Name"
 msgid "Name of the registration.  This is used by application code when locating a utility."
 msgstr "Name of the registration.  This is used by application code when locating a utility."
 
-#: fatac.content/fatac/content/dashboard.py:443
+#: fatac.content/fatac/content/dashboard.py:452
 msgid "No changes made."
 msgstr "No changes made."
 
@@ -880,7 +880,7 @@ msgstr "Previous text"
 msgid "TextNou"
 msgstr "New text"
 
-#: fatac.content/fatac/content/dashboard.py:640
+#: fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
 msgstr "The group name you entered is not valid."
 
@@ -995,9 +995,18 @@ msgstr "View attributes that are also allowed if user has permission."
 msgid "Visualització de búsqueda"
 msgstr "Search view"
 
+#. Default: "Escriptor"
+msgid "Writer"
+msgstr "Writer"
+
 #. Default: "Any"
 msgid "Year"
 msgstr "Year"
+
+#. Default: "Afegir subtítols"
+#: fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:132
+msgid "addCaptions"
+msgstr "Add captions"
 
 #. Default: "Agents"
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:18
@@ -1063,6 +1072,11 @@ msgstr "Ministry of Education"
 msgid "de"
 msgstr "of"
 
+#. Default: "Esborrar subtítols"
+#: fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:133
+msgid "delCaptions"
+msgstr "Delete captions"
+
 #. Default: "A través d'aquest formulari podeu canviar les dades del vostre perfil d'usuari."
 #: fatac.core/fatac/core/browser/profile_form.pt:32
 msgid "desc_iwant_register"
@@ -1088,7 +1102,7 @@ msgstr "List of My Groups from user."
 msgid "description_no_account"
 msgstr "If you do not have an account use the ${registration_form} to register."
 
-#. Default: "formulari de registre"
+#. Default: "Formulari de registre"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:316
 msgid "description_no_account_registration_linktext"
 msgstr "Register form"
@@ -1103,6 +1117,11 @@ msgstr "List of user's playlists."
 #: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:20
 msgid "dreta"
 msgstr "next page"
+
+#. Default: "E-mail"
+#: fatac.core/fatac/core/userdataschema.py:39
+msgid "email"
+msgstr "E-mail"
 
 #. Default: "eng"
 #: ../../../browser/languageselector.pt:13,
@@ -1147,7 +1166,7 @@ msgstr "Register allows to interact with documents of Arts Combinatòries: add c
 msgid "explora_bbdd"
 msgstr "Explore our database by:"
 
-#. Default: "Finançament:"
+#. Default: "Finançament"
 #: ../../../browser/templates/footer.pt:22
 msgid "financament"
 msgstr "Funding"
@@ -1205,7 +1224,7 @@ msgstr "we can send you a new one"
 msgid "label_delete"
 msgstr "Delete"
 
-#. Default: "E-mail"
+#. Default: "Correu electrònic"
 #: fatac.core/fatac/core/userdataschema.py:39
 msgid "label_email"
 msgstr "E-mail"
@@ -1301,7 +1320,7 @@ msgstr "order type:"
 msgid "pagina"
 msgstr "page"
 
-#. Default: "Participants:"
+#. Default: "Participants"
 #: ../../../browser/templates/footer.pt:31
 msgid "participants"
 msgstr "Participants"
