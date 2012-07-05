@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-04 10:59+0000\n"
+"POT-Creation-Date: 2012-07-05 15:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,50 +16,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
-
-#: fatac.content/fatac/content/browser/my-activity.pt:128
-msgid "<img src="++resource++fatac.content/images/activitat24.gif" /> <span>x</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/group-activity.pt:111
-msgid "<img src="++resource++fatac.content/images/activitat24.gif" /> Canvis recents del grup: <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/dashboard.pt:111
-#: fatac.content/fatac/content/browser/group-activity.pt:94
-#: fatac.content/fatac/content/browser/group-members.pt:101
-msgid "<img src="++resource++fatac.content/images/activitat_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/dashboard.pt:127
-msgid "<img src="++resource++fatac.content/images/dashboard24.gif" /> <span>x</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/group-view.pt:116
-msgid "<img src="++resource++fatac.content/images/groups24.gif" /> <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/group-members.pt:117
-#: fatac.content/fatac/content/browser/manage-groups.pt:153
-msgid "<img src="++resource++fatac.content/images/groups24.gif" /> <span>x</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/dashboard.pt:91
-#: fatac.content/fatac/content/browser/group-activity.pt:74
-#: fatac.content/fatac/content/browser/group-members.pt:81
-msgid "<img src="++resource++fatac.content/images/groups_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
-msgstr ""
-
-#: fatac.content/fatac/content/playlist_templates/sortingView.pt:26
-#: fatac.content/fatac/content/playlist_templates/view.pt:31
-msgid "<img src="++resource++fatac.content/images/playlist24.gif" /> <span>x</span>"
-msgstr ""
-
-#: fatac.content/fatac/content/browser/dashboard.pt:101
-#: fatac.content/fatac/content/browser/group-activity.pt:84
-#: fatac.content/fatac/content/browser/group-members.pt:91
-msgid "<img src="++resource++fatac.content/images/playlist_icon.gif" /> <span>x</span> [<span>${DYNAMIC_CONTENT}</span>]"
-msgstr ""
 
 #: fatac.content/fatac/content/browser/group-activity.pt:46
 msgid "> Activitat del Grup"
@@ -77,8 +33,8 @@ msgstr ""
 msgid "> Membres del Grup"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:55
-#: fatac.content/fatac/content/browser/my-playlists.pt:94
+#: fatac.content/fatac/content/browser/group-playlists.pt:88
+#: fatac.content/fatac/content/browser/my-playlists.pt:85
 msgid "> Playlists"
 msgstr ""
 
@@ -86,10 +42,14 @@ msgstr ""
 msgid "Accés usuaris"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/dashboard.pt:110
-#: fatac.content/fatac/content/browser/group-activity.pt:93
-#: fatac.content/fatac/content/browser/group-members.pt:100
+#: fatac.content/fatac/content/browser/dashboard.pt:107
+#: fatac.content/fatac/content/browser/group-activity.pt:90
+#: fatac.content/fatac/content/browser/group-members.pt:97
 msgid "Activitat"
+msgstr ""
+
+#. Default: "Afegeix"
+msgid "Add"
 msgstr ""
 
 #: fatac.content/fatac/content/portletMyFiles.py:33
@@ -109,6 +69,11 @@ msgstr ""
 msgid "Add a Playlist Image that represents your playlist"
 msgstr ""
 
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Administracio"
+msgstr ""
+
+#. Default: "Administració"
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Administració"
 msgstr ""
@@ -137,7 +102,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/my-activity.pt:128
+#: fatac.content/fatac/content/browser/my-activity.pt:125
 msgid "Canvis Recents"
 msgstr ""
 
@@ -145,7 +110,7 @@ msgstr ""
 msgid "Carpeta arrel"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:232
+#: fatac.content/fatac/content/dashboard.py:241
 msgid "Changes made."
 msgstr ""
 
@@ -153,11 +118,11 @@ msgstr ""
 msgid "Changes saved"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:455
+#: fatac.content/fatac/content/dashboard.py:464
 msgid "Changes saved."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:648
+#: fatac.content/fatac/content/dashboard.py:657
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
 msgstr ""
 
@@ -202,27 +167,27 @@ msgstr ""
 msgid "GenerarMiniaturesFaltaClasse"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:666
+#: fatac.content/fatac/content/dashboard.py:675
 msgid "Group ${name} has been added."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:677
+#: fatac.content/fatac/content/dashboard.py:686
 msgid "Group name required."
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:464
+#: fatac.content/fatac/content/dashboard.py:473
 msgid "Group(s) deleted."
 msgstr ""
 
-#: fatac.content/fatac/content/browser/dashboard.pt:90
-#: fatac.content/fatac/content/browser/manage-groups.pt:113
-#: fatac.content/fatac/content/browser/my-activity.pt:83
+#: fatac.content/fatac/content/browser/dashboard.pt:89
+#: fatac.content/fatac/content/browser/manage-groups.pt:112
+#: fatac.content/fatac/content/browser/my-activity.pt:82
 msgid "Grups"
 msgstr ""
 
 #: fatac.content/fatac/content/browser/group-activity.pt:44
 #: fatac.content/fatac/content/browser/group-members.pt:52
-#: fatac.content/fatac/content/browser/group-playlists.pt:53
+#: fatac.content/fatac/content/browser/group-playlists.pt:86
 msgid "Grups >"
 msgstr ""
 
@@ -255,9 +220,9 @@ msgstr ""
 msgid "Media Server URI"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/group-activity.pt:73
-#: fatac.content/fatac/content/browser/group-members.pt:80
-#: fatac.content/fatac/content/browser/group-playlists.pt:82
+#: fatac.content/fatac/content/browser/group-activity.pt:72
+#: fatac.content/fatac/content/browser/group-members.pt:79
+#: fatac.content/fatac/content/browser/group-playlists.pt:114
 msgid "Members"
 msgstr ""
 
@@ -273,7 +238,7 @@ msgstr ""
 msgid "MyGroups items"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:443
+#: fatac.content/fatac/content/dashboard.py:452
 msgid "No changes made."
 msgstr ""
 
@@ -313,9 +278,9 @@ msgstr ""
 msgid "Playlist Image"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/dashboard.pt:100
-#: fatac.content/fatac/content/browser/group-activity.pt:83
-#: fatac.content/fatac/content/browser/group-members.pt:90
+#: fatac.content/fatac/content/browser/dashboard.pt:98
+#: fatac.content/fatac/content/browser/group-activity.pt:81
+#: fatac.content/fatac/content/browser/group-members.pt:88
 msgid "Playlists"
 msgstr ""
 
@@ -390,7 +355,7 @@ msgstr ""
 msgid "Tag List"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:640
+#: fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
 msgstr ""
 
@@ -441,7 +406,7 @@ msgid "box_more_recently_changed"
 msgstr ""
 
 #. Default: "There is no group or user attached to this group."
-#: fatac.content/fatac/content/browser/group-members.pt:234
+#: fatac.content/fatac/content/browser/group-members.pt:231
 msgid "decription_no_members_assigned"
 msgstr ""
 
@@ -457,14 +422,24 @@ msgid "description_edit_groupproperties"
 msgstr ""
 
 #. Default: "You can add or remove groups and users from this particular group here. Note that this doesn't actually delete the group or user, it is only removed from this group."
-#: fatac.content/fatac/content/browser/group-members.pt:142
+#: fatac.content/fatac/content/browser/group-members.pt:139
 msgid "description_group_members_of"
 msgstr ""
 
 #. Default: "Show all search results"
-#: fatac.content/fatac/content/browser/group-members.pt:374
-#: fatac.content/fatac/content/browser/manage-groups.pt:303
+#: fatac.content/fatac/content/browser/group-members.pt:371
+#: fatac.content/fatac/content/browser/manage-groups.pt:300
 msgid "description_pas_show_all_search_results"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-playlists.pt:177
+#: fatac.content/fatac/content/browser/my-playlists.pt:182
+msgid "editar"
+msgstr ""
+
+#. Default: "E-mail"
+#: fatac.core/fatac/core/userdataschema.py:39
+msgid "email"
 msgstr ""
 
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
@@ -472,16 +447,16 @@ msgstr ""
 msgid "enable_cookies_message_before_login"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:123
+#: fatac.content/fatac/content/browser/group-playlists.pt:150
 msgid "group playlists"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/manage-groups.pt:153
+#: fatac.content/fatac/content/browser/manage-groups.pt:150
 msgid "grups"
 msgstr ""
 
 #. Default: "Assign to groups"
-#: fatac.content/fatac/content/browser/manage-groups.pt:220
+#: fatac.content/fatac/content/browser/manage-groups.pt:217
 msgid "heading_assign_to_groups"
 msgstr ""
 
@@ -497,22 +472,22 @@ msgid "heading_edit_groupproperties"
 msgstr ""
 
 #. Default: "Group Members"
-#: fatac.content/fatac/content/browser/group-members.pt:117
+#: fatac.content/fatac/content/browser/group-members.pt:114
 msgid "heading_group_members"
 msgstr ""
 
 #. Default: "Members of the ${groupname} group"
-#: fatac.content/fatac/content/browser/group-members.pt:124
+#: fatac.content/fatac/content/browser/group-members.pt:121
 msgid "heading_group_members_of"
 msgstr ""
 
 #. Default: "Current group members"
-#: fatac.content/fatac/content/browser/group-members.pt:157
+#: fatac.content/fatac/content/browser/group-members.pt:154
 msgid "heading_groupmembers_current"
 msgstr ""
 
 #. Default: "Current group memberships"
-#: fatac.content/fatac/content/browser/manage-groups.pt:158
+#: fatac.content/fatac/content/browser/manage-groups.pt:155
 msgid "heading_memberships_current"
 msgstr ""
 
@@ -522,12 +497,12 @@ msgid "heading_personal_tools"
 msgstr ""
 
 #. Default: "Search for groups"
-#: fatac.content/fatac/content/browser/manage-groups.pt:214
+#: fatac.content/fatac/content/browser/manage-groups.pt:211
 msgid "heading_search_groups"
 msgstr ""
 
 #. Default: "Search for new group members"
-#: fatac.content/fatac/content/browser/group-members.pt:245
+#: fatac.content/fatac/content/browser/group-members.pt:242
 msgid "heading_search_newmembers"
 msgstr ""
 
@@ -557,19 +532,19 @@ msgid "label_add_new_group"
 msgstr ""
 
 #. Default: "Afegeix una nova Playlist"
-#: fatac.content/fatac/content/browser/group-playlists.pt:44
+#: fatac.content/fatac/content/browser/group-playlists.pt:152
 #: fatac.content/fatac/content/browser/group-view.pt:44
 #: fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
 msgstr ""
 
 #. Default: "Add user to selected groups"
-#: fatac.content/fatac/content/browser/manage-groups.pt:317
+#: fatac.content/fatac/content/browser/manage-groups.pt:314
 msgid "label_add_user_to_group"
 msgstr ""
 
 #. Default: "Add selected groups and users to this group"
-#: fatac.content/fatac/content/browser/group-members.pt:380
+#: fatac.content/fatac/content/browser/group-members.pt:377
 msgid "label_add_users_to_group"
 msgstr ""
 
@@ -591,17 +566,16 @@ msgid "label_delete"
 msgstr ""
 
 #. Default: "Edit"
-#: fatac.content/fatac/content/browser/manage-groups.pt:187
+#: fatac.content/fatac/content/browser/manage-groups.pt:184
 msgid "label_edit_group"
 msgstr ""
 
-#: fatac.core/fatac/core/userdataschema.py:39
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:95
 msgid "label_email"
 msgstr ""
 
 #. Default: "Find a group here"
-#: fatac.content/fatac/content/browser/group-members.pt:134
+#: fatac.content/fatac/content/browser/group-members.pt:131
 msgid "label_find_group"
 msgstr ""
 
@@ -647,7 +621,7 @@ msgid "label_name"
 msgstr ""
 
 #. Default: "No group was specified."
-#: fatac.content/fatac/content/browser/group-members.pt:131
+#: fatac.content/fatac/content/browser/group-members.pt:128
 msgid "label_no_group_specified"
 msgstr ""
 
@@ -656,8 +630,8 @@ msgid "label_password"
 msgstr ""
 
 #. Default: "Quick search"
-#: fatac.content/fatac/content/browser/group-members.pt:253
-#: fatac.content/fatac/content/browser/manage-groups.pt:229
+#: fatac.content/fatac/content/browser/group-members.pt:250
+#: fatac.content/fatac/content/browser/manage-groups.pt:226
 msgid "label_quick_search"
 msgstr ""
 
@@ -672,7 +646,7 @@ msgid "label_remember_my_name"
 msgstr ""
 
 #. Default: "Remove selected groups / users"
-#: fatac.content/fatac/content/browser/group-members.pt:236
+#: fatac.content/fatac/content/browser/group-members.pt:233
 msgid "label_remove_selected_users"
 msgstr ""
 
@@ -683,19 +657,19 @@ msgid "label_save"
 msgstr ""
 
 #. Default: "Search"
-#: fatac.content/fatac/content/browser/group-members.pt:262
-#: fatac.content/fatac/content/browser/manage-groups.pt:237
+#: fatac.content/fatac/content/browser/group-members.pt:259
+#: fatac.content/fatac/content/browser/manage-groups.pt:234
 msgid "label_search"
 msgstr ""
 
 #. Default: "Show all"
-#: fatac.content/fatac/content/browser/group-members.pt:267
+#: fatac.content/fatac/content/browser/group-members.pt:264
 msgid "label_search_large"
 msgstr ""
 
 #. Default: "Select all items"
-#: fatac.content/fatac/content/browser/group-members.pt:171
-#: fatac.content/fatac/content/browser/manage-groups.pt:248
+#: fatac.content/fatac/content/browser/group-members.pt:168
+#: fatac.content/fatac/content/browser/manage-groups.pt:245
 msgid "label_select_all_items"
 msgstr ""
 
@@ -705,9 +679,9 @@ msgid "label_torna_a_la_llista_de_les_teves_playlists"
 msgstr ""
 
 #. Default: "Up to Groups Overview"
-#: fatac.content/fatac/content/browser/group-activity.pt:146
-#: fatac.content/fatac/content/browser/group-members.pt:395
-#: fatac.content/fatac/content/browser/group-playlists.pt:148
+#: fatac.content/fatac/content/browser/group-activity.pt:143
+#: fatac.content/fatac/content/browser/group-members.pt:392
+#: fatac.content/fatac/content/browser/group-playlists.pt:206
 msgid "label_up_to_groups_overview"
 msgstr ""
 
@@ -718,27 +692,27 @@ msgid "link_group_properties"
 msgstr ""
 
 #. Default: "E-mail Address"
-#: fatac.content/fatac/content/browser/group-members.pt:183
+#: fatac.content/fatac/content/browser/group-members.pt:180
 msgid "listingheader_email_address"
 msgstr ""
 
 #. Default: "Group Name"
-#: fatac.content/fatac/content/browser/manage-groups.pt:163
+#: fatac.content/fatac/content/browser/manage-groups.pt:160
 msgid "listingheader_group_name"
 msgstr ""
 
 #. Default: "Remove"
-#: fatac.content/fatac/content/browser/manage-groups.pt:165
+#: fatac.content/fatac/content/browser/manage-groups.pt:162
 msgid "listingheader_group_remove"
 msgstr ""
 
 #. Default: "Group/User name"
-#: fatac.content/fatac/content/browser/group-members.pt:288
+#: fatac.content/fatac/content/browser/group-members.pt:285
 msgid "listingheader_group_user_name"
 msgstr ""
 
 #. Default: "User name"
-#: fatac.content/fatac/content/browser/group-members.pt:182
+#: fatac.content/fatac/content/browser/group-members.pt:179
 msgid "listingheader_user_name"
 msgstr ""
 
@@ -753,11 +727,11 @@ msgid "name"
 msgstr ""
 
 #: fatac.content/fatac/content/playlist_templates/sortingView.pt:26
-#: fatac.content/fatac/content/playlist_templates/view.pt:31
+#: fatac.content/fatac/content/playlist_templates/view.pt:33
 msgid "playlist"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/my-playlists.pt:167
+#: fatac.content/fatac/content/browser/my-playlists.pt:155
 msgid "playlists"
 msgstr ""
 
@@ -777,8 +751,8 @@ msgid "text_ajax_noresponse_message"
 msgstr ""
 
 #. Default: "by ${creator}, last updated: ${date}"
-#: fatac.content/fatac/content/browser/group-activity.pt:133
-#: fatac.content/fatac/content/browser/my-activity.pt:151
+#: fatac.content/fatac/content/browser/group-activity.pt:130
+#: fatac.content/fatac/content/browser/my-activity.pt:148
 msgid "text_creator_date"
 msgstr ""
 
@@ -793,27 +767,32 @@ msgid "text_form_resubmit_message"
 msgstr ""
 
 #. Default: "Enter a group or user name to search for or click 'Show All'."
-#: fatac.content/fatac/content/browser/group-members.pt:348
+#: fatac.content/fatac/content/browser/group-members.pt:345
 msgid "text_no_searchstring"
 msgstr ""
 
 #. Default: "Enter a group or user name to search for."
-#: fatac.content/fatac/content/browser/group-members.pt:342
+#: fatac.content/fatac/content/browser/group-members.pt:339
 msgid "text_no_searchstring_large"
 msgstr ""
 
 #. Default: "No matches"
-#: fatac.content/fatac/content/browser/group-members.pt:337
+#: fatac.content/fatac/content/browser/group-members.pt:334
 msgid "text_nomatches"
 msgstr ""
 
 #. Default: "This user does not belong to any group."
-#: fatac.content/fatac/content/browser/manage-groups.pt:209
+#: fatac.content/fatac/content/browser/manage-groups.pt:206
 msgid "text_user_not_in_any_group"
 msgstr ""
 
 #. Default: "Send a mail to this user"
-#: fatac.content/fatac/content/browser/group-members.pt:221
+#: fatac.content/fatac/content/browser/group-members.pt:218
 msgid "title_send_mail_to_user"
+msgstr ""
+
+#: fatac.content/fatac/content/browser/group-playlists.pt:175
+#: fatac.content/fatac/content/browser/my-playlists.pt:180
+msgid "visualitzar"
 msgstr ""
 

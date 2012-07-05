@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-05 09:47+0000\n"
-"PO-Revision-Date: 2012-07-05 14:23+0100\n"
+"POT-Creation-Date: 2012-07-05 15:40+0000\n"
+"PO-Revision-Date: 2012-07-05 17:47+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgstr "> Groups"
 msgid "> Membres del Grup"
 msgstr "> Group Membres"
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:55
-#: fatac.content/fatac/content/browser/my-playlists.pt:94
+#: fatac.content/fatac/content/browser/group-playlists.pt:88
+#: fatac.content/fatac/content/browser/my-playlists.pt:85
 msgid "> Playlists"
 msgstr "> Playlists"
 
@@ -46,6 +46,10 @@ msgstr "Login"
 #: fatac.content/fatac/content/browser/group-members.pt:97
 msgid "Activitat"
 msgstr "Activity"
+
+#. Default: "Afegeix"
+msgid "Add"
+msgstr "Add"
 
 #: fatac.content/fatac/content/portletMyFiles.py:33
 msgid "Add MyFiles Portlet"
@@ -66,6 +70,11 @@ msgstr "Add a Playlist Image that represents your playlist"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Administracio"
+msgstr "Administration"
+
+#. Default: "Administració"
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Administració"
 msgstr "Administration"
 
 #: fatac.content/fatac/content/profiles/default/actions.xml
@@ -100,7 +109,7 @@ msgstr "Recent changes"
 msgid "Carpeta arrel"
 msgstr "Root folder"
 
-#: fatac.content/fatac/content/dashboard.py:232
+#: fatac.content/fatac/content/dashboard.py:241
 msgid "Changes made."
 msgstr "Changes made."
 
@@ -108,11 +117,11 @@ msgstr "Changes made."
 msgid "Changes saved"
 msgstr "Changes saved"
 
-#: fatac.content/fatac/content/dashboard.py:455
+#: fatac.content/fatac/content/dashboard.py:464
 msgid "Changes saved."
 msgstr "Changes saved."
 
-#: fatac.content/fatac/content/dashboard.py:648
+#: fatac.content/fatac/content/dashboard.py:657
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
 msgstr "Could not add group ${name}, perhaps a user or group with this name already exists."
 
@@ -157,15 +166,15 @@ msgstr "Folder name where the Plone representations of the rest objectes will be
 msgid "GenerarMiniaturesFaltaClasse"
 msgstr "Generate thumbnails: must choose the class"
 
-#: fatac.content/fatac/content/dashboard.py:666
+#: fatac.content/fatac/content/dashboard.py:675
 msgid "Group ${name} has been added."
 msgstr "Group ${name} has been added."
 
-#: fatac.content/fatac/content/dashboard.py:677
+#: fatac.content/fatac/content/dashboard.py:686
 msgid "Group name required."
 msgstr "Group name required."
 
-#: fatac.content/fatac/content/dashboard.py:464
+#: fatac.content/fatac/content/dashboard.py:473
 msgid "Group(s) deleted."
 msgstr "Group(s) deleted."
 
@@ -177,7 +186,7 @@ msgstr "Groups"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:44
 #: fatac.content/fatac/content/browser/group-members.pt:52
-#: fatac.content/fatac/content/browser/group-playlists.pt:53
+#: fatac.content/fatac/content/browser/group-playlists.pt:86
 msgid "Grups >"
 msgstr "Groups >"
 
@@ -212,7 +221,7 @@ msgstr "Media Server URI"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:72
 #: fatac.content/fatac/content/browser/group-members.pt:79
-#: fatac.content/fatac/content/browser/group-playlists.pt:81
+#: fatac.content/fatac/content/browser/group-playlists.pt:114
 msgid "Members"
 msgstr "Members"
 
@@ -228,7 +237,7 @@ msgstr "My Folder"
 msgid "MyGroups items"
 msgstr "MyGroups items"
 
-#: fatac.content/fatac/content/dashboard.py:443
+#: fatac.content/fatac/content/dashboard.py:452
 msgid "No changes made."
 msgstr "No changes made."
 
@@ -345,7 +354,7 @@ msgstr "Substitute: must state parameters"
 msgid "Tag List"
 msgstr "Tag List"
 
-#: fatac.content/fatac/content/dashboard.py:640
+#: fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
 msgstr "The group name you entered is not valid."
 
@@ -422,6 +431,11 @@ msgstr "You can add or remove groups and users from this particular group here. 
 msgid "description_pas_show_all_search_results"
 msgstr "Show all search results"
 
+#: fatac.content/fatac/content/browser/group-playlists.pt:177
+#: fatac.content/fatac/content/browser/my-playlists.pt:182
+msgid "editar"
+msgstr "edit"
+
 #. Default: "E-mail"
 #: fatac.core/fatac/core/userdataschema.py:39
 msgid "email"
@@ -432,7 +446,7 @@ msgstr "E-mail"
 msgid "enable_cookies_message_before_login"
 msgstr "Cookies are not enabled. You must enable cookies to login."
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:120
+#: fatac.content/fatac/content/browser/group-playlists.pt:150
 msgid "group playlists"
 msgstr "group playlists"
 
@@ -517,7 +531,7 @@ msgid "label_add_new_group"
 msgstr "Add New Group"
 
 #. Default: "Afegeix una nova Playlist"
-#: fatac.content/fatac/content/browser/group-playlists.pt:44
+#: fatac.content/fatac/content/browser/group-playlists.pt:152
 #: fatac.content/fatac/content/browser/group-view.pt:44
 #: fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
@@ -666,7 +680,7 @@ msgstr "Return Your Playlists list"
 #. Default: "Up to Groups Overview"
 #: fatac.content/fatac/content/browser/group-activity.pt:143
 #: fatac.content/fatac/content/browser/group-members.pt:392
-#: fatac.content/fatac/content/browser/group-playlists.pt:145
+#: fatac.content/fatac/content/browser/group-playlists.pt:206
 msgid "label_up_to_groups_overview"
 msgstr "Up to Groups Overview"
 
@@ -716,7 +730,7 @@ msgstr "Name"
 msgid "playlist"
 msgstr "Playlist"
 
-#: fatac.content/fatac/content/browser/my-playlists.pt:164
+#: fatac.content/fatac/content/browser/my-playlists.pt:155
 msgid "playlists"
 msgstr "playlists"
 
@@ -775,4 +789,9 @@ msgstr "This user does not belong to any group."
 #: fatac.content/fatac/content/browser/group-members.pt:218
 msgid "title_send_mail_to_user"
 msgstr "Send a mail to this user"
+
+#: fatac.content/fatac/content/browser/group-playlists.pt:175
+#: fatac.content/fatac/content/browser/my-playlists.pt:180
+msgid "visualitzar"
+msgstr "View"
 

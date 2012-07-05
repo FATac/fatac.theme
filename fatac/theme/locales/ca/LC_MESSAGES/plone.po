@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-05 09:47+0000\n"
-"PO-Revision-Date: 2012-07-05 12:18+0100\n"
+"POT-Creation-Date: 2012-07-05 15:40+0000\n"
+"PO-Revision-Date: 2012-07-05 17:46+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: LANGUAGE <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgstr "> Grups"
 msgid "> Membres del Grup"
 msgstr "> Membres del Grup"
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:55
-#: fatac.content/fatac/content/browser/my-playlists.pt:94
+#: fatac.content/fatac/content/browser/group-playlists.pt:88
+#: fatac.content/fatac/content/browser/my-playlists.pt:85
 msgid "> Playlists"
 msgstr "> Playlists"
 
@@ -46,6 +46,10 @@ msgstr "Accés usuaris"
 #: fatac.content/fatac/content/browser/group-members.pt:97
 msgid "Activitat"
 msgstr "Activitat"
+
+#. Default: "Afegeix"
+msgid "Add"
+msgstr "Afegeix"
 
 #: fatac.content/fatac/content/portletMyFiles.py:33
 msgid "Add MyFiles Portlet"
@@ -66,6 +70,11 @@ msgstr "Afegeix una imatge que representi la teva playlist"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Administracio"
+msgstr "Administració"
+
+#. Default: "Administració"
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Administració"
 msgstr "Administració"
 
 #: fatac.content/fatac/content/profiles/default/actions.xml
@@ -100,7 +109,7 @@ msgstr "Canvis Recents"
 msgid "Carpeta arrel"
 msgstr "Carpeta arrel"
 
-#: fatac.content/fatac/content/dashboard.py:232
+#: fatac.content/fatac/content/dashboard.py:241
 msgid "Changes made."
 msgstr "S'han realitzat els canvis."
 
@@ -108,11 +117,11 @@ msgstr "S'han realitzat els canvis."
 msgid "Changes saved"
 msgstr "S'han desat els canvis."
 
-#: fatac.content/fatac/content/dashboard.py:455
+#: fatac.content/fatac/content/dashboard.py:464
 msgid "Changes saved."
 msgstr "S'han desat els canvis."
 
-#: fatac.content/fatac/content/dashboard.py:648
+#: fatac.content/fatac/content/dashboard.py:657
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
 msgstr "No s'ha pogut afegir el grup ${name}, potser ja existeix un usuari o un grup amb aquest nom."
 
@@ -157,15 +166,15 @@ msgstr "Nom de la carpeta on les representacions de la resta d'objectes seran cr
 msgid "GenerarMiniaturesFaltaClasse"
 msgstr "Generar miniatures: Falta escollir el tipus"
 
-#: fatac.content/fatac/content/dashboard.py:666
+#: fatac.content/fatac/content/dashboard.py:675
 msgid "Group ${name} has been added."
 msgstr "S'ha afegit el grup ${name}"
 
-#: fatac.content/fatac/content/dashboard.py:677
+#: fatac.content/fatac/content/dashboard.py:686
 msgid "Group name required."
 msgstr "El nom del grup és necessari."
 
-#: fatac.content/fatac/content/dashboard.py:464
+#: fatac.content/fatac/content/dashboard.py:473
 msgid "Group(s) deleted."
 msgstr "Els grups s'han suprimit."
 
@@ -177,7 +186,7 @@ msgstr "Grups"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:44
 #: fatac.content/fatac/content/browser/group-members.pt:52
-#: fatac.content/fatac/content/browser/group-playlists.pt:53
+#: fatac.content/fatac/content/browser/group-playlists.pt:86
 msgid "Grups >"
 msgstr "Grups >"
 
@@ -212,7 +221,7 @@ msgstr "URI del servidor Media"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:72
 #: fatac.content/fatac/content/browser/group-members.pt:79
-#: fatac.content/fatac/content/browser/group-playlists.pt:81
+#: fatac.content/fatac/content/browser/group-playlists.pt:114
 msgid "Members"
 msgstr "Membres"
 
@@ -228,7 +237,7 @@ msgstr "La meva carpeta"
 msgid "MyGroups items"
 msgstr "Elements dels Meus grups"
 
-#: fatac.content/fatac/content/dashboard.py:443
+#: fatac.content/fatac/content/dashboard.py:452
 msgid "No changes made."
 msgstr "No s'han realitzat canvis."
 
@@ -345,7 +354,7 @@ msgstr "Substitueix: cal indicar els paràmetres "
 msgid "Tag List"
 msgstr ""
 
-#: fatac.content/fatac/content/dashboard.py:640
+#: fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
 msgstr "El nom de grup que heu introduït no és vàlid."
 
@@ -422,6 +431,11 @@ msgstr "Des d'aquí podeu afegir o suprimir usuaris dins d'aquest grup en partic
 msgid "description_pas_show_all_search_results"
 msgstr "Mostra tots els resultats de la cerca"
 
+#: fatac.content/fatac/content/browser/group-playlists.pt:177
+#: fatac.content/fatac/content/browser/my-playlists.pt:182
+msgid "editar"
+msgstr "edita"
+
 #. Default: "E-mail"
 #: fatac.core/fatac/core/userdataschema.py:39
 msgid "email"
@@ -432,7 +446,7 @@ msgstr "Correu electrònic"
 msgid "enable_cookies_message_before_login"
 msgstr "Les galetes no estan habilitades. Cal que habiliteu les galetes per poder iniciar la sessió."
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:120
+#: fatac.content/fatac/content/browser/group-playlists.pt:150
 msgid "group playlists"
 msgstr "Playlists del grup"
 
@@ -517,7 +531,7 @@ msgid "label_add_new_group"
 msgstr "Afegeix un grup nou"
 
 #. Default: "Afegeix una nova Playlist"
-#: fatac.content/fatac/content/browser/group-playlists.pt:44
+#: fatac.content/fatac/content/browser/group-playlists.pt:152
 #: fatac.content/fatac/content/browser/group-view.pt:44
 #: fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
@@ -666,7 +680,7 @@ msgstr "Torna a la llista de les teves playlists"
 #. Default: "Up to Groups Overview"
 #: fatac.content/fatac/content/browser/group-activity.pt:143
 #: fatac.content/fatac/content/browser/group-members.pt:392
-#: fatac.content/fatac/content/browser/group-playlists.pt:145
+#: fatac.content/fatac/content/browser/group-playlists.pt:206
 msgid "label_up_to_groups_overview"
 msgstr "Ves a visió general dels grups"
 
@@ -716,7 +730,7 @@ msgstr "Nom"
 msgid "playlist"
 msgstr "playlist"
 
-#: fatac.content/fatac/content/browser/my-playlists.pt:164
+#: fatac.content/fatac/content/browser/my-playlists.pt:155
 msgid "playlists"
 msgstr "playlists"
 
@@ -776,5 +790,8 @@ msgstr "Aquest usuari no pertany a cap grup"
 msgid "title_send_mail_to_user"
 msgstr "Envia un correu electrònic a aquest usuari"
 
-msgid "Add"
-msgstr "Afegeix"
+#: fatac.content/fatac/content/browser/group-playlists.pt:175
+#: fatac.content/fatac/content/browser/my-playlists.pt:180
+msgid "visualitzar"
+msgstr "visualitzar"
+
