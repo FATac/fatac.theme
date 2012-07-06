@@ -17,6 +17,9 @@ div.position-0 { margin-left: -100%; }
 div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
 div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-wrapper.row {margin-left: 0px;}
+
+#portal-top { margin-bottom:30px; }
+
 /* ---------------------------------------------------------------------------- general */
 a { border-bottom:none !important; }
 
@@ -69,7 +72,6 @@ img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
 
 .ac_breadcrump { font-size:9pt; text-transform:uppercase; }
-.breadcrumb_cerca { margin-top: 18px; }
 
 /* Cerca a la biblioteca || Buscar en la biblioteca */
 .ac_search_biblio { text-align: right; float:right; width:20%; }
@@ -78,6 +80,9 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
 a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
 a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
+
+.template-explorar .span5 { margin-left:13px !important; }
+.template-explorar .barra { height:440px; }
 
 /* ---------------------------------------------------------------------------- edit-bar */
 #contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar
@@ -126,6 +131,8 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #portal-personaltools .Add.Playlist a, #portal-personaltools .Add.Playlist a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
 #portal-personaltools .Add.Group a, #portal-personaltools .Add.Group a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
 #portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
+#portal-personaltools .preferences a, #portal-personaltools .preferences a:hover { background:url('++resource++fatac.theme.images/icon-perfil.png') no-repeat left center transparent; }
+#portal-personaltools .logout a, #portal-personaltools .logout a:hover { background:url('++resource++fatac.theme.images/icon-surt.png') no-repeat left center transparent; }
 #anon-personalbar {height: 22px; padding-top: 4px;}
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
@@ -331,10 +338,23 @@ div.genericview_fitxa_final .seccio_dades { width:100%; }
 div.genericview_fitxa_final .pagines_resultats .slider_vertical { height:480px; }
 div.genericview_fitxa_final.sense_subcerca #header_objecte:first-child,
 div.genericview_fitxa_final #header_objecte .div_interior:first-child { font-size:20px; font-style:italic; line-height:22px; }
+div.genericview_fitxa_final #header_objecte .counters { margin-top:20px; }
 
-div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
+div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; max-height:200px;}
 div.genericview_fitxa_final.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; max-height:200px;}
-div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{ width:98%;}
+div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{
+    width:98%;
+    min-height:200px;
+    -moz-column-count:2;
+    -webkit-column-count:2;
+    column-count:2;
+    -moz-column-gap:40px;
+    -webkit-column-gap:40px;
+    column-gap:40px;
+    -moz-column-rule:3px solid #d1d1d1;
+    -webkit-column-rule:3px solid #d1d1d1;
+    column-rule:3px solid #d1d1d1;
+}
 
 div.genericview_fitxa_final.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
 div.genericview_fitxa_final.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
@@ -342,6 +362,7 @@ div.genericview_fitxa_final.sense_subcerca #body_objecte { float:left; width:100
 div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
 
 div.genericview_fitxa_final img.addPlaylist {float:left;}
+div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 
 .counters { background-color:#ECECEC; float:left; width:184px; clear:right; font-family:georgia; font-size:14px; color:#999999; }
 .counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
@@ -449,8 +470,8 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 #fs-header .btns { float:right; }
 #fs-header .fs-header-extra { display:none; }
 
-#fs-header:hover { left:1em; }
-#fs-header:hover .fs-header-extra { display:inline; }
+/*#fs-header:hover { left:1em; }
+#fs-header:hover .fs-header-extra { display:inline; }*/
 
 #fs-footer { background-color: #464242; bottom:0em; left:0em; right:0em; opacity:0.8; text-align: center; }
 #fs-footer div { display:inline; vertical-align:middle;}
@@ -464,7 +485,7 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 /* .slide-preview.selected { border: solid 2px #FFF;}*/
 
 #fs-loader { top: 50%; left: 50%; height: 1em; margin-top: -1em; margin-left: -75px; display: none; }
-#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 50px; color: #ECECEC; overflow: hidden;}
+#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 70px; color: #ECECEC; overflow: hidden;}
 #fs-caption .slider-vertical{text-align:left;}
 #fs-caption .header { padding:5px; }
 #fs-caption .header img{ vertical-align:middle; max-width:15px; }
@@ -816,7 +837,7 @@ div.photo-container {
 }
 #content .download a:hover {color: #339933 !important;}
 
-.media iframe { margin-bottom: 15px;}
+.media iframe { margin-bottom: 15px; margin-top:70px;}
 
 .vjs-tech {
     position: relative !important;}
@@ -959,3 +980,5 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 #content fieldset {border:none;}
 
 .template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}
+
+.close a {display:none;}

@@ -171,7 +171,7 @@ msgstr "Buscar en VTLS"
 #. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
-msgstr "Buscar en biblioteca"
+msgstr "buscar en biblioteca"
 
 #. Default: "Catedràtic"
 msgid "Chair"
@@ -1443,3 +1443,26 @@ msgstr "Vista previa"
 msgid "visualitzacio4"
 msgstr "Pantalla completa"
 
+msgid "Size"
+msgstr "Tamaño"
+
+msgid "Resolution"
+msgstr "Resolución"
+
+msgid "Place"
+msgstr "Lugar"
+
+msgid "HasPhisicalVersion"
+msgstr "Versión física"
+
+msgid "Situation"
+msgstr "Situación"
+
+msgid "CreditLine"
+msgstr "Créditos"
+
+msgid "TypeDocumentary"
+msgstr "Tipo de documental"
+
+msgid "CameraModel"
+msgstr "Modelo de cámara"

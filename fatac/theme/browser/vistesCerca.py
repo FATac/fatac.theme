@@ -194,6 +194,7 @@ class cercaInicialView(BrowserView, funcionsCerca):
         """
         search_text = unicode(self.request.get('s'))
         search_text = ''.join((c for c in unicodedata.normalize('NFD', search_text) if unicodedata.category(c) != 'Mn'))
+        search_text = ''.join([c for c in search_text if c != u'"' and c != u',' and c != u':' and c != u';'])
         return search_text
 
 

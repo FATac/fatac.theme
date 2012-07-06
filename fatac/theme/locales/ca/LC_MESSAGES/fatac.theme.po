@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-07-05 15:40+0000\n"
-"PO-Revision-Date: 2012-07-05 17:45+0100\n"
+"PO-Revision-Date: 2012-07-06 10:14+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr "Cerca a VTLS"
 #. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
-msgstr "Cerca a la biblioteca"
+msgstr "cerca a la biblioteca"
 
 #. Default: "Catedràtic"
 msgid "Chair"
@@ -1434,3 +1434,26 @@ msgstr "Vista prèvia"
 msgid "visualitzacio4"
 msgstr "Pantalla sencera"
 
+msgid "Size"
+msgstr "Mida"
+
+msgid "Resolution"
+msgstr "Resolució"
+
+msgid "Place"
+msgstr "Lloc"
+
+msgid "HasPhisicalVersion"
+msgstr "Versió física"
+
+msgid "Situation"
+msgstr "Situació"
+
+msgid "CreditLine"
+msgstr "Crèdits"
+
+msgid "TypeDocumentary"
+msgstr "Tipus de documental"
+
+msgid "CameraModel"
+msgstr "Model de càmara"
