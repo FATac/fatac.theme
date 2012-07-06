@@ -131,6 +131,8 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #portal-personaltools .Add.Playlist a, #portal-personaltools .Add.Playlist a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
 #portal-personaltools .Add.Group a, #portal-personaltools .Add.Group a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
 #portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
+#portal-personaltools .preferences a, #portal-personaltools .preferences a:hover { background:url('++resource++fatac.theme.images/icon-perfil.png') no-repeat left center transparent; }
+#portal-personaltools .logout a, #portal-personaltools .logout a:hover { background:url('++resource++fatac.theme.images/icon-surt.png') no-repeat left center transparent; }
 #anon-personalbar {height: 22px; padding-top: 4px;}
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
@@ -978,3 +980,5 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 #content fieldset {border:none;}
 
 .template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}
+
+.close a {display:none;}
