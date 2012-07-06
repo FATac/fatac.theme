@@ -81,6 +81,9 @@ a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explora
 a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
 a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
+.template-explorar .span5 { margin-left:13px !important; }
+.template-explorar .barra { height:440px; }
+
 /* ---------------------------------------------------------------------------- edit-bar */
 #contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd, #contentActionMenus, #content-views, #edit-bar
     { background-color:#dddddd; border-color:#dddddd; }
