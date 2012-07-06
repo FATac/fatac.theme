@@ -1440,3 +1440,20 @@ msgstr "Mida"
 msgid "Resolution"
 msgstr "Resolució"
 
+msgid "Place"
+msgstr "Lloc"
+
+msgid "HasPhisicalVersion"
+msgstr "Versió física"
+
+msgid "Situation"
+msgstr "Situació"
+
+msgid "CreditLine"
+msgstr "Crèdits"
+
+msgid "TypeDocumentary"
+msgstr "Tipus de documental"
+
+msgid "CameraModel"
+msgstr "Model de càmara"
