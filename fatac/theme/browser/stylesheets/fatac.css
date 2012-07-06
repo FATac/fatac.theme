@@ -17,6 +17,9 @@ div.position-0 { margin-left: -100%; }
 div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
 div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-wrapper.row {margin-left: 0px;}
+
+#portal-top { margin-bottom:30px; }
+
 /* ---------------------------------------------------------------------------- general */
 a { border-bottom:none !important; }
 
@@ -69,7 +72,6 @@ img.spinner_zona_resultats { margin: 220px 0 220px 49%; }
 img.spinner_pagina { margin: 220px 0 0 49%; }
 
 .ac_breadcrump { font-size:9pt; text-transform:uppercase; }
-.breadcrumb_cerca { margin-top: 18px; }
 
 /* Cerca a la biblioteca || Buscar en la biblioteca */
 .ac_search_biblio { text-align: right; float:right; width:20%; }
@@ -331,10 +333,23 @@ div.genericview_fitxa_final .seccio_dades { width:100%; }
 div.genericview_fitxa_final .pagines_resultats .slider_vertical { height:480px; }
 div.genericview_fitxa_final.sense_subcerca #header_objecte:first-child,
 div.genericview_fitxa_final #header_objecte .div_interior:first-child { font-size:20px; font-style:italic; line-height:22px; }
+div.genericview_fitxa_final #header_objecte .counters { margin-top:20px; }
 
-div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; }
+div.genericview_fitxa_final.amb_subcerca #header_objecte { float:left; width:33%; margin-bottom:20px; clear:left; max-height:200px;}
 div.genericview_fitxa_final.amb_subcerca #body_objecte { float:left; width:66%; margin-bottom:20px; margin-left:1%; clear:right; max-height:200px;}
-div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{ width:98%;}
+div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{
+    width:98%;
+    min-height:200px;
+    -moz-column-count:2;
+    -webkit-column-count:2;
+    column-count:2;
+    -moz-column-gap:40px;
+    -webkit-column-gap:40px;
+    column-gap:40px;
+    -moz-column-rule:3px solid #d1d1d1;
+    -webkit-column-rule:3px solid #d1d1d1;
+    column-rule:3px solid #d1d1d1;
+}
 
 div.genericview_fitxa_final.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
 div.genericview_fitxa_final.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
@@ -342,6 +357,7 @@ div.genericview_fitxa_final.sense_subcerca #body_objecte { float:left; width:100
 div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width:65%; margin-bottom:20px; clear:right; }
 
 div.genericview_fitxa_final img.addPlaylist {float:left;}
+div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 
 .counters { background-color:#ECECEC; float:left; width:184px; clear:right; font-family:georgia; font-size:14px; color:#999999; }
 .counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
