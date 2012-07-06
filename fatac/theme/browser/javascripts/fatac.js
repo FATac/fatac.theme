@@ -889,7 +889,6 @@ function setMediaSrc(domElement, url, kind) {
 
     // private function to update the image size and position of a slide
     var updateSlideSize = function(slide) {
-       console.log('updateslidesize')
       var ww, wh;
       if (slide === undefined) {
         slide = $container.data("currentSlide");
