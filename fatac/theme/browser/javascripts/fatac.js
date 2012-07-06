@@ -1120,6 +1120,7 @@ function setMediaSrc(domElement, url, kind) {
             childrens.removeClass('selected');
             childrens.hide();
             oldSlide.$img.fadeOut();
+            oldSlide.$img.hide();
         }
         newSlide.$img.fadeIn(function(){
             $container.trigger("startOfSlide", newSlide);
