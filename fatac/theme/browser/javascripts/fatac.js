@@ -559,11 +559,16 @@ function pinta_pagina_seguent(pagina, callback) {
                 $('.pagina' + pagina_str).replaceWith(data);
                 inicialitza_js_pagines();
                 $(document).trigger('pinta_pagina_seguent', pagina);
-                if (callback) { callback(); }
+                if (callback) { callback();
+                }
             }
             else {
                 console.log("View discarted!");
             }
+            var id = $('.pagina' + pagina + ' video').attr('id')
+            _V_(id, {"controls": true, "autoplay": false, "preload": "auto"}, function(){
+              // Player (this) is initialized and ready.
+            });
         }).error(function(){genericAjaxError($('.pagina ' + pagina_str));});
     }
 }
@@ -963,7 +968,7 @@ function setMediaSrc(domElement, url, kind) {
         slides = $container.data("slides");
         pagina = slide + 1;
         newSlide = slides[slide];
-        newSlide.$img = $('.pagina'+pagina);
+        newSlide.$img = $('.pagina'+pagina).hide();
         if (newSlide.$img.find('.fs-info').length > 0){
             newSlide.$img.css({
                        "position"    : "absolute",
@@ -1153,7 +1158,7 @@ function setMediaSrc(domElement, url, kind) {
         var options, oldSlide, link, zoom;
         options = $container.data("options");
         oldSlide = $container.data("currentSlide");
-        oldSlide.$img;
+        oldSlide.$img.hide();
         $container.trigger("endOfSlide", oldSlide);
         $(document).unbind("keyup", keyFunc);
         // Use the fancy new FullScreenAPI:
@@ -1388,4 +1393,3 @@ function initFullScreen(){
         });
         $container.trigger("show", 0);
 }
-
