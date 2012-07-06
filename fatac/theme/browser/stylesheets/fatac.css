@@ -479,7 +479,7 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 #fs-footer .fs-prev { float:left; font-size: 3em; padding: 30px 12px 12px; margin:15px 20px 15px 0;}
 #fs-footer .fs-next { float:right; font-size: 3em; padding: 30px 12px 12px; margin:15px 0 15px 20px;}
 #fs-footer .slide-selector { float:left; font-size:0.8em; line-height:1em; text-align:left; width:100%; height:110px; overflow:hidden;}
-.slide-preview { width:25%; margin:15px 0 15px 0; float:left;}
+.slide-preview { width:30%; margin:15px 0 15px 0; float:left;}
 .slide-preview .thumbnail img{ float: left; width:70px; vertical-align:middle; margin-right:10px; }
 .slide-preview .dades img { width:16px; margin:0 0 10px 0;}
 /* .slide-preview.selected { border: solid 2px #FFF;}*/

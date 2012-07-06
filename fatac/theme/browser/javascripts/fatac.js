@@ -902,11 +902,27 @@ function setMediaSrc(domElement, url, kind) {
                 "height" : wh + "px",
                 "width"  : "auto"
               });
+
+
+          slide.$img.css({
+            "height" : "100%",
+            "width"  : "auto",
+            "left"   : "50%",
+            "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
             } else {
               o.css({
                 "height" : "auto",
                 "width"  : ww + "px"
               });
+
+          slide.$img.css({
+            "height" : "auto",
+            "width"  : "100%"
+            //"margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
+
+
             }
         });
         // compare the window aspect ratio to the video aspect ratio
@@ -925,25 +941,13 @@ function setMediaSrc(domElement, url, kind) {
 
         // });
 
-
-        // compare the window aspect ratio to the container
-        if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
-          slide.$img.css({
-            "height" : wh + "px",
-            "width"  : "auto"
-          });
-        } else {
+    // pdf
+      if (slide.$img.find('iframe').length>0) {
           slide.$img.css({
             "height" : "auto",
-            "width"  : ww + "px"
+            "width"  : "100%"
           });
-        }
-        // update margins to position in the center
-        slide.$img.css({
-          // "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
-          // "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
-          "margin" : "auto center"
-        });
+      }
 
       }
     };
@@ -959,12 +963,10 @@ function setMediaSrc(domElement, url, kind) {
         slides = $container.data("slides");
         pagina = slide + 1;
         newSlide = slides[slide];
-        newSlide.$img = $('.pagina'+pagina).hide();
+        newSlide.$img = $('.pagina'+pagina);
         if (newSlide.$img.find('.fs-info').length > 0){
             newSlide.$img.css({
                        "position"    : "absolute",
-                       // "left"       : "50%",
-                       // "top"         : "50%"
                      }).hide();
             newSlide.loaded = true;
             // Info
@@ -1031,6 +1033,7 @@ function setMediaSrc(domElement, url, kind) {
             if (newSlide.loaded) {
                 changeSlide(oldSlide, newSlide);
                 updateSlideSize(newSlide);
+
             }
             else {
                 // Encara no s'ha obtingut els resultats de la pregarrega
@@ -1150,7 +1153,7 @@ function setMediaSrc(domElement, url, kind) {
         var options, oldSlide, link, zoom;
         options = $container.data("options");
         oldSlide = $container.data("currentSlide");
-        oldSlide.$img.hide();
+        oldSlide.$img;
         $container.trigger("endOfSlide", oldSlide);
         $(document).unbind("keyup", keyFunc);
         // Use the fancy new FullScreenAPI:
@@ -1375,6 +1378,9 @@ function initFullScreen(){
           // set and show caption
           crea_scrolls_verticals();
           $('#fs-caption').html(slide.info)
+          var iframeurl = slide.$img.find('iframe').attr('src')
+          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
+
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
@@ -1383,17 +1389,3 @@ function initFullScreen(){
         $container.trigger("show", 0);
 }
 
-
-
-function doFullScreenMagic(url) {
-    var dimensions
-    var $window = $(window)
-    var window_width = $window.width()
-    var page_width = $('.pagina:visible').width()
-    var window_height = $window.height()
-    $('#fullscreenSlideshowContainer').length>0
-       ? dimensions = {w:600, h:500}
-       : dimensions = {w:600, h:500}
-    var iframe = '<iframe src="'+url+'" style="width:'+dimensions.w+'px; height:'+dimensions.h+'px;" frameborder="0"></iframe>'
-    $('.media').html(iframe)
-}
