@@ -171,7 +171,7 @@ msgstr "Search in VTLS"
 #. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
-msgstr "Search in library"
+msgstr "search in library"
 
 #. Default: "Catedràtic"
 msgid "Chair"
