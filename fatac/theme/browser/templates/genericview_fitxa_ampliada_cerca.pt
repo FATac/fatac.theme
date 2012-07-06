@@ -89,7 +89,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                             <div class="div_interior">
 
                                 <tal:rep tal:repeat="dada seccio/dades">
-                                     <tal:co tal:condition="python: dada['tipus'] not in ['search']">
+                                     <div tal:condition="python: dada['tipus'] not in ['search']">
                                         <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/>
 
                                         <!--  inici prova -->
@@ -97,7 +97,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
                                         <span metal:use-macro="context/macro_dades/macros/dadaObjecte">x</span><br/> -->
                                         <!--  fi prova -->
 
-                                    </tal:co>
+                                    </div>
                                 </tal:rep>
 
                             </div>
