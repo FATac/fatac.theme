@@ -171,7 +171,7 @@ msgstr "Buscar en VTLS"
 #. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
-msgstr "Buscar en biblioteca"
+msgstr "buscar en biblioteca"
 
 #. Default: "Catedràtic"
 msgid "Chair"
@@ -1442,4 +1442,10 @@ msgstr "Vista previa"
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:126
 msgid "visualitzacio4"
 msgstr "Pantalla completa"
+
+msgid "Size"
+msgstr "Tamaño"
+
+msgid "Resolution"
+msgstr "Resolución"
 
