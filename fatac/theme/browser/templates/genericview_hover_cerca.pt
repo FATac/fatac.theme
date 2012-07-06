@@ -14,7 +14,7 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             <span class="titol georgia13c000000italic" tal:content="dades_objecte/titol" /><br/>
             <tal:rep tal:repeat="dada dades_objecte/dades_header">
                 <!-- condició afegida xq ja no volen les dades genèriques, i cal pintar el títol diferent -->
-                <tal:co tal:condition="python: dada['valor'] != dades_objecte['titol']">
+                <tal:co tal:condition="python: dada['valor'] != dades_objecte['titol'] and dada['tipus'] != 'counter'">
                     <b metal:use-macro="context/macro_dades/macros/dadaObjecte">x</b><br/>
                 </tal:co>
             </tal:rep>
