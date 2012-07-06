@@ -449,8 +449,8 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 #fs-header .btns { float:right; }
 #fs-header .fs-header-extra { display:none; }
 
-#fs-header:hover { left:1em; }
-#fs-header:hover .fs-header-extra { display:inline; }
+/*#fs-header:hover { left:1em; }
+#fs-header:hover .fs-header-extra { display:inline; }*/
 
 #fs-footer { background-color: #464242; bottom:0em; left:0em; right:0em; opacity:0.8; text-align: center; }
 #fs-footer div { display:inline; vertical-align:middle;}
@@ -464,7 +464,7 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 /* .slide-preview.selected { border: solid 2px #FFF;}*/
 
 #fs-loader { top: 50%; left: 50%; height: 1em; margin-top: -1em; margin-left: -75px; display: none; }
-#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 50px; color: #ECECEC; overflow: hidden;}
+#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 70px; color: #ECECEC; overflow: hidden;}
 #fs-caption .slider-vertical{text-align:left;}
 #fs-caption .header { padding:5px; }
 #fs-caption .header img{ vertical-align:middle; max-width:15px; }
@@ -816,7 +816,7 @@ div.photo-container {
 }
 #content .download a:hover {color: #339933 !important;}
 
-.media iframe { margin-bottom: 15px;}
+.media iframe { margin-bottom: 15px; margin-top:70px;}
 
 .vjs-tech {
     position: relative !important;}

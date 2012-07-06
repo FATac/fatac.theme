@@ -884,6 +884,7 @@ function setMediaSrc(domElement, url, kind) {
 
     // private function to update the image size and position of a slide
     var updateSlideSize = function(slide) {
+       console.log('updateslidesize')
       var ww, wh;
       if (slide === undefined) {
         slide = $container.data("currentSlide");
@@ -918,6 +919,13 @@ function setMediaSrc(domElement, url, kind) {
             o.height(wh - 50);
         });
 
+        // slide.$img.find('iframe').each(function(i, o) {
+        //     o = $(o);
+        //     o.css({width:1000})
+
+        // });
+
+
         // compare the window aspect ratio to the container
         if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
           slide.$img.css({
@@ -932,8 +940,9 @@ function setMediaSrc(domElement, url, kind) {
         }
         // update margins to position in the center
         slide.$img.css({
-          "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
-          "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
+          // "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          // "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
+          "margin" : "auto center"
         });
 
       }
@@ -954,8 +963,8 @@ function setMediaSrc(domElement, url, kind) {
         if (newSlide.$img.find('.fs-info').length > 0){
             newSlide.$img.css({
                        "position"    : "absolute",
-                       "left"        : "50%",
-                       "top"         : "50%"
+                       // "left"       : "50%",
+                       // "top"         : "50%"
                      }).hide();
             newSlide.loaded = true;
             // Info
@@ -1293,7 +1302,7 @@ function initFullScreen(){
           // The slideshow does not provide its own UI, so add your own
           // check the fullscreenstyle.css for corresponding styles
           $container
-            .append('<div class="ui" id="fs-caption"></div> \
+            .append('<div class="ui" id="fs-caption" style="display:none;"></div> \
                 <div class="ui" id="fs-header"> \
                 <div class="fs-header-extra"><span class="logo">ARTSCOMBINATORIES</span> \
                 <span class="title"> ' + document.title + '</span></div> \
@@ -1364,16 +1373,27 @@ function initFullScreen(){
         // The "start" and "end" events are called every time.
         .bind("startOfSlide", function(event, slide) {
           // set and show caption
-          $('#fs-caption').html(slide.info).fadeIn(function(){
-                crea_scrolls_verticals();
-            });
+          crea_scrolls_verticals();
+          $('#fs-caption').html(slide.info)
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
-          $('#fs-caption').hide();
+          //$('#fs-caption').hide();
         });
         $container.trigger("show", 0);
 }
 
 
 
+function doFullScreenMagic(url) {
+    var dimensions
+    var $window = $(window)
+    var window_width = $window.width()
+    var page_width = $('.pagina:visible').width()
+    var window_height = $window.height()
+    $('#fullscreenSlideshowContainer').length>0
+       ? dimensions = {w:600, h:500}
+       : dimensions = {w:600, h:500}
+    var iframe = '<iframe src="'+url+'" style="width:'+dimensions.w+'px; height:'+dimensions.h+'px;" frameborder="0"></iframe>'
+    $('.media').html(iframe)
+}
