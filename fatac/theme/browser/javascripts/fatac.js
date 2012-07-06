@@ -559,11 +559,16 @@ function pinta_pagina_seguent(pagina, callback) {
                 $('.pagina' + pagina_str).replaceWith(data);
                 inicialitza_js_pagines();
                 $(document).trigger('pinta_pagina_seguent', pagina);
-                if (callback) { callback(); }
+                if (callback) { callback();
+                }
             }
             else {
                 console.log("View discarted!");
             }
+            var id = $('.pagina' + pagina + ' video').attr('id')
+            _V_(id, {"controls": true, "autoplay": false, "preload": "auto"}, function(){
+              // Player (this) is initialized and ready.
+            });
         }).error(function(){genericAjaxError($('.pagina ' + pagina_str));});
     }
 }
@@ -901,11 +906,27 @@ function setMediaSrc(domElement, url, kind) {
                 "height" : wh + "px",
                 "width"  : "auto"
               });
+
+
+          slide.$img.css({
+            "height" : "100%",
+            "width"  : "auto",
+            "left"   : "50%",
+            "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
             } else {
               o.css({
                 "height" : "auto",
                 "width"  : ww + "px"
               });
+
+          slide.$img.css({
+            "height" : "auto",
+            "width"  : "100%"
+            //"margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
+
+
             }
         });
         // compare the window aspect ratio to the video aspect ratio
@@ -918,23 +939,19 @@ function setMediaSrc(domElement, url, kind) {
             o.height(wh - 50);
         });
 
-        // compare the window aspect ratio to the container
-        if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
-          slide.$img.css({
-            "height" : wh + "px",
-            "width"  : "auto"
-          });
-        } else {
+        // slide.$img.find('iframe').each(function(i, o) {
+        //     o = $(o);
+        //     o.css({width:1000})
+
+        // });
+
+    // pdf
+      if (slide.$img.find('iframe').length>0) {
           slide.$img.css({
             "height" : "auto",
-            "width"  : ww + "px"
+            "width"  : "100%"
           });
-        }
-        // update margins to position in the center
-        slide.$img.css({
-          "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
-          "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
-        });
+      }
 
       }
     };
@@ -954,8 +971,6 @@ function setMediaSrc(domElement, url, kind) {
         if (newSlide.$img.find('.fs-info').length > 0){
             newSlide.$img.css({
                        "position"    : "absolute",
-                       "left"        : "50%",
-                       "top"         : "50%"
                      }).hide();
             newSlide.loaded = true;
             // Info
@@ -1022,6 +1037,7 @@ function setMediaSrc(domElement, url, kind) {
             if (newSlide.loaded) {
                 changeSlide(oldSlide, newSlide);
                 updateSlideSize(newSlide);
+
             }
             else {
                 // Encara no s'ha obtingut els resultats de la pregarrega
@@ -1104,6 +1120,7 @@ function setMediaSrc(domElement, url, kind) {
             childrens.removeClass('selected');
             childrens.hide();
             oldSlide.$img.fadeOut();
+            oldSlide.$img.hide();
         }
         newSlide.$img.fadeIn(function(){
             $container.trigger("startOfSlide", newSlide);
@@ -1293,7 +1310,7 @@ function initFullScreen(){
           // The slideshow does not provide its own UI, so add your own
           // check the fullscreenstyle.css for corresponding styles
           $container
-            .append('<div class="ui" id="fs-caption"></div> \
+            .append('<div class="ui" id="fs-caption" style="display:none;"></div> \
                 <div class="ui" id="fs-header"> \
                 <div class="fs-header-extra"><span class="logo">ARTSCOMBINATORIES</span> \
                 <span class="title"> ' + document.title + '</span></div> \
@@ -1364,16 +1381,15 @@ function initFullScreen(){
         // The "start" and "end" events are called every time.
         .bind("startOfSlide", function(event, slide) {
           // set and show caption
-          $('#fs-caption').html(slide.info).fadeIn(function(){
-                crea_scrolls_verticals();
-            });
+          crea_scrolls_verticals();
+          $('#fs-caption').html(slide.info)
+          var iframeurl = slide.$img.find('iframe').attr('src')
+          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
+
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
-          $('#fs-caption').hide();
+          //$('#fs-caption').hide();
         });
         $container.trigger("show", 0);
 }
-
-
-

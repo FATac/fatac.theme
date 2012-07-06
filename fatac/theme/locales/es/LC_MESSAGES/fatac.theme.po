@@ -1449,3 +1449,20 @@ msgstr "Tamaño"
 msgid "Resolution"
 msgstr "Resolución"
 
+msgid "Place"
+msgstr "Lugar"
+
+msgid "HasPhisicalVersion"
+msgstr "Versión física"
+
+msgid "Situation"
+msgstr "Situación"
+
+msgid "CreditLine"
+msgstr "Créditos"
+
+msgid "TypeDocumentary"
+msgstr "Tipo de documental"
+
+msgid "CameraModel"
+msgstr "Modelo de cámara"
