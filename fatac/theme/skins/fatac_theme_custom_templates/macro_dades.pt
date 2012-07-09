@@ -121,7 +121,7 @@
                     </tal:co>
                     <tal:co tal:condition="python: tipus_media == 'object'">
                         <tal:co tal:condition="python: url[-4:] == '.pdf'">
-                            <iframe tal:attributes="src string:http://docs.google.com/gview?url=${url}&embedded=true" style="width:100%; height:90%;" frameborder="0"></iframe>
+                            <iframe tal:attributes="src string:http://docs.google.com/gview?url=${url}&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
                         </tal:co>
                     </tal:co>
                 </tal:def>
