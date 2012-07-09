@@ -8,8 +8,9 @@ import json
 from Products.CMFPlone.utils import _createObjectByType
 from fatac.theme.helpers.columnes import YearPeriodColumn, AgentColumn
 import logging
-N_COLUMNS = 3
 from plone.app.discussion.interfaces import IConversation
+
+N_COLUMNS = 3
 
 
 class genericView(BrowserView, funcionsCerca):
@@ -232,6 +233,7 @@ class genericView(BrowserView, funcionsCerca):
                                  'titol_zona_resultats': titol_zona_resultats,
                                  'hi_ha_seccio_content': hi_ha_seccio_content}
                 resultat.append(dades_objecte)
+
         return resultat
 
     #===========================================================================
@@ -418,9 +420,10 @@ class genericView(BrowserView, funcionsCerca):
         info_srt = []
         i = 0
         llista = []
+        arts_folder = self.getSettings('arts_folder')
         # Afegim subtitols al player (audio/video)
-        values = [self.context[obj_id] for obj_id in self.context.objectIds()]
-        info_srt = [dict(label=obj.Title, src=obj.absolute_url()) for obj in values]
+        values = self.context.portal_catalog.searchResults(portal_type='File', path='/' + self.context.getPhysicalPath()[1] + '/' + arts_folder + '/' + str(self.idobjectes[0]))
+        info_srt = [dict(label=obj.Title, src=obj.getURL()) for obj in values]
         while i < len(dades['value']):
             partsDades = (dades['value'][i + 1] + ",default").split(",")
             llista.append({'url': dades['value'][i],
