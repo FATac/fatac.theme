@@ -8,7 +8,7 @@
 
         <tal:co tal:condition="python: tipus == 'forbidden'">
             <img tal:attributes="src string:${here/portal_url}/forbidden/image">
-        </tal:co>        
+        </tal:co>
 
         <tal:co tal:condition="python: tipus == 'search'">
             <input type="hidden" id="string_cerca" tal:attributes="value valor" />
