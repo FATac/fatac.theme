@@ -1384,7 +1384,7 @@ function initFullScreen(){
           crea_scrolls_verticals();
           $('#fs-caption').html(slide.info)
           var iframeurl = slide.$img.find('iframe').attr('src')
-          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
+          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="margin-bottom: 15px;margin-top:70px;width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
 
         })
         // before a slide is hidden this is called:
