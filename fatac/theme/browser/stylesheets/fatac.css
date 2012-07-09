@@ -807,11 +807,11 @@ div.photo-container {
 /* ---------------------------------------------------------------------------- formularis */
 
 .field_fatac { margin-bottom:5px; }
-.input_fatac { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9acc9a !important; border:1px solid #D3E3C3; }
+.input_fatac { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9AC68D !important; border:1px solid #D3E3C3; }
 .input_fatac:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
 .formControls_fatac { margin:23px 0 0 0 !important; float:left; }
-.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
-.button_fatac:hover { background-color:#9acc9a; color:#339933 !important; }
+.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.button_fatac:hover { background-color:#9AC68D; color:#339933 !important; }
 .login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
 .descripcio_registre { float:left; line-height:18px; height:91px; }
 .link_registre {  }
@@ -945,7 +945,7 @@ body.template-logged_out #content, body.template-login_form #content, .pb-ajax #
     background-color:#D3E3C3;
     font-family:Arial;
     font-size:15px !important;
-    color:#9acc9a !important;
+    color:#9AC68D !important;
     border:1px solid #D3E3C3;
     height: 30px;
     padding: 5px;
@@ -973,8 +973,8 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 .template-personal-information #actionsView,
 .template-register #actionsView {margin-left: 160px; margin-top: 20px;}
 
-.actionButtons input {width: auto; height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9acc9a !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
-.actionButtons input:hover {width: auto; background-color:#9acc9a; color:#339933 !important; cursor: pointer;}
+.actionButtons input {width: auto; height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.actionButtons input:hover {width: auto; background-color:#9AC68D; color:#339933 !important; cursor: pointer;}
 
 #contentview-user_data-personal-preferences {display: none;}
 #content fieldset {border:none;}
@@ -982,3 +982,5 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 .template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}
 
 .close a {display:none;}
+
+#footer_objecte {margin-bottom: 20px}
