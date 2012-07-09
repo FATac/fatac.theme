@@ -485,9 +485,9 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 /* .slide-preview.selected { border: solid 2px #FFF;}*/
 
 #fs-loader { top: 50%; left: 50%; height: 1em; margin-top: -1em; margin-left: -75px; display: none; }
-#fs-caption { padding: 2px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 70px; color: #ECECEC; overflow: hidden;}
+#fs-caption { padding: 15px; background-color: #464242; position: fixed; width: 300px; max-height: 485px; left: 1em; top: 70px; color: #ECECEC; overflow: hidden;}
 #fs-caption .slider-vertical{text-align:left;}
-#fs-caption .header { padding:5px; }
+#fs-caption .header { padding:5px; font-family: georgia; font-style: italic; font-size:20px;}
 #fs-caption .header img{ vertical-align:middle; max-width:15px; }
 #fs-caption .body { padding: 5px; font-family: arial; font-size: 12px; }
 #fs-caption .counters { background-color: inherit; color: inherit;}
