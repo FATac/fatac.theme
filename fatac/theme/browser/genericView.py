@@ -233,7 +233,7 @@ class genericView(BrowserView, funcionsCerca):
                                  'titol_zona_resultats': titol_zona_resultats,
                                  'hi_ha_seccio_content': hi_ha_seccio_content}
                 resultat.append(dades_objecte)
-        print resultat
+
         return resultat
 
     #===========================================================================
