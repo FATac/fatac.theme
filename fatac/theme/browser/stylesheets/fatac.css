@@ -128,8 +128,8 @@ a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filt
 #portal-personaltools dt.actionMenuHeader a { background:url('++resource++fatac.theme.images/arrow_down_green.gif') no-repeat right 18px transparent; padding-right:20px; }
 
 #portal-personaltools li a { padding-left: 24px; }
-#portal-personaltools .Add.Playlist a, #portal-personaltools .Add.Playlist a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
-#portal-personaltools .Add.Group a, #portal-personaltools .Add.Group a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
+#portal-personaltools .My.Playlists a, #portal-personaltools .My.Playlists a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
+#portal-personaltools .My.Groups a, #portal-personaltools .My.Groups a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
 #portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
 #portal-personaltools .preferences a, #portal-personaltools .preferences a:hover { background:url('++resource++fatac.theme.images/icon-perfil.png') no-repeat left center transparent; }
 #portal-personaltools .logout a, #portal-personaltools .logout a:hover { background:url('++resource++fatac.theme.images/icon-surt.png') no-repeat left center transparent; }
