@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-05 15:40+0000\n"
-"PO-Revision-Date: 2012-07-05 17:46+0100\n"
+"POT-Creation-Date: 2012-07-10 10:14+0000\n"
+"PO-Revision-Date: 2012-07-09 11:45+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: LANGUAGE <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: en\n"
@@ -32,8 +32,8 @@ msgstr "> Grups"
 msgid "> Membres del Grup"
 msgstr "> Membres del Grup"
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:88
-#: fatac.content/fatac/content/browser/my-playlists.pt:85
+#: fatac.content/fatac/content/browser/group-playlists.pt:93
+#: fatac.content/fatac/content/browser/my-playlists.pt:87
 msgid "> Playlists"
 msgstr "> Playlists"
 
@@ -77,14 +77,16 @@ msgstr "Administració"
 msgid "Administració"
 msgstr "Administració"
 
-#: fatac.content/fatac/content/profiles/default/actions.xml
+#: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Afegeix Fitxer"
 msgstr "Afegeix Fitxer"
 
+#. Default: "Afegeix Grup"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Grup"
 msgstr "Afegeix Grup"
 
+#. Default: "Afegeix Playlist"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Playlist"
 msgstr "Afegeix Playlist"
@@ -149,6 +151,10 @@ msgstr "Edita el portlet Les meves playlist"
 msgid "Edit cancelled"
 msgstr "S'ha cancel·lat l'edició."
 
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Els meus Grups"
+msgstr ""
+
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
 msgstr "Error"
@@ -186,7 +192,7 @@ msgstr "Grups"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:44
 #: fatac.content/fatac/content/browser/group-members.pt:52
-#: fatac.content/fatac/content/browser/group-playlists.pt:86
+#: fatac.content/fatac/content/browser/group-playlists.pt:91
 msgid "Grups >"
 msgstr "Grups >"
 
@@ -212,6 +218,10 @@ msgid "IndexarRecentsFaltaTemps"
 msgstr "Indexar dades recents: cal indicar el temps "
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Les Meves Playlists"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Log out"
 msgstr "Surt"
 
@@ -221,7 +231,7 @@ msgstr "URI del servidor Media"
 
 #: fatac.content/fatac/content/browser/group-activity.pt:72
 #: fatac.content/fatac/content/browser/group-members.pt:79
-#: fatac.content/fatac/content/browser/group-playlists.pt:114
+#: fatac.content/fatac/content/browser/group-playlists.pt:119
 msgid "Members"
 msgstr "Membres"
 
@@ -432,7 +442,7 @@ msgid "description_pas_show_all_search_results"
 msgstr "Mostra tots els resultats de la cerca"
 
 #: fatac.content/fatac/content/browser/group-playlists.pt:177
-#: fatac.content/fatac/content/browser/my-playlists.pt:182
+#: fatac.content/fatac/content/browser/my-playlists.pt:179
 msgid "editar"
 msgstr "edita"
 
@@ -446,7 +456,7 @@ msgstr "Correu electrònic"
 msgid "enable_cookies_message_before_login"
 msgstr "Les galetes no estan habilitades. Cal que habiliteu les galetes per poder iniciar la sessió."
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:150
+#: fatac.content/fatac/content/browser/group-playlists.pt:155
 msgid "group playlists"
 msgstr "Playlists del grup"
 
@@ -531,8 +541,8 @@ msgid "label_add_new_group"
 msgstr "Afegeix un grup nou"
 
 #. Default: "Afegeix una nova Playlist"
-#: fatac.content/fatac/content/browser/group-playlists.pt:152
-#: fatac.content/fatac/content/browser/group-view.pt:44
+#: fatac.content/fatac/content/browser/group-playlists.pt:82
+#: fatac.content/fatac/content/browser/group-view.pt:46
 #: fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
 msgstr "Afegeix una nova Playlist"
@@ -690,25 +700,57 @@ msgstr "Ves a visió general dels grups"
 msgid "link_group_properties"
 msgstr "Propietats del grup"
 
+#. Default: "Author"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:31
+msgid "listingheader_author"
+msgstr ""
+
 #. Default: "E-mail Address"
 #: fatac.content/fatac/content/browser/group-members.pt:180
 msgid "listingheader_email_address"
 msgstr "Adreça de correu"
+
+#. Default: "Edita"
+#: fatac.content/fatac/content/browser/manage-groups.pt:161
+#, fuzzy
+msgid "listingheader_group_edit"
+msgstr "Edita"
 
 #. Default: "Group Name"
 #: fatac.content/fatac/content/browser/manage-groups.pt:160
 msgid "listingheader_group_name"
 msgstr "Nom del grup"
 
-#. Default: "Remove"
+#. Default: "Baixa del grup"
 #: fatac.content/fatac/content/browser/manage-groups.pt:162
+msgid "listingheader_group_remov"
+msgstr ""
+
+#. Default: "Elimina el grup"
+#: fatac.content/fatac/content/browser/manage-groups.pt:162
+#, fuzzy
 msgid "listingheader_group_remove"
-msgstr "Suprimeix"
+msgstr "Elimina el grup"
 
 #. Default: "Group/User name"
 #: fatac.content/fatac/content/browser/group-members.pt:285
 msgid "listingheader_group_user_name"
 msgstr "Nom de grup/usuari"
+
+#. Default: "Modified"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:36
+msgid "listingheader_modified"
+msgstr ""
+
+#. Default: "Title"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:28
+msgid "listingheader_title"
+msgstr ""
+
+#. Default: "Type"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:33
+msgid "listingheader_type"
+msgstr ""
 
 #. Default: "User name"
 #: fatac.content/fatac/content/browser/group-members.pt:179
@@ -730,7 +772,7 @@ msgstr "Nom"
 msgid "playlist"
 msgstr "playlist"
 
-#: fatac.content/fatac/content/browser/my-playlists.pt:155
+#: fatac.content/fatac/content/browser/my-playlists.pt:157
 msgid "playlists"
 msgstr "playlists"
 
@@ -738,6 +780,11 @@ msgstr "playlists"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:149
 msgid "registrat"
 msgstr "Registra't"
+
+#. Default: "Content listing"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:23
+msgid "summary_content_listing"
+msgstr ""
 
 #. Default: "Close this box."
 #: fatac.content/fatac/content/jsvariables.py:24
@@ -790,8 +837,13 @@ msgstr "Aquest usuari no pertany a cap grup"
 msgid "title_send_mail_to_user"
 msgstr "Envia un correu electrònic a aquest usuari"
 
+#. Default: "Totes les playlists"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:16
+msgid "totes-les-playlists"
+msgstr ""
+
 #: fatac.content/fatac/content/browser/group-playlists.pt:175
-#: fatac.content/fatac/content/browser/my-playlists.pt:180
+#: fatac.content/fatac/content/browser/my-playlists.pt:177
 msgid "visualitzar"
 msgstr "visualitzar"
 

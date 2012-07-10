@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-05 15:40+0000\n"
+"POT-Creation-Date: 2012-07-10 10:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,8 +33,8 @@ msgstr ""
 msgid "> Membres del Grup"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:88
-#: fatac.content/fatac/content/browser/my-playlists.pt:85
+#: fatac.content/fatac/content/browser/group-playlists.pt:93
+#: fatac.content/fatac/content/browser/my-playlists.pt:87
 msgid "> Playlists"
 msgstr ""
 
@@ -78,14 +78,16 @@ msgstr ""
 msgid "Administració"
 msgstr ""
 
-#: fatac.content/fatac/content/profiles/default/actions.xml
+#: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Afegeix Fitxer"
 msgstr ""
 
+#. Default: "Afegeix Grup"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Grup"
 msgstr ""
 
+#. Default: "Afegeix Playlist"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Playlist"
 msgstr ""
@@ -150,6 +152,10 @@ msgstr ""
 msgid "Edit cancelled"
 msgstr ""
 
+#: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Els meus Grups"
+msgstr ""
+
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
 msgstr ""
@@ -187,7 +193,7 @@ msgstr ""
 
 #: fatac.content/fatac/content/browser/group-activity.pt:44
 #: fatac.content/fatac/content/browser/group-members.pt:52
-#: fatac.content/fatac/content/browser/group-playlists.pt:86
+#: fatac.content/fatac/content/browser/group-playlists.pt:91
 msgid "Grups >"
 msgstr ""
 
@@ -213,6 +219,10 @@ msgid "IndexarRecentsFaltaTemps"
 msgstr ""
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Les Meves Playlists"
+msgstr ""
+
+#: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Log out"
 msgstr ""
 
@@ -222,7 +232,7 @@ msgstr ""
 
 #: fatac.content/fatac/content/browser/group-activity.pt:72
 #: fatac.content/fatac/content/browser/group-members.pt:79
-#: fatac.content/fatac/content/browser/group-playlists.pt:114
+#: fatac.content/fatac/content/browser/group-playlists.pt:119
 msgid "Members"
 msgstr ""
 
@@ -433,7 +443,7 @@ msgid "description_pas_show_all_search_results"
 msgstr ""
 
 #: fatac.content/fatac/content/browser/group-playlists.pt:177
-#: fatac.content/fatac/content/browser/my-playlists.pt:182
+#: fatac.content/fatac/content/browser/my-playlists.pt:179
 msgid "editar"
 msgstr ""
 
@@ -447,7 +457,7 @@ msgstr ""
 msgid "enable_cookies_message_before_login"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/group-playlists.pt:150
+#: fatac.content/fatac/content/browser/group-playlists.pt:155
 msgid "group playlists"
 msgstr ""
 
@@ -532,8 +542,8 @@ msgid "label_add_new_group"
 msgstr ""
 
 #. Default: "Afegeix una nova Playlist"
-#: fatac.content/fatac/content/browser/group-playlists.pt:152
-#: fatac.content/fatac/content/browser/group-view.pt:44
+#: fatac.content/fatac/content/browser/group-playlists.pt:82
+#: fatac.content/fatac/content/browser/group-view.pt:46
 #: fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
 msgstr ""
@@ -691,9 +701,19 @@ msgstr ""
 msgid "link_group_properties"
 msgstr ""
 
+#. Default: "Author"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:31
+msgid "listingheader_author"
+msgstr ""
+
 #. Default: "E-mail Address"
 #: fatac.content/fatac/content/browser/group-members.pt:180
 msgid "listingheader_email_address"
+msgstr ""
+
+#. Default: "Edita"
+#: fatac.content/fatac/content/browser/manage-groups.pt:161
+msgid "listingheader_group_edit"
 msgstr ""
 
 #. Default: "Group Name"
@@ -701,7 +721,12 @@ msgstr ""
 msgid "listingheader_group_name"
 msgstr ""
 
-#. Default: "Remove"
+#. Default: "Baixa del grup"
+#: fatac.content/fatac/content/browser/manage-groups.pt:162
+msgid "listingheader_group_remov"
+msgstr ""
+
+#. Default: "Elimina el grup"
 #: fatac.content/fatac/content/browser/manage-groups.pt:162
 msgid "listingheader_group_remove"
 msgstr ""
@@ -709,6 +734,21 @@ msgstr ""
 #. Default: "Group/User name"
 #: fatac.content/fatac/content/browser/group-members.pt:285
 msgid "listingheader_group_user_name"
+msgstr ""
+
+#. Default: "Modified"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:36
+msgid "listingheader_modified"
+msgstr ""
+
+#. Default: "Title"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:28
+msgid "listingheader_title"
+msgstr ""
+
+#. Default: "Type"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:33
+msgid "listingheader_type"
 msgstr ""
 
 #. Default: "User name"
@@ -731,13 +771,18 @@ msgstr ""
 msgid "playlist"
 msgstr ""
 
-#: fatac.content/fatac/content/browser/my-playlists.pt:155
+#: fatac.content/fatac/content/browser/my-playlists.pt:157
 msgid "playlists"
 msgstr ""
 
 #. Default: "Registra't"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:149
 msgid "registrat"
+msgstr ""
+
+#. Default: "Content listing"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:23
+msgid "summary_content_listing"
 msgstr ""
 
 #. Default: "Close this box."
@@ -791,8 +836,13 @@ msgstr ""
 msgid "title_send_mail_to_user"
 msgstr ""
 
+#. Default: "Totes les playlists"
+#: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:16
+msgid "totes-les-playlists"
+msgstr ""
+
 #: fatac.content/fatac/content/browser/group-playlists.pt:175
-#: fatac.content/fatac/content/browser/my-playlists.pt:180
+#: fatac.content/fatac/content/browser/my-playlists.pt:177
 msgid "visualitzar"
 msgstr ""
 
