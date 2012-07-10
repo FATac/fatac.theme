@@ -358,6 +358,13 @@ class genericView(BrowserView, funcionsCerca):
                 valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
         return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
 
+    def get_forbidden_dada(self, dades):
+        """ donat un diccionari de tipus {u'type': u'forbidden', u'name': u'Title',
+        u'value': [u'Rainer Oldendorf']} retorna un string format pels strings
+        dins el 'value' concatenats amb ', '
+        """
+        return ', '.join(dades['value'])
+
     def get_text_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'text', u'name': u'Title',
         u'value': [u'Rainer Oldendorf']} retorna un string format pels strings

@@ -937,6 +937,13 @@ function setMediaSrc(domElement, url, kind) {
               o.width(ww);
             }
             o.height(wh - 50);
+          slide.$img.css({
+            "height" : "auto",
+            "width"  : "auto",
+            "left" : "-" + (0.5 * slide.$img.width()) + "px",
+            "margin-left" :  + (0.5 * slide.$img.width()) + "px",
+            "top"   : "0px"
+          });
         });
 
         // slide.$img.find('iframe').each(function(i, o) {
@@ -981,6 +988,7 @@ function setMediaSrc(domElement, url, kind) {
             $container.append(newSlide.$img);
             newSlide.preview  = newSlide.$img.find('.slide-preview');
             newSlide.preview.attr('id', 'slide-preview-' + slide);
+            newSlide.preview.attr('rel', slide);
             slideElement = $('#slide-preview-'+slide);
             if (slideElement.length > 0 ){
                 slideElement.replaceWith(newSlide.preview);
@@ -1084,7 +1092,7 @@ function setMediaSrc(domElement, url, kind) {
     });
     var addPreview = function(slides, index){
         var slide, preview;
-        preview = '<div class="slide-preview waiting" id="slide-preview-' + index + '"><img src="spinner.gif"/></div>';
+        preview = '<div class="slide-preview waiting" rel="'+index+'" id="slide-preview-' + index + '"><img src="spinner.gif"/></div>';
         slide = $("#slide-preview-" + index);
         if (index < slides.length){
             if (slides[index].loaded) {
@@ -1112,6 +1120,7 @@ function setMediaSrc(domElement, url, kind) {
     var changeSlide = function(oldSlide, newSlide) {
         var slides, slide, total_pagines = parseInt($('#pagina_total').attr('rel'),10);
         slides = $container.data("slides");
+        console.log(slides)
         slide = newSlide.id;
 
         if (oldSlide !== undefined) {
@@ -1383,13 +1392,22 @@ function initFullScreen(){
           // set and show caption
           crea_scrolls_verticals();
           $('#fs-caption').html(slide.info)
+          console.log(slide)
           var iframeurl = slide.$img.find('iframe').attr('src')
-          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="margin-bottom: 15px;margin-top:70px;width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
+          if (iframeurl) $(slide.$img.find('iframe').get(0).parentNode).html('<iframe style="margin-bottom: 15px;margin-top:70px;width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
 
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
           //$('#fs-caption').hide();
-        });
+        })
+        .on('click', '.slide-preview', function(event) {
+            event.preventDefault()
+            event.stopPropagation()
+            event.stopImmediatePropagation()
+            var index = $(this).attr('rel')
+            console.log(index)
+            $container.trigger("showSlide", index)
+        })
         $container.trigger("show", 0);
 }
