@@ -34,6 +34,9 @@ a { border-bottom:none !important; }
 
 img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
+.columna { width: 30%; padding-left: 15px; padding-right: 15px; border-right: 1px dotted; float: left; }
+.columna2 { width: 29%; padding-left: 15px; padding-right: 15px; float: left;}
+.caixa { border-top: 1px dotted; padding-top: 20px;}
 .arial20c333333bold { font-family:Arial; font-size:20px; color:#333333 !important; font-weight:bold !important; }
 .arial16c339933bold { font-family:Arial; font-size:16px; color:#339933 !important; font-weight:bold !important; }
 .arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
@@ -51,6 +54,9 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial11c666666 { font-family:Arial; font-size:11px; color:#666666 !important; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
+.georgia28c666666 { font-family:georgia; font-size:28px; color:#666666 !important; line-height:34px; }
+.georgia20c666666italic { font-family:georgia; font-size:20px; color:#666666 !important; font-style: italic; }
+.georgia15c666666 { font-family:georgia; font-size:15px; color:#666666 !important; line-height:19px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
 .georgia13c333333italic { font-family:georgia; font-size:13px; color:#333333 !important; font-style:italic }
 .georgia12c333333italic { font-family:georgia; font-size:12px; color:#333333 !important; font-style:italic; line-height: 1.2em; }
