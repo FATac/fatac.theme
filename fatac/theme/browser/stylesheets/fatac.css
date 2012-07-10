@@ -12,7 +12,7 @@
 div.width-full { width: 100%; }
 div.position-0 { margin-left: -100%; }
 #content { margin:0; }
-#content a:hover, dl.portlet a:hover{ color:#000000 !important;}
+dl.portlet a:hover{ color:#000000 !important;}
 
 div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
@@ -21,7 +21,7 @@ div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-w
 #portal-top { margin-bottom:14px; }
 
 /* ---------------------------------------------------------------------------- general */
-body, #content { font-family:georgia; font-size:13px !important; color:#666666; line-height: 1.5em !important; }
+.portaltype-document { font-family:georgia; font-size:13px !important; color:#666666; line-height: 1.5em !important; }
 
 a { border-bottom:none !important; }
 
@@ -91,9 +91,9 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 .ac_search_biblio { text-align: right; float:right; width:20%; }
 .link_biblioteca { text-transform: none; }
 
-#content a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
-#content a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
-#content a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
+.portaltype-document a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
+.portaltype-document a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
+.portaltype-document a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
 .template-explorar .span5 { margin-left:13px !important; }
 .template-explorar .barra { height:440px; }
@@ -385,7 +385,7 @@ div.genericview_fitxa_final img.addPlaylist {float:left;}
 div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 
 .counters { float:left; width:184px; clear:right; font-family:georgia; font-size:14px; color:#999999; }
-.counters .counter { background-color:#ECECEC; float:left; width:80px; padding:5px; border-radius: 0.3em; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; margin-right:2px;}
+.counters .counter { background-color:#ECECEC; float:left; width:80px; padding:5px; border-radius: 0.3em; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; margin-right:2px; margin-bottom:2px;}
 .counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
 
 .requadre_objects { margin:10px 0 20px 0; text-align:center; background-color:#ECECEC; border-top: 1px dotted #888; border-bottom: 1px dotted #888; }
