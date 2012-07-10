@@ -74,7 +74,7 @@
                         });
                     </script>
 
-                    <div id="text_intro" class="georgia32c666666" tal:define="text view/getFrontPage" tal:condition="text">
+                    <div id="text_intro" tal:define="text view/getFrontPage" tal:condition="text">
                         <div tal:replace="structure text">text introductori</div>
                     </div>
 
