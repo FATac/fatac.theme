@@ -121,6 +121,13 @@
         permission="zope2.Public"
         />
 
+    <browser:page
+        for="*"
+        name="allPlaylistsView"
+        class=".allPlaylistsView.allPlaylistsView"
+        permission="zope2.Public"
+        />
+
     <!-- Vista creada per fer proves de pintar la visualització de resultats amb una llista de ids) -->
     <browser:page
         for="*"

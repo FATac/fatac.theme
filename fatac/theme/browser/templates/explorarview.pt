@@ -18,7 +18,7 @@
                 <a href="" class="arial13c666666 explorar_classe selected" rel="class:Person" data-conf="Agents" i18n:translate="agentes">Agents</a> &nbsp|&nbsp
                 <a href="" class="arial13c666666 explorar_classe" rel="class:FrameActivity" data-conf="Events" i18n:translate="eventos">Esdeveniments</a> &nbsp|&nbsp
                 <a href="" class="arial13c666666 explorar_classe" data-conf="Explora" rel="ObjectType:Collection" i18n:translate="colection">Col·lecció</a> &nbsp|&nbsp
-                <a href="totes-les-playlists" class="arial13c666666" i18n:translate="">Totes les playlists</a>
+                <a href="allPlaylistsView" class="arial13c666666" i18n:translate="">Totes les playlists</a>
             </div>
 
             <script type="text/javascript">
