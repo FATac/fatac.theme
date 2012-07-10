@@ -850,7 +850,7 @@ div.photo-container {
 
 /* Color de fondo del player en audio */
 .audioTag { 
-	background-color: white !important;
+	background-color: transparent !important;
 	height: 113px;
 }
 
@@ -863,7 +863,6 @@ div.photo-container {
     color: black;
     font-size: 14px;
 }
-
 
 /* forzar ver controls en player */
 .vjs-fade-out {
