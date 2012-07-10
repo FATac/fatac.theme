@@ -18,7 +18,7 @@ div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
 div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-wrapper.row {margin-left: 0px;}
 
-#portal-top { margin-bottom:30px; }
+#portal-top { margin-bottom:14px; }
 
 /* ---------------------------------------------------------------------------- general */
 a { border-bottom:none !important; }
@@ -849,8 +849,19 @@ div.photo-container {
 }
 
 /* Color de fondo del player en audio */
-.video-js {
-    background-color: black;
+.audioTag {
+	background-color: transparent !important;
+	height: 113px;
+}
+
+.audioTag .vjs-fullscreen-control {
+	display: none;
+	}
+
+.audioTag .vjs-tt-cue {
+	background-color: white;
+    color: black;
+    font-size: 14px;
 }
 
 /* forzar ver controls en player */
