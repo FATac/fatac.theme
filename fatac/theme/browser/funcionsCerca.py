@@ -37,7 +37,19 @@ class funcionsCerca():
             if fields != None:
                 querystring['fields'] = fields
 
-        return self.executaCerca(querystring, llista_ids, self.getLang(), rows, start)
+        result = self.executaCerca(querystring, llista_ids, self.getLang(), rows, start)
+        # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
+        # Hem de reordenar la llista de ids del resultat segons la llista original, conservant el format
+        # de la resposta (bascicament la classe del item resultant)
+        unordered = {}
+        for doc in result['dades_json']['response'].get('docs', []):
+            unordered[doc['id']] = doc['class']
+        if unordered:
+            result['dades_json']['response']['docs'] = []
+            for lid in llista_ids:
+                if lid in unordered:
+                    result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
+        return result
 
     def getSettings(self, key=None):
         """ Retorna la configuració o el valor de la configuració demanat (key).
@@ -148,6 +160,7 @@ class funcionsCerca():
         si rep llista_ids, en comptes de querystring, monta un diccionari com si
         sigués el resultat d'una cerca i el retorna
         """
+        print 'EXECUTING SEARCH !!!!'
         if querystring and not llista_ids:
             querystring['rows'] = rows
             querystring['start'] = start
@@ -176,8 +189,8 @@ class funcionsCerca():
         elif llista_ids:
             querystring = {}
             querystring['rows'] = rows
-            querystring['start'] = start
-            querystring['f'] = ['id:' + ' OR '.join(llista_ids)]
+            querystring['start'] = 0
+            querystring['f'] = ['id:' + ' OR '.join(llista_ids[start:start+rows])]
             querystring_str = self.querystringToString(querystring)
             url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
