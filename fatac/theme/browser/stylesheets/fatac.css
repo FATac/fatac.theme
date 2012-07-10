@@ -253,8 +253,8 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #visualitzacio_resultats a img { border:1px solid transparent; }
 #visualitzacio_resultats div#zoom_resultats.selected, #visualitzacio_resultats div#zoom_resultats:hover, #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 
-#resultats { float:left; width:100%; }
-#wrapper_resultats { overflow:hidden; position:relative; height:485px; }
+#resultats { float:left; width:100%; margin-top:19px; }
+#wrapper_resultats { overflow:hidden; position:relative; height:440px; }
 .pagines_resultats { position:absolute; width:20000em; }
 .pagines_resultats .pagina { width:881px; float:left; }
 #resultats_cerca a.disabled { visibility: hidden !important; }
@@ -296,7 +296,7 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 /* ---------------------------------------------------------------------------- resultats cerca */
 #resultats_cerca { min-height:480px; }
 #resultats_cerca #wrapper_resultats { margin: 0 28px; width:879px; }
-#resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 220px; }
+#resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 208px; }
 #resultats_cerca .column-results {height:460px; overflow:hidden;}
 #resultats_cerca .column-results .slider_vertical { height:440px;}.
 #resultats_cerca .column-results ul { margin:0; padding:0; list-style: none; }
@@ -394,6 +394,8 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 .media_image { max-width:617px; height : auto; }
 .media_image { width:auto; max-height : 480px; }
 .media_video, .media_audio, .media_image { margin-bottom:10px; clear:right; }
+
+.iframe_dades { width:560px; height:500px; }
 
 /* ---------------------------------------------------------------------------- genericview_imatge.pt */
 .genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
