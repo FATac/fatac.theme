@@ -848,9 +848,21 @@ div.photo-container {
 }
 
 /* Color de fondo del player en audio */
-.video-js {
-    background-color: black;
+.audioTag { 
+	background-color: white !important;
+	height: 113px;
 }
+
+.audioTag .vjs-fullscreen-control { 
+	display: none;
+	}
+
+.audioTag .vjs-tt-cue {
+	background-color: white;
+    color: black;
+    font-size: 14px;
+}
+
 
 /* forzar ver controls en player */
 .vjs-fade-out {
