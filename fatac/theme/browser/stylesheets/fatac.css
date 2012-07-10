@@ -276,7 +276,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #links2 { float:right; text-align:right; width:60%; margin-top:6px; }
 
 /* ---------------------------------------------------------------------------- homeview.pt */
-#text_intro { width:94%; float:left; padding: 35px 3% 10px 3%; margin-top:25px; border-top:1px dotted #888888; }
+#text_intro { width:94%; float:left; padding: 23px 3% 10px 3%; margin-top:25px; border-top:1px dotted #888888; }
 #text_intro p {margin-bottom: 0.5em;}
 
 #ultims_documents, #ultims_consultats { width:100%; float:left; }
