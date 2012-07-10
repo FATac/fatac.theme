@@ -60,6 +60,7 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .georgia14c333333 { font-family:georgia; font-size:14px; color:#333333 !important; }
 .georgia15c666666italic { font-family:georgia; font-size:15px; color:#666666 !important; font-style:italic; }
 .georgia11c333333 { font-family:georgia; font-size:11px; color:#333333 !important; }
+.georgia11c666666 { font-family:georgia; font-size:11px; color:#666666 !important; }
 .georgia11c999999 { font-family:georgia; font-size:11px; color:#999999 !important; }
 .georgia11c000000 { font-family:georgia; font-size:11px; color:#000000 !important; }
 .TerminalDosis600 { font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; }
@@ -981,4 +982,4 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 
 .close a {display:none;}
 
-#footer_objecte {margin-bottom: 20px}
+#footer_objecte {margin-bottom: 20px; float: left; clear: right;}
