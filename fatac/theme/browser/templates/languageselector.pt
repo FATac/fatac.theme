@@ -23,7 +23,7 @@
                                     codeclass string:language-${code};
                                     name lang/name;"
                         tal:attributes="class string:${codeclass}">
-                        <a tal:attributes="href string:${here_url}/switchLanguage?set_language=${code};
+                        <a tal:attributes="href lang/url;
                                            title name"
                            tal:content="code" i18n:translate="" class="arial11c666666">language name</a>
                     </li>

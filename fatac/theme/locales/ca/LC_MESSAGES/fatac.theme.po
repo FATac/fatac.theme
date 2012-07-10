@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
-"POT-Creation-Date: 2012-07-05 15:40+0000\n"
-"PO-Revision-Date: 2012-07-06 10:14+0100\n"
+"POT-Creation-Date: 2012-07-10 10:14+0000\n"
+"PO-Revision-Date: 2012-07-10 12:20+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: ca\n"
@@ -46,12 +46,12 @@ msgstr ""
 
 #. Default: "Accions de manteniment"
 #: fatac.forms/fatac/forms/browser/templates/inici.pt:34
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:35
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:36
 msgid "AccionsManteniment"
 msgstr "Accions de manteniment"
 
 #. Default: "Actualitza les ontologies amb les especificades a la variable de configuració ONTOLOGY_NAMESPACE"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:47
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:48
 msgid "ActualitzaOntologies"
 msgstr "Actualitza les ontologies amb les especificades a la variable de configuració ONTOLOGY_NAMESPACE"
 
@@ -147,6 +147,10 @@ msgstr "Cerca/Edita objectes"
 msgid "Cache time"
 msgstr "Temps de cache"
 
+#. Default: "Model de càmara"
+msgid "CameraModel"
+msgstr "Model de càmara"
+
 #: fatac.theme/fatac/theme/browser/controlpanel.py:44
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -162,16 +166,17 @@ msgstr "Català"
 
 #: fatac.theme/fatac/theme/browser/templates/cercaview.pt:24
 msgid "Cerca"
-msgstr "CERCA"
+msgstr "Cerca"
 
 #. Default: "Cerca a VTLS"
 msgid "Cerca a VTLS"
 msgstr "Cerca a VTLS"
 
+#. Default: "Cercar biblioteca"
 #. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
-msgstr "cerca a la biblioteca"
+msgstr "Cerca a la biblioteca"
 
 #. Default: "Catedràtic"
 msgid "Chair"
@@ -218,7 +223,7 @@ msgstr "Color"
 msgid "Component to use"
 msgstr ""
 
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:67
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:69
 msgid "Convertir"
 msgstr "Converteix"
 
@@ -233,6 +238,10 @@ msgstr "País"
 #. Default: "Creador"
 msgid "Creator"
 msgstr "Creador"
+
+#. Default: "Crèdits"
+msgid "CreditLine"
+msgstr "Crèdits"
 
 #. Default: "Gestió cultural"
 msgid "CulturalManagement"
@@ -297,16 +306,16 @@ msgid "Error"
 msgstr "Error"
 
 #. Default: "Esborra totes les dades"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:88
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:89
 msgid "EsborraDades"
 msgstr "Esborra dades"
 
 #. Default: "Esborra <span style=\"font-weight:bold; color:red;\">de forma irreversible</span> totes les dades del sistema, arxius media, estadístiques i recarrega les ontologies. Per a confirmar aquest acció cal introduir la data i hora actual del servidor (en format tipus '30/11/11 16:37')"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:90
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:91
 msgid "EsborraDadesExplicacio"
 msgstr ""
 
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:66
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:67
 msgid "Esborrar"
 msgstr "Esborra"
 
@@ -318,7 +327,7 @@ msgstr "Castellà"
 msgid "Events"
 msgstr "Esdeveniments"
 
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:54
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:49
 msgid "Executa"
 msgstr "Executa"
 
@@ -328,12 +337,12 @@ msgid "Explorar"
 msgstr "Explora"
 
 #. Default: "Exportar a OAI"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:51
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:52
 msgid "ExportarOAI"
 msgstr "Exporta a OAI"
 
 #. Default: "Assegura que les dades actuals estiguin disponibles pel servidor OAI-PMH, d'acord amb allò especificat al oai-mapping <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:53
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:54
 msgid "ExportarOAIExplicacio"
 msgstr ""
 
@@ -355,7 +364,7 @@ msgstr "Realitzador"
 
 #: fatac.theme/fatac/theme/browser/templates/filtresview.pt:17
 msgid "Filtre de búsqueda"
-msgstr "Filtre de búsqueda"
+msgstr "Filtres de cerca"
 
 #. Default: "Fitxa d'expedient"
 #: ../../../browser/opcions.pt:2
@@ -366,7 +375,7 @@ msgstr "Fitxa d'expedient"
 msgid "Folder name where the Plone representations of the rest objectes will be created, must be inside root folder."
 msgstr "Nom de la carpeta on les representacions de la resta d'objectes seran creats, ha de estar a la carpeta arrel."
 
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:60
 msgid "Format"
 msgstr "Format"
 
@@ -379,12 +388,12 @@ msgid "Frances"
 msgstr "Francès"
 
 #. Default: "Generar miniatures"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:66
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:67
 msgid "GenerarMiniatures"
 msgstr "Generar miniatures"
 
 #. Default: "Genera les miniatures de tots els objectes d'una determinada classe. Això és útil per evitar sobrecarregar el servidor durant la cerca <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:68
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:69
 msgid "GenerarMiniaturesExplicacio"
 msgstr ""
 
@@ -394,7 +403,7 @@ msgid "GenerarMiniaturesFaltaClasse"
 msgstr "Generar miniatures: Falta escollir la classe"
 
 #. Default: "Cerca i gestió de medias"
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:33
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:34
 msgid "GestioCercaMedia"
 msgstr "Cerca i gestió medias"
 
@@ -429,6 +438,10 @@ msgstr "Els grups s'han suprimit."
 msgid "Handler"
 msgstr "Controlador"
 
+#. Default: "Versió física"
+msgid "HasPhisicalVersion"
+msgstr "Versió física"
+
 #: fatac.content/fatac/content/portletMyFiles.py:15
 #: fatac.content/fatac/content/portletMyGroups.py:15
 #: fatac.content/fatac/content/portletPlaylists.py:15
@@ -455,17 +468,17 @@ msgid "IndexarRecentsFaltaTemps"
 msgstr "Indexa dades recents: cal indicar el temps "
 
 #. Default: "Indexar a Solr"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:57
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:58
 msgid "IndexarSolr"
 msgstr "Indexa a Solr"
 
 #. Default: "Indexa des de zero totes les dades actuals perquè siguin disponibles al motor de cerca Solr, d'acord amb allò especificat al mapping <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:59
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:60
 msgid "IndexarSolrExplicacio1"
 msgstr ""
 
 #. Default: "Indexa només les dades recentment introduides o modificades, en el temps establert. No actualitza els objectes esborrats <span style=\"font-weight:bold\">(aquesta acció pot trigar una estona)</span>"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:61
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:62
 msgid "IndexarSolrExplicacio2"
 msgstr ""
 
@@ -507,17 +520,17 @@ msgid "Interfaces or classes that this subscriber depends on"
 msgstr ""
 
 #. Default: "Introdueix la data i hora del servidor per confirmar"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:91
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:92
 msgid "IntroduirHoraServidor"
 msgstr "Introdueix la data i hora del servidor per confirmar"
 
 #. Default: "Introdueix el nom de la classe"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:69
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:70
 msgid "IntroduirNomClasse"
 msgstr "Introdueix el nom de la classe"
 
 #. Default: "Introdueix el temps en minuts"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:62
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:63
 msgid "IntroduirTemps"
 msgstr "Introdueix el temps en minuts"
 
@@ -542,7 +555,7 @@ msgid "License"
 msgstr "Llicències"
 
 #. Default: "Seleccionar"
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:70
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:72
 msgid "Link"
 msgstr "Enllaç"
 
@@ -559,6 +572,7 @@ msgstr ""
 msgid "Location"
 msgstr "Ubicació"
 
+#. Default: "Manteniment"
 #: fatac.forms/fatac/forms/browser/templates/manteniment.pt:32
 msgid "Manteniment"
 msgstr "Manteniment"
@@ -567,7 +581,8 @@ msgstr "Manteniment"
 msgid "Measures"
 msgstr "Mesures"
 
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:60
+#: fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:38
 msgid "Media"
 msgstr "Media"
 
@@ -597,9 +612,14 @@ msgid "No changes made."
 msgstr "No s'han realitzat canvis."
 
 #. Default: "Nom de la propietat"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:76
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:77
 msgid "NomPropietat"
 msgstr "Nom de la propietat"
+
+#. Default: "Nou objecte"
+#: fatac.forms/fatac/forms/browser/templates/uploadData.pt:33
+msgid "NouObjecte"
+msgstr "Nou objecte"
 
 #. Default: "Nombre de pàgines"
 msgid "NumPages"
@@ -611,7 +631,7 @@ msgstr "Nombre de pàgines"
 msgid "Number of items to display"
 msgstr "Nombre d'elements a mostrar"
 
-#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:59
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:60
 msgid "Objectes"
 msgstr "Objectes"
 
@@ -678,6 +698,10 @@ msgstr "Persones"
 msgid "Photographer"
 msgstr "Fotògraf"
 
+#. Default: "Lloc"
+msgid "Place"
+msgstr "Lloc"
+
 #. Default: "Llocs"
 msgid "Places"
 msgstr "Llocs"
@@ -694,6 +718,11 @@ msgstr "Imatge de la playlist"
 #: fatac.content/fatac/content/portletPlaylists.py:28
 msgid "Playlists items"
 msgstr "Elements de la playlists"
+
+#. Default: "Previsualització <input type=\"button\" value=\"Recarregar\" onclick=\"mediaUrlPreview(document.mediaForm.mediaurl.value)\" />"
+#: fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:43
+msgid "Previsualitzacio"
+msgstr ""
 
 #. Default: "Productor"
 msgid "Producer"
@@ -719,6 +748,11 @@ msgstr "Publicació"
 msgid "Publications"
 msgstr "Publicacions"
 
+#. Default: "Pujar media"
+#: fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:36
+msgid "PujarMedia"
+msgstr "Pujar media"
+
 #: zope/component/zcml.py:68
 msgid "Python name of a factory which can create the implementation object.  This must identify an object in a module using the full dotted name. If specified, the ``component`` field must be left blank."
 msgstr ""
@@ -740,17 +774,17 @@ msgid "REST server public URI"
 msgstr ""
 
 #. Default: "Recarregar ontologies"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:45
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:46
 msgid "RecarregarOntologies"
 msgstr "Recarrega ontologies"
 
 #. Default: "Reiniciar rols"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:82
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:83
 msgid "ReiniciarRols"
 msgstr "Reiniciar rols"
 
 #. Default: "Acció necessària perquè els canvis de rol dels usuaris es facin efectius"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:84
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:85
 msgid "ReiniciarRolsExplicacio"
 msgstr "Acció necessària per a que els canvis de rol dels usuaris es facin efectius"
 
@@ -779,6 +813,10 @@ msgstr ""
 msgid "ResetFaltaConfirmar"
 msgstr "Reset: Falta confirmar"
 
+#. Default: "Resolució"
+msgid "Resolution"
+msgstr "Resolució"
+
 #. Default: "Reiniciar rols"
 #: fatac.forms/fatac/forms/browser/manteniment.py:86
 msgid "RestartRoles"
@@ -805,10 +843,23 @@ msgstr "Buscar al Site"
 msgid "Següents"
 msgstr "Següents"
 
+#. Default: "Selecció de classe"
+#: fatac.forms/fatac/forms/browser/templates/uploadData.pt:36
+msgid "SeleccioClasse"
+msgstr "Selecció de classe"
+
 #. Default: "Selecciona una tasca a realitzar"
 #: fatac.forms/fatac/forms/browser/manteniment.py:19
 msgid "SeleccionaTasca"
 msgstr "Selecciona una tasca a realitzar"
+
+#. Default: "Situació"
+msgid "Situation"
+msgstr "Situació"
+
+#. Default: "Mida"
+msgid "Size"
+msgstr "Mida"
 
 #. Default: "Orador"
 msgid "Speaker"
@@ -846,12 +897,12 @@ msgid "SubstitueixFaltenTotsParams"
 msgstr "Substitueix: cal indicar els paràmetres "
 
 #. Default: "Substituir textos"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:73
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:74
 msgid "SubstituirTextos"
 msgstr "Substituir textos"
 
 #. Default: "Substitueix de cop tots els textos d'un camp especificat. Acció útil per a canviar totes les URL de cop quan es canvia el domini del servidor. Cal indicar: el nom de la propietat que es canviarà (forma \"prefix:NomPropietat\"), el text a substituir, i el nou text."
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:75
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:76
 msgid "SubstituirTextosExplicacio"
 msgstr "Substitueix de cop tots els textos d'un camp especificat. Acció útil per a canviar totes les URL de cop quan es canvia el domini del servidor. Cal indicar: el nom de la propietat que es canviarà (forma \"prefix:NomPropietat\"), el text a substituir, i el nou text."
 
@@ -871,12 +922,12 @@ msgid "Technique"
 msgstr "Tècnica"
 
 #. Default: "Text anterior"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:77
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:78
 msgid "TextAnterior"
 msgstr "Text anterior"
 
 #. Default: "Text nou"
-#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:78
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:79
 msgid "TextNou"
 msgstr "Text nou"
 
@@ -958,6 +1009,7 @@ msgstr "Timeout en segons per demanar RESET del servidor"
 msgid "Title"
 msgstr "Títol"
 
+#: fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:18
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:21
 msgid "Totes les playlists"
 msgstr "Totes les playlists"
@@ -977,6 +1029,15 @@ msgstr "Traductors"
 #: zope/component/zcml.py:121
 msgid "Trusted"
 msgstr ""
+
+#. Default: "Tipus de documental"
+msgid "TypeDocumentary"
+msgstr "Tipus de documental"
+
+#. Default: "Url"
+#: fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:31
+msgid "URL"
+msgstr "URL"
 
 #. Default: "Video"
 msgid "Video"
@@ -1008,6 +1069,13 @@ msgstr "Any"
 msgid "addCaptions"
 msgstr "Afegir subtítols"
 
+#. Default: "Administració"
+#: fatac.forms/fatac/forms/browser/templates/deleteObject.pt:27
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:26
+#: fatac.forms/fatac/forms/browser/templates/inici.pt:16
+msgid "administracio"
+msgstr "Administració"
+
 #. Default: "Agents"
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:18
 msgid "agentes"
@@ -1034,7 +1102,13 @@ msgstr "Heu oblidat la contrasenya?"
 
 #: fatac.theme/fatac/theme/browser/templates/cercaview.pt:30
 msgid "buscar a biblioteca"
-msgstr "Cerca a la biblioteca"
+msgstr "Cercar biblioteca"
+
+#. Default: "Buscar/Editar objectes"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:28
+#: fatac.forms/fatac/forms/browser/templates/updateExisting.pt:29
+msgid "buscar_editar_objectes"
+msgstr "Buscar/Editar objectes"
 
 #. Default: "cat"
 #: ../../../browser/languageselector.pt:13,
@@ -1048,6 +1122,11 @@ msgstr "cat"
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:134
 msgid "cap_resultat"
 msgstr "Cap resultat"
+
+#. Default: "Cercar objectes"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:30
+msgid "cercar_objectes"
+msgstr "Cercar objectes"
 
 #. Default: "Tipus de document"
 msgid "class"
@@ -1113,10 +1192,21 @@ msgid "description_playlist_portlet"
 msgstr "Llista de  Playlists d'usuari."
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:73
+#: fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:80
 #: fatac.theme/fatac/theme/browser/templates/filtresview.pt:25
-#: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:20
 msgid "dreta"
 msgstr "pàgina següent"
+
+#. Default: "Edició objecte"
+#: fatac.forms/fatac/forms/browser/templates/updateExisting.pt:36
+#: fatac.forms/fatac/forms/browser/templates/updateObject.pt:34
+msgid "edicio_objecte"
+msgstr "Edició objecte"
+
+#. Default: "Edita"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:49
+msgid "edita"
+msgstr "Edita"
 
 #. Default: "E-mail"
 #: fatac.core/fatac/core/userdataschema.py:39
@@ -1145,9 +1235,19 @@ msgstr "Les galetes no estan habilitades. Cal que habiliteu les galetes per pode
 msgid "es"
 msgstr "cast"
 
+#. Default: "Esborrar"
+#: fatac.forms/fatac/forms/browser/templates/updateExisting.pt:53
+msgid "esborrar"
+msgstr "Esborrar"
+
+#. Default: "Esborrat d'objecte"
+#: fatac.forms/fatac/forms/browser/templates/deleteObject.pt:30
+msgid "esborrat_d_objecte"
+msgstr "Esborrat d'objecte"
+
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:70
+#: fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:74
 #: fatac.theme/fatac/theme/browser/templates/filtresview.pt:24
-#: fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:17
 msgid "esquerra"
 msgstr "pàgina anterior"
 
@@ -1178,6 +1278,16 @@ msgstr "Ministerio de Industria, Turismo y Comercio"
 #: fatac.theme/fatac/theme/browser/templates/footer.pt:18
 msgid "financament2"
 msgstr "Plan Avanza"
+
+#. Default: "Fitxa"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:53
+msgid "fitxa"
+msgstr "Fitxa"
+
+#. Default: "Gestió de medias"
+#: fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:29
+msgid "gestio_de_medias"
+msgstr "Gestió de medias"
 
 #. Default: "Usuari nou?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
@@ -1213,6 +1323,22 @@ msgstr "Marqueu aquesta opció si voleu que s'ompli automàticament la vostra ad
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:177
 msgid "help_remember_my_name"
 msgstr "Marqueu aquesta opció si voleu que s'ompli automàticament el vostre nom d'usuari quan torneu a iniciar la sessió."
+
+#. Default: "Inserció objecte"
+#: fatac.forms/fatac/forms/browser/templates/uploadObject.pt:29
+msgid "insercio_d_objecte"
+msgstr "Inserció objecte"
+
+#. Default: "Inserir nou objecte"
+#: fatac.forms/fatac/forms/browser/templates/uploadData.pt:31
+#: fatac.forms/fatac/forms/browser/templates/uploadNew.pt:29
+msgid "inserir_nou_objecte"
+msgstr "Inserir nou objecte"
+
+#. Default: "Introduïr URI"
+#: fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:29
+msgid "introduirURI"
+msgstr "Introduir URI"
 
 #. Default: "us en podem enviar una de nova"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:302
@@ -1294,10 +1420,20 @@ msgstr "Recorda el meu nom."
 msgid "large"
 msgstr "Veure més gran"
 
+#. Default: "Legal"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:51
+msgid "legal"
+msgstr "Legal"
+
 #. Default: "Com que l'autenticació per galetes està inhabilitada, l'accés basat en galetes no està disponible."
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:69
 msgid "login_form_disabled"
 msgstr "Com que l'autenticació per galetes està inhabilitada, l'accés basat en galetes no està disponible."
+
+#. Default: "Manteniment"
+#: fatac.forms/fatac/forms/browser/templates/manteniment.pt:31
+msgid "manteniment"
+msgstr "Manteniment"
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:44
 msgid "mes_opcions"
@@ -1307,6 +1443,11 @@ msgstr "més opcions"
 #: fatac.forms/fatac/forms/browser/uploadNew.py:43
 msgid "name"
 msgstr "Nom"
+
+#. Default: "Nou objecte"
+#: fatac.forms/fatac/forms/browser/templates/uploadNew.pt:33
+msgid "nou_objecte"
+msgstr "Nou objecte"
 
 #. Default: "Ordre:"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:48
@@ -1359,6 +1500,21 @@ msgstr "Redüir filtres"
 msgid "register"
 msgstr "REGISTRE"
 
+#. Default: "Segur que vol esborrar"
+#: fatac.forms/fatac/forms/browser/templates/updateExisting.pt:57
+msgid "segur_que_vol_esborrar"
+msgstr "Segur que vol esborrar"
+
+#. Default: "Selecció d'objectes"
+#: fatac.forms/fatac/forms/browser/templates/legalSelectObjects.pt:35
+msgid "seleccio_d_objectes"
+msgstr "Selecció d'objectes"
+
+#. Default: "Selecciona"
+#: fatac.forms/fatac/forms/browser/templates/search.pt:56
+msgid "selecciona"
+msgstr "selecciona"
+
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:104
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:106
 msgid "small"
@@ -1402,17 +1558,29 @@ msgstr "Portlet Playlist"
 #. Default: "Últims consultats"
 #: fatac.theme/fatac/theme/browser/templates/homeview.pt:116
 msgid "ultims_consultats"
-msgstr "Últims consultats"
+msgstr "Últims documents consultats"
 
 #. Default: "Últims documents"
 #: fatac.theme/fatac/theme/browser/templates/homeview.pt:89
 msgid "ultims_documents"
-msgstr "Últims documents"
+msgstr "Últims documents catalogats"
 
 #. Default: "Una iniciativa de:"
 #: fatac.theme/fatac/theme/browser/templates/footer.pt:7
 msgid "una_iniciativa_de"
 msgstr "Una iniciativa de:"
+
+#. Default: "Validació legal"
+#: fatac.forms/fatac/forms/browser/templates/legalSelectObjects.pt:28
+#: fatac.forms/fatac/forms/browser/templates/legalValidation.pt:32
+#: fatac.forms/fatac/forms/browser/templates/updateExisting.pt:45
+msgid "validacio_legal"
+msgstr "Validació legal"
+
+#. Default: "Veure"
+#: fatac.forms/fatac/forms/browser/templates/viewObject.pt:31
+msgid "veure"
+msgstr "Veure"
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:108
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:114
@@ -1434,26 +1602,3 @@ msgstr "Vista prèvia"
 msgid "visualitzacio4"
 msgstr "Pantalla sencera"
 
-msgid "Size"
-msgstr "Mida"
-
-msgid "Resolution"
-msgstr "Resolució"
-
-msgid "Place"
-msgstr "Lloc"
-
-msgid "HasPhisicalVersion"
-msgstr "Versió física"
-
-msgid "Situation"
-msgstr "Situació"
-
-msgid "CreditLine"
-msgstr "Crèdits"
-
-msgid "TypeDocumentary"
-msgstr "Tipus de documental"
-
-msgid "CameraModel"
-msgstr "Model de càmara"
