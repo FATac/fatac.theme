@@ -845,7 +845,7 @@ div.photo-container {
 #login-wrapper .login-left { float:left; width:45%; border-right:1px solid #B3D396; padding-right:4.8%; margin-right:5%; }
 #login-wrapper .login-right { float: right; width:45%; }
 
-#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; }
+#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; cursor: pointer;}
 #login-wrapper #login-form { clear:none; }
 
 
