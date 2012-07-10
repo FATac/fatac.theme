@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2012-07-10 10:14+0000\n"
-"PO-Revision-Date: 2012-07-09 11:46+0100\n"
+"PO-Revision-Date: 2012-07-10 13:13+0100\n"
 "Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgstr "Edición cancelada"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Els meus Grups"
-msgstr ""
+msgstr "Mis grupos"
 
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
@@ -220,7 +220,7 @@ msgstr "Indexar datos recientes: es necesario indicar el tiempo"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Les Meves Playlists"
-msgstr ""
+msgstr "Mis playlists"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Log out"
@@ -704,7 +704,7 @@ msgstr "Propiedades del Grupo"
 #. Default: "Author"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:31
 msgid "listingheader_author"
-msgstr ""
+msgstr "Autor"
 
 #. Default: "E-mail Address"
 #: fatac.content/fatac/content/browser/group-members.pt:180
@@ -713,7 +713,6 @@ msgstr "Dirección de Correo"
 
 #. Default: "Edita"
 #: fatac.content/fatac/content/browser/manage-groups.pt:161
-#, fuzzy
 msgid "listingheader_group_edit"
 msgstr "Editar"
 
@@ -725,11 +724,10 @@ msgstr "Nombre de Grupo"
 #. Default: "Baixa del grup"
 #: fatac.content/fatac/content/browser/manage-groups.pt:162
 msgid "listingheader_group_remov"
-msgstr ""
+msgstr "Baja del grupo"
 
 #. Default: "Elimina el grup"
 #: fatac.content/fatac/content/browser/manage-groups.pt:162
-#, fuzzy
 msgid "listingheader_group_remove"
 msgstr "Eliminar grupo"
 
@@ -741,17 +739,17 @@ msgstr "Nombre de Grupo/Usuario"
 #. Default: "Modified"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:36
 msgid "listingheader_modified"
-msgstr ""
+msgstr "Modificado"
 
 #. Default: "Title"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:28
 msgid "listingheader_title"
-msgstr ""
+msgstr "Título"
 
 #. Default: "Type"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:33
 msgid "listingheader_type"
-msgstr ""
+msgstr "Tipo"
 
 #. Default: "User name"
 #: fatac.content/fatac/content/browser/group-members.pt:179
@@ -785,7 +783,7 @@ msgstr "Resgistrate"
 #. Default: "Content listing"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:23
 msgid "summary_content_listing"
-msgstr ""
+msgstr "Listado de contenidos"
 
 #. Default: "Close this box."
 #: fatac.content/fatac/content/jsvariables.py:24
@@ -841,7 +839,7 @@ msgstr "Enviar un correo a este usuario"
 #. Default: "Totes les playlists"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:16
 msgid "totes-les-playlists"
-msgstr ""
+msgstr "Todas las playlists"
 
 #: fatac.content/fatac/content/browser/group-playlists.pt:175
 #: fatac.content/fatac/content/browser/my-playlists.pt:177
