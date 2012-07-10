@@ -41,14 +41,16 @@ class funcionsCerca():
         # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
         # Hem de reordenar la llista de ids del resultat segons la llista original, conservant el format
         # de la resposta (bascicament la classe del item resultant)
-        unordered = {}
-        for doc in result['dades_json']['response'].get('docs', []):
-            unordered[doc['id']] = doc['class']
-        if unordered:
-            result['dades_json']['response']['docs'] = []
-            for lid in llista_ids:
-                if lid in unordered:
-                    result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
+
+        if llista_ids:
+            unordered = {}
+            for doc in result['dades_json']['response'].get('docs', []):
+                unordered[doc['id']] = doc['class']
+            if unordered:
+                result['dades_json']['response']['docs'] = []
+                for lid in llista_ids:
+                    if lid in unordered:
+                        result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
         return result
 
     def getSettings(self, key=None):
