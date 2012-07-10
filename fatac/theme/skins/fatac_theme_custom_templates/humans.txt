@@ -1,0 +1,60 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+
+  Initiative: Fundació Antoni Tàpies, Barcelona
+
+  Fundació Antoni Tàpies
+  Site: www.fundaciotapies.org
+  Twitter: @fundaciotapies
+  Location: Barcelona
+
+  Coordinació: Núria Solé Bardalet i Linda Valdés
+
+  Assessorament i disseny tècnic: Jaume Nualart
+
+  Transcodificador de vídeo i Living Lab: i2cat
+
+  Disseny: Hermanos Berenguer
+
+  Assessorament legal: Manuel Martínez Ribas i Malcolm Bain, id law partners/BGMA, en el marc de la
+  Càtedra de Programari Lliure de la Universidad Politécnica de Catalunya, sota la coordinació d'Eulàlia Formentí.
+
+
+  Digitalització de llibres d'artista d'Antoni Tàpies: Fernando Cortiglia i Julia Catalá Roca en el marc del
+  Grup d'investigació del Laboratori per l'estudi de materials fotogràfics contemporanis de la UPV.
+
+  Altres materials digitalitzats: Babuin Media
+
+  Arxiu: Dos Punts Documentació i Cultura, s.l.
+
+  Documentació i digitalització: Gala Sicart
+
+  UPCnet eKnowledge Team
+  Site: www.upcnet.es
+  Twitter: @upcnet
+  Location: Barcelona
+
+  Developers: Jordi Roig
+              Ferran Pons
+              Ariel Von Barnekow [arielvb]
+              Laura Perez [lpmayos]
+              Corina Riba [hanirok]
+              Roberto Diaz [robdayz]
+              Carles Bruguera [sunbit]
+              Victor Fernandez de Alba [sneridagh]
+
+  Project Manager: Nacho Ruiz de Erenchun
+  Software architecture: Víctor Fernández de Alba [sneridagh]
+
+/* THANKS */
+  Ramon Alberch, Jorge Blasco Gallardo i el Grup d'investigació: Arxiu, art, ciència i societat (2011- Generalitat de Catalunya,
+  Museu Picasso de Barcelona, UAB), Constant vzw (Brusel·les), Nuria Enguita Mayo, Abel Garriga, Yaiza Hernández, Nicolas Malevé,
+  SLIC, i a tots/es els nostres companys/es de les institucions culturals que ens han animat a seguir en aquest projecte.
+
+/* SITE */
+  Standards: HTML5, CSS3, ECMAScript
+  Components: Modernizr, jQuery, jQuery UI, Python, Java
+  Software: Virtuoso, Tomcat, Plone, Nginx
