@@ -35,10 +35,12 @@ class filtresView(BrowserView, funcionsCerca):
                             total = 0
                             opcions = []
                             while i < len(opcions_json):
-                                opcions.append({'nom': opcions_json[i], 'num': opcions_json[i + 1]})
+                                nom = opcions_json[i]
+                                nom_clean = nom.replace(':', ' ').replace(';', ' ').replace('.', ' ')
+                                opcions.append({'nom': nom, 'nom_clean': nom_clean, 'num': opcions_json[i + 1]})
                                 total += opcions_json[i + 1]
                                 i += 2
-                            opcions = [{'nom': 'Tots', 'num': total}] + opcions
+                            opcions = [{'nom': 'Tots', 'nom_clean': 'Tots', 'num': total}] + opcions
                             filtres.append({'nom_filtre': filtre, 'opcions': opcions})
         return filtres
 
