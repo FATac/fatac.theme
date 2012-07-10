@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="fatac.theme">
+    <body>
+        <metal:block fill-slot="top_slot" tal:define="dummy python:request.set('disable_border',1)">
+        </metal:block>
+        <metal:content-title fill-slot="content-title"></metal:content-title>
+        <metal:content-description fill-slot="content-description"></metal:content-description>
+        <metal:content-core fill-slot="content-core">
+            <metal:main-macro define-macro="content">
+
+
+                <div class="ac_breadcrump div_dotted_line_bottom">
+                    <span i18n:translate="Totes les playlists" class="TerminalDosis600">Totes les playlists</span>
+                </div>
+
+                <tal:def tal:define="batch view/retBatchedItems">
+                    <div id="llista_playlists">
+
+                        <div class="una_playlist genericview_fitxa_cerca" tal:repeat="item batch">
+                            <a tal:attributes="href item/url; title item/titol">
+                                <div class="thumbnail">
+                                    <!-- amb escala genèrica seria:
+                                    <img tal:condition="item/obj/descImage"
+                                         tal:replace="structure item/obj/@@images/descImage/thumb" />
+                                    -->
+                                    <img tal:define="scales item/obj/@@images;
+                                                     thumbnail python: scales.scale('descImage', width=80, height=80);"
+                                         tal:condition="thumbnail"
+                                         tal:attributes="src thumbnail/url;
+                                                         width thumbnail/width;
+                                                         height thumbnail/height" />
+
+                                    <img tal:condition="not:item/obj/descImage"
+                                         class="miniatura_objecte"
+                                         tal:attributes="alt item/titol"
+                                         src="++resource++fatac.theme.images/playlist_generic.jpg" />
+                                </div>
+                            </a>
+                            <div class="dades">
+                                <a tal:attributes="href item/url; title item/titol">
+                                    <img class="miniatura_classe" tal:attributes="src item/icono; alt item/titol" />
+                                    <br><br>
+                                    <span class="who georgia11c999999" tal:content="item/titol" />
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--<div metal:use-macro="here/batch_macros/macros/navigation" />-->
+                    <tal:comment tal:replace="nothing">
+                        En comptes de cridar la macro 'navigation', copio aquí la macro de
+                        Plone-4.0.7-py2.6.egg/Products/CMFPlone/skins/plone_templates/batch_macros.pt
+                        i l'adapto al que jo necessito.
+                        Per fer servir la original:
+                            div metal:use-macro="here/batch_macros/macros/navigation"
+                    </tal:comment>
+                    <div class="listingBar"
+                         metal:define-macro="navigation"
+                         tal:define="request request|context/request|container/request|nothing;
+                                     batch batch|nothing;
+                                     batchformkeys batchformkeys|nothing;
+                                     batchlinkparams python:batchformkeys and dict([(key, request.form[key]) for key in batchformkeys if key in request]) or request.form;
+                                     mq python:modules['ZTUtils'].make_query;
+                                     url batch_base_url | request/ACTUAL_URL;"
+                         tal:condition="python: batch.next or  batch.previous">
+
+                        <span class="previous" tal:define="p batch/previous | nothing" tal:condition="p">
+                            <a tal:attributes="href python: '%s?%s' % (url , mq( batchlinkparams, {batch.b_start_str:p.first} ))">
+                               <img src="++resource++fatac.theme.images/ico_left.gif" i18n:attributes="title esquerra; alt esquerra" />
+                            </a>
+                        </span>
+
+                        <span class="next" tal:define="n batch/next | nothing" tal:condition="n">
+                            <a tal:attributes="href python: '%s?%s' % (url , mq( batchlinkparams, {batch.b_start_str:n.first} ))">
+                               <img src="++resource++fatac.theme.images/ico_right.gif" i18n:attributes="title dreta; alt dreta" />
+                            </a>
+                        </span>
+                    </div>
+                    <!-- =========================================================== -->
+                </tal:def>
+
+            </metal:main-macro>
+        </metal:content-core>
+    </body>
+</html>

@@ -559,7 +559,7 @@ function pinta_pagina_seguent(pagina, callback) {
                 $('.pagina' + pagina_str).replaceWith(data);
                 inicialitza_js_pagines();
                 $(document).trigger('pinta_pagina_seguent', pagina);
-                if (callback) { callback(); 
+                if (callback) { callback();
                 }
             }
             else {
@@ -568,7 +568,7 @@ function pinta_pagina_seguent(pagina, callback) {
             var id = $('.pagina' + pagina + ' video').attr('id')
             _V_(id, {"controls": true, "autoplay": false, "preload": "auto"}, function(){
               // Player (this) is initialized and ready.
-            });            
+            });
         }).error(function(){genericAjaxError($('.pagina ' + pagina_str));});
     }
 }
@@ -889,7 +889,6 @@ function setMediaSrc(domElement, url, kind) {
 
     // private function to update the image size and position of a slide
     var updateSlideSize = function(slide) {
-       console.log('updateslidesize')
       var ww, wh;
       if (slide === undefined) {
         slide = $container.data("currentSlide");
@@ -907,11 +906,27 @@ function setMediaSrc(domElement, url, kind) {
                 "height" : wh + "px",
                 "width"  : "auto"
               });
+
+
+          slide.$img.css({
+            "height" : "100%",
+            "width"  : "auto",
+            "left"   : "50%",
+            "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
             } else {
               o.css({
                 "height" : "auto",
                 "width"  : ww + "px"
               });
+
+          slide.$img.css({
+            "height" : "auto",
+            "width"  : "100%"
+            //"margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
+          });
+
+
             }
         });
         // compare the window aspect ratio to the video aspect ratio
@@ -930,25 +945,13 @@ function setMediaSrc(domElement, url, kind) {
 
         // });
 
-
-        // compare the window aspect ratio to the container
-        if ((ww / wh) > (slide.$img.width() / slide.$img.height())) {
-          slide.$img.css({
-            "height" : wh + "px",
-            "width"  : "auto"
-          });
-        } else {
+    // pdf
+      if (slide.$img.find('iframe').length>0) {
           slide.$img.css({
             "height" : "auto",
-            "width"  : ww + "px"
+            "width"  : "100%"
           });
-        }
-        // update margins to position in the center
-        slide.$img.css({
-          // "margin-left" : "-" + (0.5 * slide.$img.width()) + "px",
-          // "margin-top"  : "-" + (0.5 * slide.$img.height()) + "px"
-          "margin" : "auto center"
-        });
+      }
 
       }
     };
@@ -968,8 +971,6 @@ function setMediaSrc(domElement, url, kind) {
         if (newSlide.$img.find('.fs-info').length > 0){
             newSlide.$img.css({
                        "position"    : "absolute",
-                       // "left"       : "50%",
-                       // "top"         : "50%"
                      }).hide();
             newSlide.loaded = true;
             // Info
@@ -1036,6 +1037,7 @@ function setMediaSrc(domElement, url, kind) {
             if (newSlide.loaded) {
                 changeSlide(oldSlide, newSlide);
                 updateSlideSize(newSlide);
+
             }
             else {
                 // Encara no s'ha obtingut els resultats de la pregarrega
@@ -1118,6 +1120,7 @@ function setMediaSrc(domElement, url, kind) {
             childrens.removeClass('selected');
             childrens.hide();
             oldSlide.$img.fadeOut();
+            oldSlide.$img.hide();
         }
         newSlide.$img.fadeIn(function(){
             $container.trigger("startOfSlide", newSlide);
@@ -1380,25 +1383,13 @@ function initFullScreen(){
           // set and show caption
           crea_scrolls_verticals();
           $('#fs-caption').html(slide.info)
+          var iframeurl = slide.$img.find('iframe').attr('src')
+          $($('.pagina:visible iframe').get(0).parentNode).html('<iframe style="margin-bottom: 15px;margin-top:70px;width:100%; height:90%;" frameborder="0" src="'+iframeurl+'"></iframe>')
+
         })
         // before a slide is hidden this is called:
         .bind("endOfSlide", function(event, slide) {
           //$('#fs-caption').hide();
         });
         $container.trigger("show", 0);
-}
-
-
-
-function doFullScreenMagic(url) {
-    var dimensions
-    var $window = $(window)
-    var window_width = $window.width()
-    var page_width = $('.pagina:visible').width()
-    var window_height = $window.height()
-    $('#fullscreenSlideshowContainer').length>0
-       ? dimensions = {w:600, h:500}
-       : dimensions = {w:600, h:500}
-    var iframe = '<iframe src="'+url+'" style="width:'+dimensions.w+'px; height:'+dimensions.h+'px;" frameborder="0"></iframe>'
-    $('.media').html(iframe)
 }
