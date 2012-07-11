@@ -1015,3 +1015,9 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 .close a {display:none;}
 
 #footer_objecte {margin-bottom: 20px; }
+
+#fullscreenSlideshowContainer .resultats,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades .media
+    { height:100% !important; }
