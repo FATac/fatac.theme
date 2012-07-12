@@ -325,7 +325,7 @@ msgstr "Spanish"
 
 #. Default: "Esdeveniments"
 msgid "Events"
-msgstr "Events"
+msgstr "Event"
 
 #: fatac.forms/fatac/forms/browser/templates/manteniment.pt:49
 msgid "Executa"
@@ -451,6 +451,10 @@ msgstr "How many items to list."
 #. Default: "Imatge"
 msgid "Image"
 msgstr "Image"
+
+#. Default: "Text"
+msgid "Text"
+msgstr "Text"
 
 #. Default: "Indexar tot"
 #: fatac.forms/fatac/forms/browser/manteniment.py:82
@@ -734,7 +738,10 @@ msgstr " Heritage protection"
 
 #. Default: "Protecció de patrimoni"
 msgid "ProtectionPromotionAT"
-msgstr "Heritage protection"
+msgstr "Antoni Tàpies Protection and Promotion"
+
+msgid "ProtectionPromotionFAT"
+msgstr "Fundació Protection and Promotion"
 
 #: zope/component/zcml.py:352
 msgid "Provided interface"
@@ -1062,7 +1069,7 @@ msgstr "Writer"
 
 #. Default: "Any"
 msgid "Year"
-msgstr "Year"
+msgstr "Years"
 
 #. Default: "Afegir subtítols"
 #: fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:132
@@ -1092,8 +1099,8 @@ msgstr "Expand filters"
 
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:96
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:97
-msgid "arxius"
-msgstr "files"
+msgid "results"
+msgstr "Results"
 
 #. Default: "Heu oblidat la contrasenya?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
@@ -1130,7 +1137,7 @@ msgstr "Search object"
 
 #. Default: "Tipus de document"
 msgid "class"
-msgstr "Document type"
+msgstr "Format"
 
 #. Default: "Col·lecció"
 #: fatac.theme/fatac/theme/browser/templates/explorarview.pt:20
@@ -1213,6 +1220,26 @@ msgstr "edit"
 msgid "email"
 msgstr "E-mail"
 
+#. Default: "Occupation"
+#: fatac.core/fatac/core/userdataschema.py:45
+msgid "label_occupation"
+msgstr "Occupation"
+
+#. Default: "Institution"
+#: fatac.core/fatac/core/userdataschema.py:52
+msgid "label_institution"
+msgstr "Institution"
+
+#. Default: "City"
+#: fatac.core/fatac/core/userdataschema.py:59
+msgid "label_city"
+msgstr "City"
+
+#. Default: "Accept terms of use"
+#: fatac.core/fatac/core/userdataschema.py:73
+msgid "label_accept"
+msgstr "I have read and agreed to the terms and conditions"
+
 #. Default: "eng"
 #: ../../../browser/languageselector.pt:13,
 #: 29
@@ -1260,6 +1287,12 @@ msgstr "Events"
 #: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:27
 msgid "exp_iwant_register"
 msgstr "Register allows to interact with documents of Arts Combinatòries: add comments, create playlists and groups with others users."
+
+#. Default: "The fields with an asterisk are compulsory"
+#: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:29
+msgid "camps_obligatoris"
+msgstr "The fields marked in red are compulsory"
+
 
 #. Default: "Explora la nostra base de dades per:"
 #: ../../../browser/templates/explorarview.pt:16
@@ -1363,7 +1396,7 @@ msgstr "Set your password"
 #. Default: "Full Name"
 #: fatac.core/fatac/core/userdataschema.py:33
 msgid "label_full_name"
-msgstr "Full Name"
+msgstr "Name and Surname"
 
 #. Default: "Home page"
 #: fatac.core/fatac/core/userdataschema.py:66
@@ -1453,13 +1486,13 @@ msgstr "New object"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:48
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:44
 msgid "ordre"
-msgstr "order type:"
+msgstr "Sort by:"
 
 #. Default: "pàgina"
 #: fatac.content/fatac/content/playlist_templates/playlistView.pt:91
 #: fatac.theme/fatac/theme/browser/templates/resultatsview.pt:92
 msgid "pagina"
-msgstr "page"
+msgstr "Page"
 
 #. Default: "Participants"
 #: ../../../browser/templates/footer.pt:31
@@ -1493,7 +1526,7 @@ msgstr "Ajuntament de Barcelona"
 
 #: fatac.theme/fatac/theme/browser/templates/filtresview.pt:19
 msgid "reduir_filtres"
-msgstr "minimize filters"
+msgstr "Reduce filters"
 
 #. Default: "REGISTRE"
 #: fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:21

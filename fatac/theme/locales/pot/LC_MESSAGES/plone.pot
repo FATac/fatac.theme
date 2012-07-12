@@ -447,11 +447,6 @@ msgstr ""
 msgid "editar"
 msgstr ""
 
-#. Default: "E-mail"
-#: fatac.core/fatac/core/userdataschema.py:39
-msgid "email"
-msgstr ""
-
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:63
 msgid "enable_cookies_message_before_login"
@@ -514,16 +509,6 @@ msgstr ""
 #. Default: "Search for new group members"
 #: fatac.content/fatac/content/browser/group-members.pt:242
 msgid "heading_search_newmembers"
-msgstr ""
-
-#. Default: "Enter full name, e.g. John Smith."
-#: fatac.core/fatac/core/userdataschema.py:34
-msgid "help_full_name_creation"
-msgstr ""
-
-#. Default: "The URL for your external home page, if you have one."
-#: fatac.core/fatac/core/userdataschema.py:67
-msgid "help_homepage"
 msgstr ""
 
 #. Default: "Check this to have your email address filled in automatically when you log in later."
@@ -589,11 +574,6 @@ msgstr ""
 msgid "label_find_group"
 msgstr ""
 
-#. Default: "Full Name"
-#: fatac.core/fatac/core/userdataschema.py:33
-msgid "label_full_name"
-msgstr ""
-
 #. Default: "Group Dashboard"
 #: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:37
 msgid "label_group_dashboard"
@@ -612,11 +592,6 @@ msgstr ""
 #. Default: "Group Properties"
 #: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:27
 msgid "label_group_properties"
-msgstr ""
-
-#. Default: "Home page"
-#: fatac.core/fatac/core/userdataschema.py:66
-msgid "label_homepage"
 msgstr ""
 
 #. Default: "Log in"

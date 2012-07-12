@@ -39,7 +39,7 @@ msgstr "> Playlists"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Accés usuaris"
-msgstr "Login"
+msgstr "Register"
 
 #: fatac.content/fatac/content/browser/dashboard.pt:107
 #: fatac.content/fatac/content/browser/group-activity.pt:90
@@ -84,12 +84,12 @@ msgstr "Add File"
 #. Default: "Afegeix Grup"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Grup"
-msgstr "Add Group"
+msgstr "Groups"
 
 #. Default: "Afegeix Playlist"
 #: fatac.content/fatac/content/profiles/default/actions.xml
 msgid "Afegeix Playlist"
-msgstr "Add Playlist"
+msgstr "Playlists"
 
 #: fatac.theme/fatac/theme/browser/interfaces.py:50
 msgid "Arts folder"
@@ -223,7 +223,7 @@ msgstr "My playlists"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Log out"
-msgstr "Log out"
+msgstr "Sign out"
 
 #: fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
@@ -299,7 +299,7 @@ msgstr "Playlists items"
 
 #: fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Preferences"
-msgstr "Preferences"
+msgstr "Profile"
 
 #: fatac.theme/fatac/theme/browser/interfaces.py:35
 msgid "REST request timeout"
@@ -422,7 +422,7 @@ msgstr "There is no group or user attached to this group."
 #. Default: "Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris."
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:144
 msgid "descripcio_registre"
-msgstr "Register to interact with documents of Arts Combinatòries: add comments, create playlists and groups with others."
+msgstr "Registering allows you to interact with the documents in Arts Combinatòries, so that you can add comments, compile playlists and create groups with other users."
 
 #. Default: "Groups are logical collections of users, like departments and business units. They are not directly related to permissions on a global level, you normally use Roles for that - and let certain Groups have a particular role."
 #: fatac.content/fatac/content/browser/edit-group-details.pt:56
@@ -446,11 +446,6 @@ msgstr "Show all search results"
 msgid "editar"
 msgstr "edit"
 
-#. Default: "E-mail"
-#: fatac.core/fatac/core/userdataschema.py:39
-msgid "email"
-msgstr "E-mail"
-
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:63
 msgid "enable_cookies_message_before_login"
@@ -467,7 +462,7 @@ msgstr "goups"
 #. Default: "Assign to groups"
 #: fatac.content/fatac/content/browser/manage-groups.pt:217
 msgid "heading_assign_to_groups"
-msgstr "Assign to groups"
+msgstr "All Groups"
 
 #. Default: "Create a Group"
 #: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:55
@@ -498,7 +493,7 @@ msgstr "Current group members"
 #. Default: "Current group memberships"
 #: fatac.content/fatac/content/browser/manage-groups.pt:155
 msgid "heading_memberships_current"
-msgstr "Current group memberships"
+msgstr "My groups"
 
 #. Default: "Personal tools"
 #: fatac.theme/fatac/theme/browser/templates/personal_bar.pt:3
@@ -514,16 +509,6 @@ msgstr "Search for groups"
 #: fatac.content/fatac/content/browser/group-members.pt:242
 msgid "heading_search_newmembers"
 msgstr "Search for new group members"
-
-#. Default: "Enter full name, e.g. John Smith."
-#: fatac.core/fatac/core/userdataschema.py:34
-msgid "help_full_name_creation"
-msgstr "Enter full name, e.g. John Smith."
-
-#. Default: "The URL for your external home page, if you have one."
-#: fatac.core/fatac/core/userdataschema.py:67
-msgid "help_homepage"
-msgstr "The URL for your external home page, if you have one."
 
 #. Default: "Check this to have your email address filled in automatically when you log in later."
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:117
@@ -550,7 +535,7 @@ msgstr "Add a new playlist"
 #. Default: "Add user to selected groups"
 #: fatac.content/fatac/content/browser/manage-groups.pt:314
 msgid "label_add_user_to_group"
-msgstr "Add user to selected groups"
+msgstr "Subscribe to the Selected Groups"
 
 #. Default: "Add selected groups and users to this group"
 #: fatac.content/fatac/content/browser/group-members.pt:377
@@ -564,6 +549,15 @@ msgstr "Change password"
 
 #. Default: "Dashboard"
 #: fatac.content/fatac/content/browser/dashboard.pt:81
+msgid "escritorio"
+msgstr "Dashboard"
+
+#. Default: "Dashboard"
+#: fatac.content/fatac/content/browser/dashboard.pt:128
+msgid "desc_escritorio"
+msgstr "In your perosnal area you will be able to create and save your own playlists and groups as well as keeping track of all your movements through the platform."
+
+#. Default: "Dashboard"
 #: fatac.content/fatac/content/browser/group-activity.pt:64
 #: fatac.content/fatac/content/browser/group-members.pt:71
 msgid "label_dashboard"
@@ -588,11 +582,6 @@ msgstr "E-mail"
 msgid "label_find_group"
 msgstr "Find a group here"
 
-#. Default: "Full Name"
-#: fatac.core/fatac/core/userdataschema.py:33
-msgid "label_full_name"
-msgstr "Full Name"
-
 #. Default: "Group Dashboard"
 #: fatac.content/fatac/content/browser/usergroups_groupdetails.pt:37
 msgid "label_group_dashboard"
@@ -613,15 +602,10 @@ msgstr "Group Portlets"
 msgid "label_group_properties"
 msgstr "Group Properties"
 
-#. Default: "Home page"
-#: fatac.core/fatac/core/userdataschema.py:66
-msgid "label_homepage"
-msgstr "Homepage"
-
 #. Default: "Log in"
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:124
 msgid "label_log_in"
-msgstr "Login"
+msgstr "Sign-in"
 
 #. Default: "Name"
 #: fatac.content/fatac/content/browser/edit-group-details.pt:77
@@ -636,7 +620,7 @@ msgstr "No group was specified."
 
 #: fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:102
 msgid "label_password"
-msgstr "Assign password"
+msgstr "Password"
 
 #. Default: "Quick search"
 #: fatac.content/fatac/content/browser/group-members.pt:250
@@ -718,7 +702,7 @@ msgstr "Edit"
 #. Default: "Group Name"
 #: fatac.content/fatac/content/browser/manage-groups.pt:160
 msgid "listingheader_group_name"
-msgstr "Group Name"
+msgstr "Group name"
 
 #. Default: "Baixa del grup"
 #: fatac.content/fatac/content/browser/manage-groups.pt:162
