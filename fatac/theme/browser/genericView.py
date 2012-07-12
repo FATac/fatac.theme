@@ -258,7 +258,7 @@ class genericView(BrowserView, funcionsCerca):
     def getThumbnailObjecte(self, idobjecte):
         """ crida el servei que retorna el thumbnail de l'objecte
         """
-        uid = self.uidParam
+        uid = self.getUIDParam()
         if uid != '':
             uid = '?' + uid
         return self.rest_public + '/resource/' + idobjecte + '/thumbnail' + uid
@@ -300,7 +300,7 @@ class genericView(BrowserView, funcionsCerca):
         """
         if self.idobjectes:
             idobjectes_str = ','.join(self.idobjectes)
-            uid = self.uidParam
+            uid = self.getUIDParam()
             if uid != '':
                 uid = '&' + uid
             url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header' + uid + '&lang=' + self.getLang()
@@ -324,9 +324,10 @@ class genericView(BrowserView, funcionsCerca):
         """
         if self.idobjectes:
             idobjectes_str = ','.join(self.idobjectes)
-            uid = self.uidParam
+            uid = self.getUIDParam()
             if uid != '':
                 uid = '&' + uid
+
             url = self.servidorRest + '/resource/' + idobjectes_str + '/view?section=header,body,content,footer' + uid + '&lang=' + self.getLang()
             #TODO: esborrar quan acabem de testejar
             import time

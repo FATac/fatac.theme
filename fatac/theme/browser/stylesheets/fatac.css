@@ -12,7 +12,7 @@
 div.width-full { width: 100%; }
 div.position-0 { margin-left: -100%; }
 #content { margin:0; }
-#content a:hover, dl.portlet a:hover{ color:#000000 !important;}
+dl.portlet a:hover{ color:#000000 !important;}
 
 div.genericview fitxa_ampliada_cerca  {background-color: red !important}
 
@@ -21,12 +21,19 @@ div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-w
 #portal-top { margin-bottom:14px; }
 
 /* ---------------------------------------------------------------------------- general */
+.portaltype-document #content-core { font-family:georgia; font-size:13px !important; color:#666666; line-height: 1.5em !important; }
+
 a { border-bottom:none !important; }
+
+.portaltype-document h1 { color:#333333; font-family:arial; font-size:1em; border-bottom:1px dotted #cccccc; margin-bottom:25px; padding-bottom:5px; text-transform: uppercase; }
+.portaltype-document #content-core { padding:0 20px; }
 
 .div_dotted_line {float:left; width:100%; clear:both; border-top:1px dotted #888888; padding-top:10px; margin-top:4px; }
 .div_dotted_line_soft { float:left; width:100%; clear:both; border-top:1px dotted #cccccc; padding-top:10px; margin-top:20px; }
 .div_dotted_line_doble_negre { float:left; width:100%; clear:both; border-bottom:1px dotted #000000; border-top:1px dotted #000000; padding-bottom:8px; padding-top: 8px; margin-bottom:8px; }
 .div_dotted_line_bottom { float:left; width:100%; clear:both; border-bottom:1px dotted #888888; padding-bottom:8px; margin-bottom:8px; }
+
+.portaltype-fatac-dummy #selector_filtres { border-top: 1px dotted #888888; padding-top:10px; }
 
 #heading-assign-to-groups.div_dotted_line_bottom, #current-group-header.div_dotted_line_bottom {float:none;}
 
@@ -34,6 +41,9 @@ a { border-bottom:none !important; }
 
 img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
+.columna { width: 30%; padding-left: 15px; padding-right: 15px; border-right: 1px dotted; float: left; }
+.columna2 { width: 29%; padding-left: 15px; padding-right: 15px; float: left;}
+.caixa { border-top: 1px dotted; padding-top: 20px;}
 .arial20c333333bold { font-family:Arial; font-size:20px; color:#333333 !important; font-weight:bold !important; }
 .arial16c339933bold { font-family:Arial; font-size:16px; color:#339933 !important; font-weight:bold !important; }
 .arial13c666666 { font-family:Arial; font-size:13px; color:#666666 !important; }
@@ -51,6 +61,9 @@ img.arrow_top, img.arrow_bottom { margin-right:5px; }
 .arial11c666666 { font-family:Arial; font-size:11px; color:#666666 !important; }
 .arial11c339933 { font-family:Arial; font-size:11px; color:#339933 !important; }
 .georgia32c666666 { font-family:georgia; font-size:32px; color:#666666 !important; line-height:38px; }
+.georgia28c666666 { font-family:georgia; font-size:28px; color:#666666 !important; line-height:34px; }
+.georgia20c666666italic { font-family:georgia; font-size:20px; color:#666666 !important; font-style: italic; }
+.georgia15c666666 { font-family:georgia; font-size:15px; color:#666666 !important; line-height:19px; }
 .georgia13c333333 { font-family:georgia; font-size:13px; color:#333333 !important; }
 .georgia13c333333italic { font-family:georgia; font-size:13px; color:#333333 !important; font-style:italic }
 .georgia12c333333italic { font-family:georgia; font-size:12px; color:#333333 !important; font-style:italic; line-height: 1.2em; }
@@ -78,9 +91,9 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 .ac_search_biblio { text-align: right; float:right; width:20%; }
 .link_biblioteca { text-transform: none; }
 
-a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
-a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
-a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
+.portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
+.portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
+.portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
 .template-explorar .span5 { margin-left:13px !important; }
 .template-explorar .barra { height:440px; }
@@ -245,8 +258,8 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #visualitzacio_resultats a img { border:1px solid transparent; }
 #visualitzacio_resultats div#zoom_resultats.selected, #visualitzacio_resultats div#zoom_resultats:hover, #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 
-#resultats { float:left; width:100%; }
-#wrapper_resultats { overflow:hidden; position:relative; height:485px; }
+#resultats { float:left; width:100%; margin-top:19px; }
+#wrapper_resultats { overflow:hidden; position:relative; height:440px; }
 .pagines_resultats { position:absolute; width:20000em; }
 .pagines_resultats .pagina { width:881px; float:left; }
 #resultats_cerca a.disabled { visibility: hidden !important; }
@@ -263,7 +276,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #links2 { float:right; text-align:right; width:60%; margin-top:6px; }
 
 /* ---------------------------------------------------------------------------- homeview.pt */
-#text_intro { width:94%; float:left; padding: 35px 3% 10px 3%; margin-top:25px; border-top:1px dotted #888888; }
+#text_intro { width:94%; float:left; padding: 23px 3% 10px 3%; margin-top:25px; border-top:1px dotted #888888; }
 #text_intro p {margin-bottom: 0.5em;}
 
 #ultims_documents, #ultims_consultats { width:100%; float:left; }
@@ -288,7 +301,7 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 /* ---------------------------------------------------------------------------- resultats cerca */
 #resultats_cerca { min-height:480px; }
 #resultats_cerca #wrapper_resultats { margin: 0 28px; width:879px; }
-#resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 220px; }
+#resultats_cerca .arrow_left_resultats, #resultats_cerca .arrow_right_resultats { margin-top: 208px; }
 #resultats_cerca .column-results {height:460px; overflow:hidden;}
 #resultats_cerca .column-results .slider_vertical { height:440px;}.
 #resultats_cerca .column-results ul { margin:0; padding:0; list-style: none; }
@@ -357,6 +370,12 @@ div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{
     column-rule:3px solid #d1d1d1;
 }
 
+div.genericview_fitxa_final #header_objecte,
+div.genericview_fitxa_final #body_objecte,
+div.genericview_fitxa_final #content_objecte { line-height: 19px; }
+
+
+
 div.genericview_fitxa_final.sense_subcerca .divs_esq { float:left; width:33%; clear:left; margin-bottom:20px; }
 div.genericview_fitxa_final.sense_subcerca #header_objecte { float:left; width:100%; margin-bottom:10px; }
 div.genericview_fitxa_final.sense_subcerca #body_objecte { float:left; width:100%; }
@@ -365,11 +384,11 @@ div.genericview_fitxa_final.sense_subcerca #content_objecte { float:right; width
 div.genericview_fitxa_final img.addPlaylist {float:left;}
 div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 
-.counters { background-color:#ECECEC; float:left; width:184px; clear:right; font-family:georgia; font-size:14px; color:#999999; }
-.counters .counter { float:left; width:80px; border:1px solid white; padding:5px; }
+.counters { float:left; width:184px; clear:right; font-family:georgia; font-size:14px; color:#999999; }
+.counters .counter { background-color:#ECECEC; float:left; width:80px; padding:5px; border-radius: 0.3em; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; margin-right:2px; margin-bottom:2px;}
 .counters .counter img { max-height:15px; max-width:15px; margin-right:5px; }
 
-.requadre_objects { margin:0 0 20px 0; text-align:center; background-color:#ECECEC; border-top: 1px dotted #888; border-bottom: 1px dotted #888; }
+.requadre_objects { margin:10px 0 20px 0; text-align:center; background-color:#ECECEC; border-top: 1px dotted #888; border-bottom: 1px dotted #888; }
 .scrollable_genericview { height:198px; text-align:center; width:98%; float:left; background-color:#ececec; padding:0% 2% 0% 0; margin:0; }
 .scrollable_genericview .fila { margin: 0px 0; }
 .requadre_objects .arrow_up { margin:7px 0px 10px; }
@@ -380,6 +399,8 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 .media_image { max-width:617px; height : auto; }
 .media_image { width:auto; max-height : 480px; }
 .media_video, .media_audio, .media_image { margin-bottom:10px; clear:right; }
+
+.iframe_dades { width:560px; height:500px; }
 
 /* ---------------------------------------------------------------------------- genericview_imatge.pt */
 .genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
@@ -824,7 +845,7 @@ div.photo-container {
 #login-wrapper .login-left { float:left; width:45%; border-right:1px solid #B3D396; padding-right:4.8%; margin-right:5%; }
 #login-wrapper .login-right { float: right; width:45%; }
 
-#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; }
+#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; cursor: pointer;}
 #login-wrapper #login-form { clear:none; }
 
 
@@ -993,4 +1014,10 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 
 .close a {display:none;}
 
-#footer_objecte {margin-bottom: 20px; float: left; clear: right;}
+#footer_objecte {margin-bottom: 20px; }
+
+#fullscreenSlideshowContainer .resultats,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades,
+#fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades .media
+    { height:100% !important; }
