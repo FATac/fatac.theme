@@ -93,9 +93,9 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 .ac_search_biblio { text-align: right; float:right; width:20%; }
 .link_biblioteca { text-transform: none; }
 
-.portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
-.portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
-.portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
+.link_fatac, .portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
+.link_fatac:hover, .portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
+.link_fatac:visited, .portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
 .template-explorar .span5 { margin-left:13px !important; }
 .template-explorar .barra { height:440px; }

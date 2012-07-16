@@ -28,8 +28,23 @@
                 <div metal:use-macro="context/base-pageform.html/form" />
                 <br />
                 <br />
-                <div class="georgia15c666666italic descripcio_registre" i18n:domain="fatac.theme" i18n:translate="camps_obligatoris">
-                    The fields with an asterisk are compulsory
+                <div class="georgia15c666666italic descripcio_registre">
+                    <span i18n:domain="fatac.theme" i18n:translate="camps_obligatoris">
+                        The fields with an asterisk are compulsory
+                    </span>
+                    <tal:def tal:define="document python: context.portal_catalog.searchResults(portal_type='Document', id='conditions-of-use')"
+                             tal:condition="document">
+                        <tal:def tal:define="brain python: document[0];
+                                             trad python: brain.getObject().getTranslation();"
+                                 tal:condition="trad">
+                            /
+                            <a class="link_fatac"
+                               tal:attributes="href python: trad.absolute_url()"
+                               tal:content="python: trad.Title()">
+                                Condicions
+                            </a>
+                        </tal:def>
+                    </tal:def>
                 </div>
               </tal:mailhost>
 
