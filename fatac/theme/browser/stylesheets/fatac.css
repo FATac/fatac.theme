@@ -25,7 +25,9 @@ div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-w
 
 a { border-bottom:none !important; }
 
-.portaltype-document h1 { color:#333333; font-family:arial; font-size:1em; border-bottom:1px dotted #cccccc; margin-bottom:25px; padding-bottom:5px; text-transform: uppercase; }
+.portaltype-document h1 {
+    font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; line-height: 19px;
+    color:#000000; border-bottom:1px dotted #888888; margin-bottom:25px; padding-bottom:9px; text-transform: uppercase; }
 .portaltype-document #content-core { padding:0 20px; }
 
 .div_dotted_line {float:left; width:100%; clear:both; border-top:1px dotted #888888; padding-top:10px; margin-top:4px; }
