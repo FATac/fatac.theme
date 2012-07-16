@@ -985,6 +985,8 @@ body.template-logged_out #content, body.template-login_form #content, .pb-ajax #
     width: 100%;
 }
 
+.template-register .checkboxType { height:14px; }
+
 .template-change-password input:focus,
 .template-personal-information input:focus,
 .template-register input:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
