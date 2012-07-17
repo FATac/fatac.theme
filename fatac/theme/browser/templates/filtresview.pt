@@ -36,7 +36,7 @@
                                     <div class="div_interior">
                                         <ul>
                                             <tal:rep tal:repeat="opcio filtre/opcions">
-                                                <li class="arial12c666666">
+                                                <li class="arial12c666666" tal:condition="python: opcio['num'] > 0">
                                                     <a href ="#" tal:attributes="rel string:${filtre/nom_filtre}:${opcio/nom_clean}; class string:c_${filtre/nom_filtre} f_${opcio/nom} link_filtre" tal:content="opcio/nom" i18n:translate="">Tots</a> [<span tal:content="opcio/num">0</span>]
                                                 </li>
                                             </tal:rep>
