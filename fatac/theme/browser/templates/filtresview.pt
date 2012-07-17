@@ -6,7 +6,8 @@
     });
 </script>
 
-<div id="selector_filtres" class="div_dotted_line_bottom" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme">
+<div id="selector_filtres" class="div_dotted_line_bottom" tal:define="filtres view/retFiltres" i18n:domain="fatac.theme"
+     tal:condition="filtres">
 
     <!-- arrow_desplegable: cal que tingui la classe arrow_desplegable que indica que plega o desplega un div,
         arrow_top o arrow_bottom que indica si plega o desplega, i una tercera classe que indica l'id del div
