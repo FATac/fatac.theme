@@ -282,10 +282,14 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #text_intro p {margin-bottom: 0.5em;}
 
 #ultims_documents, #ultims_consultats { width:100%; float:left; }
+#ultims_documents .scrollable_fatac, #ultims_consultats .scrollable_fatac
+    { width:892px; float:left; }
+#ultims_documents .scrollable_fatac .pagina, #ultims_consultats .scrollable_fatac .pagina
+    { width:892px; }
 .requadre_resultats { text-align:center; width:100%; float:left; border-bottom:1px dotted #888888; background-color:#EEEEEE; padding:10px 0; margin:0; }
 .requadre_resultats .arrow_up { margin-bottom:10px; }
 .requadre_resultats .arrow_down { margin-top:10px; }
-.requadre_resultats .genericview_fitxa_home { height:175px; text-align:left;  width:16.3%; float:left; margin:0 0.7%; background-color:white; padding:0; }
+.requadre_resultats .genericview_fitxa_home { height:175px; text-align:left;  width:18.4%; float:left; margin:0 0.8%; background-color:white; padding:0; }
 
 div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10px; border-bottom: 1px dotted #888; padding-bottom: 10px; }
 #ultims_consultats div.titol_home { border-top:0; margin-top:0; }
