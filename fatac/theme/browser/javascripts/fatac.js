@@ -779,7 +779,7 @@ function init_cerca() {
 
     querystring = {rows: 999999, s: get_s};
 
-    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '3', pagina_actual: 1, resultats_per_pagina: 32};
+    parametres_visualitzacio = {querystring: querystring, visualitzacio: 'imatge', zoom: '2', pagina_actual: 1, resultats_per_pagina: 45};
     parametres_visualitzacio['querystring']['categories'] = 'class,Year,Country,Translation,Media,License,Role,Person,Organisation,Events,Publications,ArtWork,Collection,Administration,CulturalManagement,ProtectionPromotion';
     //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
     $('#visual-portal-wrapper').get(0).parametres_visualitzacio = parametres_visualitzacio;
