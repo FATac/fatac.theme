@@ -462,6 +462,8 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 *//*.wrapper_hover img { max-width:200px; max-height:230px; }*/
 /*.wrapper_hover img.miniatura_classe { max-width:15px; max-height:15px; margin:10px 0 7px 0; }*/
 
+.wrapper_hover { width:240px; height:286px; }
+
 .genericview.genericview_hover_cerca { border-radius: 0.2em; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; -moz-box-shadow: 0 0 15px #666; -webkit-box-shadow: 0 0 15px #666; box-shadow: 0 0 15px #666; text-align:left; background-color:#FFFFFF; padding:10px; width:220px; }
 .genericview.genericview_hover_cerca img { width:218px; max-height:230px; }
 .genericview.genericview_hover_cerca img.miniatura_classe { max-width:15px; max-height:15px; margin:5px 0 2px 0; }
