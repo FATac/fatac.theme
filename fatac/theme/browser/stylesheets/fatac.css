@@ -843,18 +843,20 @@ div.photo-container {
 .button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
 .button_fatac:hover { background-color:#9AC68D; color:#339933 !important; }
 .login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
-.descripcio_registre { float:left; line-height:18px; height:91px; }
-.link_registre {  }
+.descripcio_registre { float:left; line-height:18px; }
+.link_registre { float:left; }
 
 /* ---------------------------------------------------------------------------- login-form */
-#login-form { float:left; width:100%; }
-#login-wrapper { float:left; width:100%; padding: 20px; }
-#login-wrapper .login-left, #login-wrapper .login-right { height:175px; }
-#login-wrapper .login-left { float:left; width:45%; border-right:1px solid #B3D396; padding-right:4.8%; margin-right:5%; }
-#login-wrapper .login-right { float: right; width:45%; }
+.login_row1, .login_row2 { float:left; width:100%; }
+.login_row2 { margin-bottom:17px; }
+.login_col1 { width:45%; float:left; padding-right:5%; margin-right:4%; border-right:1px solid #B3D396; }
+.login_col2 { width:45%; float:right; }
 
-#login-wrapper #login-form input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 5px; cursor: pointer;}
-#login-wrapper #login-form { clear:none; }
+#login-wrapper { float:left; width:100%; padding: 2%; }
+/*#login-wrapper .login-left, #login-wrapper .login-right { height:175px; }*/
+
+#login-wrapper input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 2%; cursor: pointer;}
+#login-wrapper input.input_fatac { width:96%; }
 
 
 /* ---------------------------------------------------------------------------- altres */

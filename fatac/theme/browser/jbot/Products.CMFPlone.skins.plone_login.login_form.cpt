@@ -71,11 +71,14 @@
 
                 <div class="login-logo"><img tal:attributes="src string:${portal_url}/logo.png" /></div>
 
-                <div class="login-left">
-                    <form tal:attributes="action python:context.absolute_url()+'/'+template.id"
-                          method="post" id="login_form" tal:condition="use_normal">
 
-                        <div id="login-form">
+
+
+                <form tal:attributes="action python:context.absolute_url()+'/'+template.id"
+                      method="post" id="login_form" tal:condition="use_normal">
+
+                    <div class="login_row1">
+                        <div class="login_col1">
                             <input type="hidden" name="came_from" value="" tal:attributes="value came_from|nothing" />
                             <input type="hidden" name="next" value="" tal:attributes="value next|nothing" />
                             <input type="hidden" name="ajax_load" value="" tal:attributes="value request/ajax_load|nothing" />
@@ -119,7 +122,15 @@
                                     </div>
                                 </tal:email>
                             </div>
-
+                        </div>
+                        <div class="login_col2">
+                            <div class="georgia15c666666italic descripcio_registre" i18n:translate="descripcio_registre">
+                                Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login_row2">
+                        <div class="login_col1">
                             <div class="formControls formControls_fatac">
                                 <input class="context button_fatac" type="submit" name="submit" value="Log in"
                                        i18n:attributes="value label_log_in;" />
@@ -133,68 +144,21 @@
                                     Forgot your password?
                                 </a>
                             </div>
-
                         </div>
-
-                    </form>
-                </div>
-
-                <div id="login-utils" class="login-right">
-
-                    <div class="georgia15c666666italic descripcio_registre" i18n:translate="descripcio_registre">
-                        Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris.
-                    </div>
-
-                    <div class="formControls formControls_fatac">
-                        <a tal:define="join_url python:test(came_from, join_url+test(join_url.find('?')==-1, '?', '&amp;')+ztu.make_query(came_from=came_from), join_url);"
-                           tal:attributes="href string:${context/portal_url}/@@register; target target;"
-                           i18n:translate="registrat" class="button_fatac link_registre">Registra't</a>
-                    </div>
-                </div>
-
-                <!-- TODO: descomentar al final -->
-                <!--
-                <form tal:attributes="action external_login_url" class="enableAutoFocus" method="get" id="login_form"
-                      tal:condition="use_external">
-
-                    <div id="login-form">
-                        <input type="hidden" name="next" value=""
-                            tal:attributes="value string:${request/URL1}/logged_in" />
-                        <div class="formControls">
-                            <input class="context" type="submit" name="submit" value="Log in"
-                                   i18n:attributes="value label_log_in;" />
+                        <div class="login_col2">
+                            <div class="formControls formControls_fatac">
+                                <a tal:define="join_url python:test(came_from, join_url+test(join_url.find('?')==-1, '?', '&amp;')+ztu.make_query(came_from=came_from), join_url);"
+                                   tal:attributes="href string:${context/portal_url}/@@register; target target;"
+                                   i18n:translate="registrat" class="button_fatac link_registre">Registra't</a>
+                            </div>
                         </div>
                     </div>
 
                 </form>
 
-                <tal:use_iframe condition="use_iframe">
 
-                    <form action="#" method="get" id="login_form" name="login_form" class="iframe-wrapper"
-                          tal:define="params python:dict(next=request.URL1+'/logged_in', target='_parent', ajax_load=True, ajax_include_head=True, mail_password_url=mail_password, join_url=join);
-                                      dummy python:came_from and params.update(dict(came_from=came_from));
-                                      src external_login_url"
-                          tal:attributes="action src">
-
-                        <div id="login-form">
-
-                            <iframe name="login-form-iframe" id="login-form-iframe"
-                                tal:attributes="src python:external_login_url+test(join_url.find('?')==-1, '?', '&amp;')+ztu.make_query(params);">
-
-                                <input tal:replace="structure python:ztu.make_hidden_input(params)" />
-                                <div class="formControls">
-                                    <input class="context" type="submit" name="submit" value="Log in"
-                                        i18n:attributes="value label_log_in;" />
-                                </div>
-
-                            </iframe>
-
-                        </div>
-
-                    </form>
-
-                </tal:use_iframe>
-                -->
+<!-- #login-form
+#login-utils -->
 
             </div>
 
