@@ -1,12 +1,3 @@
-/* ---------------------------------------------------------------------------- deformFormFieldset */
-.deformFormFieldset { border:none !important; background-color:#ededed; padding:10px;}
-.deformFormFieldset ul { list-style-type: none !important; margin-left: 0 !important; }
-.deformFormFieldset label { margin-right:15px; }
-.deformFormFieldset li.buttons { margin-top:15px; }
-.miniatura_objecte_validacio_legal { float:right; margin-top:-63px; }
-.miniatura_objecte_validacio_legal .genericview_imatge { background-color:transparent; }
-
-
 /* ---------------------------------------------------------------------------- estructura */
 #visual-portal-wrapper { margin:auto; width:950px; }
 div.width-full { width: 100%; }
@@ -25,7 +16,8 @@ div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-w
 
 a { border-bottom:none !important; }
 
-.portaltype-document h1 {
+.portaltype-document h1,
+h1.documentFirstHeading {
     font-family:'Terminal Dosis', sans-serif; font-weight: 600; font-size: 9pt; line-height: 19px;
     color:#000000; border-bottom:1px dotted #888888; margin-bottom:25px; padding-bottom:9px; text-transform: uppercase; }
 .portaltype-document #content-core { padding:0 20px; }
@@ -120,16 +112,6 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 
 /* ---------------------------------------------------------------------------- portal-logo */
 #portal-logo { float:left; margin-bottom: 15px; margin-top: 7px;}
-
-
-/* ---------------------------------------------------------------------------- cercador.pt */
-#viewlet_cercador { float:left; width:450px; margin-left:100px; }
-#viewlet_cercador form#cercador { width:330px; float:left; }
-#viewlet_cercador form#cercador input { float:left; height:16px; display:inline;  padding:10px; border:none; border-radius:0.3em 0 0 0.3em; -webkit-radius:0.3em 0 0 0.3em; -moz-border-radius:0.3em 0 0 0.3em; background-color:#EEEEEE; }
-#viewlet_cercador #s { background-color:transparent; width: 270px; border:none; }
-#viewlet_cercador .searchButton { height:36px; width:36px; background:url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent; border:none; float:left; }
-#viewlet_cercador a {  margin: 7px 0 0 25px; float:left; }
-#viewlet_cercador img{ vertical-align:middle;}
 
 
 /* ---------------------------------------------------------------------------- personal_bar.pt */
@@ -566,264 +548,6 @@ div.photo-container {
 }
 
 
-/* Comments Viewlet
-   -------------------------------------------------------------------------- */
-
-.discussion,
-#commenting {
-    /* Clear "float: left" from "manage portlets" div above the
-       comment viewlet. This will get fixed in the next Plone 4
-       release. */
-    clear: both;
-}
-
-.comment {
-    margin-bottom: 25px;
-}
-
-.commentImage {
-    float: left;
-    margin-right: 0.5em;
-    height: 3.5em;
-}
-
-.commentImage a:link {
-    /* Override the default bottom border of links in Plone 4. */
-    border: 0px;
-}
-
-.commentImage img {
-
-}
-
-.commentDate {
-    display: inline;
-    font-size: 13px;
-    color: #339933;
-    font-style: normal;
-}
-
-.commentBody {
-    clear: both;
-    overflow: auto;
-    font-family: serif, sans-serif;
-    font-size:16px;
-    color: black !important;
-    border-radius:0em;
-    box-shadow: 0 0 0 0 #000000;
-    padding: 0;
-}
-
-.commentBody p {
-    float: left;
- }
-
-.discussion .documentByLine {
-    float: left;
-    margin-left: 0;
-    margin-bottom: 0.5em;
-    color: #339933;
-    font-size: 16px;
-    font-style: italic;
-}
-.discussion .documentByLine a {
-    color: #339933;
-}
-
-.commentActions {
-    float: right;
-    text-align: right;
-}
-.commentActions input {
-    margin-right: 3px;
-    padding: 0px 5px;
-    padding-left: 5px;
-    border-radius: 0.2em;
-    border-width: 1px !important;
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    color:#339933 !important;
-    background-color:#B3D396;
-}
-
-.discussion .discreet {
-    color: #666666;
-    font-size: 85%;
-}
-
-/* Reply Form
-   -------------------------------------------------------------------------- */
-
-.reply fieldset {
-    /* Fix bouncing fieldset when reply form is shown. */
-    margin: 0 !important;
-    color: #339933;
-}
-
-.reply .text-widget {
-    /* Make sure the input fields are always below the label. This sometimes
-     * break when the reply form is copied from the main comment form.
-     */
-    display: block;
-}
-
-.reply-to-comment-button {
-   /* Hide the reply-to-comment button and show it only if Javascript
-    * is enabled. Since the reply functions rely on jQuery.
-    */
-    display: none;
-    margin-right: 3px;
-    padding: 0px 5px;
-    padding-left: 5px;
-    border-radius: 0.2em;
-    border-width: 1px !important;
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    color:#339933 !important;
-    background-color:#B3D396;
-
-}
-
-.cancelreplytocomment {
-    /* Hide the cancel button in the comment form, show it only in the reply form
-     * in order to close it.
-     */
-    display: none;
-}
-
-
-/* Moderation View
-   -------------------------------------------------------------------------- */
-
-#bulkactions {
-    text-align: left;
-}
-
-#dobulkaction {
-    margin: 0.3em 0;
-}
-
-.comment-publish-button {
-    float: left;
-    margin-right: 0.5em;
-}
-
-.comment-delete-button {
-    float: left;
-}
-
-#review-comments {
-    margin: 0;
-}
-
-#fieldset-moderate-comments {
-    padding: 2em 1em;
-}
-
-/* Discussion Control Panel
-   -------------------------------------------------------------------------- */
-
-.template-discussion-settings .unclickable {
-    opacity: 0.6;
-    filter: alpha(opacity = 50);
-}
-
-/* Plone 4 Styles
-   -------------------------------------------------------------------------- */
-
-/* These styles are only applied for Plone 4, since Plone 3.x does
-    not have a .row class for portal-column-content. */
-
-.row #dobulkaction {
-    margin: 0;
-}
-
-.row #commenting {
-    font-size: 80%;
-}
-
-.row #commenting .formControls {
-    margin: 0;
-}
-
-.row #commenting .formControls input {
-    margin-right: 3px;
-    padding: 0px 5px;
-    padding-left: 5px;
-    border-radius: 0.2em;
-    border-width: 1px !important;
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    color:#339933 !important;
-    background-color:#B3D396;
-}
-
-.row #commenting textarea,
-.row .discussion textarea {
-    font: 100% Monaco, "Courier New", Courier, monospace;
-    width: 100%;
-}
-
-.row #commenting fieldset,
-.row .discussion fieldset {
-    border: 0.1em solid #339933;
-    border-style: solid none none none;
-}
-
-.row #commenting legend,
-.row .discussion legend {
-    padding: 0.5em 0.5em 0.5em 0;
-    font-size: 85%;
-    color: #339933;
-}
-
-.row #commenting label,
-.row .discussion label {
-    font-weight:bold;
-}
-
-#commenting {
-    clear: both;
-    background-color: #d3e3c3;
-    padding: 10px;
-    border-radius: 0.3em;
-}
-
-#commenting textarea {
-    background-color: #d3e3c3;
-    border-radius: 0.3em;
-    border:1px solid #d3e3c3;
-    color: #339933;
-    font-size: 18px !important;
-    padding: 5px;
-    width: 920px !important;
-}
-
-#commenting textarea:hover {
-    border: 1px solid #339933;
-}
-/*textarea:focus { color: red }*/
-#commenting #formfield-form-widgets-text .horizontal {
-    display: none;
-}
-
-.discussion {
-    background-color: #d3e3c3;
-    border-radius: 0.3em;
-    border:1px solid #d3e3c3;
-    color: #339933;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.comment {
-    margin-top: 0;
-}
-
-#commenting .field {
-    margin-bottom: 5px;
-}
-
 /* ---------------------------------------------------------------------------- notificacions purr */
 
 #purr-container { position:fixed; right:177px; top:95px; z-index:10; }
@@ -832,31 +556,6 @@ div.photo-container {
 #purr-container div.purr div { padding:15px; }
 #purr-container div span { font-size: 14px; color:#339933; padding-left:35px; line-height:12px; }
 #purr-container div a.close{ display:none; }
-
-
-/* ---------------------------------------------------------------------------- formularis */
-
-.field_fatac { margin-bottom:5px; }
-.input_fatac { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9AC68D !important; border:1px solid #D3E3C3; }
-.input_fatac:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
-.formControls_fatac { margin:23px 0 0 0 !important; float:left; }
-.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
-.button_fatac:hover { background-color:#9AC68D; color:#339933 !important; }
-.login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
-.descripcio_registre { float:left; line-height:18px; }
-.link_registre { float:left; }
-
-/* ---------------------------------------------------------------------------- login-form */
-.login_row1, .login_row2 { float:left; width:100%; }
-.login_row2 { margin-bottom:17px; }
-.login_col1 { width:45%; float:left; padding-right:5%; margin-right:4%; border-right:1px solid #B3D396; }
-.login_col2 { width:45%; float:right; }
-
-#login-wrapper { float:left; width:100%; padding: 2%; }
-/*#login-wrapper .login-left, #login-wrapper .login-right { height:175px; }*/
-
-#login-wrapper input { width:100%; border-radius: 0.3em 0.3em 0.3em 0.3em; height: 30px; padding: 2%; cursor: pointer;}
-#login-wrapper input.input_fatac { width:96%; }
 
 
 /* ---------------------------------------------------------------------------- altres */
@@ -940,89 +639,7 @@ body.template-logged_out #content, body.template-login_form #content, .pb-ajax #
     text-align: left;
 }
 
-.template-login_form .login-logo,
-.template-logged_out .login-logo {display: none;}
-
-.template-change-password .documentFirstHeading,
-.template-personal-information .documentFirstHeading,
-.template-register .documentFirstHeading {display: none}
-
-.template-change-password .documentDescription,
-.template-personal-information .documentDescription,
-.template-register .documentDescription {display: none}
-
-.template-change-password .descripcio_registre,
-.template-personal-information .descripcio_registre,
-.template-register .descripcio_registre {height:50px; float:none;}
-
-.title_registre { color: #333333 !important; font-style: normal; margin-bottom: 5px; margin-top: 18px}
-
-.template-change-password label,
-.template-personal-information label,
-.template-register label {float:left; font-weight: normal; font-family:Arial; font-size:15px; color:#666666 !important; padding-top: 10px;}
-
-.template-change-password .formHelp,
-.template-personal-information .formHelp,
-.template-register .formHelp {display: none;}
-
-.template-change-password .widget {margin-left: 220px}
-
-.template-personal-information .widget,
-.template-register .widget {margin-left: 160px}
-
-.template-personal-information legend,
-.template-change-password legend {display: none}
-
-.template-change-password .field,
-.template-personal-information .field,
-.template-register .field { margin-bottom:5px; }
-
-.template-change-password input,
-.template-personal-information input,
-.template-register input {
-    border-radius:0.3em;
-    -moz-border-radius:0.3em;
-    -webkit-border-radius: 0.3em;
-    background-color:#D3E3C3;
-    font-family:Arial;
-    font-size:15px !important;
-    color:#9AC68D !important;
-    border:1px solid #D3E3C3;
-    height: 30px;
-    padding: 5px;
-    width: 100%;
-}
-
-.template-register .checkboxType { height:14px; }
-
-.template-change-password input:focus,
-.template-personal-information input:focus,
-.template-register input:focus { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
-
-body.template-register #content input[type="text"] { width: 400px;}
-body.template-personal-information #content input[type="text"] { width: 400px;}
-body.template-change-password #content input[type="password"] { width: 400px;}
-
-#formfield-form-accept {margin-top: 10px}
-#formfield-form-accept label {float:none; font-size:12px !important; padding: 0; position: relative; top:-3px; margin-left: 5px}
-#formfield-form-accept input {padding-top: 5px}
-
-.template-change-password .fieldErrorBox,
-.template-personal-information .fieldErrorBox,
-.template-register .fieldErrorBox {margin-left: 160px}
-
-.template-change-password #actionsView {margin-left: 220px; margin-top: 20px;}
-
-.template-personal-information #actionsView,
-.template-register #actionsView {margin-left: 160px; margin-top: 20px;}
-
-.actionButtons input {width: auto; height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
-.actionButtons input:hover {width: auto; background-color:#9AC68D; color:#339933 !important; cursor: pointer;}
-
 #contentview-user_data-personal-preferences {display: none;}
-#content fieldset {border:none;}
-
-.template-change-password fieldset, .template-personal-information fieldset {margin:0; padding:0;}
 
 .close a {display:none;}
 
@@ -1033,3 +650,404 @@ body.template-change-password #content input[type="password"] { width: 400px;}
 #fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades,
 #fullscreenSlideshowContainer .fitxa_ampliada_cerca_overlay .seccio_dades .media
     { height:100% !important; }
+
+
+/* ======================================================================================= */
+/* ============================================================================ formularis */
+/* ======================================================================================= */
+
+form div.field { float:left; width:100%; }
+form label { font-weight: normal; font-family:Arial; font-size:15px; color:#666666 !important; padding-top: 10px; }
+form textarea { min-height:95px; }
+form input[type="text"], form input[type="password"], form textarea
+    { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9AC68D !important; border:1px solid #D3E3C3; height: 30px; padding: 5px; width: 100% !important; }
+form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus,
+form input[type="text"]:hover, form input[type="password"]:hover, form textarea:hover
+    { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
+form div.error.warning input,
+form div.field.error input
+    { border: 1px solid red; background-color:#DC7575 !important; }
+form div.field.error { background-color:transparent; border:none; padding:0; margin-bottom:5px; }
+form span.formHelp { font-size:12px; color:#666666; }
+form input[type="file"] { float:left; clear:left; color:#666666 !important; margin-top:10px; }
+form input[type="submit"] { width: auto; height:auto !important; padding:10px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+form input[type="submit"]:hover { width: auto; background-color:#9AC68D; color:#339933 !important; cursor: pointer; }
+form div#actionsView { float:left; }
+#formfield-form-accept {margin-top: 10px}
+#formfield-form-accept label {float:none; font-size:12px !important; padding: 0; position: relative; top:-3px; margin-left: 5px}
+#formfield-form-accept input {padding-top: 5px}
+#content fieldset {border:none;}
+
+form .formControls { float:left; margin-left:0; }
+
+/* ---------------------------------------------------------------------------- template-change-password,
+                                                                                template-personal-information,
+                                                                                template-register */
+.template-change-password input[type="password"],
+.template-personal-information input[type="text"],
+.template-register input[type="text"]
+    { width:400px !important; }
+
+.template-change-password .documentFirstHeading,
+.template-personal-information .documentFirstHeading,
+.template-register .documentFirstHeading,
+.template-change-password .documentDescription,
+.template-personal-information .documentDescription,
+.template-register .documentDescription,
+.template-change-password .formHelp,
+.template-personal-information .formHelp,
+.template-register .formHelp,
+.template-personal-information legend,
+.template-change-password legend
+    { display: none; }
+
+.template-change-password .descripcio_registre,
+.template-personal-information .descripcio_registre,
+.template-register .descripcio_registre
+    { height:30px; float:left; width:100%; }
+
+.title_registre { color: #333333 !important; font-style: normal; margin-bottom: 5px; margin-top: 18px}
+
+.template-change-password label,
+.template-personal-information label,
+.template-register label
+    { float:left; }
+
+
+.template-change-password .widget
+    { margin-left: 220px }
+
+.template-personal-information .widget,
+.template-register .widget
+    { margin-left: 160px }
+
+.template-change-password .field,
+.template-personal-information .field,
+.template-register .field
+    { margin-bottom:5px; }
+
+.template-change-password form,
+.template-personal-information form,
+.template-register form
+    { float:left; margin:20px 0; }
+
+.template-personal-information .fieldErrorBox,
+.template-register .fieldErrorBox
+    { margin-left: 160px }
+
+.template-change-password .fieldErrorBox
+    { margin-left: 220px }
+
+#formfield-form-mail_me
+    { margin-bottom:0; }
+
+.template-register .descripcio_registre
+    { margin-top:0px; margin-bottom:0 }
+
+.template-register #actionsView,
+.template-personal-information #actionsView
+    { margin-left: 160px; margin-top: 20px; }
+
+.template-change-password #actionsView
+    {margin-left: 220px; margin-top: 20px;}
+
+.template-change-password fieldset,
+.template-personal-information fieldset
+    {margin:0; padding:0;}
+
+
+/* ---------------------------------------------------------------------------- login-form */
+
+#login-wrapper { float:left; width:100%; padding: 2%; }
+.login_row1, .login_row2 { float:left; width:100%; }
+.login_row2 { margin-bottom:17px; }
+.login_col1 { width:45%; float:left; padding-right:5%; margin-right:4%; border-right:1px solid #B3D396; }
+.login_col2 { width:45%; float:right; }
+.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.button_fatac:hover { background-color:#9AC68D; color:#339933 !important; }
+.login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
+.descripcio_registre { float:left; line-height:18px; }
+.link_registre { float:left; }
+
+.template-login_form .login-logo,
+.template-logged_out .login-logo,
+.template-logged_out .documentDescription {display: none;}
+
+
+/* ---------------------------------------------------------------------------- cercador.pt */
+
+#viewlet_cercador { float:left; width:450px; margin-left:100px; }
+#viewlet_cercador form#cercador { width:330px; float:left; }
+#viewlet_cercador form#cercador input { color: #999999 !important; float:left; height:16px; display:inline;  padding:10px; border:none; border-radius:0.3em 0 0 0.3em; -webkit-radius:0.3em 0 0 0.3em; -moz-border-radius:0.3em 0 0 0.3em; background-color:#EEEEEE; }
+#viewlet_cercador form#cercador input:focus,
+#viewlet_cercador form#cercador input:hover
+    { border:none !important; background-color:#EEEEEE !important; }
+#viewlet_cercador #s { background-color:transparent; width: 270px !important; border:none; }
+#viewlet_cercador .searchButton { height:36px; width:36px; background:url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent; border:none; float:left; }
+#viewlet_cercador a {  margin: 7px 0 0 25px; float:left; }
+#viewlet_cercador img{ vertical-align:middle;}
+
+
+/* ---------------------------------------------------------------------------- form add playlist */
+
+.section-Members .formTabs, .section-Members p.discreet,
+.template-my-playlists .formTabs, .template-my-playlists p.discreet,
+.portaltype-fatac-dummy .formTabs, .portaltype-fatac-dummy p.discreet
+    { display:none !important; }
+
+
+/* ---------------------------------------------------------------------------- template-manage-groups */
+
+.template-manage-groups .documentDescription { display:none; }
+
+
+/* ---------------------------------------------------------------------------- deformFormFieldset */
+
+.deformFormFieldset { border:none !important; background-color:#ededed; padding:10px;}
+.deformFormFieldset ul { list-style-type: none !important; margin-left: 0 !important; }
+.deformFormFieldset label { margin-right:15px; }
+.deformFormFieldset li.buttons { margin-top:15px; }
+.miniatura_objecte_validacio_legal { float:right; margin-top:-63px; }
+.miniatura_objecte_validacio_legal .genericview_imatge { background-color:transparent; }
+
+
+/* ---------------------------------------------------------------------------- comments viewlet */
+
+.num_aportacions { cursor:pointer; }
+/*.portaltype-fatac-dummy #viewlet-below-content { display:none; } TODO: lpmayos descomentar*/
+
+.discussion { color: #393; float:left; width:96%; padding:2%; background-color: #D3E3C3 !important; border-radius: 0.3em; -moz-border-radius: 0.3em; -webkit-border-radius: 0.3em; border:0; outline:0; margin-top:30px; }
+.discussion input[type="submit"],
+#commenting .formControls input[type="submit"]
+    { background-color:transparent !important; border: 0 !important; font-weight:normal !important; text-transform: lowercase; }
+.discussion .documentByLine { float: left; margin-left: 0; margin-bottom: 0.5em; color: #339933; font-size: 16px; font-style: italic; }
+.discussion .documentByLine a { color: #339933; }
+.discussion .commentDate { display: inline; font-size: 13px; color: #339933; font-style: normal; }
+.discussion .commentBody { clear: both; overflow: auto; font-family: serif, sans-serif; font-size:16px; color: black !important; border-radius:0em; box-shadow: 0 0 0 0 #000000; padding: 0; }
+.discussion .commentBody p { float: left; }
+
+#commenting { float:left; width:100%; }
+#commenting label { display:none; }
+#commenting textarea { width:96% !important; padding: 15px 2% 50px 2%; border-radius: 0.3em 0.3em 0 0; -moz-border-radius: 0.3em 0.3em 0 0; -webkit-border-radius: 0.3em 0.3em 0 0; }
+#commenting textarea:focus { border-color:#D3E3C3; outline-color: transparent; }
+#commenting .formControls { float:left; width:100%; background-color: #D3E3C3 !important; border: 1px solid #D3E3C3; margin-top:-27px !important; border-radius: 0 0 0.3em 0.3em; -moz-border-radius: 0 0 0.3em 0.3em; -webkit-border-radius: 0 0 0.3em 0.3em; }
+
+
+/*.discussion, #commenting { clear: both; }
+
+.comment { margin-bottom: 25px; }
+
+.commentImage { float: left; margin-right: 0.5em; height: 3.5em; }
+
+.commentImage a:link { border: 0px; }
+
+.commentDate { display: inline; font-size: 13px; color: #339933; font-style: normal; }
+
+.commentBody { clear: both; overflow: auto; font-family: serif, sans-serif; font-size:16px; color: black !important; border-radius:0em; box-shadow: 0 0 0 0 #000000; padding: 0; }
+
+.commentBody p { float: left; }
+
+.discussion .documentByLine { float: left; margin-left: 0; margin-bottom: 0.5em; color: #339933; font-size: 16px; font-style: italic; }
+.discussion .documentByLine a { color: #339933; }
+
+.commentActions { float: right; text-align: right; }
+.commentActions input { margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
+
+.discussion .discreet { color: #666666; font-size: 85%; }*/
+
+
+/* Reply Form  */
+
+/*.reply fieldset { margin: 0 !important; color: #339933; }
+
+.reply .text-widget { display: block; }
+
+.reply-to-comment-button { display: none; margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
+
+.cancelreplytocomment { display: none; }*/
+
+
+/* Moderation View */
+
+/*#bulkactions { text-align: left; }
+
+#dobulkaction { margin: 0.3em 0; }
+
+.comment-publish-button { float: left; margin-right: 0.5em; }
+
+.comment-delete-button { float: left; }
+
+#review-comments { margin: 0; }
+
+#fieldset-moderate-comments { padding: 2em 1em; }*/
+
+
+/* Discussion Control Panel */
+
+/*.template-discussion-settings .unclickable { opacity: 0.6; filter: alpha(opacity = 50); }
+*/
+/* Plone 4 Styles  */
+/* These styles are only applied for Plone 4, since Plone 3.x does
+not have a .row class for portal-column-content. */
+
+/*.row #dobulkaction { margin: 0; }
+
+.row #commenting { font-size: 80%; }
+
+.row #commenting .formControls { margin: 0; }
+
+.row #commenting .formControls input { margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
+
+.row #commenting textarea,
+.row .discussion textarea
+    { font: 100% Monaco, "Courier New", Courier, monospace; width: 100%; }
+
+.row #commenting fieldset,
+.row .discussion fieldset
+    { border: 0.1em solid #339933; border-style: solid none none none; }
+
+.row #commenting legend,
+.row .discussion legend
+    { padding: 0.5em 0.5em 0.5em 0; font-size: 85%; color: #339933; }
+
+.row #commenting label,
+.row .discussion label
+    { font-weight:bold; }
+
+#commenting { clear: both; background-color: #d3e3c3; padding: 10px; border-radius: 0.3em; }
+
+#commenting textarea { background-color: #d3e3c3; border-radius: 0.3em; border:1px solid #d3e3c3; color: #339933; font-size: 18px !important; padding: 5px; width: 920px !important; }
+
+#commenting textarea:hover { border: 1px solid #339933; }
+#commenting #formfield-form-widgets-text .horizontal { display: none; }
+
+.discussion { background-color: #d3e3c3; border-radius: 0.3em; border:1px solid #d3e3c3; color: #339933; padding: 10px; margin-bottom: 10px; }
+
+.comment { margin-top: 0; }
+
+#commenting .field { margin-bottom: 5px; }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.discussion .hide {
+    display: none;
+}
+
+
+.reply fieldset {
+    margin: 0 !important;
+    color: #339933;
+}
+
+.reply .text-widget {
+    display: block;
+}
+
+.reply-to-comment-button {
+    display: none;
+    margin-right: 3px;
+    padding: 0px 5px;
+    padding-left: 5px;
+    border-radius: 0.2em;
+    border-width: 1px !important;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    color:#339933 !important;
+    background-color:#B3D396;
+
+}
+
+.cancelreplytocomment {
+    display: none;
+}
+
+
+#bulkactions {
+    text-align: left;
+}
+
+#dobulkaction {
+    margin: 0.3em 0;
+}
+
+.comment-publish-button {
+    float: left;
+    margin-right: 0.5em;
+}
+
+.comment-delete-button {
+    float: left;
+}
+
+#review-comments {
+    margin: 0;
+}
+
+#fieldset-moderate-comments {
+    padding: 2em 1em;
+}
+
+.template-discussion-settings .unclickable {
+    opacity: 0.6;
+    filter: alpha(opacity = 50);
+}
+
+.row #dobulkaction {
+    margin: 0;
+}
+
+.row #commenting {
+    font-size: 80%;
+}
+
+.row #commenting .formControls {
+    margin: 0;
+}
+
+.row #commenting .formControls input {
+    margin-right: 3px;
+    padding: 0px 5px;
+    padding-left: 5px;
+    border-radius: 0.2em;
+    border-width: 1px !important;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    color:#339933 !important;
+    background-color:#B3D396;
+}
+
+.row #commenting textarea,
+.row .discussion textarea {
+    font: 100% Monaco, "Courier New", Courier, monospace;
+    width: 100%;
+}
+
+.row #commenting fieldset,
+.row .discussion fieldset {
+    border: 0.1em solid #339933;
+    border-style: solid none none none;
+}
+
+.row #commenting legend,
+.row .discussion legend {
+    padding: 0.5em 0.5em 0.5em 0;
+    font-size: 85%;
+    color: #339933;
+}
+
+.row #commenting label,
+.row .discussion label {
+    font-weight:bold;
+}*/
