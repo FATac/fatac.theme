@@ -88,7 +88,7 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 .link_biblioteca { text-transform: none; }
 
 .link_fatac, .portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
-.link_fatac:hover, .portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover {color: #007ca7 !important; }
+.link_fatac:hover, .portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover, #content a:hover, dl.portlet a:hover {color: #007ca7 !important; }
 .link_fatac:visited, .portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
 
 .template-explorar .span5 { margin-left:13px !important; }
@@ -281,7 +281,7 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 /* codi necessari per scrollable ultims_documents, ultims_consultats i formulari legal */
 .requadre_resultats a.disabled { visibility: hidden; }
 .scrollable_fatac { position:relative; overflow:hidden; width: 100%; }
-.scrollable_fatac { height:175px; text-align:left; padding:0 29px; }
+.scrollable_fatac { height:175px !important; text-align:left; padding:0 29px; }
 .scrollable_fatac .pagina { position:absolute; height:20000em; width:100%; }
 .scrollable_fatac .fila { float:left; width:100%; }
 
