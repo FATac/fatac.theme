@@ -700,6 +700,9 @@ div.field span.required:after {
 .template-register input[type="text"]
     { width:400px !important; }
 
+.template-register .overlay input[type="text"]
+    { width:96% !important; }
+
 .template-change-password .documentFirstHeading,
 .template-personal-information .documentFirstHeading,
 .template-register .documentFirstHeading,
