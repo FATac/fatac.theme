@@ -35,8 +35,10 @@ h1.documentFirstHeading {
 
 img.arrow_top, img.arrow_bottom { margin-right:5px; }
 
-.columna { width: 30%; padding-left: 15px; padding-right: 15px; border-right: 1px dotted; float: left; }
-.columna2 { width: 29%; padding-left: 15px; padding-right: 15px; float: left;}
+.columna, .columna2 { width: 30%; padding: 0 17px; float:left; }
+.columna { border-right: 1px dotted; }
+.columna:nth-of-type(2) { padding-left:0 !important; }
+
 .caixa { border-top: 1px dotted; padding-top: 20px;}
 .arial20c333333bold { font-family:Arial; font-size:20px; color:#333333 !important; font-weight:bold !important; }
 .arial16c339933bold { font-family:Arial; font-size:16px; color:#339933 !important; font-weight:bold !important; }
