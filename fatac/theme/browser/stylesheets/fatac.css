@@ -663,7 +663,7 @@ form div.field { float:left; width:100%; }
 form label { font-weight: normal; font-family:Arial; font-size:15px; color:#666666 !important; padding-top: 10px; }
 form textarea { min-height:95px; }
 form input[type="text"], form input[type="password"], form textarea
-    { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9AC68D !important; border:1px solid #D3E3C3; height: 30px; padding: 5px; width: 100% !important; }
+    { border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; background-color:#D3E3C3; font-family:Arial; font-size:15px !important; color:#9AC68D !important; border:1px solid #D3E3C3; height: 30px; padding: 5px 2%; width: 96% !important; }
 form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus,
 form input[type="text"]:hover, form input[type="password"]:hover, form textarea:hover
     { background-color:#D3E3C3 !important; color:#339933 !important; border:1px solid #339933; }
