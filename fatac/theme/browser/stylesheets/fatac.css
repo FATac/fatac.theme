@@ -245,7 +245,7 @@ dl.llista_desplegable_verd dt, dl.llista_desplegable_verd dd { background-color:
 #visualitzacio_resultats div#zoom_resultats.selected, #visualitzacio_resultats div#zoom_resultats:hover, #visualitzacio_resultats a.selected img, #visualitzacio_resultats a:hover img { border:1px solid #999999; border-radius:0.3em; -webkit-radius:0.3em; -moz-border-radius:0.3em; }
 
 #resultats { float:left; width:100%; margin-top:19px; }
-#wrapper_resultats { overflow:hidden; position:relative; height:440px; }
+#wrapper_resultats { overflow:hidden; position:relative; height:500px; }
 .pagines_resultats { position:absolute; width:20000em; }
 .pagines_resultats .pagina { width:881px; float:left; }
 #resultats_cerca a.disabled { visibility: hidden !important; }
