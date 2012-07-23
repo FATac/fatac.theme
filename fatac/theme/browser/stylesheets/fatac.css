@@ -857,6 +857,16 @@ table.listing, table.listing th, table.listing td  { border-color:#9AC68D; }
 table.listing th { background-color: #D3E3C3; color: #393; }
 table.listing td { background-color: white !important; color:#666; }
 
-div.overlay table.listing { font-size:12px; }
+div.overlay { font-size:100% !important; }
+div.overlay table.listing { font-size:12px !important; }
 
+
+/* ---------------------------------------------------------------------------- portalMessage */
+
+.portalMessage { font-size:12px !important; font-family:arial; }
+.portalMessage.error { border-color:#D00 !important; }
+.portalMessage.error dd { color:#D00; }
+.portalMessage.info { border-color:#393 !important; }
+.portalMessage.info dt { background-color:#393; }
+.portalMessage.info dd { background-color:#D3E3C3; color:#393; }
 
