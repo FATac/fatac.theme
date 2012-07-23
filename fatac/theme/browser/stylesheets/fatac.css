@@ -381,7 +381,7 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 .scrollable_genericview .fila { margin: 0px 0; }
 .requadre_objects .arrow_up { margin:7px 0px 10px; }
 .requadre_objects .arrow_down { margin:10px 0px 7px; }
-.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:27%; float:left; margin-left:2%; background-color:white; padding:2%; }
+.requadre_objects .genericview_fitxa_home {height:175px; text-align:left;  width:28%; float:left; margin-left:4%; background-color:white; padding:0; }
 .requadre_objects a.disabled { visibility: hidden; }
 
 .media_image { max-width:617px; height : auto; }
