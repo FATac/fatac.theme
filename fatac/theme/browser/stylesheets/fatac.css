@@ -683,6 +683,12 @@ form div#actionsView { float:left; }
 
 form .formControls { float:left; margin-left:0; }
 
+#content li.formTab a.required span:after,
+#content-core li.formTab a.required span:after,
+div.field span.required:after {
+    content: "*";
+}
+
 /* ---------------------------------------------------------------------------- template-change-password,
                                                                                 template-personal-information,
                                                                                 template-register */
