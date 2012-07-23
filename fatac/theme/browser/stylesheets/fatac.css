@@ -787,6 +787,8 @@ form .formControls { float:left; margin-left:0; }
     { border:none !important; background-color:#EEEEEE !important; }
 #viewlet_cercador #s { background-color:transparent; width: 270px !important; border:none; }
 #viewlet_cercador .searchButton { height:36px; width:36px; background:url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent; border:none; float:left; }
+#viewlet_cercador .searchButton:hover { background-image:url('++resource++fatac.theme.images/ico-buscar-b.gif'); }
+#viewlet_cercador .searchButton:active { background-image:url('++resource++fatac.theme.images/ico-buscar-c.gif'); }
 #viewlet_cercador a {  margin: 7px 0 0 25px; float:left; }
 #viewlet_cercador img{ vertical-align:middle;}
 
