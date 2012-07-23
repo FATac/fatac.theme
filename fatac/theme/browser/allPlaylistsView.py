@@ -21,8 +21,11 @@ class allPlaylistsView(BrowserView):
                                                           sort_on='Date', sort_order='reverse',
                                                           language=idiomes)
         for dada in dades:
+            obj = dada.getObject()
+            autor = obj.Creator()
             llista.append({'titol': dada.Title,
-                           'obj': dada.getObject(),
+                           'autor': autor,
+                           'obj': obj,
                            'icono': dada.getIcon,
                            'url': dada.getURL()})
         return llista

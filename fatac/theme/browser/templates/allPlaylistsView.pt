@@ -44,8 +44,10 @@
                             <div class="dades">
                                 <a tal:attributes="href item/url; title item/titol">
                                     <img class="miniatura_classe" tal:attributes="src item/icono; alt item/titol" />
-                                    <br><br>
-                                    <span class="who georgia11c999999" tal:content="item/titol" />
+                                    <br/>
+                                    <span class="who georgia11c333333" tal:content="item/titol" />
+                                    <br/>
+                                    <span class="autor georgia11c999999" tal:content="item/autor" />
                                 </a>
                             </div>
                         </div>

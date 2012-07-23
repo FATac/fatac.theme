@@ -807,6 +807,7 @@ div.field span.required:after {
 
 /* ---------------------------------------------------------------------------- form add playlist */
 
+.overlay .formTabs, .overlay p.discreet,
 .section-Members .formTabs, .section-Members p.discreet,
 .template-my-playlists .formTabs, .template-my-playlists p.discreet,
 .portaltype-fatac-dummy .formTabs, .portaltype-fatac-dummy p.discreet
