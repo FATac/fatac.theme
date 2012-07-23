@@ -471,6 +471,9 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 #fullscreenSlideshowContainer .download { color: #ECECEC; text-align: center; }
 #fullscreenSlideshowContainer .ui { position: absolute;font-family: sans-serif; z-index: 100; font-size: 1em;}
 #fullscreenSlideshowContainer .ui img{vertical-align: middle; }
+#fullscreenSlideshowContainer #addSubtitles,
+#fullscreenSlideshowContainer #removeSubtitles
+    { display:none; }
 
 #fs-header, #fs-loader, #fs-caption { -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; }
 #fs-header, #fs-loader, #fs-caption, #fs-footer { background-color: black; font-weight: bold; cursor: pointer; line-height: 1em; color: #ECECEC; }
@@ -670,7 +673,7 @@ form div.field.error input
 form div.field.error { background-color:transparent; border:none; padding:0; margin-bottom:5px; }
 form span.formHelp { font-size:12px; color:#666666; }
 form input[type="file"] { float:left; clear:left; color:#666666 !important; margin-top:10px; }
-form input[type="submit"] { width: auto; height:auto !important; padding:10px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+form input[type="submit"] { width: auto; height:auto !important; padding:5px 10px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
 form input[type="submit"]:hover { width: auto; background-color:#9AC68D; color:#339933 !important; cursor: pointer; }
 form div#actionsView { float:left; }
 #formfield-form-accept {margin-top: 10px}
@@ -763,7 +766,7 @@ form .formControls { float:left; margin-left:0; }
 .login_row2 { margin-bottom:17px; }
 .login_col1 { width:45%; float:left; padding-right:5%; margin-right:4%; border-right:1px solid #B3D396; }
 .login_col2 { width:45%; float:right; }
-.button_fatac { height:auto !important; padding:10px 5px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
+.button_fatac { height:auto !important; padding: 5px 10px !important; margin:0 !important; background-color:white; border:1px solid #9AC68D !important; border-radius:0.3em; -moz-border-radius:0.3em; -webkit-border-radius: 0.3em; font-family:Arial; font-size:15px !important; color:#339933 !important; font-weight:bold; }
 .button_fatac:hover { background-color:#9AC68D; color:#339933 !important; }
 .login-forgotten-password-fatac { float:left; margin-left:15px; padding-top:34px; }
 .descripcio_registre { float:left; line-height:18px; }
@@ -833,221 +836,13 @@ form .formControls { float:left; margin-left:0; }
 #commenting .formControls { float:left; width:100%; background-color: #D3E3C3 !important; border: 1px solid #D3E3C3; margin-top:-27px !important; border-radius: 0 0 0.3em 0.3em; -moz-border-radius: 0 0 0.3em 0.3em; -webkit-border-radius: 0 0 0.3em 0.3em; }
 
 
-/*.discussion, #commenting { clear: both; }
+/* ---------------------------------------------------------------------------- folder_contents */
 
-.comment { margin-bottom: 25px; }
+table.listing { font-family:Arial; margin-bottom: 25px !important; }
+table.listing, table.listing th, table.listing td  { border-color:#9AC68D; }
+table.listing th { background-color: #D3E3C3; color: #393; }
+table.listing td { background-color: white !important; color:#666; }
 
-.commentImage { float: left; margin-right: 0.5em; height: 3.5em; }
+div.overlay table.listing { font-size:12px; }
 
-.commentImage a:link { border: 0px; }
 
-.commentDate { display: inline; font-size: 13px; color: #339933; font-style: normal; }
-
-.commentBody { clear: both; overflow: auto; font-family: serif, sans-serif; font-size:16px; color: black !important; border-radius:0em; box-shadow: 0 0 0 0 #000000; padding: 0; }
-
-.commentBody p { float: left; }
-
-.discussion .documentByLine { float: left; margin-left: 0; margin-bottom: 0.5em; color: #339933; font-size: 16px; font-style: italic; }
-.discussion .documentByLine a { color: #339933; }
-
-.commentActions { float: right; text-align: right; }
-.commentActions input { margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
-
-.discussion .discreet { color: #666666; font-size: 85%; }*/
-
-
-/* Reply Form  */
-
-/*.reply fieldset { margin: 0 !important; color: #339933; }
-
-.reply .text-widget { display: block; }
-
-.reply-to-comment-button { display: none; margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
-
-.cancelreplytocomment { display: none; }*/
-
-
-/* Moderation View */
-
-/*#bulkactions { text-align: left; }
-
-#dobulkaction { margin: 0.3em 0; }
-
-.comment-publish-button { float: left; margin-right: 0.5em; }
-
-.comment-delete-button { float: left; }
-
-#review-comments { margin: 0; }
-
-#fieldset-moderate-comments { padding: 2em 1em; }*/
-
-
-/* Discussion Control Panel */
-
-/*.template-discussion-settings .unclickable { opacity: 0.6; filter: alpha(opacity = 50); }
-*/
-/* Plone 4 Styles  */
-/* These styles are only applied for Plone 4, since Plone 3.x does
-not have a .row class for portal-column-content. */
-
-/*.row #dobulkaction { margin: 0; }
-
-.row #commenting { font-size: 80%; }
-
-.row #commenting .formControls { margin: 0; }
-
-.row #commenting .formControls input { margin-right: 3px; padding: 0px 5px; padding-left: 5px; border-radius: 0.2em; border-width: 1px !important; -webkit-border-radius: 0.2em; -moz-border-radius: 0.2em; color:#339933 !important; background-color:#B3D396; }
-
-.row #commenting textarea,
-.row .discussion textarea
-    { font: 100% Monaco, "Courier New", Courier, monospace; width: 100%; }
-
-.row #commenting fieldset,
-.row .discussion fieldset
-    { border: 0.1em solid #339933; border-style: solid none none none; }
-
-.row #commenting legend,
-.row .discussion legend
-    { padding: 0.5em 0.5em 0.5em 0; font-size: 85%; color: #339933; }
-
-.row #commenting label,
-.row .discussion label
-    { font-weight:bold; }
-
-#commenting { clear: both; background-color: #d3e3c3; padding: 10px; border-radius: 0.3em; }
-
-#commenting textarea { background-color: #d3e3c3; border-radius: 0.3em; border:1px solid #d3e3c3; color: #339933; font-size: 18px !important; padding: 5px; width: 920px !important; }
-
-#commenting textarea:hover { border: 1px solid #339933; }
-#commenting #formfield-form-widgets-text .horizontal { display: none; }
-
-.discussion { background-color: #d3e3c3; border-radius: 0.3em; border:1px solid #d3e3c3; color: #339933; padding: 10px; margin-bottom: 10px; }
-
-.comment { margin-top: 0; }
-
-#commenting .field { margin-bottom: 5px; }
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*.discussion .hide {
-    display: none;
-}
-
-
-.reply fieldset {
-    margin: 0 !important;
-    color: #339933;
-}
-
-.reply .text-widget {
-    display: block;
-}
-
-.reply-to-comment-button {
-    display: none;
-    margin-right: 3px;
-    padding: 0px 5px;
-    padding-left: 5px;
-    border-radius: 0.2em;
-    border-width: 1px !important;
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    color:#339933 !important;
-    background-color:#B3D396;
-
-}
-
-.cancelreplytocomment {
-    display: none;
-}
-
-
-#bulkactions {
-    text-align: left;
-}
-
-#dobulkaction {
-    margin: 0.3em 0;
-}
-
-.comment-publish-button {
-    float: left;
-    margin-right: 0.5em;
-}
-
-.comment-delete-button {
-    float: left;
-}
-
-#review-comments {
-    margin: 0;
-}
-
-#fieldset-moderate-comments {
-    padding: 2em 1em;
-}
-
-.template-discussion-settings .unclickable {
-    opacity: 0.6;
-    filter: alpha(opacity = 50);
-}
-
-.row #dobulkaction {
-    margin: 0;
-}
-
-.row #commenting {
-    font-size: 80%;
-}
-
-.row #commenting .formControls {
-    margin: 0;
-}
-
-.row #commenting .formControls input {
-    margin-right: 3px;
-    padding: 0px 5px;
-    padding-left: 5px;
-    border-radius: 0.2em;
-    border-width: 1px !important;
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    color:#339933 !important;
-    background-color:#B3D396;
-}
-
-.row #commenting textarea,
-.row .discussion textarea {
-    font: 100% Monaco, "Courier New", Courier, monospace;
-    width: 100%;
-}
-
-.row #commenting fieldset,
-.row .discussion fieldset {
-    border: 0.1em solid #339933;
-    border-style: solid none none none;
-}
-
-.row #commenting legend,
-.row .discussion legend {
-    padding: 0.5em 0.5em 0.5em 0;
-    font-size: 85%;
-    color: #339933;
-}
-
-.row #commenting label,
-.row .discussion label {
-    font-weight:bold;
-}*/
