@@ -1324,10 +1324,10 @@ function initFullScreen(){
                 <div class="fs-header-extra"><span class="logo">ARTSCOMBINATORIES</span> \
                 <span class="title"> ' + document.title + '</span></div> \
                 <div class="btns"> \
-                    <span id="fs-close"><img src="++resource++fatac.theme.images/vista-normal.png" alt="&times;" title="Close"/></span> \
-                    <span id="fs-info"><img src="++resource++fatac.theme.images/info.png" alt="i" title="Info"/></span> \
-                    <span class="fs-prev"><img src="++resource++fatac.theme.images/flecha-detras.png" alt="&lt;" title="Previous"/></span> \
-                    <span class="fs-next"><img src="++resource++fatac.theme.images/flecha-delante.png" alt="&gt;" title="Next"/></span> \
+                    <span id="fs-close"><img class="imgHoverable" src="++resource++fatac.theme.images/vista-normal.png" alt="&times;" title="Close"/></span> \
+                    <span id="fs-info"><img class="imgHoverable" src="++resource++fatac.theme.images/info.png" alt="i" title="Info"/></span> \
+                    <span class="fs-prev"><img class="imgHoverable" src="++resource++fatac.theme.images/flecha-detras.png" alt="&lt;" title="Previous"/></span> \
+                    <span class="fs-next"><img class="imgHoverable" src="++resource++fatac.theme.images/flecha-delante.png" alt="&gt;" title="Next"/></span> \
                 </div> \
                 </div>')
             .append('<div class="ui" id="fs-loader"><img src="spinner.gif" alt="Loading..."></div>')
@@ -1372,7 +1372,44 @@ function initFullScreen(){
           });
           $('#fs-info').click(function(){
             $('#fs-caption').toggle();
+
+            // a part de mostrar/amagar la info, desactivem/activem l'efecte de hover
+            imatge = $('#fs-info').find('img');
+            if (imatge.hasClass("imgHoverable")) {
+                imatge.removeClass("imgHoverable");
+                $(imatge).unbind('mouseenter mouseleave');
+            } else {
+                imatge.addClass("imgHoverable");
+                activaHover();
+            }
           });
+
+            // Quan fem hover sobre imatges amb classe imgHoverable, canviem
+            // l'src d'aquestes imatges pel mateix peo amb '_hover'
+            $(document).ready(function(){
+               activaHover();
+            });
+
+            function activaHover() {
+               // primer fem unbind i després tornem a assignar, per evitar efectes indesitjats
+               $(".imgHoverable").unbind('mouseenter mouseleave');
+               $(".imgHoverable").hover( function() {
+                   var hoverImg = HoverImgOf($(this).attr("src"));
+                   $(this).attr("src", hoverImg);
+                 }, function() {
+                   var normalImg = NormalImgOf($(this).attr("src"));
+                   $(this).attr("src", normalImg);
+                 }
+               );
+            }
+            function HoverImgOf(filename) {
+               var re = new RegExp("(.+)\\.(gif|png|jpg)", "g");
+               return filename.replace(re, "$1_hover.$2");
+            }
+            function NormalImgOf(filename) {
+               var re = new RegExp("(.+)_hover\\.(gif|png|jpg)", "g");
+               return filename.replace(re, "$1.$2");
+            }
 
         })
         // When a slide starts to load this is called
@@ -1411,3 +1448,4 @@ function initFullScreen(){
         })
         $container.trigger("show", 0);
 }
+
