@@ -81,6 +81,13 @@
 
     <browser:page
         for="*"
+        name="imageView"
+        class=".imageView.imageView"
+        permission="zope2.Public"
+        />
+
+    <browser:page
+        for="*"
         name="filtresView"
         class=".vistesCerca.filtresView"
         permission="zope2.Public"
