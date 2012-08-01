@@ -12,7 +12,8 @@ div.pagina .row, div#portal-columns.row, div#portal-top.row, div#portal-footer-w
 #portal-top { margin-bottom:14px; }
 
 /* ---------------------------------------------------------------------------- general */
-.portaltype-document #content-core { font-family:georgia; font-size:13px !important; color:#666666; line-height: 1.5em !important; }
+.portaltype-document #content-core, .template-default_error_message #content-core
+    { font-family:georgia; font-size:13px !important; color:#666666; line-height: 1.5em !important; }
 
 a { border-bottom:none !important; }
 
@@ -87,9 +88,12 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 .ac_search_biblio { text-align: right; float:right; width:20%; }
 .link_biblioteca { text-transform: none; }
 
-.link_fatac, .portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a { color: #00A2DA !important; }
-.link_fatac:hover, .portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover, #content a:hover, dl.portlet a:hover {color: #007ca7 !important; }
-.link_fatac:visited, .portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited { color: #008fc1 !important; }
+.template-default_error_message #content-core a, .link_fatac, .portaltype-document #content-core a, .valor a, a.internal-link, a.external-link, a.linked_object, .filtres a, .template-explorar #wrapper_resultats a
+    { color: #00A2DA !important; }
+.template-default_error_message #content-core a:hover, .link_fatac:hover, .portaltype-document #content-core a:hover, .valor a:hover, a.internal-link:hover, a.external-link:hover, a.linked_object:hover, .filtres a:hover, .template-explorar #wrapper_resultats a:hover, #content a:hover, dl.portlet a:hover
+    {color: #007ca7 !important; }
+.template-default_error_message #content-core a:visited, .link_fatac:visited, .portaltype-document #content-core a:visited, .valor a:visited, a.internal-link:visited, a.external-link:visited, a.linked_object:visited, .filtres a:visited, .template-explorar #wrapper_resultats a:visited
+    { color: #008fc1 !important; }
 
 .template-explorar .span5 { margin-left:13px !important; }
 .template-explorar .barra { height:440px; }
@@ -892,4 +896,11 @@ div.overlay table.listing { font-size:12px !important; }
 .portalMessage.info { border-color:#393 !important; }
 .portalMessage.info dt { background-color:#393; }
 .portalMessage.info dd { background-color:#D3E3C3; color:#393; }
+
+
+/* ---------------------------------------------------------------------------- template-default_error_message */
+
+.template-default_error_message h3, .template-default_error_message dl
+    { display:none; }
+
 
