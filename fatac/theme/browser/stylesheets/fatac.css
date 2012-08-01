@@ -721,9 +721,8 @@ form .formControls { float:left; margin-left:0; }
 
 #content li.formTab a.required span:after,
 #content-core li.formTab a.required span:after,
-div.field span.required:after {
-    content: "*";
-}
+div.field span.required:after
+    { content: "*"; color:#333; }
 
 /* ---------------------------------------------------------------------------- template-change-password,
                                                                                 template-personal-information,
@@ -774,9 +773,9 @@ div.field span.required:after {
 .template-register .field
     { margin-bottom:5px; }
 
-.template-change-password form,
-.template-personal-information form,
-.template-register form
+.template-change-password #content form,
+.template-personal-information #content form,
+.template-register #content form
     { float:left; margin:20px 0; }
 
 .template-personal-information .fieldErrorBox,
@@ -803,6 +802,9 @@ div.field span.required:after {
 .template-personal-information fieldset
     {margin:0; padding:0;}
 
+.template-register #formfield-form-accept { margin-top:50px; }
+.template-register #text_asterisc { margin:-130px 0 0 160px; font-size:12px; font-family:arial; }
+.template-register #text_condicions_politica { margin:-97px 0 0 320px;  font-size:12px; font-family:arial; }
 
 /* ---------------------------------------------------------------------------- login-form */
 

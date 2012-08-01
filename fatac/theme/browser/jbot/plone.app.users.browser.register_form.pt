@@ -28,18 +28,22 @@
                 <div metal:use-macro="context/base-pageform.html/form" />
                 <br />
                 <br />
-                <div class="georgia15c666666italic descripcio_registre">
+
+                <div class="georgia15c666666italic descripcio_registre" id="text_asterisc">
                     <span i18n:domain="fatac.theme" i18n:translate="camps_obligatoris">
                         The fields with an asterisk are compulsory
                     </span>
+                </div>
+
+                <div class="georgia15c666666italic descripcio_registre" id="text_condicions_politica">
 
                     <tal:def tal:define="utils context/@@fatac.utils;
                                          link utils/linkcondicionsus;
                                          link2 utils/linkpoliticaprivacitat">
                         <tal:co tal:condition="link">
-                            / <a class="link_fatac"
-                                 tal:attributes="href link/enllac; title link/descripcio"
-                                 tal:content="link/titol" />
+                            <a class="link_fatac"
+                                tal:attributes="href link/enllac; title link/descripcio"
+                                tal:content="link/titol" />
                         </tal:co>
                         <tal:co tal:condition="link2">
                             / <a class="link_fatac"
