@@ -337,6 +337,9 @@ div.titol_home { border-top: 1px dotted #888; padding-top: 10px; margin-top: 10p
 #content_objecte {background-color: lightgreen}
 #footer_objecte {background-color: pink}
 */
+
+.envolcall_dada { margin-bottom:5px; }
+
 div.genericview_fitxa_final div.num_aportacions { line-height:15px; font-style:normal; float:left; margin-left:10px; padding:3px 10px; height:16px; color: #339933; background-color: #D3E3C3; border-radius: 0.3em; -webkit-radius: 0.3em; -moz-border-radius: 0.3em; }
 div.genericview_fitxa_final img.miniatura_classe { max-width:15px; max-height:15px; vertical-align: middle;}
 
@@ -364,9 +367,13 @@ div.genericview_fitxa_final.amb_subcerca #body_objecte .div_interior{
     column-rule:3px solid #d1d1d1;
 }
 
+div.genericview_fitxa_final #footer_objecte { float:left; }
+
 div.genericview_fitxa_final #header_objecte,
 div.genericview_fitxa_final #body_objecte,
-div.genericview_fitxa_final #content_objecte { line-height: 19px; }
+div.genericview_fitxa_final #content_objecte,
+div.genericview_fitxa_final #footer_objecte
+    { line-height: 19px; }
 
 
 
