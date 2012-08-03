@@ -86,7 +86,7 @@
                         <div class="photo-container">
                             <img class="media_image" tal:attributes="src url; alt identificador" />
                         </div>
-                        <a tal:attributes="href string:${here/portal_url}/imageView?image=${url}&title=${identificador}"
+                        <br/><a tal:attributes="href string:${here/portal_url}/imageView?image=${url}&title=${identificador}"
                            i18n:translate="" class="link_fatac">Veure imatge ampliada</a>
                     </tal:co>
 
