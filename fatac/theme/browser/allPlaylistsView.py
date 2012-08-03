@@ -22,9 +22,12 @@ class allPlaylistsView(BrowserView):
                                                           language=idiomes)
         for dada in dades:
             obj = dada.getObject()
-            autor = obj.Creator()
+            owner = obj.getOwner()
+            fullname = owner.getProperty('fullname')
+            if not fullname:
+                fullname = owner.getUserName()
             llista.append({'titol': dada.Title,
-                           'autor': autor,
+                           'autor': fullname,
                            'obj': obj,
                            'icono': dada.getIcon,
                            'url': dada.getURL()})
