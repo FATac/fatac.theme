@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-12 09:53+0000\n"
+"POT-Creation-Date: 2012-08-03 08:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,7 +124,6 @@ msgid "AssignarDretsLegals"
 msgstr ""
 
 #. Default: "Àudio"
-#. Default: "Audi"
 msgid "Audio"
 msgstr ""
 
@@ -175,7 +174,6 @@ msgid "Cerca a VTLS"
 msgstr ""
 
 #. Default: "Cercar biblioteca"
-#. Default: "Cerca a la biblioteca"
 #: ../../../browser/templates/cercaview.pt:39
 msgid "Cerca a la biblioteca"
 msgstr ""
@@ -234,7 +232,6 @@ msgid "Could not add group ${name}, perhaps a user or group with this name alrea
 msgstr ""
 
 #. Default: "Països"
-#. Default: "País"
 msgid "Country"
 msgstr ""
 
@@ -327,7 +324,6 @@ msgid "Espanol"
 msgstr ""
 
 #. Default: "Esdeveniment"
-#. Default: "Esdeveniments"
 msgid "Events"
 msgstr ""
 
@@ -366,7 +362,7 @@ msgstr ""
 msgid "Film-maker"
 msgstr ""
 
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:17
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:18
 msgid "Filtre de búsqueda"
 msgstr ""
 
@@ -640,7 +636,7 @@ msgid "Objectes"
 msgstr ""
 
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:14
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:15
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:16
 #: ../../../../fatac.theme/fatac/theme/browser/templates/homeview.pt:88
 msgid "Obre"
 msgstr ""
@@ -737,7 +733,6 @@ msgid "ProtectionPromotion"
 msgstr ""
 
 #. Default: "Protecció i promoció Antoni Tàpies"
-#. Default: "Protecció de patrimoni"
 msgid "ProtectionPromotionAT"
 msgstr ""
 
@@ -921,7 +916,7 @@ msgid "Tag List"
 msgstr ""
 
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:13
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:14
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:15
 #: ../../../../fatac.theme/fatac/theme/browser/templates/homeview.pt:87
 msgid "Tanca"
 msgstr ""
@@ -1022,13 +1017,21 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
+#: ../../../../fatac.content/fatac/content/dummy_templates/view.pt:96
+msgid "Tornar"
+msgstr ""
+
 #: ../../../../fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:18
-#: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:21
+#: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:22
 msgid "Totes les playlists"
 msgstr ""
 
 #. Default: "Tots"
 msgid "Tots"
+msgstr ""
+
+#: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:21
+msgid "Tots els expedients"
 msgstr ""
 
 #. Default: "Idiomes"
@@ -1039,6 +1042,7 @@ msgstr ""
 msgid "Translators"
 msgstr ""
 
+#. Default: "De confiança"
 #: zope/component/zcml.py:121
 msgid "Trusted"
 msgstr ""
@@ -1052,14 +1056,20 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
+#: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:89
+msgid "Veure imatge ampliada"
+msgstr ""
+
 #. Default: "Video"
 msgid "Video"
 msgstr ""
 
+#. Default: "Veure atributs que també estan permesos si l'usuari té permís."
 #: zope/component/zcml.py:471
 msgid "View attributes that are also allowed if the user has permission."
 msgstr ""
 
+#. Default: "Veure atributs que també estan permesos si l'usuari té permís."
 #: zope/component/zcml.py:627
 msgid "View attributes that are also allowed if user has permission."
 msgstr ""
@@ -1074,12 +1084,11 @@ msgid "Writer"
 msgstr ""
 
 #. Default: "Anys"
-#. Default: "Any"
 msgid "Year"
 msgstr ""
 
 #. Default: "Afegir subtítols"
-#: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:132
+#: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:134
 msgid "addCaptions"
 msgstr ""
 
@@ -1100,7 +1109,7 @@ msgstr ""
 msgid "amb_el_suport_de"
 msgstr ""
 
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:20
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:21
 msgid "ampliar_filtres"
 msgstr ""
 
@@ -1126,14 +1135,12 @@ msgid "ca"
 msgstr ""
 
 #. Default: "The fields with an asterisk are compulsory"
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:31
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/plone.app.users.browser.register_form.pt:33
 msgid "camps_obligatoris"
 msgstr ""
 
 #. Default: "0 resultats"
-#: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:119
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultats_columna_view.pt:47
-#: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:134
 msgid "cap_resultat"
 msgstr ""
 
@@ -1143,7 +1150,6 @@ msgid "cercar_objectes"
 msgstr ""
 
 #. Default: "Format"
-#. Default: "Tipus de document"
 msgid "class"
 msgstr ""
 
@@ -1167,7 +1173,7 @@ msgid "de"
 msgstr ""
 
 #. Default: "Esborrar subtítols"
-#: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:134
+#: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:136
 msgid "delCaptions"
 msgstr ""
 
@@ -1207,25 +1213,24 @@ msgid "description_playlist_portlet"
 msgstr ""
 
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:73
-#: ../../../../fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:80
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:25
+#: ../../../../fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:82
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:26
 msgid "dreta"
 msgstr ""
 
 #. Default: "Edició objecte"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:36
+#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:37
 #: ../../../../fatac.forms/fatac/forms/browser/templates/updateObject.pt:34
 msgid "edicio_objecte"
 msgstr ""
 
 #. Default: "Edita"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:49
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:60
 msgid "edita"
 msgstr ""
 
-#. Default: "Correu electrònic"
 #. Default: "E-mail"
-#: fatac.core/fatac/core/userdataschema.py:39
+#: ../../../../fatac.core/fatac/core/userdataschema.py:38
 msgid "email"
 msgstr ""
 
@@ -1252,7 +1257,7 @@ msgid "es"
 msgstr ""
 
 #. Default: "Esborrar"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:53
+#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:54
 msgid "esborrar"
 msgstr ""
 
@@ -1262,8 +1267,8 @@ msgid "esborrat_d_objecte"
 msgstr ""
 
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:70
-#: ../../../../fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:74
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:24
+#: ../../../../fatac.theme/fatac/theme/browser/templates/allPlaylistsView.pt:76
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:25
 msgid "esquerra"
 msgstr ""
 
@@ -1296,7 +1301,7 @@ msgid "financament2"
 msgstr ""
 
 #. Default: "Fitxa"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:53
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:64
 msgid "fitxa"
 msgstr ""
 
@@ -1315,15 +1320,23 @@ msgstr ""
 msgid "heading_personal_tools"
 msgstr ""
 
-#. Default: "Introduïu el nom complet, per exemple: Víctor Sauler i Portal."
+#. Default: "Tick this box to indicate that you have found, read and accepted the terms of use for this site. "
+#: ../../../../fatac.core/fatac/core/userdataschema.py:73
+msgid "help_accept"
+msgstr ""
+
+#. Default: "Fill in your occupation or the work you develop."
+#: ../../../../fatac.core/fatac/core/userdataschema.py:45
+msgid "help_city"
+msgstr ""
+
 #. Default: "Enter full name, e.g. John Smith."
-#: fatac.core/fatac/core/userdataschema.py:34
+#: ../../../../fatac.core/fatac/core/userdataschema.py:33
 msgid "help_full_name_creation"
 msgstr ""
 
-#. Default: "L'URL de la vostra pàgina d'inici externa, si en teniu."
 #. Default: "The URL for your external home page, if you have one."
-#: fatac.core/fatac/core/userdataschema.py:67
+#: ../../../../fatac.core/fatac/core/userdataschema.py:66
 msgid "help_homepage"
 msgstr ""
 
@@ -1358,15 +1371,13 @@ msgstr ""
 msgid "introduirURI"
 msgstr ""
 
-#. Default: "Accepto les condicions d'ús"
 #. Default: "Accept terms of use"
-#: fatac.core/fatac/core/userdataschema.py:73
+#: ../../../../fatac.core/fatac/core/userdataschema.py:72
 msgid "label_accept"
 msgstr ""
 
-#. Default: "Ciutat"
 #. Default: "City"
-#: fatac.core/fatac/core/userdataschema.py:59
+#: ../../../../fatac.core/fatac/core/userdataschema.py:58
 msgid "label_city"
 msgstr ""
 
@@ -1390,21 +1401,18 @@ msgstr ""
 msgid "label_estb_contrasenya"
 msgstr ""
 
-#. Default: "Nom i cognom"
 #. Default: "Full Name"
-#: fatac.core/fatac/core/userdataschema.py:33
+#: ../../../../fatac.core/fatac/core/userdataschema.py:32
 msgid "label_full_name"
 msgstr ""
 
-#. Default: "Pàgina d'inici"
 #. Default: "Home page"
-#: fatac.core/fatac/core/userdataschema.py:66
+#: ../../../../fatac.core/fatac/core/userdataschema.py:65
 msgid "label_homepage"
 msgstr ""
 
-#. Default: "Institució"
 #. Default: "Institution"
-#: fatac.core/fatac/core/userdataschema.py:52
+#: ../../../../fatac.core/fatac/core/userdataschema.py:51
 msgid "label_institution"
 msgstr ""
 
@@ -1428,9 +1436,8 @@ msgstr ""
 msgid "label_login_to_add_comments"
 msgstr ""
 
-#. Default: "Ocupació"
 #. Default: "Occupation"
-#: fatac.core/fatac/core/userdataschema.py:45
+#: ../../../../fatac.core/fatac/core/userdataschema.py:44
 msgid "label_occupation"
 msgstr ""
 
@@ -1465,7 +1472,7 @@ msgid "large"
 msgstr ""
 
 #. Default: "Legal"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:51
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:62
 msgid "legal"
 msgstr ""
 
@@ -1535,7 +1542,7 @@ msgstr ""
 msgid "patrocinadors2"
 msgstr ""
 
-#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:19
+#: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:20
 msgid "reduir_filtres"
 msgstr ""
 
@@ -1551,7 +1558,7 @@ msgid "results"
 msgstr ""
 
 #. Default: "Segur que vol esborrar"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:57
+#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:58
 msgid "segur_que_vol_esborrar"
 msgstr ""
 
@@ -1561,7 +1568,7 @@ msgid "seleccio_d_objectes"
 msgstr ""
 
 #. Default: "Selecciona"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:56
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:67
 msgid "selecciona"
 msgstr ""
 
@@ -1623,7 +1630,7 @@ msgstr ""
 #. Default: "Validació legal"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/legalSelectObjects.pt:28
 #: ../../../../fatac.forms/fatac/forms/browser/templates/legalValidation.pt:32
-#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:45
+#: ../../../../fatac.forms/fatac/forms/browser/templates/updateExisting.pt:46
 msgid "validacio_legal"
 msgstr ""
 
@@ -1647,7 +1654,6 @@ msgstr ""
 msgid "visualitzacio3"
 msgstr ""
 
-#: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:111
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:126
 msgid "visualitzacio4"
 msgstr ""

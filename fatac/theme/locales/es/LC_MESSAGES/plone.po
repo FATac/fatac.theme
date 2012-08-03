@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-12 09:53+0000\n"
-"PO-Revision-Date: 2012-07-10 13:13+0100\n"
-"Last-Translator: Corina Riba Santos <corina.riba@upcnet.es>\n"
+"POT-Creation-Date: 2012-08-03 08:45+0000\n"
+"PO-Revision-Date: 2012-08-02 13:58+0100\n"
+"Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,7 +128,7 @@ msgstr "Cambios guardados."
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:657
 msgid "Could not add group ${name}, perhaps a user or group with this name already exists."
-msgstr "No pudo agregarse el grupo ${name}, quizás ya existe un usuario o grupo con este nombre."
+msgstr "No pudo añadirse el grupo ${name}, quizás ya existe un usuario o grupo con este nombre."
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Dashboard"
@@ -407,7 +407,7 @@ msgid "Usuari >"
 msgstr "Usuario >"
 
 #. Default: "Forgot your password?"
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:129
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:140
 msgid "box_forgot_password_option"
 msgstr "He olvidado la contraseña"
 
@@ -429,7 +429,7 @@ msgid "desc_escritorio"
 msgstr "Desde la zona de usuario podrás crear y consultar playlists, grupos y el historial de la actividad desarrollada en la plataforma."
 
 #. Default: "Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris."
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:144
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:127
 msgid "descripcio_registre"
 msgstr "Registrarse permite interactuar con los documentos de Arts Combinatòries: añadir comentarios, crear playlists  y grupos con otros usuarios."
 
@@ -442,7 +442,7 @@ msgstr "Los grupos son colecciones lógicas de usuarios, como un departamento o 
 #. Default: "You can add or remove groups and users from this particular group here. Note that this doesn't actually delete the group or user, it is only removed from this group."
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:139
 msgid "description_group_members_of"
-msgstr "Puede agregar o eliminar grupos y usuarios para este grupo en particular aquí. Observe que con esto no elimina al grupo o usuario, solamente lo elimina de este grupo."
+msgstr "Puede añadir o eliminar grupos y usuarios para este grupo en particular aquí. Observe que con esto no elimina al grupo o usuario, solamente lo elimina de este grupo."
 
 #. Default: "Show all search results"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:371
@@ -454,6 +454,11 @@ msgstr "Mostrar todos los resultados de búsqueda"
 #: ../../../../fatac.content/fatac/content/browser/my-playlists.pt:179
 msgid "editar"
 msgstr "editar"
+
+#. Default: "E-mail"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:38
+msgid "email"
+msgstr ""
 
 #. Default: "Cookies are not enabled. You must enable cookies before you can log in."
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:63
@@ -524,20 +529,45 @@ msgstr "Búscar por grupos"
 msgid "heading_search_newmembers"
 msgstr "Buscar por nuevos miembros de grupos"
 
+#. Default: "Tick this box to indicate that you have found, read and accepted the terms of use for this site. "
+#: ../../../../fatac.core/fatac/core/userdataschema.py:73
+msgid "help_accept"
+msgstr ""
+
+#. Default: "Fill in your occupation or the work you develop."
+#: ../../../../fatac.core/fatac/core/userdataschema.py:45
+msgid "help_city"
+msgstr ""
+
+#. Default: "Enter full name, e.g. John Smith."
+#: ../../../../fatac.core/fatac/core/userdataschema.py:33
+msgid "help_full_name_creation"
+msgstr ""
+
+#. Default: "The URL for your external home page, if you have one."
+#: ../../../../fatac.core/fatac/core/userdataschema.py:66
+msgid "help_homepage"
+msgstr ""
+
 #. Default: "Check this to have your email address filled in automatically when you log in later."
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:117
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:120
 msgid "help_remember_my_email"
 msgstr "Marque esta opción para que su dirección de correo se rellene automáticamente cuando inicie la sesión más tarde."
 
 #. Default: "Check this to have your user name filled in automatically when you log in later."
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:111
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:114
 msgid "help_remember_my_name"
 msgstr "Marcando la opción 'Recordar mi nombre' hará que el navegador guarde una cookie con su nombre de usuario. Cuando ustéd regrese al site más tarde, su nombre de usuario aparecerá automáticamente."
+
+#. Default: "Accept terms of use"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:72
+msgid "label_accept"
+msgstr ""
 
 #. Default: "Add New Group"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
 msgid "label_add_new_group"
-msgstr "Agregar Nuevo Grupo"
+msgstr "Añadir nuevo grupo"
 
 #. Default: "Afegeix una nova Playlist"
 #: ../../../../fatac.content/fatac/content/browser/group-playlists.pt:82
@@ -554,12 +584,22 @@ msgstr "Darse de alta en los grupos seleccionados"
 #. Default: "Add selected groups and users to this group"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:377
 msgid "label_add_users_to_group"
-msgstr "Agregar los grupos y usuarios seleccionados a este grupo"
+msgstr "Añadir los grupos y usuarios seleccionados a este grupo"
+
+#. Default: "Back to site"
+#: ../../../../fatac.theme/fatac/theme/browser/templates/imageView.pt:23
+msgid "label_back_to_site"
+msgstr "Volver"
 
 #. Default: "Canviar contrasenya"
 #: ../../../../fatac.core/fatac/core/browser/profile_form.pt:21
 msgid "label_canviar_contrasenya"
 msgstr "Cambiar contraseña"
+
+#. Default: "City"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:58
+msgid "label_city"
+msgstr ""
 
 #. Default: "Dashboard"
 #: ../../../../fatac.content/fatac/content/browser/group-activity.pt:64
@@ -578,7 +618,7 @@ msgstr "Eliminar"
 msgid "label_edit_group"
 msgstr "Editar"
 
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:95
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:98
 msgid "label_email"
 msgstr "Correo electrónico"
 
@@ -586,6 +626,11 @@ msgstr "Correo electrónico"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:131
 msgid "label_find_group"
 msgstr "Encontrar aquí a algún grupo"
+
+#. Default: "Full Name"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:32
+msgid "label_full_name"
+msgstr ""
 
 #. Default: "Group Dashboard"
 #: ../../../../fatac.content/fatac/content/browser/usergroups_groupdetails.pt:37
@@ -607,8 +652,23 @@ msgstr "Portlets de Grupo"
 msgid "label_group_properties"
 msgstr "Propiedades del Grupo"
 
+#. Default: "Home"
+#: ../../../../fatac.theme/fatac/theme/browser/templates/imageView.pt:29
+msgid "label_home"
+msgstr "Página principal"
+
+#. Default: "Home page"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:65
+msgid "label_homepage"
+msgstr ""
+
+#. Default: "Institution"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:51
+msgid "label_institution"
+msgstr ""
+
 #. Default: "Log in"
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:124
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:135
 msgid "label_log_in"
 msgstr "Iniciar sesión"
 
@@ -623,7 +683,12 @@ msgstr "Nombre"
 msgid "label_no_group_specified"
 msgstr "No ha especificado ningún grupo."
 
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:102
+#. Default: "Occupation"
+#: ../../../../fatac.core/fatac/core/userdataschema.py:44
+msgid "label_occupation"
+msgstr ""
+
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:105
 msgid "label_password"
 msgstr "Contraseña"
 
@@ -634,12 +699,12 @@ msgid "label_quick_search"
 msgstr "Búsqueda rápida"
 
 #. Default: "Remember my email address."
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:116
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:119
 msgid "label_remember_my_email"
 msgstr "Recordar mi dirección de correo."
 
 #. Default: "Remember my name."
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:110
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:113
 msgid "label_remember_my_name"
 msgstr "Recuerda mi nombre."
 
@@ -674,7 +739,7 @@ msgstr "Seleccionar todos"
 #. Default: "Torna a la llista de les teves playlists"
 #: ../../../../fatac.content/fatac/content/playlist_templates/view.pt:20
 msgid "label_torna_a_la_llista_de_les_teves_playlists"
-msgstr "Volver a la lista de tus Playlist"
+msgstr "Volver a la lista de tus playlists"
 
 #. Default: "Up to Groups Overview"
 #: ../../../../fatac.content/fatac/content/browser/group-activity.pt:143
@@ -744,6 +809,10 @@ msgstr "Tipo"
 msgid "listingheader_user_name"
 msgstr "Nombre de usuario"
 
+#. Default: "Ciutat"
+msgid "location"
+msgstr "Ciudad"
+
 #. Default: "Since cookie authentication is disabled, cookie-based login is not available."
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:68
 msgid "login_form_disabled"
@@ -764,7 +833,7 @@ msgid "playlists"
 msgstr "playlists"
 
 #. Default: "Registra't"
-#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:149
+#: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:150
 msgid "registrat"
 msgstr "Resgístrate"
 
