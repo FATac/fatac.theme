@@ -132,11 +132,24 @@ img.spinner_pagina { margin: 220px 0 0 49%; }
 #portal-personaltools dt.actionMenuHeader a { background:url('++resource++fatac.theme.images/arrow_down_green.gif') no-repeat right 18px transparent; padding-right:20px; }
 
 #portal-personaltools li a { padding-left: 24px; }
-#portal-personaltools .My.Playlists a, #portal-personaltools .My.Playlists a:hover { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
-#portal-personaltools .My.Groups a, #portal-personaltools .My.Groups a:hover { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
-#portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
-#portal-personaltools .preferences a, #portal-personaltools .preferences a:hover { background:url('++resource++fatac.theme.images/icon-perfil.png') no-repeat left center transparent; }
-#portal-personaltools .logout a, #portal-personaltools .logout a:hover { background:url('++resource++fatac.theme.images/icon-surt.png') no-repeat left center transparent; }
+#portal-personaltools .My.Playlists a, #portal-personaltools .My.Playlists a:hover
+    { background:url('++resource++fatac.theme.images/icon-playlist.png') no-repeat left center transparent; }
+#portal-personaltools .My.Groups a, #portal-personaltools .My.Groups a:hover
+    { background:url('++resource++fatac.theme.images/icon-grups.png') no-repeat left center transparent; }
+#portal-personaltools .dashboard a, #portal-personaltools .dashboard a:hover
+    { background:url('++resource++fatac.theme.images/icon-compte.png') no-repeat left center transparent; }
+#portal-personaltools .preferences a, #portal-personaltools .preferences a:hover
+    { background:url('++resource++fatac.theme.images/icon-perfil.png') no-repeat left center transparent; }
+#portal-personaltools .logout a, #portal-personaltools .logout a:hover
+    { background:url('++resource++fatac.theme.images/icon-surt.png') no-repeat left center transparent; }
+#portal-personaltools .fatac_admin a, #portal-personaltools .fatac_admin a:hover
+    { background:url('++resource++fatac.theme.images/icon-admin.png') no-repeat left center transparent; }
+#portal-personaltools .carpeta_arrel a, #portal-personaltools .carpeta_arrel a:hover
+    { background:url('++resource++fatac.theme.images/icon-export.png') no-repeat left center transparent; }
+#portal-personaltools .plone_setup a, #portal-personaltools .plone_setup a:hover
+    { background:url('++resource++fatac.theme.images/icon-network.png') no-repeat left center transparent; }
+
+
 #anon-personalbar {height: 22px; padding-top: 4px;}
 
 /* ---------------------------------------------------------------------------- searchview.pt: filtres; */
@@ -804,7 +817,7 @@ div.field span.required:after
 
 .template-register #formfield-form-accept { margin-top:50px; }
 .template-register #text_asterisc { margin:-130px 0 0 160px; font-size:12px; font-family:arial; }
-.template-register #text_condicions_politica { margin:-97px 0 0 320px;  font-size:12px; font-family:arial; }
+.template-register #text_condicions_politica { margin:-83px 0 0 182px;  font-size:12px; font-family:arial; }
 
 /* ---------------------------------------------------------------------------- login-form */
 
