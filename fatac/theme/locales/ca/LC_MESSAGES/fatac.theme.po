@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-08-03 08:45+0000\n"
-"PO-Revision-Date: 2012-08-02 13:58+0100\n"
+"PO-Revision-Date: 2012-08-28 11:06+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -1373,7 +1373,7 @@ msgstr "Introduir URI"
 #. Default: "Accept terms of use"
 #: ../../../../fatac.core/fatac/core/userdataschema.py:72
 msgid "label_accept"
-msgstr "Accepto les condicions d'ús"
+msgstr "Accepto les condicions d'ús i la política de privacitat de Arts combinatòries"
 
 #. Default: "City"
 #: ../../../../fatac.core/fatac/core/userdataschema.py:58
