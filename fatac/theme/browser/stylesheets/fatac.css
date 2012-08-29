@@ -876,12 +876,11 @@ div.field span.required:after
 .template-manage-groups .row>[class*="span"], .template-my-activity .row>[class*="span"], .template-dashboard .row>[class*="span"], .template-my-playlists .row>[class*="span"]
     { margin-left:0px !important; }
 
-.template-manage-groups .span5 a:hover, .template-my-activity .span5 a:hover, .template-dashboard .span5 a:hover, .template-my-playlists .span5 a:hover
-    { color:red !important; }
-
+#dashboard-menu a:hover { color:#393 !important; }
 
 .template-manage-groups .documentDescription { display:none; }
-
+.template-manage-groups th { font-weight: normal; color:#999; font-size:11px; }
+.template-manage-groups form input[type="submit"] { font-size:11px !important; }
 
 /* ---------------------------------------------------------------------------- deformFormFieldset */
 
