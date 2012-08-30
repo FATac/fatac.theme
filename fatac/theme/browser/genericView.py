@@ -47,6 +47,7 @@ class genericView(BrowserView, funcionsCerca):
         elif parametres_visualitzacio:
             if 'visualitzacio' in parametres_visualitzacio:
                 self.visualitzacio = parametres_visualitzacio['visualitzacio']
+
             if self.visualitzacio is not None and self.visualitzacio == 'columnes':
                 if 'querystring' in parametres_visualitzacio:
                     if 'Year' in parametres_visualitzacio['querystring']['f'][0]:
@@ -142,6 +143,7 @@ class genericView(BrowserView, funcionsCerca):
     def dades_genericview_solr(self):
         """ Retorna les dades que s'han obtingut de la cerca al solr.
         """
+
         if self.resultat_cerca is not None:
             resultat = []
             lang = self.getLang()

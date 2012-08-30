@@ -38,19 +38,21 @@ class funcionsCerca():
                 querystring['fields'] = fields
 
         result = self.executaCerca(querystring, llista_ids, self.getLang(), rows, start)
-        # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
-        # Hem de reordenar la llista de ids del resultat segons la llista original, conservant el format
-        # de la resposta (bascicament la classe del item resultant)
 
+        # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
+        # Hem de reordenar la llista de ids del resultat segons la llista original
         if llista_ids:
             unordered = {}
             for doc in result['dades_json']['response'].get('docs', []):
-                unordered[doc['id']] = doc['class']
+                # doc = {u'What': [u"Posters for Art's Sake"], u'Who': [u'Dawn Ades'], u'When': [2007], u'id': u'n_087300spanishdesign', u'class': u'Text'}
+                # unordered[doc['id']] = doc['class']
+                unordered[doc['id']] = doc  # guardo el dic sencer, no només class
             if unordered:
                 result['dades_json']['response']['docs'] = []
                 for lid in llista_ids:
                     if lid in unordered:
-                        result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
+                        # result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
+                        result['dades_json']['response']['docs'].append(unordered[lid])
         return result
 
     def getSettings(self, key=None):
@@ -194,7 +196,8 @@ class funcionsCerca():
             querystring['start'] = 0
             querystring['f'] = ['id:' + ' OR '.join(llista_ids[start:start+rows])]
             querystring_str = self.querystringToString(querystring)
-            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
+            # url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
+            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,Who,What,When,class&conf=Explorar&lang=" + lang
             self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
             read = self.llegeixJson(url)
             if read:
@@ -211,16 +214,6 @@ class funcionsCerca():
                 llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
                 #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
                 return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
-            # numFound = len(llista_ids)
-            # #exemple: docs = [{u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}, {u'id': u'CulturalManagement_96'}]
-            # docs = []
-            # for id in llista_ids:
-            #     docs.append({'id': id})
-            # dades_json = {
-            #     'facet_counts': {u'facet_ranges': {}, u'facet_fields': {}},
-            #     'response': {u'start': 0, u'numFound': numFound, u'docs': docs}
-            # }
-            # return {'ordre_filtres': [], 'dades_json': dades_json}
 
         return None
 
