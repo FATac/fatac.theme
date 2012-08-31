@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-08-03 08:45+0000\n"
+"POT-Creation-Date: 2012-08-31 09:15+0000\n"
 "PO-Revision-Date: 2012-08-02 13:58+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
@@ -84,13 +84,11 @@ msgstr "Añadir Archivo"
 
 #. Default: "Grups"
 #: fatac.content/fatac/content/profiles/default/actions.xml
-#, fuzzy
 msgid "Afegeix Grup"
 msgstr "Grupos"
 
 #. Default: "Playlists"
 #: fatac.content/fatac/content/profiles/default/actions.xml
-#, fuzzy
 msgid "Afegeix Playlist"
 msgstr "Playlists"
 
@@ -108,7 +106,7 @@ msgstr "Cancelar"
 
 #: ../../../../fatac.content/fatac/content/browser/my-activity.pt:125
 msgid "Canvis Recents"
-msgstr "Cambios recientes"
+msgstr "Acciones recientes"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Carpeta arrel"
@@ -131,7 +129,7 @@ msgid "Could not add group ${name}, perhaps a user or group with this name alrea
 msgstr "No pudo añadirse el grupo ${name}, quizás ya existe un usuario o grupo con este nombre."
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Dashboard"
+msgid "Dashboard fatac"
 msgstr "Escritorio"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:43
@@ -225,7 +223,7 @@ msgid "Les Meves Playlists"
 msgstr "Mis playlists"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Log out"
+msgid "Tancar sessió"
 msgstr "Cerrar sesión"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
@@ -301,7 +299,7 @@ msgid "Playlists items"
 msgstr "Elementos de la Playlist"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Preferences"
+msgid "Profile"
 msgstr "Perfil"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:35
@@ -424,7 +422,6 @@ msgstr "No hay ningún grupo o usuario asociado a este grupo."
 
 #. Default: "Aquí el disclaimer/informació sobre l'escriptori dels usuaris."
 #: ../../../../fatac.content/fatac/content/browser/dashboard.pt:128
-#, fuzzy
 msgid "desc_escritorio"
 msgstr "Desde la zona de usuario podrás crear y consultar playlists, grupos y el historial de la actividad desarrollada en la plataforma."
 
@@ -477,11 +474,6 @@ msgstr "Playlist de grupo"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:150
 msgid "grups"
 msgstr "Grupos"
-
-#. Default: "Assign to groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:217
-msgid "heading_assign_to_groups"
-msgstr "Todos los grupos"
 
 #. Default: "Create a Group"
 #: ../../../../fatac.content/fatac/content/browser/usergroups_groupdetails.pt:55
@@ -564,22 +556,12 @@ msgstr "Marcando la opción 'Recordar mi nombre' hará que el navegador guarde u
 msgid "label_accept"
 msgstr ""
 
-#. Default: "Add New Group"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
-msgid "label_add_new_group"
-msgstr "Añadir nuevo grupo"
-
 #. Default: "Afegeix una nova Playlist"
 #: ../../../../fatac.content/fatac/content/browser/group-playlists.pt:82
 #: ../../../../fatac.content/fatac/content/browser/group-view.pt:46
 #: ../../../../fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
-msgstr "Añadir una nueva playlist"
-
-#. Default: "Add user to selected groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:314
-msgid "label_add_user_to_group"
-msgstr "Darse de alta en los grupos seleccionados"
+msgstr "Crear Playlist"
 
 #. Default: "Add selected groups and users to this group"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:377

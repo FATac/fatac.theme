@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
-"POT-Creation-Date: 2012-08-03 08:45+0000\n"
+"POT-Creation-Date: 2012-08-31 09:15+0000\n"
 "PO-Revision-Date: 2012-08-28 11:07+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
@@ -50,6 +50,10 @@ msgstr "A list of factories (usually just one) that create the adapter instance.
 msgid "AccionsManteniment"
 msgstr "Maintenance actions"
 
+#. Default: "Actor"
+msgid "Actor"
+msgstr "Actor"
+
 #. Default: "Actualitza les ontologies amb les especificades a la variable de configuració ONTOLOGY_NAMESPACE"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:48
 msgid "ActualitzaOntologies"
@@ -81,6 +85,12 @@ msgstr "Add a Playlist Image that represents your playlist"
 msgid "Administracio"
 msgstr "Administration"
 
+msgid "Administration"
+msgstr ""
+
+msgid "AdmissionDate"
+msgstr ""
+
 #. Default: "Afegeix Nou Fitxer"
 msgid "Afegeix Nou Fitxer"
 msgstr "Add a new file"
@@ -92,6 +102,9 @@ msgstr "Add a new group"
 #. Default: "Afegeix Nova Playlist"
 msgid "Afegeix Nova Playlist"
 msgstr "Add a new playlist"
+
+msgid "Agents"
+msgstr ""
 
 #. Default: "Alfabètic"
 msgid "AlphabeticalOrder"
@@ -105,6 +118,14 @@ msgstr "Previous"
 msgid "Arabe"
 msgstr "Arab"
 
+#. Default: "Arquitecte"
+msgid "Architect"
+msgstr "Architect"
+
+#. Default: "Arxiver"
+msgid "Archivist"
+msgstr "Archivist"
+
 #. Default: "Obra d'art"
 msgid "ArtWork"
 msgstr "ArtWork"
@@ -117,6 +138,9 @@ msgstr "Artist"
 msgid "Arts folder"
 msgstr "Arts folder"
 
+msgid "AspectRate"
+msgstr ""
+
 #. Default: "Assignar drets legals"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/inici.pt:32
 msgid "AssignarDretsLegals"
@@ -125,6 +149,9 @@ msgstr "Assign legal rights"
 #. Default: "Àudio"
 msgid "Audio"
 msgstr "Audio"
+
+msgid "AudioCodec"
+msgstr ""
 
 #. Default: "Autor"
 msgid "Author"
@@ -138,6 +165,12 @@ msgstr "Authors"
 msgid "Biography"
 msgstr "Biography"
 
+msgid "Birth"
+msgstr ""
+
+msgid "BitRate"
+msgstr ""
+
 #. Default: "Buscar/Editar objectes"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/inici.pt:31
 msgid "BuscarEditarObjectes"
@@ -149,7 +182,7 @@ msgstr "Cache time"
 
 #. Default: "Model de càmara"
 msgid "CameraModel"
-msgstr "Camera Model"
+msgstr "Camera model"
 
 #: ../../../../fatac.theme/fatac/theme/browser/controlpanel.py:44
 msgid "Cancel"
@@ -160,9 +193,23 @@ msgstr "Cancel"
 msgid "Carregant..."
 msgstr "Loading..."
 
+#. Default: "Dibuixant"
+msgid "Cartoonist"
+msgstr "Cartoonist"
+
+msgid "CaseFile"
+msgstr ""
+
 #. Default: "Català"
 msgid "Catala"
 msgstr "Catalan"
+
+#. Default: "Catalogador"
+msgid "Cataloguer"
+msgstr "Cataloguer"
+
+msgid "Category"
+msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercaview.pt:24
 msgid "Cerca"
@@ -179,7 +226,7 @@ msgstr "Search the library"
 
 #. Default: "Catedràtic"
 msgid "Chair"
-msgstr "Chair"
+msgstr "Professor"
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:241
 msgid "Changes made."
@@ -192,6 +239,13 @@ msgstr "Changes saved"
 #: ../../../../fatac.content/fatac/content/dashboard.py:464
 msgid "Changes saved."
 msgstr "Changes saved."
+
+msgid "Channels"
+msgstr ""
+
+#. Default: "Coreògraf"
+msgid "Choreographer"
+msgstr "Choreographer"
 
 #. Default: "Cronològic"
 msgid "ChronologicalOrder"
@@ -218,9 +272,20 @@ msgstr "Collections"
 msgid "Color"
 msgstr "Color"
 
+msgid "ColorModel"
+msgstr ""
+
 #: zope/component/zcml.py:52
 msgid "Component to use"
 msgstr "Component to use"
+
+#. Default: "Compositor"
+msgid "Composer"
+msgstr "Composer"
+
+#. Default: "Consultor"
+msgid "Consultant"
+msgstr "Consultant"
 
 #: ../../../../fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:69
 msgid "Convertir"
@@ -234,33 +299,55 @@ msgstr "Could not add group ${name}, perhaps a user or group with this name alre
 msgid "Country"
 msgstr "Countries"
 
+msgid "Cover"
+msgstr ""
+
 #. Default: "Creador"
 msgid "Creator"
 msgstr "Creator"
 
 #. Default: "Crèdits"
 msgid "CreditLine"
-msgstr "Credit Line"
+msgstr "Credits"
+
+#. Default: "Crític"
+msgid "Critic"
+msgstr "Critic"
 
 #. Default: "Gestió cultural"
 msgid "CulturalManagement"
 msgstr "Cultural Management"
 
-#. Default: "Comissari"
+#. Default: "Curador"
 msgid "Curator"
 msgstr "Curator"
+
+#. Default: "Ballarí"
+msgid "Dancer"
+msgstr "Dancer"
 
 #. Default: "Data"
 msgid "Date"
 msgstr "Date"
+
+msgid "Death"
+msgstr ""
 
 #. Default: "Descripció"
 msgid "Description"
 msgstr "Description"
 
 #. Default: "Dissenyador"
+msgid "Designer"
+msgstr "Designer"
+
+#. Default: "Dissenyador"
 msgid "Designers"
 msgstr "Designers"
+
+#. Default: "Programador"
+msgid "Developer"
+msgstr "Developer"
 
 #. Default: "Descarrega"
 #: fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:114
@@ -290,6 +377,9 @@ msgstr "Edit Playlists Portlet"
 #: ../../../../fatac.theme/fatac/theme/browser/controlpanel.py:46
 msgid "Edit cancelled"
 msgstr "Edit cancelled"
+
+msgid "Editor"
+msgstr ""
 
 #. Default: "Editors"
 msgid "Editors"
@@ -330,6 +420,9 @@ msgstr "Event"
 msgid "Executa"
 msgstr "Play"
 
+msgid "Expedient"
+msgstr ""
+
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercador.pt:9
 #: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
 msgid "Explorar"
@@ -345,6 +438,9 @@ msgstr "Export to OAI"
 msgid "ExportarOAIExplicacio"
 msgstr ""
 
+msgid "Extent"
+msgstr ""
+
 #: zope/component/zcml.py:67
 msgid "Factory"
 msgstr "Factory"
@@ -357,13 +453,16 @@ msgstr "Fatac"
 msgid "Fatac settings"
 msgstr "Fatac settings"
 
-#. Default: "Realitzador"
+#. Default: "Director de cinema"
 msgid "Film-maker"
 msgstr "Film-maker"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:18
 msgid "Filtre de búsqueda"
 msgstr "Filter your result"
+
+msgid "FirstName"
+msgstr ""
 
 #. Default: "Fitxa d'expedient"
 #: ../../../browser/opcions.pt:2
@@ -441,11 +540,26 @@ msgstr "Handler"
 msgid "HasPhisicalVersion"
 msgstr "Phisical Version"
 
+#. Default: "Historiador"
+msgid "Historian"
+msgstr "Historian"
+
+#. Default: "Fons"
+msgid "Holding"
+msgstr "Holding"
+
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:15
 #: ../../../../fatac.content/fatac/content/portletMyGroups.py:15
 #: ../../../../fatac.content/fatac/content/portletPlaylists.py:15
 msgid "How many items to list."
 msgstr "How many items to list."
+
+msgid "ISBN"
+msgstr ""
+
+#. Default: "Il·lustrador"
+msgid "Illustrator"
+msgstr "Illustrator"
 
 #. Default: "Imatge"
 msgid "Image"
@@ -533,6 +647,10 @@ msgstr "Enter class name"
 msgid "IntroduirTemps"
 msgstr "Enter the time in minutes"
 
+#. Default: "Periodista"
+msgid "Journalist"
+msgstr "Journalist"
+
 #. Default: "Tipus"
 msgid "Kind"
 msgstr "Kind"
@@ -541,6 +659,13 @@ msgstr "Kind"
 msgid "Language"
 msgstr "Language"
 
+msgid "LastName"
+msgstr ""
+
+#. Default: "Advocat"
+msgid "Lawyer"
+msgstr "Lawyer"
+
 #. Default: "Conferenciant"
 msgid "Lecturer"
 msgstr "Lecturer"
@@ -548,6 +673,10 @@ msgstr "Lecturer"
 #: ../../../../fatac.content/fatac/content/portlets/portletPlaylists.pt:6
 msgid "Les Meves Playlists"
 msgstr "My Playlist"
+
+#. Default: "Bibliotecari"
+msgid "Librarian"
+msgstr "Librarian"
 
 #. Default: "Llicències"
 msgid "License"
@@ -576,6 +705,13 @@ msgstr "Location"
 msgid "Manteniment"
 msgstr "Maintenance"
 
+#. Default: "Manuscrit"
+msgid "Manuscript"
+msgstr "Manuscript"
+
+msgid "Measurement"
+msgstr ""
+
 #. Default: "Mesures"
 msgid "Measures"
 msgstr "Measures"
@@ -588,6 +724,17 @@ msgstr "Media"
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
 msgstr "Media Server URI"
+
+#. Default: "Membre"
+msgid "Member"
+msgstr "Member"
+
+msgid "Mides"
+msgstr ""
+
+#. Default: "Músic"
+msgid "Musician"
+msgstr "Musician"
 
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:28
 msgid "My Files items"
@@ -630,6 +777,15 @@ msgstr "Number of pages"
 msgid "Number of items to display"
 msgstr "Number of items to display"
 
+msgid "NumberOfCopies"
+msgstr ""
+
+msgid "NumberT"
+msgstr ""
+
+msgid "ObjectType"
+msgstr ""
+
 #: ../../../../fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:60
 msgid "Objectes"
 msgstr "Objects"
@@ -657,17 +813,29 @@ msgstr "Order: "
 msgid "Organisation"
 msgstr "Organizations"
 
+msgid "Orientation"
+msgstr ""
+
 #: ../../../../fatac.content/fatac/content/playlist.py:51
 msgid "Original Group"
 msgstr "Original Group"
 
 #. Default: "Origen"
 msgid "OriginalSource"
-msgstr "Origin"
+msgstr "Original format"
+
+msgid "PagesNumber"
+msgstr "Number of pages"
+
+msgid "PartOf"
+msgstr ""
 
 #. Default: "Participant"
 msgid "Participant"
 msgstr "Participant"
+
+msgid "Participants"
+msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:25
 msgid "Per exemple: http://example.com/rest/"
@@ -718,6 +886,10 @@ msgstr "Playlist Image"
 msgid "Playlists items"
 msgstr "Playlists items"
 
+#. Default: "Poeta"
+msgid "Poet"
+msgstr "Poet"
+
 #. Default: "Previsualització <input type=\"button\" value=\"Recarregar\" onclick=\"mediaUrlPreview(document.mediaForm.mediaurl.value)\" />"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:43
 msgid "Previsualitzacio"
@@ -726,6 +898,10 @@ msgstr "Preview"
 #. Default: "Productor"
 msgid "Producer"
 msgstr "Producer"
+
+#. Default: "Director de projectes"
+msgid "Project_Manager"
+msgstr "Project Manager"
 
 #. Default: "Protecció de patrimonis"
 msgid "ProtectionPromotion"
@@ -750,6 +926,9 @@ msgstr "Publication"
 #. Default: "Publicacions"
 msgid "Publications"
 msgstr "Publications"
+
+msgid "Publisher"
+msgstr ""
 
 #. Default: "Pujar media"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:36
@@ -781,6 +960,10 @@ msgstr "REST server public URI"
 msgid "RecarregarOntologies"
 msgstr "Reload ontologies"
 
+#. Default: "Número de registre"
+msgid "RegisterNumber"
+msgstr "Registration number"
+
 #. Default: "Reiniciar rols"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:83
 msgid "ReiniciarRols"
@@ -791,9 +974,18 @@ msgstr "Restart roles"
 msgid "ReiniciarRolsExplicacio"
 msgstr "Action required for user roles changes take effect"
 
+msgid "RelatedActivites"
+msgstr "Related activities"
+
 #. Default: "Activitats relacionades"
 msgid "RelatedActivities"
 msgstr "Related activities"
+
+msgid "RelatedCaseFiles"
+msgstr "Related case-files"
+
+msgid "RelatedDocuments"
+msgstr "Related documents"
 
 #. Default: "Publicacions"
 msgid "RelatedPublications"
@@ -825,9 +1017,16 @@ msgstr "Resolution"
 msgid "RestartRoles"
 msgstr "Restart roles"
 
+#. Default: "Restaurador"
+msgid "Restorer"
+msgstr "Restorer"
+
 #. Default: "Rols"
 msgid "Role"
 msgstr "Roles"
+
+msgid "SamplingRate"
+msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/controlpanel.py:30
 msgid "Save"
@@ -856,9 +1055,16 @@ msgstr "Select class"
 msgid "SeleccionaTasca"
 msgstr "Select a task to be performed"
 
+msgid "SheetNumber"
+msgstr ""
+
+#. Default: "Cantant"
+msgid "Singer"
+msgstr "Singer"
+
 #. Default: "Situació"
 msgid "Situation"
-msgstr "Situation"
+msgstr "Currently situation"
 
 #. Default: "Mida"
 msgid "Size"
@@ -879,6 +1085,10 @@ msgstr ""
 #: zope/component/zcml.py:97
 msgid "Specifications to be adapted"
 msgstr ""
+
+#. Default: "Patrocinador"
+msgid "Sponsor"
+msgstr "Sponsor"
 
 #: zope/component/zcml.py:224
 msgid "Subscriber factory"
@@ -907,6 +1117,9 @@ msgstr "Replace text"
 #. Default: "Substitueix de cop tots els textos d'un camp especificat. Acció útil per a canviar totes les URL de cop quan es canvia el domini del servidor. Cal indicar: el nom de la propietat que es canviarà (forma \"prefix:NomPropietat\"), el text a substituir, i el nou text."
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:76
 msgid "SubstituirTextosExplicacio"
+msgstr ""
+
+msgid "Subtitle"
 msgstr ""
 
 #: ../../../../fatac.content/fatac/content/dummy.py:18
@@ -1037,6 +1250,10 @@ msgstr "All dossiers"
 msgid "Translation"
 msgstr "Languages"
 
+#. Default: "Traductor"
+msgid "Translator"
+msgstr "Translator"
+
 #. Default: "Traductors"
 msgid "Translators"
 msgstr "Translators"
@@ -1054,6 +1271,9 @@ msgstr "Documentary type"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:31
 msgid "URL"
 msgstr "URL"
+
+msgid "Vegap"
+msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:89
 msgid "Veure imatge ampliada"
@@ -1077,6 +1297,33 @@ msgstr "View attributes that are also allowed if user has permission."
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:16
 msgid "Visualització de búsqueda"
 msgstr "Search view"
+
+#. Default: "Volum"
+msgid "Volum"
+msgstr "Volume"
+
+msgid "Watermark"
+msgstr ""
+
+msgid "What"
+msgstr ""
+
+msgid "When"
+msgstr ""
+
+msgid "Who"
+msgstr ""
+
+msgid "WidthImage"
+msgstr ""
+
+#. Default: "Treballador"
+msgid "Worker"
+msgstr "Worker"
+
+#. Default: "Tutor taller"
+msgid "Workshop_tutor"
+msgstr "Workshop tutor"
 
 #. Default: "Escriptor"
 msgid "Writer"
@@ -1111,6 +1358,9 @@ msgstr "With the support of:"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:21
 msgid "ampliar_filtres"
 msgstr "Expand filters"
+
+msgid "body"
+msgstr ""
 
 #. Default: "Heu oblidat la contrasenya?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
@@ -1166,10 +1416,16 @@ msgstr "Whit the collaboration of:"
 msgid "collaboracio1"
 msgstr "Ministry of Education"
 
+msgid "content"
+msgstr ""
+
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:93
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:94
 msgid "de"
 msgstr "of"
+
+msgid "default"
+msgstr ""
 
 #. Default: "Esborrar subtítols"
 #: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:136
@@ -1185,6 +1441,9 @@ msgstr "Through this form you can change the information in your user profile."
 #: ../../../../fatac.core/fatac/core/browser/change_password_form.pt:25
 msgid "desc_register"
 msgstr "Through this form you can change the information in your user profile."
+
+msgid "description"
+msgstr ""
 
 #. Default: "List of My Files from user."
 #: ../../../../fatac.content/fatac/content/profiles/default/portlets.xml
@@ -1304,10 +1563,16 @@ msgstr "Plan Avanza"
 msgid "fitxa"
 msgstr "Tab"
 
+msgid "footer"
+msgstr ""
+
 #. Default: "Gestió de medias"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:29
 msgid "gestio_de_medias"
 msgstr "Medias Management"
+
+msgid "header"
+msgstr ""
 
 #. Default: "Usuari nou?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:309
@@ -1465,6 +1730,9 @@ msgstr "Remember my email."
 msgid "label_remember_my_name"
 msgstr "Remember my name."
 
+msgid "language"
+msgstr ""
+
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:106
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:110
 msgid "large"
@@ -1596,6 +1864,12 @@ msgstr "Your form has not been saved. All changes you have made will be lost."
 msgid "text_form_resubmit_message"
 msgstr "You have already clicked the submit button. Do you really want to submit this form again?"
 
+msgid "thumbnail"
+msgstr ""
+
+msgid "title"
+msgstr ""
+
 #. Default: "Portlet MyFiles"
 #: ../../../../fatac.content/fatac/content/profiles/default/portlets.xml
 msgid "title_myfiles_portlet"
@@ -1657,3 +1931,17 @@ msgstr "Thumbnail"
 msgid "visualitzacio4"
 msgstr "Fullscreen"
 
+#. Default: "Add user to selected groups"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:314
+msgid "label_add_user_to_group"
+msgstr "Subscribe to the Selected Groups"
+
+#. Default: "Assign to groups"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:217
+msgid "heading_assign_to_groups"
+msgstr "All Groups"
+
+#. Default: "Add New Group"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
+msgid "label_add_new_group"
+msgstr "Add group"

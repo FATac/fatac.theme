@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-08-03 08:45+0000\n"
+"POT-Creation-Date: 2012-08-31 09:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,7 +129,7 @@ msgid "Could not add group ${name}, perhaps a user or group with this name alrea
 msgstr ""
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Dashboard"
+msgid "Dashboard fatac"
 msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:43
@@ -223,7 +223,7 @@ msgid "Les Meves Playlists"
 msgstr ""
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Log out"
+msgid "Tancar sessió"
 msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
@@ -475,11 +475,6 @@ msgstr ""
 msgid "grups"
 msgstr ""
 
-#. Default: "Assign to groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:217
-msgid "heading_assign_to_groups"
-msgstr ""
-
 #. Default: "Create a Group"
 #: ../../../../fatac.content/fatac/content/browser/usergroups_groupdetails.pt:55
 msgid "heading_create_group"
@@ -561,21 +556,11 @@ msgstr ""
 msgid "label_accept"
 msgstr ""
 
-#. Default: "Add New Group"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
-msgid "label_add_new_group"
-msgstr ""
-
 #. Default: "Afegeix una nova Playlist"
 #: ../../../../fatac.content/fatac/content/browser/group-playlists.pt:82
 #: ../../../../fatac.content/fatac/content/browser/group-view.pt:46
 #: ../../../../fatac.content/fatac/content/browser/my-activity.pt:39
 msgid "label_add_new_playlist"
-msgstr ""
-
-#. Default: "Add user to selected groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:314
-msgid "label_add_user_to_group"
 msgstr ""
 
 #. Default: "Add selected groups and users to this group"
