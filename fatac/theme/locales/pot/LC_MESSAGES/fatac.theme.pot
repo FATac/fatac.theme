@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-08-31 09:15+0000\n"
+"POT-Creation-Date: 2012-09-03 10:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,6 +139,7 @@ msgstr ""
 msgid "Arts folder"
 msgstr ""
 
+#. Default: "Aspect Rate"
 msgid "AspectRate"
 msgstr ""
 
@@ -151,6 +152,11 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
+#. Default: "Audio Channels"
+msgid "AudioChannels"
+msgstr ""
+
+#. Default: "Audio Codec"
 msgid "AudioCodec"
 msgstr ""
 
@@ -169,6 +175,7 @@ msgstr ""
 msgid "Birth"
 msgstr ""
 
+#. Default: " Bit Rate"
 msgid "BitRate"
 msgstr ""
 
@@ -181,7 +188,7 @@ msgstr ""
 msgid "Cache time"
 msgstr ""
 
-#. Default: "Model de càmara"
+#. Default: "Model de càmera"
 msgid "CameraModel"
 msgstr ""
 
@@ -273,6 +280,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
+#. Default: "Color"
 msgid "ColorModel"
 msgstr ""
 
@@ -320,8 +328,11 @@ msgid "CulturalManagement"
 msgstr ""
 
 #. Default: "Curador"
-#. Default: "Comissari"
 msgid "Curator"
+msgstr ""
+
+#. Default: "Situació"
+msgid "CurrentlySituation"
 msgstr ""
 
 #. Default: "Ballarí"
@@ -391,6 +402,10 @@ msgstr ""
 msgid "Els meus Grups"
 msgstr ""
 
+#. Default: "Data fi"
+msgid "EndDate"
+msgstr ""
+
 #. Default: "Error"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:61
 msgid "Error"
@@ -456,7 +471,6 @@ msgid "Fatac settings"
 msgstr ""
 
 #. Default: "Director de cinema"
-#. Default: "Realitzador"
 msgid "Film-maker"
 msgstr ""
 
@@ -823,10 +837,11 @@ msgstr ""
 msgid "Original Group"
 msgstr ""
 
-#. Default: "Origen"
+#. Default: "Format original"
 msgid "OriginalSource"
 msgstr ""
 
+#. Default: "Nombre de pàgines"
 msgid "PagesNumber"
 msgstr ""
 
@@ -850,6 +865,10 @@ msgstr ""
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:30
 msgid "Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"
+msgstr ""
+
+#. Default: "Performer"
+msgid "Performer"
 msgstr ""
 
 #: zope/component/zcml.py:61
@@ -977,6 +996,7 @@ msgstr ""
 msgid "ReiniciarRolsExplicacio"
 msgstr ""
 
+#. Default: "Activitats relacionades"
 msgid "RelatedActivites"
 msgstr ""
 
@@ -984,9 +1004,11 @@ msgstr ""
 msgid "RelatedActivities"
 msgstr ""
 
+#. Default: "Expedients relacionats"
 msgid "RelatedCaseFiles"
 msgstr ""
 
+#. Default: "Documents relacionats"
 msgid "RelatedDocuments"
 msgstr ""
 
@@ -1011,7 +1033,6 @@ msgstr ""
 msgid "ResetFaltaConfirmar"
 msgstr ""
 
-#. Default: "Resolució"
 msgid "Resolution"
 msgstr ""
 
@@ -1028,6 +1049,7 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
+#. Default: "Sampling Rate"
 msgid "SamplingRate"
 msgstr ""
 
@@ -1093,6 +1115,10 @@ msgstr ""
 msgid "Sponsor"
 msgstr ""
 
+#. Default: "Data inici"
+msgid "StartDate"
+msgstr ""
+
 #: zope/component/zcml.py:224
 msgid "Subscriber factory"
 msgstr ""
@@ -1122,6 +1148,7 @@ msgstr ""
 msgid "SubstituirTextosExplicacio"
 msgstr ""
 
+#. Default: "Subtítol"
 msgid "Subtitle"
 msgstr ""
 
@@ -1266,7 +1293,7 @@ msgstr ""
 msgid "Trusted"
 msgstr ""
 
-#. Default: "Tipus de documental"
+#. Default: "Tipologia documental"
 msgid "TypeDocumentary"
 msgstr ""
 
@@ -1284,6 +1311,10 @@ msgstr ""
 
 #. Default: "Video"
 msgid "Video"
+msgstr ""
+
+#. Default: "Video Codec"
+msgid "VideoCodec"
 msgstr ""
 
 #. Default: "Veure atributs que també estan permesos si l'usuari té permís."
@@ -1422,6 +1453,10 @@ msgstr ""
 msgid "content"
 msgstr ""
 
+#. Default: "Data"
+msgid "created"
+msgstr ""
+
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:93
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:94
 msgid "de"
@@ -1548,6 +1583,10 @@ msgstr ""
 msgid "explora_bbdd"
 msgstr ""
 
+#. Default: "Durada"
+msgid "extent"
+msgstr ""
+
 #. Default: "Finançament"
 #: ../../../browser/templates/footer.pt:22
 msgid "financament"
@@ -1569,12 +1608,33 @@ msgstr ""
 msgid "footer"
 msgstr ""
 
+#. Default: "Format"
+msgid "format"
+msgstr ""
+
 #. Default: "Gestió de medias"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:29
 msgid "gestio_de_medias"
 msgstr ""
 
+#. Default: "Idioma"
+msgid "hasLanguage"
+msgstr ""
+
+#. Default: "Té versió física"
+msgid "hasPhysicallVersion"
+msgstr ""
+
+#. Default: "Traducció"
+msgid "hasTranslation"
+msgstr ""
+
 msgid "header"
+msgstr ""
+
+#. Default: "Assign to groups"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:218
+msgid "heading_assign_to_groups"
 msgstr ""
 
 #. Default: "Usuari nou?"
@@ -1638,9 +1698,31 @@ msgstr ""
 msgid "introduirURI"
 msgstr ""
 
+#. Default: "Es part de"
+msgid "isPartOf"
+msgstr ""
+
+#. Default: "Tipologia documental"
+msgid "isTypeDocumentary"
+msgstr ""
+
+#. Default: "Relacionat amb"
+msgid "isrelated"
+msgstr ""
+
 #. Default: "Accept terms of use"
 #: ../../../../fatac.core/fatac/core/userdataschema.py:72
 msgid "label_accept"
+msgstr ""
+
+#. Default: "Add New Group"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
+msgid "label_add_new_group"
+msgstr ""
+
+#. Default: "Add user to selected groups"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:315
+msgid "label_add_user_to_group"
 msgstr ""
 
 #. Default: "City"
@@ -1733,6 +1815,7 @@ msgstr ""
 msgid "label_remember_my_name"
 msgstr ""
 
+#. Default: "Idioma"
 msgid "language"
 msgstr ""
 
@@ -1768,6 +1851,14 @@ msgstr ""
 #. Default: "Nou objecte"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/uploadNew.pt:33
 msgid "nou_objecte"
+msgstr ""
+
+#. Default: "no"
+msgid "off"
+msgstr ""
+
+#. Default: "sí"
+msgid "on"
 msgstr ""
 
 #. Default: "Ordre:"
@@ -1888,6 +1979,10 @@ msgstr ""
 msgid "title_playlist_portlet"
 msgstr ""
 
+#. Default: "Lloc"
+msgid "tookPlaceAt"
+msgstr ""
+
 #. Default: "Últims consultats"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/homeview.pt:116
 msgid "ultims_consultats"
@@ -1934,17 +2029,3 @@ msgstr ""
 msgid "visualitzacio4"
 msgstr ""
 
-#. Default: "Add user to selected groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:314
-msgid "label_add_user_to_group"
-msgstr ""
-
-#. Default: "Assign to groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:217
-msgid "heading_assign_to_groups"
-msgstr ""
-
-#. Default: "Add New Group"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:69
-msgid "label_add_new_group"
-msgstr ""

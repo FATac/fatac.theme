@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-08-31 09:15+0000\n"
+"POT-Creation-Date: 2012-09-03 10:49+0000\n"
 "PO-Revision-Date: 2012-08-02 13:58+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
@@ -25,7 +25,7 @@ msgstr "> Actividad del Grupo"
 msgid "> Activity"
 msgstr "> actividad"
 
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:80
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:81
 msgid "> Grups"
 msgstr "> Grupos"
 
@@ -186,7 +186,7 @@ msgid "Group(s) deleted."
 msgstr "Grupo(s) borrado(s)."
 
 #: ../../../../fatac.content/fatac/content/browser/dashboard.pt:89
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:112
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:113
 #: ../../../../fatac.content/fatac/content/browser/my-activity.pt:82
 msgid "Grups"
 msgstr "Grupos"
@@ -221,10 +221,6 @@ msgstr "Indexar datos recientes: es necesario indicar el tiempo"
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Les Meves Playlists"
 msgstr "Mis playlists"
-
-#: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Tancar sessió"
-msgstr "Cerrar sesión"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
@@ -365,6 +361,10 @@ msgstr "Sustituir: es necesario indicar los parámetros "
 msgid "Tag List"
 msgstr ""
 
+#: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
+msgid "Tancar sessió"
+msgstr "Cerrar sesión"
+
 #: ../../../../fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
 msgstr "El nombre de grupo introducido no es válido."
@@ -399,7 +399,7 @@ msgid "Undo"
 msgstr "Deshacer"
 
 #: ../../../../fatac.content/fatac/content/browser/dashboard.pt:56
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:78
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:79
 #: ../../../../fatac.content/fatac/content/browser/my-activity.pt:48
 msgid "Usuari >"
 msgstr "Usuario >"
@@ -443,7 +443,7 @@ msgstr "Puede añadir o eliminar grupos y usuarios para este grupo en particular
 
 #. Default: "Show all search results"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:371
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:300
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:301
 msgid "description_pas_show_all_search_results"
 msgstr "Mostrar todos los resultados de búsqueda"
 
@@ -471,7 +471,7 @@ msgstr "Escritorio"
 msgid "group playlists"
 msgstr "Playlist de grupo"
 
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:150
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:151
 msgid "grups"
 msgstr "Grupos"
 
@@ -502,7 +502,7 @@ msgid "heading_groupmembers_current"
 msgstr "Miembros del Grupo actuales"
 
 #. Default: "Current group memberships"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:155
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
 msgid "heading_memberships_current"
 msgstr "Mis grupos"
 
@@ -512,7 +512,7 @@ msgid "heading_personal_tools"
 msgstr "Herramientas Personales"
 
 #. Default: "Search for groups"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:211
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:212
 msgid "heading_search_groups"
 msgstr "Búscar por grupos"
 
@@ -559,7 +559,7 @@ msgstr ""
 #. Default: "Afegeix una nova Playlist"
 #: ../../../../fatac.content/fatac/content/browser/group-playlists.pt:82
 #: ../../../../fatac.content/fatac/content/browser/group-view.pt:46
-#: ../../../../fatac.content/fatac/content/browser/my-activity.pt:39
+#: ../../../../fatac.content/fatac/content/browser/my-playlists.pt:78
 msgid "label_add_new_playlist"
 msgstr "Crear Playlist"
 
@@ -596,7 +596,7 @@ msgid "label_delete"
 msgstr "Eliminar"
 
 #. Default: "Edit"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:184
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:185
 msgid "label_edit_group"
 msgstr "Editar"
 
@@ -676,7 +676,7 @@ msgstr "Contraseña"
 
 #. Default: "Quick search"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:250
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:226
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:227
 msgid "label_quick_search"
 msgstr "Búsqueda rápida"
 
@@ -703,7 +703,7 @@ msgstr "Guardar"
 
 #. Default: "Search"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:259
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:234
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:235
 msgid "label_search"
 msgstr "Buscar"
 
@@ -714,7 +714,7 @@ msgstr "Mostrar todo"
 
 #. Default: "Select all items"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:168
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:245
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:246
 msgid "label_select_all_items"
 msgstr "Seleccionar todos"
 
@@ -747,17 +747,17 @@ msgid "listingheader_email_address"
 msgstr "Dirección de Correo"
 
 #. Default: "Edita"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:162
 msgid "listingheader_group_edit"
 msgstr "Editar"
 
 #. Default: "Group Name"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:160
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
 msgid "listingheader_group_name"
 msgstr "Nombre de grupo"
 
 #. Default: "Baixa del grup"
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:162
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:163
 msgid "listingheader_group_remov"
 msgstr "Baja del grupo"
 
@@ -866,7 +866,7 @@ msgid "text_nomatches"
 msgstr "No hay coincidencias"
 
 #. Default: "This user does not belong to any group."
-#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:206
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:207
 msgid "text_user_not_in_any_group"
 msgstr "Este usuario no pertenece a ningún grupo."
 
