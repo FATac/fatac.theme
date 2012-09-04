@@ -418,6 +418,19 @@ div.genericview_fitxa_final .divs_esq .barra { height:200px; }
 
 .iframe_dades { width:560px; height:500px; }
 
+div.genericview_fitxa_final #footer_objecte #scrollable_RelatedDocuments {
+    border-top:1px dotted #888888; padding-top:10px; margin-top:40px;
+}
+div.genericview_fitxa_final #footer_objecte #scrollable_RelatedDocuments .requadre_objects {
+    width:100%;
+}
+div.genericview_fitxa_final #footer_objecte #scrollable_RelatedDocuments span.georgia13c999999:first-child {
+    background:url('++resource++fatac.theme.images/ico_arrow_down.png') no-repeat left top transparent; padding-left:20px;
+}
+div.genericview_fitxa_final #footer_objecte #scrollable_RelatedDocuments .requadre_objects .genericview_fitxa_home {
+    margin-left:20px
+}
+
 /* ---------------------------------------------------------------------------- genericview_imatge.pt */
 .genericview_imatge { float:left; background-color:#ececec; text-align:center; margin:5px; }
 .genericview_imatge.zoom_1 { width:70px; height:70px; }
