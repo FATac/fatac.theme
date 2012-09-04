@@ -15,23 +15,23 @@ crida demo2: tb es pot cridar amb parametres_visualitzacio
             <div class="dades">
                 <a href="#" tal:attributes="href string:${context/portal_url}/genericView?idobjecte=${dades_objecte/id}">
 
-                    <span class="what georgia12c333333italic" 
+                    <span class="what georgia12c333333italic"
                           tal:define="value dades_objecte/titol"
                           tal:content="python:plone_view.cropText(value,55)"
                           tal:attributes="alt value; title value;"
                           />
 
 
-                    <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />                    
-                    <div class="visualClear"><!--  --></div>                    
-                
+                    <img class="miniatura_classe" tal:attributes="src dades_objecte/thumbnail_classe" />
+                    <div class="visualClear"><!--  --></div>
+
                 </a>
 
             </div>
                     <tal:co tal:define="isanon context/@@plone_portal_state/anonymous"
                             tal:condition="not: isanon">
                         <img class="addPlaylist hidden" tal:attributes="rel dades_objecte/id" src="++resource++fatac.content/images/add_playlist.png" />
-                    </tal:co>              
+                    </tal:co>
         </tal:cond>
     </div>
 </tal:rep>
