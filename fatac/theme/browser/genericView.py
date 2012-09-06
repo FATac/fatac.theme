@@ -206,35 +206,37 @@ class genericView(BrowserView, funcionsCerca):
             for objecte in dades_json:
                 id_objecte = self.idobjectes[i]
                 i += 1
-                titol_objecte = self.getTitolObjecte(objecte['sections'])
-                titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
 
-                dades_seccions = []
-                te_subcerca = 'sense_subcerca'
-                hi_ha_seccio_content = False
-                for seccio in objecte['sections']:
-                    if seccio['name'] == 'content':
-                        hi_ha_seccio_content = True
-                    dades = []
-                    if 'data' in seccio:
-                        for dada in seccio['data']:
-                            dada_llegida = self.llegirDada(dada)  # {'nom': nom, 'tipus': tipus, 'valor': valor}
-                            if dada_llegida['valor'] and dada_llegida['valor'] != ' ':
-                                dades.append(dada_llegida)
-                            if dada['type'] == 'search':
-                                te_subcerca = 'amb_subcerca'
-                        dades_seccions.append({'nom': seccio['name'], 'dades': dades})
+                if 'sections' in objecte:
+                    titol_objecte = self.getTitolObjecte(objecte['sections'])
+                    titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
 
-                dades_objecte = {'id': id_objecte,
-                                 'titol': titol_objecte,
-                                 'classe': objecte['className'],
-                                 'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
-                                 'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
-                                 'dades_seccions': dades_seccions,
-                                 'te_subcerca': te_subcerca,
-                                 'titol_zona_resultats': titol_zona_resultats,
-                                 'hi_ha_seccio_content': hi_ha_seccio_content}
-                resultat.append(dades_objecte)
+                    dades_seccions = []
+                    te_subcerca = 'sense_subcerca'
+                    hi_ha_seccio_content = False
+                    for seccio in objecte['sections']:
+                        if seccio['name'] == 'content':
+                            hi_ha_seccio_content = True
+                        dades = []
+                        if 'data' in seccio:
+                            for dada in seccio['data']:
+                                dada_llegida = self.llegirDada(dada)  # {'nom': nom, 'tipus': tipus, 'valor': valor}
+                                if dada_llegida['valor'] and dada_llegida['valor'] != ' ':
+                                    dades.append(dada_llegida)
+                                if dada['type'] == 'search':
+                                    te_subcerca = 'amb_subcerca'
+                            dades_seccions.append({'nom': seccio['name'], 'dades': dades})
+
+                    dades_objecte = {'id': id_objecte,
+                                     'titol': titol_objecte,
+                                     'classe': objecte['className'],
+                                     'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
+                                     'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
+                                     'dades_seccions': dades_seccions,
+                                     'te_subcerca': te_subcerca,
+                                     'titol_zona_resultats': titol_zona_resultats,
+                                     'hi_ha_seccio_content': hi_ha_seccio_content}
+                    resultat.append(dades_objecte)
 
         return resultat
 
