@@ -834,6 +834,9 @@ function init_explora() {
         if ( $(this).attr('rel') != 'ObjectType:Collection'){
             visualitzacio = 'columnes';
         }
+        if ( $(this).attr('data-conf') == 'Events'){
+            querystring['sort'] = 'ChronologicalOrder+desc';
+        }
         parametres_visualitzacio = {querystring: querystring, visualitzacio: visualitzacio, zoom: '1', pagina_actual: 1, resultats_per_pagina: 15};
 
         //('#visual-portal-wrapper').get(0) = objecte dom sense envolcall jquery
