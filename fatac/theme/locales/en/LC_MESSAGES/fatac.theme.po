@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
-"POT-Creation-Date: 2012-09-03 10:49+0000\n"
+"POT-Creation-Date: 2012-09-12 11:22+0000\n"
 "PO-Revision-Date: 2012-08-28 11:07+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "X-Poedit-Language: English\n"
 "X-Poedit-Basepath: /var/plone/fatac/fatac.buildout/src\n"
 
-#: zope/component/zcml.py:231
-msgid "A callable object that handles events."
-msgstr "A callable object that handles events."
-
-#: zope/component/zcml.py:443
-msgid "A class that provides attributes used by the view."
-msgstr "A class that provides attributes used by the view."
-
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
 msgid "A description of Dummy"
 msgstr "A description of Dummy"
@@ -32,17 +24,9 @@ msgstr "A description of Dummy"
 msgid "A description of Playlist"
 msgstr "A description of Playlist"
 
-#: zope/component/zcml.py:225
-msgid "A factory used to create the subscriber instance."
-msgstr "A factory used to create the subscriber instance."
-
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.ghost.xml
 msgid "A fake type for store comments"
 msgstr "A fake type for store comments"
-
-#: zope/component/zcml.py:83
-msgid "A list of factories (usually just one) that create the adapter instance."
-msgstr "A list of factories (usually just one) that create the adapter instance."
 
 #. Default: "Accions de manteniment"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/inici.pt:34
@@ -58,10 +42,6 @@ msgstr "Actor"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:48
 msgid "ActualitzaOntologies"
 msgstr "Update with ontologies specified in the configuration variable ONTOLOGY_NAMESPACE"
-
-#: zope/component/zcml.py:82
-msgid "Adapter factory/factories"
-msgstr "Adapter factory/factories"
 
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:33
 msgid "Add MyFiles Portlet"
@@ -85,11 +65,13 @@ msgstr "Add a Playlist Image that represents your playlist"
 msgid "Administracio"
 msgstr "Administration"
 
+#. Default: "Administració"
 msgid "Administration"
-msgstr ""
+msgstr "Administration"
 
+#. Default: "Data d'admissió"
 msgid "AdmissionDate"
-msgstr ""
+msgstr "Admission date"
 
 #. Default: "Afegeix Nou Fitxer"
 msgid "Afegeix Nou Fitxer"
@@ -103,8 +85,9 @@ msgstr "Add a new group"
 msgid "Afegeix Nova Playlist"
 msgstr "Add a new playlist"
 
+#. Default: "Agents"
 msgid "Agents"
-msgstr ""
+msgstr "Agents"
 
 #. Default: "Alfabètic"
 msgid "AlphabeticalOrder"
@@ -171,8 +154,9 @@ msgstr "Authors"
 msgid "Biography"
 msgstr "Biography"
 
+#. Default: "Naixement"
 msgid "Birth"
-msgstr ""
+msgstr "Birth"
 
 #. Default: " Bit Rate"
 msgid "BitRate"
@@ -204,8 +188,9 @@ msgstr "Loading..."
 msgid "Cartoonist"
 msgstr "Cartoonist"
 
+#. Default: "Expedient"
 msgid "CaseFile"
-msgstr ""
+msgstr "Case file"
 
 #. Default: "Català"
 msgid "Catala"
@@ -215,8 +200,9 @@ msgstr "Catalan"
 msgid "Cataloguer"
 msgstr "Cataloguer"
 
+#. Default: "Categoria"
 msgid "Category"
-msgstr ""
+msgstr "Category"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercaview.pt:24
 msgid "Cerca"
@@ -247,8 +233,9 @@ msgstr "Changes saved"
 msgid "Changes saved."
 msgstr "Changes saved."
 
+#. Default: "Canals"
 msgid "Channels"
-msgstr ""
+msgstr "Channels"
 
 #. Default: "Coreògraf"
 msgid "Choreographer"
@@ -257,11 +244,6 @@ msgstr "Choreographer"
 #. Default: "Cronològic"
 msgid "ChronologicalOrder"
 msgstr "Chronological"
-
-#. Default: "Tipus"
-#: zope/component/zcml.py:442
-msgid "Class"
-msgstr "Class"
 
 #. Default: "Col·laborador"
 msgid "Collaborator"
@@ -283,10 +265,6 @@ msgstr "Colour"
 msgid "ColorModel"
 msgstr "Colour"
 
-#: zope/component/zcml.py:52
-msgid "Component to use"
-msgstr "Component to use"
-
 #. Default: "Compositor"
 msgid "Composer"
 msgstr "Composer"
@@ -307,8 +285,9 @@ msgstr "Could not add group ${name}, perhaps a user or group with this name alre
 msgid "Country"
 msgstr "Countries"
 
+#. Default: "Coberta"
 msgid "Cover"
-msgstr ""
+msgstr "Cover"
 
 #. Default: "Creador"
 msgid "Creator"
@@ -342,8 +321,9 @@ msgstr "Dancer"
 msgid "Date"
 msgstr "Date"
 
+#. Default: "Mort"
 msgid "Death"
-msgstr ""
+msgstr "Death"
 
 #. Default: "Descripció"
 msgid "Description"
@@ -368,7 +348,7 @@ msgstr "Download"
 
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
 msgid "Dummy"
-msgstr ""
+msgstr "Dummy"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:43
 msgid "Duration of the internal cache in minutes, it must be betwen 0 and 60"
@@ -390,8 +370,9 @@ msgstr "Edit Playlists Portlet"
 msgid "Edit cancelled"
 msgstr "Edit cancelled"
 
+#. Default: "Editor"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #. Default: "Editors"
 msgid "Editors"
@@ -436,8 +417,9 @@ msgstr "Event"
 msgid "Executa"
 msgstr "Play"
 
+#. Default: "Expedient"
 msgid "Expedient"
-msgstr ""
+msgstr "Case File"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercador.pt:9
 #: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
@@ -454,12 +436,9 @@ msgstr "Export to OAI"
 msgid "ExportarOAIExplicacio"
 msgstr ""
 
+#. Default: "Durada"
 msgid "Extent"
-msgstr ""
-
-#: zope/component/zcml.py:67
-msgid "Factory"
-msgstr "Factory"
+msgstr "Running Time"
 
 #: ../../../../fatac.theme/fatac/theme/profiles/default/controlpanel.xml
 msgid "Fatac"
@@ -477,8 +456,9 @@ msgstr "Film-maker"
 msgid "Filtre de búsqueda"
 msgstr "Filter your result"
 
+#. Default: "Nom"
 msgid "FirstName"
-msgstr ""
+msgstr "First name"
 
 #. Default: "Fitxa d'expedient"
 #: ../../../browser/opcions.pt:2
@@ -547,11 +527,6 @@ msgstr "Group name required."
 msgid "Group(s) deleted."
 msgstr "Group(s) deleted."
 
-#. Default: "Controlador"
-#: zope/component/zcml.py:230
-msgid "Handler"
-msgstr "Handler"
-
 #. Default: "Versió física"
 msgid "HasPhisicalVersion"
 msgstr "Phisical Version"
@@ -570,8 +545,9 @@ msgstr "Holding"
 msgid "How many items to list."
 msgstr "How many items to list."
 
+#. Default: "ISBN"
 msgid "ISBN"
-msgstr ""
+msgstr "ISBN"
 
 #. Default: "Il·lustrador"
 msgid "Illustrator"
@@ -624,30 +600,6 @@ msgstr "Home"
 msgid "InserirObjecte"
 msgstr "Insert new object"
 
-#: zope/component/zcml.py:401
-msgid "Interface"
-msgstr "Interface"
-
-#: zope/component/zcml.py:353
-msgid "Interface provided by the utility."
-msgstr "Interface provided by the utility."
-
-#: zope/component/zcml.py:457
-msgid "Interface that is also allowed if user has permission."
-msgstr "Interface that is also allowed if user has permission."
-
-#: zope/component/zcml.py:90
-msgid "Interface the component provides"
-msgstr "Interface the component provides"
-
-#: zope/component/zcml.py:406
-msgid "Interface type"
-msgstr "Interface type"
-
-#: zope/component/zcml.py:243
-msgid "Interfaces or classes that this subscriber depends on"
-msgstr "Interfaces or classes that this subscriber depends on"
-
 #. Default: "Introdueix la data i hora del servidor per confirmar"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:92
 msgid "IntroduirHoraServidor"
@@ -675,8 +627,9 @@ msgstr "Kind"
 msgid "Language"
 msgstr "Language"
 
+#. Default: "Cognom"
 msgid "LastName"
-msgstr ""
+msgstr "Last name"
 
 #. Default: "Advocat"
 msgid "Lawyer"
@@ -708,10 +661,6 @@ msgstr "Link"
 msgid "List of Groups that has this Playlist"
 msgstr "List of Groups that has this Playlist"
 
-#: zope/component/zcml.py:135
-msgid "Locate"
-msgstr "Locate"
-
 #. Default: "Ubicació"
 msgid "Location"
 msgstr "Location"
@@ -725,8 +674,9 @@ msgstr "Maintenance"
 msgid "Manuscript"
 msgstr "Manuscript"
 
+#. Default: "Mesurament"
 msgid "Measurement"
-msgstr ""
+msgstr "Measurement"
 
 #. Default: "Mesures"
 msgid "Measures"
@@ -745,8 +695,9 @@ msgstr "Media Server URI"
 msgid "Member"
 msgstr "Member"
 
+#. Default: "Mides"
 msgid "Mides"
-msgstr ""
+msgstr "Measures"
 
 #. Default: "Músic"
 msgid "Musician"
@@ -759,15 +710,6 @@ msgstr "My Files items"
 #: ../../../../fatac.content/fatac/content/portletMyGroups.py:28
 msgid "MyGroups items"
 msgstr "MyGroups items"
-
-#. Default: "Nom"
-#: zope/component/zcml.py:113
-msgid "Name"
-msgstr "Name"
-
-#: zope/component/zcml.py:359
-msgid "Name of the registration.  This is used by application code when locating a utility."
-msgstr "Name of the registration.  This is used by application code when locating a utility."
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:452
 msgid "No changes made."
@@ -793,14 +735,16 @@ msgstr "Number of pages"
 msgid "Number of items to display"
 msgstr "Number of items to display"
 
+#. Default: "Número de còpies"
 msgid "NumberOfCopies"
-msgstr ""
+msgstr "Number of copies"
 
 msgid "NumberT"
 msgstr ""
 
+#. Default: "Tipus d'objecte"
 msgid "ObjectType"
-msgstr ""
+msgstr "Object type"
 
 #: ../../../../fatac.forms/fatac/forms/browser/templates/gestioMedias.pt:60
 msgid "Objectes"
@@ -829,8 +773,9 @@ msgstr "Order: "
 msgid "Organisation"
 msgstr "Organizations"
 
+#. Default: "Orientació"
 msgid "Orientation"
-msgstr ""
+msgstr "Orientation"
 
 #: ../../../../fatac.content/fatac/content/playlist.py:51
 msgid "Original Group"
@@ -844,15 +789,17 @@ msgstr "Original format"
 msgid "PagesNumber"
 msgstr "Number of pages"
 
+#. Default: "Part de"
 msgid "PartOf"
-msgstr ""
+msgstr "Part of"
 
 #. Default: "Participant"
 msgid "Participant"
 msgstr "Participant"
 
+#. Default: "Participants"
 msgid "Participants"
-msgstr ""
+msgstr "Participants"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:25
 msgid "Per exemple: http://example.com/rest/"
@@ -869,14 +816,6 @@ msgstr "Per exemple: http://localhost:8080/ArtsCombinatoriesRest/media/"
 #. Default: "Performer"
 msgid "Performer"
 msgstr "Performer"
-
-#: zope/component/zcml.py:61
-msgid "Permission"
-msgstr "Permission"
-
-#: zope/component/zcml.py:62
-msgid "Permission required to use this component."
-msgstr "Permission required to use this component."
 
 #. Default: "Persones"
 msgid "Person"
@@ -936,10 +875,6 @@ msgstr "Antoni Tàpies Protection and Promotion"
 msgid "ProtectionPromotionFAT"
 msgstr "Fundació Protection and Promotion"
 
-#: zope/component/zcml.py:352
-msgid "Provided interface"
-msgstr "Provided interface"
-
 #. Default: "Publicació"
 msgid "Publication"
 msgstr "Publication"
@@ -948,21 +883,14 @@ msgstr "Publication"
 msgid "Publications"
 msgstr "Publications"
 
+#. Default: "Editor"
 msgid "Publisher"
-msgstr ""
+msgstr "Publisher"
 
 #. Default: "Pujar media"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/uploadMedia.pt:36
 msgid "PujarMedia"
 msgstr "Upload media"
-
-#: zope/component/zcml.py:68
-msgid "Python name of a factory which can create the implementation object.  This must identify an object in a module using the full dotted name. If specified, the ``component`` field must be left blank."
-msgstr "Python name of a factory which can create the implementation object.  This must identify an object in a module using the full dotted name. If specified, the ``component`` field must be left blank."
-
-#: zope/component/zcml.py:53
-msgid "Python name of the implementation object.  This must identify an object in a module using the full dotted name.  If specified, the ``factory`` field must be left blank."
-msgstr "Python name of the implementation object.  This must identify an object in a module using the full dotted name.  If specified, the ``factory`` field must be left blank."
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:35
 msgid "REST request timeout"
@@ -1023,15 +951,12 @@ msgstr "Representation"
 msgid "Represents"
 msgstr "Represents"
 
-#: zope/component/zcml.py:504
-msgid "Request type"
-msgstr "Request type"
-
 #. Default: "Reset: Falta confirmar"
 #: ../../../../fatac.forms/fatac/forms/browser/manteniment.py:31
 msgid "ResetFaltaConfirmar"
 msgstr "Reset: needed to confirm"
 
+#. Default: "Resolució"
 msgid "Resolution"
 msgstr "Resolution"
 
@@ -1079,8 +1004,9 @@ msgstr "Select class"
 msgid "SeleccionaTasca"
 msgstr "Select a task to be performed"
 
+#. Default: "Número de full"
 msgid "SheetNumber"
-msgstr ""
+msgstr "Sheet number"
 
 #. Default: "Cantant"
 msgid "Singer"
@@ -1102,13 +1028,9 @@ msgstr "Speaker"
 msgid "Specific settings for FATac based sites"
 msgstr "Specific settings for FATac based sites"
 
-#: zope/component/zcml.py:426
-msgid "Specifications of the objects to be viewed"
-msgstr ""
-
-#: zope/component/zcml.py:97
-msgid "Specifications to be adapted"
-msgstr ""
+#. Default: "Activitat"
+msgid "SpecificActivity"
+msgstr "Activity"
 
 #. Default: "Patrocinador"
 msgid "Sponsor"
@@ -1117,10 +1039,6 @@ msgstr "Sponsor"
 #. Default: "Data inici"
 msgid "StartDate"
 msgstr "Start date"
-
-#: zope/component/zcml.py:224
-msgid "Subscriber factory"
-msgstr "Subscriber factory"
 
 #. Default: "Substitueix"
 #: ../../../../fatac.forms/fatac/forms/browser/manteniment.py:66
@@ -1184,38 +1102,6 @@ msgstr "New text"
 msgid "The group name you entered is not valid."
 msgstr "The group name you entered is not valid."
 
-#: zope/component/zcml.py:495
-msgid "The interface this component provides."
-msgstr "The interface this component provides."
-
-#: zope/component/zcml.py:616
-msgid "The layer the resource is in."
-msgstr "The layer the resource is in."
-
-#: zope/component/zcml.py:448
-msgid "The layer the view is in."
-msgstr "The layer the view is in."
-
-#: zope/component/zcml.py:488
-msgid "The name of the resource."
-msgstr "The name of the resource."
-
-#: zope/component/zcml.py:489
-msgid "The name shows up in URLs/paths. For example 'foo'."
-msgstr "The name shows up in URLs/paths. For example 'foo'."
-
-#: zope/component/zcml.py:437
-msgid "The permission needed to use the view."
-msgstr "The permission needed to use the view."
-
-#: zope/component/zcml.py:107
-msgid "This adapter is only available, if the principal has this permission."
-msgstr "This adapter is only available, if the principal has this permission."
-
-#: zope/component/zcml.py:91
-msgid "This attribute specifies the interface the adapter instance must provide."
-msgstr "This attribute specifies the interface the adapter instance must provide."
-
 #: ../../../../fatac.content/fatac/content/dummy.py:19
 #: ../../../../fatac.content/fatac/content/ghost.py:34
 msgid "This is a list of tags that have this image"
@@ -1242,14 +1128,6 @@ msgstr "This portlet displays my files."
 msgid "This portlet displays my groups."
 msgstr "This portlet displays my groups."
 
-#: zope/component/zcml.py:98
-msgid "This should be a list of interfaces or classes"
-msgstr "This should be a list of interfaces or classes"
-
-#: zope/component/zcml.py:253
-msgid "This subscriber is only available, if the principal has this permission."
-msgstr "This subscriber is only available, if the principal has this permission."
-
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:36
 msgid "Timeout in seconds for the resquests to the REST Server."
 msgstr "Timeout in seconds for the resquests to the REST Server."
@@ -1258,7 +1136,7 @@ msgstr "Timeout in seconds for the resquests to the REST Server."
 msgid "Title"
 msgstr "Title"
 
-#: ../../../../fatac.content/fatac/content/dummy_templates/view.pt:96
+#: ../../../../fatac.content/fatac/content/dummy_templates/view.pt:99
 msgid "Tornar"
 msgstr "Back"
 
@@ -1287,11 +1165,6 @@ msgstr "Translator"
 msgid "Translators"
 msgstr "Translators"
 
-#. Default: "De confiança"
-#: zope/component/zcml.py:121
-msgid "Trusted"
-msgstr "Trusted"
-
 #. Default: "Tipologia documental"
 msgid "TypeDocumentary"
 msgstr "Documentary type"
@@ -1316,16 +1189,6 @@ msgstr "Video"
 msgid "VideoCodec"
 msgstr "Video codec"
 
-#. Default: "Veure atributs que també estan permesos si l'usuari té permís."
-#: zope/component/zcml.py:471
-msgid "View attributes that are also allowed if the user has permission."
-msgstr "View attributes that are also allowed if the user has permission."
-
-#. Default: "Veure atributs que també estan permesos si l'usuari té permís."
-#: zope/component/zcml.py:627
-msgid "View attributes that are also allowed if user has permission."
-msgstr "View attributes that are also allowed if user has permission."
-
 #: ../../../../fatac.content/fatac/content/playlist_templates/playlistView.pt:16
 #: ../../../../fatac.theme/fatac/theme/browser/templates/resultatsview.pt:16
 msgid "Visualització de búsqueda"
@@ -1335,20 +1198,25 @@ msgstr "Search view"
 msgid "Volum"
 msgstr "Volume"
 
+#. Default: "Marca d'aigua"
 msgid "Watermark"
-msgstr ""
+msgstr "Watermark"
 
+#. Default: "Que"
 msgid "What"
-msgstr ""
+msgstr "What"
 
+#. Default: "Quan"
 msgid "When"
-msgstr ""
+msgstr "When"
 
+#. Default: "Qui"
 msgid "Who"
-msgstr ""
+msgstr "Who"
 
+#. Default: "Ample de la imatge"
 msgid "WidthImage"
-msgstr ""
+msgstr "Width Image"
 
 #. Default: "Treballador"
 msgid "Worker"
@@ -1392,8 +1260,9 @@ msgstr "With the support of:"
 msgid "ampliar_filtres"
 msgstr "Expand filters"
 
+#. Default: "cos"
 msgid "body"
-msgstr ""
+msgstr "body"
 
 #. Default: "Heu oblidat la contrasenya?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
@@ -1449,8 +1318,9 @@ msgstr "Whit the collaboration of:"
 msgid "collaboracio1"
 msgstr "Ministry of Education"
 
+#. Default: "contingut"
 msgid "content"
-msgstr ""
+msgstr "content"
 
 #. Default: "Data"
 msgid "created"
@@ -1462,7 +1332,7 @@ msgid "de"
 msgstr "of"
 
 msgid "default"
-msgstr ""
+msgstr "default"
 
 #. Default: "Esborrar subtítols"
 #: ../../../../fatac.theme/fatac/theme/skins/fatac_theme_custom_templates/macro_dades.pt:136
@@ -1479,8 +1349,9 @@ msgstr "Through this form you can change the information in your user profile."
 msgid "desc_register"
 msgstr "Through this form you can change the information in your user profile."
 
+#. Default: "descripció"
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #. Default: "List of My Files from user."
 #: ../../../../fatac.content/fatac/content/profiles/default/portlets.xml
@@ -1520,7 +1391,7 @@ msgid "edicio_objecte"
 msgstr "Edit object"
 
 #. Default: "Edita"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:60
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:58
 msgid "edita"
 msgstr "edit"
 
@@ -1600,12 +1471,13 @@ msgid "financament2"
 msgstr "Plan Avanza"
 
 #. Default: "Fitxa"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:64
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:62
 msgid "fitxa"
 msgstr "Tab"
 
+#. Default: "peu"
 msgid "footer"
-msgstr ""
+msgstr "footer"
 
 #. Default: "Format"
 msgid "format"
@@ -1628,8 +1500,9 @@ msgstr "Has physical version"
 msgid "hasTranslation"
 msgstr "Translation"
 
+#. Default: "capçalera"
 msgid "header"
-msgstr ""
+msgstr "header"
 
 #. Default: "Assign to groups"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:218
@@ -1824,7 +1697,7 @@ msgid "large"
 msgstr "Larger"
 
 #. Default: "Legal"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:62
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:60
 msgid "legal"
 msgstr "Legal"
 
@@ -1928,7 +1801,7 @@ msgid "seleccio_d_objectes"
 msgstr "Select objectes"
 
 #. Default: "Selecciona"
-#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:67
+#: ../../../../fatac.forms/fatac/forms/browser/templates/search.pt:65
 msgid "selecciona"
 msgstr "Select"
 
@@ -1957,11 +1830,13 @@ msgstr "Your form has not been saved. All changes you have made will be lost."
 msgid "text_form_resubmit_message"
 msgstr "You have already clicked the submit button. Do you really want to submit this form again?"
 
+#. Default: "miniatura"
 msgid "thumbnail"
-msgstr ""
+msgstr "thumbnail"
 
+#. Default: "títol"
 msgid "title"
-msgstr ""
+msgstr "title"
 
 #. Default: "Portlet MyFiles"
 #: ../../../../fatac.content/fatac/content/profiles/default/portlets.xml
