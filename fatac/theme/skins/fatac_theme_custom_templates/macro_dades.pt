@@ -44,7 +44,7 @@
         </tal:co>
 
         <tal:co tal:condition="python: tipus == 'objects'">
-            <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" i18n:translate=""/>
+            <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" />
             <input type="hidden" tal:attributes="id string:llista_ids_${nom}; value valor" />
             <div tal:attributes="id string:scrollable_${nom}">
                 <tal:co tal:condition="nom"><span class="georgia13c999999" tal:content="nom" i18n:translate="" /></tal:co>

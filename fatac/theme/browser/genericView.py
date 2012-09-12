@@ -230,6 +230,7 @@ class genericView(BrowserView, funcionsCerca):
                     dades_objecte = {'id': id_objecte,
                                      'titol': titol_objecte,
                                      'classe': objecte['className'],
+                                     'nom_classe': objecte['className'].replace("ac:", ""),
                                      'thumbnail_classe': self.getThumbnailClasse(objecte['className']),
                                      'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
                                      'dades_seccions': dades_seccions,
@@ -361,7 +362,7 @@ class genericView(BrowserView, funcionsCerca):
         if 'type' in dada:
             if hasattr(self, 'get_%s_dada' % (dada['type'])):
                 valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
-        return {'nom': self.context.translate(nom, domain="fatac.theme"), 'tipus': tipus, 'valor': valor}
+        return {'nom': nom, 'tipus': tipus, 'valor': valor}
 
     def get_forbidden_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'forbidden', u'name': u'Title',
