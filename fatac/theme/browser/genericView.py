@@ -209,7 +209,7 @@ class genericView(BrowserView, funcionsCerca):
 
                 if 'sections' in objecte:
                     titol_objecte = self.getTitolObjecte(objecte['sections'])
-                    titol_zona_resultats = self.context.translate('visualitzacio_' + objecte['className'], domain='fatac')
+                    titol_zona_resultats = self.context.translate(objecte['className'].replace("ac:", ""), domain='fatac.theme')
 
                     dades_seccions = []
                     te_subcerca = 'sense_subcerca'
@@ -361,7 +361,7 @@ class genericView(BrowserView, funcionsCerca):
         if 'type' in dada:
             if hasattr(self, 'get_%s_dada' % (dada['type'])):
                 valor = getattr(self, 'get_%s_dada' % (dada['type']))(dada)
-        return {'nom': self.context.translate(nom, domain="fatac"), 'tipus': tipus, 'valor': valor}
+        return {'nom': self.context.translate(nom, domain="fatac.theme"), 'tipus': tipus, 'valor': valor}
 
     def get_forbidden_dada(self, dades):
         """ donat un diccionari de tipus {u'type': u'forbidden', u'name': u'Title',
@@ -414,7 +414,7 @@ class genericView(BrowserView, funcionsCerca):
         while i < len(dades['value']):
             #ignorem 'media', xq és la superclasse
             if dades['value'][i] != 'Media':
-                llista.append({'classe': self.context.translate(dades['value'][i], domain="fatac"), 'num': dades['value'][i + 1], 'icon': self.getThumbnailClasse(dades['value'][i])})
+                llista.append({'classe': self.context.translate(dades['value'][i], domain="fatac.theme"), 'num': dades['value'][i + 1], 'icon': self.getThumbnailClasse(dades['value'][i])})
             i += 2
         return llista
 
