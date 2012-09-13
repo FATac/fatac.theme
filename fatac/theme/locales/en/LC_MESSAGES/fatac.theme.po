@@ -1903,6 +1903,15 @@ msgstr "Thumbnail"
 msgid "visualitzacio4"
 msgstr "Fullscreen"
 
+msgid "comentari_retall"
+msgstr "Comment"
+
+msgid "comentari_crear"
+msgstr "Create comment"
+
+msgid "comentari_cancelar"
+msgstr "Cancel"
+
 msgid "comentari_afegit"
 msgstr "Comment added"
 

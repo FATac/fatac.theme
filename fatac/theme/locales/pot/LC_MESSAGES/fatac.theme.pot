@@ -1904,3 +1904,11 @@ msgstr ""
 msgid "visualitzacio4"
 msgstr ""
 
+msgid "comentari_retall"
+msgstr ""
+
+msgid "comentari_crear"
+msgstr ""
+
+msgid "comentari_cancelar"
+msgstr ""

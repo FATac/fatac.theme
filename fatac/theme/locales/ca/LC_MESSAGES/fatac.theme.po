@@ -1903,6 +1903,15 @@ msgstr "Vista prèvia"
 msgid "visualitzacio4"
 msgstr "Pantalla sencera"
 
+msgid "comentari_retall"
+msgstr "Comentari del retall"
+
+msgid "comentari_crear"
+msgstr "Crea el comentari"
+
+msgid "comentari_cancelar"
+msgstr "Cancel·la"
+
 msgid "comentari_afegit"
 msgstr "Comentari afegit"
 
@@ -1916,4 +1925,4 @@ msgid "comentari_confirmar"
 msgstr "Aquest comentari serà esborrat permanentment i no podrà ser recuperat. Està segur?"
 
 msgid "comentari_esborrar"
-msgstr "Esborrar el comentari?""
+msgstr "Esborrar el comentari?"
