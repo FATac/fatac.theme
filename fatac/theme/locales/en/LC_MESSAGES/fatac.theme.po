@@ -1903,3 +1903,17 @@ msgstr "Thumbnail"
 msgid "visualitzacio4"
 msgstr "Fullscreen"
 
+msgid "comentari_afegit"
+msgstr "Comment added"
+
+msgid "comentari_esborrat"
+msgstr "Comment deleted"
+
+msgid "comentari_no_esborrat"
+msgstr "You are not authorized to delete the comment"
+
+msgid "comentari_confirmar"
+msgstr "This comment will be deleted and can not be recovered. Are you sure?"
+
+msgid "comentari_esborrar"
+msgstr "Delete the comment?"

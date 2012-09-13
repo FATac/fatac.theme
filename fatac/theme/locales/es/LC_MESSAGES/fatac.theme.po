@@ -1903,3 +1903,17 @@ msgstr "Vista previa"
 msgid "visualitzacio4"
 msgstr "Pantalla completa"
 
+msgid "comentari_afegit"
+msgstr "Comentario añadido"
+
+msgid "comentari_esborrat"
+msgstr "Comentario borrado"
+
+msgid "comentari_no_esborrat"
+msgstr "No tienes permisos para borrar el comentario"
+
+msgid "comentari_confirmar"
+msgstr "Este comentario será eliminado y no podrá ser recuperado. ¿Está seguro?"
+
+msgid "comentari_esborrar"
+msgstr "Borrar el comentario?"

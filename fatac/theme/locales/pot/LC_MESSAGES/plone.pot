@@ -885,3 +885,17 @@ msgstr ""
 msgid "visualitzar"
 msgstr ""
 
+msgid "comentari_afegit"
+msgstr ""
+
+msgid "comentari_esborrat"
+msgstr ""
+
+msgid "comentari_no_esborrat"
+msgstr ""
+
+msgid "comentari_confirmar"
+msgstr ""
+
+msgid "comentari_esborrar"
+msgstr ""

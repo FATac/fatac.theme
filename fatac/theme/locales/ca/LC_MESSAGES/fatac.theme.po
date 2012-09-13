@@ -1903,3 +1903,17 @@ msgstr "Vista prèvia"
 msgid "visualitzacio4"
 msgstr "Pantalla sencera"
 
+msgid "comentari_afegit"
+msgstr "Comentari afegit"
+
+msgid "comentari_esborrat"
+msgstr "Comentari esborrat"
+
+msgid "comentari_no_esborrat"
+msgstr "No tens permissos per esborrar el comentari"
+
+msgid "comentari_confirmar"
+msgstr "Aquest comentari serà esborrat permanentment i no podrà ser recuperat. Està segur?"
+
+msgid "comentari_esborrar"
+msgstr "Esborrar el comentari?""
