@@ -43,8 +43,6 @@ function selector_ordenacio() {
         event.preventDefault();
         event.stopImmediatePropagation();
         event.stopPropagation();
-        //console.error("modifica_parametres_visualitzacio('sort', " + $(this).attr('rel') + ")");
-        //modifica_parametres_visualitzacio('sort', $(this).attr('rel'));
         querystring = consulta_parametre_visualitzacio('querystring');
         querystring['sort'] = $(this).attr('rel');
         modifica_parametres_visualitzacio('querystring', querystring);
@@ -137,7 +135,7 @@ function pinta_filtres() {
         html_filtres = data;
         $('div#selector_filtres').replaceWith(html_filtres);
         inicialitza_js_filtres();
-    }).error(function(){console.error('errrr!'); genericAjaxError($('div#selector_filtres'));});
+    }).error(function(){genericAjaxError($('div#selector_filtres'));});
 }
 
 function scroll_horitzontal_filtres() {
@@ -259,7 +257,6 @@ function click_filtres() {
 
         //seleccionar els filtres 'Tots' per defecte
         marca_filtres_seleccionats();
-
         $.post('cercaAjaxView', {parametres_visualitzacio: ret_parametres_visualitzacio_json()}, function () {
 
             //un cop ja hem recalculat la cerca, pintem els filtres
@@ -285,11 +282,12 @@ function marca_filtres_seleccionats() {
         for (i = 0; i < filtres_aplicats.length; i = i + 1) {
             categoria = filtres_aplicats[i].split(':')[0];
             var opcio = filtres_aplicats[i].split(':')[1];
-            $('.c_' + categoria + '.f_' + opcio).addClass('selected');
-            $('.c_' + categoria + '.f_Tots').removeClass('selected');
-            /* si conté espais, haurem posat class=str1 str2, i per seleccionar l'element en farem servri el primer */
-            var classe_c = categoria.split(' ')[0];
-            var classe_o = opcio.split(' ')[0];
+
+            /* si conté espais, haurem posat class=str1 str2;
+               per seleccionar l'element, buscarem per totes les classes */
+            var classe_c = categoria.split(' ').join('.');
+            var classe_o = opcio.split(' ').join('.');
+
             $('.c_' + classe_c + '.f_' + classe_o).addClass('selected');
             $('.c_' + classe_c + '.f_Tots').removeClass('selected');
         }
@@ -491,7 +489,7 @@ function genericAjaxError(area){
                 'en': 'Error loading content, please reload the page',
                 'es': 'Error al cargar contenido, porfavor recarga la pagina.'
         });
-    console.error(text)
+
     // Si ens passen un element de la pàgina, substituim el seu contingut pel
     //  missatge d'error
     if (area !== null) {
