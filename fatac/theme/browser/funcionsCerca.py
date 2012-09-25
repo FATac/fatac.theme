@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from plone.memoize.ram import cache
-import urllib2
 import json
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
@@ -29,7 +28,6 @@ class funcionsCerca():
         querystring = None
         if 'llista_ids' in parametres_visualitzacio:
             llista_ids = parametres_visualitzacio['llista_ids']
-            self.context.plone_log("Llista id's: " + str(llista_ids))
         if 'querystring' in parametres_visualitzacio:
             querystring = parametres_visualitzacio['querystring']
             if query != None:
@@ -39,20 +37,23 @@ class funcionsCerca():
 
         result = self.executaCerca(querystring, llista_ids, self.getLang(), rows, start)
 
-        # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
-        # Hem de reordenar la llista de ids del resultat segons la llista original
-        if llista_ids:
-            unordered = {}
-            for doc in result['dades_json']['response'].get('docs', []):
-                # doc = {u'What': [u"Posters for Art's Sake"], u'Who': [u'Dawn Ades'], u'When': [2007], u'id': u'n_087300spanishdesign', u'class': u'Text'}
-                # unordered[doc['id']] = doc['class']
-                unordered[doc['id']] = doc  # guardo el dic sencer, no només class
-            if unordered:
-                result['dades_json']['response']['docs'] = []
-                for lid in llista_ids:
-                    if lid in unordered:
-                        # result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
-                        result['dades_json']['response']['docs'].append(unordered[lid])
+        # Quan feiem servir urllib2, calia reordenar. Ara ja no
+        # # Si enviavem una llista de ids, el resultat no ens torna en el mateix ordre que li hem demanat
+        # # Hem de reordenar la llista de ids del resultat segons la llista original
+        # if llista_ids:
+        #     unordered = {}
+        #     for doc in result['dades_json']['response'].get('docs', []):
+        #         # doc = {u'What': [u"Posters for Art's Sake"], u'Who': [u'Dawn Ades'], u'When': [2007], u'id': u'n_087300spanishdesign', u'class': u'Text'}
+        #         # unordered[doc['id']] = doc['class']
+        #         unordered[doc['id']] = doc  # guardo el dic sencer, no només class
+        #     if unordered:
+        #         result['dades_json']['response']['docs'] = []
+        #         for lid in llista_ids:
+        #             if lid in unordered:
+        #                 # result['dades_json']['response']['docs'].append({'id': lid, 'class': unordered[lid]})
+        #                 result['dades_json']['response']['docs'].append(unordered[lid])
+        # return result
+
         return result
 
     def getSettings(self, key=None):
@@ -109,15 +110,27 @@ class funcionsCerca():
         Centralitzem per parsejar la url de forma centralitzada (per exemple per
         evitar errors de codificació
         """
-        url = url.replace(" ", "%20")
-        #try:
-        request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
-        if request:
-            return request.read()
-        return
-        #except:
-        #    self.context.plone_log("error en executar urllib2.urlopen(" + url + ")")
-        #    return
+
+        import requests
+        request = requests.get(url)
+        self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ llegeixJson() a funcionsCerca.py, requests.get(url) de url = \n' + url)
+
+        # quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
+        # el read amb una expressió regular que ens retornarà una llista on
+        # podrem consultar l'ordre.
+        import re
+        text = request.text
+        inici = text.find('facet_fields')
+        final = text.find('}', inici)
+        facet_fields = text[inici:final]
+        # busca qualsevol cadena [A-Za-z] seguida de :, i les agrupa guardant la posició inicial
+        # mm = [('ObjectType', 15), ('Year', 139), ('Country', 347), ('Translation', 570), ('Media', 649), ('License', 702), ('Role', 715), ('Person', 832), ('Organisation', 2858), ('Collection', 2876), ('ArtWork', 3043)]
+        mm = [(a.groups()[0], a.start()) for a in re.finditer('"([A-Za-z]*)":', facet_fields)]
+        # ordena mm en funció de la posició guardada
+        # llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
+        llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
+
+        return {'json': request.json, 'llista_claus': llista_claus}
 
     def querystringToString(self, querystring):
         """
@@ -173,47 +186,18 @@ class funcionsCerca():
             querystring_str = self.querystringToString(querystring)
             url = (self.retServidorRest() + '/solr/search?' + querystring_str
                     + "&lang=" + lang)
-            self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
-            read = self.llegeixJson(url)
-            if read:
-                #quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
-                #el read amb una expressió regular que ens retornarà una llista on podrem consultar l'ordre.
-                import re
-                inici = read.find('facet_fields')
-                final = read.find('}', inici)
-                facet_fields = read[inici:final]
-                # busca qualsevol cadena [A-Za-z] seguida de :, i les agrupa guardant la posició inicial
-                mm = [(a.groups()[0], a.start()) for a in re.finditer('"([A-Za-z]*)":', facet_fields)]
-                #mm = [('ObjectType', 15), ('Year', 139), ('Country', 347), ('Translation', 570), ('Media', 649), ('License', 702), ('Role', 715), ('Person', 832), ('Organisation', 2858), ('Collection', 2876), ('ArtWork', 3043)]
-                #ordena mm en funció de la posició guardada
-                llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
-                #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
-                return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
 
         elif llista_ids:
             querystring = {}
             querystring['rows'] = rows
             querystring['start'] = 0
-            querystring['f'] = ['id:' + ' OR '.join(llista_ids[start:start+rows])]
+            querystring['f'] = ['id:' + ' OR '.join(llista_ids[start:start + rows])]
             querystring_str = self.querystringToString(querystring)
-            # url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,class,Title&conf=Explorar&lang=" + lang
             url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,Who,What,When,class&conf=Explorar&lang=" + lang
-            self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ cerca: ' + url)
-            read = self.llegeixJson(url)
-            if read:
-                #quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
-                #el read amb una expressió regular que ens retornarà una llista on podrem consultar l'ordre.
-                import re
-                inici = read.find('facet_fields')
-                final = read.find('}', inici)
-                facet_fields = read[inici:final]
-                # busca qualsevol cadena [A-Za-z] seguida de :, i les agrupa guardant la posició inicial
-                mm = [(a.groups()[0], a.start()) for a in re.finditer('"([A-Za-z]*)":', facet_fields)]
-                #mm = [('ObjectType', 15), ('Year', 139), ('Country', 347), ('Translation', 570), ('Media', 649), ('License', 702), ('Role', 715), ('Person', 832), ('Organisation', 2858), ('Collection', 2876), ('ArtWork', 3043)]
-                #ordena mm en funció de la posició guardada
-                llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
-                #llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
-                return {'ordre_filtres': llista_claus, 'dades_json': json.loads(read)}
+
+        read = self.llegeixJson(url)
+        if read:
+            return {'ordre_filtres': read['llista_claus'], 'dades_json': read['json']}
 
         return None
 
@@ -230,28 +214,22 @@ class funcionsCerca():
         url = self.retServidorRest() + '/solr/configurations'
         read = self.llegeixJson(url)
         if read:
-            dades_json = json.loads(read)
-            if 'data' in dades_json:
-                data = dades_json['data']
-                i = 0
-                while i < len(data):
-                    if data[i]['name'] == clau:
-                        return data[i]['sortFields']
-                    i += 1
+            data = read['json']['data']
+            i = 0
+            while i < len(data):
+                if data[i]['name'] == clau:
+                    return data[i]['sortFields']
+                i += 1
         return
 
     def existObjectRest(self, querystring):
         """ Crida al servei rest que ens diu si l'objecte existeix o no, per després crear-lo al plone
         """
-        value = 'false'
         uid = self.getUIDParam()
         if uid != '':
             uid = '?' + uid
         url = self.retServidorRest() + '/resource/' + querystring + '/exists' + uid
-        dades = self.llegeixJson(url)
-        if dades:
-            value = json.loads(dades)
-        return value
+        return self.llegeixJson(url)['json']
 
     def getUIDParam(self):
         """ Obte l'uid de l'usuari en base64, si no s'ha identificat retornar una cadena buida
