@@ -5,7 +5,6 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from funcionsCerca import funcionsCerca
 from Products.CMFCore.utils import getToolByName
 from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
-from zope.component import getMultiAdapter
 from math import ceil
 import unicodedata
 
@@ -70,6 +69,7 @@ class resultatsView(BrowserView, funcionsCerca):
         if resultat_cerca:
             if 'dades_json' in resultat_cerca:
                 dades_json = resultat_cerca['dades_json']
+
                 if 'response' in dades_json and 'numFound' in dades_json['response']:
                     num_resultats = float(dades_json['response']['numFound'])
                     pagina_actual = int(parametres_visualitzacio['pagina_actual'])
@@ -103,7 +103,7 @@ class resultatsView(BrowserView, funcionsCerca):
         resultat_cerca = self.executaCercaIdsOQuerystring()
         opcions = []
         if resultat_cerca:
-            if 'dades_json' in resultat_cerca and 'ordre_filtres' in resultat_cerca:
+            if 'dades_json' in resultat_cerca:
                 dades_json = resultat_cerca['dades_json']
                 if 'facet_counts' in dades_json and 'facet_fields' in dades_json['facet_counts']:
                     filtres_json = dades_json['facet_counts']['facet_fields']
