@@ -7,6 +7,7 @@ from Products.CMFCore.utils import getToolByName
 from fatac.theme.helpers.columnes import YearPeriodColumn, CapitalLetterColumn
 from math import ceil
 import unicodedata
+import re
 
 
 class filtresView(BrowserView, funcionsCerca):
@@ -35,13 +36,19 @@ class filtresView(BrowserView, funcionsCerca):
                             opcions = []
                             while i < len(opcions_json):
                                 nom = opcions_json[i]
-                                nom_clean = nom.replace(':', ' ').replace(';', ' ').replace('.', ' ')
-                                opcions.append({'nom': nom, 'nom_clean': nom_clean, 'num': opcions_json[i + 1]})
+                                # El següent replace de caracters ha de replicar el que hi ha a
+                                # /ArtsCombinatoriesRest/src/org/fundaciotapies/ac/logic/solr/SolrManager.java
+                                # on es fa:   r.replace('"', ' ').replace(',', ' ').replace(':', ' ')
+                                nom_clean = nom.replace('"', ' ').replace(',', ' ').replace(':', ' ')
+
+                                nom_alfanum = re.sub(r'\W+', '', nom)
+                                opcions.append({'nom': nom, 'nom_alfanum': nom_alfanum, 'nom_clean': nom_clean, 'num': opcions_json[i + 1]})
                                 total += opcions_json[i + 1]
                                 i += 2
                             if total > 0:
-                                opcions = [{'nom': 'Tots', 'nom_clean': 'Tots', 'num': total}] + opcions
-                                filtres.append({'nom_filtre': filtre, 'opcions': opcions})
+                                opcions = [{'nom': 'Tots', 'nom_alfanum': 'Tots', 'nom_clean': 'Tots', 'num': total}] + opcions
+                                filtre_alfanum = re.sub(r'\W+', '', filtre)
+                                filtres.append({'nom_filtre': filtre, 'nom_filtre_alfanum': filtre_alfanum, 'opcions': opcions})
         return filtres
 
 

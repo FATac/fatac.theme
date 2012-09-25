@@ -283,10 +283,11 @@ function marca_filtres_seleccionats() {
             categoria = filtres_aplicats[i].split(':')[0];
             var opcio = filtres_aplicats[i].split(':')[1];
 
-            /* si conté espais, haurem posat class=str1 str2;
-               per seleccionar l'element, buscarem per totes les classes */
-            var classe_c = categoria.split(' ').join('.');
-            var classe_o = opcio.split(' ').join('.');
+            // com a classe, fem servir el nom del filtre i la opció en alfanumèric
+            // (a vistesCerca.py fem nom_alfanum = re.sub(r'\W+', '', nom)).
+            // Aquí apliquem el mateix criteri per marcar/desmarcar els seleccionats
+            classe_c = categoria.replace(/[^a-z0-9]/gi,'');
+            classe_o = opcio.replace(/[^a-z0-9]/gi,'');
 
             $('.c_' + classe_c + '.f_' + classe_o).addClass('selected');
             $('.c_' + classe_c + '.f_Tots').removeClass('selected');
