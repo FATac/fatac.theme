@@ -669,9 +669,9 @@ div.photo-container {
 
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    background: url("++resource++fatac.theme.images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #B3D396;
+    background: url("++resource++fatac.theme.images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #999;
     color: #339933;
-    border: 1px solid #339933;
+    border: 1px solid #999;
     font-weight: normal;
 }
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
@@ -908,7 +908,7 @@ div.field span.required:after
 /* ---------------------------------------------------------------------------- comments viewlet */
 
 .num_aportacions { cursor:pointer; }
-.portaltype-fatac-dummy #viewlet-below-content { display:none; }
+/*.portaltype-fatac-dummy #viewlet-below-content { display:none; }*/
 
 .discussion { color: #393; float:left; width:96%; padding:2%; background-color: #D3E3C3 !important; border-radius: 0.3em; -moz-border-radius: 0.3em; -webkit-border-radius: 0.3em; border:0; outline:0; margin-top:30px; }
 .discussion input[type="submit"],
