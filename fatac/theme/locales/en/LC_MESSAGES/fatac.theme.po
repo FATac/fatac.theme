@@ -380,7 +380,7 @@ msgstr "Editors"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletMyGroups.pt:6
 msgid "Els meus Grups"
-msgstr "My groups"
+msgstr "Groups"
 
 #. Default: "Data fi"
 msgid "EndDate"
@@ -641,7 +641,7 @@ msgstr "Lecturer"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletPlaylists.pt:6
 msgid "Les Meves Playlists"
-msgstr "My Playlist"
+msgstr "Playlist"
 
 #. Default: "Bibliotecari"
 msgid "Librarian"
@@ -727,7 +727,7 @@ msgstr "New object"
 
 #. Default: "Nombre de pàgines"
 msgid "NumPages"
-msgstr "Number of pages"
+msgstr "Page number"
 
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:14
 #: ../../../../fatac.content/fatac/content/portletMyGroups.py:14
@@ -783,11 +783,11 @@ msgstr "Original Group"
 
 #. Default: "Format original"
 msgid "OriginalSource"
-msgstr "Original format"
+msgstr "Original Format"
 
 #. Default: "Nombre de pàgines"
 msgid "PagesNumber"
-msgstr "Number of pages"
+msgstr "Page number"
 
 #. Default: "Part de"
 msgid "PartOf"
@@ -831,7 +831,7 @@ msgstr "Place"
 
 #. Default: "Llocs"
 msgid "Places"
-msgstr "Places"
+msgstr "Place"
 
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
 msgid "Playlist"
@@ -937,7 +937,7 @@ msgstr "Related case-files"
 
 #. Default: "Documents relacionats"
 msgid "RelatedDocuments"
-msgstr "Related documents"
+msgstr "Related with"
 
 #. Default: "Publicacions"
 msgid "RelatedPublications"
@@ -1645,7 +1645,7 @@ msgstr "Login"
 #. Default: "Identifica"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
 msgid "label_log_in"
-msgstr "Login"
+msgstr "Sign-in"
 
 #. Default: "Nom d'usuari"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
@@ -1926,3 +1926,13 @@ msgstr "This comment will be deleted and can not be recovered. Are you sure?"
 
 msgid "comentari_esborrar"
 msgstr "Delete the comment?"
+
+#. Default: "Group Name"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
+msgid "listingheader_group_name"
+msgstr "Group name"
+
+#. Default: "Current group memberships"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
+msgid "heading_memberships_current"
+msgstr "My Groups"

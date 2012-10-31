@@ -153,7 +153,7 @@ msgstr "Edit cancelled"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Els meus Grups"
-msgstr "My groups"
+msgstr "Groups"
 
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
@@ -219,7 +219,7 @@ msgstr "Index recent data: must enter time"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Les Meves Playlists"
-msgstr "My playlists"
+msgstr "Playlists"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
@@ -422,7 +422,7 @@ msgstr "There is no group or user attached to this group."
 #. Default: "Aquí el disclaimer/informació sobre l'escriptori dels usuaris."
 #: ../../../../fatac.content/fatac/content/browser/dashboard.pt:128
 msgid "desc_escritorio"
-msgstr "In your perosnal area you will be able to create and save your own playlists and groups as well as keeping track of all your movements through the platform."
+msgstr "In your personal area you will be able to create and save your own playlists and groups as well as keeping track of all your movements through the platform."
 
 #. Default: "Registrar-se permet interactuar amb els documents d'Arts Combinatòries: afegir comentaris, crear playlists i grups amb altres usuaris."
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:127
@@ -884,3 +884,5 @@ msgstr "All playlists"
 msgid "visualitzar"
 msgstr "View"
 
+msgid "Group name"
+msgstr "Group Name"

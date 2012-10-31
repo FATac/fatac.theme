@@ -380,7 +380,7 @@ msgstr "Editors"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletMyGroups.pt:6
 msgid "Els meus Grups"
-msgstr "Els meus Grups"
+msgstr "Grups"
 
 #. Default: "Data fi"
 msgid "EndDate"
@@ -424,7 +424,7 @@ msgstr "Expedient"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercador.pt:9
 #: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
 msgid "Explorar"
-msgstr "Explora"
+msgstr "Explorar"
 
 #. Default: "Exportar a OAI"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:52
@@ -641,7 +641,7 @@ msgstr "Conferenciant"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletPlaylists.pt:6
 msgid "Les Meves Playlists"
-msgstr "Les Meves Playlists"
+msgstr "Playlists"
 
 #. Default: "Bibliotecari"
 msgid "Librarian"
@@ -727,7 +727,7 @@ msgstr "Nou objecte"
 
 #. Default: "Nombre de pàgines"
 msgid "NumPages"
-msgstr "Nombre de pàgines"
+msgstr "Núm. pàg."
 
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:14
 #: ../../../../fatac.content/fatac/content/portletMyGroups.py:14
@@ -787,7 +787,7 @@ msgstr "Format original"
 
 #. Default: "Nombre de pàgines"
 msgid "PagesNumber"
-msgstr "Nombre de pàgines"
+msgstr "Núm. pàg."
 
 #. Default: "Part de"
 msgid "PartOf"
@@ -831,7 +831,7 @@ msgstr "Lloc"
 
 #. Default: "Llocs"
 msgid "Places"
-msgstr "Llocs"
+msgstr "Lloc"
 
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
 msgid "Playlist"
@@ -937,7 +937,7 @@ msgstr "Expedients relacionats"
 
 #. Default: "Documents relacionats"
 msgid "RelatedDocuments"
-msgstr "Documents relacionats"
+msgstr "Relacionat amb"
 
 #. Default: "Publicacions"
 msgid "RelatedPublications"
@@ -1267,7 +1267,7 @@ msgstr "cos"
 #. Default: "Heu oblidat la contrasenya?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
 msgid "box_forgot_password_option"
-msgstr "Heu oblidat la contrasenya?"
+msgstr "He oblidat la contrasenya"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercaview.pt:30
 msgid "buscar a biblioteca"
@@ -1645,7 +1645,7 @@ msgstr "Registra't"
 #. Default: "Identifica"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
 msgid "label_log_in"
-msgstr "Identifica"
+msgstr "Iniciar sessió"
 
 #. Default: "Nom d'usuari"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
@@ -1926,3 +1926,13 @@ msgstr "Aquest comentari serà esborrat permanentment i no podrà ser recuperat.
 
 msgid "comentari_esborrar"
 msgstr "Esborrar el comentari?"
+
+#. Default: "Group Name"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
+msgid "listingheader_group_name"
+msgstr "Nom del grup"
+
+#. Default: "Current group memberships"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
+msgid "heading_memberships_current"
+msgstr "Els meus grups"

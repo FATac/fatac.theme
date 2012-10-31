@@ -96,7 +96,7 @@
                                  tal:attributes="class python:test(error, 'field field_fatac error', 'field field_fatac')">
                                 <div tal:condition="error" tal:content="error">Validation error output</div>
                                 <input class="input_fatac" type="text" size="" tal:attributes="name ac_name; id ac_name;"
-                                                             i18n:attributes="value label_email" />
+                                                             i18n:domain="fatac.theme" i18n:attributes="value label_email" />
                             </div>
 
                             <div class="field field_fatac" tal:define="error python:errors.get(ac_password, None);"
@@ -133,12 +133,13 @@
                         <div class="login_col1">
                             <div class="formControls formControls_fatac">
                                 <input class="context button_fatac" type="submit" name="submit" value="Log in"
-                                       i18n:attributes="value label_log_in;" />
+                                       i18n:domain="fatac.theme" i18n:attributes="value label_log_in;" />
                             </div>
 
                             <div id="login-forgotten-password" class="login-forgotten-password-fatac" tal:condition="python:mail_password_url and use_normal">
                                 <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
                                    tal:attributes="href mail_password_url; target target;"
+                                   i18n:domain="fatac.theme"
                                    i18n:translate="box_forgot_password_option"
                                    class="arial12c339933">
                                     Forgot your password?

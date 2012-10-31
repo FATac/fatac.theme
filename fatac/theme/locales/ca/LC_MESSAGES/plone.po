@@ -153,7 +153,7 @@ msgstr "S'ha cancel·lat l'edició."
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Els meus Grups"
-msgstr "Els meus grups"
+msgstr "Grups"
 
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
@@ -219,7 +219,7 @@ msgstr "Indexar dades recents: cal indicar el temps "
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Les Meves Playlists"
-msgstr "Les meves playlists"
+msgstr "Playlists"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
@@ -503,7 +503,7 @@ msgstr "Membres actuals del grup"
 #. Default: "Current group memberships"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
 msgid "heading_memberships_current"
-msgstr "Els meus grups"
+msgstr "Grups"
 
 #. Default: "Personal tools"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/personal_bar.pt:3
@@ -884,3 +884,5 @@ msgstr "Totes les playlists"
 msgid "visualitzar"
 msgstr "visualitzar"
 
+msgid "Group name"
+msgstr "Nom del grup"

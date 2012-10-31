@@ -154,7 +154,7 @@ msgstr "Edición cancelada"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Els meus Grups"
-msgstr "Mis grupos"
+msgstr "Grupos"
 
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:62
 msgid "Error"
@@ -179,7 +179,7 @@ msgstr "El grupo ${name} ha sido agregado."
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:686
 msgid "Group name required."
-msgstr "Nombre de grupo requerido."
+msgstr "Nombre del grupo requerido."
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:473
 msgid "Group(s) deleted."
@@ -220,7 +220,7 @@ msgstr "Indexar datos recientes: es necesario indicar el tiempo"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
 msgid "Les Meves Playlists"
-msgstr "Mis playlists"
+msgstr "Playlists"
 
 #: ../../../../fatac.theme/fatac/theme/browser/interfaces.py:29
 msgid "Media Server URI"
@@ -367,7 +367,7 @@ msgstr "Cerrar sesión"
 
 #: ../../../../fatac.content/fatac/content/dashboard.py:649
 msgid "The group name you entered is not valid."
-msgstr "El nombre de grupo introducido no es válido."
+msgstr "El nombre del grupo introducido no es válido."
 
 #: ../../../../fatac.content/fatac/content/dummy.py:19
 #: ../../../../fatac.content/fatac/content/ghost.py:34
@@ -754,7 +754,7 @@ msgstr "Editar"
 #. Default: "Group Name"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
 msgid "listingheader_group_name"
-msgstr "Nombre de grupo"
+msgstr "Nombre del grupo"
 
 #. Default: "Baixa del grup"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:163
@@ -769,7 +769,7 @@ msgstr "Eliminar grupo"
 #. Default: "Group/User name"
 #: ../../../../fatac.content/fatac/content/browser/group-members.pt:285
 msgid "listingheader_group_user_name"
-msgstr "Nombre de Grupo/Usuario"
+msgstr "Nombre del Grupo/Usuario"
 
 #. Default: "Modified"
 #: ../../../../fatac.theme/fatac/theme/browser/jbot/Products.CMFPlone.skins.plone_content.folder_tabular_view.pt:36
@@ -885,3 +885,5 @@ msgstr "Todas las playlists"
 msgid "visualitzar"
 msgstr "Ver"
 
+msgid "Group name"
+msgstr "Nombre del grupo"

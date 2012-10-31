@@ -380,7 +380,7 @@ msgstr "Editores"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletMyGroups.pt:6
 msgid "Els meus Grups"
-msgstr "Mis grupos"
+msgstr "Grupos"
 
 #. Default: "Data fi"
 msgid "EndDate"
@@ -424,7 +424,7 @@ msgstr "Expediente"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercador.pt:9
 #: ../../../../fatac.theme/fatac/theme/browser/templates/explorarview.pt:14
 msgid "Explorar"
-msgstr "Explora"
+msgstr "Explorar"
 
 #. Default: "Exportar a OAI"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/manteniment.pt:52
@@ -454,7 +454,7 @@ msgstr "Director de cine"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/filtresview.pt:18
 msgid "Filtre de búsqueda"
-msgstr "Filtro de búsqueda"
+msgstr "Filtros de búsqueda"
 
 #. Default: "Nom"
 msgid "FirstName"
@@ -641,7 +641,7 @@ msgstr "Conferenciante"
 
 #: ../../../../fatac.content/fatac/content/portlets/portletPlaylists.pt:6
 msgid "Les Meves Playlists"
-msgstr "Mis Playlists"
+msgstr "Playlists"
 
 #. Default: "Bibliotecari"
 msgid "Librarian"
@@ -727,7 +727,7 @@ msgstr "Nuevo objeto"
 
 #. Default: "Nombre de pàgines"
 msgid "NumPages"
-msgstr "Número de páginas"
+msgstr "Nº pág."
 
 #: ../../../../fatac.content/fatac/content/portletMyFiles.py:14
 #: ../../../../fatac.content/fatac/content/portletMyGroups.py:14
@@ -787,7 +787,7 @@ msgstr "Formato original"
 
 #. Default: "Nombre de pàgines"
 msgid "PagesNumber"
-msgstr "Número de páginas"
+msgstr "Nº pág."
 
 #. Default: "Part de"
 msgid "PartOf"
@@ -831,7 +831,7 @@ msgstr "Lugar"
 
 #. Default: "Llocs"
 msgid "Places"
-msgstr "Lugares"
+msgstr "Lugar"
 
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.playlist.xml
 msgid "Playlist"
@@ -937,7 +937,7 @@ msgstr "Expedientes vinculados"
 
 #. Default: "Documents relacionats"
 msgid "RelatedDocuments"
-msgstr "Documentos vinculados"
+msgstr "Relacionado con"
 
 #. Default: "Publicacions"
 msgid "RelatedPublications"
@@ -1267,7 +1267,7 @@ msgstr "cuerpo"
 #. Default: "Heu oblidat la contrasenya?"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:295
 msgid "box_forgot_password_option"
-msgstr "¿Ha olvidado su contraseña?"
+msgstr "He olvidado la contraseña"
 
 #: ../../../../fatac.theme/fatac/theme/browser/templates/cercaview.pt:30
 msgid "buscar a biblioteca"
@@ -1645,7 +1645,7 @@ msgstr "Registrate"
 #. Default: "Identifica"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:196
 msgid "label_log_in"
-msgstr "Entrar"
+msgstr "Iniciar sesión"
 
 #. Default: "Nom d'usuari"
 #: ../../../browser/jbot/Products.CMFPlone.skins.plone_login.login_form.cpt:126
@@ -1870,7 +1870,7 @@ msgstr "Últimos documentos catalogados"
 #. Default: "Una iniciativa de:"
 #: ../../../../fatac.theme/fatac/theme/browser/templates/footer.pt:7
 msgid "una_iniciativa_de"
-msgstr "Una iniciativa de"
+msgstr "Una iniciativa de:"
 
 #. Default: "Validació legal"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/legalSelectObjects.pt:28
@@ -1926,3 +1926,13 @@ msgstr "Este comentario será eliminado y no podrá ser recuperado. ¿Está segu
 
 msgid "comentari_esborrar"
 msgstr "Borrar el comentario?"
+
+#. Default: "Group Name"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:161
+msgid "listingheader_group_name"
+msgstr "Nombre del grupo"
+
+#. Default: "Current group memberships"
+#: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
+msgid "heading_memberships_current"
+msgstr "Mis grupos"
