@@ -676,6 +676,7 @@ div.photo-container {
 }
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     color: #339933;
+    background-color: #b3d396;
 }
 
 #comentari {
