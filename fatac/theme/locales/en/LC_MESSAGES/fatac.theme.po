@@ -865,7 +865,7 @@ msgstr "Project Manager"
 
 #. Default: "Protecció de patrimonis"
 msgid "ProtectionPromotion"
-msgstr " Heritage protection"
+msgstr "Heritage protection"
 
 #. Default: "Protecció i promoció Antoni Tàpies"
 msgid "ProtectionPromotionAT"
@@ -1851,7 +1851,7 @@ msgstr "My groups"
 #. Default: "Portlet Playlists"
 #: ../../../../fatac.content/fatac/content/profiles/default/portlets.xml
 msgid "title_playlist_portlet"
-msgstr " Playlists"
+msgstr "Playlists"
 
 #. Default: "Lloc"
 msgid "tookPlaceAt"
@@ -1936,3 +1936,196 @@ msgstr "Group name"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
 msgid "heading_memberships_current"
 msgstr "My Groups"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "ExhibitionTourings"
+msgstr "Guided visits"
+
+msgid "Administrative_Organisation"
+msgstr "Administrative Organization"
+
+msgid "Archive_Services"
+msgstr "Archives Services"
+
+msgid "Asset_Managment"
+msgstr "Heritage management"
+
+msgid "Bookshop_Services"
+msgstr "Bookshop services"
+
+msgid "Cataloguing_Graphic_Work"
+msgstr "Cataloguing Graphic Work"
+
+msgid "Cataloguing_Original_Work"
+msgstr "Cataloguing Original Work"
+
+msgid "Certification_Graphic_Work"
+msgstr "Certification Graphic Work"
+
+msgid "Certification_Original_Work"
+msgstr "Certification Graphic Work"
+
+msgid "Circulation_Sheet"
+msgstr "Loan sheet"
+
+msgid "Comunication"
+msgstr "Communication"
+
+msgid "Condition_Report"
+msgstr "Condition report"
+
+msgid "Conservation_and_Restoration"
+msgstr "Conservation and Restoration"
+
+msgid "Copyright_Protection"
+msgstr "Copyright Protection"
+
+msgid "Description_and_Condition"
+msgstr "Description and  Condition"
+
+msgid "Educational_Services"
+msgstr "Educational Services"
+
+msgid "Event_Organisation"
+msgstr "Event Organization"
+
+msgid "Event_Production"
+msgstr "Event Production"
+
+msgid "External_Relations"
+msgstr "External Relations"
+
+msgid "FAT_Promotion_and_Information"
+msgstr "Fundació Promotion and promotion "
+
+msgid "Financial_Resource_Managment"
+msgstr "Financial Resources management"
+
+msgid "Friends_of_the_FAT"
+msgstr "Friends of the Fundació"
+
+msgid "Fundació_Logo"
+msgstr "Fundació Logo"
+
+msgid "History_of_FAT"
+msgstr "History of Fundació"
+
+msgid "Human_Resources"
+msgstr "Human Resources"
+
+msgid "Installation_Guide"
+msgstr "Installation  Guide"
+
+msgid "Intervention_Report"
+msgstr "Intervention Report"
+
+msgid "Legislation_and_Legal_Matters"
+msgstr "Legal Matters"
+
+msgid "Library_Services"
+msgstr "Library Services"
+
+msgid "Managment_FAT"
+msgstr "Fundació Management"
+
+msgid "Press_and_Media_Clipping"
+msgstr "Press Clipping"
+
+msgid "Press_kit_and_Press_Releases"
+msgstr "Press kit and Press Releases"
+
+msgid "Protocol_Events_and_Actions"
+msgstr "Protocol Events and Actions"
+
+msgid "Record_of_the_Work"
+msgstr "Artworks data sheets"
+
+msgid "Registration_of_the_Work"
+msgstr "Artwork registrations"
+
+msgid "Research"
+msgstr "Antoni Tàpies Research "
+
+msgid "Space_and_Set-up"
+msgstr "Space and Set-up"
+
+msgid "Status_and_Rules"
+msgstr "Status and Rules"
+
+msgid "Works"
+msgstr "Works"
+
+msgid "Sub_Case-file"
+msgstr "Case file"
+
+msgid "Lectures_and_Seminars"
+msgstr "Seminars and Lectures"
+
+msgid "InstitutionalAgreement"
+msgstr "Institutional agreements"
+
+msgid "Activitats paral·les "
+msgstr "Parallel activities"
+
+msgid "Clausura"
+msgstr "Closing event"
+
+msgid "Curs "
+msgstr "Courses"
+
+msgid "Emissions i gravacions TV ràdio cinema"
+msgstr "Broadcasting and recordings: TV, radio, film"
+
+msgid "Entrevistes "
+msgstr "Interviews"
+
+msgid "Espectacles "
+msgstr "Spectacle"
+
+msgid "Foto d'instal·lacio Col·leccio EspaiA"
+msgstr "Installation view: Space A"
+
+msgid "Foto instal·lacio fora de FAT"
+msgstr "Installation view: other institutions"
+
+msgid "Fotografies d'instal·lacio"
+msgstr "Installation view: Fundació"
+
+msgid "Inauguracions"
+msgstr "Openings"
+
+msgid "Llibre d'instal·lacio"
+msgstr "Installation guide"
+
+msgid "Material per premsa"
+msgstr "Press kit"
+
+msgid "Muntatge exposició"
+msgstr "Exhibition set-up"
+
+msgid "Obra"
+msgstr "Photo Artworks"
+
+msgid "Portes obertes"
+msgstr "Free admission day"
+
+msgid "Presentacions "
+msgstr "Presentations"
+
+msgid "Roda de premsa"
+msgstr "Press conferences"
+
+msgid "Servei educatiu taller "
+msgstr "Education workshop"
+
+msgid "Servei educatiu visites dinamitzades"
+msgstr "Dynamic visits"
+
+msgid "Dinners"
+msgstr "Dinners"
+
+msgid "ProtocolVisits"
+msgstr "Protocol visits"
+

@@ -1936,3 +1936,196 @@ msgstr "Nombre del grupo"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
 msgid "heading_memberships_current"
 msgstr "Mis grupos"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "ExhibitionTourings"
+msgstr "Visitas guiadas"
+
+msgid "Administrative_Organisation"
+msgstr "Organización administrativa"
+
+msgid "Archive_Services"
+msgstr "Servicio de archivo"
+
+msgid "Asset_Managment"
+msgstr "Gestión del patrimonio"
+
+msgid "Bookshop_Services"
+msgstr "Servicio de tienda"
+
+msgid "Cataloguing_Graphic_Work"
+msgstr "Catalogación obra gráfica"
+
+msgid "Cataloguing_Original_Work"
+msgstr "Catalogación obra original"
+
+msgid "Certification_Graphic_Work"
+msgstr "Certificación obra gráfica"
+
+msgid "Certification_Original_Work"
+msgstr "Certificación obra original"
+
+msgid "Circulation_Sheet"
+msgstr "Hoja de préstamo"
+
+msgid "Comunication"
+msgstr "Comunicación"
+
+msgid "Condition_Report"
+msgstr "Memoria de condiciones"
+
+msgid "Conservation_and_Restoration"
+msgstr "Conservación y restauración"
+
+msgid "Copyright_Protection"
+msgstr "Protección derechos autor"
+
+msgid "Description_and_Condition"
+msgstr "Informe de condiciones"
+
+msgid "Educational_Services"
+msgstr "Servició de educación"
+
+msgid "Event_Organisation"
+msgstr "Organización evento"
+
+msgid "Event_Production"
+msgstr "Producción evento"
+
+msgid "External_Relations"
+msgstr "Relaciones externas"
+
+msgid "FAT_Promotion_and_Information"
+msgstr "Protección y promoción Fundació"
+
+msgid "Financial_Resource_Managment"
+msgstr "Gestión recursos financieros"
+
+msgid "Friends_of_the_FAT"
+msgstr "Amigos de la Fundació"
+
+msgid "Fundació_Logo"
+msgstr "Fundació Logo"
+
+msgid "History_of_FAT"
+msgstr "Historia de la Fundació"
+
+msgid "Human_Resources"
+msgstr "Recursos humanos"
+
+msgid "Installation_Guide"
+msgstr "Reportaje instalación"
+
+msgid "Intervention_Report"
+msgstr "Informe de intervención"
+
+msgid "Legislation_and_Legal_Matters"
+msgstr "Asuntos jurídicos"
+
+msgid "Library_Services"
+msgstr "Servicios de biblioteca"
+
+msgid "Managment_FAT"
+msgstr "Dirección de la Fundació"
+
+msgid "Press_and_Media_Clipping"
+msgstr "Resumen de prensa"
+
+msgid "Press_kit_ans_Press_Releases"
+msgstr "Dossier y nota de prensa"
+
+msgid "Protocol_Events_and_Actions"
+msgstr "Actos y atenciones protocolarias"
+
+msgid "Record_of_the_Work"
+msgstr "Ficha de obra"
+
+msgid "Registration_of_the_Work"
+msgstr "Registro de obra"
+
+msgid "Research"
+msgstr "Investigación Antoni Tàpies"
+
+msgid "Space_and_Set-up"
+msgstr "Espacios y montaje"
+
+msgid "Status_and_Rules"
+msgstr "Estatutos y reglamentos"
+
+msgid "Works"
+msgstr "Obras"
+
+msgid "Sub_Case-file"
+msgstr "Expediente"
+
+msgid "Lectures_and_Seminars"
+msgstr "Conferencias y seminarios"
+
+msgid "InstitutionalAgreement"
+msgstr "Acuerdos institucionales"
+
+msgid "Activitats paral·les "
+msgstr "Actividades paralelas"
+
+msgid "Clausura"
+msgstr "Clausura"
+
+msgid "Curs "
+msgstr "Cursos"
+
+msgid "Emissions i gravacions TV ràdio cinema"
+msgstr "Emisiones y grabaciones: TV, radio, cine"
+
+msgid "Entrevistes "
+msgstr "Entrevistas"
+
+msgid "Espectacles "
+msgstr "Espectáculos"
+
+msgid "Foto d'instal·lacio Col·leccio EspaiA"
+msgstr "Foto instalación: Espacio A"
+
+msgid "Foto instal·lacio fora de FAT"
+msgstr "Foto instalación otras instituciones"
+
+msgid "Fotografies d'instal·lacio"
+msgstr "Foto instalación Fundació"
+
+msgid "Inauguracions"
+msgstr "Inauguraciones"
+
+msgid "Llibre d'instal·lacio"
+msgstr "Libro de instalación"
+
+msgid "Material per premsa"
+msgstr "Material prensa"
+
+msgid "Muntatge exposició"
+msgstr "Montaje exposición"
+
+msgid "Obra"
+msgstr "Foto obras"
+
+msgid "Portes obertes"
+msgstr "Puertas abiertas"
+
+msgid "Presentacions "
+msgstr "Presentaciones"
+
+msgid "Roda de premsa"
+msgstr "Rueda de prensa"
+
+msgid "Servei educatiu taller "
+msgstr "Taller educativo"
+
+msgid "Servei educatiu visites dinamitzades"
+msgstr "Visitas dinamizadas"
+
+msgid "Dinners"
+msgstr "Comidas"
+
+msgid "ProtocolVisits"
+msgstr "Visitas protocolarias"
+

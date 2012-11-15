@@ -1912,3 +1912,196 @@ msgstr ""
 
 msgid "comentari_cancelar"
 msgstr ""
+
+msgid "Performance"
+msgstr ""
+
+msgid "ExhibitionTourings"
+msgstr ""
+
+msgid "Administrative_Organisation"
+msgstr ""
+
+msgid "Archive_Services"
+msgstr ""
+
+msgid "Asset_Managment"
+msgstr ""
+
+msgid "Bookshop_Services"
+msgstr ""
+
+msgid "Cataloguing_Graphic_Work"
+msgstr ""
+
+msgid "Cataloguing_Original_Work"
+msgstr ""
+
+msgid "Certification_Graphic_Work"
+msgstr ""
+
+msgid "Certification_Original_Work"
+msgstr ""
+
+msgid "Circulation_Sheet"
+msgstr ""
+
+msgid "Comunication"
+msgstr ""
+
+msgid "Condition_Report"
+msgstr ""
+
+msgid "Conservation_and_Restoration"
+msgstr ""
+
+msgid "Copyright_Protection"
+msgstr ""
+
+msgid "Description_and_Condition"
+msgstr ""
+
+msgid "Educational_Services"
+msgstr ""
+
+msgid "Event_Organisation"
+msgstr ""
+
+msgid "Event_Production"
+msgstr ""
+
+msgid "External_Relations"
+msgstr ""
+
+msgid "FAT_Promotion_and_Information"
+msgstr ""
+
+msgid "Financial_Resource_Managment"
+msgstr ""
+
+msgid "Friends_of_the_FAT"
+msgstr ""
+
+msgid "Fundació_Logo"
+msgstr ""
+
+msgid "History_of_FAT"
+msgstr ""
+
+msgid "Human_Resources"
+msgstr ""
+
+msgid "Installation_Guide"
+msgstr ""
+
+msgid "Intervention_Report"
+msgstr ""
+
+msgid "Legislation_and_Legal_Matters"
+msgstr ""
+
+msgid "Library_Services"
+msgstr ""
+
+msgid "Managment_FAT"
+msgstr ""
+
+msgid "Press_and_Media_Clipping"
+msgstr ""
+
+msgid "Press_kit_and_Press_Releases"
+msgstr ""
+
+msgid "Protocol_Events_and_Actions"
+msgstr ""
+
+msgid "Record_of_the_Work"
+msgstr ""
+
+msgid "Registration_of_the_Work"
+msgstr ""
+
+msgid "Research"
+msgstr ""
+
+msgid "Space_and_Set-up"
+msgstr ""
+
+msgid "Status_and_Rules"
+msgstr ""
+
+msgid "Work"
+msgstr ""
+
+msgid "Sub_Case-file"
+msgstr ""
+
+msgid "Lectures_and_Seminars"
+msgstr ""
+
+msgid "InstitutionalAgreement"
+msgstr ""
+
+msgid "Activitats paral·les "
+msgstr ""
+
+msgid "Clausura"
+msgstr ""
+
+msgid "Curs "
+msgstr ""
+
+msgid "Emissions i gravacions TV ràdio cinema"
+msgstr ""
+
+msgid "Entrevistes "
+msgstr ""
+
+msgid "Espectacles "
+msgstr ""
+
+msgid "Foto d'instal·lacio Col·leccio EspaiA"
+msgstr ""
+
+msgid "Foto instal·lacio fora de FAT"
+msgstr ""
+
+msgid "Fotografies d'instal·lacio"
+msgstr ""
+
+msgid "Inauguracions"
+msgstr ""
+
+msgid "Llibre d'instal·lacio"
+msgstr ""
+
+msgid "Material per premsa"
+msgstr ""
+
+msgid "Muntatge exposició"
+msgstr ""
+
+msgid "Obra"
+msgstr ""
+
+msgid "Portes obertes"
+msgstr ""
+
+msgid "Presentacions "
+msgstr ""
+
+msgid "Roda de premsa"
+msgstr ""
+
+msgid "Servei educatiu taller "
+msgstr ""
+
+msgid "Servei educatiu visites dinamitzades"
+msgstr ""
+
+msgid "Dinners"
+msgstr ""
+
+msgid "ProtocolVisits"
+msgstr ""
+

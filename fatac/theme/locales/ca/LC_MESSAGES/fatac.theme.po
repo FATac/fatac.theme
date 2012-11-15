@@ -160,7 +160,7 @@ msgstr "Naixement"
 
 #. Default: " Bit Rate"
 msgid "BitRate"
-msgstr " Bit Rate"
+msgstr "Bit Rate"
 
 #. Default: "Buscar/Editar objectes"
 #: ../../../../fatac.forms/fatac/forms/browser/templates/inici.pt:31
@@ -1936,3 +1936,195 @@ msgstr "Nom del grup"
 #: ../../../../fatac.content/fatac/content/browser/manage-groups.pt:156
 msgid "heading_memberships_current"
 msgstr "Els meus grups"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "ExhibitionTourings"
+msgstr "Visites guiades"
+
+msgid "Administrative_Organisation"
+msgstr "Organització administrativa"
+
+msgid "Archive_Services"
+msgstr "Servei d'arxiu"
+
+msgid "Asset_Managment"
+msgstr "Gestió del patrimoni"
+
+msgid "Bookshop_Services"
+msgstr "Servei de botiga"
+
+msgid "Cataloguing_Graphic_Work"
+msgstr "Catalogació obra gràfica"
+
+msgid "Cataloguing_Original_Work"
+msgstr "Catalogació obra original"
+
+msgid "Certification_Graphic_Work"
+msgstr "Certificació obra gràfica"
+
+msgid "Certification_Original_Work"
+msgstr "Certificació obra original"
+
+msgid "Circulation_Sheet"
+msgstr "Full de préstec"
+
+msgid "Comunication"
+msgstr "Comunicació"
+
+msgid "Condition_Report"
+msgstr "Memòria de condicions"
+
+msgid "Conservation_and_Restoration"
+msgstr "Conservació i restauració"
+
+msgid "Copyright_Protection"
+msgstr "Protecció drets autor"
+
+msgid "Description_and_Condition"
+msgstr "Informe de condicions"
+
+msgid "Educational_Services"
+msgstr "Servei d'educació"
+
+msgid "Event_Organisation"
+msgstr "Organització esdeveniment"
+
+msgid "Event_Production"
+msgstr "Producció esdeveniment"
+
+msgid "External_Relations"
+msgstr "Relacions externes"
+
+msgid "FAT_Promotion_and_Information"
+msgstr "Protecció i promoció Fundació"
+
+msgid "Financial_Resource_Managment"
+msgstr "Gestió recursos financers"
+
+msgid "Friends_of_the_FAT"
+msgstr "Amics de la Fundació"
+
+msgid "Fundació_Logo"
+msgstr "Fundació Logo"
+
+msgid "History_of_FAT"
+msgstr "Història de la Fundació"
+
+msgid "Human_Resources"
+msgstr "Recursos humans"
+
+msgid "Installation_Guide"
+msgstr "Reportatge d'instal·lació"
+
+msgid "Intervention_Report"
+msgstr "Informe d'intervenció"
+
+msgid "Legislation_and_Legal_Matters"
+msgstr "Assumptes jurídics "
+
+msgid "Library_Services"
+msgstr "Servei de biblioteca"
+
+msgid "Managment_FAT"
+msgstr "Direcció de la Fundació"
+
+msgid "Press_and_Media_Clipping"
+msgstr "Recull de premsa"
+
+msgid "Press_kit_and_Press_Releases"
+msgstr "Dossier i nota de premsa"
+
+msgid "Protocol_Events_and_Actions"
+msgstr "Actes i atencions protocol·làries"
+
+msgid "Record_of_the_Work"
+msgstr "Fitxa d'obra"
+
+msgid "Registration_of_the_Work"
+msgstr "Registre d'obra"
+
+msgid "Research"
+msgstr "Investigació Antoni Tàpies"
+
+msgid "Space_and_Set-up"
+msgstr "Espais i muntatge"
+
+msgid "Status_and_Rules"
+msgstr "Estatuts i reglaments"
+
+msgid "Works"
+msgstr "Obres"
+
+msgid "Sub_Case-file"
+msgstr "Expedient"
+
+msgid "Lectures_and_Seminars"
+msgstr "Conferències i seminaris"
+
+msgid "InstitutionalAgreement"
+msgstr "Acords institucionals"
+
+msgid "Activitats paral·les "
+msgstr "Activitats paral·leles"
+
+msgid "Clausura"
+msgstr "Clausura"
+
+msgid "Curs "
+msgstr "Cursos"
+
+msgid "Emissions i gravacions TV ràdio cinema"
+msgstr "Emissions i gravacions: TV, ràdio, cinema"
+
+msgid "Entrevistes "
+msgstr "Entrevistes"
+
+msgid "Espectacles "
+msgstr "Espectacles"
+
+msgid "Foto d'instal·lacio Col·leccio EspaiA"
+msgstr "Foto instal·lació: Espai A"
+
+msgid "Foto instal·lacio fora de FAT"
+msgstr "Foto instal·lació altres institucions"
+
+msgid "Fotografies d'instal·lacio"
+msgstr "Foto instal·lació Fundació"
+
+msgid "Inauguracions"
+msgstr "Inauguracions"
+
+msgid "Llibre d'instal·lacio"
+msgstr "Llibre d'instal·lació"
+
+msgid "Material per premsa"
+msgstr "Material premsa"
+
+msgid "Muntatge exposició"
+msgstr "Muntatge exposició"
+
+msgid "Obra"
+msgstr "Foto obres"
+
+msgid "Portes obertes"
+msgstr "Portes obertes"
+
+msgid "Presentacions "
+msgstr "Presentacions"
+
+msgid "Roda de premsa"
+msgstr "Roda de premsa"
+
+msgid "Servei educatiu taller "
+msgstr "Taller educatiu"
+
+msgid "Servei educatiu visites dinamitzades"
+msgstr "Visites dinamitzades"
+
+msgid "Dinners"
+msgstr "Àpats"
+
+msgid "ProtocolVisits"
+msgstr "Visites protocol·làries"
