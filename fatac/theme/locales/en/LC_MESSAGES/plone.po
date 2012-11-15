@@ -886,6 +886,3 @@ msgstr "View"
 
 msgid "Group name"
 msgstr "Group Name"
-
-msgid "Press_kit_and_Press_Releases"
-msgstr "Press kit and press releases"
