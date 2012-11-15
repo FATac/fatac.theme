@@ -886,3 +886,6 @@ msgstr "visualitzar"
 
 msgid "Group name"
 msgstr "Nom del grup"
+
+msgid "Press_kit_and_Press_Releases"
+msgstr "Kit i comunicats de premsa"
