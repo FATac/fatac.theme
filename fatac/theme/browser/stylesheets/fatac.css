@@ -679,9 +679,19 @@ div.photo-container {
     background-color: #b3d396;
 }
 
+.ui-dialog-titlebar {
+    display:none;
+}
+.ui-dialog-buttonpane {
+    margin:0 !important; border-top:none;
+}
+
 #comentari {
-    height: 87px;
+    height: 100px;
+    min-height:100px !important;
     width: 252px;
+    border: none;
+    background-color:white !important;
 }
 
 .numberofcomments {margin-bottom: 20px; font-size: 13px;}
