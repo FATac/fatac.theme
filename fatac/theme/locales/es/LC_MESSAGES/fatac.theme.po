@@ -2034,7 +2034,7 @@ msgid "Press_and_Media_Clipping"
 msgstr "Resumen de prensa"
 
 msgid "Press_kit_and_Press_Releases"
-msgstr "Dosier y nota de premsa"
+msgstr "Dosier y nota de prensa"
 
 msgid "Press_kit_ans_Press_Releases"
 msgstr "Dossier y nota de prensa"
