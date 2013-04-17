@@ -1,0 +1,45 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+.breadcrumb {
+  display: inline-block;
+  padding: 0;
+  margin: 6px 0 0;
+  list-style: none;
+  font-size:84.6153846%;
+  li {
+    display: inline-block;
+    @include ie7-inline-block();
+    text-shadow: 0 1px 0 $white;
+  }
+  .divider {
+    padding: 0 2px;
+    color: #63a1c1;
+    font-size:61.5384615%;
+    position:relative;
+    top:-1px;
+  }
+  .active, .active a {
+    color: $gray;
+    font-weight:bold;
+  }
+  h2 {
+    margin:0 !important;
+    font-size:11px;
+    color: $grayLight;
+    font-weight:normal;
+    line-height:18px;
+  }
+}
+
+#portal-breadcrumbs h2 {
+    margin:0 !important;
+    font-size:84.6153846%;
+    color: $grayLight;
+    font-weight:normal;
+    line-height:18px;
+    display: inline-block;
+}
+
+//s'ha canviat l'estructura per defecte del breadcrumbs per poc accessible

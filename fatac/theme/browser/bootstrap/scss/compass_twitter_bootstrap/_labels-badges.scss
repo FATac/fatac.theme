@@ -1,0 +1,78 @@
+//
+// Labels and badges
+// --------------------------------------------------
+
+
+// Base classes
+.label,
+.badge {
+  font-size: $baseFontSize * .845; 
+  font-weight: bold;
+  line-height: 14px; // ensure proper line-height if floated
+  color: $white; 
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: darken($grayLight,20%);
+}
+// Set unique padding and border-radii
+.label {
+  padding: 1px 4px 2px;
+  @include border-radius(3px);
+}
+.badge {
+  padding: 1px 6px 2px;
+  @include border-radius(9px);
+}
+
+// Hover state, but only for links
+a {
+  &.label:hover,
+  &.badge:hover {
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+// Important (red)
+.label-primary, .badge-primary               { background-color: $blue; }
+.label-primary[href], .badge-primary[href]   { background-color: darken($blue, 10%); }
+
+
+.label-important, .badge-important               { background-color: $red; }
+.label-important[href], .badge-important[href]   { background-color: darken($red, 10%); }
+// Warnings (orange)
+.label-warning, .badge-warning                   { background-color: $orange; }
+.label-warning[href], .badge-warning[href]       { background-color: darken($orange, 10%); }
+// Success (green)
+.label-success, .badge-success                   { background-color: $successText; }
+.label-success[href], .badge-success[href]       { background-color: darken($successText, 10%); }
+// Info (turquoise)
+.label-info, .badge-info                         { background-color: darken($cyan, 10%); }
+.label-info[href], .badge-info[href]             { background-color: darken($cyan, 20%); }
+// Inverse (black)
+.label-inverse, .badge-inverse                   { background-color: $grayDark; }
+.label-inverse[href], .badge-inverse[href]       { background-color: darken($grayDark, 10%); }
+// Intranet
+.label-intranet, .badge-intranet                 { background-color: $purple; }
+.label-intranet[href], .badge-intranet[href]     { background-color: darken($purple, 10%); }
+
+
+// Quick fix for labels/badges in buttons
+.btn {
+  .label,
+  .badge {
+    position: relative;
+    top: -1px;
+  }
+}
+.btn-mini {
+  .label,
+  .badge {
+    top: 0;
+  }
+}

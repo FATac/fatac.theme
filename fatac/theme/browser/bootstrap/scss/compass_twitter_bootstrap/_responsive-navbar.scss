@@ -1,0 +1,301 @@
+//
+// Responsive: Navbar
+// --------------------------------------------------
+
+
+// TABLETS AND BELOW
+// -----------------
+//Recordem $navbarCollapseWidth:             799px !default;
+
+
+
+@media only screen and (max-width: 979px) and (orientation: portrait),
+       only screen and (max-width: 979px) and (orientation: landscape) {
+
+   
+  // UNFIX THE TOPBAR
+  // ----------------
+  // Remove any padding from the body
+  body {
+    padding-top: 0;
+  }
+  // Unfix the navbar
+  #portal-globalnav .navbar-fixed-top,
+  #portal-globalnav .navbar-fixed-bottom { position: static;}
+  #portal-globalnav .navbar-fixed-top {margin-bottom: $baseLineHeight;}
+  #portal-globalnav .navbar-fixed-bottom {margin-top: $baseLineHeight;}
+  #portal-globalnav .navbar-fixed-top .navbar-inner,
+  #portal-globalnav .navbar-fixed-bottom .navbar-inner {padding: 5px;}
+  #portal-globalnav .navbar .container {width: auto;padding: 0;}
+  // Account for brand name
+  #portal-globalnav .navbar .brand {padding-left: 10px;padding-right: 10px;margin: 0 0 0 -5px;}
+  // Negative indent the now static "fixed" navbar
+  #portal-globalnav .navbar-fixed-top,#portal-globalnav .navbar-fixed-bottom {margin-left: -10px;margin-right: -10px;}
+  // COLLAPSIBLE NAVBAR
+  // ------------------
+  // Nav collapse clears brand
+  #portal-globalnav .nav-collapse, .nav-collapse-eines  {clear: both;}
+  // Block-level the nav
+  #portal-globalnav .nav-collapse .nav, .nav-collapse-eines .nav {
+    float: none;
+    margin: 0 0 ($baseLineHeight / 2);
+  }
+  #portal-globalnav .nav-collapse .nav > li,
+  .nav-collapse-eines.nav-collapse .nav > li  {
+    float: none;
+  }
+  #portal-globalnav .nav-collapse .nav > li > a,
+  .nav-collapse-eines.nav-collapse .nav > li > a {
+    margin-bottom: 2px;
+  }
+  #portal-globalnav .nav-collapse .nav > .divider-vertical,
+  .nav-collapse-eines.nav-collapse .nav > .divider-vertical {
+    display: none;
+  }
+  #portal-globalnav .nav-collapse .nav .nav-header,
+  .nav-collapse-eines.nav-collapse .nav .nav-header, {
+    color: $navbarText;
+    text-shadow: none;
+  }
+  // Nav and dropdown links in navbar
+  #portal-globalnav .nav-collapse .nav > li > a,
+  #portal-globalnav .nav-collapse .dropdown-menu a, 
+  .nav-collapse-eines.nav-collapse .nav > li > a,
+  .nav-collapse-eines.nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: $white;
+    @include border-radius(3px);
+  }
+
+  // Buttons
+  #portal-globalnav .nav-collapse .btn {
+    padding: 4px 10px 4px;
+    font-weight: normal;
+    @include border-radius(4px);
+  }
+  #portal-globalnav .nav-collapse .dropdown-menu li + li a {
+    margin-bottom: 2px;
+  }
+  #portal-globalnav .nav-collapse .nav > li > a:hover,
+  #portal-globalnav .nav-collapse .dropdown-menu a:hover {
+    background-color: $navbarBackground;
+  }
+  #portal-globalnav .navbar-inverse .nav-collapse .nav > li > a:hover,
+  #portal-globalnav .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+    background-color: $navbarInverseBackground;
+  }
+  // Buttons in the navbar
+  #portal-globalnav .nav-collapse.in .btn-group {
+    margin-top: 5px;
+    padding: 0;
+  }
+  // Dropdowns in the navbar
+  #portal-globalnav .nav-collapse .dropdown-menu,
+  .nav-collapse-eines.nav-collapse .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    float: none;
+    display: block;
+    max-width: none;
+    margin: 0 15px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    @include border-radius(0);
+    @include box-shadow(none);
+  }
+  #portal-globalnav .nav-collapse .dropdown-menu:before,
+  #portal-globalnav .nav-collapse .dropdown-menu:after {
+    display: none;
+  }
+  #portal-globalnav .nav-collapse .dropdown-menu .divider {
+    display: none;
+  }
+  // Forms in navbar
+  #portal-globalnav .nav-collapse .navbar-form,
+  #portal-globalnav .nav-collapse .navbar-search {
+    float: none;
+    padding: ($baseLineHeight / 2) 15px;
+    margin: ($baseLineHeight / 2) 0;
+    border-top: 1px solid $navbarBackground;
+    border-bottom: 1px solid $navbarBackground;
+    @include box-shadow(#{inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1)});
+  }
+  // Pull right (secondary) nav content
+  #portal-globalnav .navbar .nav-collapse .nav.pull-right {
+    float: none;
+    margin-left: 0;
+  }
+  // Hide everything in the navbar save .brand and toggle button */
+  #portal-globalnav .nav-collapse,
+  #portal-globalnav .nav-collapse.collapse {
+    overflow: hidden;
+    height: 0;
+  }
+  // Navbar button
+  #portal-globalnav .navbar .btn-navbar {
+    display: block;
+  }
+
+  #portal-header .btn-navbar.pull-right {margin-top:18px;}
+  .nav-collapse-eines.nav-collapse {overflow: hidden; height: 0;}
+  .nav-collapse-eines.nav-collapse .nav {@include border-radius(6px); background: $grayLighter; margin:9px 0 0 !important; border:1px solid $tableBorder; @include box-shadow(inset 0 2px 5px 2px rgba(0,0,0,.15));}
+  .nav-collapse-eines.nav-collapse .nav .dropdown-toggle {display: none;}
+  .nav-collapse-eines.nav-collapse a {color:$blue !important;}
+  // STATIC NAVBAR
+  // -------------
+  #portal-globalnav .navbar-static .navbar-inner {
+    padding-left:  10px;
+    padding-right: 10px;
+  }
+  #portal-globalnav .nav {margin-bottom:0 !important; border-top: 1px solid $tableBorder;}
+  #portal-globalnav .nav a {color:$gray !important; border-bottom: 0 !important; @include border-radius(0 !important); margin-bottom:0 !important;
+    &:focus, &:hover {color: $grayDarker !important;}
+  }
+  #portal-globalnav .state-published {border-right: 3px solid $blue !important;}
+  #portal-globalnav .state-draft {border-right: 3px solid $green !important;}
+  #portal-globalnav .state-pending {border-right: 3px solid darken($orange, 15%) !important;}
+  #portal-globalnav .state-intranet {border-right: 3px solid $purple !important;}
+  #portal-globalnav .state-private {border-right: 3px solid $red !important;}
+
+
+}
+
+
+// DEFAULT DESKTOP
+// ---------------
+
+
+@media only screen and (max-width: 639px),
+      only screen and (max-width: 639px) and (orientation: landscape)  {
+
+  .navbar-fixed-top, .navbar-fixed-bottom {padding-left:0; padding-right: 0;}
+
+  // Unfix the navbar
+  .navbar-fixed-top,
+  .navbar-fixed-bottom { position: static;}
+  .navbar-fixed-top {margin-bottom: $baseLineHeight;}
+  .navbar-fixed-bottom {margin-top: $baseLineHeight;}
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {padding: 5px;}
+  .navbar .container {width: auto;padding: 0;}
+  // Account for brand name
+  .navbar .brand {padding-left: 10px;padding-right: 10px;margin: 0 0 0 -5px;}
+  // Negative indent the now static "fixed" navbar
+  .navbar-fixed-top,#portal-globalnav .navbar-fixed-bottom {margin-left: -10px;margin-right: -10px;}
+  // COLLAPSIBLE NAVBAR
+  // ------------------
+  // Nav collapse clears brand
+  .nav-collapse {clear: both;}
+  // Block-level the nav
+  .nav-collapse .nav {
+    float: none;
+    margin: 0 0 ($baseLineHeight / 2);
+  }
+  .nav-collapse .nav > li {
+    float: none;
+  }
+  .nav-collapse .nav > li > a {
+    margin-bottom: 2px;
+  }
+  .nav-collapse .nav > .divider-vertical {
+    display: none;
+  }
+  .nav-collapse .nav .nav-header {
+    color: $navbarText;
+    text-shadow: none;
+  }
+  // Nav and dropdown links in navbar
+  .nav-collapse .nav > li > a,
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: $white;
+    @include border-radius(3px);
+  }
+
+  // Buttons
+  .nav-collapse .btn {
+    padding: 4px 10px 4px;
+    font-weight: normal;
+    @include border-radius(4px);
+  }
+  .nav-collapse .dropdown-menu li + li a {
+    margin-bottom: 2px;
+  }
+  .nav-collapse .nav > li > a:hover,
+  .nav-collapse .dropdown-menu a:hover {
+    background-color: $navbarBackground;
+  }
+  .navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+    background-color: $navbarInverseBackground;
+  }
+  // Buttons in the navbar
+  .nav-collapse.in .btn-group {
+    margin-top: 5px;
+    padding: 0;
+  }
+  // Dropdowns in the navbar
+  .nav-collapse .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    float: none;
+    display: block;
+    max-width: none;
+    margin: 0 15px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    @include border-radius(0);
+    @include box-shadow(none);
+  }
+  .nav-collapse .dropdown-menu:before,
+  .nav-collapse .dropdown-menu:after {
+    display: none;
+  }
+  .nav-collapse .dropdown-menu .divider {
+    display: none;
+  }
+  // Forms in navbar
+  .nav-collapse .navbar-form,
+  .nav-collapse .navbar-search {
+    float: none;
+    padding: ($baseLineHeight / 2) 15px;
+    margin: ($baseLineHeight / 2) 0;
+    border-top: 1px solid $navbarBackground;
+    border-bottom: 1px solid $navbarBackground;
+    @include box-shadow(#{inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1)});
+  }
+  // Pull right (secondary) nav content
+  .navbar .nav-collapse .nav.pull-right {
+    float: none;
+    margin-left: 0;
+  }
+  // Hide everything in the navbar save .brand and toggle button */
+  .nav-collapse,
+  .nav-collapse.collapse {
+    overflow: hidden;
+    height: 0;
+  }
+  // Navbar button
+  .navbar .btn-navbar {
+    display: block;
+  }
+
+  // STATIC NAVBAR
+  // -------------
+  .navbar-static .navbar-inner {
+    padding-left:  10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape)  {
+  * .reView {
+    display:none !important;
+  }
+}

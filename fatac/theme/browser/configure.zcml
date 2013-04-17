@@ -142,6 +142,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        for="*"
+        name="bookView"
+        class=".bookview.BookView"
+        permission="zope2.View"
+        />
+
+
     <!-- Vista creada per fer proves de pintar la visualització de resultats amb una llista de ids) -->
     <browser:page
         for="*"

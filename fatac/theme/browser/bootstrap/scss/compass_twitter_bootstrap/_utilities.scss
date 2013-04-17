@@ -1,0 +1,53 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+.pull-top {
+  margin-top:-52px !important;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+
+.goout {
+  border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px !important; overflow: hidden; padding: 0 !important; position: absolute !important; width: 1px;
+}
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// For Affix plugin
+.affix {
+  position: fixed;
+}
+
+// Clearing floats
+.clearfix {
+  @include clearfix();
+}
+
+// Accessible yet invisible text
+.hide-text {
+  @include hide-text();
+}
+
+// Uses box-sizing mixin, so must be defined here
+.input-block-level {
+  @include input-block-level();
+}

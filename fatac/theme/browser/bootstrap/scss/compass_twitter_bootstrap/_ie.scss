@@ -1,0 +1,66 @@
+//
+// Internet Explorer CSS Hacks
+// --------------------------------------------------
+
+// Button Groups
+// --------------------------------------------------
+.lt-ie8 .btn-group > .btn + .dropdown-toggle {
+  *padding-top: 5px;
+  *padding-bottom: 5px;
+}
+.lt-ie8 .btn-group > .btn-mini + .dropdown-toggle {
+  *padding-left: 2px;
+  *padding-right: 2px;
+}
+.lt-ie8 .btn-group > .btn-small + .dropdown-toggle {
+  *padding-top: 5px;
+  *padding-bottom: 4px;
+}
+.lt-ie8 .btn-group > .btn-large + .dropdown-toggle {
+  *padding-left: 7px;
+  *padding-right: 7px;
+}
+
+
+
+// Button
+// --------------------------------------------------
+.lt-ie8 .btn{
+  *line-height: $baseLineHeight;
+  *border: 0; // Remove the border to prevent IE7's  black border on input:focus
+  &:hover {
+    *border: 0; // Remove the border to prevent IE7's black border on input:focus
+    *background-color: darken($white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
+  }
+  &.disabled,
+  &[disabled] {
+    *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  }
+
+} 
+.lt-ie8 button.btn,
+.lt-ie8 input[type="submit"].btn {
+  // IE7 has some default padding on button controls
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+  &.btn-large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+}
+
+
+// Component animations
+// --------------------------------------------------
+.lt-ie9 .collapse {
+  overflow: visible \9;
+}
+ 
