@@ -11,9 +11,8 @@
 // Group == heading + body
 .accordion-group {
   margin-bottom: 2px;
-  border: 1px solid $tableBorder;
-  @include border-radius(4px);
-  background: #fcfcfc;
+  border: 1px solid #e5e5e5;
+  @include border-radius($baseBorderRadius);
 }
 .accordion-heading {
   border-bottom: 0;
@@ -28,13 +27,8 @@
   cursor: pointer;
 }
 
-.accordion-body {
-  background: #fff;
-  @include box-shadow(inset 0 1px 4px #ddd);
-}
-
 // Inner needs the styles because you can't animate properly with any styles on the element
 .accordion-inner {
   padding: 9px 15px;
-  border-top: 1px solid $tableBorder;
+  border-top: 1px solid #e5e5e5;
 }

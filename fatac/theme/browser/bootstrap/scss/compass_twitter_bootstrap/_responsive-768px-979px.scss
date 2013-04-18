@@ -2,7 +2,8 @@
 // Responsive: Tablet to desktop
 // --------------------------------------------------
 
-@media only screen and (min-width: 640px) and (max-width: 979px) and (orientation: portrait) {
+
+@media (min-width: 768px) and (max-width: 979px) {
 
   // Fixed grid
   @include grid-core($gridColumnWidth768, $gridGutterWidth768);
@@ -14,4 +15,5 @@
   @include grid-input($gridColumnWidth768, $gridGutterWidth768);
 
   // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
 }

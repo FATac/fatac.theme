@@ -2,7 +2,6 @@
 // Responsive: Large desktop and up
 // --------------------------------------------------
 
-/* No es fa servir
 
 @media (min-width: 1200px) {
 
@@ -20,12 +19,10 @@
     margin-left: -$gridGutterWidth1200;
   }
   .thumbnails > li {
-    margin-left: -$gridGutterWidth1200;
+    margin-left: $gridGutterWidth1200;
   }
   .row-fluid .thumbnails {
     margin-left: 0;
   }
 
 }
-
-*/

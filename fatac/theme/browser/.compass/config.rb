@@ -5,8 +5,8 @@ add_import_path "./bootstrap/scss"
 http_path = "/"
 css_dir = "./stylesheets"
 sass_dir = "./scss"
-http_images_path = "/++resource++fatac.theme.images"
-images_dir = "static/images"
+http_images_path = "/++resource++fatac.theme.bootstrap/img/"
+images_dir = "bootstrap/img"
 javascripts_dir = "./bootstrap/js"
 
 # You can select your preferred output style here (can be overridden via the command line):

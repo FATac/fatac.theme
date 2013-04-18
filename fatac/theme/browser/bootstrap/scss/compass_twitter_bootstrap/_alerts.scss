@@ -2,6 +2,7 @@
 // Alerts
 // --------------------------------------------------
 
+
 // Base styles
 // -------------------------
 
@@ -11,12 +12,12 @@
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
   background-color: $warningBackground;
   border: 1px solid $warningBorder;
-  border-bottom: 1px solid darken($warningBorder,20%);
-  @include border-radius(4px);
+  @include border-radius($baseBorderRadius);
+}
+.alert,
+.alert h4 {
+  // Specified for the h4 to prevent conflicts of changing $headingsColor
   color: $warningText;
-  @include box-shadow(0 1px 2px rgba(0,0,0,.15));
-  @include gradient-vertical($warningBackground, darken($warningBackground,10%));
-
 }
 .alert h4 {
   margin: 0;
@@ -25,11 +26,11 @@
 // Adjust close link position
 .alert .close {
   position: relative;
-  top: 0px;
-  right: -25px;
+  top: -2px;
+  right: -21px;
   line-height: $baseLineHeight;
-  text-shadow: 0 -1px rgba(0,0,0,1), 0 1px rgba(255,255,255,1);
 }
+
 
 // Alternate styles
 // -------------------------
@@ -38,30 +39,36 @@
   background-color: $successBackground;
   border-color: $successBorder;
   color: $successText;
-  border-bottom: 1px solid darken($successBorder,10%);
-  @include gradient-vertical($successBackground, darken($successBackground,10%));  
+}
+.alert-success h4 {
+  color: $successText;
 }
 .alert-danger,
 .alert-error {
   background-color: $errorBackground;
   border-color: $errorBorder;
   color: $errorText;
-  border-bottom: 1px solid darken($errorBorder,15%);
-  @include gradient-vertical($errorBackground, darken($errorBackground,10%));  
+}
+.alert-danger h4,
+.alert-error h4 {
+  color: $errorText;
 }
 .alert-info {
   background-color: $infoBackground;
   border-color: $infoBorder;
   color: $infoText;
-  border-bottom: 1px solid darken($infoBorder,10%);
-  @include gradient-vertical($infoBackground, darken($infoBackground,10%));  
 }
+.alert-info h4 {
+  color: $infoText;
+}
+
 
 // Block alerts
 // -------------------------
+
 .alert-block {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .alert-block > p,
 .alert-block > ul {

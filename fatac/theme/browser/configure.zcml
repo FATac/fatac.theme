@@ -26,6 +26,13 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="fatac.theme.bootstrap"
+        directory="bootstrap"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Resource directory for stylesheets -->
     <browser:resourceDirectory
         name="fatac.theme.stylesheets"

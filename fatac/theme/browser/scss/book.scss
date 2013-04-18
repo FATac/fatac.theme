@@ -1,3 +1,215 @@
 @import "reboot";
 
 
+$tapiesGreen: #B9E38F;
+$tapiesDarkGreen: #339933;
+$tapiesLightGrey: #fbfbfb;
+$tapiesDarkGrey: #f0f0f0;
+
+
+@mixin book-section {
+    background-color: $tapiesLightGrey;
+    @include border-radius(5px);
+    border: 2px solid $tapiesDarkGrey;
+    height: 100%;
+    padding-left:15px;
+}
+
+body {
+    font-family: 'Terminal Dosis', sans-serif;
+}
+
+html, body, .container {
+    height:100%;
+}
+
+#book {
+    height:97%;
+    margin-top: 2%;
+    header {
+        > div {
+            position:relative;
+            @include book-section;
+            #palette {
+                position:absolute;
+                top:10px;
+                right:10px;
+                background-image: url('++resource++fatac.theme.images/palette.png');
+                background-repeat: no-repeat;
+                width:73px;
+                height:25px;
+            }
+            h1 {
+                position:absolute;
+                bottom:0px;
+                font-size: 2em;
+                width:100%;
+                .author {
+                    //font-size: 1.5em;
+                    //font-family: georgia;
+                    color:$tapiesDarkGreen;
+                    //font-style: italic;
+                }
+            }
+
+        }
+        box-sizing: border-box;
+        padding-bottom:2%;
+        height:12%;
+    }
+    #screen {
+        #main {
+            @include book-section;
+            padding-left:0px;
+            position:relative;
+            overflow: hidden;
+            text-align: center;
+
+
+            img:hover + button#zoom {
+                opacity: 0.4;
+            }
+
+            button#zoom {
+                opacity: 0;
+                position:absolute;
+                right:4px;
+                bottom:4px;
+                height: 36px;
+                width: 36px;
+                border:none;
+                @include border-radius(5px);
+                background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
+                -webkit-transition: opacity 0.4s ease-in-out;
+                -moz-transition: opacity 0.4s ease-in-out;
+                -o-transition: opacity 0.4s ease-in-out;
+                transition: opacity 0.4s ease-in-out;
+            }
+            img {
+                -webkit-box-shadow: 0px 0px 14px rgba(50, 50, 50, 1);
+                -moz-box-shadow:    0px 0px 14px rgba(50, 50, 50, 1);
+                box-shadow:         0px 0px 14px rgba(50, 50, 50, 1);
+                max-height: 100%;
+                z-index: 1000;
+                &:hover {
+                    cursor: -webkit-zoom-in;
+                    cursor: -moz-zoom-in;
+                    max-width: none;
+                    max-height: none;
+                }
+            }
+        }
+
+        #sidebar {
+            @include book-section;
+            padding-left:0px;
+            .accordion-group {
+                border:none;
+                .accordion-body.in {
+                    padding-bottom:5px;
+                    border-bottom: 1px solid #e5e5e5;
+                    border-top: 1px solid #e5e5e5;
+                    cursor:all-scroll;
+                }
+                .accordion-heading a {
+                    font-size:1.4em;
+                    font-weight: bold;
+                    color: $tapiesDarkGreen;
+                    text-decoration: none;
+                    &:hover {
+                        -webkit-transition: text-shadow  0.2s ease-in-out;
+                        -moz-transition: text-shadow 0.2s ease-in-out;
+                        -o-transition: text-shadow 0.2s ease-in-out;
+                        transition: text-shadow 0.2s ease-in-out;
+                        text-shadow: $tapiesGreen 0px 0px 10px;
+                    }
+                }
+                .detail {
+                    img {
+                        @include border-radius(5px);
+                    }
+                    margin-bottom:10px;
+                }
+            }
+        }
+
+        height:64%;
+
+
+    }
+
+    footer {
+        box-sizing: border-box;
+        padding-top:2%;
+        > div {
+            @include book-section;
+            @mixin navbutton {
+                float:left;
+                width:10%;
+                text-align: center;
+                color: $tapiesDarkGrey;
+                font-size: 4em;
+                font-weight: bold;
+                padding-top: 2.8%;
+                line-height: 0.8em;
+                cursor:pointer;
+                background: none;
+                border: none;
+            }
+            #prev {
+                @include navbutton;
+            }
+
+            #thumbs {
+                height:100%;
+                width:80%;
+                float:left;
+                overflow: hidden;
+                position:relative;
+                .wrapper {
+                    height:100%;
+                    width:135000px;
+                    padding-left:5px;
+                    .thumb {
+                        box-sizing: border-box;
+                        margin-top:10px;
+                        margin-right:10px;
+                        float:left;
+                        background-color: $tapiesDarkGrey;
+                        @include border-radius(5px);
+                        height:126px;
+                        width:126px;
+                        img {
+                            @include border-radius(5px);
+                            &:hover{
+                                cursor:pointer;
+                            }
+                        }
+
+
+                    }
+                }
+                .window {
+                        position:absolute;
+                        top:5px;
+                        height:130px;
+                        width:130px;
+                        border:3px solid $tapiesDarkGreen;
+                        @include border-radius(10px);
+                        z-index: 1000;
+                }
+            }
+
+            #next {
+                @include navbutton;
+                padding-right: 10px;
+            }
+
+        }
+        height:20%;
+        width:100%;
+    }
+
+    .row-fluid {
+    }
+}
