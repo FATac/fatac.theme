@@ -8346,27 +8346,55 @@ html, body, .container {
   border: 2px solid #f0f0f0;
   height: 100%;
   padding-left: 15px;
+  overflow: hidden;
+  z-index: 20;
   padding-left: 0px;
 }
-/* line 106, ../scss/book.scss */
+/* line 110, ../scss/book.scss */
+#book #screen #sidebar #comments .accordion-toggle button {
+  display: none;
+}
+/* line 114, ../scss/book.scss */
+#book #screen #sidebar #comments .accordion-toggle:hover button {
+  -webkit-transition: text-shadow 0.2s ease-in-out;
+  -moz-transition: text-shadow 0.2s ease-in-out;
+  -o-transition: text-shadow 0.2s ease-in-out;
+  display: block;
+  cursor: pointer;
+  background: none;
+  border: 2px #339933 solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 18px;
+  width: 18px;
+  color: #339933;
+  padding: 0px;
+  line-height: 17px;
+  margin-top: 3px;
+  font-weight: bold;
+}
+/* line 133, ../scss/book.scss */
 #book #screen #sidebar .accordion-group {
   border: none;
 }
-/* line 108, ../scss/book.scss */
+/* line 135, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-body.in {
   padding-bottom: 5px;
-  border-bottom: 1px solid #e5e5e5;
-  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #fbfbfb;
+  border-top: 1px solid #fbfbfb;
   cursor: all-scroll;
+  font-family: Georgia, Serif;
+  color: #666;
 }
-/* line 114, ../scss/book.scss */
+/* line 144, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a {
   font-size: 1.4em;
   font-weight: bold;
   color: #339933;
   text-decoration: none;
 }
-/* line 119, ../scss/book.scss */
+/* line 149, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a:hover {
   -webkit-transition: text-shadow 0.2s ease-in-out;
   -moz-transition: text-shadow 0.2s ease-in-out;
@@ -8374,24 +8402,41 @@ html, body, .container {
   transition: text-shadow 0.2s ease-in-out;
   text-shadow: #b9e38f 0px 0px 10px;
 }
-/* line 127, ../scss/book.scss */
+/* line 157, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail {
   margin-bottom: 10px;
 }
-/* line 128, ../scss/book.scss */
+/* line 158, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-bottom: 5px;
 }
-/* line 141, ../scss/book.scss */
+/* line 166, ../scss/book.scss */
+#book #screen #sidebar .accordion-group .comment {
+  border-bottom: 1px #b9e38f dotted;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+/* line 167, ../scss/book.scss */
+#book #screen #sidebar .accordion-group .comment span {
+  font-style: italic;
+  color: #999;
+}
+/* line 176, ../scss/book.scss */
+#book #screen #sidebar .accordion-group .note {
+  border-bottom: 1px #b9e38f dotted;
+  margin-bottom: 10px;
+}
+/* line 189, ../scss/book.scss */
 #book footer {
   box-sizing: border-box;
   padding-top: 2%;
   height: 20%;
   width: 100%;
 }
-/* line 144, ../scss/book.scss */
+/* line 192, ../scss/book.scss */
 #book footer > div {
   background-color: #fbfbfb;
   -webkit-border-radius: 5px;
@@ -8401,7 +8446,7 @@ html, body, .container {
   height: 100%;
   padding-left: 15px;
 }
-/* line 159, ../scss/book.scss */
+/* line 207, ../scss/book.scss */
 #book footer > div #prev {
   float: left;
   width: 10%;
@@ -8415,7 +8460,7 @@ html, body, .container {
   background: none;
   border: none;
 }
-/* line 163, ../scss/book.scss */
+/* line 211, ../scss/book.scss */
 #book footer > div #thumbs {
   height: 100%;
   width: 80%;
@@ -8423,13 +8468,13 @@ html, body, .container {
   overflow: hidden;
   position: relative;
 }
-/* line 169, ../scss/book.scss */
+/* line 217, ../scss/book.scss */
 #book footer > div #thumbs .wrapper {
   height: 100%;
   width: 135000px;
   padding-left: 5px;
 }
-/* line 173, ../scss/book.scss */
+/* line 221, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb {
   box-sizing: border-box;
   margin-top: 10px;
@@ -8442,17 +8487,17 @@ html, body, .container {
   height: 126px;
   width: 126px;
 }
-/* line 182, ../scss/book.scss */
+/* line 230, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 184, ../scss/book.scss */
+/* line 232, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img:hover {
   cursor: pointer;
 }
-/* line 192, ../scss/book.scss */
+/* line 240, ../scss/book.scss */
 #book footer > div #thumbs .window {
   position: absolute;
   top: 5px;
@@ -8464,7 +8509,7 @@ html, body, .container {
   border-radius: 10px;
   z-index: 1000;
 }
-/* line 203, ../scss/book.scss */
+/* line 251, ../scss/book.scss */
 #book footer > div #next {
   float: left;
   width: 10%;
@@ -8478,4 +8523,24 @@ html, body, .container {
   background: none;
   border: none;
   padding-right: 10px;
+}
+
+/* line 266, ../scss/book.scss */
+#commentsModal .btn {
+  font-weight: bold;
+}
+/* line 269, ../scss/book.scss */
+#commentsModal .modal-body {
+  width: 100%;
+}
+/* line 272, ../scss/book.scss */
+#commentsModal textarea {
+  width: 92%;
+}
+/* line 274, ../scss/book.scss */
+#commentsModal textarea:focus {
+  border-color: #339933;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
 }

@@ -50,7 +50,7 @@
                         </div>
                         <div id="collapseDetails" class="accordion-body collapse in">
                           <div class="accordion-inner">
-                            No hi han detalls
+                            No hi ha detalls
                           </div>
                         </div>
                       </div>
@@ -63,15 +63,14 @@
                         </div>
                         <div id="collapseNotes" class="accordion-body collapse">
                           <div class="accordion-inner">
-                            No hi han notes
                           </div>
                         </div>
                       </div>
 
-                      <div class="accordion-group">
+                      <div class="accordion-group" id="comments">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseComments">
-                            Comentaris
+                            Comentaris <button class="pull-right">+</button>
                           </a>
                         </div>
                         <div id="collapseComments" class="accordion-body collapse">
@@ -108,9 +107,24 @@
 
         </div> <!-- /container -->
 
+        <div class="modal hide fade" id="commentsModal">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Afegir Comentari</h3>
+          </div>
+          <div class="modal-body">
+            <textarea rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <a href="#" id="close" class="btn">Close</a>
+            <a href="#" id="send" class="btn btn-success">Guardar comentari</a>
+          </div>
+        </div>
+
         <script src="++resource++fatac.theme.javascripts/jquery-1.9.1.min.js"></script>
         <script src="++resource++fatac.theme.bootstrap/js/bootstrap-transition.js"></script>
         <script src="++resource++fatac.theme.bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="++resource++fatac.theme.bootstrap/js/bootstrap-modal.js"></script>
         <script src="++resource++fatac.theme.javascripts/screenfull.min.js"></script>
         <script src="++resource++fatac.theme.javascripts/jquery.mousewheel.js"></script>
         <script src="++resource++fatac.theme.javascripts/jquery.scrollpane.js"></script>

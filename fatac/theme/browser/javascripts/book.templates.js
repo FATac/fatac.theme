@@ -24,15 +24,15 @@ var THUMB = '\
 
 var DETAIL = '\
 <div class="detail">\
-  <label>{{title}}</label>\
   <img src="{{url}}"/>\
+  <span>{{title}}</span>\
 </div>\
 ';
 
 var COMMENT = '\
-<div class="comment">\
-    <label>{{title}}, {{author}}</label>\
+<div class="comment clearfix">\
     <p>{{text}}</p>\
+    <span class="pull-right">{{author}}</span>\
 </div>\
 ';
 

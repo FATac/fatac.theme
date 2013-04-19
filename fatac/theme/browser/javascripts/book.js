@@ -6,17 +6,21 @@
 // })
 
 
+    function thsize() {
+        return $('.thumb').width() + 10
+    }
+
     function getMaxThumbs() {
-        return Math.floor($('#thumbs').width() / 136)
+        return Math.floor($('#thumbs').width() / thsize())
     }
 
     function getThumbWinPos(win) {
-        return Math.floor(win.position().left / 136)
+        return Math.floor(win.position().left / thsize())
 
     }
 
     function getRealWinIndex(index, wrapper) {
-        return index + Math.floor(parseInt(wrapper.css('margin-left'))/ 136)
+        return index + Math.floor(parseInt(wrapper.css('margin-left'))/ thsize())
     }
 
     function renderItems(itemType, index) {
@@ -27,8 +31,20 @@
         for (i=0;i<data[itemlower].length;i++){
             new_html += templates[itemlower].render(data[itemlower][i])
         }
-        $('#collapse' + itemType + ' .accordion-inner').html(new_html)
+        extra = arguments.length>2 ? ' '+arguments[2] : ''
+        $('#collapse' + itemType + ' .accordion-inner' + extra).html(new_html)
 
+    }
+
+    function resizeThumbsAndWindow() {
+        $('#thumbs .thumb').each(function(index, element) {
+            $thumbs = $('#thumbs')
+            $win = $thumbs.find('.window')
+            $thumbs = $('#thumbs')
+            $element = $(element)
+            $element.css({width: $thumbs.height() - 22, height: $thumbs.height() - 22})
+            $win.css({width: $thumbs.height() - 18, height: $thumbs.height() - 18})
+        })
     }
 
     function setPageData(index) {
@@ -375,7 +391,7 @@ $(document).ready(function(event) {
     var data = $('#book')[0].bookdata
 
     // Restrict accordion bodies height
-    var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+2) * 3)
+    var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
     $('.accordion-body').each(function (index, element) {
         $(element).css({'max-height': allowed_height})
     })
@@ -388,6 +404,7 @@ $(document).ready(function(event) {
     }
     $('#thumbs .wrapper').html(thumbs)
     setPageData(0)
+    resizeThumbsAndWindow()
 
     // Scroll sidebar sections
 
@@ -398,18 +415,54 @@ $(document).ready(function(event) {
             var $target = $current.find('.accordion-inner')
 
             var newpos = parseInt($target.css('margin-top')) - (20*deltaY*-1)
-            var maxscroll = $target.height() - $current.height()
-            console.log(newpos+ ', '+maxscroll)
-            // if (newpos > 0) {
-            //     newpos = 0
-            // }
-            if (newpos <= 0 && Math.abs(newpos) <= maxscroll) {
+            var maxscroll = $current.height() - $target.height()
+            if (maxscroll < 0) {
+                console.log(newpos+ ', '+maxscroll)
+                if (newpos > 0) newpos = 0
+                if (newpos < maxscroll) newpos = maxscroll
+
                 $target.css({'margin-top': newpos})
             }
 
         }
 
     });
+
+
+    // resize handler {
+    $(window).resize(function(event) {
+        resizeThumbsAndWindow()
+    })
+
+
+    // Add comment button handlers
+
+    $('#comments button').click(function(event) {
+        event.stopPropagation()
+        event.stopImmediatePropagation()
+        event.preventDefault()
+        $('#commentsModal').modal({})
+    })
+
+    $('#commentsModal #close.btn').click(function(event) {
+      $('#commentsModal').modal('hide')
+    })
+
+    $('#commentsModal #send.btn').click(function(event) {
+        payload = {
+            "form.widgets.in_reply_to": "",
+            "form.widgets.author_name": "",
+            "form.widgets.author_email": "",
+            "form.widgets.text" : $('#commentsModal textarea').val(),
+            "form.widgets.user_notification:list": "selected",
+            "form.buttons.comment": "Comment"
+        }
+
+        $.post('@@view', payload, function(data) {
+            $('#commentsModal').modal('hide')
+        })
+
+    })
 
 
     // Move window pointer to prev .thumb
@@ -430,9 +483,9 @@ $(document).ready(function(event) {
             var $wrapper = $win.siblings('.wrapper')
             setPageData(index)
             if (winpos>=1) {
-                $win.animate({left:136 * getRealWinIndex(index, $wrapper)}, 200)
+                $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
             } else {
-                mleft = 136 * (index - winpos) * -1
+                mleft = thsize() * (index - winpos) * -1
                 console.log(mleft)
                 $wrapper.animate({'margin-left': mleft}, 200)
             }
@@ -460,9 +513,9 @@ $(document).ready(function(event) {
             var $wrapper = $win.siblings('.wrapper')
             setPageData(index)
             if (winpos +1 < maxpos) {
-                $win.animate({left:136 * getRealWinIndex(index, $wrapper)}, 200)
+                $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
             } else {
-                mleft = 136 * (index - winpos) * -1
+                mleft = thsize() * (index - winpos) * -1
                 console.log(mleft)
                 $wrapper.animate({'margin-left': mleft}, 200)
             }
@@ -486,7 +539,7 @@ $(document).ready(function(event) {
             $selected.toggleClass('selected')
             $target.toggleClass('selected')
 
-            $win.animate({left:136 * realindex}, 200)
+            $win.animate({left:thsize() * realindex}, 200)
             setPageData(index)
         }
 
