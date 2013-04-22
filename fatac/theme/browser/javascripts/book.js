@@ -6,6 +6,10 @@
 // })
 
 
+    function getCurrentIndex() {
+        return $('.thumb.selected').index()
+    }
+
     function thsize() {
         return $('.thumb').width() + 10
     }
@@ -47,6 +51,13 @@
         })
     }
 
+    function getData(callback) {
+        $.get('/', function(data) {
+            $('#book')[0].bookdata = BOOK_DATA
+            callback.call()
+        })
+    }
+
     function setPageData(index) {
         var image_url = $('#book')[0].bookdata.pages[index].image
         $('#main img').attr('src', image_url)
@@ -80,7 +91,7 @@ $(document).ready(function(event) {
 
     // Get Information
 
-    $('#book')[0].bookdata = {
+    BOOK_DATA = {
         'title': 'Las aventuras de Mortadelo i Filemon',
         'author': 'Francisco Ibañez',
         'url': 'http://foo/bar',
@@ -387,24 +398,27 @@ $(document).ready(function(event) {
 
     // End test json
 
-    var templates = fatbooks.templates()
-    var data = $('#book')[0].bookdata
+    getData(function(event) {
+        var templates = fatbooks.templates()
+        var data = $('#book')[0].bookdata
 
-    // Restrict accordion bodies height
-    var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
-    $('.accordion-body').each(function (index, element) {
-        $(element).css({'max-height': allowed_height})
+        // Restrict accordion bodies height
+        var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
+        $('.accordion-body').each(function (index, element) {
+            $(element).css({'max-height': allowed_height})
+        })
+
+        // Render thumbs
+        thumbs = ''
+        for (i=0;i<data.pages.length;i++){
+            params = {'selected': i==0 ? 'selected' : ''}
+            thumbs += templates.thumb.render($.extend(data.pages[i], params))
+        }
+        $('#thumbs .wrapper').html(thumbs)
+        setPageData(0)
+        resizeThumbsAndWindow()
+
     })
-
-    // Render thumbs
-    thumbs = ''
-    for (i=0;i<data.pages.length;i++){
-        params = {'selected': i==0 ? 'selected' : ''}
-        thumbs += templates.thumb.render($.extend(data.pages[i], params))
-    }
-    $('#thumbs .wrapper').html(thumbs)
-    setPageData(0)
-    resizeThumbsAndWindow()
 
     // Scroll sidebar sections
 
@@ -460,6 +474,9 @@ $(document).ready(function(event) {
 
         $.post('@@view', payload, function(data) {
             $('#commentsModal').modal('hide')
+            getData(function(event) {
+                renderItems('Details', getCurrentIndex())
+            })
         })
 
     })
