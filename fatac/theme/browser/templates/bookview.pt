@@ -21,14 +21,14 @@
 
         <div class="container">
 
-            <!-- <button id="button">fullscreen</button> -->
-
             <div class="container-fluid" id="book">
 
               <header class="row-fluid" >
                 <div class="span12">
+                  <h1>Las aventuras de Mortadelo i Filemon</h1>
+                  <span class="author">Francisco Ibañez</span>
                   <div id="palette"></div>
-                  <h1>Las aventuras de Mortadelo i Filemon, <span class="author">Francisco Ibañez</span></h1>
+                  <button id="fullscreen"></button>
                 </div>
 
               </header>
@@ -87,7 +87,7 @@
 
               <footer class="row-fluid" >
                 <div class="span12">
-                  <button id="prev"><<</button>
+                  <button id="prev"></button>
                   <div id="thumbs">
                         <div class="window"></div>
                         <div class="wrapper">
@@ -98,7 +98,7 @@
                             <div class="thumb"></div>
                         </div>
                   </div>
-                  <button id="next">>></button>
+                  <button id="next"></button>
 
                 </div>
               </footer>
@@ -107,17 +107,23 @@
 
         </div> <!-- /container -->
 
-        <div class="modal hide fade" id="commentsModal">
+        <div class="modal hide fade" id="commentsModal" tal:define="anonymous view/anonymous">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Afegir Comentari</h3>
           </div>
+          <div tal:condition="anonymous" class="modal-body">
+            <div class="alert alert-error">
+                <strong>Alerta! </strong>
+                Has d'estar <a tal:attributes="href string: ${view/portal_url}/login">identificat</a> per poder comentar
+            </div>
+          </div>
           <div class="modal-body">
-            <textarea rows="4"></textarea>
+            <textarea rows="4" tal:attributes="disabled view/anonymous | nothing"></textarea>
           </div>
           <div class="modal-footer">
-            <a href="#" id="close" class="btn">Close</a>
-            <a href="#" id="send" class="btn btn-success">Guardar comentari</a>
+            <a href="#" id="close" class="btn">Cancela</a>
+            <a href="#" id="send" tal:attributes="class view/commentclass">Envia el comentari</a>
           </div>
         </div>
 

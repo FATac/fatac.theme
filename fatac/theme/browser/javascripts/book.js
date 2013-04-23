@@ -1,11 +1,3 @@
-// document.getElementById('button').addEventListener('click', function() {
-
-//         console.log('full')
-//         screenfull.request();
-
-// })
-
-
     function getCurrentIndex() {
         return $('.thumb.selected').index()
     }
@@ -40,15 +32,45 @@
 
     }
 
+    // Render thumbnails
+    function renderThumbs() {
+
+        var templates = fatbooks.templates()
+        var data = $('#book')[0].bookdata
+
+        thumbs = ''
+        for (i=0;i<data.pages.length;i++){
+            params = {'selected': i==0 ? 'selected' : ''}
+            thumbs += templates.thumb.render($.extend(data.pages[i], params))
+        }
+        $('#thumbs .wrapper').html(thumbs)
+
+    }
     function resizeThumbsAndWindow() {
         $('#thumbs .thumb').each(function(index, element) {
-            $thumbs = $('#thumbs')
-            $win = $thumbs.find('.window')
-            $thumbs = $('#thumbs')
-            $element = $(element)
-            $element.css({width: $thumbs.height() - 22, height: $thumbs.height() - 22})
-            $win.css({width: $thumbs.height() - 18, height: $thumbs.height() - 18})
+            var $thumbs = $('#thumbs')
+            var $thumbsparent = $('footer .span12')
+            var $win = $thumbs.find('.window')
+            var $thumbs = $('#thumbs')
+            var $element = $(element)
+            var thumbsize = $thumbs.height() - 22
+            var thumbswidth = Math.floor(  ($thumbsparent.width()-80) / (thumbsize+ 10)  )  * (thumbsize +10)
+            var margin = Math.floor( ($thumbsparent.width() - thumbswidth) / 2) - 12
+            $('#prev').width(margin)
+            $('#next').width(margin - 4)
+            $thumbs.css({width:thumbswidth})
+            $element.css({width: thumbsize, height: thumbsize})
+            $win.css({width: thumbsize + 4, height: thumbsize + 4})
         })
+    }
+
+    // Restrict accordion bodies height
+    function resizeSidebarSections() {
+        var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
+        $('.accordion-body').each(function (index, element) {
+            $(element).css({'max-height': allowed_height})
+        })
+
     }
 
     function getData(callback) {
@@ -60,7 +82,12 @@
 
     function setPageData(index) {
         var image_url = $('#book')[0].bookdata.pages[index].image
-        $('#main img').attr('src', image_url)
+        $img = $('#main img')
+        $img.attr('src', image_url)
+        $img.fadeOut(500, function() {
+            $img.fadeIn(500);
+        });
+
 
         var templates = fatbooks.templates()
         var data = $('#book')[0].bookdata
@@ -88,25 +115,29 @@
 
 $(document).ready(function(event) {
 
+    $('button#fullscreen').click(function() {
+            screenfull.toggle();
+    })
 
     // Get Information
 
     BOOK_DATA = {
-        'title': 'Las aventuras de Mortadelo i Filemon',
+        'title': 'Las aventuras de Mortadelu i Filemon',
         'author': 'Francisco Ibañez',
         'url': 'http://foo/bar',
         'pages': [
             {
                 'title': 'Pagina1',
-                'image': 'http://lorempixel.com/1400/1400/abstract/1',
+                'image': 'http://lorempixel.com/1400/1400/cats/1',
+                'proportion': 'square',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/2'
+                        'url': 'http://lorempixel.com/300/300/cats/2'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/3'
+                        'url': 'http://lorempixel.com/300/300/cats/3'
                     }
                 ],
                 'notes': [
@@ -135,15 +166,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina2',
-                'image': 'http://lorempixel.com/1400/1400/abstract/2',
+                'image': 'http://lorempixel.com/1400/700/cats/2',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/3'
+                        'url': 'http://lorempixel.com/300/300/cats/3'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/4'
+                        'url': 'http://lorempixel.com/300/300/cats/4'
                     }
                 ],
                 'notes': [
@@ -172,15 +204,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina3',
-                'image': 'http://lorempixel.com/1400/1400/abstract/3',
+                'image': 'http://lorempixel.com/700/1400/cats/3',
+                'proportion': 'vertical',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/4'
+                        'url': 'http://lorempixel.com/300/300/cats/4'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/5'
+                        'url': 'http://lorempixel.com/300/300/cats/5'
                     }
                 ],
                 'notes': [
@@ -209,15 +242,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina4',
-                'image': 'http://lorempixel.com/1400/1400/abstract/4',
+                'image': 'http://lorempixel.com/1400/700/cats/4',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/5'
+                        'url': 'http://lorempixel.com/300/300/cats/5'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/6'
+                        'url': 'http://lorempixel.com/300/300/cats/6'
                     }
                 ],
                 'notes': [
@@ -246,15 +280,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina5',
-                'image': 'http://lorempixel.com/1400/1400/abstract/5',
+                'image': 'http://lorempixel.com/1400/700/cats/5',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/6'
+                        'url': 'http://lorempixel.com/300/300/cats/6'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/7'
+                        'url': 'http://lorempixel.com/300/300/cats/7'
                     }
                 ],
                 'notes': [
@@ -283,15 +318,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina6',
-                'image': 'http://lorempixel.com/1400/1400/abstract/6',
+                'image': 'http://lorempixel.com/1400/700/cats/6',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/7'
+                        'url': 'http://lorempixel.com/300/300/cats/7'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/8'
+                        'url': 'http://lorempixel.com/300/300/cats/8'
                     }
                 ],
                 'notes': [
@@ -320,15 +356,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina7',
-                'image': 'http://lorempixel.com/1400/1400/abstract/7',
+                'image': 'http://lorempixel.com/1400/700/cats/7',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/8'
+                        'url': 'http://lorempixel.com/300/300/cats/8'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/9'
+                        'url': 'http://lorempixel.com/300/300/cats/9'
                     }
                 ],
                 'notes': [
@@ -357,15 +394,16 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina8',
-                'image': 'http://lorempixel.com/1400/1400/abstract/8',
+                'image': 'http://lorempixel.com/1400/700/cats/8',
+                'proportion': 'horizontal',
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/abstract/9'
+                        'url': 'http://lorempixel.com/300/300/cats/9'
                     },
                     {
                         'title': 'Detall2',
-                        'url': 'http://lorempixel.com/300/300/abstract/10'
+                        'url': 'http://lorempixel.com/300/300/cats/10'
                     }
                 ],
                 'notes': [
@@ -398,32 +436,26 @@ $(document).ready(function(event) {
 
     // End test json
 
-    getData(function(event) {
-        var templates = fatbooks.templates()
-        var data = $('#book')[0].bookdata
-
-        // Restrict accordion bodies height
-        var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
-        $('.accordion-body').each(function (index, element) {
-            $(element).css({'max-height': allowed_height})
-        })
-
-        // Render thumbs
-        thumbs = ''
-        for (i=0;i<data.pages.length;i++){
-            params = {'selected': i==0 ? 'selected' : ''}
-            thumbs += templates.thumb.render($.extend(data.pages[i], params))
-        }
-        $('#thumbs .wrapper').html(thumbs)
-        setPageData(0)
+    getData(function(event, data) {
+        $('header h1').text($('#book')[0].bookdata['title'] + ', ')
+        resizeSidebarSections()
+        renderThumbs()
         resizeThumbsAndWindow()
+        setPageData(0)
+
 
     })
+
+    // resize handler {
+    $(window).resize(function(event) {
+        resizeThumbsAndWindow()
+        resizeSidebarSections()
+    })
+
 
     // Scroll sidebar sections
 
     $('.accordion-body').mousewheel(function(event, delta, deltaX, deltaY) {
-        console.log(delta, deltaX, deltaY);
         if (deltaY) {
             var $current = $(event.currentTarget)
             var $target = $current.find('.accordion-inner')
@@ -431,7 +463,6 @@ $(document).ready(function(event) {
             var newpos = parseInt($target.css('margin-top')) - (20*deltaY*-1)
             var maxscroll = $current.height() - $target.height()
             if (maxscroll < 0) {
-                console.log(newpos+ ', '+maxscroll)
                 if (newpos > 0) newpos = 0
                 if (newpos < maxscroll) newpos = maxscroll
 
@@ -441,12 +472,6 @@ $(document).ready(function(event) {
         }
 
     });
-
-
-    // resize handler {
-    $(window).resize(function(event) {
-        resizeThumbsAndWindow()
-    })
 
 
     // Add comment button handlers
@@ -462,7 +487,7 @@ $(document).ready(function(event) {
       $('#commentsModal').modal('hide')
     })
 
-    $('#commentsModal #send.btn').click(function(event) {
+    $('#commentsModal #send.btn-success').click(function(event) {
         payload = {
             "form.widgets.in_reply_to": "",
             "form.widgets.author_name": "",
@@ -489,21 +514,17 @@ $(document).ready(function(event) {
         var $win = $('#book #thumbs .window')
         var $prev = $selected.prev()
         var index = $prev.index()
-        console.log('Prev Selected Thumb ' + index)
         if (index >= 0) {
             $selected.toggleClass('selected')
             $prev.toggleClass('selected')
             var winpos = getThumbWinPos($win)
             var maxpos = getMaxThumbs()
-            console.log('Win position ' + winpos)
-            console.log('Visible thumbs ' + maxpos)
             var $wrapper = $win.siblings('.wrapper')
             setPageData(index)
             if (winpos>=1) {
                 $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
             } else {
                 mleft = thsize() * (index - winpos) * -1
-                console.log(mleft)
                 $wrapper.animate({'margin-left': mleft}, 200)
             }
         }
@@ -518,26 +539,20 @@ $(document).ready(function(event) {
         var $win = $('#book #thumbs .window')
         var $next = $selected.next()
         var index = $next.index()
-        console.log('Next Selected Thumb ' + index)
         var nthumbs = $('#book #thumbs .thumb').length
         if (index < nthumbs && index > 0) {
             $selected.toggleClass('selected')
             $next.toggleClass('selected')
             var winpos = getThumbWinPos($win)
             var maxpos = getMaxThumbs()
-            console.log('Win position ' + winpos)
-            console.log('Visible thumbs ' + maxpos)
             var $wrapper = $win.siblings('.wrapper')
             setPageData(index)
             if (winpos +1 < maxpos) {
                 $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
             } else {
                 mleft = thsize() * (index - winpos) * -1
-                console.log(mleft)
                 $wrapper.animate({'margin-left': mleft}, 200)
             }
-
-
         }
 
     });

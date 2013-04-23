@@ -18,7 +18,7 @@ var NOTE = '\
 
 var THUMB = '\
 <div class="thumb {{selected}}">\
-    <img src="{{image}}" title="{{title}}"/>\
+    <img class="{{proportion}}" src="{{image}}" title="{{title}}"/>\
 </div>\
 ';
 

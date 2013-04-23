@@ -8231,7 +8231,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 /* line 18, ../scss/book.scss */
 body {
-  font-family: "Terminal Dosis", sans-serif;
+  font-family: "Georgia", sans-serif;
 }
 
 /* line 22, ../scss/book.scss */
@@ -8265,7 +8265,7 @@ html, body, .container {
 #book header > div #palette {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 45px;
   background-image: url("++resource++fatac.theme.images/palette.png");
   background-repeat: no-repeat;
   width: 73px;
@@ -8273,20 +8273,26 @@ html, body, .container {
 }
 /* line 42, ../scss/book.scss */
 #book header > div h1 {
-  position: absolute;
   bottom: 0px;
-  font-size: 2em;
-  width: 100%;
+  font-size: 1.5em;
+  margin: 10px 0;
+  line-height: 25px;
+  float: left;
+  padding-right: 10px;
 }
-/* line 47, ../scss/book.scss */
-#book header > div h1 .author {
+/* line 50, ../scss/book.scss */
+#book header > div .author {
+  margin: 10px 0;
   color: #339933;
+  font-size: 1.2em;
+  float: left;
+  line-height: 28px;
 }
-/* line 60, ../scss/book.scss */
+/* line 64, ../scss/book.scss */
 #book #screen {
   height: 64%;
 }
-/* line 61, ../scss/book.scss */
+/* line 65, ../scss/book.scss */
 #book #screen #main {
   background-color: #fbfbfb;
   -webkit-border-radius: 5px;
@@ -8300,11 +8306,11 @@ html, body, .container {
   overflow: hidden;
   text-align: center;
 }
-/* line 69, ../scss/book.scss */
+/* line 73, ../scss/book.scss */
 #book #screen #main img:hover + button#zoom {
   opacity: 0.4;
 }
-/* line 73, ../scss/book.scss */
+/* line 77, ../scss/book.scss */
 #book #screen #main button#zoom {
   opacity: 0;
   position: absolute;
@@ -8322,22 +8328,23 @@ html, body, .container {
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
-/* line 88, ../scss/book.scss */
+/* line 92, ../scss/book.scss */
 #book #screen #main img {
   -webkit-box-shadow: 0px 0px 14px #323232;
   -moz-box-shadow: 0px 0px 14px #323232;
   box-shadow: 0px 0px 14px #323232;
   max-height: 100%;
+  max-width: 100%;
   z-index: 1000;
 }
-/* line 94, ../scss/book.scss */
+/* line 99, ../scss/book.scss */
 #book #screen #main img:hover {
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
   max-width: none;
   max-height: none;
 }
-/* line 103, ../scss/book.scss */
+/* line 108, ../scss/book.scss */
 #book #screen #sidebar {
   background-color: #fbfbfb;
   -webkit-border-radius: 5px;
@@ -8350,11 +8357,11 @@ html, body, .container {
   z-index: 20;
   padding-left: 0px;
 }
-/* line 110, ../scss/book.scss */
+/* line 115, ../scss/book.scss */
 #book #screen #sidebar #comments .accordion-toggle button {
   display: none;
 }
-/* line 114, ../scss/book.scss */
+/* line 119, ../scss/book.scss */
 #book #screen #sidebar #comments .accordion-toggle:hover button {
   -webkit-transition: text-shadow 0.2s ease-in-out;
   -moz-transition: text-shadow 0.2s ease-in-out;
@@ -8374,27 +8381,27 @@ html, body, .container {
   margin-top: 3px;
   font-weight: bold;
 }
-/* line 133, ../scss/book.scss */
+/* line 138, ../scss/book.scss */
 #book #screen #sidebar .accordion-group {
   border: none;
 }
-/* line 135, ../scss/book.scss */
+/* line 140, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-body.in {
   padding-bottom: 5px;
   border-bottom: 1px solid #fbfbfb;
   border-top: 1px solid #fbfbfb;
   cursor: all-scroll;
-  font-family: Georgia, Serif;
+  font-family: Arial, sans-serif;
   color: #666;
 }
-/* line 144, ../scss/book.scss */
+/* line 149, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
   color: #339933;
   text-decoration: none;
 }
-/* line 149, ../scss/book.scss */
+/* line 154, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a:hover {
   -webkit-transition: text-shadow 0.2s ease-in-out;
   -moz-transition: text-shadow 0.2s ease-in-out;
@@ -8402,41 +8409,44 @@ html, body, .container {
   transition: text-shadow 0.2s ease-in-out;
   text-shadow: #b9e38f 0px 0px 10px;
 }
-/* line 157, ../scss/book.scss */
+/* line 162, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail {
   margin-bottom: 10px;
 }
-/* line 158, ../scss/book.scss */
+/* line 163, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail img {
+  -webkit-box-shadow: 0px 0px 3px #323232;
+  -moz-box-shadow: 0px 0px 3px #323232;
+  box-shadow: 0px 0px 3px #323232;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
-/* line 166, ../scss/book.scss */
+/* line 175, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment {
   border-bottom: 1px #b9e38f dotted;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-/* line 167, ../scss/book.scss */
+/* line 176, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment span {
   font-style: italic;
   color: #999;
 }
-/* line 176, ../scss/book.scss */
+/* line 185, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .note {
   border-bottom: 1px #b9e38f dotted;
   margin-bottom: 10px;
 }
-/* line 189, ../scss/book.scss */
+/* line 198, ../scss/book.scss */
 #book footer {
   box-sizing: border-box;
   padding-top: 2%;
   height: 20%;
   width: 100%;
 }
-/* line 192, ../scss/book.scss */
+/* line 201, ../scss/book.scss */
 #book footer > div {
   background-color: #fbfbfb;
   -webkit-border-radius: 5px;
@@ -8445,11 +8455,11 @@ html, body, .container {
   border: 2px solid #f0f0f0;
   height: 100%;
   padding-left: 15px;
+  padding-left: 0px;
 }
-/* line 207, ../scss/book.scss */
+/* line 222, ../scss/book.scss */
 #book footer > div #prev {
   float: left;
-  width: 10%;
   text-align: center;
   color: #f0f0f0;
   font-size: 4em;
@@ -8459,23 +8469,54 @@ html, body, .container {
   cursor: pointer;
   background: none;
   border: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  width: 40px;
+  height: 100%;
+  background-image: url("++resource++fatac.theme.images/flecha-detras-grande.png");
 }
-/* line 211, ../scss/book.scss */
+/* line 227, ../scss/book.scss */
+#book footer > div #next {
+  float: left;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 4em;
+  font-weight: bold;
+  padding-top: 2.8%;
+  line-height: 0.8em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  width: 40px;
+  height: 100%;
+  padding-right: 10px;
+  background-image: url("++resource++fatac.theme.images/flecha-delante-grande.png");
+}
+/* line 233, ../scss/book.scss */
 #book footer > div #thumbs {
   height: 100%;
-  width: 80%;
+  width: 90%;
   float: left;
   overflow: hidden;
   position: relative;
 }
-/* line 217, ../scss/book.scss */
+/* line 239, ../scss/book.scss */
 #book footer > div #thumbs .wrapper {
   height: 100%;
   width: 135000px;
   padding-left: 5px;
 }
-/* line 221, ../scss/book.scss */
+/* line 243, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb {
+  -webkit-box-shadow: 0px 0px 9px #323232;
+  -moz-box-shadow: 0px 0px 9px #323232;
+  box-shadow: 0px 0px 9px #323232;
+  text-align: center;
+  overflow: hidden;
   box-sizing: border-box;
   margin-top: 10px;
   margin-right: 10px;
@@ -8487,17 +8528,35 @@ html, body, .container {
   height: 126px;
   width: 126px;
 }
-/* line 230, ../scss/book.scss */
+/* line 244, ../scss/book.scss */
+#book footer > div #thumbs .wrapper .thumb.selected {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 265, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img {
+  max-width: 100%;
+  max-height: 100%;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 232, ../scss/book.scss */
+/* line 269, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img:hover {
   cursor: pointer;
 }
-/* line 240, ../scss/book.scss */
+/* line 272, ../scss/book.scss */
+#book footer > div #thumbs .wrapper .thumb img.vertical {
+  max-height: none;
+  margin-top: -50%;
+}
+/* line 276, ../scss/book.scss */
+#book footer > div #thumbs .wrapper .thumb img.horizontal {
+  max-width: none;
+  margin-left: -50%;
+}
+/* line 285, ../scss/book.scss */
 #book footer > div #thumbs .window {
   position: absolute;
   top: 5px;
@@ -8509,38 +8568,54 @@ html, body, .container {
   border-radius: 10px;
   z-index: 1000;
 }
-/* line 251, ../scss/book.scss */
-#book footer > div #next {
-  float: left;
-  width: 10%;
-  text-align: center;
-  color: #f0f0f0;
-  font-size: 4em;
-  font-weight: bold;
-  padding-top: 2.8%;
-  line-height: 0.8em;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding-right: 10px;
-}
 
-/* line 266, ../scss/book.scss */
+/* line 306, ../scss/book.scss */
 #commentsModal .btn {
-  font-weight: bold;
+  font-family: Arial, sans-serif;
 }
-/* line 269, ../scss/book.scss */
+/* line 310, ../scss/book.scss */
+#commentsModal .btn-disabled {
+  color: #aaa;
+}
+/* line 313, ../scss/book.scss */
 #commentsModal .modal-body {
   width: 100%;
 }
-/* line 272, ../scss/book.scss */
+/* line 316, ../scss/book.scss */
 #commentsModal textarea {
   width: 92%;
 }
-/* line 274, ../scss/book.scss */
+/* line 318, ../scss/book.scss */
 #commentsModal textarea:focus {
   border-color: #339933;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
+}
+/* line 325, ../scss/book.scss */
+#commentsModal .alert {
+  width: 85%;
+  margin-bottom: 0px;
+}
+/* line 328, ../scss/book.scss */
+#commentsModal .alert a {
+  color: #339933;
+}
+
+/* line 334, ../scss/book.scss */
+button#fullscreen {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-image: url("++resource++fatac.theme.images/vista-normal.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+/* line 345, ../scss/book.scss */
+button#fullscreen:hover {
+  background-image: url("++resource++fatac.theme.images/vista-normal_hover.png");
 }
