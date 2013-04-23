@@ -1,23 +1,41 @@
+
+    // Returns the current selected page index based on selected thumb
+
     function getCurrentIndex() {
         return $('.thumb.selected').index()
     }
+
+
+    // Returns the actual thumb size, with margin
 
     function thsize() {
         return $('.thumb').width() + 10
     }
 
+
+    // Returns how many full thumbs are allowed on the footer section
+
     function getMaxThumbs() {
         return Math.floor($('#thumbs').width() / thsize())
     }
+
+
+    // Returns the window position relative to the left of the thumbs section
 
     function getThumbWinPos(win) {
         return Math.floor(win.position().left / thsize())
 
     }
 
+
+    // Returns the window position relative to the first thumb in list, even if it's hidden
+
     function getRealWinIndex(index, wrapper) {
         return index + Math.floor(parseInt(wrapper.css('margin-left'))/ thsize())
     }
+
+
+    // Renders a page sidebar item collection by type,
 
     function renderItems(itemType, index) {
         var templates = fatbooks.templates()
@@ -32,7 +50,8 @@
 
     }
 
-    // Render thumbnails
+    // Render thumbnails section
+
     function renderThumbs() {
 
         var templates = fatbooks.templates()
@@ -44,8 +63,10 @@
             thumbs += templates.thumb.render($.extend(data.pages[i], params))
         }
         $('#thumbs .wrapper').html(thumbs)
-
     }
+
+    // Resize thumbnails and selection window, recenter navigation arrows
+
     function resizeThumbsAndWindow() {
         $('#thumbs .thumb').each(function(index, element) {
             var $thumbs = $('#thumbs')
@@ -64,7 +85,8 @@
         })
     }
 
-    // Restrict accordion bodies height
+    // Restrict accordion bodies height to adapt to full sidebar height
+
     function resizeSidebarSections() {
         var allowed_height = $('#sidebar').height() - (($('.accordion-heading').height()+4) * 3)
         $('.accordion-body').each(function (index, element) {
@@ -73,12 +95,16 @@
 
     }
 
+    // Loads the JSON data of the book and calls the specified callback afterwards
+
     function getData(callback) {
         $.get('/', function(data) {
             $('#book')[0].bookdata = BOOK_DATA
             callback.call()
         })
     }
+
+    // Loads the information of a Book page into the UI
 
     function setPageData(index) {
         var image_url = $('#book')[0].bookdata.pages[index].image
@@ -88,38 +114,25 @@
             $img.fadeIn(500);
         });
 
-
         var templates = fatbooks.templates()
         var data = $('#book')[0].bookdata
 
         renderItems('Details', index)
         renderItems('Notes', index)
         renderItems('Comments', index)
-
-        // // Render Detalls
-        // var detalls = ''
-        // for (i=0;i<data.pages.length;i++){
-        //     detalls += templates.detall.render(data.pages[i].detalls)
-        // }
-        // $('#collapseDetalls .accordion-inner').html(detalls)
-
-        // // Render Detalls
-        // var detalls = ''
-        // for (i=0;i<data.pages.length;i++){
-        //     detalls += templates.detall.render(data.pages[i].detalls)
-        // }
-        // $('#collapseDetalls .accordion-inner').html(detalls)
-
-
     }
 
+// Initialize UI when ready
+
 $(document).ready(function(event) {
+
+    // Set fullscreen toggle to header button
 
     $('button#fullscreen').click(function() {
             screenfull.toggle();
     })
 
-    // Get Information
+    // Dummy information
 
     BOOK_DATA = {
         'title': 'Las aventuras de Mortadelu i Filemon',
@@ -434,7 +447,10 @@ $(document).ready(function(event) {
         ]
     }
 
-    // End test json
+    // End Dummy data
+
+
+    // Get de data and initialize UI
 
     getData(function(event, data) {
         $('header h1').text($('#book')[0].bookdata['title'] + ', ')
@@ -442,18 +458,17 @@ $(document).ready(function(event) {
         renderThumbs()
         resizeThumbsAndWindow()
         setPageData(0)
-
-
     })
 
-    // resize handler {
+    // Update UI size and positions on resizing
+
     $(window).resize(function(event) {
         resizeThumbsAndWindow()
         resizeSidebarSections()
     })
 
 
-    // Scroll sidebar sections
+    // Make sidebar sections scrollable vertically
 
     $('.accordion-body').mousewheel(function(event, delta, deltaX, deltaY) {
         if (deltaY) {
@@ -468,13 +483,11 @@ $(document).ready(function(event) {
 
                 $target.css({'margin-top': newpos})
             }
-
         }
-
     });
 
 
-    // Add comment button handlers
+    // Add comment interface showup handler
 
     $('#comments button').click(function(event) {
         event.stopPropagation()
@@ -483,9 +496,15 @@ $(document).ready(function(event) {
         $('#commentsModal').modal({})
     })
 
+
+    // Add comment modal close handler
+
     $('#commentsModal #close.btn').click(function(event) {
       $('#commentsModal').modal('hide')
     })
+
+
+    // Add comment modal post handler
 
     $('#commentsModal #send.btn-success').click(function(event) {
         payload = {
@@ -503,11 +522,10 @@ $(document).ready(function(event) {
                 renderItems('Details', getCurrentIndex())
             })
         })
-
     })
 
 
-    // Move window pointer to prev .thumb
+    // Move window pointer to previous .thumb
 
     $('#book #prev').click(function(event) {
         var $selected = $('#book #thumbs .thumb.selected')
@@ -612,9 +630,4 @@ $(document).ready(function(event) {
 
         $img.css({'margin-left': scroll_x, 'margin-top': scroll_y})
     });
-
-
-
-
-
 });
