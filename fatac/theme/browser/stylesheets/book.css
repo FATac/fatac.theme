@@ -8359,13 +8359,7 @@ html, body, .container {
 }
 /* line 115, ../scss/book.scss */
 #book #screen #sidebar #comments .accordion-toggle button {
-  display: none;
-}
-/* line 119, ../scss/book.scss */
-#book #screen #sidebar #comments .accordion-toggle:hover button {
-  -webkit-transition: text-shadow 0.2s ease-in-out;
-  -moz-transition: text-shadow 0.2s ease-in-out;
-  -o-transition: text-shadow 0.2s ease-in-out;
+  opacity: 0.4;
   display: block;
   cursor: pointer;
   background: none;
@@ -8381,11 +8375,18 @@ html, body, .container {
   margin-top: 3px;
   font-weight: bold;
 }
-/* line 138, ../scss/book.scss */
+/* line 131, ../scss/book.scss */
+#book #screen #sidebar #comments .accordion-toggle:hover button {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opaity 0.3s ease-in-out;
+  opacity: 1;
+}
+/* line 139, ../scss/book.scss */
 #book #screen #sidebar .accordion-group {
   border: none;
 }
-/* line 140, ../scss/book.scss */
+/* line 141, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-body.in {
   padding-bottom: 5px;
   border-bottom: 1px solid #fbfbfb;
@@ -8394,14 +8395,14 @@ html, body, .container {
   font-family: Arial, sans-serif;
   color: #666;
 }
-/* line 149, ../scss/book.scss */
+/* line 150, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a {
   font-size: 1.2em;
   font-weight: bold;
   color: #339933;
   text-decoration: none;
 }
-/* line 154, ../scss/book.scss */
+/* line 155, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a:hover {
   -webkit-transition: text-shadow 0.2s ease-in-out;
   -moz-transition: text-shadow 0.2s ease-in-out;
@@ -8409,11 +8410,11 @@ html, body, .container {
   transition: text-shadow 0.2s ease-in-out;
   text-shadow: #b9e38f 0px 0px 10px;
 }
-/* line 162, ../scss/book.scss */
+/* line 163, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail {
   margin-bottom: 10px;
 }
-/* line 163, ../scss/book.scss */
+/* line 164, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail img {
   -webkit-box-shadow: 0px 0px 3px #323232;
   -moz-box-shadow: 0px 0px 3px #323232;
@@ -8423,30 +8424,30 @@ html, body, .container {
   border-radius: 5px;
   margin-bottom: 5px;
 }
-/* line 175, ../scss/book.scss */
+/* line 176, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment {
   border-bottom: 1px #b9e38f dotted;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-/* line 176, ../scss/book.scss */
+/* line 177, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment span {
   font-style: italic;
   color: #999;
 }
-/* line 185, ../scss/book.scss */
+/* line 186, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .note {
   border-bottom: 1px #b9e38f dotted;
   margin-bottom: 10px;
 }
-/* line 198, ../scss/book.scss */
+/* line 199, ../scss/book.scss */
 #book footer {
   box-sizing: border-box;
   padding-top: 2%;
   height: 20%;
   width: 100%;
 }
-/* line 201, ../scss/book.scss */
+/* line 202, ../scss/book.scss */
 #book footer > div {
   background-color: #fbfbfb;
   -webkit-border-radius: 5px;
@@ -8457,7 +8458,7 @@ html, body, .container {
   padding-left: 15px;
   padding-left: 0px;
 }
-/* line 222, ../scss/book.scss */
+/* line 223, ../scss/book.scss */
 #book footer > div #prev {
   float: left;
   text-align: center;
@@ -8476,7 +8477,11 @@ html, body, .container {
   height: 100%;
   background-image: url("++resource++fatac.theme.images/flecha-detras-grande.png");
 }
-/* line 227, ../scss/book.scss */
+/* line 226, ../scss/book.scss */
+#book footer > div #prev:hover {
+  background-image: url("++resource++fatac.theme.images/flecha-detras_hover.png");
+}
+/* line 232, ../scss/book.scss */
 #book footer > div #next {
   float: left;
   text-align: center;
@@ -8496,7 +8501,11 @@ html, body, .container {
   padding-right: 10px;
   background-image: url("++resource++fatac.theme.images/flecha-delante-grande.png");
 }
-/* line 233, ../scss/book.scss */
+/* line 236, ../scss/book.scss */
+#book footer > div #next:hover {
+  background-image: url("++resource++fatac.theme.images/flecha-delante_hover.png");
+}
+/* line 242, ../scss/book.scss */
 #book footer > div #thumbs {
   height: 100%;
   width: 90%;
@@ -8504,13 +8513,13 @@ html, body, .container {
   overflow: hidden;
   position: relative;
 }
-/* line 239, ../scss/book.scss */
+/* line 248, ../scss/book.scss */
 #book footer > div #thumbs .wrapper {
   height: 100%;
   width: 135000px;
   padding-left: 5px;
 }
-/* line 243, ../scss/book.scss */
+/* line 252, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb {
   -webkit-box-shadow: 0px 0px 9px #323232;
   -moz-box-shadow: 0px 0px 9px #323232;
@@ -8528,13 +8537,13 @@ html, body, .container {
   height: 126px;
   width: 126px;
 }
-/* line 244, ../scss/book.scss */
+/* line 253, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb.selected {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 265, ../scss/book.scss */
+/* line 274, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img {
   max-width: 100%;
   max-height: 100%;
@@ -8542,21 +8551,21 @@ html, body, .container {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 269, ../scss/book.scss */
+/* line 278, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img:hover {
   cursor: pointer;
 }
-/* line 272, ../scss/book.scss */
+/* line 281, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img.vertical {
   max-height: none;
   margin-top: -50%;
 }
-/* line 276, ../scss/book.scss */
+/* line 285, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img.horizontal {
   max-width: none;
   margin-left: -50%;
 }
-/* line 285, ../scss/book.scss */
+/* line 294, ../scss/book.scss */
 #book footer > div #thumbs .window {
   position: absolute;
   top: 5px;
@@ -8569,40 +8578,40 @@ html, body, .container {
   z-index: 1000;
 }
 
-/* line 306, ../scss/book.scss */
+/* line 315, ../scss/book.scss */
 #commentsModal .btn {
   font-family: Arial, sans-serif;
 }
-/* line 310, ../scss/book.scss */
+/* line 319, ../scss/book.scss */
 #commentsModal .btn-disabled {
   color: #aaa;
 }
-/* line 313, ../scss/book.scss */
+/* line 322, ../scss/book.scss */
 #commentsModal .modal-body {
   width: 100%;
 }
-/* line 316, ../scss/book.scss */
+/* line 325, ../scss/book.scss */
 #commentsModal textarea {
   width: 92%;
 }
-/* line 318, ../scss/book.scss */
+/* line 327, ../scss/book.scss */
 #commentsModal textarea:focus {
   border-color: #339933;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
 }
-/* line 325, ../scss/book.scss */
+/* line 334, ../scss/book.scss */
 #commentsModal .alert {
   width: 85%;
   margin-bottom: 0px;
 }
-/* line 328, ../scss/book.scss */
+/* line 337, ../scss/book.scss */
 #commentsModal .alert a {
   color: #339933;
 }
 
-/* line 334, ../scss/book.scss */
+/* line 343, ../scss/book.scss */
 button#fullscreen {
   border: none;
   background-color: transparent;
@@ -8615,7 +8624,7 @@ button#fullscreen {
   height: 25px;
   cursor: pointer;
 }
-/* line 345, ../scss/book.scss */
+/* line 354, ../scss/book.scss */
 button#fullscreen:hover {
   background-image: url("++resource++fatac.theme.images/vista-normal_hover.png");
 }
