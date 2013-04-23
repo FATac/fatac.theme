@@ -8577,41 +8577,85 @@ html, body, .container {
   border-radius: 10px;
   z-index: 1000;
 }
-
+/* line 304, ../scss/book.scss */
+#book footer > div #thumbs .posbar {
+  position: absolute;
+  bottom: 2px;
+  height: 7px;
+  margin: 12px 0px;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #dddddd;
+  background-color: #f0f0f0;
+}
 /* line 315, ../scss/book.scss */
+#book footer > div #thumbs .slider {
+  position: absolute;
+  bottom: 2px;
+  width: 30px;
+  height: 30px;
+  background-image: url("++resource++fatac.theme.images/ico_4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 323, ../scss/book.scss */
+#book footer > div #thumbs .slider.ui-draggable-dragging .tag {
+  display: block;
+}
+/* line 326, ../scss/book.scss */
+#book footer > div #thumbs .slider .tag {
+  padding: 5px;
+  z-index: 2000;
+  display: none;
+  position: absolute;
+  margin: -32px 0 0 3px;
+  padding: 3px 7px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #999999;
+  height: 20px;
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* line 353, ../scss/book.scss */
 #commentsModal .btn {
   font-family: Arial, sans-serif;
 }
-/* line 319, ../scss/book.scss */
+/* line 357, ../scss/book.scss */
 #commentsModal .btn-disabled {
   color: #aaa;
 }
-/* line 322, ../scss/book.scss */
+/* line 360, ../scss/book.scss */
 #commentsModal .modal-body {
   width: 100%;
 }
-/* line 325, ../scss/book.scss */
+/* line 363, ../scss/book.scss */
 #commentsModal textarea {
   width: 92%;
 }
-/* line 327, ../scss/book.scss */
+/* line 365, ../scss/book.scss */
 #commentsModal textarea:focus {
   border-color: #339933;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
 }
-/* line 334, ../scss/book.scss */
+/* line 372, ../scss/book.scss */
 #commentsModal .alert {
   width: 85%;
   margin-bottom: 0px;
 }
-/* line 337, ../scss/book.scss */
+/* line 375, ../scss/book.scss */
 #commentsModal .alert a {
   color: #339933;
 }
 
-/* line 343, ../scss/book.scss */
+/* line 381, ../scss/book.scss */
 button#fullscreen {
   border: none;
   background-color: transparent;
@@ -8624,7 +8668,7 @@ button#fullscreen {
   height: 25px;
   cursor: pointer;
 }
-/* line 354, ../scss/book.scss */
+/* line 392, ../scss/book.scss */
 button#fullscreen:hover {
   background-image: url("++resource++fatac.theme.images/vista-normal_hover.png");
 }

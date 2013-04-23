@@ -28,6 +28,111 @@
     }
 
 
+    // Gets the corresponding page index by the click on posbar
+
+    function getSelectedByPosbarClickPosition(x) {
+
+            var posbar_margin = 5
+            var slider_width = 30
+            var numpages = $('#book')[0].bookdata.pages.length -1
+            var $posbar = $('.posbar')
+            var $slider = $('.slider')
+            var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
+            var slider_step_width = Math.floor(effective_posbar_width / (numpages - 1))
+
+            var position = x - $posbar.offset().left
+            var index = Math.floor( position / slider_step_width )
+
+            return index
+    }
+
+
+    // Gets the corresponding page index by the slider position
+
+    function getSelectedBySliderPosition() {
+            var posbar_margin = 15
+            var slider_width = 30
+            var numpages = $('#book')[0].bookdata.pages.length -1
+            var $posbar = $('.posbar')
+            var $slider = $('.slider')
+            var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
+            var slider_step_width = Math.floor(effective_posbar_width / (numpages - 1))
+
+            var position = $slider.position().left + (slider_width / 2) - posbar_margin
+            var index = Math.floor( position / slider_step_width )
+
+            return index
+    }
+
+
+    // Sets the slider in the posbar to a position relative to the total images
+
+    function setSliderPosition(index) {
+        var posbar_margin = 15
+        var slider_width = 30
+        var numpages = $('#book')[0].bookdata.pages.length -1
+        var $posbar = $('.posbar')
+        var $slider = $('.slider')
+        var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
+        var slider_step_width = Math.floor(effective_posbar_width / (numpages - 1))
+        var position = (index * slider_step_width) + posbar_margin - (slider_width / 2)
+        $slider.css({left:position})
+    }
+
+    // Determines where to move the selected window and thumb wrapper by the page index
+    // and toogles the selected status
+
+    function setWinAndWrapperPosition(index) {
+
+        var $current_selected = $('#book #thumbs .thumb.selected')
+        var $win = $('#book #thumbs .window')
+        var $next_selected = $($('#thumbs .thumb')[index])
+        var distance = index - $current_selected.index()
+        var max_window_position = getMaxThumbs() - 1
+
+        // calculate next window position
+        var win_new_pos = getThumbWinPos($win) + distance
+
+
+        // We are moving the select window within the actual visible thumbs
+        // We don't have to move the wrapper
+        if (win_new_pos == 0) {}
+            var move_wrapper = 0
+
+        // We are moving the selected window to a thumb hidden at the right side
+        // So we have to move the wrapper to the left as many thumbs as needed
+        if (win_new_pos > max_window_position) {
+            var move_wrapper = max_window_position - win_new_pos
+            win_new_pos = max_window_position
+        }
+
+        // We are moving the selected window to a thumb hidden at the left side
+        // So we have to move the wrapper to the right as many thumbs as needed
+
+        if (win_new_pos < 0) {
+            var move_wrapper = 0 - win_new_pos
+            win_new_pos = 0
+        }
+
+        // The window has to be moved, so move it!
+        if (win_new_pos!=getThumbWinPos($win)) {
+            $win.animate({left:thsize() * win_new_pos}, 200)
+        }
+
+        // The wrapper position has to be moved, so move it!
+        if (move_wrapper!=0) {
+            var $wrapper = $win.siblings('.wrapper')
+            var wrapper_position = parseInt($wrapper.css('margin-left'))
+            mleft = wrapper_position + (move_wrapper * thsize())
+            $wrapper.animate({'margin-left': mleft}, 200)
+
+        }
+
+        $current_selected.toggleClass('selected')
+        $next_selected.toggleClass('selected')
+
+    }
+
     // Returns the window position relative to the first thumb in list, even if it's hidden
 
     function getRealWinIndex(index, wrapper) {
@@ -74,7 +179,8 @@
             var $win = $thumbs.find('.window')
             var $thumbs = $('#thumbs')
             var $element = $(element)
-            var thumbsize = $thumbs.height() - 22
+            var thumbsize = $thumbs.height() - 50
+
             var thumbswidth = Math.floor(  ($thumbsparent.width()-80) / (thumbsize+ 10)  )  * (thumbsize +10)
             var margin = Math.floor( ($thumbsparent.width() - thumbswidth) / 2) - 12
             $('#prev').width(margin)
@@ -120,6 +226,7 @@
         renderItems('Details', index)
         renderItems('Notes', index)
         renderItems('Comments', index)
+        setSliderPosition(index)
     }
 
 // Initialize UI when ready
@@ -441,7 +548,615 @@ $(document).ready(function(event) {
                         'author': 'John Travolta'
                     }
                 ]
+            },
+            {
+                'title': 'Pagina1',
+                'image': 'http://lorempixel.com/1400/1400/cats/1',
+                'proportion': 'square',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/2'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/3'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina2',
+                'image': 'http://lorempixel.com/1400/700/cats/2',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/3'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/4'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina3',
+                'image': 'http://lorempixel.com/700/1400/cats/3',
+                'proportion': 'vertical',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/4'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/5'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina4',
+                'image': 'http://lorempixel.com/1400/700/cats/4',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/5'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/6'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina5',
+                'image': 'http://lorempixel.com/1400/700/cats/5',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/6'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/7'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina6',
+                'image': 'http://lorempixel.com/1400/700/cats/6',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/7'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/8'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina7',
+                'image': 'http://lorempixel.com/1400/700/cats/7',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/8'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/9'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina8',
+                'image': 'http://lorempixel.com/1400/700/cats/8',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/9'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/10'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+            {
+                'title': 'Pagina1',
+                'image': 'http://lorempixel.com/1400/1400/cats/1',
+                'proportion': 'square',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/2'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/3'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina2',
+                'image': 'http://lorempixel.com/1400/700/cats/2',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/3'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/4'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina3',
+                'image': 'http://lorempixel.com/700/1400/cats/3',
+                'proportion': 'vertical',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/4'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/5'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina4',
+                'image': 'http://lorempixel.com/1400/700/cats/4',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/5'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/6'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina5',
+                'image': 'http://lorempixel.com/1400/700/cats/5',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/6'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/7'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina6',
+                'image': 'http://lorempixel.com/1400/700/cats/6',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/7'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/8'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina7',
+                'image': 'http://lorempixel.com/1400/700/cats/7',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/8'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/9'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
+            },
+
+            {
+                'title': 'Pagina8',
+                'image': 'http://lorempixel.com/1400/700/cats/8',
+                'proportion': 'horizontal',
+                'details': [
+                    {
+                        'title': 'Detall1',
+                        'url': 'http://lorempixel.com/300/300/cats/9'
+                    },
+                    {
+                        'title': 'Detall2',
+                        'url': 'http://lorempixel.com/300/300/cats/10'
+                    }
+                ],
+                'notes': [
+                    {
+                        'title': 'Nota1',
+                        'text': "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. "
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends."
+                    }
+                ],
+                'comments': [
+                    {
+                        'title': 'Nota1',
+                        'text': "No man, I don't eat pork",
+                        'author': 'Samuel'
+                    },
+                    {
+                        'title': 'Nota1',
+                        'text': "I gotta piss",
+                        'author': 'John Travolta'
+                    }
+                ]
             }
+
+
 
 
         ]
@@ -533,20 +1248,9 @@ $(document).ready(function(event) {
         var $prev = $selected.prev()
         var index = $prev.index()
         if (index >= 0) {
-            $selected.toggleClass('selected')
-            $prev.toggleClass('selected')
-            var winpos = getThumbWinPos($win)
-            var maxpos = getMaxThumbs()
-            var $wrapper = $win.siblings('.wrapper')
+            setWinAndWrapperPosition(index)
             setPageData(index)
-            if (winpos>=1) {
-                $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
-            } else {
-                mleft = thsize() * (index - winpos) * -1
-                $wrapper.animate({'margin-left': mleft}, 200)
-            }
         }
-
     });
 
 
@@ -559,20 +1263,9 @@ $(document).ready(function(event) {
         var index = $next.index()
         var nthumbs = $('#book #thumbs .thumb').length
         if (index < nthumbs && index > 0) {
-            $selected.toggleClass('selected')
-            $next.toggleClass('selected')
-            var winpos = getThumbWinPos($win)
-            var maxpos = getMaxThumbs()
-            var $wrapper = $win.siblings('.wrapper')
+            setWinAndWrapperPosition(index)
             setPageData(index)
-            if (winpos +1 < maxpos) {
-                $win.animate({left:thsize() * getRealWinIndex(index, $wrapper)}, 200)
-            } else {
-                mleft = thsize() * (index - winpos) * -1
-                $wrapper.animate({'margin-left': mleft}, 200)
-            }
         }
-
     });
 
 
@@ -580,21 +1273,35 @@ $(document).ready(function(event) {
 
     $('#thumbs').on('click', '.thumb img', function(event) {
         $target = $(event.currentTarget).closest('.thumb')
-        var $selected = $('#book #thumbs .thumb.selected')
-        var $win = $('#book #thumbs .window')
         var index = $target.index()
-        var realindex = getRealWinIndex(index, $target.closest('.wrapper'))
-
-        if (realindex < getMaxThumbs() ) {
-            $selected.toggleClass('selected')
-            $target.toggleClass('selected')
-
-            $win.animate({left:thsize() * realindex}, 200)
-            setPageData(index)
-        }
-
+        setWinAndWrapperPosition(index)
+        setPageData(index)
     });
 
+
+    // Move window pointer to corresponding .thumb relative to clicked slider position
+
+    $('.posbar').click(function(event) {
+
+            var index = getSelectedByPosbarClickPosition(event.pageX)
+            setWinAndWrapperPosition(index)
+            setPageData(index)
+    })
+
+    $('.slider').draggable({
+        containment: "parent",
+        axis: 'x',
+        stop: function(event, ui) {
+            var newindex = getSelectedBySliderPosition()
+            setWinAndWrapperPosition(newindex)
+            setPageData(newindex)
+        },
+        drag: function(event, ui) {
+            var data = $('#book')[0].bookdata.pages
+            dragindex = getSelectedBySliderPosition()
+            $('.slider .tag').text(dragindex + 1)
+        }
+    });
 
     // Reset image position after mouse leaves #main img
 
