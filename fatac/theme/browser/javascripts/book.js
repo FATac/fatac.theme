@@ -1200,6 +1200,7 @@ $(document).ready(function(event) {
 
     getData(function(event, data) {
         $('header h1').text(getBook()['title'] + ', ')
+        $('header .author').text(getBook()['author'])
         resizeSidebarSections()
         renderThumbs()
         resizeThumbsAndWindow()
