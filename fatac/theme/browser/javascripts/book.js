@@ -211,8 +211,8 @@
     // Loads the JSON data of the book and calls the specified callback afterwards
 
     function getData(callback) {
-        $.get('/', function(data) {
-            $('#book')[0].bookdata = BOOK_DATA
+        $.get('jsonLlibre', function(data) {
+            $('#book')[0].bookdata = data
             callback.call()
         })
     }
