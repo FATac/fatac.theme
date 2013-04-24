@@ -29,7 +29,7 @@ class gestionarLlibre(BrowserView):
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         llibre = portal.portal_catalog.searchResults(portal_type="fatac.dummy", path='/fatac/ac/'+id_llibre)   
         url_llibre = llibre[0].getURL() 
-        return url_llibre + '/++add++fatac.paginaLlibre'
+        return url_llibre
     
     def PaginesLlibre(self):        
         id_llibre = self.context.id

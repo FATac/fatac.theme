@@ -28,12 +28,16 @@
         
         <div id="content-core">       
          
-            <div i18n:translate="pagines_llibre" tal:define="llibre view/getLlibre">
+            <div i18n:translate="pagines_llibre" tal:define="llibre view/getLlibre">   
+               
                 <div class="pagines">Pàgines llibre
-                    <a tal:attributes="href llibre">  
+                    <a tal:attributes="href python:llibre+'/++add++fatac.paginaLlibre'">  
                        <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
                       <!--  <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
-                    </a>
+                    </a>     
+                    <a style="float:right" target="_blank"  tal:attributes="href python:llibre+'/bookView'">  
+                        Visualitzar llibre               
+                    </a> 
                 </div>
                 
                 <ul class="llista_pagines">
