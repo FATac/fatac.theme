@@ -35,9 +35,10 @@ class jsonLlibre(BrowserView):
 
         for detall in detalls:            
             id_pagina = detall.id
-            obj = detall.getObject()   
+            obj = detall.getObject()  
+            url_image = detall.getURL() + '/@@download/picture/' +  obj.picture.filename.encode() 
             details.append(dict(title=obj.title, 
-                                url=detall.getURL(),                                                          
+                                url=url_image,                                                          
                               )
                         )         
         return details[0:]
