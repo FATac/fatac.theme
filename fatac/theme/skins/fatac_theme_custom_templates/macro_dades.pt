@@ -94,7 +94,7 @@
                         <div class="photo-container">
                             <img class="media_image" tal:attributes="src url; alt identificador" />
                         </div>
-                        <br/><a tal:attributes="href string:${here/portal_url}/imageView?image=${url}&title=${identificador}"
+                        <br/><a tal:attributes="href string:${context/absolute_url}/bookView"
                            i18n:translate="" class="link_fatac">Veure llibre ampliat</a>
                     </tal:co>
 
