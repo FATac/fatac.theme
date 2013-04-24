@@ -26,6 +26,13 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="fatac.theme.bootstrap"
+        directory="bootstrap"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Resource directory for stylesheets -->
     <browser:resourceDirectory
         name="fatac.theme.stylesheets"
@@ -156,6 +163,14 @@
         class=".utils.utilitats"
         permission="zope2.View"
         />
+
+    <browser:page
+        for="*"
+        name="bookView"
+        class=".bookview.BookView"
+        permission="zope2.View"
+        />
+
 
     <!-- Vista creada per fer proves de pintar la visualització de resultats amb una llista de ids) -->
     <browser:page

@@ -1,0 +1,396 @@
+@import "reboot";
+
+
+$tapiesGreen: #B9E38F;
+$tapiesDarkGreen: #339933;
+$tapiesLightGrey: #fbfbfb;
+$tapiesDarkGrey: #f0f0f0;
+
+
+@mixin book-section {
+    background-color: $tapiesLightGrey;
+    @include border-radius(5px);
+    border: 2px solid $tapiesDarkGrey;
+    height: 100%;
+    padding-left:15px;
+}
+
+body {
+    font-family: 'Georgia', sans-serif;
+}
+
+html, body, .container {
+    height:100%;
+}
+
+#book {
+    height:97%;
+    margin-top: 2%;
+    header {
+        > div {
+            position:relative;
+            @include book-section;
+            #palette {
+                position:absolute;
+                top:10px;
+                right:45px;
+                background-image: url('++resource++fatac.theme.images/palette.png');
+                background-repeat: no-repeat;
+                width:73px;
+                height:25px;
+            }
+            h1 {
+                bottom:0px;
+                font-size: 1.5em;
+                margin: 10px 0;
+                line-height: 25px;
+                float:left;
+                padding-right: 10px;
+            }
+            .author {
+                margin: 10px 0;
+                color:$tapiesDarkGreen;
+                font-size: 1.2em;
+                float: left;
+                line-height: 28px;
+            }
+
+
+        }
+        box-sizing: border-box;
+        padding-bottom:2%;
+        height:12%;
+    }
+    #screen {
+        #main {
+            @include book-section;
+            padding-left:0px;
+            position:relative;
+            overflow: hidden;
+            text-align: center;
+
+
+            img:hover + button#zoom {
+                opacity: 0.4;
+            }
+
+            button#zoom {
+                opacity: 0;
+                position:absolute;
+                right:4px;
+                bottom:4px;
+                height: 36px;
+                width: 36px;
+                border:none;
+                @include border-radius(5px);
+                background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
+                -webkit-transition: opacity 0.4s ease-in-out;
+                -moz-transition: opacity 0.4s ease-in-out;
+                -o-transition: opacity 0.4s ease-in-out;
+                transition: opacity 0.4s ease-in-out;
+            }
+            img {
+                -webkit-box-shadow: 0px 0px 14px rgba(50, 50, 50, 1);
+                -moz-box-shadow:    0px 0px 14px rgba(50, 50, 50, 1);
+                box-shadow:         0px 0px 14px rgba(50, 50, 50, 1);
+                max-height: 100%;
+                max-width: 100%;
+                z-index: 1000;
+                &:hover {
+                    cursor: -webkit-zoom-in;
+                    cursor: -moz-zoom-in;
+                    max-width: none;
+                    max-height: none;
+                }
+            }
+        }
+
+        #sidebar {
+            @include book-section;
+            overflow: hidden;
+            z-index: 20;
+            padding-left:0px;
+
+            #comments .accordion-toggle{
+                button {
+                    opacity: 0.4;
+                    display: block;
+                    cursor:pointer;
+                    background: none;
+                    border: 2px $tapiesDarkGreen solid;
+                    @include border-radius(5px);
+                    height:18px;
+                    width:18px;
+                    color:$tapiesDarkGreen;
+                    padding: 0px;
+                    line-height: 17px;
+                    margin-top: 3px;
+                    font-weight: bold;
+                }
+                &:hover {
+                    button {
+                        -webkit-transition: opacity  0.3s ease-in-out;
+                        -moz-transition: opacity 0.3s ease-in-out;
+                        -o-transition: opaity 0.3s ease-in-out;
+                        opacity: 1;
+                    }
+                }
+            }
+            .accordion-group {
+                border:none;
+                .accordion-body.in {
+                    padding-bottom:5px;
+                    border-bottom: 1px solid $tapiesLightGrey;
+                    border-top: 1px solid $tapiesLightGrey;
+                    cursor:all-scroll;
+                    font-family: Arial, sans-serif;
+                    color:#666;
+
+                }
+                .accordion-heading a {
+                    font-size:1.2em;
+                    font-weight: bold;
+                    color: $tapiesDarkGreen;
+                    text-decoration: none;
+                    &:hover {
+                        -webkit-transition: text-shadow  0.2s ease-in-out;
+                        -moz-transition: text-shadow 0.2s ease-in-out;
+                        -o-transition: text-shadow 0.2s ease-in-out;
+                        transition: text-shadow 0.2s ease-in-out;
+                        text-shadow: $tapiesGreen 0px 0px 10px;
+                    }
+                }
+                .detail {
+                    img {
+                        -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 1);
+                        -moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 1);
+                        box-shadow:         0px 0px 3px rgba(50, 50, 50, 1);
+
+                        @include border-radius(5px);
+                        margin-bottom:5px;
+
+                    }
+                    margin-bottom:10px;
+                }
+
+                .comment {
+                    span {
+                        font-style: italic;
+                        color:#999;
+                    }
+                    border-bottom:1px $tapiesGreen dotted;
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .note {
+                    border-bottom:1px $tapiesGreen dotted;
+                    margin-bottom: 10px;
+
+                }
+            }
+        }
+
+        height:64%;
+
+
+    }
+
+    footer {
+        box-sizing: border-box;
+        padding-top:2%;
+        > div {
+            @include book-section;
+            padding-left:0px;
+            @mixin navbutton {
+                float:left;
+                text-align: center;
+                color: $tapiesDarkGrey;
+                font-size: 4em;
+                font-weight: bold;
+                padding-top: 2.8%;
+                line-height: 0.8em;
+                cursor:pointer;
+                background: none;
+                border: none;
+                background-repeat: no-repeat;
+                background-position-y: center;
+                background-position-x: center;
+                width:40px;
+                height:100%;
+
+            }
+            #prev {
+                @include navbutton;
+                background-image: url('++resource++fatac.theme.images/flecha-detras-grande.png');
+                &:hover {
+                    background-image: url('++resource++fatac.theme.images/flecha-detras_hover.png');
+                }
+
+            }
+
+            #next {
+                @include navbutton;
+                padding-right: 10px;
+                background-image: url('++resource++fatac.theme.images/flecha-delante-grande.png');
+                &:hover {
+                    background-image: url('++resource++fatac.theme.images/flecha-delante_hover.png');
+                }
+
+            }
+
+            #thumbs {
+                height:100%;
+                width:90%;
+                float:left;
+                overflow: hidden;
+                position:relative;
+                .wrapper {
+                    height:100%;
+                    width:135000px;
+                    padding-left:5px;
+                    .thumb {
+                        &.selected {
+                            -webkit-box-shadow: none;
+                            -moz-box-shadow: none;
+                            box-shadow: none;
+
+                        }
+
+                        -webkit-box-shadow: 0px 0px 9px rgba(50, 50, 50, 1);
+                        -moz-box-shadow:    0px 0px 9px rgba(50, 50, 50, 1);
+                        box-shadow:         0px 0px 9px rgba(50, 50, 50, 1);
+
+                        text-align: center;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                        margin-top:10px;
+                        margin-right:10px;
+                        float:left;
+                        background-color: $tapiesDarkGrey;
+                        @include border-radius(5px);
+                        height:126px;
+                        width:126px;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            @include border-radius(5px);
+                            &:hover{
+                                cursor:pointer;
+                            }
+                            &.vertical {
+                                max-height: none;
+                                margin-top: -50%;
+                            }
+                            &.horizontal {
+                                max-width: none;
+                                margin-left: -50%;
+                            }
+                        }
+
+
+                    }
+                }
+                .window {
+                        position:absolute;
+                        top:5px;
+                        height:130px;
+                        width:130px;
+                        border:3px solid $tapiesDarkGreen;
+                        @include border-radius(10px);
+                        z-index: 1000;
+                }
+
+                .posbar {
+                    position:absolute;
+                    bottom:2px;
+                    height:7px;
+                    margin:12px 0px;
+                    box-sizing: border-box;
+                    width:100%;
+                    @include border-radius(5px);
+                    border: 2px solid #ddd;
+                    background-color: $tapiesDarkGrey;
+                 }
+               .slider {
+                    position:absolute;
+                    bottom:2px;
+                    width:30px;
+                    height:30px;
+                    background-image: url('++resource++fatac.theme.images/ico_4.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &.ui-draggable-dragging .tag {
+                        display: block
+                    }
+                    .tag {
+                        padding:5px;
+                        z-index: 2000;
+                        display:none;
+                        position:absolute;
+                        margin:-32px 0 0 3px;
+                        padding: 3px 7px;
+                        @include border-radius(5px);
+                        border:2px solid #999;
+                        height:20px;
+                        background-color: white;
+                        font-family: Arial, sans-serif;
+
+                    }
+                }
+            }
+
+        }
+        height:20%;
+        width:100%;
+    }
+
+    .row-fluid {
+    }
+}
+
+#commentsModal {
+    .btn {
+        font-family: Arial, sans-serif;
+    }
+
+    .btn-disabled {
+        color:#aaa;
+    }
+    .modal-body {
+        width:100%;
+    }
+    textarea {
+        width:92%;
+        &:focus {
+            border-color:$tapiesDarkGreen;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $tapiesDarkGreen;
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $tapiesDarkGreen;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $tapiesDarkGreen;
+        };
+    }
+    .alert {
+        width:85%;
+        margin-bottom: 0px;
+        a{
+            color:$tapiesDarkGreen;
+        }
+    }
+}
+
+button#fullscreen {
+    border:none;
+    background-color: transparent;
+    position:absolute;
+    top:10px;
+    right:10px;
+    background-image: url('++resource++fatac.theme.images/vista-normal.png');
+    background-repeat: no-repeat;
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    &:hover {
+        background-image: url('++resource++fatac.theme.images/vista-normal_hover.png');
+    }
+
+}

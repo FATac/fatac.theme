@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="++resource++fatac.theme.stylesheets/book.css">
+
+        <script src="++resource++fatac.theme.javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis:200,600);</style>
+    </head>
+    <body>
+
+
+        <div class="container">
+
+            <div class="container-fluid" id="book">
+
+              <header class="row-fluid" >
+                <div class="span12">
+                  <h1>Las aventuras de Mortadelo i Filemon</h1>
+                  <span class="author">Francisco Ibañez</span>
+                  <div id="palette"></div>
+                  <button id="fullscreen"></button>
+                </div>
+
+              </header>
+
+              <div class="row-fluid" id="screen" >
+                <div id="main" class="span9">
+                  <img src=""/>
+                  <button id="zoom"></button>
+
+
+                </div>
+
+                <div id="sidebar" class="span3 accordion">
+                     <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseDetails">
+                            Detalls
+                          </a>
+                        </div>
+                        <div id="collapseDetails" class="accordion-body collapse in">
+                          <div class="accordion-inner">
+                            No hi ha detalls
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseNotes">
+                            Notes
+                          </a>
+                        </div>
+                        <div id="collapseNotes" class="accordion-body collapse">
+                          <div class="accordion-inner">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-group" id="comments">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseComments">
+                            Comentaris <button class="pull-right">+</button>
+                          </a>
+                        </div>
+                        <div id="collapseComments" class="accordion-body collapse">
+                          <div class="accordion-inner">
+                            No hi han comentaris
+                          </div>
+                        </div>
+                      </div>
+
+
+                </div>
+
+              </div>
+
+              <footer class="row-fluid" >
+                <div class="span12">
+                  <button id="prev"></button>
+                  <div id="thumbs">
+                        <div class="window"></div>
+                        <div class="posbar"></div>
+                        <div class="slider">
+                          <div class="tag"></div>
+                        </div>
+                        <div class="wrapper">
+                            <div class="thumb selected"></div>
+                            <div class="thumb"></div>
+                            <div class="thumb"></div>
+                            <div class="thumb"></div>
+                            <div class="thumb"></div>
+                        </div>
+                  </div>
+                  <button id="next"></button>
+
+                </div>
+              </footer>
+            </div>
+
+
+        </div> <!-- /container -->
+
+        <div class="modal hide fade" id="commentsModal" tal:define="anonymous view/anonymous">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Afegir Comentari</h3>
+          </div>
+          <div tal:condition="anonymous" class="modal-body">
+            <div class="alert alert-error">
+                <strong>Alerta! </strong>
+                Has d'estar <a tal:attributes="href string: ${view/portal_url}/login">identificat</a> per poder comentar
+            </div>
+          </div>
+          <div class="modal-body">
+            <textarea rows="4" tal:attributes="disabled view/anonymous | nothing"></textarea>
+          </div>
+          <div class="modal-footer">
+            <a href="#" id="close" class="btn">Cancela</a>
+            <a href="#" id="send" tal:attributes="class view/commentclass">Envia el comentari</a>
+          </div>
+        </div>
+
+        <script src="++resource++fatac.theme.javascripts/jquery-1.9.1.min.js"></script>
+        <script src="++resource++fatac.theme.javascripts/jquery-ui-1.10.2.custom.min.js"></script>
+        <script src="++resource++fatac.theme.bootstrap/js/bootstrap-transition.js"></script>
+        <script src="++resource++fatac.theme.bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="++resource++fatac.theme.bootstrap/js/bootstrap-modal.js"></script>
+        <script src="++resource++fatac.theme.javascripts/screenfull.min.js"></script>
+        <script src="++resource++fatac.theme.javascripts/jquery.mousewheel.js"></script>
+        <script src="++resource++fatac.theme.javascripts/jquery.scrollpane.js"></script>
+        <script src="++resource++fatac.theme.javascripts/hogan.js"></script>
+        <script src="++resource++fatac.theme.javascripts/book.templates.js"></script>
+        <script src="++resource++fatac.theme.javascripts/book.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
