@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1 (unreleased)
+-------------------
+
+- Nova vista per gestionar els llibres i per retornar json llibre
+
 1.0dev (unreleased)
 -------------------
 

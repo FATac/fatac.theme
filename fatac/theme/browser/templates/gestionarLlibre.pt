@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      lang="en"
+      i18n:domain="fatac.theme">
+    <head>
+        <metal:block tal:define="dummy python:request.RESPONSE.setHeader('Content-Type', 'text/html;;charset=utf-8')" />
+
+        <title tal:content="view/title">Title</title>
+
+        <style type="text/css" media="screen">
+            body { background-color: white; color: black; font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif; font-size: 69%; }
+            a { display:block; margin: 0.5em; color: #436976; text-decoration: underline; line-height:1.5em; }
+            img { border: 0px; padding: 5px; }
+            #content-core { text-align: center; }
+        </style>
+    </head>
+    <body>   
+
+    <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        
+        <div id="content-core">       
+         
+            <div i18n:translate="pagines_llibre" tal:define="llibre view/getLlibre">
+                <div class="pagines">Pàgines llibre
+                    <a tal:attributes="href llibre">  
+                       <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
+                      <!--  <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                    </a>
+                </div>
+                
+                <ul class="llista_pagines">
+                    <li class="pagina" tal:repeat="pagina view/PaginesLlibre">
+                      
+                        <div class="titol_pagines"> <a tal:content="pagina/title" href="" tal:attributes="href pagina/url_edit"/> </div>                      
+                       
+                        <div class="row-fluid">
+                            <div class="span4" tal:define="url_pagina pagina/url" i18n:translate="detalls"><span class="dades_pagina">Detalls</span>
+                                <a tal:attributes="href python:url_pagina+'/++add++fatac.detallLlibre'">  
+                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
+                                   <!-- <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                                </a>
+                                <ul tal:condition="pagina/detalls">
+                                    <li tal:repeat="detall pagina/detalls">
+                                        <a tal:define="url_detall detall/getURL" tal:content="detall/Title" href="" tal:attributes="href python:url_detall+'/edit'"/>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="span4" tal:define="url_pagina pagina/url" i18n:translate="notes"><span class="dades_pagina">Notes</span>
+                                <a tal:attributes="href python:url_pagina+'/++add++fatac.notaLlibre'">  
+                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
+                                   <!-- <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                                </a>
+                                <ul tal:condition="pagina/notes">                                
+                                    <li tal:repeat="nota pagina/notes">
+                                        <a tal:define="url_nota nota/getURL" tal:content="nota/Title" href="" tal:attributes="href python:url_nota+'/edit'"/>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="span4" i18n:translate="comentaris"><span class="dades_pagina">Comentaris</span>
+                               <ul tal:condition="pagina/comentaris">                                
+                                    <li tal:repeat="comentari pagina/comentaris">
+                                        <div tal:define="url_comentari comentari/getURL" >    
+                                            <span tal:content="comentari/Description"/> 
+
+                                            <a href="" tal:attributes="href python:url_comentari+'/@@moderate-delete-comment'" >
+                                                <i class="icon-trash icon-large" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
+                                            </a>
+
+                                           <!--  <form name="delete" action="" tal:attributes="action string:${url_comentari}/@@moderate-delete-comment" method="post" style="display: inline;">
+                                                <input name="form.button.DeleteComment" class="destructive" type="submit" 
+                                                    value=" "> 
+                                                <a href="" tal:attributes="href python:url_comentari+'/@@moderate-delete-comment'" >
+                                                    <i class="icon-trash icon-large" src="++resource++fatac.theme.images/glyphicons-halflings.png">></i>
+                                                </a>
+
+                                                    <i class="icon-remove-circle" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
+                                               
+                                            </form> -->
+                                      
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                     </div>
+                  
+                    </li>
+                    
+                </ul>                
+            </div>           
+
+         
+        </div>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />        
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+    </tal:main-macro>
+    </metal:main>         
+       
+    </body>
+
+</html>
