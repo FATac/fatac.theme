@@ -2128,3 +2128,40 @@ msgstr "Àpats"
 
 msgid "ProtocolVisits"
 msgstr "Visites protocol·làries"
+
+msgid "paginaLlibre"
+msgstr "Pàgina Llibre"
+
+msgid "descriptionpaginaLlibre"
+msgstr "Permet afegir una pàgina del llibre"
+
+msgid "notaPagina"
+msgstr "Nota Pàgina"
+
+msgid "descriptionnotaPagina"
+msgstr "Permet afegir una nota a la pàgina del llibre"
+
+msgid "detallPagina"
+msgstr "Detall Pàgina"
+
+msgid "descriptiondetallPagina"
+msgstr "Permet afegir un detall a la pàgina del llibre"
+
+
+msgid "Pagina"
+msgstr "Pàgina"
+
+msgid "Please upload an image"
+msgstr "Afegeix una imatge"
+
+msgid "Keep existing image"
+msgstr "Guarda imatge existent"
+
+msgid "Replace with new imatge"
+msgstr "Reemplaça amb una nova imatge"
+
+msgid "The displayed text"
+msgstr "El text que es mostra"
+
+msgid "Picture"
+msgstr "Detall"

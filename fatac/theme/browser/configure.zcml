@@ -92,6 +92,21 @@
         class=".imageView.imageView"
         permission="zope2.Public"
         />
+  
+
+    <browser:page
+        for="*"
+        name="gestionarLlibre"
+        class=".gestionarLlibre.gestionarLlibre"
+        permission="cmf.ManagePortal"
+        />
+
+    <browser:page
+        for="*"
+        name="jsonLlibre"
+        class=".jsonLlibre.jsonLlibre"
+        permission="zope2.View"
+        />
 
     <browser:page
         for="*"
