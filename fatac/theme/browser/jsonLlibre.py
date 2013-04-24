@@ -127,8 +127,8 @@ class jsonLlibre(BrowserView):
 
       
         llibre = {                     
-            'title': 'Las aventuras de Mortadelo i Filemon',
-            'author': 'Francisco Ibañez',
+            'title': 'Títol del llibre',
+            'author': 'Autor',
             'url': 'http://foo/bar',
             'pages': self.PaginesLlibre(obj),            
         }       
