@@ -27,6 +27,13 @@
 
     }
 
+    function getBook() {
+        return $('#book')[0].bookdata
+    }
+
+    function getCurrentPage() {
+        return getBook().pages[getCurrentIndex()]
+    }
 
     // Gets the corresponding page index by the click on posbar
 
@@ -34,7 +41,7 @@
 
             var posbar_margin = 5
             var slider_width = 30
-            var numpages = $('#book')[0].bookdata.pages.length -1
+            var numpages = getBook().pages.length -1
             var $posbar = $('.posbar')
             var $slider = $('.slider')
             var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
@@ -52,7 +59,7 @@
     function getSelectedBySliderPosition() {
             var posbar_margin = 15
             var slider_width = 30
-            var numpages = $('#book')[0].bookdata.pages.length -1
+            var numpages = getBook().pages.length -1
             var $posbar = $('.posbar')
             var $slider = $('.slider')
             var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
@@ -70,7 +77,7 @@
     function setSliderPosition(index) {
         var posbar_margin = 15
         var slider_width = 30
-        var numpages = $('#book')[0].bookdata.pages.length -1
+        var numpages = getBook().pages.length -1
         var $posbar = $('.posbar')
         var $slider = $('.slider')
         var effective_posbar_width = $posbar.width() - (posbar_margin * 2) - slider_width
@@ -144,7 +151,7 @@
 
     function renderItems(itemType, index) {
         var templates = fatbooks.templates()
-        var data = $('#book')[0].bookdata.pages[index]
+        var data = getBook().pages[index]
         var itemlower = itemType.toLowerCase()
         var new_html = ''
         for (i=0;i<data[itemlower].length;i++){
@@ -160,7 +167,7 @@
     function renderThumbs() {
 
         var templates = fatbooks.templates()
-        var data = $('#book')[0].bookdata
+        var data = getBook()
 
         thumbs = ''
         for (i=0;i<data.pages.length;i++){
@@ -213,7 +220,7 @@
     // Loads the information of a Book page into the UI
 
     function setPageData(index) {
-        var image_url = $('#book')[0].bookdata.pages[index].image
+        var image_url = getBook().pages[index].image
         $img = $('#main img')
         $img.attr('src', image_url)
         $img.fadeOut(500, function() {
@@ -221,7 +228,7 @@
         });
 
         var templates = fatbooks.templates()
-        var data = $('#book')[0].bookdata
+        var data = getBook()
 
         renderItems('Details', index)
         renderItems('Notes', index)
@@ -248,6 +255,7 @@ $(document).ready(function(event) {
         'pages': [
             {
                 'title': 'Pagina1',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/1400/cats/1',
                 'proportion': 'square',
                 'details': [
@@ -286,6 +294,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina2',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/2',
                 'proportion': 'horizontal',
                 'details': [
@@ -324,6 +333,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina3',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/700/1400/cats/3',
                 'proportion': 'vertical',
                 'details': [
@@ -362,6 +372,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina4',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/4',
                 'proportion': 'horizontal',
                 'details': [
@@ -400,6 +411,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina5',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/5',
                 'proportion': 'horizontal',
                 'details': [
@@ -438,6 +450,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina6',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/6',
                 'proportion': 'horizontal',
                 'details': [
@@ -476,6 +489,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina7',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/7',
                 'proportion': 'horizontal',
                 'details': [
@@ -514,6 +528,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina8',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/8',
                 'proportion': 'horizontal',
                 'details': [
@@ -551,6 +566,7 @@ $(document).ready(function(event) {
             },
             {
                 'title': 'Pagina1',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/1400/cats/1',
                 'proportion': 'square',
                 'details': [
@@ -589,6 +605,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina2',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/2',
                 'proportion': 'horizontal',
                 'details': [
@@ -627,6 +644,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina3',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/700/1400/cats/3',
                 'proportion': 'vertical',
                 'details': [
@@ -665,6 +683,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina4',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/4',
                 'proportion': 'horizontal',
                 'details': [
@@ -703,6 +722,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina5',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/5',
                 'proportion': 'horizontal',
                 'details': [
@@ -741,6 +761,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina6',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/6',
                 'proportion': 'horizontal',
                 'details': [
@@ -779,6 +800,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina7',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/7',
                 'proportion': 'horizontal',
                 'details': [
@@ -817,6 +839,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina8',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/8',
                 'proportion': 'horizontal',
                 'details': [
@@ -854,6 +877,7 @@ $(document).ready(function(event) {
             },
             {
                 'title': 'Pagina1',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/1400/cats/1',
                 'proportion': 'square',
                 'details': [
@@ -892,6 +916,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina2',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/2',
                 'proportion': 'horizontal',
                 'details': [
@@ -930,6 +955,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina3',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/700/1400/cats/3',
                 'proportion': 'vertical',
                 'details': [
@@ -968,6 +994,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina4',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/4',
                 'proportion': 'horizontal',
                 'details': [
@@ -1006,6 +1033,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina5',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/5',
                 'proportion': 'horizontal',
                 'details': [
@@ -1044,6 +1072,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina6',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/6',
                 'proportion': 'horizontal',
                 'details': [
@@ -1082,6 +1111,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina7',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/7',
                 'proportion': 'horizontal',
                 'details': [
@@ -1120,6 +1150,7 @@ $(document).ready(function(event) {
 
             {
                 'title': 'Pagina8',
+                'url': 'http://lapagina',
                 'image': 'http://lorempixel.com/1400/700/cats/8',
                 'proportion': 'horizontal',
                 'details': [
@@ -1168,7 +1199,7 @@ $(document).ready(function(event) {
     // Get de data and initialize UI
 
     getData(function(event, data) {
-        $('header h1').text($('#book')[0].bookdata['title'] + ', ')
+        $('header h1').text(getBook()['title'] + ', ')
         resizeSidebarSections()
         renderThumbs()
         resizeThumbsAndWindow()
@@ -1230,8 +1261,7 @@ $(document).ready(function(event) {
             "form.widgets.user_notification:list": "selected",
             "form.buttons.comment": "Comment"
         }
-
-        $.post('@@view', payload, function(data) {
+        $.post(getCurrentPage().url + '/@@view', payload, function(data) {
             $('#commentsModal').modal('hide')
             getData(function(event) {
                 renderItems('Details', getCurrentIndex())
@@ -1297,7 +1327,7 @@ $(document).ready(function(event) {
             setPageData(newindex)
         },
         drag: function(event, ui) {
-            var data = $('#book')[0].bookdata.pages
+            var data = getBook().pages
             dragindex = getSelectedBySliderPosition()
             $('.slider .tag').text(dragindex + 1)
         }
