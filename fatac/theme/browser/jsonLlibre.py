@@ -53,7 +53,7 @@ class jsonLlibre(BrowserView):
             id_nota = nota.id
             obj = nota.getObject()   
             notes.append(dict(title=obj.title, 
-                              text=obj.text.raw_encoded,                                                          
+                              text=obj.text,                                                          
                               )
                         )         
         return notes[0:]
