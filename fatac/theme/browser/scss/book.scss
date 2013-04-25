@@ -135,10 +135,13 @@ html, body, .container {
             }
             .accordion-group {
                 border:none;
+                .accordion-inner {
+                    border:none;
+                }
                 .accordion-body.in {
                     padding-bottom:5px;
-                    border-bottom: 1px solid $tapiesLightGrey;
-                    border-top: 1px solid $tapiesLightGrey;
+                    border-bottom: 2px solid $tapiesLightGrey;
+                    border-top: 2px solid $tapiesLightGrey;
                     cursor:all-scroll;
                     font-family: Arial, sans-serif;
                     color:#666;
