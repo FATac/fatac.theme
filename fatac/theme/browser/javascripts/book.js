@@ -9,7 +9,9 @@
     // Returns the actual thumb size, with margin
 
     function thsize() {
-        return $('.thumb').width() + 10
+        var THUMB_SIZE = $('.thumb').width() + 10
+        $('#thumbs')[0].thumbsize = THUMB_SIZE
+        return THUMB_SIZE
     }
 
 
@@ -177,6 +179,9 @@
         $('#thumbs .wrapper').html(thumbs)
     }
 
+
+
+
     // Resize thumbnails and selection window, recenter navigation arrows
 
     function resizeThumbsAndWindow() {
@@ -186,15 +191,45 @@
             var $win = $thumbs.find('.window')
             var $thumbs = $('#thumbs')
             var $element = $(element)
+            var $image = $element.find('img')
             var thumbsize = $thumbs.height() - 50
+
+            // Set a callback to calculate margins on image load
+            $image.imagesLoaded( function( $images, $proper, $broken ) {
+            // calculate margins when images fully loaded
+                $.each($images, function(index, image) {
+                    var image_css = {}
+                    var $img = $(image)
+                    if ($img.height() > $img.width()) {
+                        var percent = Math.floor(( 100 * (($img.height() - $img.width()) / 2)) / $img.height() )
+                        image_css['margin-top'] = '-' + parseInt(percent, 10) + '%'
+                        $image.css(image_css)
+                    }
+
+                    if ($img.width() > $img.height()) {
+                        var percent = Math.floor(( 100 * (($img.width() - $img.height()) / 2)) / $img.width() )
+                        element_css['margin-left'] = '-' + parseInt(percent, 10) + '%'
+                        $image.css(image_css)
+                    }
+                    $img.addClass('loaded')
+                })
+
+            });
 
             var thumbswidth = Math.floor(  ($thumbsparent.width()-80) / (thumbsize+ 10)  )  * (thumbsize +10)
             var margin = Math.floor( ($thumbsparent.width() - thumbswidth) / 2) - 12
             $('#prev').width(margin)
             $('#next').width(margin - 4)
+
+            var element_css = {width: thumbsize, height: thumbsize}
+
+            console.log($('#thumbs')[0].thumbsize)
+
             $thumbs.css({width:thumbswidth})
-            $element.css({width: thumbsize, height: thumbsize})
+            $element.css(element_css)
             $win.css({width: thumbsize + 4, height: thumbsize + 4})
+            thsize()
+
         })
     }
 
@@ -213,6 +248,7 @@
     function getData(callback) {
         $.get('jsonLlibre', function(data) {
             $('#book')[0].bookdata = data
+            //$('#book')[0].bookdata = BOOK_DATA
             callback.call()
         })
     }
@@ -231,6 +267,17 @@
         var data = getBook()
 
         renderItems('Details', index)
+        $('.detail img').each(function(index, image) {
+            var $image = $(image)
+            $image.imagesLoaded( function( $images, $proper, $broken ) {
+                // calculate margins
+                $.each($images, function(index, image) {
+                    var $im = $(image)
+                    $im.addClass('loaded')
+                })
+
+            })
+        })
         renderItems('Notes', index)
         renderItems('Comments', index)
         setSliderPosition(index)
@@ -334,7 +381,7 @@ $(document).ready(function(event) {
             {
                 'title': 'Pagina3',
                 'url': 'http://lapagina',
-                'image': 'http://lorempixel.com/700/1400/cats/3',
+                'image': 'http://lorempixel.com/400/500/cats/3',
                 'proportion': 'vertical',
                 'details': [
                     {
@@ -1195,7 +1242,6 @@ $(document).ready(function(event) {
 
     // End Dummy data
 
-
     // Get de data and initialize UI
 
     getData(function(event, data) {
@@ -1348,6 +1394,8 @@ $(document).ready(function(event) {
     $('#book #main img').on('mousemove', function(event) {
         var $img = $(event.currentTarget)
         var $main = $img.closest('#main')
+
+
         var pos = $main.position()
 
         var width = $main.width()
@@ -1356,16 +1404,24 @@ $(document).ready(function(event) {
         var img_width = $img.width()
         var img_height = $img.height()
 
-        var hidden_x = img_width - width
-        var hidden_y = img_height - height
+        if (img_width > width || img_height > height) {
+            var hidden_x = img_width - width
+            var hidden_y = img_height - height
+
+            var mousex = event.pageX - pos['left']
+            var mousey = event.pageY - pos['top']
+
+            var scroll_x = (mousex / width) * hidden_x * -1
+            var scroll_y = (mousey / height) * hidden_y * -1
+
+            movement = {}
+            if (img_width > width) movement['margin-left'] = scroll_x
+            if (img_height > height) movement['margin-top'] = scroll_y
+
+            $img.css(movement)
+        }
 
 
-        var mousex = event.pageX - pos['left']
-        var mousey = event.pageY - pos['top']
 
-        var scroll_x = (mousex / width) * hidden_x * -1
-        var scroll_y = (mousey / height) * hidden_y * -1
-
-        $img.css({'margin-left': scroll_x, 'margin-top': scroll_y})
     });
 });
