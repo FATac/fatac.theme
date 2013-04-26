@@ -528,6 +528,17 @@ $(document).ready(function(event) {
             $detail.addClass('viewing')
         }
 
+
+        var $body = $detail.closest('.accordion-body')
+        var detail_height = $detail_image.height()
+        var detail_top = $detail_image.offset().top - $body.offset().top
+        var body_height = $body.height()
+
+        if ((detail_height + detail_top) > body_height) {
+            $detail.closest('.accordion-inner').css({'margin-top': body_height - (detail_height + detail_top)})
+        }
+
+
         var url = go_view_detail ? $detail_image.attr('src') : getCurrentPage().image
         $img.attr('src', url)
 
