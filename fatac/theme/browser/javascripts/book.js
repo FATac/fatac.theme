@@ -1,4 +1,6 @@
 NAVIGATING = false
+WIN_POS = 0
+WRAPPER_POS = 0
     // Returns the current selected page index based on selected thumb
 
     function getCurrentIndex() {
@@ -9,9 +11,7 @@ NAVIGATING = false
     // Returns the actual thumb size, with margin
 
     function thsize() {
-        var THUMB_SIZE = $('.thumb').width() + 10
-        $('#thumbs')[0].thumbsize = THUMB_SIZE
-        return THUMB_SIZE
+        return $('.thumb').width() + 10
     }
 
 
@@ -127,6 +127,7 @@ NAVIGATING = false
         if (win_new_pos!=getThumbWinPos($win)) {
             NAVIGATING = true
             $win.animate({left:thsize() * win_new_pos}, 300, function(event) {
+                WIN_POS = win_new_pos
                 NAVIGATING = false
             })
         }
@@ -138,6 +139,7 @@ NAVIGATING = false
             var wrapper_position = parseInt($wrapper.css('margin-left'))
             mleft = wrapper_position + (move_wrapper * thsize())
             $wrapper.animate({'margin-left': mleft}, 300, function(event) {
+                WRAPPER_POS = Math.floor(mleft / thsize())
                 NAVIGATING = false
             })
 
@@ -195,6 +197,7 @@ NAVIGATING = false
             var $thumbsparent = $('footer .span12')
             var $win = $thumbs.find('.window')
             var $thumbs = $('#thumbs')
+            var $wrapper = $thumbs.find('.wrapper')
             var $element = $(element)
             var $image = $element.find('img')
             var thumbsize = $thumbs.height() - 50
@@ -231,8 +234,19 @@ NAVIGATING = false
             $thumbs.css({width:thumbswidth})
             $element.css(element_css)
             $win.css({width: thumbsize + 4, height: thumbsize + 4})
-            thsize()
 
+            // Reposition wrapper and window for new thumb_size
+            // check index to do it only the first time
+            // we have to do it inside the "each" because we need the new thumb size
+
+            if (index==0) {
+                if (WIN_POS >= getMaxThumbs()) {
+                    WRAPPER_POS = WRAPPER_POS + (getMaxThumbs() - WIN_POS - 1)
+                    WIN_POS = getMaxThumbs() -1
+                }
+                $win.css({'left':thsize() * WIN_POS})
+                $wrapper.css({'margin-left': WRAPPER_POS * thsize()})
+            }
         })
     }
 
