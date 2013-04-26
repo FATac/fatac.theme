@@ -45,7 +45,7 @@
                      <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseDetails">
-                            Detalls
+                            Detalls (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseDetails" class="accordion-body collapse in">
@@ -58,7 +58,7 @@
                       <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseNotes">
-                            Notes
+                            Notes (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseNotes" class="accordion-body collapse">
@@ -70,7 +70,7 @@
                       <div class="accordion-group" id="comments">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseComments">
-                            Comentaris <button class="pull-right">+</button>
+                            Comentaris (<span class="count">0</span>)<button class="pull-right">+</button>
                           </a>
                         </div>
                         <div id="collapseComments" class="accordion-body collapse">

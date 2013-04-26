@@ -170,6 +170,7 @@ WRAPPER_POS = 0
         }
         extra = arguments.length>2 ? ' '+arguments[2] : ''
         $('#collapse' + itemType + ' .accordion-inner' + extra).html(new_html)
+        $('#collapse' + itemType).siblings('.accordion-heading').find('.count').text(data[itemlower].length)
 
     }
 
