@@ -145,6 +145,7 @@
         <script src="++resource++fatac.theme.javascripts/jquery.scrollpane.js"></script>
         <script src="++resource++fatac.theme.javascripts/hogan.js"></script>
         <script src="++resource++fatac.theme.javascripts/book.templates.js"></script>
+        <!--script src="++resource++fatac.theme.javascripts/book.dummycontent.js"></script-->
         <script src="++resource++fatac.theme.javascripts/book.js"></script>
 
         <script>
