@@ -23,6 +23,24 @@ html, body, .container {
     height:100%;
 }
 
+
+@mixin zoombutton {
+    opacity: 0;
+    position:absolute;
+    right:4px;
+    bottom:4px;
+    height: 36px;
+    width: 36px;
+    border:none;
+    @include border-radius(5px);
+    background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    z-index:3000;
+}
+
 #book {
     height:97%;
     margin-top: 2%;
@@ -75,20 +93,9 @@ html, body, .container {
             }
 
             button#zoom {
-                opacity: 0;
-                position:absolute;
-                right:4px;
-                bottom:4px;
-                height: 36px;
-                width: 36px;
-                border:none;
-                @include border-radius(5px);
-                background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
-                -webkit-transition: opacity 0.4s ease-in-out;
-                -moz-transition: opacity 0.4s ease-in-out;
-                -o-transition: opacity 0.4s ease-in-out;
-                transition: opacity 0.4s ease-in-out;
+                @include zoombutton;
             }
+
             img {
                 max-height: 100%;
                 max-width: 100%;
@@ -142,7 +149,6 @@ html, body, .container {
                     padding-bottom:5px;
                     border-bottom: 2px solid $tapiesLightGrey;
                     border-top: 2px solid $tapiesLightGrey;
-                    cursor:all-scroll;
                     font-family: Arial, sans-serif;
                     color:#666;
 
@@ -153,8 +159,19 @@ html, body, .container {
                     color: $tapiesDarkGreen;
                     text-decoration: none;
                 }
+
+                .detail.viewing button#zoom {
+                    opacity: 0.4;
+                }
                 .detail {
+                    position:relative;
+                    button#zoom {
+                        @include zoombutton;
+                        bottom:30px;
+                    }
                     img {
+                        cursor: -webkit-zoom-in;
+                        cursor: -moz-zoom-in;
                         opacity: 0;
                         @include border-radius(5px);
                         margin-bottom:5px;

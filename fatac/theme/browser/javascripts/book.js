@@ -325,7 +325,7 @@ $(document).ready(function(event) {
                 'details': [
                     {
                         'title': 'Detall1',
-                        'url': 'http://lorempixel.com/300/300/cats/2'
+                        'url': 'http://lorempixel.com/1000/1000/cats/2'
                     },
                     {
                         'title': 'Detall2',
@@ -1457,7 +1457,31 @@ $(document).ready(function(event) {
             $img.css(movement)
         }
 
-
-
     });
+
+    $('#book #sidebar').on('.detail img').click(function(event) {
+        event.stopPropagation()
+        event.stopImmediatePropagation()
+        var $detail_image = $(event.target)
+        var $detail = $detail_image.closest('.detail')
+        var $img = $('#main img')
+        $detail.toggleClass('viewing')
+        var go_view_detail = $detail.hasClass('viewing')
+        if (go_view_detail) {
+            $('#book #sidebar .detail.viewing').each(function(idx, element) {
+                $element = $(element)
+                $element.removeClass('viewing')
+            })
+            $detail.addClass('viewing')
+        }
+
+
+        var url = go_view_detail ? $detail_image.attr('src') : getCurrentPage().image
+        $img.attr('src', url)
+
+        $img.fadeOut(200, function() {
+            $img.fadeIn(200);
+        });
+    })
+
 });

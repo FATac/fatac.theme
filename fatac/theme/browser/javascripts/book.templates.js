@@ -25,6 +25,7 @@ var THUMB = '\
 var DETAIL = '\
 <div class="detail">\
   <img src="{{url}}"/>\
+  <button id="zoom"></button>\
   <span>{{title}}</span>\
 </div>\
 ';

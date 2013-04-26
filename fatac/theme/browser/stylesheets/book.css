@@ -8239,18 +8239,18 @@ html, body, .container {
   height: 100%;
 }
 
-/* line 26, ../scss/book.scss */
+/* line 44, ../scss/book.scss */
 #book {
   height: 97%;
   margin-top: 2%;
 }
-/* line 29, ../scss/book.scss */
+/* line 47, ../scss/book.scss */
 #book header {
   box-sizing: border-box;
   padding-bottom: 2%;
   height: 12%;
 }
-/* line 30, ../scss/book.scss */
+/* line 48, ../scss/book.scss */
 #book header > div {
   position: relative;
   background-color: #f0f0f0;
@@ -8261,7 +8261,7 @@ html, body, .container {
   height: 100%;
   padding-left: 15px;
 }
-/* line 33, ../scss/book.scss */
+/* line 51, ../scss/book.scss */
 #book header > div #palette {
   position: absolute;
   top: 10px;
@@ -8271,7 +8271,7 @@ html, body, .container {
   width: 73px;
   height: 25px;
 }
-/* line 42, ../scss/book.scss */
+/* line 60, ../scss/book.scss */
 #book header > div h1 {
   bottom: 0px;
   font-size: 1.5em;
@@ -8280,7 +8280,7 @@ html, body, .container {
   float: left;
   padding-right: 10px;
 }
-/* line 50, ../scss/book.scss */
+/* line 68, ../scss/book.scss */
 #book header > div .author {
   margin: 10px 0;
   color: #339933;
@@ -8288,11 +8288,11 @@ html, body, .container {
   float: left;
   line-height: 28px;
 }
-/* line 64, ../scss/book.scss */
+/* line 82, ../scss/book.scss */
 #book #screen {
   height: 64%;
 }
-/* line 65, ../scss/book.scss */
+/* line 83, ../scss/book.scss */
 #book #screen #main {
   background-color: #f0f0f0;
   -webkit-border-radius: 5px;
@@ -8307,11 +8307,11 @@ html, body, .container {
   text-align: center;
   background: url("++resource++fatac.theme.images/furley_bg.png");
 }
-/* line 73, ../scss/book.scss */
+/* line 91, ../scss/book.scss */
 #book #screen #main img:hover + button#zoom {
   opacity: 0.4;
 }
-/* line 77, ../scss/book.scss */
+/* line 95, ../scss/book.scss */
 #book #screen #main button#zoom {
   opacity: 0;
   position: absolute;
@@ -8328,21 +8328,22 @@ html, body, .container {
   -moz-transition: opacity 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
+  z-index: 3000;
 }
-/* line 92, ../scss/book.scss */
+/* line 99, ../scss/book.scss */
 #book #screen #main img {
   max-height: 100%;
   max-width: 100%;
   z-index: 1000;
 }
-/* line 96, ../scss/book.scss */
+/* line 103, ../scss/book.scss */
 #book #screen #main img:hover {
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
   max-width: none;
   max-height: none;
 }
-/* line 105, ../scss/book.scss */
+/* line 112, ../scss/book.scss */
 #book #screen #sidebar {
   background-color: #f0f0f0;
   -webkit-border-radius: 5px;
@@ -8355,7 +8356,7 @@ html, body, .container {
   z-index: 20;
   padding-left: 0px;
 }
-/* line 112, ../scss/book.scss */
+/* line 119, ../scss/book.scss */
 #book #screen #sidebar #comments .accordion-toggle button {
   opacity: 0.4;
   display: block;
@@ -8373,80 +8374,106 @@ html, body, .container {
   margin-top: 3px;
   font-weight: bold;
 }
-/* line 128, ../scss/book.scss */
+/* line 135, ../scss/book.scss */
 #book #screen #sidebar #comments .accordion-toggle:hover button {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
-/* line 136, ../scss/book.scss */
+/* line 143, ../scss/book.scss */
 #book #screen #sidebar .accordion-group {
   border: none;
 }
-/* line 138, ../scss/book.scss */
+/* line 145, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-inner {
   border: none;
 }
-/* line 141, ../scss/book.scss */
+/* line 148, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-body.in {
   padding-bottom: 5px;
   border-bottom: 2px solid #fbfbfb;
   border-top: 2px solid #fbfbfb;
-  cursor: all-scroll;
   font-family: Arial, sans-serif;
   color: #666;
 }
-/* line 150, ../scss/book.scss */
+/* line 156, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .accordion-heading a {
   font-size: 1.2em;
   font-weight: bold;
   color: #339933;
   text-decoration: none;
 }
-/* line 156, ../scss/book.scss */
+/* line 163, ../scss/book.scss */
+#book #screen #sidebar .accordion-group .detail.viewing button#zoom {
+  opacity: 0.4;
+}
+/* line 166, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail {
+  position: relative;
   margin-bottom: 10px;
 }
-/* line 157, ../scss/book.scss */
+/* line 168, ../scss/book.scss */
+#book #screen #sidebar .accordion-group .detail button#zoom {
+  opacity: 0;
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  height: 36px;
+  width: 36px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: url("++resource++fatac.theme.images/ico-buscar-a.gif") no-repeat right center transparent;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 3000;
+  bottom: 30px;
+}
+/* line 172, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail img {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
   opacity: 0;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
-/* line 161, ../scss/book.scss */
+/* line 178, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .detail img.loaded {
   opacity: 1;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
 }
-/* line 171, ../scss/book.scss */
+/* line 188, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment {
   border-bottom: 1px #b9e38f dotted;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-/* line 172, ../scss/book.scss */
+/* line 189, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .comment span {
   font-style: italic;
   color: #999;
 }
-/* line 181, ../scss/book.scss */
+/* line 198, ../scss/book.scss */
 #book #screen #sidebar .accordion-group .note {
   border-bottom: 1px #b9e38f dotted;
   margin-bottom: 10px;
 }
-/* line 194, ../scss/book.scss */
+/* line 211, ../scss/book.scss */
 #book footer {
   box-sizing: border-box;
   padding-top: 2%;
   height: 20%;
   width: 100%;
 }
-/* line 197, ../scss/book.scss */
+/* line 214, ../scss/book.scss */
 #book footer > div {
   background-color: #f0f0f0;
   -webkit-border-radius: 5px;
@@ -8457,7 +8484,7 @@ html, body, .container {
   padding-left: 15px;
   padding-left: 0px;
 }
-/* line 218, ../scss/book.scss */
+/* line 235, ../scss/book.scss */
 #book footer > div #prev {
   float: left;
   text-align: center;
@@ -8476,11 +8503,11 @@ html, body, .container {
   height: 100%;
   background-image: url("++resource++fatac.theme.images/flecha-detras-grande.png");
 }
-/* line 221, ../scss/book.scss */
+/* line 238, ../scss/book.scss */
 #book footer > div #prev:hover {
   background-image: url("++resource++fatac.theme.images/flecha-detras_hover.png");
 }
-/* line 227, ../scss/book.scss */
+/* line 244, ../scss/book.scss */
 #book footer > div #next {
   float: left;
   text-align: center;
@@ -8500,11 +8527,11 @@ html, body, .container {
   padding-right: 10px;
   background-image: url("++resource++fatac.theme.images/flecha-delante-grande.png");
 }
-/* line 231, ../scss/book.scss */
+/* line 248, ../scss/book.scss */
 #book footer > div #next:hover {
   background-image: url("++resource++fatac.theme.images/flecha-delante_hover.png");
 }
-/* line 237, ../scss/book.scss */
+/* line 254, ../scss/book.scss */
 #book footer > div #thumbs {
   height: 100%;
   width: 90%;
@@ -8512,13 +8539,13 @@ html, body, .container {
   overflow: hidden;
   position: relative;
 }
-/* line 243, ../scss/book.scss */
+/* line 260, ../scss/book.scss */
 #book footer > div #thumbs .wrapper {
   height: 100%;
   width: 135000px;
   padding-left: 5px;
 }
-/* line 247, ../scss/book.scss */
+/* line 264, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb {
   text-align: center;
   overflow: hidden;
@@ -8533,7 +8560,7 @@ html, body, .container {
   height: 126px;
   width: 126px;
 }
-/* line 258, ../scss/book.scss */
+/* line 275, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img {
   opacity: 0;
   max-width: 100%;
@@ -8542,26 +8569,26 @@ html, body, .container {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 263, ../scss/book.scss */
+/* line 280, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img.loaded {
   opacity: 1;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
 }
-/* line 270, ../scss/book.scss */
+/* line 287, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img:hover {
   cursor: pointer;
 }
-/* line 273, ../scss/book.scss */
+/* line 290, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img.vertical {
   max-height: none;
 }
-/* line 277, ../scss/book.scss */
+/* line 294, ../scss/book.scss */
 #book footer > div #thumbs .wrapper .thumb img.horizontal {
   max-width: none;
 }
-/* line 286, ../scss/book.scss */
+/* line 303, ../scss/book.scss */
 #book footer > div #thumbs .window {
   position: absolute;
   top: 5px;
@@ -8573,7 +8600,7 @@ html, body, .container {
   border-radius: 10px;
   z-index: 1000;
 }
-/* line 296, ../scss/book.scss */
+/* line 313, ../scss/book.scss */
 #book footer > div #thumbs .posbar {
   position: absolute;
   bottom: 2px;
@@ -8587,7 +8614,7 @@ html, body, .container {
   border: 0px;
   background-color: #ccc;
 }
-/* line 307, ../scss/book.scss */
+/* line 324, ../scss/book.scss */
 #book footer > div #thumbs .slider {
   position: absolute;
   bottom: 2px;
@@ -8597,16 +8624,16 @@ html, body, .container {
   border: 5px transparent;
   background-color: #666;
 }
-/* line 315, ../scss/book.scss */
+/* line 332, ../scss/book.scss */
 #book footer > div #thumbs .slider:hover {
   bottom: 12px;
   height: 10px;
 }
-/* line 320, ../scss/book.scss */
+/* line 337, ../scss/book.scss */
 #book footer > div #thumbs .slider.ui-draggable-dragging .tag {
   display: block;
 }
-/* line 323, ../scss/book.scss */
+/* line 340, ../scss/book.scss */
 #book footer > div #thumbs .slider .tag {
   padding: 5px;
   z-index: 2000;
@@ -8623,40 +8650,40 @@ html, body, .container {
   font-family: Arial, sans-serif;
 }
 
-/* line 350, ../scss/book.scss */
+/* line 367, ../scss/book.scss */
 #commentsModal .btn {
   font-family: Arial, sans-serif;
 }
-/* line 354, ../scss/book.scss */
+/* line 371, ../scss/book.scss */
 #commentsModal .btn-disabled {
   color: #aaa;
 }
-/* line 357, ../scss/book.scss */
+/* line 374, ../scss/book.scss */
 #commentsModal .modal-body {
   width: 100%;
 }
-/* line 360, ../scss/book.scss */
+/* line 377, ../scss/book.scss */
 #commentsModal textarea {
   width: 92%;
 }
-/* line 362, ../scss/book.scss */
+/* line 379, ../scss/book.scss */
 #commentsModal textarea:focus {
   border-color: #339933;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #339933;
 }
-/* line 369, ../scss/book.scss */
+/* line 386, ../scss/book.scss */
 #commentsModal .alert {
   width: 85%;
   margin-bottom: 0px;
 }
-/* line 372, ../scss/book.scss */
+/* line 389, ../scss/book.scss */
 #commentsModal .alert a {
   color: #339933;
 }
 
-/* line 378, ../scss/book.scss */
+/* line 395, ../scss/book.scss */
 button#fullscreen {
   border: none;
   background-color: transparent;
@@ -8669,7 +8696,7 @@ button#fullscreen {
   height: 25px;
   cursor: pointer;
 }
-/* line 389, ../scss/book.scss */
+/* line 406, ../scss/book.scss */
 button#fullscreen:hover {
   background-image: url("++resource++fatac.theme.images/vista-normal_hover.png");
 }
