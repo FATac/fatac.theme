@@ -68,7 +68,7 @@ html, body, .container {
             position:relative;
             overflow: hidden;
             text-align: center;
-
+            background: url('++resource++fatac.theme.images/furley_bg.png');
 
             img:hover + button#zoom {
                 opacity: 0.4;

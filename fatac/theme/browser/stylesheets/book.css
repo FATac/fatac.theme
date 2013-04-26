@@ -8305,6 +8305,7 @@ html, body, .container {
   position: relative;
   overflow: hidden;
   text-align: center;
+  background: url("++resource++fatac.theme.images/furley_bg.png");
 }
 /* line 73, ../scss/book.scss */
 #book #screen #main img:hover + button#zoom {

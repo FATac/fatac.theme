@@ -1,4 +1,4 @@
-
+NAVIGATING = false
     // Returns the current selected page index based on selected thumb
 
     function getCurrentIndex() {
@@ -125,20 +125,27 @@
 
         // The window has to be moved, so move it!
         if (win_new_pos!=getThumbWinPos($win)) {
-            $win.animate({left:thsize() * win_new_pos}, 200)
+            NAVIGATING = true
+            $win.animate({left:thsize() * win_new_pos}, 300, function(event) {
+                NAVIGATING = false
+            })
         }
 
         // The wrapper position has to be moved, so move it!
         if (move_wrapper!=0) {
+            NAVIGATING = true
             var $wrapper = $win.siblings('.wrapper')
             var wrapper_position = parseInt($wrapper.css('margin-left'))
             mleft = wrapper_position + (move_wrapper * thsize())
-            $wrapper.animate({'margin-left': mleft}, 200)
+            $wrapper.animate({'margin-left': mleft}, 300, function(event) {
+                NAVIGATING = false
+            })
 
         }
 
         $current_selected.toggleClass('selected')
         $next_selected.toggleClass('selected')
+
 
     }
 
@@ -178,8 +185,6 @@
         }
         $('#thumbs .wrapper').html(thumbs)
     }
-
-
 
 
     // Resize thumbnails and selection window, recenter navigation arrows
@@ -222,8 +227,6 @@
             $('#next').width(margin - 4)
 
             var element_css = {width: thumbsize, height: thumbsize}
-
-            console.log($('#thumbs')[0].thumbsize)
 
             $thumbs.css({width:thumbswidth})
             $element.css(element_css)
@@ -1320,13 +1323,19 @@ $(document).ready(function(event) {
     // Move window pointer to previous .thumb
 
     $('#book #prev').click(function(event) {
-        var $selected = $('#book #thumbs .thumb.selected')
-        var $win = $('#book #thumbs .window')
-        var $prev = $selected.prev()
-        var index = $prev.index()
-        if (index >= 0) {
-            setWinAndWrapperPosition(index)
-            setPageData(index)
+        if (!NAVIGATING) {
+            NAVIGATING = true
+            var $selected = $('#book #thumbs .thumb.selected')
+            var $win = $('#book #thumbs .window')
+            var $prev = $selected.prev()
+            var index = $prev.index()
+            if (index >= 0) {
+                setWinAndWrapperPosition(index)
+                setPageData(index)
+            }
+        }
+        else {
+            console.log('Keep calm and read books')
         }
     });
 
@@ -1334,25 +1343,38 @@ $(document).ready(function(event) {
     // Move window pointer to next .thumb
 
     $('#book #next').click(function(event) {
-        var $selected = $('#book #thumbs .thumb.selected')
-        var $win = $('#book #thumbs .window')
-        var $next = $selected.next()
-        var index = $next.index()
-        var nthumbs = $('#book #thumbs .thumb').length
-        if (index < nthumbs && index > 0) {
-            setWinAndWrapperPosition(index)
-            setPageData(index)
+        if (!NAVIGATING) {
+            NAVIGATING = true
+            var $selected = $('#book #thumbs .thumb.selected')
+            var $win = $('#book #thumbs .window')
+            var $next = $selected.next()
+            var index = $next.index()
+            var nthumbs = $('#book #thumbs .thumb').length
+            if (index < nthumbs && index > 0) {
+                setWinAndWrapperPosition(index)
+                setPageData(index)
+            }
         }
+        else {
+            console.log('Keep calm and read books')
+        }
+
     });
 
 
     // Move window pointer to clicked .thumb
 
     $('#thumbs').on('click', '.thumb img', function(event) {
-        $target = $(event.currentTarget).closest('.thumb')
-        var index = $target.index()
-        setWinAndWrapperPosition(index)
-        setPageData(index)
+        if (!NAVIGATING) {
+            NAVIGATING = true
+            $target = $(event.currentTarget).closest('.thumb')
+            var index = $target.index()
+            setWinAndWrapperPosition(index)
+            setPageData(index)
+        }
+        else {
+            console.log('Keep calm and read books')
+        }
     });
 
 
