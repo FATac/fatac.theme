@@ -265,8 +265,8 @@ WRAPPER_POS = 0
 
     function getData(callback) {
         $.get('jsonLlibre', function(data) {
-            //$('#book')[0].bookdata = data
-            $('#book')[0].bookdata = BOOK_DATA
+            $('#book')[0].bookdata = data
+            //$('#book')[0].bookdata = BOOK_DATA
             callback.call()
         })
     }
