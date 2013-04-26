@@ -347,12 +347,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -386,12 +388,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -425,12 +429,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -464,12 +470,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -503,12 +511,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -542,12 +552,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -581,12 +593,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -620,12 +634,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -658,12 +674,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -697,12 +715,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -736,12 +756,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -775,12 +797,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -814,12 +838,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -853,12 +879,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -892,12 +920,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -931,12 +961,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -969,12 +1001,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1008,12 +1042,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1047,12 +1083,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1086,12 +1124,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1125,12 +1165,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1164,12 +1206,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1203,12 +1247,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             },
@@ -1242,12 +1288,14 @@ $(document).ready(function(event) {
                     {
                         'title': 'Nota1',
                         'text': "No man, I don't eat pork",
-                        'author': 'Samuel'
+                        'author': 'Samuel',
+                        'date': '2013/02/01'
                     },
                     {
                         'title': 'Nota1',
                         'text': "I gotta piss",
-                        'author': 'John Travolta'
+                        'author': 'John Travolta',
+                        'date': '2013/02/01'
                     }
                 ]
             }
@@ -1460,9 +1508,10 @@ $(document).ready(function(event) {
 
     });
 
-    $('#book #sidebar').on('.detail img').click(function(event) {
+    $('#book #sidebar').on('click','.detail img', function(event) {
         event.stopPropagation()
         event.stopImmediatePropagation()
+        event.preventDefault()
         var $detail_image = $(event.target)
         var $detail = $detail_image.closest('.detail')
         var $img = $('#main img')
@@ -1475,7 +1524,6 @@ $(document).ready(function(event) {
             })
             $detail.addClass('viewing')
         }
-
 
         var url = go_view_detail ? $detail_image.attr('src') : getCurrentPage().image
         $img.attr('src', url)

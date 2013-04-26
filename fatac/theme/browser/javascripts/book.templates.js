@@ -33,7 +33,7 @@ var DETAIL = '\
 var COMMENT = '\
 <div class="comment clearfix">\
     <p>{{text}}</p>\
-    <span class="pull-right">{{author}}</span>\
+    <span class="pull-right">{{author}}</span><span class="date">{{date}}</span>\
 </div>\
 ';
 
