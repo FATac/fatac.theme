@@ -8277,15 +8277,13 @@ html, body, .container {
   font-size: 1.5em;
   margin: 10px 0;
   line-height: 25px;
-  float: left;
   padding-right: 10px;
 }
-/* line 68, ../scss/book.scss */
-#book header > div .author {
+/* line 69, ../scss/book.scss */
+#book header > div h2 {
   margin: 10px 0;
   color: #339933;
   font-size: 1.2em;
-  float: left;
   line-height: 28px;
 }
 /* line 82, ../scss/book.scss */

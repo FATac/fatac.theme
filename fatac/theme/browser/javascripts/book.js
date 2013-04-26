@@ -316,6 +316,7 @@ $(document).ready(function(event) {
     BOOK_DATA = {
         'title': 'Las aventuras de Mortadelu i Filemon',
         'author': 'Francisco Ibañez',
+        'year': '1991',
         'url': 'http://foo/bar',
         'pages': [
             {
@@ -1311,7 +1312,7 @@ $(document).ready(function(event) {
     // Get de data and initialize UI
 
     getData(function(event, data) {
-        $('header h1').text(getBook()['title'] + ', ')
+        $('header h1').text(getBook()['title'] + ', ' + getBook()['year'])
         $('header .author').text(getBook()['author'])
         resizeSidebarSections()
         renderThumbs()
