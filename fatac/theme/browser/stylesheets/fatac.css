@@ -1565,3 +1565,7 @@ div.overlay table.listing { font-size:12px !important; }
 .icon-resize-horizontal {
   background-position: -456px -118px;
 }
+
+.private {
+    color: red !important;
+}

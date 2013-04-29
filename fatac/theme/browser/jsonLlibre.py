@@ -6,6 +6,9 @@ from Products.CMFCore.utils import getToolByName
 from fatac.theme.browser.genericView import genericView
 import json
 
+from datetime import datetime
+from DateTime import DateTime
+
 class jsonLlibre(BrowserView):
     """ classe per generar una vista html del llibre
     """
@@ -66,10 +69,11 @@ class jsonLlibre(BrowserView):
         commentspagina = portal.portal_catalog.searchResults(portal_type="Discussion Item", path='/fatac/ac/'+id_llibre+'/'+id_pagina)       
         for comentari in commentspagina:            
             id_comentari = comentari.id
-            obj = comentari.getObject()            
+            obj = comentari.getObject() 
             comments.append(dict(title=obj.Title(), 
                                  text=obj.text.encode(),  
-                                 author=obj.author_name,                                                       
+                                 author=obj.author_name,  
+                                 date='%s/%s/%s' % (obj.creation_date.year, obj.creation_date.month, obj.creation_date.day),                    
                               )
                         )         
         return comments[0:]
@@ -129,6 +133,7 @@ class jsonLlibre(BrowserView):
         llibre = {                     
             'title': 'Títol del llibre',
             'author': 'Autor',
+            'year': '2013',
             'url': 'http://foo/bar',
             'pages': self.PaginesLlibre(obj),            
         }       

@@ -103,6 +103,13 @@
 
     <browser:page
         for="*"
+        name="comentarisLlibre"
+        class=".comentarisLlibre.comentarisLlibre"
+        permission="cmf.ManagePortal"
+        />
+
+    <browser:page
+        for="*"
         name="jsonLlibre"
         class=".jsonLlibre.jsonLlibre"
         permission="zope2.View"

@@ -23,7 +23,47 @@ class gestionarLlibre(BrowserView):
         """
         """
         return ViewPageTemplateFile('templates/gestionarLlibre.pt')(self)
+
+
+    def DetallsPagina(self, pagina, id_llibre):    
+        details = []
+        id_pagina = pagina.id
+
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        workflow = getToolByName(self.context,'portal_workflow')
+        detalls = portal.portal_catalog.searchResults(portal_type="fatac.detallLlibre", path='/fatac/ac/'+id_llibre+'/'+id_pagina, sort_on='getObjPositionInParent')       
+
+        for detall in detalls:            
+            id_pagina = detall.id
+            obj = detall.getObject()  
+            details.append(dict(title=obj.title, 
+                                url=detall.getURL(),  
+                                status = workflow.getInfoFor(obj,'review_state'),                                                        
+                              )
+                        )         
+        return details[0:]
    
+
+    
+    def NotesPagina(self, pagina, id_llibre):    
+        notes = []
+        id_pagina = pagina.id
+
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        workflow = getToolByName(self.context,'portal_workflow')
+        notespagina = portal.portal_catalog.searchResults(portal_type="fatac.notaLlibre", path='/fatac/ac/'+id_llibre+'/'+id_pagina, sort_on='getObjPositionInParent')       
+        for nota in notespagina:            
+            id_nota = nota.id
+            obj = nota.getObject()   
+            notes.append(dict(title=obj.title, 
+                              text=obj.text,   
+                              url=nota.getURL(),
+                              status = workflow.getInfoFor(obj,'review_state'),                                                       
+                              )
+                        )         
+        return notes[0:]
+
+
     def getLlibre(self):        
         id_llibre = self.context.id
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
@@ -34,17 +74,18 @@ class gestionarLlibre(BrowserView):
     def PaginesLlibre(self):        
         id_llibre = self.context.id
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
-        pagines = portal.portal_catalog.searchResults(portal_type="fatac.paginaLlibre", path='/fatac/ac/'+id_llibre, review_state=['published'], sort_on='getObjPositionInParent')
-        
+        workflow = getToolByName(self.context,'portal_workflow')
+        pagines = portal.portal_catalog.searchResults(portal_type="fatac.paginaLlibre", path='/fatac/ac/'+id_llibre, sort_on='getObjPositionInParent')
         results = []       
         for pagina in pagines:
                 id_pagina = pagina.id
-                obj = pagina.getObject()                   
+                obj = pagina.getObject() 
                 results.append(dict(title=obj.title,
                                     url=pagina.getURL(), 
-                                    url_edit=pagina.getURL() + '/edit',                                     
-                                    detalls = [i for i in  portal.portal_catalog.searchResults(portal_type="fatac.detallLlibre", path='/fatac/ac/'+id_llibre+'/'+id_pagina, review_state=['published'], sort_on='getObjPositionInParent')],                                    
-                                    notes = [i for i in  portal.portal_catalog.searchResults(portal_type="fatac.notaLlibre", path='/fatac/ac/'+id_llibre+'/'+id_pagina, review_state=['published'], sort_on='getObjPositionInParent')],                                    
+                                    url_edit=pagina.getURL() + '/edit',   
+                                    status = workflow.getInfoFor(obj,'review_state'),                                                                     
+                                    detalls = self.DetallsPagina(obj, id_llibre),                              
+                                    notes = self.NotesPagina(obj, id_llibre),                                     
                                     comentaris = [i for i in  portal.portal_catalog.searchResults(portal_type="Discussion Item", path='/fatac/ac/'+id_llibre+'/'+id_pagina)],  
                                     )
 
