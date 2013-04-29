@@ -25,6 +25,7 @@ var THUMB = '\
 var DETAIL = '\
 <div class="detail">\
   <img src="{{url}}"/>\
+  <button id="zoom"></button>\
   <span>{{title}}</span>\
 </div>\
 ';
@@ -32,7 +33,7 @@ var DETAIL = '\
 var COMMENT = '\
 <div class="comment clearfix">\
     <p>{{text}}</p>\
-    <span class="pull-right">{{author}}</span>\
+    <span class="pull-right">{{author}}</span><span class="date">{{date}}</span>\
 </div>\
 ';
 

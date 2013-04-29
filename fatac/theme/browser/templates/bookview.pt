@@ -26,7 +26,9 @@
               <header class="row-fluid" >
                 <div class="span12">
                   <h1>Las aventuras de Mortadelo i Filemon</h1>
-                  <span class="author">Francisco Ibañez</span>
+                  <h2>
+                      <span class="author">Francisco Ibañez</span>
+                  </h2>
                   <div id="palette"></div>
                   <button id="fullscreen"></button>
                 </div>
@@ -45,7 +47,7 @@
                      <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseDetails">
-                            Detalls
+                            Detalls (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseDetails" class="accordion-body collapse in">
@@ -58,7 +60,7 @@
                       <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseNotes">
-                            Notes
+                            Notes (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseNotes" class="accordion-body collapse">
@@ -70,7 +72,7 @@
                       <div class="accordion-group" id="comments">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseComments">
-                            Comentaris <button class="pull-right">+</button>
+                            Comentaris (<span class="count">0</span>)<button class="pull-right">+</button>
                           </a>
                         </div>
                         <div id="collapseComments" class="accordion-body collapse">
@@ -143,6 +145,7 @@
         <script src="++resource++fatac.theme.javascripts/jquery.scrollpane.js"></script>
         <script src="++resource++fatac.theme.javascripts/hogan.js"></script>
         <script src="++resource++fatac.theme.javascripts/book.templates.js"></script>
+        <!--script src="++resource++fatac.theme.javascripts/book.dummycontent.js"></script-->
         <script src="++resource++fatac.theme.javascripts/book.js"></script>
 
         <script>

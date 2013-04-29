@@ -8,9 +8,9 @@ $tapiesDarkGrey: #f0f0f0;
 
 
 @mixin book-section {
-    background-color: $tapiesLightGrey;
+    background-color: $tapiesDarkGrey;
     @include border-radius(5px);
-    border: 2px solid $tapiesDarkGrey;
+    border: 3px solid $tapiesLightGrey;
     height: 100%;
     padding-left:15px;
 }
@@ -21,6 +21,24 @@ body {
 
 html, body, .container {
     height:100%;
+}
+
+
+@mixin zoombutton {
+    opacity: 0;
+    position:absolute;
+    right:4px;
+    bottom:4px;
+    height: 36px;
+    width: 36px;
+    border:none;
+    @include border-radius(5px);
+    background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    z-index:3000;
 }
 
 #book {
@@ -44,14 +62,14 @@ html, body, .container {
                 font-size: 1.5em;
                 margin: 10px 0;
                 line-height: 25px;
-                float:left;
                 padding-right: 10px;
             }
-            .author {
+
+
+            h2 {
                 margin: 10px 0;
                 color:$tapiesDarkGreen;
                 font-size: 1.2em;
-                float: left;
                 line-height: 28px;
             }
 
@@ -68,31 +86,17 @@ html, body, .container {
             position:relative;
             overflow: hidden;
             text-align: center;
-
+            background: url('++resource++fatac.theme.images/furley_bg.png');
 
             img:hover + button#zoom {
                 opacity: 0.4;
             }
 
             button#zoom {
-                opacity: 0;
-                position:absolute;
-                right:4px;
-                bottom:4px;
-                height: 36px;
-                width: 36px;
-                border:none;
-                @include border-radius(5px);
-                background: url('++resource++fatac.theme.images/ico-buscar-a.gif') no-repeat right center transparent;
-                -webkit-transition: opacity 0.4s ease-in-out;
-                -moz-transition: opacity 0.4s ease-in-out;
-                -o-transition: opacity 0.4s ease-in-out;
-                transition: opacity 0.4s ease-in-out;
+                @include zoombutton;
             }
+
             img {
-                -webkit-box-shadow: 0px 0px 14px rgba(50, 50, 50, 1);
-                -moz-box-shadow:    0px 0px 14px rgba(50, 50, 50, 1);
-                box-shadow:         0px 0px 14px rgba(50, 50, 50, 1);
                 max-height: 100%;
                 max-width: 100%;
                 z-index: 1000;
@@ -131,18 +135,20 @@ html, body, .container {
                     button {
                         -webkit-transition: opacity  0.3s ease-in-out;
                         -moz-transition: opacity 0.3s ease-in-out;
-                        -o-transition: opaity 0.3s ease-in-out;
+                        -o-transition: opacity 0.3s ease-in-out;
                         opacity: 1;
                     }
                 }
             }
             .accordion-group {
                 border:none;
+                .accordion-inner {
+                    border:none;
+                }
                 .accordion-body.in {
                     padding-bottom:5px;
-                    border-bottom: 1px solid $tapiesLightGrey;
-                    border-top: 1px solid $tapiesLightGrey;
-                    cursor:all-scroll;
+                    border-bottom: 2px solid $tapiesLightGrey;
+                    border-top: 2px solid $tapiesLightGrey;
                     font-family: Arial, sans-serif;
                     color:#666;
 
@@ -152,19 +158,20 @@ html, body, .container {
                     font-weight: bold;
                     color: $tapiesDarkGreen;
                     text-decoration: none;
-                    &:hover {
-                        -webkit-transition: text-shadow  0.2s ease-in-out;
-                        -moz-transition: text-shadow 0.2s ease-in-out;
-                        -o-transition: text-shadow 0.2s ease-in-out;
-                        transition: text-shadow 0.2s ease-in-out;
-                        text-shadow: $tapiesGreen 0px 0px 10px;
-                    }
+                }
+
+                .detail.viewing button#zoom {
+                    opacity: 0.4;
                 }
                 .detail {
+                    position:relative;
+                    button#zoom {
+                        @include zoombutton;
+                        bottom:30px;
+                    }
                     img {
-                        -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 1);
-                        -moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 1);
-                        box-shadow:         0px 0px 3px rgba(50, 50, 50, 1);
+                        cursor: -webkit-zoom-in;
+                        cursor: -moz-zoom-in;
                         opacity: 0;
                         @include border-radius(5px);
                         margin-bottom:5px;
@@ -172,7 +179,7 @@ html, body, .container {
                                 opacity: 1;
                                 -webkit-transition: opacity  0.5s ease-in-out;
                                 -moz-transition: opacity 0.5s ease-in-out;
-                                -o-transition: opaity 0.5s ease-in-out;
+                                -o-transition: opacity 0.5s ease-in-out;
                         }
                     }
                     margin-bottom:10px;
@@ -181,7 +188,12 @@ html, body, .container {
                 .comment {
                     span {
                         font-style: italic;
+                        color:#777;
+                    }
+                    .date {
+                        font-style: normal;
                         color:#999;
+                        font-size: 0.9em;
                     }
                     border-bottom:1px $tapiesGreen dotted;
                     padding-bottom: 5px;
@@ -255,17 +267,6 @@ html, body, .container {
                     width:135000px;
                     padding-left:5px;
                     .thumb {
-                        &.selected {
-                            -webkit-box-shadow: none;
-                            -moz-box-shadow: none;
-                            box-shadow: none;
-
-                        }
-
-                        -webkit-box-shadow: 0px 0px 9px rgba(50, 50, 50, 1);
-                        -moz-box-shadow:    0px 0px 9px rgba(50, 50, 50, 1);
-                        box-shadow:         0px 0px 9px rgba(50, 50, 50, 1);
-
                         text-align: center;
                         overflow: hidden;
                         box-sizing: border-box;
@@ -283,9 +284,9 @@ html, body, .container {
                             @include border-radius(5px);
                             &.loaded {
                                 opacity: 1;
-                                -webkit-transition: opacity  0.5s ease-in-out;
-                                -moz-transition: opacity 0.5s ease-in-out;
-                                -o-transition: opaity 0.5s ease-in-out;
+                                -webkit-transition: opacity  0.2s ease-in-out;
+                                -moz-transition: opacity 0.2s ease-in-out;
+                                -o-transition: opacity 0.2s ease-in-out;
 
                             }
                             &:hover{
@@ -317,22 +318,27 @@ html, body, .container {
                 .posbar {
                     position:absolute;
                     bottom:2px;
-                    height:7px;
+                    height:5px;
                     margin:12px 0px;
                     box-sizing: border-box;
                     width:100%;
                     @include border-radius(5px);
-                    border: 2px solid #ddd;
-                    background-color: $tapiesDarkGrey;
+                    border: 0px;
+                    background-color: #ccc;
                  }
                .slider {
                     position:absolute;
                     bottom:2px;
                     width:30px;
-                    height:30px;
-                    background-image: url('++resource++fatac.theme.images/ico_4.png');
-                    background-repeat: no-repeat;
-                    background-position: center;
+                    height:5px;
+                    bottom:14px;
+                    border:5px transparent;
+                    background-color:#666;
+                    &:hover {
+                        bottom:12px;
+                        height:10px;
+
+                    }
                     &.ui-draggable-dragging .tag {
                         display: block
                     }
