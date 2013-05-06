@@ -36,7 +36,7 @@ class gestionarLlibre(BrowserView):
         for detall in detalls:            
             id_pagina = detall.id
             obj = detall.getObject()  
-            details.append(dict(title=obj.title, 
+            details.append(dict(title=obj.title_or_id(), 
                                 url=detall.getURL(),  
                                 status = workflow.getInfoFor(obj,'review_state'),                                                        
                               )
@@ -80,7 +80,7 @@ class gestionarLlibre(BrowserView):
         for pagina in pagines:
                 id_pagina = pagina.id
                 obj = pagina.getObject() 
-                results.append(dict(title=obj.title,
+                results.append(dict(title=obj.title_or_id(),
                                     url=pagina.getURL(), 
                                     url_edit=pagina.getURL() + '/edit',   
                                     status = workflow.getInfoFor(obj,'review_state'),                                                                     

@@ -2165,3 +2165,6 @@ msgstr "El text que es mostra"
 
 msgid "Picture"
 msgstr "Detall"
+
+msgid "help_description"
+msgstr "S'usa en llistes d'elements i resultats de cerca"
