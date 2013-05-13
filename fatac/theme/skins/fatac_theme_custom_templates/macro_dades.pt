@@ -1,6 +1,5 @@
 <metal:dada metal:define-macro="dadaObjecte" i18n:domain="fatac.theme">
-    <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">
-
+    <tal:def tal:define="nom dada/nom; tipus dada/tipus; valor dada/valor" tal:condition="valor">       
         <tal:co tal:condition="python: tipus == 'text'">
             <tal:co tal:condition="nom"><span class="etiqueta" tal:content="nom" i18n:translate=""/>: </tal:co>
             <span i18n:translate="" i18n:domain="fatac.theme" class="valor" tal:content="structure valor" />
@@ -43,6 +42,12 @@
             </tal:rep>
         </tal:co>
 
+        <tal:co tal:condition="python: tipus == 'linkedBook'" tal:define="obj valor">
+            <tal:co tal:condition="obj">
+                <a class="linked_object" target="_blank" tal:attributes="href obj"><span i18n:translate="veure_llibre">Veure llibre</span></a>
+            </tal:co>
+        </tal:co>
+
         <tal:co tal:condition="python: tipus == 'objects'">
             <input type="hidden" class="nom_dada" id="nom_dada" tal:attributes="value nom" />
             <input type="hidden" tal:attributes="id string:llista_ids_${nom}; value valor" />
@@ -82,22 +87,14 @@
             <tal:def tal:define="global hasVideo python:0"></tal:def>
             <tal:rep tal:repeat="media valor">
                 <tal:def tal:define="url media/url; tipus_media media/tipus_media; profile media/profile; identificador python:url.split('/')[-1]; info_srt media/info_srt">
-                    <!-- <tal:co tal:condition="python: tipus_media == 'image'">
+                    <tal:co tal:condition="python: tipus_media == 'image'">
                         <div class="photo-container">
                             <img class="media_image" tal:attributes="src url; alt identificador" />
                         </div>
                         <br/><a tal:attributes="href string:${here/portal_url}/imageView?image=${url}&title=${identificador}"
                            i18n:translate="" class="link_fatac">Veure imatge ampliada</a>
-                    </tal:co> -->
-
-                    <tal:co tal:condition="python: tipus_media == 'image'">
-                        <div class="photo-container">
-                            <img class="media_image" tal:attributes="src url; alt identificador" />
-                        </div>
-                        <br/><a tal:attributes="href string:${context/absolute_url}/bookView"
-                           i18n:translate="" class="link_fatac">Veure llibre ampliat</a>
                     </tal:co>
-
+                    
                     <tal:co tal:condition="python: tipus_media == 'video'">
                     	<tal:co tal:condition="python: hasVideo == 0" tal:define="nom dada/valor;">
                             <video class="videoTag video-js vjs-default-skin" tal:attributes="src url; id python:nom[0]['url']"
@@ -145,5 +142,6 @@
             </tal:def>
             </div>
         </tal:co>
+        
     </tal:def>
 </metal:dada>

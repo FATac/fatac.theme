@@ -28,17 +28,16 @@
         
         <div id="content-core">       
          
-            <div i18n:translate="pagines_llibre" tal:define="llibre view/getLlibre">   
+            <div tal:define="llibre view/getLlibre">   
                
-                <div class="pagines">Pàgines llibre                    
+                <div class="pagines"><span i18n:translate="pagines_llibre">Pàgines llibre</span>                    
                     <a style="float:right" target="_blank"  tal:attributes="href python:llibre+'/bookView'">  
-                        Visualitzar llibre               
+                        <span i18n:translate="visualitzar_llibre">Visualitzar llibre</span>
                     </a> 
                 </div>
                 
                 <ul class="llista_pagines">
-                    <li class="pagina" tal:repeat="pagina view/PaginesLlibre">
-
+                    <li class="pagina" tal:repeat="pagina view/PaginesLlibre">                       
                         <div class="titol_pagines" tal:define="estat pagina/status" > 
                             <a tal:condition="python:estat in ('published')" tal:content="pagina/title" href="" tal:attributes="href pagina/url_edit" /> 
 
@@ -47,7 +46,7 @@
                   
                         <div class="row-fluid">   
 
-                            <div class="span12" i18n:translate="comentaris"><span class="dades_pagina">Comentaris</span>
+                            <div class="span12">
                                <ul tal:condition="pagina/comentaris">                                
                                     <li tal:repeat="comentari pagina/comentaris">
                                         <div tal:define="url_comentari comentari/getURL" >    

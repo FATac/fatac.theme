@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-09-12 11:22+0000\n"
-"PO-Revision-Date: 2012-08-28 11:06+0100\n"
+"PO-Revision-Date: 2013-05-13 11:06+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -2147,17 +2147,16 @@ msgstr "Detall Pàgina"
 msgid "descriptiondetallPagina"
 msgstr "Permet afegir un detall a la pàgina del llibre"
 
-
 msgid "Pagina"
 msgstr "Pàgina"
 
 msgid "Please upload an image"
 msgstr "Afegeix una imatge"
 
-msgid "Keep existing image"
+msgid "nochange_image"
 msgstr "Guarda imatge existent"
 
-msgid "Replace with new imatge"
+msgid "upload_image"
 msgstr "Reemplaça amb una nova imatge"
 
 msgid "The displayed text"
@@ -2168,3 +2167,27 @@ msgstr "Detall"
 
 msgid "help_description"
 msgstr "S'usa en llistes d'elements i resultats de cerca"
+
+msgid "gestioLink"
+msgstr "Gestionar Llibre"
+
+msgid "veure_llibre"
+msgstr "Veure Llibre"
+
+msgid "pagines_llibre"
+msgstr "Pàgines Llibre"
+
+msgid "visualitzar_llibre"
+msgstr "Visualitzar Llibre"
+
+msgid "detalls"
+msgstr "Detalls"
+
+msgid "notes"
+msgstr "Notes"
+
+msgid "comentaris"
+msgstr "Comentaris"
+
+msgid "tornar_llibre"
+msgstr "Tornar al llibre"

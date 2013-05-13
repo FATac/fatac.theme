@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-09-12 11:22+0000\n"
-"PO-Revision-Date: 2012-08-28 11:07+0100\n"
+"PO-Revision-Date: 2013-05-13 11:07+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -2129,3 +2129,65 @@ msgstr "Dinners"
 msgid "ProtocolVisits"
 msgstr "Protocol visits"
 
+msgid "paginaLlibre"
+msgstr "Page Book"
+
+msgid "descriptionpaginaLlibre"
+msgstr "Allows to add a page of the book"
+
+msgid "notaPagina"
+msgstr "Note Page"
+
+msgid "descriptionnotaPagina"
+msgstr "Allows to add a note to the book page"
+
+msgid "detallPagina"
+msgstr "Detail Page"
+
+msgid "descriptiondetallPagina"
+msgstr "Allows to add a detail page of the book"
+
+msgid "Pagina"
+msgstr "Page"
+
+msgid "Please upload an image"
+msgstr "Add an image"
+
+msgid "nochange_image"
+msgstr "Save existing image"
+
+msgid "upload_image"
+msgstr "Replace with a new image"
+
+msgid "The displayed text"
+msgstr "The text displayed"
+
+msgid "Picture"
+msgstr "Detail"
+
+msgid "help_description"
+msgstr "It is used in lists of items and search results"
+
+msgid "gestioLink"
+msgstr "Manage Book"
+
+msgid "veure_llibre"
+msgstr "See book"
+
+msgid "pagines_llibre"
+msgstr "Book pages"
+
+msgid "visualitzar_llibre"
+msgstr "View Book"
+
+msgid "detalls"
+msgstr "Details"
+
+msgid "notes"
+msgstr "Notes"
+
+msgid "comentaris"
+msgstr "Comments"
+
+msgid "tornar_llibre"
+msgstr "Return to the book"

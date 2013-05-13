@@ -41,11 +41,11 @@ class comentarisLlibre(BrowserView):
         for pagina in pagines:
                 id_pagina = pagina.id
                 obj = pagina.getObject() 
-                results.append(dict(title=obj.title,
+                results.append(dict(title=obj.title_or_id(),
                                     url=pagina.getURL(), 
                                     url_edit=pagina.getURL() + '/edit',   
                                     status = workflow.getInfoFor(obj,'review_state'), 
-                                    comentaris = [i for i in  portal.portal_catalog.searchResults(portal_type="Discussion Item", path='/fatac/ac/'+id_llibre+'/'+id_pagina)],  
+                                    comentaris = [i for i in  portal.portal_catalog.searchResults(portal_type="Discussion Item", path='/fatac/ac/'+id_llibre+'/'+obj.title_or_id())],  
                                     )
 
                                )            

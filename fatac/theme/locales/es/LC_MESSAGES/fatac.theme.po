@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FATAC\n"
 "POT-Creation-Date: 2012-09-12 11:22+0000\n"
-"PO-Revision-Date: 2012-08-28 11:07+0100\n"
+"PO-Revision-Date: 2013-05-13 11:07+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2078,7 +2078,7 @@ msgstr "Clausura"
 msgid "Curs "
 msgstr "Cursos"
 
-msgid "Emissions i gravacions TV ràdio cinema"
+msgid "Emissions i gravacions TV ràdi2013-05-13o cinema"
 msgstr "Emisiones y grabaciones: TV, radio, cine"
 
 msgid "Entrevistes "
@@ -2132,3 +2132,65 @@ msgstr "Comidas"
 msgid "ProtocolVisits"
 msgstr "Visitas protocolarias"
 
+msgid "paginaLlibre"
+msgstr "Página Libro"
+
+msgid "descriptionpaginaLlibre"
+msgstr "Permite añadir una página del libro"
+
+msgid "notaPagina"
+msgstr "Nota Pagina"
+
+msgid "descriptionnotaPagina"
+msgstr "Permite añadir una nota a la pagina del libro"
+
+msgid "detallPagina"
+msgstr "Detalle Pagina"
+
+msgid "descriptiondetallPagina"
+msgstr "Permite añadir un detalle a la pagina del libro"
+
+msgid "Pagina"
+msgstr "Página"
+
+msgid "Please upload an image"
+msgstr "Añade una imagen"
+
+msgid "nochange_image"
+msgstr "Guarda imagen existente"
+
+msgid "upload_image"
+msgstr "Reemplaza con una nueva imagen"
+
+msgid "The displayed text"
+msgstr "El texto que se muestra"
+
+msgid "Picture"
+msgstr "Detalle"
+
+msgid "help_description"
+msgstr "Se usa en listas de elementos y resultados de busqueda"
+
+msgid "gestioLink"
+msgstr "Gestionar Libro"
+
+msgid "veure_llibre"
+msgstr "Ver Libro"
+
+msgid "pagines_llibre"
+msgstr "Páginas Libro"
+
+msgid "visualitzar_llibre"
+msgstr "Visualizar Libro"
+
+msgid "detalls"
+msgstr "Detalles"
+
+msgid "notes"
+msgstr "Notas"
+
+msgid "comentaris"
+msgstr "Comentarios"
+
+msgid "tornar_llibre"
+msgstr "Volver al libro"

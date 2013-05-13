@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2012-09-12 11:22+0000\n"
-"PO-Revision-Date: 2012-08-02 14:26+0100\n"
+"PO-Revision-Date: 2013-05-13 14:26+0100\n"
 "Last-Translator: lpmayos <laura.perez-mayos@upcnet.es>\n"
 "Language-Team: Plone Team <plone.team@upcnet.es>\n"
 "MIME-Version: 1.0\n"
@@ -886,3 +886,9 @@ msgstr "View"
 
 msgid "Group name"
 msgstr "Group Name"
+
+msgid "Gestionar"
+msgstr "Manage Book"
+
+msgid "Comentaris"
+msgstr "Comments"

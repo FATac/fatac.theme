@@ -9,7 +9,7 @@ import json
 from datetime import datetime
 from DateTime import DateTime
 
-class jsonLlibre(BrowserView):
+class jsonLlibre(genericView):
     """ classe per generar una vista html del llibre
     """
 
@@ -17,11 +17,22 @@ class jsonLlibre(BrowserView):
         """ self.servidorRest guarda l'adreça del servidor Rest que serveix les
         dades; self.idobjectes guarda l'id del/s objecte/s del que volem mostrar
         """
-        super(BrowserView, self).__init__(context, request)
+        #super(BrowserView, self).__init__(context, request)
+        super(genericView, self).__init__(context, request)
         self.request = request
         self.context = context
-        self.llibre = self.request.get('llibre')
-        self.title = self.request.get('title')
+        self.servidorRest = self.retServidorRest()
+        self.rest_public = self.getSettings('rest_public_server')
+        self.zoom = None
+        self.visualitzacio = None
+        self.idobjectes = None
+        self.uidParam = self.getUIDParam()
+        self.resultat_cerca = None
+        self.idobjectes = None
+        # self.request = request
+        # self.context = context
+        # self.llibre = self.request.get('llibre')
+        # self.title = self.request.get('title')
 
     def __call__(self):
         """
@@ -114,6 +125,43 @@ class jsonLlibre(BrowserView):
         return pages[0:]
       
 
+    def dades_llibre(self):
+        """
+        """
+        dades_json = self.retAllSections()  # retorna diccionari
+        resultat = []   
+        year = ''   
+        autor = ''  
+        if dades_json:
+            i = 0
+            for objecte in dades_json:
+                id_objecte = self.idobjectes[i]
+                i += 1
+                if 'sections' in objecte:
+                    titol_objecte = self.getTitolObjecte(objecte['sections'])
+
+                    dades_seccions = []
+                    for seccio in objecte['sections']:                    
+                        dades = []
+                        if 'data' in seccio:
+                            for dada in seccio['data']:
+                                dada_llegida = self.llegirDada(dada)  # {'nom': nom, 'tipus': tipus, 'valor': valor}
+                                if dada_llegida['nom'] == u'Autor':
+                                    autor = dada_llegida['valor']    
+                                elif dada_llegida['nom'] == u'Authors':
+                                    autor = dada_llegida['valor'][0]['text']    
+                                if dada_llegida['nom'] == u'Date' or dada_llegida['nom'] == u'Year':
+                                    year = dada_llegida['valor']      
+                          
+                    dades_objecte = {'id': id_objecte,
+                                     'title': titol_objecte,
+                                     'classe': objecte['className'],
+                                     'nom_classe': objecte['className'].replace("ac:", ""),                                     
+                                     'year': year,
+                                     'author': autor,}
+                    resultat.append(dades_objecte)
+
+        return resultat
 
     def jsonLlibre(self):      
         context = self.context
@@ -122,19 +170,24 @@ class jsonLlibre(BrowserView):
 
         llibre = []    
         pages = []   
-
+        year = ''
+        autor = ''
+        
         id_llibre = self.context.id
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         llibre = portal.portal_catalog.searchResults(portal_type="fatac.dummy", path='/fatac/ac/'+id_llibre)
-      
-        obj = llibre[0].getObject()     
+        
+        obj = llibre[0].getObject()    
+        idobjecte = obj.id
+        self.idobjectes = [idobjecte]
 
-      
+        dades = self.dades_llibre()
+              
         llibre = {                     
-            'title': 'Títol del llibre',
-            'author': 'Autor',
-            'year': '2013',
-            'url': 'http://foo/bar',
+            'title': dades[0]['title'],
+            'author': dades[0]['author'],
+            'year': dades[0]['year'],
+            'url': self.context.portal_url() + '/ac/' + idobjecte,
             'pages': self.PaginesLlibre(obj),            
         }       
            
