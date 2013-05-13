@@ -498,11 +498,8 @@ class genericView(BrowserView, funcionsCerca):
         return res
 
     def get_linkedBook_dada(self, dades):
-        """ donat un diccionari de tipus {"name": "Author", "type": "linkedObjects",
-        "value": ["Tàpies. Celebració de la mel@Tapies_Celebracio_de_la_mel_3", "Tàpies. Certeses sentides@Tapies_Certeses_sentides", "Homenatge a Picasso@Homenatge_a_Picasso"]}
-        cal pintar cada dada dins value formant un link amb la part esquerra de '@'
-        que linki a la fitxa de l'objecte amb l'id indicat després de l'@.
-        Retorna una llista de diccionaris tipus {'text':xxx, 'id':xxx}
+        """ donat un diccionari de tipus {u'type': u'linkedBook', u'value': [u'on']}
+        si on retornem la url per visualitzar el llibre i sino en blanc
         """
         valor = ', '.join(dades['value'])
         url = ''
