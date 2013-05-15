@@ -1,5 +1,9 @@
 Changelog
 =========
+1.2 (unreleased)
+--------------
+
+- Afegida funcionalitat de visor de llibre d'autor
 
 1.1 (unreleased)
 -------------------
