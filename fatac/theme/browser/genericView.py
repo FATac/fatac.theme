@@ -143,7 +143,6 @@ class genericView(BrowserView, funcionsCerca):
     def dades_genericview_solr(self):
         """ Retorna les dades que s'han obtingut de la cerca al solr.
         """
-
         if self.resultat_cerca is not None:
             resultat = []
             lang = self.getLang()
@@ -153,6 +152,7 @@ class genericView(BrowserView, funcionsCerca):
                                  'titol': '',
                                  'quan': '',
                                  'qui': '',
+                                 'display_screen': '',
                                  'classe': objecte['class'],
                                  'thumbnail_classe': self.getThumbnailClasse(objecte['class']),
                                  'thumbnail_objecte': self.getThumbnailObjecte(id_objecte),
@@ -164,6 +164,8 @@ class genericView(BrowserView, funcionsCerca):
                     dades_objecte['qui'] = objecte['Who'][0]
                 if 'When' in objecte:
                     dades_objecte['quan'] = objecte['When'][0]
+                if 'DisplayScreen' in objecte:
+                    dades_objecte['display_screen'] = objecte['DisplayScreen'][0]
                 resultat.append(dades_objecte)
             self.resultat_cerca = None
             return resultat
@@ -494,3 +496,14 @@ class genericView(BrowserView, funcionsCerca):
                     })
             i += 1
         return res
+
+    def get_linkedBook_dada(self, dades):
+        """ donat un diccionari de tipus {u'type': u'linkedBook', u'value': [u'on']}
+        si on retornem la url per visualitzar el llibre i sino en blanc
+        """
+        valor = ', '.join(dades['value'])
+        url = ''
+        if valor == u'on':            
+            url = self.context.portal_url() + '/ac/' + self.idobjectes[0] + '/bookView'
+        
+        return url

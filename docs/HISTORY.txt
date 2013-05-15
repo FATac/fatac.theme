@@ -5,6 +5,7 @@ Changelog
 -------------------
 
 - Nova vista per gestionar els llibres i per retornar json llibre
+- Nova vista comentaris llibre
 
 1.0dev (unreleased)
 -------------------

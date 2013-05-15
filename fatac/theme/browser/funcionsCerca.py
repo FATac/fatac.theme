@@ -23,7 +23,6 @@ class funcionsCerca():
         """
         """
         parametres_visualitzacio = self.retParametresVisualitzacio()
-
         llista_ids = None
         querystring = None
         if 'llista_ids' in parametres_visualitzacio:
@@ -193,7 +192,7 @@ class funcionsCerca():
             querystring['start'] = 0
             querystring['f'] = ['id:' + ' OR '.join(llista_ids[start:start + rows])]
             querystring_str = self.querystringToString(querystring)
-            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,Who,What,When,class&conf=Explorar&lang=" + lang
+            url = self.retServidorRest() + '/solr/search?' + querystring_str + "&fields=id,Who,What,When,DisplayScreen,class&conf=Explorar&lang=" + lang
 
         read = self.llegeixJson(url)
         if read:

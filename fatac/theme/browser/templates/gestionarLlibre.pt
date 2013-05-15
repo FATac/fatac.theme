@@ -28,74 +28,59 @@
         
         <div id="content-core">       
          
-            <div i18n:translate="pagines_llibre" tal:define="llibre view/getLlibre">   
+            <div tal:define="llibre view/getLlibre">   
                
-                <div class="pagines">Pàgines llibre
+                <div class="pagines"><span i18n:translate="pagines_llibre">Pàgines llibre 
+                </span>
                     <a tal:attributes="href python:llibre+'/++add++fatac.paginaLlibre'">  
-                       <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
-                      <!--  <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                       <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>                  
                     </a>     
-                    <a style="float:right" target="_blank"  tal:attributes="href python:llibre+'/bookView'">  
-                        Visualitzar llibre               
+                    <a style="float:right" target="_blank" tal:attributes="href python:llibre+'/bookView'">
+                        <span i18n:translate="visualitzar_llibre">Visualitzar llibre</span>
                     </a> 
                 </div>
                 
                 <ul class="llista_pagines">
                     <li class="pagina" tal:repeat="pagina view/PaginesLlibre">
-                      
-                        <div class="titol_pagines"> <a tal:content="pagina/title" href="" tal:attributes="href pagina/url_edit"/> </div>                      
-                       
+
+                        <div class="titol_pagines" tal:define="estat pagina/status" > 
+                            <a tal:condition="python:estat in ('published')" tal:content="pagina/title" href="" tal:attributes="href pagina/url_edit" /> 
+
+                            <a tal:condition="python:estat in ('private')" class="private" tal:content="pagina/title" href="" tal:attributes="href pagina/url_edit" /> 
+                        </div>   
+                  
                         <div class="row-fluid">
-                            <div class="span4" tal:define="url_pagina pagina/url" i18n:translate="detalls"><span class="dades_pagina">Detalls</span>
+                            <div class="span6" tal:define="url_pagina pagina/url"><span class="dades_pagina" i18n:translate="detalls">Detalls</span>
                                 <a tal:attributes="href python:url_pagina+'/++add++fatac.detallLlibre'">  
-                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
-                                   <!-- <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>                                   
                                 </a>
                                 <ul tal:condition="pagina/detalls">
                                     <li tal:repeat="detall pagina/detalls">
-                                        <a tal:define="url_detall detall/getURL" tal:content="detall/Title" href="" tal:attributes="href python:url_detall+'/edit'"/>
+                                        <span tal:define="estat detall/status">
+                                            <a tal:condition="python:estat in ('published')" tal:define="url_detall detall/url" tal:content="detall/title" href="" tal:attributes="href python:url_detall+'/edit'"/>
+
+                                            <a tal:condition="python:estat in ('private')" class="private" tal:define="url_detall detall/url" tal:content="detall/title" href="" tal:attributes="href python:url_detall+'/edit'"/>
+                                        </span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="span4" tal:define="url_pagina pagina/url" i18n:translate="notes"><span class="dades_pagina">Notes</span>
+                            <div class="span6" tal:define="url_pagina pagina/url"><span class="dades_pagina" i18n:translate="notes">Notes</span>
                                 <a tal:attributes="href python:url_pagina+'/++add++fatac.notaLlibre'">  
-                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
-                                   <!-- <img class="addPlaylist" src="++resource++fatac.content/images/add_playlist.png"> -->
+                                   <i class="icon-plus" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>                                   
                                 </a>
                                 <ul tal:condition="pagina/notes">                                
                                     <li tal:repeat="nota pagina/notes">
-                                        <a tal:define="url_nota nota/getURL" tal:content="nota/Title" href="" tal:attributes="href python:url_nota+'/edit'"/>
+                                        <span tal:define="estat nota/status">
+                                            <a tal:condition="python:estat in ('published')" tal:define="url_nota nota/url" tal:content="nota/text" href="" tal:attributes="href python:url_nota+'/edit'"/>
+
+                                            <span tal:condition="python:estat in ('private')" tal:define="url_nota nota/url">
+                                                <a class="private" tal:content="nota/title" href="" tal:attributes="href python:url_nota+'/edit'"/>             
+                                            </span>
+                                        </span>
                                     </li>
                                 </ul>
-                            </div>
-                            
-
-                            <div class="span4" i18n:translate="comentaris"><span class="dades_pagina">Comentaris</span>
-                               <ul tal:condition="pagina/comentaris">                                
-                                    <li tal:repeat="comentari pagina/comentaris">
-                                        <div tal:define="url_comentari comentari/getURL" >    
-                                            <span tal:content="comentari/Description"/> 
-
-                                            <a href="" tal:attributes="href python:url_comentari+'/@@moderate-delete-comment'" >
-                                                <i class="icon-trash icon-large" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
-                                            </a>
-
-                                           <!--  <form name="delete" action="" tal:attributes="action string:${url_comentari}/@@moderate-delete-comment" method="post" style="display: inline;">
-                                                <input name="form.button.DeleteComment" class="destructive" type="submit" 
-                                                    value=" "> 
-                                                <a href="" tal:attributes="href python:url_comentari+'/@@moderate-delete-comment'" >
-                                                    <i class="icon-trash icon-large" src="++resource++fatac.theme.images/glyphicons-halflings.png">></i>
-                                                </a>
-
-                                                    <i class="icon-remove-circle" src="++resource++fatac.theme.images/glyphicons-halflings.png"></i>
-                                               
-                                            </form> -->
-                                      
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            </div>                            
 
                      </div>
                   
