@@ -43,7 +43,7 @@ html, body, .container {
 
 #book {
     height:97%;
-    margin-top: 2%;
+    margin-top: 1%;
     header {
         > div {
             position:relative;
@@ -54,8 +54,8 @@ html, body, .container {
                 right:45px;
                 background-image: url('++resource++fatac.theme.images/palette.png');
                 background-repeat: no-repeat;
-                width:73px;
-                height:25px;
+                width:302px;
+                height:33px;
             }
             h1 {
                 bottom:0px;
@@ -77,7 +77,7 @@ html, body, .container {
         }
         box-sizing: border-box;
         padding-bottom:2%;
-        height:12%;
+        height:16%;
     }
     #screen {
         #main {
@@ -208,7 +208,7 @@ html, body, .container {
             }
         }
 
-        height:64%;
+        height:63%;
 
 
     }
@@ -401,7 +401,7 @@ button#fullscreen {
     border:none;
     background-color: transparent;
     position:absolute;
-    top:10px;
+    top:15px;
     right:10px;
     background-image: url('++resource++fatac.theme.images/vista-normal.png');
     background-repeat: no-repeat;

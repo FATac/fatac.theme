@@ -8242,13 +8242,13 @@ html, body, .container {
 /* line 44, ../scss/book.scss */
 #book {
   height: 97%;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 /* line 47, ../scss/book.scss */
 #book header {
   box-sizing: border-box;
   padding-bottom: 2%;
-  height: 12%;
+  height: 16%;
 }
 /* line 48, ../scss/book.scss */
 #book header > div {
@@ -8268,8 +8268,8 @@ html, body, .container {
   right: 45px;
   background-image: url("++resource++fatac.theme.images/palette.png");
   background-repeat: no-repeat;
-  width: 73px;
-  height: 25px;
+  width: 302px;
+  height: 33px;
 }
 /* line 60, ../scss/book.scss */
 #book header > div h1 {
@@ -8288,7 +8288,7 @@ html, body, .container {
 }
 /* line 82, ../scss/book.scss */
 #book #screen {
-  height: 64%;
+  height: 63%;
 }
 /* line 83, ../scss/book.scss */
 #book #screen #main {
@@ -8692,7 +8692,7 @@ button#fullscreen {
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   background-image: url("++resource++fatac.theme.images/vista-normal.png");
   background-repeat: no-repeat;

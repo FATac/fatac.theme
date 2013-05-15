@@ -263,6 +263,7 @@ WRAPPER_POS = 0
 
     // Loads the JSON data of the book and calls the specified callback afterwards
 
+
     function getData(callback) {
         $.get('jsonLlibre', function(data) {
             $('#book')[0].bookdata = data

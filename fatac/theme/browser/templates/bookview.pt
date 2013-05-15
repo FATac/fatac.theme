@@ -16,7 +16,7 @@
         <script src="++resource++fatac.theme.javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis:200,600);</style>
     </head>
-    <body>
+    <body i18n:domain='fatac.theme'>
 
 
         <div class="container">
@@ -47,12 +47,13 @@
                      <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseDetails">
-                            Detalls (<span class="count">0</span>)
+                            <span tal:omit-tag="" i18n:translate="viewer_details"></span>
+                            (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseDetails" class="accordion-body collapse in">
                           <div class="accordion-inner">
-                            No hi ha detalls
+                            <span tal:omit-tag="" i18n:translate="viewer_no_details"></span>
                           </div>
                         </div>
                       </div>
@@ -60,11 +61,13 @@
                       <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseNotes">
-                            Notes (<span class="count">0</span>)
+                            <span tal:omit-tag="" i18n:translate="viewer_notes"></span>
+                             (<span class="count">0</span>)
                           </a>
                         </div>
                         <div id="collapseNotes" class="accordion-body collapse">
                           <div class="accordion-inner">
+                            <span tal:omit-tag="" i18n:translate="viewer_no_notes"></span>
                           </div>
                         </div>
                       </div>
@@ -72,12 +75,13 @@
                       <div class="accordion-group" id="comments">
                         <div class="accordion-heading">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#sidebar" href="#collapseComments">
-                            Comentaris (<span class="count">0</span>)<button class="pull-right">+</button>
+                            <span tal:omit-tag="" i18n:translate="viewer_comments"></span>
+                             (<span class="count">0</span>)<button class="pull-right">+</button>
                           </a>
                         </div>
                         <div id="collapseComments" class="accordion-body collapse">
                           <div class="accordion-inner">
-                            No hi han comentaris
+                            <span tal:omit-tag="" i18n:translate="viewer_no_comments"></span>
                           </div>
                         </div>
                       </div>
@@ -116,20 +120,20 @@
         <div class="modal hide fade" id="commentsModal" tal:define="anonymous view/anonymous">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Afegir Comentari</h3>
+            <h3 i18n:translate="viewer_add_comment">Afegir Comentari</h3>
           </div>
           <div tal:condition="anonymous" class="modal-body">
             <div class="alert alert-error">
-                <strong>Alerta! </strong>
-                Has d'estar <a tal:attributes="href string: ${view/portal_url}/login">identificat</a> per poder comentar
+                <strong i18n:translate="viewer_alert">Alerta! </strong>
+                <span tal:omit-tag="" i18n:translate="viewer_alert_one"></span>  <a tal:attributes="href string: ${view/portal_url}/login" i18n:translate="viewer_alert_two">identificat</a> <span tal:omit-tag="" i18n:translate="viewer_alert_three"></span>
             </div>
           </div>
           <div class="modal-body">
             <textarea rows="4" tal:attributes="disabled view/anonymous | nothing"></textarea>
           </div>
           <div class="modal-footer">
-            <a href="#" id="close" class="btn">Cancela</a>
-            <a href="#" id="send" tal:attributes="class view/commentclass">Envia el comentari</a>
+            <a href="#" id="close" class="btn" i18n:translate="viewer_cancel">Cancea</a>
+            <a href="#" id="send" tal:attributes="class view/commentclass" i18n:translate="viewer_send_comment">Envia el comentari</a>
           </div>
         </div>
 
@@ -145,7 +149,7 @@
         <script src="++resource++fatac.theme.javascripts/jquery.scrollpane.js"></script>
         <script src="++resource++fatac.theme.javascripts/hogan.js"></script>
         <script src="++resource++fatac.theme.javascripts/book.templates.js"></script>
-        <!--script src="++resource++fatac.theme.javascripts/book.dummycontent.js"></script-->
+        <!-- <script src="++resource++fatac.theme.javascripts/book.dummycontent.js"></script> -->
         <script src="++resource++fatac.theme.javascripts/book.js"></script>
 
         <script>

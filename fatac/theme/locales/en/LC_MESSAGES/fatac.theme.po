@@ -16,6 +16,45 @@ msgstr ""
 "X-Poedit-Language: English\n"
 "X-Poedit-Basepath: /var/plone/fatac/fatac.buildout/src\n"
 
+msgid "viewer_details"
+msgstr "Details"
+
+msgid "viewer_notes"
+msgstr "Notes"
+
+msgid "viewer_comments"
+msgstr "Comments"
+
+msgid "viewer_no_details"
+msgstr "There are no details"
+
+msgid "viewer_no_notes"
+msgstr "There are no notes"
+
+msgid "viewer_no_comments"
+msgstr "There are no comments"
+
+msgid "viewer_add_comment"
+msgstr "Add comment"
+
+msgid "viewer_cancel"
+msgstr "Cancel"
+
+msgid "viewer_send_comment"
+msgstr "Send comment"
+
+msgid "viewer_alert"
+msgstr "Warning!"
+
+msgid "viewer_alert_one"
+msgstr "You have to "
+
+msgid "viewer_alert_two"
+msgstr "log in"
+
+msgid "viewer_alert_three"
+msgstr "to comment."
+
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
 msgid "A description of Dummy"
 msgstr "A description of Dummy"

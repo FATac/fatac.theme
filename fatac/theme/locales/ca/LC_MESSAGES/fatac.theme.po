@@ -16,6 +16,45 @@ msgstr ""
 "X-Poedit-Basepath: /var/plone/fatac/fatac.buildout/src\n"
 "X-Poedit-Language: Catalan\n"
 
+msgid "viewer_details"
+msgstr "Detalls"
+
+msgid "viewer_notes"
+msgstr "Notes"
+
+msgid "viewer_comments"
+msgstr "Comentaris"
+
+msgid "viewer_no_details"
+msgstr "No hi han detalls"
+
+msgid "viewer_no_notes"
+msgstr "No hi han notes"
+
+msgid "viewer_no_comments"
+msgstr "No hi han comentaris"
+
+msgid "viewer_add_comment"
+msgstr "Afegir comentari"
+
+msgid "viewer_cancel"
+msgstr "Cancela"
+
+msgid "viewer_send_comment"
+msgstr "Enviar el comentari"
+
+msgid "viewer_alert"
+msgstr "Alerta!"
+
+msgid "viewer_alert_one"
+msgstr "Has d'estar "
+
+msgid "viewer_alert_two"
+msgstr "identificat"
+
+msgid "viewer_alert_three"
+msgstr "per poder comentar."
+
 #: ../../../../fatac.content/fatac/content/profiles/default/types/fatac.dummy.xml
 msgid "A description of Dummy"
 msgstr ""
