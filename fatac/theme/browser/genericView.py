@@ -65,10 +65,11 @@ class genericView(BrowserView, funcionsCerca):
                 self.resultat_cerca = []
                 if resultat_cerca:
                     if 'dades_json' in resultat_cerca:
-                        dades_json = resultat_cerca['dades_json']
+                        dades_json = resultat_cerca['dades_json']()
+                        #import pdb;pdb.set_trace()
                         if 'response' in dades_json and 'docs' in dades_json['response']:
                             resultats = dades_json['response']['docs']
-                            self.resultat_cerca = resultat_cerca['dades_json']['response']['docs']
+                            self.resultat_cerca = resultat_cerca['dades_json']()['response']['docs']
                             idobjectes = []
                             for resultat in resultats:
                                 idobjectes.append(resultat['id'])
@@ -470,7 +471,7 @@ class genericView(BrowserView, funcionsCerca):
         resultat_cerca = self.executaCercaIdsOQuerystring([query], "id," + field)
         if resultat_cerca:
             if 'dades_json' in resultat_cerca:
-                dades_json = resultat_cerca['dades_json']
+                dades_json = resultat_cerca['dades_json']()
                 if 'response' in dades_json and 'docs' in dades_json['response']:
                     resultats = dades_json['response']['docs']
                     idobjectes = []
