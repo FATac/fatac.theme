@@ -129,7 +129,7 @@ class funcionsCerca():
         # llista_claus = ['ObjectType', 'Year', 'Country', 'Translation', 'Media', 'License', 'Role', 'Person', 'Organisation', 'Collection', 'ArtWork']
         llista_claus = [a[0] for a in sorted(mm, key=lambda filtre:filtre[1])]
 
-        return {'json': request.json, 'llista_claus': llista_claus}
+        return {'json': request.json(), 'llista_claus': llista_claus}
 
     def querystringToString(self, querystring):
         """
