@@ -25,9 +25,9 @@
 
               <header class="row-fluid" >
                 <div class="span12">
-                  <h1>Las aventuras de Mortadelo i Filemon</h1>
+                  <h1></h1>
                   <h2>
-                      <span class="author">Francisco Ibañez</span>
+                      <span class="author"></span>
                   </h2>
                   <div id="palette"></div>
                   <button id="fullscreen"></button>
