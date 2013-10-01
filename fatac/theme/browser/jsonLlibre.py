@@ -146,13 +146,12 @@ class jsonLlibre(genericView):
                         if 'data' in seccio:
                             for dada in seccio['data']:
                                 dada_llegida = self.llegirDada(dada)  # {'nom': nom, 'tipus': tipus, 'valor': valor}
-                                if dada_llegida['nom'] == u'Autor':
+                                if dada_llegida['nom'] == u'Author':
                                     autor = dada_llegida['valor']    
                                 elif dada_llegida['nom'] == u'Authors':
                                     autor = dada_llegida['valor'][0]['text']    
                                 if dada_llegida['nom'] == u'Date' or dada_llegida['nom'] == u'Year':
                                     year = dada_llegida['valor']      
-                          
                     dades_objecte = {'id': id_objecte,
                                      'title': titol_objecte,
                                      'classe': objecte['className'],
@@ -182,7 +181,7 @@ class jsonLlibre(genericView):
         self.idobjectes = [idobjecte]
 
         dades = self.dades_llibre()
-              
+
         llibre = {                     
             'title': dades[0]['title'],
             'author': dades[0]['author'],

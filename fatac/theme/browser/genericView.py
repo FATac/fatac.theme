@@ -66,6 +66,7 @@ class genericView(BrowserView, funcionsCerca):
                 if resultat_cerca:
                     if 'dades_json' in resultat_cerca:
                         dades_json = resultat_cerca['dades_json']
+                        #import pdb;pdb.set_trace()
                         if 'response' in dades_json and 'docs' in dades_json['response']:
                             resultats = dades_json['response']['docs']
                             self.resultat_cerca = resultat_cerca['dades_json']['response']['docs']

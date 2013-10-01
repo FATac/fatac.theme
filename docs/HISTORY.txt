@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 - Treure default mortadelo
+- Afegits autors al jsonLlibre per visualitzarlos al visor del llibre
 
 1.2 (unreleased)
 --------------
