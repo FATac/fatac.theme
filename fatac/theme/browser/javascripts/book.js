@@ -315,7 +315,13 @@ $(document).ready(function(event) {
     // Get the data and initialize UI
 
     getData(function(event, data) {
-        $('header h1').text(getBook()['title'] + ', ' + getBook()['year'])
+        var header = getBook()['title']
+        var year = getBook()['year']
+        year = year.replace(new RegExp(' ', 'g'), '');
+        if (year != '') {
+            header += ',' + year
+        }
+        $('header h1').text(header)
         $('header .author').text(getBook()['author'])
         resizeSidebarSections()
         renderThumbs()
