@@ -1,7 +1,12 @@
 Changelog
 =========
 
-1.2.1 (2012-06-18)
+1.2.2 (2013-10-01)
+------------------
+
+- Treure comma si no hi ha any
+
+1.2.1 (2013-06-18)
 ------------------
 
 - Treure default mortadelo
