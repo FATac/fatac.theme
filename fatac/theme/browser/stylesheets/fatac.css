@@ -669,7 +669,7 @@ div.photo-container {
 
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    background: url("++resource++fatac.theme.images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #999;
+    background: url("++resource++fatac.theme.images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #999 !important;
     color: #339933;
     border: 1px solid #999;
     font-weight: normal;
@@ -677,6 +677,7 @@ div.photo-container {
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     color: #339933;
     background-color: #b3d396;
+    background: none repeat scroll 0 0 #D3E3C3;
 }
 
 .ui-dialog-titlebar {
@@ -690,7 +691,7 @@ div.photo-container {
     height: 100px;
     min-height:100px !important;
     width: 252px;
-    border: none;
+    border: 1px solid #D3E3C3;
     background-color:white !important;
 }
 
@@ -1020,10 +1021,12 @@ div.overlay table.listing { font-size:12px !important; }
 .row:after {
   clear: both;
 }
+/*
 [class*="span"] {
   float: left;
   margin-left: 20px;
 }
+*/
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {

@@ -112,7 +112,7 @@ class funcionsCerca():
 
         import requests
         request = requests.get(url)
-        self.context.plone_log('$$$$$$$$$$$$$$$$$$$$$$$ llegeixJson() a funcionsCerca.py, requests.get(url) de url = \n' + url)
+        #self.context.plone_log('##### llegeixJson() a funcionsCerca.py, requests from url = ' + url)
 
         # quan llegim, perdem l'ordre dels filtres. Per evitar-ho, parsejarem
         # el read amb una expressió regular que ens retornarà una llista on

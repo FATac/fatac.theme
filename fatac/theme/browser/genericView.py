@@ -315,9 +315,9 @@ class genericView(BrowserView, funcionsCerca):
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
-            self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
+            #self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
             request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
-            self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
+            #self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
             read = request.read()
             if read:
                 dades_json = json.loads(read)  # retorna diccionari
@@ -340,9 +340,9 @@ class genericView(BrowserView, funcionsCerca):
             #TODO: esborrar quan acabem de testejar
             import time
             t0 = time.time()
-            self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
+            #self.context.plone_log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Inici crida: ' + url)
             request = urllib2.urlopen(url, timeout=self.retRequestTimeout())
-            self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
+            #self.context.plone_log('Fi urlopen  %.3f segons' % (time.time() - t0))
             read = request.read()
             if read:
                 dades_json = json.loads(read)  # retorna diccionari

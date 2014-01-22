@@ -38,7 +38,7 @@ msgid "> Playlists"
 msgstr "> Playlists"
 
 #: ../../../../fatac.core/fatac/core/profiles/default/actions.xml
-msgid "Accés usuaris"
+msgid "Acces usuaris"
 msgstr "Register"
 
 #: ../../../../fatac.content/fatac/content/browser/dashboard.pt:107
